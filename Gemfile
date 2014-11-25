@@ -7,7 +7,7 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
-
+gem 'unicorn'
 gem 'pg'
 
 gem 'rails_12factor', group: :production
@@ -25,6 +25,6 @@ gem 'rails_12factor', group: :production
 # gem 'capistrano', :group => :development
 
 # To use debugger
-gem 'ruby-debug19', :require => 'ruby-debug'
+# gem 'debugger', :require => 'ruby-debug'
 
 ruby '2.1.5'
