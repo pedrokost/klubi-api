@@ -12,6 +12,12 @@ gem 'pg'
 
 gem 'rails_12factor', group: :production
 
+group :development, :test do
+	gem 'spring-commands-rspec'
+ 	gem 'rspec-rails', '~> 3.0'
+ 	gem 'guard-rspec'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
