@@ -12,11 +12,19 @@ gem 'pg'
 
 gem 'rails_12factor', group: :production
 
+gem 'active_model_serializers', '~> 0.9.0'
+
+gem 'randexp'
+
+
 group :development, :test do
 	gem 'spring-commands-rspec'
  	gem 'rspec-rails', '~> 3.0'
  	gem 'guard-rspec'
+	gem 'factory_girl_rails'
 end
+
+gem 'shoulda-matchers', require: false
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

@@ -11,9 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20141127221214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "klubs", force: true do |t|
+    t.string   "name",                                  null: false
+    t.string   "slug",                                  null: false
+    t.string   "address"
+    t.string   "town"
+    t.string   "website"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "editor_email"
+    t.decimal  "latitude",     precision: 10, scale: 6
+    t.decimal  "longitude",    precision: 10, scale: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "klubs", ["slug"], name: "index_klubs_on_slug", using: :btree
 
 end

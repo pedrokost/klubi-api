@@ -25,6 +25,7 @@ guard :rspec, cmd: 'spring rspec' do
   watch(%r{^spec/support/(.+)\.rb$})                  { "spec" }
   watch('config/routes.rb')                           { "spec/routing" }
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
+  watch('app/controllers/application_controller.rb')  { "spec/apis" }
   watch('spec/rails_helper.rb')                       { "spec" }
 
   # Capybara features specs
