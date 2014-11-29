@@ -16,6 +16,7 @@ gem 'active_model_serializers', '~> 0.9.0'
 
 gem 'randexp'
 
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
 	gem 'spring-commands-rspec'
