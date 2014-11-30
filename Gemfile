@@ -27,6 +27,10 @@ end
 
 gem 'shoulda-matchers', require: false
 
+group :test do
+	gem "json-schema"
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

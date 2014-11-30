@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "required": ["klub"],
+  "properties": {
+    "klub" : {
+      "type" : "object",
+      "required" : [
+        "id",
+        "name",
+        "slug",
+        "address",
+        "town",
+        "website",
+        "phone",
+        "email",
+        "latitude",
+        "longitude"
+      ],
+      "properties" : {
+        "id" :        { "type": "integer" },
+        "name" :      { "type": "string" },
+        "slug" :      { "type": "string" },
+        "address" :   { "type": "string" },
+        "town" :      { "type": "string" },
+        "website" :   { "type": "string" },
+        "phone" :     { "type": "string" },
+        "email" :     { "type": "string" },
+        "latitude" :  { "type": "number" },
+        "longitude" : { "type": "number" }
+      }
+    }
+  }
+}
