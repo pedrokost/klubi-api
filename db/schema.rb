@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130183820) do
+ActiveRecord::Schema.define(version: 20141207092059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,10 @@ ActiveRecord::Schema.define(version: 20141130183820) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "complete",                              default: false
+    t.string   "categories",                            default: [],                 array: true
   end
 
+  add_index "klubs", ["categories"], name: "index_klubs_on_categories", using: :gin
   add_index "klubs", ["slug"], name: "index_klubs_on_slug", using: :btree
 
 end
