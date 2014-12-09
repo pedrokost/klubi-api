@@ -2,13 +2,22 @@ require 'api_constraints'
 
 Rails.application.routes.draw do
 
+
   constraints subdomain: 'api' do
     scope module: 'api' do
       scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
-        resources :klubs, only: [:index]
+        # defaults format: :json do
+          resources :klubs, only: [:index]
+          post 'klubs/import'
+        # end
       end
     end
   end
+
+  # constraints subdomain: 'import' do
+  #   post 'klubs/create'
+  #   # resources :klubs, only: [:create]
+  # end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

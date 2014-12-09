@@ -4,7 +4,7 @@ class Klub < ActiveRecord::Base
 
 	validates :slug, uniqueness: true
 	validates :name, presence: true
-	
+
 	default_scope { where(complete: true) }
 
 private

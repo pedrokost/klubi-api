@@ -8,5 +8,11 @@ FactoryGirl.define do
 			latitude 12.25566
 			longitude 45.25566
 		end
+    factory :klub_to_import do
+      address 'Trzaska cesta 25, 1000 Ljubljana'
+      email 'klub@email.com'
+      phone '041 563 521'
+      website 'http://petelin.si'
+    end
   end
 end

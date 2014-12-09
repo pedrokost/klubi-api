@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/cyu/rack-cors.git
+  revision: 470a0f92d4a971f1f2d9a7839cdab772c845591a
+  specs:
+    rack-cors (0.3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -14,7 +20,7 @@ GEM
       activesupport (= 4.1.8)
       builder (~> 3.1)
       erubis (~> 2.7.0)
-    active_model_serializers (0.9.0)
+    active_model_serializers (0.9.1)
       activemodel (>= 3.2)
     activemodel (4.1.8)
       activesupport (= 4.1.8)
@@ -29,6 +35,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
     celluloid (0.16.0)
@@ -43,22 +50,25 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.6)
     formatador (0.2.5)
-    guard (2.9.0)
+    guard (2.10.2)
       formatador (>= 0.2.4)
       listen (~> 2.7)
       lumberjack (~> 1.0)
       pry (>= 0.9.12)
       thor (>= 0.18.1)
-    guard-rspec (4.3.1)
+    guard-compat (0.3.0)
+    guard-rspec (4.4.2)
       guard (~> 2.1)
-      rspec (>= 2.14, < 4.0)
+      guard-compat (~> 0.1)
+      rspec (>= 2.99.0, < 4.0)
     hike (1.2.3)
     hitimes (1.2.2)
     i18n (0.6.11)
     json (1.8.1)
-    json-schema (2.4.1)
+    json-schema (2.5.0)
+      addressable (~> 2.3)
     kgio (2.9.2)
-    listen (2.8.2)
+    listen (2.8.3)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -75,7 +85,6 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.5.2)
-    rack-cors (0.2.9)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.8)
@@ -102,7 +111,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
-    rake (10.4.0)
+    rake (10.4.2)
     randexp (0.1.7)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
@@ -131,14 +140,14 @@ GEM
       activesupport (>= 3.0.0)
     slop (3.6.0)
     spring (1.2.0)
-    spring-commands-rspec (1.0.2)
+    spring-commands-rspec (1.0.3)
       spring (>= 0.9.1)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.2.1)
+    sprockets-rails (2.2.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
@@ -163,7 +172,7 @@ DEPENDENCIES
   guard-rspec
   json-schema
   pg
-  rack-cors
+  rack-cors!
   rails (= 4.1.8)
   rails-api
   rails_12factor

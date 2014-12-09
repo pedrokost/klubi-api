@@ -21,7 +21,7 @@ module ZatresiApi
     # config.i18n.default_locale = :de
 
 
-    config.middleware.insert_before 0, Rack::Cors, logger: Rails.logger do
+    config.middleware.insert_before ActionDispatch::Static, Rack::Cors, logger: Rails.logger do
       allow do
         origins 'app.local:4200' , 'zatresi.si', 'dev.zatresi.si'
 
