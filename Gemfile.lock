@@ -85,6 +85,7 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.5.2)
+    rack-rewrite (1.5.0)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.8)
@@ -174,6 +175,7 @@ DEPENDENCIES
   json-schema
   pg
   rack-cors!
+  rack-rewrite
   rails (= 4.1.8)
   rails-api
   rails_12factor

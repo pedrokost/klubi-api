@@ -20,6 +20,8 @@ gem 'randexp'
 
 gem 'rack-cors', github: 'cyu/rack-cors', require: 'rack/cors'
 
+gem 'rack-rewrite'
+
 group :development, :test do
 	gem 'spring-commands-rspec'
  	gem 'rspec-rails', '~> 3.0'

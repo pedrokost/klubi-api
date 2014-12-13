@@ -31,5 +31,14 @@ module ZatresiApi
           :max_age => 1728000
       end
     end
+
+    config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+
+      # Redirect to the www version of the domain
+      r301 %r{.*}, "http://www.zatresi.si$&", :if => Proc.new {|rack_env|
+        rack_env['SERVER_NAME'] == "zatresi.si"
+      }
+    end
+
   end
 end
