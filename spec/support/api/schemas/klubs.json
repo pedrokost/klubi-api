@@ -43,6 +43,9 @@
                     },
                     "longitude": {
                         "type": ["string", "null"]
+                    },
+                    "facebookUrl": {
+                      "type": ["string", "null"]
                     }
                 }
             }]

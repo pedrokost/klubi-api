@@ -42,7 +42,7 @@ module Api
     private
 
       def klub_import_params
-        params.require(:klub).permit(:name, :address, :website, :phone, :email, :latitude, :longitude, categories: [])
+        params.require(:klub).permit(:name, :address, :website, :phone, :email, :latitude, :longitude, :facebook_url, categories: [])
       end
 		end
 	end
