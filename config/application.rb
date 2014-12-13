@@ -32,7 +32,7 @@ module ZatresiApi
       end
     end
 
-    config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+    config.middleware.insert_before(Rack::Cors, Rack::Rewrite) do
 
       # Redirect to the www version of the domain
       r301 %r{.*}, "http://www.zatresi.si$&", :if => Proc.new {|rack_env|
