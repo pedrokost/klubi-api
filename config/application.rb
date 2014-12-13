@@ -23,7 +23,7 @@ module ZatresiApi
 
     config.middleware.insert_before ActionDispatch::Static, Rack::Cors, logger: Rails.logger do
       allow do
-        origins 'app.local:4200' , 'zatresi.si', 'dev.zatresi.si'
+        origins 'app.local:4200' , 'zatresi.si', 'dev.zatresi.si', 'www.zatresi.si'
 
         resource '*',
           :headers => :any,
