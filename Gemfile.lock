@@ -37,10 +37,19 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.2.2)
+    byebug (3.5.1)
+      columnize (~> 0.8)
+      debugger-linecache (~> 1.2)
+      slop (~> 3.6)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     coderay (1.1.0)
+    columnize (0.9.0)
+    debug_inspector (0.0.2)
+    debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     factory_girl (4.5.0)
@@ -64,6 +73,7 @@ GEM
     hike (1.2.3)
     hitimes (1.2.2)
     i18n (0.6.11)
+    interception (0.5)
     json (1.8.1)
     json-schema (2.5.0)
       addressable (~> 2.3)
@@ -79,11 +89,23 @@ GEM
     mime-types (2.4.3)
     minitest (5.4.3)
     multi_json (1.10.1)
+    netrc (0.7.9)
     pg (0.17.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (2.0.0)
+      byebug (~> 3.4)
+      pry (~> 0.10)
+    pry-rails (0.3.2)
+      pry (>= 0.9.10)
+    pry-rescue (1.4.1)
+      interception (>= 0.5)
+      pry
+    pry-stack_explorer (0.4.9.1)
+      binding_of_caller (>= 0.7)
+      pry (>= 0.9.11)
     rack (1.5.2)
     rack-rewrite (1.5.0)
     rack-test (0.6.2)
@@ -118,6 +140,8 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     redis (3.2.0)
+    rest_client (1.8.2)
+      netrc (~> 0.7.7)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
@@ -174,6 +198,10 @@ DEPENDENCIES
   guard-rspec
   json-schema
   pg
+  pry-byebug
+  pry-rails
+  pry-rescue
+  pry-stack_explorer
   rack-cors!
   rack-rewrite
   rails (= 4.1.8)
@@ -181,6 +209,7 @@ DEPENDENCIES
   rails_12factor
   randexp
   redis
+  rest_client
   rspec-rails (~> 3.0)
   shoulda-matchers
   spring

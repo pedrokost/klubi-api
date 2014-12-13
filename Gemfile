@@ -16,11 +16,20 @@ gem 'active_model_serializers', '~> 0.9.0'
 
 gem 'redis'
 
+group :development do
+  gem 'pry-rails'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
+  gem 'pry-byebug'
+end
+
 gem 'randexp'
 
 gem 'rack-cors', github: 'cyu/rack-cors', require: 'rack/cors'
 
 gem 'rack-rewrite'
+
+gem 'rest_client', require: false
 
 group :development, :test do
 	gem 'spring-commands-rspec'

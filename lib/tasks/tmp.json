@@ -1,0 +1,3950 @@
+{
+  "name": "Fitness podatki",
+  "count": 198,
+  "frequency": "Manual Crawl",
+  "version": 5,
+  "newdata": true,
+  "lastrunstatus": "partial",
+  "lastsuccess": "Sat Dec 13 2014 05:02:28 GMT+0000 (UTC)",
+  "thisversionstatus": "partial",
+  "results": {
+    "collection1": [
+      {
+        "name": "4P fitness club",
+        "photo": {
+          "alt": "4P fitness club",
+          "src": "http://fitness-info.si/cache/com_zoo/images/4p fitness logotip_7e43235dbda76eee5d61d2216bb6c7e6.jpg",
+          "text": ""
+        },
+        "address1": "Naslov: Verovškova ulica 55a",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 33 22 03",
+        "contact2": {
+          "href": "mailto:office@4p-fitness.com",
+          "text": "office@4p-fitness.com"
+        },
+        "contact3": {
+          "href": "http://4p-fitness.com/",
+          "text": "http://4p-fitness.com/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/4p.fitnes",
+          "text": "http://www.facebook.com/4p.fitnes"
+        }
+      },
+      {
+        "name": "AMBROSIJA center dobrega počutja",
+        "address1": "Naslov: Zaloška cesta 167",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 546 31 52",
+        "contact2": {
+          "href": "mailto:info@ambrosija.si",
+          "text": "info@ambrosija.si"
+        },
+        "contact3": {
+          "href": "http://www.ambrosija.si/start.htm",
+          "text": "http://www.ambrosija.si/start.htm"
+        },
+        "contact4": {
+          "href": "http://www.ambrosija.si/start.htm",
+          "text": "http://www.ambrosija.si/start.htm"
+        }
+      },
+      {
+        "name": "BJ FIT - FITNESS & WELLNESS CENTER",
+        "photo": {
+          "alt": "BJ FIT - FITNESS & WELLNESS CENTER",
+          "src": "http://fitness-info.si/cache/com_zoo/images/bj fit logo_0b43f10f8655cd82210a2537f2bbda8d.jpg",
+          "text": ""
+        },
+        "address1": "Naslov: Pod Hruševco 48c",
+        "address2": "Poštna številka: 1360",
+        "address3": "Mesto: Vrhnika",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 373 500",
+        "contact2": {
+          "href": "mailto:info@bjfit.si",
+          "text": "info@bjfit.si"
+        },
+        "contact3": {
+          "href": "http://bjfit.si/",
+          "text": "http://bjfit.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Bj-Fit-Fitness-and-Wellness-center/358435844243392",
+          "text": "http://www.facebook.com/pages/Bj-Fit-Fitness-and-Wellness-center/358435844243392"
+        }
+      },
+      {
+        "name": "Bodifit Kamnik",
+        "address1": "Naslov: Usnjarska 8",
+        "address2": "Poštna številka: 1241",
+        "address3": "Mesto: Kamnik",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 439 439",
+        "contact2": {
+          "href": "mailto:kamnik@bodifit.net",
+          "text": "kamnik@bodifit.net"
+        },
+        "contact3": {
+          "href": "http://www.bodifit-kamnik.si/",
+          "text": "http://www.bodifit-kamnik.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/BodifitKamnik",
+          "text": "https://www.facebook.com/BodifitKamnik"
+        }
+      },
+      {
+        "name": "Bodifit Otelo",
+        "address1": "Naslov: Breznikova 17",
+        "address2": "Poštna številka: 1230",
+        "address3": "Mesto: Domžale",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 729 27 27",
+        "contact2": {
+          "href": "mailto:otelo@bodifit.net",
+          "text": "otelo@bodifit.net"
+        },
+        "contact3": {
+          "href": "http://www.otelo.si",
+          "text": "http://www.otelo.si"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/otelo.wellnesscenter",
+          "text": "http://www.facebook.com/otelo.wellnesscenter"
+        }
+      },
+      {
+        "name": "Bodyshaping studio Rudnik",
+        "address1": "Naslov: Jurčkova cesta 231",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 693 302",
+        "contact2": {
+          "href": "mailto:info@bodyshaping.si",
+          "text": "info@bodyshaping.si"
+        },
+        "contact3": {
+          "href": "http://www.bodyshaping.si/BSS/domov",
+          "text": "http://www.bodyshaping.si/BSS/domov"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Fitnes-studio-BSS-Rudnik/110866108979286",
+          "text": "http://www.facebook.com/pages/Fitnes-studio-BSS-Rudnik/110866108979286"
+        }
+      },
+      {
+        "name": "Center Metulj",
+        "address1": "Naslov: Litijska cesta 148",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 524 19 15, 031 275 518",
+        "contact2": {
+          "href": "mailto:info@center-metulj.si",
+          "text": "info@center-metulj.si"
+        },
+        "contact3": {
+          "href": "http://www.center-metulj.si/",
+          "text": "http://www.center-metulj.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/fitnes.metulj?ref=ts&fref=ts",
+          "text": "http://www.facebook.com/fitnes.metulj?ref=ts&fref=ts"
+        }
+      },
+      {
+        "name": "Center Osebni pristop",
+        "photo": {
+          "alt": "Center Osebni pristop",
+          "src": "http://fitness-info.si/cache/com_zoo/images/center osebni pristop fitness info logo_344edf9195723c9d0ee27fa70603a319.jpg",
+          "text": ""
+        },
+        "address1": "Naslov: Jamova 95A",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 861 420",
+        "contact2": {
+          "href": "mailto:bostjan@vitalno-telo.com",
+          "text": "bostjan@vitalno-telo.com"
+        },
+        "contact3": {
+          "href": "http://www.vitalno-telo.com/",
+          "text": "http://www.vitalno-telo.com/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/VITALNO-TELO/116397465080",
+          "text": "https://www.facebook.com/pages/VITALNO-TELO/116397465080"
+        }
+      },
+      {
+        "name": "Center Vitalis",
+        "address1": "Naslov: Praprošče 15",
+        "address2": "Poštna številka: 1270",
+        "address3": "Mesto: Litija",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 834 736, 040 621 029, 01 89 84 329",
+        "contact2": {
+          "href": "mailto:vojko.kodrman@telemach.net",
+          "text": "vojko.kodrman@telemach.net"
+        },
+        "contact3": {
+          "href": "http://www.fitnesvitalis.com/",
+          "text": "http://www.fitnesvitalis.com/"
+        },
+        "contact4": {
+          "href": "http://www.fitnesvitalis.com/",
+          "text": "http://www.fitnesvitalis.com/"
+        }
+      },
+      {
+        "name": "CUBE fitness",
+        "address1": "Naslov: Ulica prvoborcev 25",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 030 674 953",
+        "contact2": {
+          "href": "mailto:info@cube-fitnes.si",
+          "text": "info@cube-fitnes.si"
+        },
+        "contact3": {
+          "href": "http://www.cube-fitnes.si/",
+          "text": "http://www.cube-fitnes.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Cube-Fitness/102809939830326",
+          "text": "http://www.facebook.com/pages/Cube-Fitness/102809939830326"
+        }
+      },
+      {
+        "name": "FIT13 fitness center",
+        "address1": "Naslov: Brnčičeva 13",
+        "address2": "Poštna številka: 1231",
+        "address3": "Mesto: Ljubljana - Črnuče",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 530 22 58",
+        "contact2": {
+          "href": "mailto:info@fit13.si",
+          "text": "info@fit13.si"
+        },
+        "contact3": {
+          "href": "http://www.fit13.si",
+          "text": "http://www.fit13.si"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/fit13.fitnes",
+          "text": "https://www.facebook.com/fit13.fitnes"
+        }
+      },
+      {
+        "name": "Fitline fitnes studio",
+        "address1": "Naslov: Ulica Jožeta Jame 12",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 065 200, 030 640 530",
+        "contact2": {
+          "href": "mailto:info@fitline.si",
+          "text": "info@fitline.si"
+        },
+        "contact3": {
+          "href": "http://www.fitline.si/",
+          "text": "http://www.fitline.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/fitlinestudio.si",
+          "text": "http://www.facebook.com/fitlinestudio.si"
+        }
+      },
+      {
+        "name": "Fitnes center BIT",
+        "address1": "Naslov: Litijska cesta 57",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 227 225, 031 890 151",
+        "contact2": {
+          "href": "mailto:info@fitnescenterbit.com",
+          "text": "info@fitnescenterbit.com"
+        },
+        "contact3": {
+          "href": "http://www.fitnescenterbit.com/",
+          "text": "http://www.fitnescenterbit.com/"
+        },
+        "contact4": {
+          "href": "http://www.fitnescenterbit.com/",
+          "text": "http://www.fitnescenterbit.com/"
+        }
+      },
+      {
+        "name": "Fitnes center Fit & Fun",
+        "address1": "Naslov: Dalmatinova 2",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 239 61 74",
+        "contact2": {
+          "href": "mailto:info@fit-fun.si",
+          "text": "info@fit-fun.si"
+        },
+        "contact3": {
+          "href": "http://www.fit-fun.si/site/index.php?view=home",
+          "text": "http://www.fit-fun.si/site/index.php?view=home"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/Fit-Fun-center/185556814824488",
+          "text": "https://www.facebook.com/pages/Fit-Fun-center/185556814824488"
+        }
+      },
+      {
+        "name": "Fitnes center gimnazija Šiška",
+        "photo": {
+          "alt": "Fitnes center gimnazija Šiška ",
+          "src": "http://fitness-info.si/cache/com_zoo/images/fitnes center gimnazija ika logo_e052fef74c77f20244289dc9f59c7efc.png",
+          "text": ""
+        },
+        "address1": "Naslov: Aljaževa 32",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 617 117",
+        "contact2": {
+          "href": "mailto:tadej.eposta@gmail.com",
+          "text": "tadej.eposta@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.facebook.com/fitnessiska",
+          "text": "http://www.facebook.com/fitnessiska"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/fitnessiska",
+          "text": "http://www.facebook.com/fitnessiska"
+        }
+      },
+      {
+        "name": "Fitnes center Ložar",
+        "address1": "Naslov: Javorjeva ulica 10",
+        "address2": "Poštna številka: 1230",
+        "address3": "Mesto: Domžale",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 72 16 550",
+        "contact2": {
+          "href": "mailto:lozar.marko@siol.net",
+          "text": "lozar.marko@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-lozar.si/",
+          "text": "http://www.fitnes-lozar.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/fitnes.lozar",
+          "text": "http://www.facebook.com/fitnes.lozar"
+        }
+      },
+      {
+        "name": "FITNES CENTER MOJ FIT - BTC",
+        "address1": "Naslov: Bratislavska ulica 9",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 75 05 041, 051 622 280",
+        "contact2": {
+          "href": "mailto:mojfit@mfit.si",
+          "text": "mojfit@mfit.si"
+        },
+        "contact3": {
+          "href": "http://mojfit.com/",
+          "text": "http://mojfit.com/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/MOJ-FIT/246131911325",
+          "text": "http://www.facebook.com/pages/MOJ-FIT/246131911325"
+        }
+      },
+      {
+        "name": "Fitnes center OZ",
+        "address1": "Naslov: Gasilska cesta 14",
+        "address2": "Poštna številka: 1290",
+        "address3": "Mesto: Grosuplje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 786 19 02, 031 802 516",
+        "contact2": {
+          "href": "mailto:info@osebnotrenerstvo.si",
+          "text": "info@osebnotrenerstvo.si"
+        },
+        "contact3": {
+          "href": "http://www.ostanitezdravi.si/oz_fitnes.php",
+          "text": "http://www.ostanitezdravi.si/oz_fitnes.php"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Fitnes-Center-Oz/185608231450116",
+          "text": "http://www.facebook.com/pages/Fitnes-Center-Oz/185608231450116"
+        }
+      },
+      {
+        "name": "Fitnes center Sokol Kamnik",
+        "address1": "Naslov: Usnjarska ulica 8",
+        "address2": "Poštna številka: 1240",
+        "address3": "Mesto: Kamnik",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 899 247",
+        "contact2": {
+          "href": "mailto:info@fitnes-kamnik.si",
+          "text": "info@fitnes-kamnik.si"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-kamnik.si/",
+          "text": "http://www.fitnes-kamnik.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/fcsokol.kamnik",
+          "text": "http://www.facebook.com/fcsokol.kamnik"
+        }
+      },
+      {
+        "name": "Fitnes FIT CITY",
+        "address1": "Naslov: Tržaška 132",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 160 056",
+        "contact2": {
+          "href": "mailto:lony@siol.com",
+          "text": "lony@siol.com"
+        },
+        "contact3": {
+          "href": "http://www.fit-city.com/",
+          "text": "http://www.fit-city.com/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/FitnesFITCITY",
+          "text": "https://www.facebook.com/FitnesFITCITY"
+        }
+      },
+      {
+        "name": "Fitnes FITINN Ljubljana BTC",
+        "photo": {
+          "alt": "Fitnes FITINN Ljubljana BTC",
+          "src": "http://fitness-info.si/cache/com_zoo/images/fitinn_b0dc1631639d8f6afa343be3df17f250.jpg",
+          "text": ""
+        },
+        "address1": "Naslov: Šmartinska cesta 152",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 810 95 03",
+        "contact2": {
+          "href": "mailto:lj.btc@fitinn.si",
+          "text": "lj.btc@fitinn.si"
+        },
+        "contact3": {
+          "href": "http://fitinn.si/",
+          "text": "http://fitinn.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/fitinn.si",
+          "text": "https://www.facebook.com/fitinn.si"
+        }
+      },
+      {
+        "name": "Fitnes Mr FIT",
+        "address1": "Naslov: Prešernova 22",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 422 37 54",
+        "contact2": {
+          "href": "mailto:info@mrfit.si",
+          "text": "info@mrfit.si"
+        },
+        "contact3": {
+          "href": "http://www.mrfit.si/main.html",
+          "text": "http://www.mrfit.si/main.html"
+        },
+        "contact4": {
+          "href": "http://www.mrfit.si/main.html",
+          "text": "http://www.mrfit.si/main.html"
+        }
+      },
+      {
+        "name": "Fitnes Napoleon",
+        "photo": {
+          "alt": "Fitnes Napoleon ",
+          "src": "http://fitness-info.si/cache/com_zoo/images/logo- fitnes napoleon_89fd426485ca429e6d149abda4dfa676.png",
+          "text": ""
+        },
+        "address1": "Naslov: IOC Zapolje III/5",
+        "address2": "Poštna številka: 1370",
+        "address3": "Mesto: Logatec",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 051 624 944",
+        "contact2": {
+          "href": "mailto:fitnes.napoleon@gmail.com",
+          "text": "fitnes.napoleon@gmail.com"
+        },
+        "contact3": {
+          "href": "http://fitnes-napoleon.si/site/",
+          "text": "http://fitnes-napoleon.si/site/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/fitnes.napoleon",
+          "text": "http://www.facebook.com/fitnes.napoleon"
+        }
+      },
+      {
+        "name": "Fitnes studio Era",
+        "address1": "Naslov: Dunajska cesta 105",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 341 225",
+        "contact2": {
+          "href": "mailto:fitnes.era@siol.net",
+          "text": "fitnes.era@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-era.si/",
+          "text": "http://www.fitnes-era.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Fitnes-studio-Era/141714762553608",
+          "text": "http://www.facebook.com/pages/Fitnes-studio-Era/141714762553608"
+        }
+      },
+      {
+        "name": "Fitnes studio Peter Klepec",
+        "photo": {
+          "alt": "Fitnes studio Peter Klepec ",
+          "src": "http://fitness-info.si/cache/com_zoo/images/fitnes studio peter klepec logo_0ae89de4825395c8ccfe7cc16cd8319f.jpg",
+          "text": ""
+        },
+        "address1": "Naslov: Rimska 33",
+        "address2": "Poštna številka: 1358",
+        "address3": "Mesto: Log pri Brezovici",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 756 50 23, 041 972 169",
+        "contact2": {
+          "href": "mailto:info@fitnes-peter-klepec.si",
+          "text": "info@fitnes-peter-klepec.si"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-peter-klepec.si/",
+          "text": "http://www.fitnes-peter-klepec.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/fitnespeterklepec",
+          "text": "https://www.facebook.com/fitnespeterklepec"
+        }
+      },
+      {
+        "name": "Fitnes studio Topatlet",
+        "address1": "Naslov: Litijska 100",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 362 191",
+        "contact2": {
+          "href": "mailto:topatlet@gmail.com",
+          "text": "topatlet@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.topatlet-klub.si",
+          "text": "http://www.topatlet-klub.si"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/FitnesStudioTopatlet",
+          "text": "https://www.facebook.com/FitnesStudioTopatlet"
+        }
+      },
+      {
+        "name": "Fitnes tivoli",
+        "address1": "Naslov: Celovška cesta 25",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 431 51 55",
+        "contact2": {
+          "href": "mailto:fitnes@tivoli.sport-ljubljana.si",
+          "text": "fitnes@tivoli.sport-ljubljana.si"
+        },
+        "contact3": {
+          "href": "http://www.sport-ljubljana.si/park-tivoli/urniki-in-ceniki/",
+          "text": "http://www.sport-ljubljana.si/park-tivoli/urniki-in-ceniki/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/Fitnes-Tivoli/449047761880857",
+          "text": "https://www.facebook.com/pages/Fitnes-Tivoli/449047761880857"
+        }
+      },
+      {
+        "name": "Fitnes V.I.P.",
+        "address1": "Naslov: Ljubljanska cesta 4a",
+        "address2": "Poštna številka: 1295",
+        "address3": "Mesto: Ivančna Gorica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 982 000",
+        "contact2": {
+          "href": "mailto:info@vip-vadba.si",
+          "text": "info@vip-vadba.si"
+        },
+        "contact3": {
+          "href": "http://vip-vadba.si/content/fitnes",
+          "text": "http://vip-vadba.si/content/fitnes"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/%C5%A0portni-studio-VIP/263205857054979",
+          "text": "http://www.facebook.com/pages/%C5%A0portni-studio-VIP/263205857054979"
+        }
+      },
+      {
+        "name": "Fitness BIFIT",
+        "address1": "Naslov: Zaloška cesta 153",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 844 544, 01 540 07 07",
+        "contact2": {
+          "href": "mailto:bifitbifit@gmail.com",
+          "text": "bifitbifit@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.facebook.com/pages/BIFIT-FITNES/207817699313504?sk=wall&filter=12",
+          "text": "http://www.facebook.com/pages/BIFIT-FITNES/207817699313504?sk=wall&filter=12"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/BIFIT-FITNES/207817699313504?sk=wall&filter=12",
+          "text": "http://www.facebook.com/pages/BIFIT-FITNES/207817699313504?sk=wall&filter=12"
+        }
+      },
+      {
+        "name": "Fitness PTT",
+        "address1": "Naslov: Celjska ulica 16",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 277 695",
+        "contact2": {
+          "href": "mailto:jovanovic.sa@gmail.com",
+          "text": "jovanovic.sa@gmail.com"
+        },
+        "contact3": {
+          "href": "https://www.facebook.com/pages/Fitnes-PTT/431514873568685",
+          "text": "https://www.facebook.com/pages/Fitnes-PTT/431514873568685"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/Fitnes-PTT/431514873568685",
+          "text": "https://www.facebook.com/pages/Fitnes-PTT/431514873568685"
+        }
+      },
+      {
+        "name": "Fitness studio Energy",
+        "address1": "Naslov: Cesta 2. Grupe Odredov 34",
+        "address2": "Poštna številka: 1295",
+        "address3": "Mesto: Ivančna Gorica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 326 426",
+        "contact2": {
+          "href": "mailto:fitnes-energy@t-2.net",
+          "text": "fitnes-energy@t-2.net"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-pub.si/",
+          "text": "http://www.fitnes-pub.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Fitnes-Energy-Ivan%C4%8Dna-Gorica/28860963208",
+          "text": "http://www.facebook.com/pages/Fitnes-Energy-Ivan%C4%8Dna-Gorica/28860963208"
+        }
+      },
+      {
+        "name": "HC Gym",
+        "address1": "Naslov: Obrna cona ugar 5",
+        "address2": "Poštna številka: 1310",
+        "address3": "Mesto: Ribnica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 321 995",
+        "contact2": {
+          "href": "mailto:hc-gym@hotmail.com",
+          "text": "hc-gym@hotmail.com"
+        },
+        "contact3": {
+          "href": "https://www.facebook.com/pages/Hc-gym/137254269789720",
+          "text": "https://www.facebook.com/pages/Hc-gym/137254269789720"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/Hc-gym/137254269789720",
+          "text": "https://www.facebook.com/pages/Hc-gym/137254269789720"
+        }
+      },
+      {
+        "name": "Konex center",
+        "address1": "Naslov: Cesta na Brdo 109",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 24 14 007",
+        "contact2": {
+          "href": "mailto:info@konex-center.si",
+          "text": "info@konex-center.si"
+        },
+        "contact3": {
+          "href": "http://www.konex-center.si/",
+          "text": "http://www.konex-center.si/"
+        },
+        "contact4": {
+          "href": "http://www.konex-center.si/",
+          "text": "http://www.konex-center.si/"
+        }
+      },
+      {
+        "name": "LIONESS",
+        "address1": "Naslov: Litostrojska 41",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 163 627",
+        "contact2": {
+          "href": "mailto:fitlevinja@hotmail.com",
+          "text": "fitlevinja@hotmail.com"
+        },
+        "contact3": {
+          "href": "http://www.lioness.web44.net/",
+          "text": "http://www.lioness.web44.net/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Lioness-Fitnes-za-%C5%BEenske-manikura-masa%C5%BEa/139650776114647",
+          "text": "http://www.facebook.com/pages/Lioness-Fitnes-za-%C5%BEenske-manikura-masa%C5%BEa/139650776114647"
+        }
+      },
+      {
+        "name": "OAZA - center vadbenih užitkov",
+        "address1": "Naslov: Leskoškova 10",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 070 929 259, 01 547 19 00",
+        "contact2": {
+          "href": "mailto:oaza.cvu@gmail.com",
+          "text": "oaza.cvu@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.oaza-center.si/",
+          "text": "http://www.oaza-center.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/oaza.center",
+          "text": "http://www.facebook.com/oaza.center"
+        }
+      },
+      {
+        "name": "OK Fit Center",
+        "address1": "Naslov: Razori 2",
+        "address2": "Poštna številka: 1356",
+        "address3": "Mesto: Dobrova",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 947 947",
+        "contact2": {
+          "href": "mailto:info@ok-fit.si",
+          "text": "info@ok-fit.si"
+        },
+        "contact3": {
+          "href": "http://www.ok-fit.si/si/",
+          "text": "http://www.ok-fit.si/si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/OK-fit-center/147708051925932",
+          "text": "https://www.facebook.com/pages/OK-fit-center/147708051925932"
+        }
+      },
+      {
+        "name": "ONE to ONE fitnes klub",
+        "address1": "Naslov: Tržaška cesta 315",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 256 29 29, 041 693 518",
+        "contact2": {
+          "href": "mailto:info@one2one.si",
+          "text": "info@one2one.si"
+        },
+        "contact3": {
+          "href": "http://www.one2one.si/",
+          "text": "http://www.one2one.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/one2onefitnes",
+          "text": "http://www.facebook.com/one2onefitnes"
+        }
+      },
+      {
+        "name": "OPTIMUM fitnes center",
+        "photo": {
+          "alt": "OPTIMUM fitnes center",
+          "src": "http://fitness-info.si/cache/com_zoo/images/logo_a89010556cb0e306fab1919d8d7db20f.jpg",
+          "text": ""
+        },
+        "address1": "Naslov: Industrijska cesta 1g",
+        "address2": "Poštna številka: 1290",
+        "address3": "Mesto: Grosuplje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 15 15 00",
+        "contact2": {
+          "href": "mailto:info@fc-optimum.si",
+          "text": "info@fc-optimum.si"
+        },
+        "contact3": {
+          "href": "http://www.fc-optimum.si/index.php",
+          "text": "http://www.fc-optimum.si/index.php"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/Fitnes-Center-Optimum/346373735444073",
+          "text": "https://www.facebook.com/pages/Fitnes-Center-Optimum/346373735444073"
+        }
+      },
+      {
+        "name": "Orto Gym",
+        "address1": "Naslov: Šmartinska cesta 106",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 540 462",
+        "contact2": {
+          "href": "mailto:info@cross-fit.si",
+          "text": "info@cross-fit.si"
+        },
+        "contact3": {
+          "href": "http://www.cross-fit.si/index.php",
+          "text": "http://www.cross-fit.si/index.php"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Crossfit-Orto-Kirn/122966094390289",
+          "text": "http://www.facebook.com/pages/Crossfit-Orto-Kirn/122966094390289"
+        }
+      },
+      {
+        "name": "Osebni Fitnes Studio Barbara Vegelj",
+        "address1": "Naslov: Ob železnici 30a",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 051 240 956, 041 768 312",
+        "contact2": {
+          "href": "mailto:info@osebni-fitnes.com",
+          "text": "info@osebni-fitnes.com"
+        },
+        "contact3": {
+          "href": "http://www.osebni-fitnes.com/",
+          "text": "http://www.osebni-fitnes.com/"
+        },
+        "contact4": {
+          "href": "http://www.osebni-fitnes.com/",
+          "text": "http://www.osebni-fitnes.com/"
+        }
+      },
+      {
+        "name": "PeTit Studio",
+        "address1": "Naslov: Parmova 51",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 348 036",
+        "contact2": {
+          "href": "mailto:info@actionmama.com",
+          "text": "info@actionmama.com"
+        },
+        "contact3": {
+          "href": "http://www.petit-studio.si/index.php",
+          "text": "http://www.petit-studio.si/index.php"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/osebnatelovadnica",
+          "text": "https://www.facebook.com/osebnatelovadnica"
+        }
+      },
+      {
+        "name": "Savna klub Breza",
+        "address1": "Naslov: Lepodvorska ulica 13",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 231 97 13",
+        "contact2": {
+          "href": "mailto: info@savnabreza.com",
+          "text": "info@savnabreza.com"
+        },
+        "contact3": {
+          "href": "http://www.savnabreza.com/sl/",
+          "text": "http://www.savnabreza.com/sl/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Savna-klub-Breza/233257696762656",
+          "text": "http://www.facebook.com/pages/Savna-klub-Breza/233257696762656"
+        }
+      },
+      {
+        "name": "ŠD Tabor",
+        "address1": "Naslov: Tabor 13",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 23 22 528",
+        "contact2": {
+          "href": "mailto:sd.tabor@siol.net",
+          "text": "sd.tabor@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.sportnodrustvo-tabor.si/trimcenter.html",
+          "text": "http://www.sportnodrustvo-tabor.si/trimcenter.html"
+        },
+        "contact4": {
+          "href": "http://www.sportnodrustvo-tabor.si/trimcenter.html",
+          "text": "http://www.sportnodrustvo-tabor.si/trimcenter.html"
+        }
+      },
+      {
+        "name": "SOKOLlaguna fitnes center",
+        "address1": "Naslov: Dunajska cesta 270",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 569 10 99, 041 935 923",
+        "contact2": {
+          "href": "mailto:sokollaguna@sokolgroup.com",
+          "text": "sokollaguna@sokolgroup.com"
+        },
+        "contact3": {
+          "href": "http://www.sokolgroup.com/sokolfit/sokollaguna.php",
+          "text": "http://www.sokolgroup.com/sokolfit/sokollaguna.php"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/SOKOLfit/147538485294422",
+          "text": "http://www.facebook.com/pages/SOKOLfit/147538485294422"
+        }
+      },
+      {
+        "name": "SOKOLvič wellness center",
+        "address1": "Naslov: Koprska 72",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 200 27 55",
+        "contact2": {
+          "href": "mailto:sokolvic@sokolgroup.com",
+          "text": "sokolvic@sokolgroup.com"
+        },
+        "contact3": {
+          "href": "http://www.sokolgroup.com/sokolfit/sokolvic.php?stran=fitnes",
+          "text": "http://www.sokolgroup.com/sokolfit/sokolvic.php?stran=fitnes"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/SOKOLfit/147538485294422",
+          "text": "http://www.facebook.com/pages/SOKOLfit/147538485294422"
+        }
+      },
+      {
+        "name": "Spin center",
+        "address1": "Naslov: Obrezija 12",
+        "address2": "Poštna številka: 1411",
+        "address3": "Mesto: Izlake",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 779 383",
+        "contact2": {
+          "href": "mailto:info@drustvo-spin.si",
+          "text": "info@drustvo-spin.si"
+        },
+        "contact3": {
+          "href": "http://www.drustvo-spin.si/index.php?p=strani&id=17",
+          "text": "http://www.drustvo-spin.si/index.php?p=strani&id=17"
+        },
+        "contact4": {
+          "href": "http://www.drustvo-spin.si/index.php?p=strani&id=17",
+          "text": "http://www.drustvo-spin.si/index.php?p=strani&id=17"
+        }
+      },
+      {
+        "name": "Sportclub",
+        "photo": {
+          "alt": "Sportclub",
+          "src": "http://fitness-info.si/cache/com_zoo/images/fitnes in wellness center sportclub logo_1e680f204ee12d54c161ffa7656a0a1d.jpg",
+          "text": ""
+        },
+        "address1": "Naslov: Gortanova 22",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 520 77 77",
+        "contact2": {
+          "href": "mailto:info@sportclub.si",
+          "text": "info@sportclub.si"
+        },
+        "contact3": {
+          "href": "http://www.sportclub.si/index.html",
+          "text": "http://www.sportclub.si/index.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/sportclub.fitnes",
+          "text": "http://www.facebook.com/sportclub.fitnes"
+        }
+      },
+      {
+        "name": "Športni center Chagi",
+        "address1": "Naslov: Vojkova cesta 58",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 280 17 99, 041 30 47 00",
+        "contact2": {
+          "href": "mailto:info@sportnicenter-chagi.com",
+          "text": "info@sportnicenter-chagi.com"
+        },
+        "contact3": {
+          "href": "http://www.sportnicenter-chagi.com/",
+          "text": "http://www.sportnicenter-chagi.com/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/%C5%A0portni-center-Chagi/195660413791331",
+          "text": "http://www.facebook.com/pages/%C5%A0portni-center-Chagi/195660413791331"
+        }
+      },
+      {
+        "name": "Športni center Dolgi most",
+        "address1": "Naslov: Dolgi most 6a",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 242 75 36, 031 613 313",
+        "contact2": {
+          "href": "mailto:jaka@sc-dolgimost.com",
+          "text": "jaka@sc-dolgimost.com"
+        },
+        "contact3": {
+          "href": "http://www.sc-dolgimost.com/",
+          "text": "http://www.sc-dolgimost.com/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/%C5%A0portni-center-Dolgi-most/171253219629215",
+          "text": "http://www.facebook.com/pages/%C5%A0portni-center-Dolgi-most/171253219629215"
+        }
+      },
+      {
+        "name": "Športni center Fit Fit",
+        "address1": "Naslov: Slamnikarska cesta 1 A",
+        "address2": "Poštna številka: 1230",
+        "address3": "Mesto: Domžale",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 729 22 33, 01 729 22 31",
+        "contact2": {
+          "href": "mailto:fit.bar@siol.net",
+          "text": "fit.bar@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.fit-fit.net/index.php",
+          "text": "http://www.fit-fit.net/index.php"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/FitFitCenter",
+          "text": "https://www.facebook.com/FitFitCenter"
+        }
+      },
+      {
+        "name": "Športni center Millenium",
+        "photo": {
+          "alt": "Športni center Millenium",
+          "src": "http://fitness-info.si/cache/com_zoo/images/millenium portni center logo_c0300509d871429fd9bc90f79c3e426d.gif",
+          "text": ""
+        },
+        "address1": "Naslov: Šmartinska cesta 152",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 585 15 00",
+        "contact2": {
+          "href": "mailto:millenium@btc.si",
+          "text": "millenium@btc.si"
+        },
+        "contact3": {
+          "href": "http://www.millenium.btc.si/",
+          "text": "http://www.millenium.btc.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/SC.Millenium.btc",
+          "text": "https://www.facebook.com/SC.Millenium.btc"
+        }
+      },
+      {
+        "name": "Športni center VITA FIT",
+        "address1": "Naslov: Parmova 101240 kamnik",
+        "address2": "Poštna številka: 1240",
+        "address3": "Mesto: Kamnik",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 83 91 644, 040 46 94 80",
+        "contact2": {
+          "href": "mailto:peter.hribar@gmail.com",
+          "text": "peter.hribar@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.vita-fit.si/",
+          "text": "http://www.vita-fit.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/vitafithribar",
+          "text": "http://www.facebook.com/vitafithribar"
+        }
+      },
+      {
+        "name": "Športno društvo Dobrepolje",
+        "address1": "Naslov: Videm 34",
+        "address2": "Poštna številka: 1312",
+        "address3": "Mesto: Videm - Dobrepolje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 669 227",
+        "contact2": {
+          "href": "mailto:sd.dobrepolje@siol.net",
+          "text": "sd.dobrepolje@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.sd-dobrepolje.si/rekreacija.html",
+          "text": "http://www.sd-dobrepolje.si/rekreacija.html"
+        },
+        "contact4": {
+          "href": "http://www.sd-dobrepolje.si/rekreacija.html",
+          "text": "http://www.sd-dobrepolje.si/rekreacija.html"
+        }
+      },
+      {
+        "name": "Športno društvo Sokol Kočevje",
+        "address1": "Naslov: Šalka vas 4",
+        "address2": "Poštna številka: 1330",
+        "address3": "Mesto: Kočevje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 503 090",
+        "contact2": {
+          "href": "mailto:sokolkocevje@gmail.com ",
+          "text": "sokolkocevje@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.facebook.com/pages/%C5%A0portno-dru%C5%A1tvo-Sokol-Ko%C4%8Devje/165093445977",
+          "text": "http://www.facebook.com/pages/%C5%A0portno-dru%C5%A1tvo-Sokol-Ko%C4%8Devje/165093445977"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/%C5%A0portno-dru%C5%A1tvo-Sokol-Ko%C4%8Devje/165093445977",
+          "text": "http://www.facebook.com/pages/%C5%A0portno-dru%C5%A1tvo-Sokol-Ko%C4%8Devje/165093445977"
+        }
+      },
+      {
+        "name": "ŠRD Sostro",
+        "address1": "Naslov: Sostrska cesta 22",
+        "address2": "Poštna številka: 1261",
+        "address3": "Mesto: Ljubljana-Dobrunje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 874 080",
+        "contact2": {
+          "href": "mailto:fitnes.bitenc@siol.net",
+          "text": "fitnes.bitenc@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.srdsostro-drustvo.si/",
+          "text": "http://www.srdsostro-drustvo.si/"
+        },
+        "contact4": {
+          "href": "http://www.srdsostro-drustvo.si/",
+          "text": "http://www.srdsostro-drustvo.si/"
+        }
+      },
+      {
+        "name": "Studio Forte moč športa",
+        "address1": "Naslov: Brigadirska 12",
+        "address2": "Poštna številka: 1360",
+        "address3": "Mesto: Vrhnika - Verd",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 051 77 04 77, 05 99 28 25",
+        "contact2": {
+          "href": "mailto:info@studioforte.si ",
+          "text": "info@studioforte.si"
+        },
+        "contact3": {
+          "href": "http://www.studioforte.si/OSEBNIFITNES/OSEBNIFITNES.aspx",
+          "text": "http://www.studioforte.si/OSEBNIFITNES/OSEBNIFITNES.aspx"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/Forte-studio/109653425766232",
+          "text": "https://www.facebook.com/pages/Forte-studio/109653425766232"
+        }
+      },
+      {
+        "name": "Studio TRIM",
+        "address1": "Naslov: Ulica Sallaumines 8",
+        "address2": "Poštna številka: 1420",
+        "address3": "Mesto: Trbovlje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 267 005",
+        "contact2": {
+          "href": "mailto:info@studiotrim.si",
+          "text": "info@studiotrim.si"
+        },
+        "contact3": {
+          "href": "http://www.studiotrim.si/",
+          "text": "http://www.studiotrim.si/"
+        },
+        "contact4": {
+          "href": "http://www.studiotrim.si/",
+          "text": "http://www.studiotrim.si/"
+        }
+      },
+      {
+        "name": "Studio za oblikovanje telesa",
+        "address1": "Naslov: Šuštarjeva kolonija 42",
+        "address2": "Poštna številka: 1420",
+        "address3": "Mesto: Trbovlje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 398 246, 03 56 30 066",
+        "contact2": {
+          "href": "mailto:linija.sport@siol.net",
+          "text": "linija.sport@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.linija-sport.si/",
+          "text": "http://www.linija-sport.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Linija-Sport/116112958163",
+          "text": "http://www.facebook.com/pages/Linija-Sport/116112958163"
+        }
+      },
+      {
+        "name": "Sunny Studio",
+        "address1": "Naslov: Regentova cesta 37",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana - Dravlje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 513 44 44",
+        "contact2": {
+          "href": "mailto:sunny@siol.net",
+          "text": "sunny@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.sunny.si/sl/domov",
+          "text": "http://www.sunny.si/sl/domov"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/SunnyStudio",
+          "text": "https://www.facebook.com/SunnyStudio"
+        }
+      },
+      {
+        "name": "SUPERFIT KLUB™",
+        "address1": "Naslov: Litostrojska 58 c",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana - Šiška",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 233 233",
+        "contact2": {
+          "href": "mailto:info@superfitklub.si",
+          "text": "info@superfitklub.si"
+        },
+        "contact3": {
+          "href": "http://superfitklub.si/",
+          "text": "http://superfitklub.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/superfitklub",
+          "text": "https://www.facebook.com/superfitklub"
+        }
+      },
+      {
+        "name": "ŠUS Eurofitness",
+        "address1": "Naslov: Vodnikova 155",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 51 81 662",
+        "contact2": {
+          "href": "mailto:sus@clubeurofitness.com",
+          "text": "sus@clubeurofitness.com"
+        },
+        "contact3": {
+          "href": "http://www.sportnahisailirija.si/ponudba/sus-eurofitness/",
+          "text": "http://www.sportnahisailirija.si/ponudba/sus-eurofitness/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/%C5%A0US-Eurofitness/354643964560019",
+          "text": "http://www.facebook.com/pages/%C5%A0US-Eurofitness/354643964560019"
+        }
+      },
+      {
+        "name": "Tenis klub Kubu",
+        "address1": "Naslov: Pustnice 46",
+        "address2": "Poštna številka: 1217",
+        "address3": "Mesto: Vodice",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 832 43 15 (lokal)",
+        "contact2": {
+          "href": "mailto:kubu.vodice@gmail.com",
+          "text": "kubu.vodice@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.kubu.si/fitnes.htm",
+          "text": "http://www.kubu.si/fitnes.htm"
+        },
+        "contact4": {
+          "href": "http://www.kubu.si/fitnes.htm",
+          "text": "http://www.kubu.si/fitnes.htm"
+        }
+      },
+      {
+        "name": "Vadbeni center MaxxFitnes",
+        "address1": "Naslov: Dunajska cesta 190",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 0590 41 900, 041 733 744",
+        "contact2": {
+          "href": "mailto:info@maxxfitnes.si",
+          "text": "info@maxxfitnes.si"
+        },
+        "contact3": {
+          "href": "http://www.maxxfitnes.si/",
+          "text": "http://www.maxxfitnes.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/MaxxFITNES.SI",
+          "text": "http://www.facebook.com/MaxxFITNES.SI"
+        }
+      },
+      {
+        "name": "Vadbeni center Natural",
+        "address1": "Naslov: Gasilska cesta 14",
+        "address2": "Poštna številka: 1290",
+        "address3": "Mesto: Grosuplje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 7861 902, Tadej 040 653 963, Jure 031 872 571",
+        "contact2": {
+          "href": "mailto:info@osebnotrenerstvo.si",
+          "text": "info@osebnotrenerstvo.si"
+        },
+        "contact3": {
+          "href": "https://www.facebook.com/vadbenicenternatural",
+          "text": "https://www.facebook.com/vadbenicenternatural"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/vadbenicenternatural",
+          "text": "https://www.facebook.com/vadbenicenternatural"
+        }
+      },
+      {
+        "name": "Vita line",
+        "address1": "Naslov: Brezje pri Grosupljem 90",
+        "address2": "Poštna številka: 1290",
+        "address3": "Mesto: Grosuplje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 051 633 446",
+        "contact2": {
+          "href": "mailto:info@vitaline.si",
+          "text": "info@vitaline.si"
+        },
+        "contact3": {
+          "href": "http://vitaline.si/fitnes",
+          "text": "http://vitaline.si/fitnes"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/vitaline.grosuplje",
+          "text": "http://www.facebook.com/vitaline.grosuplje"
+        }
+      },
+      {
+        "name": "Žabji Fit Studio",
+        "address1": "Naslov: Bevke 92A",
+        "address2": "Poštna številka: 1358",
+        "address3": "Mesto: Log pri Brezovici",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 715 501",
+        "contact2": {
+          "href": "mailto:galija@volja.net",
+          "text": "galija@volja.net"
+        },
+        "contact3": {
+          "href": "http://www.sportno-drustvo-bevke.si/index.php/ponudba/zabji-fit",
+          "text": "http://www.sportno-drustvo-bevke.si/index.php/ponudba/zabji-fit"
+        },
+        "contact4": {
+          "href": "http://www.sportno-drustvo-bevke.si/index.php/ponudba/zabji-fit",
+          "text": "http://www.sportno-drustvo-bevke.si/index.php/ponudba/zabji-fit"
+        }
+      },
+      {
+        "name": "Center Sonce",
+        "address1": "Naslov: Ljubljanska cesta 80",
+        "address2": "Poštna številka: 2310",
+        "address3": "Mesto: Slovenska Bistrica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 818 53 69, 040 493 928",
+        "contact2": {
+          "href": "mailto:info@center-sonce.com",
+          "text": "info@center-sonce.com"
+        },
+        "contact3": {
+          "href": "http://www.center-sonce.com/",
+          "text": "http://www.center-sonce.com/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/FITNES-CENTER-SONCE/110789185614396",
+          "text": "http://www.facebook.com/pages/FITNES-CENTER-SONCE/110789185614396"
+        }
+      },
+      {
+        "name": "Dijaški dom Drava - Fitnes",
+        "address1": "Naslov: Smetanova 67",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 234 81 50",
+        "contact2": {
+          "href": "mailto:info@dddrava.si",
+          "text": "info@dddrava.si"
+        },
+        "contact3": {
+          "href": "http://dddrava.si/domske-dejavnosti/fitnes",
+          "text": "http://dddrava.si/domske-dejavnosti/fitnes"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/dddrava",
+          "text": "http://www.facebook.com/dddrava"
+        }
+      },
+      {
+        "name": "F-FITNES",
+        "address1": "Naslov: Vrazova ulica 9",
+        "address2": "Poštna številka: 2270",
+        "address3": "Mesto: Ormož",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 779 190",
+        "contact2": {
+          "href": "mailto:info@f-fitnes.si, marko",
+          "text": "info@f-fitnes.si, marko"
+        },
+        "contact3": {
+          "href": "http://www.f-fitnes.si/",
+          "text": "http://www.f-fitnes.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/F-fitnes/125214970857043",
+          "text": "http://www.facebook.com/pages/F-fitnes/125214970857043"
+        }
+      },
+      {
+        "name": "Fit – Fajn center Lenart",
+        "address1": "Naslov: Industrijska ul. 8",
+        "address2": "Poštna številka: 2230",
+        "address3": "Mesto: Lenart v Slovenskih Goricah",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 772 234",
+        "contact2": {
+          "href": "mailto:lenart@fit-fajn.si",
+          "text": "lenart@fit-fajn.si"
+        },
+        "contact3": {
+          "href": "http://lenart.fit-fajn.si/",
+          "text": "http://lenart.fit-fajn.si/"
+        },
+        "contact4": {
+          "href": "http://lenart.fit-fajn.si/",
+          "text": "http://lenart.fit-fajn.si/"
+        }
+      },
+      {
+        "name": "Fitnes ANDFIT",
+        "address1": "Naslov: Koroška cesta 50",
+        "address2": "Poštna številka: 2370",
+        "address3": "Mesto: Dravograd",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 383 737",
+        "contact2": {
+          "href": "mailto:info@andfit.si",
+          "text": "info@andfit.si"
+        },
+        "contact3": {
+          "href": "http://www.andfit.si/",
+          "text": "http://www.andfit.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/fitnescenterANDFIT",
+          "text": "http://www.facebook.com/fitnescenterANDFIT"
+        }
+      },
+      {
+        "name": "FITNES BODIFIT CITY",
+        "address1": "Naslov: Ulica Kneza Koclja 22",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 064 135 500",
+        "contact2": {
+          "href": "mailto:city@bodifit.net",
+          "text": "city@bodifit.net"
+        },
+        "contact3": {
+          "href": "http://www.fitnes24-7.si/",
+          "text": "http://www.fitnes24-7.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/bodifit.program",
+          "text": "https://www.facebook.com/bodifit.program"
+        }
+      },
+      {
+        "name": "Fitnes Bodifit Studenci",
+        "address1": "Naslov: Na Poljanah 20",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 620 97 34, 031 222 862",
+        "contact2": {
+          "href": "mailto:studenci@bodifit.net",
+          "text": "studenci@bodifit.net"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-studenci.si/",
+          "text": "http://www.fitnes-studenci.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/bodifit.program",
+          "text": "https://www.facebook.com/bodifit.program"
+        }
+      },
+      {
+        "name": "Fitnes Botra",
+        "address1": "Naslov: Gorisnica 22",
+        "address2": "Poštna številka: 2272",
+        "address3": "Mesto: Gorišnica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 389 807, 02 743 10 18",
+        "contact2": {
+          "href": "mailto:facebook.boto@botra.si, info.hotel",
+          "text": "facebook.boto@botra.si, info.hotel"
+        },
+        "contact3": {
+          "href": "http://www.botra.si/fitnes-botra/fitnes/53-fitnes",
+          "text": "http://www.botra.si/fitnes-botra/fitnes/53-fitnes"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/hotel-BOTRA/110482779047016",
+          "text": "http://www.facebook.com/pages/hotel-BOTRA/110482779047016"
+        }
+      },
+      {
+        "name": "Fitnes center hotela Bellevue",
+        "address1": "Naslov: Na Slemenu 35",
+        "address2": "Poštna številka: 2208",
+        "address3": "Mesto: Pohorje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 607 51 00",
+        "contact2": {
+          "href": "mailto:bellevue@termemb.si",
+          "text": "bellevue@termemb.si"
+        },
+        "contact3": {
+          "href": "http://www.termemb.si/si/wellness/wellness-center-bellevue/rekreacija",
+          "text": "http://www.termemb.si/si/wellness/wellness-center-bellevue/rekreacija"
+        },
+        "contact4": {
+          "href": "http://www.termemb.si/si/wellness/wellness-center-bellevue/rekreacija",
+          "text": "http://www.termemb.si/si/wellness/wellness-center-bellevue/rekreacija"
+        }
+      },
+      {
+        "name": "Fitnes center Mega fit",
+        "address1": "Naslov: Ronkova 4",
+        "address2": "Poštna številka: 2380",
+        "address3": "Mesto: Slovenj Gradec",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 88 22 135, 041 690 827",
+        "contact2": {
+          "href": "mailto:info@megafit.si",
+          "text": "info@megafit.si"
+        },
+        "contact3": {
+          "href": "http://www.megafit.si/",
+          "text": "http://www.megafit.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/megafit.fitnes",
+          "text": "http://www.facebook.com/megafit.fitnes"
+        }
+      },
+      {
+        "name": "Fitnes center Sokol Maribor",
+        "address1": "Naslov: Črtomirova ulIca 9",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 332 33 82",
+        "contact2": {
+          "href": "mailto:velmark@amis.net",
+          "text": "velmark@amis.net"
+        },
+        "contact3": {
+          "href": "http://www.sokolmaribor.com/",
+          "text": "http://www.sokolmaribor.com/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Fitnes-center-Sokol-Maribor/356293024384405",
+          "text": "http://www.facebook.com/pages/Fitnes-center-Sokol-Maribor/356293024384405"
+        }
+      },
+      {
+        "name": "Fitnes center Zdravo",
+        "photo": {
+          "alt": "Fitnes center Zdravo ",
+          "src": "http://fitness-info.si/cache/com_zoo/images/fitnes center zdravo logo_d393f7153e029307739af88b25ccb70c.jpg",
+          "text": ""
+        },
+        "address1": "Naslov: Čučkova ulica 6a",
+        "address2": "Poštna številka: 2250",
+        "address3": "Mesto: Ptuj",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 088 124",
+        "contact2": {
+          "href": "mailto:info@fitnes-zdravo.si",
+          "text": "info@fitnes-zdravo.si"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-zdravo.si/",
+          "text": "http://www.fitnes-zdravo.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/fitnes.zdravo.ptuj",
+          "text": "http://www.facebook.com/fitnes.zdravo.ptuj"
+        }
+      },
+      {
+        "name": "Fitnes FITINN Maribor Kolosej",
+        "photo": {
+          "alt": "Fitnes FITINN Maribor Kolosej",
+          "src": "http://fitness-info.si/cache/com_zoo/images/fitinn_b0dc1631639d8f6afa343be3df17f250.jpg",
+          "text": ""
+        },
+        "address1": "Naslov: Loška ulica 13",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 34 32 30",
+        "contact2": {
+          "href": "mailto:mb.kolosej@fitinn.si",
+          "text": "mb.kolosej@fitinn.si"
+        },
+        "contact3": {
+          "href": "http://fitinn.si/",
+          "text": "http://fitinn.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/fitinn.si",
+          "text": "https://www.facebook.com/fitinn.si"
+        }
+      },
+      {
+        "name": "FItnes klub Maribor",
+        "address1": "Naslov: Koroška cesta 33",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 24 33 33",
+        "contact2": {
+          "href": "mailto:info@fitnes-pristan.si",
+          "text": "info@fitnes-pristan.si"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-pristan.si/",
+          "text": "http://www.fitnes-pristan.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/fitnesPristan",
+          "text": "http://www.facebook.com/fitnesPristan"
+        }
+      },
+      {
+        "name": "Fitnes PeroGym",
+        "address1": "Naslov: Dravska pot 3",
+        "address2": "Poštna številka: 2204",
+        "address3": "Mesto: Miklavž na Dravskem polju",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 475 825",
+        "contact4": {
+          "href": "https://www.facebook.com/fitnes.perogym",
+          "text": "https://www.facebook.com/fitnes.perogym"
+        }
+      },
+      {
+        "name": "Fitnes Slavija",
+        "address1": "Naslov: Ulica Vita Kraigherja 3",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 360 800, 02 252 1800",
+        "contact2": {
+          "href": "mailto:info@fitnesslavija.si",
+          "text": "info@fitnesslavija.si"
+        },
+        "contact3": {
+          "href": "http://www.fitnesslavija.si/si/",
+          "text": "http://www.fitnesslavija.si/si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/Fitnes-Slavija/340649029362716",
+          "text": "https://www.facebook.com/pages/Fitnes-Slavija/340649029362716"
+        }
+      },
+      {
+        "name": "Fitnes Studio Forma",
+        "address1": "Naslov: Osojnikova 4a",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 480 00 00",
+        "contact2": {
+          "href": "mailto:info@fitnesforma.com",
+          "text": "info@fitnesforma.com"
+        },
+        "contact3": {
+          "href": "http://www.fitnesforma.com/",
+          "text": "http://www.fitnesforma.com/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/fitnesforma",
+          "text": "http://www.facebook.com/fitnesforma"
+        }
+      },
+      {
+        "name": "Fitnes studio Herman",
+        "address1": "Naslov: Gorkega ulica 20",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 641 410",
+        "contact2": {
+          "href": "mailto:fitnes.herman@gmail.com ",
+          "text": "fitnes.herman@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.facebook.com/pages/FITNES-STUDIO-HERMAN/139592862723770",
+          "text": "http://www.facebook.com/pages/FITNES-STUDIO-HERMAN/139592862723770"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/FITNES-STUDIO-HERMAN/139592862723770",
+          "text": "http://www.facebook.com/pages/FITNES-STUDIO-HERMAN/139592862723770"
+        }
+      },
+      {
+        "name": "FItnes studio Popaj",
+        "address1": "Naslov: Ulica Šercerjeve brigade 20",
+        "address2": "Poštna številka: 2250",
+        "address3": "Mesto: Ptuj",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 324 293",
+        "contact4": {
+          "href": "https://www.facebook.com/studiopopaj",
+          "text": "https://www.facebook.com/studiopopaj"
+        }
+      },
+      {
+        "name": "Fitness - New Body Studio Arena",
+        "address1": "Naslov: Pot k mlinu 57",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 61 40 950",
+        "contact2": {
+          "href": "mailto:info.arena@sc-pohorje.si",
+          "text": "info.arena@sc-pohorje.si"
+        },
+        "contact3": {
+          "href": "http://www.pohorje.org/mariborsko-pohorje-poleti/fitness-hotel-arena",
+          "text": "http://www.pohorje.org/mariborsko-pohorje-poleti/fitness-hotel-arena"
+        },
+        "contact4": {
+          "href": "http://www.pohorje.org/mariborsko-pohorje-poleti/fitness-hotel-arena",
+          "text": "http://www.pohorje.org/mariborsko-pohorje-poleti/fitness-hotel-arena"
+        }
+      },
+      {
+        "name": "Fitness in wellness Betnava",
+        "address1": "Naslov: Ulica Eve Lovše 15",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 344 140",
+        "contact2": {
+          "href": "mailto:info@betnava.si",
+          "text": "info@betnava.si"
+        },
+        "contact3": {
+          "href": "http://fitnes-betnava.si/",
+          "text": "http://fitnes-betnava.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Fitnes-Betnava/431488406908410",
+          "text": "http://www.facebook.com/pages/Fitnes-Betnava/431488406908410"
+        }
+      },
+      {
+        "name": "Fitness JETI",
+        "address1": "Naslov: Ul. Pohorskega bataljona 19",
+        "address2": "Poštna številka: 2317",
+        "address3": "Mesto: Oplotnica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 944 938",
+        "contact4": {
+          "href": "https://www.facebook.com/pages/Fitnes-JETI/512908938798372",
+          "text": "https://www.facebook.com/pages/Fitnes-JETI/512908938798372"
+        }
+      },
+      {
+        "name": "Fitness studio FIT2000",
+        "address1": "Naslov: Potrčeva cesta 4",
+        "address2": "Poštna številka: 2250",
+        "address3": "Mesto: Ptuj",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 748 1553",
+        "contact2": {
+          "href": "mailto:fit2000@t-2.net",
+          "text": "fit2000@t-2.net"
+        },
+        "contact3": {
+          "href": "http://www.fit2000.si/",
+          "text": "http://www.fit2000.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/groups/162222468517/",
+          "text": "http://www.facebook.com/groups/162222468517/"
+        }
+      },
+      {
+        "name": "MTC Fontana",
+        "address1": "Naslov: Koroška cesta 172",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 222 862, 040 812 952",
+        "contact2": {
+          "href": "mailto:centri@bodifit.net",
+          "text": "centri@bodifit.net"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-fontana.si/",
+          "text": "http://www.fitnes-fontana.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/bodifit.program",
+          "text": "https://www.facebook.com/bodifit.program"
+        }
+      },
+      {
+        "name": "Rekreacijsko Športni Center Rače",
+        "address1": "Naslov: Ptujska cesta 3",
+        "address2": "Poštna številka: 2327",
+        "address3": "Mesto: Rače",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 670 938",
+        "contact2": {
+          "href": "mailto:info@fitnes-race.si",
+          "text": "info@fitnes-race.si"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-race.si/",
+          "text": "http://www.fitnes-race.si/"
+        },
+        "contact4": {
+          "href": "http://www.fitnes-race.si/",
+          "text": "http://www.fitnes-race.si/"
+        }
+      },
+      {
+        "name": "Športni center Draš",
+        "address1": "Naslov: Pohorska ulica 57",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 614 14 51, 041 502 836",
+        "contact2": {
+          "href": "mailto:info@dras.si",
+          "text": "info@dras.si"
+        },
+        "contact3": {
+          "href": "http://dras.si/sl/fitnes.html",
+          "text": "http://dras.si/sl/fitnes.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Center-Dra%C5%A1-Hotel-Wellness-Sport/173912486985",
+          "text": "http://www.facebook.com/pages/Center-Dra%C5%A1-Hotel-Wellness-Sport/173912486985"
+        }
+      },
+      {
+        "name": "Športni center RED POWER",
+        "photo": {
+          "alt": "Športni center RED POWER",
+          "src": "http://fitness-info.si/cache/com_zoo/images/sc red power logo_8ff92e84508c1fd9dcb089110317c6c7.jpg",
+          "text": ""
+        },
+        "address1": "Naslov: Preradovičeva ulica 22",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 62 00 408",
+        "contact2": {
+          "href": "mailto:info@redpower.si",
+          "text": "info@redpower.si"
+        },
+        "contact3": {
+          "href": "http://www.redpower.si/site/index.php?view=fitnes",
+          "text": "http://www.redpower.si/site/index.php?view=fitnes"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Red-Power-Center/144892925541699",
+          "text": "http://www.facebook.com/pages/Red-Power-Center/144892925541699"
+        }
+      },
+      {
+        "name": "Športni park Ruše",
+        "address1": "Naslov: Šolska ulica 17",
+        "address2": "Poštna številka: 2342",
+        "address3": "Mesto: Ruše",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 673 05 02, 02 673 05 03",
+        "contact2": {
+          "href": "mailto:info@sportniparkruse.si",
+          "text": "info@sportniparkruse.si"
+        },
+        "contact3": {
+          "href": "http://www.sportniparkruse.si/index.php/Sportni-park/fitnes.html",
+          "text": "http://www.sportniparkruse.si/index.php/Sportni-park/fitnes.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/sportniparkruse.si",
+          "text": "http://www.facebook.com/sportniparkruse.si"
+        }
+      },
+      {
+        "name": "Športni zavod Ravne na Koroškem",
+        "address1": "Naslov: Na gradu 6",
+        "address2": "Poštna številka: 2390",
+        "address3": "Mesto: Ravne na Koroškem",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 82 23 332, 02 821 54 14",
+        "contact2": {
+          "href": "mailto:info@sportravne.si",
+          "text": "info@sportravne.si"
+        },
+        "contact3": {
+          "href": "http://www.sportravne.si/index.php?option=com_content&view=article&id=63&Itemid=72",
+          "text": "http://www.sportravne.si/index.php?option=com_content&view=article&id=63&Itemid=72"
+        },
+        "contact4": {
+          "href": "http://www.sportravne.si/index.php?option=com_content&view=article&id=63&Itemid=72",
+          "text": "http://www.sportravne.si/index.php?option=com_content&view=article&id=63&Itemid=72"
+        }
+      },
+      {
+        "name": "Športno društvo Bit Fit",
+        "address1": "Naslov: Stržovo 66",
+        "address2": "Poštna številka: 2392",
+        "address3": "Mesto: Mežica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 362 191",
+        "contact2": {
+          "href": "mailto:sd.bitfit@gmail.com",
+          "text": "sd.bitfit@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.bitfit.si/",
+          "text": "http://www.bitfit.si/"
+        },
+        "contact4": {
+          "href": "http://www.bitfit.si/",
+          "text": "http://www.bitfit.si/"
+        }
+      },
+      {
+        "name": "StudioFit",
+        "address1": "Naslov: Žolgarjeva ulica 4A",
+        "address2": "Poštna številka: 2310",
+        "address3": "Mesto: Slovenska Bistrica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 45 03 505, 040 70 59 52",
+        "contact2": {
+          "href": "mailto:info@studiofit.si",
+          "text": "info@studiofit.si"
+        },
+        "contact3": {
+          "href": "http://www.studiofit.si/",
+          "text": "http://www.studiofit.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/StudioFit",
+          "text": "https://www.facebook.com/StudioFit"
+        }
+      },
+      {
+        "name": "Terme Ptuj",
+        "address1": "Naslov: Pot v Toplice 9",
+        "address2": "Poštna številka: 2251",
+        "address3": "Mesto: Ptuj",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 74 94 150",
+        "contact2": {
+          "href": "mailto:wellness@terme-ptuj.si",
+          "text": "wellness@terme-ptuj.si"
+        },
+        "contact3": {
+          "href": "http://www.sava-hotels-resorts.com/si/destinacije/ptuj/programi/vodni-parki/fitnes/",
+          "text": "http://www.sava-hotels-resorts.com/si/destinacije/ptuj/programi/vodni-parki/fitnes/"
+        },
+        "contact4": {
+          "href": "http://www.sava-hotels-resorts.com/si/destinacije/ptuj/programi/vodni-parki/fitnes/",
+          "text": "http://www.sava-hotels-resorts.com/si/destinacije/ptuj/programi/vodni-parki/fitnes/"
+        }
+      },
+      {
+        "name": "Top Power Studio",
+        "address1": "Naslov: Ulica Staneta Severja 7B",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 33 23 407",
+        "contact2": {
+          "href": "mailto:bojan.permozer@gmail.com",
+          "text": "bojan.permozer@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.toppowerstudio.si/",
+          "text": "http://www.toppowerstudio.si/"
+        },
+        "contact4": {
+          "href": "http://www.toppowerstudio.si/",
+          "text": "http://www.toppowerstudio.si/"
+        }
+      },
+      {
+        "name": "Univerzitetni športni center Leona Štuklja",
+        "address1": "Naslov: Koroška cesta 130",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 23 55 400",
+        "contact2": {
+          "href": "mailto:szum@zdravum.si, usc",
+          "text": "szum@zdravum.si, usc"
+        },
+        "contact3": {
+          "href": "http://www.uni-mb.si/povezava.aspx?pid=5663",
+          "text": "http://www.uni-mb.si/povezava.aspx?pid=5663"
+        },
+        "contact4": {
+          "href": "http://www.uni-mb.si/povezava.aspx?pid=5663",
+          "text": "http://www.uni-mb.si/povezava.aspx?pid=5663"
+        }
+      },
+      {
+        "name": "Wellness center Habakuk",
+        "address1": "Naslov: Pohorska ulica 59",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 30 08 382",
+        "contact2": {
+          "href": "mailto:wellness@termemb.si",
+          "text": "wellness@termemb.si"
+        },
+        "contact3": {
+          "href": "http://www.termemb.si/si/wellness/wellness-center-habakuk/rekreacija",
+          "text": "http://www.termemb.si/si/wellness/wellness-center-habakuk/rekreacija"
+        },
+        "contact4": {
+          "href": "http://www.termemb.si/si/wellness/wellness-center-habakuk/rekreacija",
+          "text": "http://www.termemb.si/si/wellness/wellness-center-habakuk/rekreacija"
+        }
+      },
+      {
+        "name": "City gym fitnes center",
+        "address1": "Naslov: Prvomajska ulica 41",
+        "address2": "Poštna številka: 3250",
+        "address3": "Mesto: Rogaska Slatina",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 070 829 544",
+        "contact2": {
+          "href": "mailto:benjamin.fit@gmail.com",
+          "text": "benjamin.fit@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.citygym.si",
+          "text": "http://www.citygym.si"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/CityGym.si",
+          "text": "https://www.facebook.com/CityGym.si"
+        }
+      },
+      {
+        "name": "Fitnes AHTIK",
+        "address1": "Naslov: Gubčeva cesta 5",
+        "address2": "Poštna številka: 3320",
+        "address3": "Mesto: Velenje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 714 431, 05 87 49 35",
+        "contact2": {
+          "href": "mailto:fit.am.velenje@gmail.com",
+          "text": "fit.am.velenje@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.fitnesahtik.com/osnovnimeni.html",
+          "text": "http://www.fitnesahtik.com/osnovnimeni.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/groups/265175211410/",
+          "text": "http://www.facebook.com/groups/265175211410/"
+        }
+      },
+      {
+        "name": "Fitnes center Revolution",
+        "address1": "Naslov: Mariborska cesta 119",
+        "address2": "Poštna številka: 3000",
+        "address3": "Mesto: Celje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 235 443",
+        "contact2": {
+          "href": "mailto:info@fitnes-revolution.si",
+          "text": "info@fitnes-revolution.si"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-revolution.si/",
+          "text": "http://www.fitnes-revolution.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Fitnes-center-Revolution/154926797870809",
+          "text": "http://www.facebook.com/pages/Fitnes-center-Revolution/154926797870809"
+        }
+      },
+      {
+        "name": "Fitnes center Spartakus",
+        "address1": "Naslov: Toplice 10",
+        "address2": "Poštna številka: 3272",
+        "address3": "Mesto: Rimske Toplice",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 574 20 00",
+        "contact2": {
+          "href": "mailto:info@rimske-terme.si",
+          "text": "info@rimske-terme.si"
+        },
+        "contact3": {
+          "href": "http://www.rimske-terme.si/default.asp?mID=sl&pID=Fitnes",
+          "text": "http://www.rimske-terme.si/default.asp?mID=sl&pID=Fitnes"
+        },
+        "contact4": {
+          "href": "http://www.rimske-terme.si/default.asp?mID=sl&pID=Fitnes",
+          "text": "http://www.rimske-terme.si/default.asp?mID=sl&pID=Fitnes"
+        }
+      },
+      {
+        "name": "Fitnes center Terme Zreče",
+        "address1": "Naslov: Cesta na Roglo 15",
+        "address2": "Poštna številka: 3214",
+        "address3": "Mesto: Zreče",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 75 76 268",
+        "contact2": {
+          "href": "mailto:unitur@unitur.eu",
+          "text": "unitur@unitur.eu"
+        },
+        "contact3": {
+          "href": "http://www.terme-zrece.eu/si/zima/sport-in-aktivnosti/fitnes/",
+          "text": "http://www.terme-zrece.eu/si/zima/sport-in-aktivnosti/fitnes/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/TermeZrece",
+          "text": "http://www.facebook.com/TermeZrece"
+        }
+      },
+      {
+        "name": "Fitnes Center Wellness Park Laško",
+        "address1": "Naslov: Zdraviliška cesta 6",
+        "address2": "Poštna številka: 3270",
+        "address3": "Mesto: Laško",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 734 57 70, 03 734 57 71",
+        "contact2": {
+          "href": "mailto:info@thermana.si, wellness-zdravilisce",
+          "text": "info@thermana.si, wellness-zdravilisce"
+        },
+        "contact3": {
+          "href": "http://www.thermana.si/ceniki/fitnes/fitnes-center-zdravilisca-lasko",
+          "text": "http://www.thermana.si/ceniki/fitnes/fitnes-center-zdravilisca-lasko"
+        },
+        "contact4": {
+          "href": "http://www.thermana.si/ceniki/fitnes/fitnes-center-zdravilisca-lasko",
+          "text": "http://www.thermana.si/ceniki/fitnes/fitnes-center-zdravilisca-lasko"
+        }
+      },
+      {
+        "name": "Fitnes Herkul",
+        "address1": "Naslov: Liptovska ulica 27A",
+        "address2": "Poštna številka: 3210",
+        "address3": "Mesto: Slovenske Konjice",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 75 90 775, 040 233 006",
+        "contact2": {
+          "href": "mailto:fitnes.herkul@siol.net",
+          "text": "fitnes.herkul@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-herkul.si/",
+          "text": "http://www.fitnes-herkul.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/fitnes.herkul",
+          "text": "http://www.facebook.com/fitnes.herkul"
+        }
+      },
+      {
+        "name": "Fitnes klub Skala",
+        "address1": "Naslov: Šmarška cesta 52",
+        "address2": "Poštna številka: 3320",
+        "address3": "Mesto: Velenje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 58 61 729, 041 714 488, 03 58 62 313",
+        "contact4": {
+          "href": "http://www.skalca.com/",
+          "text": "http://www.skalca.com/"
+        }
+      },
+      {
+        "name": "Fitnes studio Galactica",
+        "address1": "Naslov: Koroška cesta 55b",
+        "address2": "Poštna številka: 3320",
+        "address3": "Mesto: Velenje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 078 478",
+        "contact2": {
+          "href": "mailto:info@galactica.si",
+          "text": "info@galactica.si"
+        },
+        "contact3": {
+          "href": "http://www.galactica.si",
+          "text": "http://www.galactica.si"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/wellnessgalactica",
+          "text": "https://www.facebook.com/wellnessgalactica"
+        }
+      },
+      {
+        "name": "Fitnes studio Rdeča dvorana",
+        "address1": "Naslov: Šaleška cesta 3",
+        "address2": "Poštna številka: 3320",
+        "address3": "Mesto: Velenje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 898 74 00, 03 898 74 05",
+        "contact2": {
+          "href": "mailto:info@srz-rdeca-dvorana.si",
+          "text": "info@srz-rdeca-dvorana.si"
+        },
+        "contact3": {
+          "href": "http://www.srz-rdeca-dvorana.si/ceniki.php?id=3",
+          "text": "http://www.srz-rdeca-dvorana.si/ceniki.php?id=3"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/Rde%C4%8Da-dvorana-Velenje/199990560079020",
+          "text": "https://www.facebook.com/pages/Rde%C4%8Da-dvorana-Velenje/199990560079020"
+        }
+      },
+      {
+        "name": "Fitnes Tris",
+        "address1": "Naslov: Ulica Heroja Staneta 9",
+        "address2": "Poštna številka: 3310",
+        "address3": "Mesto: Žalec",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 349 541, 051 238 531",
+        "contact2": {
+          "href": "mailto:tris.rekreacija@gmail.com",
+          "text": "tris.rekreacija@gmail.com"
+        }
+      },
+      {
+        "name": "Fitness Šaht",
+        "address1": "Naslov: Kardeljev trg 3",
+        "address2": "Poštna številka: 3320",
+        "address3": "Mesto: Velenje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 070 581 699, 05 903 01 25",
+        "contact2": {
+          "href": "mailto:grabnerdea@gmail.com",
+          "text": "grabnerdea@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.facebook.com/SahtFitnesStudioTerIzdelavaNohtov",
+          "text": "http://www.facebook.com/SahtFitnesStudioTerIzdelavaNohtov"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/SahtFitnesStudioTerIzdelavaNohtov",
+          "text": "http://www.facebook.com/SahtFitnesStudioTerIzdelavaNohtov"
+        }
+      },
+      {
+        "name": "Fitness&Wellness center Olimpus",
+        "address1": "Naslov: Celjska cesta 8",
+        "address2": "Poštna številka: 3310",
+        "address3": "Mesto: Žalec",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 620 98 04",
+        "contact2": {
+          "href": "mailto:info@olimpus.si",
+          "text": "info@olimpus.si"
+        },
+        "contact3": {
+          "href": "http://center.olimpus.si/",
+          "text": "http://center.olimpus.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/OLIMPUS-fitnes-wellness/114285282007986",
+          "text": "http://www.facebook.com/pages/OLIMPUS-fitnes-wellness/114285282007986"
+        }
+      },
+      {
+        "name": "PRO FITNES",
+        "address1": "Naslov: Nazorjeva 6",
+        "address2": "Poštna številka: 3000",
+        "address3": "Mesto: Celje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 492 7118, 041 335 228",
+        "contact2": {
+          "href": "mailto:darko.ulezic@gmail.com",
+          "text": "darko.ulezic@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.profitness.si",
+          "text": "http://www.profitness.si"
+        },
+        "contact4": {
+          "href": "http://www.profitness.si",
+          "text": "http://www.profitness.si"
+        }
+      },
+      {
+        "name": "R&B Gym",
+        "address1": "Naslov: Lava 2D3000 Celje",
+        "address2": "Poštna številka: 3000",
+        "address3": "Mesto: Celje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 492 97 10, 031 302 809",
+        "contact2": {
+          "href": "mailto:info@rnb-gym.si",
+          "text": "info@rnb-gym.si"
+        },
+        "contact3": {
+          "href": "http://www.rnb-gym.si/",
+          "text": "http://www.rnb-gym.si/"
+        },
+        "contact4": {
+          "href": "http://www.rnb-gym.si/",
+          "text": "http://www.rnb-gym.si/"
+        }
+      },
+      {
+        "name": "Šport center Prodnik",
+        "address1": "Naslov: Juvanje 1",
+        "address2": "Poštna številka: 3333",
+        "address3": "Mesto: Ljubno ob Savinji",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 838 10 30, 03 839 25 00, 041 752 111,031 752 111",
+        "contact2": {
+          "href": "mailto:s.c.prodnik@gmail.com",
+          "text": "s.c.prodnik@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.prodnik.com/si/ponudba/ponudba.php?id=2",
+          "text": "http://www.prodnik.com/si/ponudba/ponudba.php?id=2"
+        },
+        "contact4": {
+          "href": "http://www.prodnik.com/si/ponudba/ponudba.php?id=2",
+          "text": "http://www.prodnik.com/si/ponudba/ponudba.php?id=2"
+        }
+      },
+      {
+        "name": "Terme Olimia",
+        "address1": "Naslov: Zdraviliška cesta 24",
+        "address2": "Poštna številka: 3254",
+        "address3": "Mesto: Podčetrtek",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 829 78 22",
+        "contact2": {
+          "href": "mailto:spa.beauty@terme-olimia.com",
+          "text": "spa.beauty@terme-olimia.com"
+        },
+        "contact3": {
+          "href": "http://www.terme-olimia.com/sl/wellness-center-termalija/fitnes-264",
+          "text": "http://www.terme-olimia.com/sl/wellness-center-termalija/fitnes-264"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/TermeOlimia",
+          "text": "https://www.facebook.com/TermeOlimia"
+        }
+      },
+      {
+        "name": "Terme Topolšica",
+        "address1": "Naslov: Topolšica 77",
+        "address2": "Poštna številka: 3326",
+        "address3": "Mesto: Topolšica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 896 31 70",
+        "contact2": {
+          "href": "mailto:wellness.zala@t-topolsica.si ",
+          "text": "wellness.zala@t-topolsica.si"
+        },
+        "contact3": {
+          "href": "http://www.terme-topolsica.si/ceniki/wellness-zala/fitness/",
+          "text": "http://www.terme-topolsica.si/ceniki/wellness-zala/fitness/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Terme-Topol%C5%A1ica/177825392256133?sk=wall",
+          "text": "http://www.facebook.com/pages/Terme-Topol%C5%A1ica/177825392256133?sk=wall"
+        }
+      },
+      {
+        "name": "Top-Fit",
+        "address1": "Naslov: Ipavčeva 22",
+        "address2": "Poštna številka: 3000",
+        "address3": "Mesto: Celje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 428 14 40, 040 50 20 60",
+        "contact2": {
+          "href": "mailto:topfit@siol.net",
+          "text": "topfit@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.top-fit.si/",
+          "text": "http://www.top-fit.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/topfit.fitnes",
+          "text": "http://www.facebook.com/topfit.fitnes"
+        }
+      },
+      {
+        "name": "Wellness center Aspara",
+        "address1": "Naslov: Cesta Leona Dobrotinška 22 B",
+        "address2": "Poštna številka: 3230",
+        "address3": "Mesto: Šentjur",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 494 444, 0590 876 00",
+        "contact2": {
+          "href": "mailto:info@wellness-aspara.com",
+          "text": "info@wellness-aspara.com"
+        },
+        "contact3": {
+          "href": "http://www.wellness-aspara.com/sport/fitnes-center/",
+          "text": "http://www.wellness-aspara.com/sport/fitnes-center/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/wellness.aspara",
+          "text": "http://www.facebook.com/wellness.aspara"
+        }
+      },
+      {
+        "name": "BE FIT - fitness studio",
+        "address1": "Naslov: Vincarje 47",
+        "address2": "Poštna številka: 4220",
+        "address3": "Mesto: Škofja Loka",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 51 22 182",
+        "contact2": {
+          "href": "mailto:befit.fitnes@gmail.com",
+          "text": "befit.fitnes@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.minihotel.si/fitness.asp",
+          "text": "http://www.minihotel.si/fitness.asp"
+        },
+        "contact4": {
+          "href": "http://www.minihotel.si/fitness.asp",
+          "text": "http://www.minihotel.si/fitness.asp"
+        }
+      },
+      {
+        "name": "Bio Fit",
+        "address1": "Naslov: Koritno 6",
+        "address2": "Poštna številka: 4260",
+        "address3": "Mesto: Bled",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 372 284",
+        "contact2": {
+          "href": "mailto:biofit.bled@gmail.com ",
+          "text": "biofit.bled@gmail.com"
+        },
+        "contact3": {
+          "href": "http://biofit.si/",
+          "text": "http://biofit.si/"
+        },
+        "contact4": {
+          "href": "http://biofit.si/",
+          "text": "http://biofit.si/"
+        }
+      },
+      {
+        "name": "Bohinj Park EKO Hotel - ECO Resort & Spa",
+        "address1": "Naslov: Triglavska cesta 17",
+        "address2": "Poštna številka: 4264",
+        "address3": "Mesto: Bohinjska Bistrica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 08 20 04 080",
+        "contact2": {
+          "href": "mailto:info@vodni-park-bohinj.si",
+          "text": "info@vodni-park-bohinj.si"
+        },
+        "contact3": {
+          "href": "http://www.vodni-park-bohinj.si/vodni_park/fitnes/",
+          "text": "http://www.vodni-park-bohinj.si/vodni_park/fitnes/"
+        },
+        "contact4": {
+          "href": "http://www.vodni-park-bohinj.si/vodni_park/fitnes/",
+          "text": "http://www.vodni-park-bohinj.si/vodni_park/fitnes/"
+        }
+      },
+      {
+        "name": "Fitnes center BioEstetik",
+        "address1": "Naslov: Na Logu 8",
+        "address2": "Poštna številka: 4290",
+        "address3": "Mesto: Tržič",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 687 890",
+        "contact2": {
+          "href": "mailto:info@bioestetik.si, sabina.koder",
+          "text": "info@bioestetik.si, sabina.koder"
+        },
+        "contact3": {
+          "href": "http://www.bioestetik-fitness.si/vadba.htm",
+          "text": "http://www.bioestetik-fitness.si/vadba.htm"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/BioEstetik-Frizerstvo-kozmetika-fitness/259949604032910",
+          "text": "http://www.facebook.com/pages/BioEstetik-Frizerstvo-kozmetika-fitness/259949604032910"
+        }
+      },
+      {
+        "name": "Fitnes center POPAJ",
+        "address1": "Naslov: Smledniška 136",
+        "address2": "Poštna številka: 4000",
+        "address3": "Mesto: Čirče-Kranj",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 23 28 134,  051 455 256",
+        "contact2": {
+          "href": "mailto:fitnes.popaj@volja.net",
+          "text": "fitnes.popaj@volja.net"
+        },
+        "contact3": {
+          "href": "http://prehrana-sportna.si/",
+          "text": "http://prehrana-sportna.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/FITNES-CENTER-POPAJ/113229882120597",
+          "text": "http://www.facebook.com/pages/FITNES-CENTER-POPAJ/113229882120597"
+        }
+      },
+      {
+        "name": "Fitnes center Sokol Žirovnica",
+        "address1": "Naslov: Žirovnica 63",
+        "address2": "Poštna številka: 4274",
+        "address3": "Mesto: Žirovnica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 13 68 90, 041 247 920",
+        "contact2": {
+          "href": "mailto:matej_zor@yahoo.com",
+          "text": "matej_zor@yahoo.com"
+        },
+        "contact3": {
+          "href": "http://partizan.zirovnica.si/?page_id=32",
+          "text": "http://partizan.zirovnica.si/?page_id=32"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Fitnes-Sokol-%C5%BDirovnica/254713192956?sk=wall",
+          "text": "http://www.facebook.com/pages/Fitnes-Sokol-%C5%BDirovnica/254713192956?sk=wall"
+        }
+      },
+      {
+        "name": "Fitnes center Top",
+        "address1": "Naslov: Cesta Staneta Žagarja 2b",
+        "address2": "Poštna številka: 4240",
+        "address3": "Mesto: Radovljica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 212 955",
+        "contact2": {
+          "href": "mailto:fitnesscentertop@gmail.com",
+          "text": "fitnesscentertop@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.fitnestop.si/",
+          "text": "http://www.fitnestop.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/fitnescentertop",
+          "text": "https://www.facebook.com/fitnescentertop"
+        }
+      },
+      {
+        "name": "Fitnes KING",
+        "address1": "Naslov: Cesta Staneta Žagarja 71",
+        "address2": "Poštna številka: 4000",
+        "address3": "Mesto: Kranj",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 030 267 965",
+        "contact2": {
+          "href": "mailto:info@fitnesking.si",
+          "text": "info@fitnesking.si"
+        },
+        "contact3": {
+          "href": "http://www.fitnesking.si",
+          "text": "http://www.fitnesking.si"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/FitnesKing",
+          "text": "https://www.facebook.com/FitnesKing"
+        }
+      },
+      {
+        "name": "Fitnes Matrica",
+        "address1": "Naslov: Hafnarjevo naselje 125",
+        "address2": "Poštna številka: 4220",
+        "address3": "Mesto: Škofja loka",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 870 323 (nina), 031 378 723 (majda), 031 380 467 (saso)",
+        "contact2": {
+          "href": "mailto:sgcmatrica@gmail.com",
+          "text": "sgcmatrica@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.sdmatrica.com/",
+          "text": "http://www.sdmatrica.com/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/sgcmatrica",
+          "text": "https://www.facebook.com/sgcmatrica"
+        }
+      },
+      {
+        "name": "Fitnes Prošport",
+        "address1": "Naslov: Jernejeva ulica 12",
+        "address2": "Poštna številka: 4000",
+        "address3": "Mesto: Kranj",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 23 10 240, 031 362 629",
+        "contact2": {
+          "href": "mailto:info@prosport.si",
+          "text": "info@prosport.si"
+        },
+        "contact3": {
+          "href": "http://www.prosport.si/?stran=fitnes",
+          "text": "http://www.prosport.si/?stran=fitnes"
+        },
+        "contact4": {
+          "href": "http://www.prosport.si/?stran=fitnes",
+          "text": "http://www.prosport.si/?stran=fitnes"
+        }
+      },
+      {
+        "name": "Fitnes Stegnar",
+        "address1": "Naslov: Sebenje 47b",
+        "address2": "Poštna številka: 4294",
+        "address3": "Mesto: Križe",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 0599 21 248",
+        "contact2": {
+          "href": "mailto:info@fitnes-stegnar.si",
+          "text": "info@fitnes-stegnar.si"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-stegnar.si/fitnes",
+          "text": "http://www.fitnes-stegnar.si/fitnes"
+        },
+        "contact4": {
+          "href": "http://www.fitnes-stegnar.si/fitnes",
+          "text": "http://www.fitnes-stegnar.si/fitnes"
+        }
+      },
+      {
+        "name": "Fitnes studio IRENA",
+        "address1": "Naslov: Ljubljanska cesta 29a",
+        "address2": "Poštna številka: 4000",
+        "address3": "Mesto: Kranj",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 23 32 018",
+        "contact2": {
+          "href": "mailto:informacije@fitness-studio-irena.si",
+          "text": "informacije@fitness-studio-irena.si"
+        },
+        "contact3": {
+          "href": "http://www.fitness-studio-irena.si/",
+          "text": "http://www.fitness-studio-irena.si/"
+        },
+        "contact4": {
+          "href": "http://www.fitness-studio-irena.si/",
+          "text": "http://www.fitness-studio-irena.si/"
+        }
+      },
+      {
+        "name": "Fitnes v Hotelu Marinšek",
+        "address1": "Naslov: Glavna Cesta 2",
+        "address2": "Poštna številka: 4202",
+        "address3": "Mesto: Naklo",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 92 34 100",
+        "contact2": {
+          "href": "mailto:info@marinsek.net",
+          "text": "info@marinsek.net"
+        },
+        "contact3": {
+          "href": "http://www.marinsek.net/si/fitnes.htm",
+          "text": "http://www.marinsek.net/si/fitnes.htm"
+        },
+        "contact4": {
+          "href": "http://www.marinsek.net/si/fitnes.htm",
+          "text": "http://www.marinsek.net/si/fitnes.htm"
+        }
+      },
+      {
+        "name": "MAXX FIT Kranj",
+        "address1": "Naslov: Partizanska 37",
+        "address2": "Poštna številka: 4000",
+        "address3": "Mesto: Kranj",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 23 63 209",
+        "contact2": {
+          "href": "mailto:info@maxxfit-kranj.si ",
+          "text": "info@maxxfit-kranj.si"
+        },
+        "contact3": {
+          "href": "http://www.maxxfit-kranj.si/",
+          "text": "http://www.maxxfit-kranj.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/maxxFIT-fitnes-z-osebnim-pristopom/268877689026",
+          "text": "http://www.facebook.com/pages/maxxFIT-fitnes-z-osebnim-pristopom/268877689026"
+        }
+      },
+      {
+        "name": "Mega Center",
+        "address1": "Naslov: Savska cesta 34",
+        "address2": "Poštna številka: 4000",
+        "address3": "Mesto: Kranj",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 20 20 800, 051 441 963",
+        "contact2": {
+          "href": "mailto:info@megacenter.si",
+          "text": "info@megacenter.si"
+        },
+        "contact3": {
+          "href": "http://www.megacenter.si/",
+          "text": "http://www.megacenter.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/megacenter.si",
+          "text": "http://www.facebook.com/megacenter.si"
+        }
+      },
+      {
+        "name": "Moč Fitnes Center",
+        "address1": "Naslov: Kolodvorska ulica 1c",
+        "address2": "Poštna številka: 4280",
+        "address3": "Mesto: Kranjska Gora",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 08 20 57192",
+        "contact2": {
+          "href": "mailto:fitnes.moc@gmail.com",
+          "text": "fitnes.moc@gmail.com"
+        },
+        "contact3": {
+          "href": "https://www.facebook.com/fitnes.moc",
+          "text": "https://www.facebook.com/fitnes.moc"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/fitnes.moc",
+          "text": "https://www.facebook.com/fitnes.moc"
+        }
+      },
+      {
+        "name": "No.1 Fitnes Bled",
+        "photo": {
+          "alt": "No.1 Fitnes Bled",
+          "src": "http://fitness-info.si/cache/com_zoo/images/no1 fitnes bled logo_e91dba26ebdb5e36d8b04e2fd9dac9aa.jpg",
+          "text": ""
+        },
+        "address1": "Naslov: Ljubljanska 5",
+        "address2": "Poštna številka: 4260",
+        "address3": "Mesto: Bled",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 858 432",
+        "contact2": {
+          "href": "mailto:leon@n1-fitnes.si",
+          "text": "leon@n1-fitnes.si"
+        },
+        "contact3": {
+          "href": "http://www.no1-fitnes.si/",
+          "text": "http://www.no1-fitnes.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/No1Fitnes",
+          "text": "https://www.facebook.com/No1Fitnes"
+        }
+      },
+      {
+        "name": "No.1 Fitnes Radovljica",
+        "photo": {
+          "alt": "No.1 Fitnes Radovljica",
+          "src": "http://fitness-info.si/cache/com_zoo/images/no1 fitnes bled logo_e91dba26ebdb5e36d8b04e2fd9dac9aa.jpg",
+          "text": ""
+        },
+        "address1": "Naslov: Kranjska cesta 4",
+        "address2": "Poštna številka: 4240",
+        "address3": "Mesto: Radovljica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 858 432",
+        "contact2": {
+          "href": "mailto:fitnescenterradovljica11@gmail.com",
+          "text": "fitnescenterradovljica11@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.n1-fitnes.si/",
+          "text": "http://www.n1-fitnes.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/No1Fitnes",
+          "text": "https://www.facebook.com/No1Fitnes"
+        }
+      },
+      {
+        "name": "O2 Fitnes Center Jesenice",
+        "address1": "Naslov: Cesta Marašala Tita 22",
+        "address2": "Poštna številka: 4270",
+        "address3": "Mesto: Jesenice",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 360 487 / 041 708 908",
+        "contact3": {
+          "href": "https://www.facebook.com/o2fitnes.si",
+          "text": "https://www.facebook.com/o2fitnes.si"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/o2fitnes.si",
+          "text": "https://www.facebook.com/o2fitnes.si"
+        }
+      },
+      {
+        "name": "Plavalni klub Gorenjska banka Radovljica",
+        "address1": "Naslov: Kopališka 9",
+        "address2": "Poštna številka: 4240",
+        "address3": "Mesto: Radovljica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 53 15 770",
+        "contact2": {
+          "href": "mailto:pkrad@plavalniklub-radovljica.si",
+          "text": "pkrad@plavalniklub-radovljica.si"
+        },
+        "contact3": {
+          "href": "http://www.plavalniklub-radovljica.si/ponudba/fitnes",
+          "text": "http://www.plavalniklub-radovljica.si/ponudba/fitnes"
+        },
+        "contact4": {
+          "href": "http://www.plavalniklub-radovljica.si/ponudba/fitnes",
+          "text": "http://www.plavalniklub-radovljica.si/ponudba/fitnes"
+        }
+      },
+      {
+        "name": "Samson Fitnes Club",
+        "address1": "Naslov: Kolodvorska cesta 9",
+        "address2": "Poštna številka: 4260",
+        "address3": "Mesto: Bled",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 574 36 66, 041 618 319",
+        "contact2": {
+          "href": "mailto:gricar80@gmail.com",
+          "text": "gricar80@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.gricarbled.si/samsonfitnes.php",
+          "text": "http://www.gricarbled.si/samsonfitnes.php"
+        },
+        "contact4": {
+          "href": "http://www.gricarbled.si/samsonfitnes.php",
+          "text": "http://www.gricarbled.si/samsonfitnes.php"
+        }
+      },
+      {
+        "name": "Studio Vital",
+        "address1": "Naslov: Cesta maršala Tita 86",
+        "address2": "Poštna številka: 4270",
+        "address3": "Mesto: Jesenice",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 58 36 160, 04 58 36 162 , 031 755 013",
+        "contact2": {
+          "href": "mailto:novela@studio-vital.si",
+          "text": "novela@studio-vital.si"
+        },
+        "contact3": {
+          "href": "http://www.studio-vital.si/index.php",
+          "text": "http://www.studio-vital.si/index.php"
+        },
+        "contact4": {
+          "href": "http://www.studio-vital.si/index.php",
+          "text": "http://www.studio-vital.si/index.php"
+        }
+      },
+      {
+        "name": "Vrelec Brdo - Fitness",
+        "address1": "Naslov: Predoslje 39",
+        "address2": "Poštna številka: 4000",
+        "address3": "Mesto: Kranj",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 260 18 16",
+        "contact2": {
+          "href": "mailto:vrelec.brdo@gov.si",
+          "text": "vrelec.brdo@gov.si"
+        },
+        "contact3": {
+          "href": "http://www.brdo.si/wellness/fitness-program",
+          "text": "http://www.brdo.si/wellness/fitness-program"
+        },
+        "contact4": {
+          "href": "http://www.brdo.si/wellness/fitness-program",
+          "text": "http://www.brdo.si/wellness/fitness-program"
+        }
+      },
+      {
+        "name": "Wellness Feniks Bled",
+        "address1": "Naslov: Cankarjeva 2",
+        "address2": "Poštna številka: 4260",
+        "address3": "Mesto: Bled",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 787 601, 04 62 05 120",
+        "contact2": {
+          "href": "mailto:squashklubbled@gmail.com",
+          "text": "squashklubbled@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.squashbled.si/index.php?option=com_content&view=article&id=2&Itemid=3",
+          "text": "http://www.squashbled.si/index.php?option=com_content&view=article&id=2&Itemid=3"
+        },
+        "contact4": {
+          "href": "http://www.squashbled.si/index.php?option=com_content&view=article&id=2&Itemid=3",
+          "text": "http://www.squashbled.si/index.php?option=com_content&view=article&id=2&Itemid=3"
+        }
+      },
+      {
+        "name": "Bodysense fitness & wellness club",
+        "address1": "Naslov: Ulica 15. Maja 24",
+        "address2": "Poštna številka: 6000",
+        "address3": "Mesto: Koper",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 639 11 00",
+        "contact2": {
+          "href": "mailto:bodysensekoper@gmail.com",
+          "text": "bodysensekoper@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.bodysense.si/",
+          "text": "http://www.bodysense.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/bodysense.koper",
+          "text": "http://www.facebook.com/bodysense.koper"
+        }
+      },
+      {
+        "name": "California fitness Koper",
+        "address1": "Naslov: Marežganskega upora 4",
+        "address2": "Poštna številka: 6000",
+        "address3": "Mesto: Koper",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 440 460",
+        "contact2": {
+          "href": "mailto:info@california-fitness.net",
+          "text": "info@california-fitness.net"
+        },
+        "contact3": {
+          "href": "http://www.california-fitness.net/",
+          "text": "http://www.california-fitness.net/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/CALIFORNIA-FITNESS-KOPER/216733183082",
+          "text": "http://www.facebook.com/pages/CALIFORNIA-FITNESS-KOPER/216733183082"
+        }
+      },
+      {
+        "name": "Fil-Sport",
+        "address1": "Naslov: Cesta na Polane 43",
+        "address2": "Poštna številka: 6210",
+        "address3": "Mesto: Sežana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 73 00 800, 031 61 64 65",
+        "contact2": {
+          "href": "mailto:info@fil-sport.si",
+          "text": "info@fil-sport.si"
+        },
+        "contact3": {
+          "href": "http://www.fil-sport.si/index_main.html",
+          "text": "http://www.fil-sport.si/index_main.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Fil-Sport/267060478826",
+          "text": "http://www.facebook.com/pages/Fil-Sport/267060478826"
+        }
+      },
+      {
+        "name": "FIT&FUN fitnes studio",
+        "address1": "Naslov: Kraška cesta 53",
+        "address2": "Poštna številka: 6215",
+        "address3": "Mesto: Divača",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 051 739 583"
+      },
+      {
+        "name": "Fitnes center Daneu",
+        "address1": "Naslov: Kosovelova 4b",
+        "address2": "Poštna številka: 6210",
+        "address3": "Mesto: Sežana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 730 17 50, 040 743 027",
+        "contact2": {
+          "href": "mailto:info@fitnesdaneu.com",
+          "text": "info@fitnesdaneu.com"
+        },
+        "contact3": {
+          "href": "http://www.fitnesdaneu.com/",
+          "text": "http://www.fitnesdaneu.com/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/FITNES-CENTER-DANEU/268797887829",
+          "text": "http://www.facebook.com/pages/FITNES-CENTER-DANEU/268797887829"
+        }
+      },
+      {
+        "name": "Fitnes center Tomšič",
+        "address1": "Naslov: Rozmanova ulica 25 B",
+        "address2": "Poštna številka: 6250",
+        "address3": "Mesto: Ilirska Bistrica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 440 606, 041 456 656",
+        "contact2": {
+          "href": "mailto:tomsic.igor@siol.net",
+          "text": "tomsic.igor@siol.net"
+        }
+      },
+      {
+        "name": "Fitnes Manija",
+        "photo": {
+          "alt": "Fitnes Manija",
+          "src": "http://fitness-info.si/cache/com_zoo/images/fiitnes-manija-fitness-info-logo_beb0717125d5bd36ac46b60d67f3a555.jpg",
+          "text": ""
+        },
+        "address1": "Naslov: Kopališko nabrežje 5",
+        "address2": "Poštna številka: 6000",
+        "address3": "Mesto: Koper",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 051 351 070",
+        "contact2": {
+          "href": "mailto:info@fitmania.net",
+          "text": "info@fitmania.net"
+        },
+        "contact3": {
+          "href": "http://www.fitmania.net/",
+          "text": "http://www.fitmania.net/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Fit-mania-Koper/141747072585598",
+          "text": "http://www.facebook.com/pages/Fit-mania-Koper/141747072585598"
+        }
+      },
+      {
+        "name": "Fitnes Mirjam",
+        "address1": "Naslov: Razdrto 19",
+        "address2": "Poštna številka: 6225",
+        "address3": "Mesto: Hruševje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 684 988, 041 750 716, 05 75 77 200",
+        "contact2": {
+          "href": "mailto: mirjam.pavlin@mirjam.si",
+          "text": "mirjam.pavlin@mirjam.si"
+        },
+        "contact3": {
+          "href": "http://www.mirjam.si/",
+          "text": "http://www.mirjam.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Penzion-Wellness-Mirjam/203285059772934",
+          "text": "http://www.facebook.com/pages/Penzion-Wellness-Mirjam/203285059772934"
+        }
+      },
+      {
+        "name": "Fitnes Planet",
+        "photo": {
+          "alt": "Fitnes Planet",
+          "src": "http://fitness-info.si/cache/com_zoo/images/fitnes planet logo_4a85a16e5e2523b1c2346b4047f06d37.jpg",
+          "text": ""
+        },
+        "address1": "Naslov: Stjenkova 1",
+        "address2": "Poštna številka: 6210",
+        "address3": "Mesto: Sežana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 754 737",
+        "contact2": {
+          "href": "mailto:info@fitnes-planet.com",
+          "text": "info@fitnes-planet.com"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-planet.com",
+          "text": "http://www.fitnes-planet.com"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/FitnesPlanet",
+          "text": "https://www.facebook.com/FitnesPlanet"
+        }
+      },
+      {
+        "name": "Fitnes studio Žusterna",
+        "address1": "Naslov: Istrska 67",
+        "address2": "Poštna številka: 6000",
+        "address3": "Mesto: Koper",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 61 00 300",
+        "contact2": {
+          "href": "mailto:zusterna@terme-catez.si",
+          "text": "zusterna@terme-catez.si"
+        },
+        "contact3": {
+          "href": "http://www.terme-catez.si/slovenska-obala/wellness-396/kardiofitnes-zusterna/",
+          "text": "http://www.terme-catez.si/slovenska-obala/wellness-396/kardiofitnes-zusterna/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/TermeCatez",
+          "text": "https://www.facebook.com/TermeCatez"
+        }
+      },
+      {
+        "name": "Fitnes v wellnessu Carnevale",
+        "address1": "Naslov: Spodnje Škofije 259",
+        "address2": "Poštna številka: 6281",
+        "address3": "Mesto: Škofije",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 66 80 200",
+        "contact2": {
+          "href": "mailto:info@carnevale.sI",
+          "text": "info@carnevale.sI"
+        },
+        "contact3": {
+          "href": "http://www.carnevale.si/sl/wellness.html",
+          "text": "http://www.carnevale.si/sl/wellness.html"
+        },
+        "contact4": {
+          "href": "http://www.carnevale.si/sl/wellness.html",
+          "text": "http://www.carnevale.si/sl/wellness.html"
+        }
+      },
+      {
+        "name": "Fitness & Welness Epicenter",
+        "address1": "Naslov: Kazarje 3",
+        "address2": "Poštna številka: 6230",
+        "address3": "Mesto: Postojna",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 700 22 77, 041 635 797",
+        "contact2": {
+          "href": "mailto:wellness@epicenter-on.net",
+          "text": "wellness@epicenter-on.net"
+        },
+        "contact3": {
+          "href": "http://www.fitness-epicenter.si/fitness.html",
+          "text": "http://www.fitness-epicenter.si/fitness.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/fit.postojna",
+          "text": "http://www.facebook.com/fit.postojna"
+        }
+      },
+      {
+        "name": "Fitness club Acqua Relax",
+        "address1": "Naslov: Obala 77",
+        "address2": "Poštna številka: 6320",
+        "address3": "Mesto: Portorož",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 690 19 50",
+        "contact2": {
+          "href": "mailto:acquarelax@siol.net",
+          "text": "acquarelax@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.acquarelax.com/sl/products/Fitness-Club-fitnes/16.html#s23",
+          "text": "http://www.acquarelax.com/sl/products/Fitness-Club-fitnes/16.html#s23"
+        },
+        "contact4": {
+          "href": "http://www.acquarelax.com/sl/products/Fitness-Club-fitnes/16.html#s23",
+          "text": "http://www.acquarelax.com/sl/products/Fitness-Club-fitnes/16.html#s23"
+        }
+      },
+      {
+        "name": "Gym Bo Fit",
+        "address1": "Naslov: Polje 21",
+        "address2": "Poštna številka: 6310",
+        "address3": "Mesto: Izola",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 64 17 005",
+        "contact2": {
+          "href": "mailto:gymbofit@volja.net",
+          "text": "gymbofit@volja.net"
+        },
+        "contact3": {
+          "href": "http://www.gymbofit.com/Fitnes.php",
+          "text": "http://www.gymbofit.com/Fitnes.php"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/gym.bofit",
+          "text": "http://www.facebook.com/gym.bofit"
+        }
+      },
+      {
+        "name": "Invictus fitnes",
+        "address1": "Naslov: Kajuhova ulica 28",
+        "address2": "Poštna številka: 6310",
+        "address3": "Mesto: Izola",
+        "address4": "Država: Slovenia",
+        "contact4": {
+          "href": "https://www.facebook.com/InvictusFitnes",
+          "text": "https://www.facebook.com/InvictusFitnes"
+        }
+      },
+      {
+        "name": "LVCM Fitness center Izola",
+        "address1": "Naslov: Ulica oktobrske revolucije 2",
+        "address2": "Poštna številka: 6310",
+        "address3": "Mesto: Izola",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 575 565",
+        "contact2": {
+          "href": "mailto:kristjanflego@gmail.com",
+          "text": "kristjanflego@gmail.com"
+        },
+        "contact3": {
+          "href": "https://www.facebook.com/pages/LVCM-fitness-center-Izola/120682244749440",
+          "text": "https://www.facebook.com/pages/LVCM-fitness-center-Izola/120682244749440"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/LVCM-fitness-center-Izola/120682244749440",
+          "text": "https://www.facebook.com/pages/LVCM-fitness-center-Izola/120682244749440"
+        }
+      },
+      {
+        "name": "Power lifting klub Oskar & Co. Postojna",
+        "address1": "Naslov: Ljubljanska cesta 2",
+        "address2": "Poštna številka: 6230",
+        "address3": "Mesto: Postojna",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 688 641",
+        "contact2": {
+          "href": "mailto:vlado.schweiger@gmail.com",
+          "text": "vlado.schweiger@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.facebook.com/pages/Power-lifting-klub-Oskar-Co-Postojna/279876132057490",
+          "text": "http://www.facebook.com/pages/Power-lifting-klub-Oskar-Co-Postojna/279876132057490"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Power-lifting-klub-Oskar-Co-Postojna/279876132057490",
+          "text": "http://www.facebook.com/pages/Power-lifting-klub-Oskar-Co-Postojna/279876132057490"
+        }
+      },
+      {
+        "name": "Studio F",
+        "address1": "Naslov: Lipica 5",
+        "address2": "Poštna številka: 6210",
+        "address3": "Mesto: Sežana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 73 41 644",
+        "contact2": {
+          "href": "mailto:info@studiof.si",
+          "text": "info@studiof.si"
+        },
+        "contact3": {
+          "href": "http://www.studiof.si/fitnes.html",
+          "text": "http://www.studiof.si/fitnes.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/STUDIO-F/191092226282",
+          "text": "http://www.facebook.com/pages/STUDIO-F/191092226282"
+        }
+      },
+      {
+        "name": "Total fitness",
+        "address1": "Naslov: Polje 9/A",
+        "address2": "Poštna številka: 6310",
+        "address3": "Mesto: Izola",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 132 922",
+        "contact2": {
+          "href": "mailto:totalfitness.izola@gmail.com",
+          "text": "totalfitness.izola@gmail.com"
+        },
+        "contact3": {
+          "href": "http://total-fitness.yolasite.com/",
+          "text": "http://total-fitness.yolasite.com/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/TotalFitness-Fitnes/340687092663156",
+          "text": "http://www.facebook.com/pages/TotalFitness-Fitnes/340687092663156"
+        }
+      },
+      {
+        "name": "Wellness center ADRIA",
+        "address1": "Naslov: Jadranska cesta 25",
+        "address2": "Poštna številka: 6280",
+        "address3": "Mesto: Ankaran",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 66 37 356, 051 634 381",
+        "contact2": {
+          "href": "mailto:wellness@adria-ankaran.si",
+          "text": "wellness@adria-ankaran.si"
+        },
+        "contact3": {
+          "href": "http://www.adria-ankaran.si/wellness/fitnes/",
+          "text": "http://www.adria-ankaran.si/wellness/fitnes/"
+        },
+        "contact4": {
+          "href": "http://www.adria-ankaran.si/wellness/fitnes/",
+          "text": "http://www.adria-ankaran.si/wellness/fitnes/"
+        }
+      },
+      {
+        "name": "Fitnes center Tolmin - Hotel Krn",
+        "address1": "Naslov: Mestni trg 3",
+        "address2": "Poštna številka: 5220",
+        "address3": "Mesto: Tolmin",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 38 21 100, 031 599 484",
+        "contact2": {
+          "href": "mailto:info.hotel.krn@gmail.com",
+          "text": "info.hotel.krn@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.hotel-krn.net/1_3.html",
+          "text": "http://www.hotel-krn.net/1_3.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/fitnes.centertolmin?sk=wall",
+          "text": "http://www.facebook.com/fitnes.centertolmin?sk=wall"
+        }
+      },
+      {
+        "name": "Fitnes klub MOJGIB",
+        "address1": "Naslov: Lapajnetova ulica 53",
+        "address2": "Poštna številka: 5280",
+        "address3": "Mesto: Idrija",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 37 41 549",
+        "contact2": {
+          "href": "mailto:info@mojgib.si",
+          "text": "info@mojgib.si"
+        },
+        "contact3": {
+          "href": "http://www.mojgib.si/fitnes/",
+          "text": "http://www.mojgib.si/fitnes/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/mojgib",
+          "text": "http://www.facebook.com/mojgib"
+        }
+      },
+      {
+        "name": "Fitness center ORIA",
+        "address1": "Naslov: Vipavska cesta 132, Rožna Dolina",
+        "address2": "Poštna številka: 5000",
+        "address3": "Mesto: Nova Gorica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 333 09 09, 041 614 869",
+        "contact2": {
+          "href": "mailto:oria.fitness@siol.net",
+          "text": "oria.fitness@siol.net"
+        }
+      },
+      {
+        "name": "Fitness Mravljica",
+        "address1": "Naslov: Goriška 29",
+        "address2": "Poštna številka: 5271",
+        "address3": "Mesto: Vipava",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 172 182",
+        "contact2": {
+          "href": "mailto:info@fitples-mravljica.net",
+          "text": "info@fitples-mravljica.net"
+        },
+        "contact3": {
+          "href": "http://www.fitples-mravljica.net/",
+          "text": "http://www.fitples-mravljica.net/"
+        },
+        "contact4": {
+          "href": "http://www.fitples-mravljica.net/",
+          "text": "http://www.fitples-mravljica.net/"
+        }
+      },
+      {
+        "name": "Fitness Stadion",
+        "address1": "Naslov: Bazoviška ulica 4",
+        "address2": "Poštna številka: 5000",
+        "address3": "Mesto: Nova Gorica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 95 43 38, 051 640 575",
+        "contact2": {
+          "href": "mailto:info@mikasport.com",
+          "text": "info@mikasport.com"
+        },
+        "contact3": {
+          "href": "http://www.mikasport.com/fitness-stadion/",
+          "text": "http://www.mikasport.com/fitness-stadion/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/mikasport",
+          "text": "https://www.facebook.com/mikasport"
+        }
+      },
+      {
+        "name": "Healthy Life Fitness & Nutrition",
+        "address1": "Naslov: Goriška cesta 29a",
+        "address2": "Poštna številka: 5270",
+        "address3": "Mesto: Ajdovščina",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 417 832",
+        "contact2": {
+          "href": "mailto:info@hl-fitness.net",
+          "text": "info@hl-fitness.net"
+        },
+        "contact3": {
+          "href": "http://www.hl-fitness.net/",
+          "text": "http://www.hl-fitness.net/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/HEALTHY-LIFE-FITNESS-NUTRITION/144459019343",
+          "text": "http://www.facebook.com/pages/HEALTHY-LIFE-FITNESS-NUTRITION/144459019343"
+        }
+      },
+      {
+        "name": "Magma X",
+        "address1": "Naslov: Industrijska cesta 11",
+        "address2": "Poštna številka: 5000",
+        "address3": "Mesto: Nova Gorica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 08 200 48 21",
+        "contact3": {
+          "href": "http://www.magma-x.com/fitnes/magma_fitnes/",
+          "text": "http://www.magma-x.com/fitnes/magma_fitnes/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Magma-X/154404377920623",
+          "text": "http://www.facebook.com/pages/Magma-X/154404377920623"
+        }
+      },
+      {
+        "name": "Myofit fitnes Tolmin",
+        "address1": "Naslov: Dijaška 12b",
+        "address2": "Poštna številka: 5220",
+        "address3": "Mesto: Tolmin",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: Vasja: 040 432 240, Jerca: 031 213 186",
+        "contact3": {
+          "href": "http://www.facebook.com/groups/140633052746223/",
+          "text": "http://www.facebook.com/groups/140633052746223/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/groups/140633052746223/",
+          "text": "http://www.facebook.com/groups/140633052746223/"
+        }
+      },
+      {
+        "name": "Wellness center Pulsus",
+        "address1": "Naslov: Cesta 5. maja 14",
+        "address2": "Poštna številka: 5270",
+        "address3": "Mesto: Ajdovščina",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 219 092, 031 874 012",
+        "contact2": {
+          "href": "mailto:info@pulsus.si",
+          "text": "info@pulsus.si"
+        },
+        "contact3": {
+          "href": "http://www.pulsuscenter.si/",
+          "text": "http://www.pulsuscenter.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pulsus.fitnes",
+          "text": "http://www.facebook.com/pulsus.fitnes"
+        }
+      },
+      {
+        "name": "B-FIT fitnes center",
+        "address1": "Naslov: Ulica 11. Novembra 47",
+        "address2": "Poštna številka: 8273",
+        "address3": "Mesto: Leskovec pri Krškem",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 762 001",
+        "contact2": {
+          "href": "mailto:info@bfit.si",
+          "text": "info@bfit.si"
+        },
+        "contact3": {
+          "href": "http://www.bfit.si/",
+          "text": "http://www.bfit.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/B-FIT-center/113030588723413",
+          "text": "http://www.facebook.com/pages/B-FIT-center/113030588723413"
+        }
+      },
+      {
+        "name": "Cajner GYM",
+        "address1": "Naslov: Foersterjeva 10",
+        "address2": "Poštna številka: 8000",
+        "address3": "Mesto: Novo Mesto",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 064 173 103",
+        "contact3": {
+          "href": "https://www.facebook.com/cajner.gym",
+          "text": "https://www.facebook.com/cajner.gym"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/cajner.gym",
+          "text": "https://www.facebook.com/cajner.gym"
+        }
+      },
+      {
+        "name": "Fitnes Center Klepec",
+        "address1": "Naslov: Obrtniška ulica 37",
+        "address2": "Poštna številka: 8210",
+        "address3": "Mesto: Trebnje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 07 304 59 12, 041 911 701",
+        "contact2": {
+          "href": "mailto:info@fitnes-klepec.com",
+          "text": "info@fitnes-klepec.com"
+        }
+      },
+      {
+        "name": "Fitnes center Millennium",
+        "address1": "Naslov: Cesta Krških žrtev 47",
+        "address2": "Poštna številka: 8270",
+        "address3": "Mesto: Krško",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 59 57 40, 07 492 12 23",
+        "contact2": {
+          "href": "mailto:milenium.fitnes@gmail.com",
+          "text": "milenium.fitnes@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.millennium-fitnes.si/",
+          "text": "http://www.millennium-fitnes.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/milenium.fitnes",
+          "text": "http://www.facebook.com/milenium.fitnes"
+        }
+      },
+      {
+        "name": "Fitnes center Panorama",
+        "address1": "Naslov: Zdraviliški trg 7",
+        "address2": "Poštna številka: 8350",
+        "address3": "Mesto: Dolenjske Toplice",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 07 39 19 750",
+        "contact2": {
+          "href": "mailto:balnea@terme-krka.si",
+          "text": "balnea@terme-krka.si"
+        },
+        "contact3": {
+          "href": "http://www.terme-krka.si/si/dolenjske/balnea/sportne_aktivnosti/fitnes/",
+          "text": "http://www.terme-krka.si/si/dolenjske/balnea/sportne_aktivnosti/fitnes/"
+        },
+        "contact4": {
+          "href": "http://www.terme-krka.si/si/dolenjske/balnea/sportne_aktivnosti/fitnes/",
+          "text": "http://www.terme-krka.si/si/dolenjske/balnea/sportne_aktivnosti/fitnes/"
+        }
+      },
+      {
+        "name": "Fitnes klub Požun",
+        "address1": "Naslov: Titova cesta 75",
+        "address2": "Poštna številka: 8281",
+        "address3": "Mesto: Senovo",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 07 488 19 66, 041 460 332",
+        "contact2": {
+          "href": "mailto:fitnes.pozun@siol.net",
+          "text": "fitnes.pozun@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.pozun.eu/index.html",
+          "text": "http://www.pozun.eu/index.html"
+        },
+        "contact4": {
+          "href": "http://www.pozun.eu/index.html",
+          "text": "http://www.pozun.eu/index.html"
+        }
+      },
+      {
+        "name": "Fitnes studio Sevnica",
+        "address1": "Naslov: Prvomajska ulica 15a",
+        "address2": "Poštna številka: 8290",
+        "address3": "Mesto: Sevnica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 07 81 40 790",
+        "contact2": {
+          "href": "mailto:fitnes.sevnica@gmail.com",
+          "text": "fitnes.sevnica@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-sevnica.com/",
+          "text": "http://www.fitnes-sevnica.com/"
+        },
+        "contact4": {
+          "href": "http://www.fitnes-sevnica.com/",
+          "text": "http://www.fitnes-sevnica.com/"
+        }
+      },
+      {
+        "name": "Fitnes v centru za medicinsko rehabilitacijo",
+        "address1": "Naslov: Zdraviliški trg 7",
+        "address2": "Poštna številka: 8350",
+        "address3": "Mesto: Dolenjske Toplice",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 07/ 39 19 750",
+        "contact2": {
+          "href": "mailto:balnea@terme-krka.si",
+          "text": "balnea@terme-krka.si"
+        },
+        "contact3": {
+          "href": "http://www.terme-krka.si/si/dolenjske/balnea/sportne_aktivnosti/fitnes/",
+          "text": "http://www.terme-krka.si/si/dolenjske/balnea/sportne_aktivnosti/fitnes/"
+        },
+        "contact4": {
+          "href": "http://www.terme-krka.si/si/dolenjske/balnea/sportne_aktivnosti/fitnes/",
+          "text": "http://www.terme-krka.si/si/dolenjske/balnea/sportne_aktivnosti/fitnes/"
+        }
+      },
+      {
+        "name": "Fitness center Arena",
+        "address1": "Naslov: Cesta bratov Milavcev 16",
+        "address2": "Poštna številka: 8250",
+        "address3": "Mesto: Brežice",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 423 600",
+        "contact2": {
+          "href": "mailto:fitnesscenterarena@gmail.com",
+          "text": "fitnesscenterarena@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.fitneskemo.com/?name=default.php",
+          "text": "http://www.fitneskemo.com/?name=default.php"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/FitnesKemo",
+          "text": "http://www.facebook.com/FitnesKemo"
+        }
+      },
+      {
+        "name": "Panter Fitness & Gym",
+        "address1": "Naslov: Topliška cesta 2a",
+        "address2": "Poštna številka: 8000",
+        "address3": "Mesto: Novo mesto",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 93 89 47",
+        "contact2": {
+          "href": "mailto:info@panter-gym.si, gym",
+          "text": "info@panter-gym.si, gym"
+        },
+        "contact3": {
+          "href": "http://www.panter-gym.si/fitness-gym/",
+          "text": "http://www.panter-gym.si/fitness-gym/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Panter-GymBar/214784718546161",
+          "text": "http://www.facebook.com/pages/Panter-GymBar/214784718546161"
+        }
+      },
+      {
+        "name": "Rekreativni center Simon",
+        "address1": "Naslov: majer št 5",
+        "address2": "Poštna številka: 8340",
+        "address3": "Mesto: Črnomelj",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 21 96 97, 051 23 70 79, 07 30 56 500",
+        "contact2": {
+          "href": "mailto:simon.tomec@volja.net",
+          "text": "simon.tomec@volja.net"
+        },
+        "contact3": {
+          "href": "http://www.rcsimon.si/",
+          "text": "http://www.rcsimon.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/simon.tomec",
+          "text": "http://www.facebook.com/simon.tomec"
+        }
+      },
+      {
+        "name": "Športni center FIT & FUN",
+        "address1": "Naslov: Vorančeva ulica 4 A",
+        "address2": "Poštna številka: 8000",
+        "address3": "Mesto: Novo mesto",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 312 681, 07 334 75 00",
+        "contact2": {
+          "href": "mailto:fit.fun@siol.net",
+          "text": "fit.fun@siol.net"
+        },
+        "contact3": {
+          "href": "http://fitfun.si/",
+          "text": "http://fitfun.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/scfitfun.pureberrobert",
+          "text": "https://www.facebook.com/scfitfun.pureberrobert"
+        }
+      },
+      {
+        "name": "Športni studio Nina",
+        "address1": "Naslov: Črmošnjice 71",
+        "address2": "Poštna številka: 8000",
+        "address3": "Mesto: Novo mesto",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 339 993",
+        "contact2": {
+          "href": "mailto:info@studio-nina.si",
+          "text": "info@studio-nina.si"
+        },
+        "contact3": {
+          "href": "http://www.studio-nina.si/",
+          "text": "http://www.studio-nina.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/%C5%A0PORTNI-STUDIO-NINA/116195921731012",
+          "text": "http://www.facebook.com/pages/%C5%A0PORTNI-STUDIO-NINA/116195921731012"
+        }
+      },
+      {
+        "name": "Vitanova",
+        "address1": "Naslov: Cesta krških žrtev 49A",
+        "address2": "Poštna številka: 8270",
+        "address3": "Mesto: Krško",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 693 231 (Blaž), 051 387 788 (Vilma)",
+        "contact2": {
+          "href": "mailto:info@vita-nova.si",
+          "text": "info@vita-nova.si"
+        },
+        "contact3": {
+          "href": "http://www.vita-nova.si/",
+          "text": "http://www.vita-nova.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/Vitanova/201962546577657",
+          "text": "https://www.facebook.com/pages/Vitanova/201962546577657"
+        }
+      },
+      {
+        "name": "Bioterme Mala Nedelja - Fitnes",
+        "address1": "Naslov: Moravci v Slovenskih goricah 34b",
+        "address2": "Poštna številka: 9243",
+        "address3": "Mesto: Mala Nedelja",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 565 20 00",
+        "contact2": {
+          "href": "mailto:info@bioterme.si",
+          "text": "info@bioterme.si"
+        },
+        "contact3": {
+          "href": "http://www.bioterme.si/index.php?option=com_content&view=article&id=66&Itemid=112&lang=sl",
+          "text": "http://www.bioterme.si/index.php?option=com_content&view=article&id=66&Itemid=112&lang=sl"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/groups/183475165914/",
+          "text": "http://www.facebook.com/groups/183475165914/"
+        }
+      },
+      {
+        "name": "Fitnes center Hotela Diana",
+        "address1": "Naslov: Slovenska ulica 52",
+        "address2": "Poštna številka: 9000",
+        "address3": "Mesto: Murska Sobota",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 51 41 200, 02 514 12 24, 040 298 020",
+        "contact2": {
+          "href": "mailto:info@hotel-diana.si, wellness",
+          "text": "info@hotel-diana.si, wellness"
+        },
+        "contact3": {
+          "href": "http://www.hotel-diana.si/fitness/",
+          "text": "http://www.hotel-diana.si/fitness/"
+        },
+        "contact4": {
+          "href": "http://www.hotel-diana.si/fitness/",
+          "text": "http://www.hotel-diana.si/fitness/"
+        }
+      },
+      {
+        "name": "Fitnes center Ljutomer",
+        "address1": "Naslov: Grossmanova 7",
+        "address2": "Poštna številka: 9240",
+        "address3": "Mesto: Ljutomer",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 325 874",
+        "contact2": {
+          "href": "mailto:info@fitnes-ljutomer.si",
+          "text": "info@fitnes-ljutomer.si"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-ljutomer.si/",
+          "text": "http://www.fitnes-ljutomer.si/"
+        },
+        "contact4": {
+          "href": "http://www.fitnes-ljutomer.si/",
+          "text": "http://www.fitnes-ljutomer.si/"
+        }
+      },
+      {
+        "name": "Fitnes center Odranci",
+        "address1": "Naslov: Prešernova ulica 23",
+        "address2": "Poštna številka: 9233",
+        "address3": "Mesto: Odranci",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 573 70 23 (kličite po 15. uri)",
+        "contact2": {
+          "href": "mailto:info@fitnes-odranci.si",
+          "text": "info@fitnes-odranci.si"
+        },
+        "contact3": {
+          "href": "http://www.fitnes-odranci.si/",
+          "text": "http://www.fitnes-odranci.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Fitnes-center-Odranci/218183284864",
+          "text": "http://www.facebook.com/pages/Fitnes-center-Odranci/218183284864"
+        }
+      },
+      {
+        "name": "Fitnes IZZY FIT",
+        "address1": "Naslov: Lipovci 19",
+        "address2": "Poštna številka: 9231",
+        "address3": "Mesto: Beltinci",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 328 327",
+        "contact2": {
+          "href": "mailto:istok.gomboc@siol.net",
+          "text": "istok.gomboc@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.facebook.com/groups/113967881956408/",
+          "text": "http://www.facebook.com/groups/113967881956408/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/groups/113967881956408/",
+          "text": "http://www.facebook.com/groups/113967881956408/"
+        }
+      },
+      {
+        "name": "Fitnes Krpan Murska Sobota",
+        "address1": "Naslov: Mladinska 3",
+        "address2": "Poštna številka: 9000",
+        "address3": "Mesto: Murska Sobota",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 717 064, 02 537 12 80",
+        "contact2": {
+          "href": "mailto:darinka.babic@siol.net",
+          "text": "darinka.babic@siol.net"
+        }
+      },
+      {
+        "name": "Fitnes studio „FIT & PUMP“",
+        "address1": "Naslov: Miklošičeva 30",
+        "address2": "Poštna številka: 9000",
+        "address3": "Mesto: Murska Sobota",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 522 13 83, 031 430 135",
+        "contact2": {
+          "href": "mailto:fitnes@fit-pump.si",
+          "text": "fitnes@fit-pump.si"
+        },
+        "contact3": {
+          "href": "http://www.fit-pump.si/?prikaz=studio",
+          "text": "http://www.fit-pump.si/?prikaz=studio"
+        },
+        "contact4": {
+          "href": "http://www.fit-pump.si/?prikaz=studio",
+          "text": "http://www.fit-pump.si/?prikaz=studio"
+        }
+      },
+      {
+        "name": "Fitnes v hotelu Lipa",
+        "address1": "Naslov: Tomšičeva 2 a",
+        "address2": "Poštna številka: 9220",
+        "address3": "Mesto: Lendava",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 577 41 00",
+        "contact2": {
+          "href": "mailto:info@terme-lendava.si",
+          "text": "info@terme-lendava.si"
+        },
+        "contact3": {
+          "href": "http://www.sava-hotels-resorts.com/si/destinacije/lendava/programi/wellness/fitnes/",
+          "text": "http://www.sava-hotels-resorts.com/si/destinacije/lendava/programi/wellness/fitnes/"
+        },
+        "contact4": {
+          "href": "http://www.sava-hotels-resorts.com/si/destinacije/lendava/programi/wellness/fitnes/",
+          "text": "http://www.sava-hotels-resorts.com/si/destinacije/lendava/programi/wellness/fitnes/"
+        }
+      },
+      {
+        "name": "Fitness EXTREME",
+        "address1": "Naslov: UlicA dr. Franca Kovačiča 12",
+        "address2": "Poštna številka: 9240",
+        "address3": "Mesto: Ljutomer",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 807 224",
+        "contact2": {
+          "href": "mailto:leon.mursic@gmail.com",
+          "text": "leon.mursic@gmail.com"
+        },
+        "contact3": {
+          "href": "http://mojatrenerka.weebly.com/predstavitev-fitnes-centrov.html",
+          "text": "http://mojatrenerka.weebly.com/predstavitev-fitnes-centrov.html"
+        },
+        "contact4": {
+          "href": "http://mojatrenerka.weebly.com/predstavitev-fitnes-centrov.html",
+          "text": "http://mojatrenerka.weebly.com/predstavitev-fitnes-centrov.html"
+        }
+      },
+      {
+        "name": "Športno rekreativni center Spartacus",
+        "address1": "Naslov: Kopališka ulica 2",
+        "address2": "Poštna številka: 9000",
+        "address3": "Mesto: Murska Sobota",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 537 10 43, 051 722 904",
+        "contact2": {
+          "href": "mailto:info@spartacus.si",
+          "text": "info@spartacus.si"
+        },
+        "contact3": {
+          "href": "http://www.spartacus.si/src/",
+          "text": "http://www.spartacus.si/src/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/SRCSpartacus",
+          "text": "http://www.facebook.com/SRCSpartacus"
+        }
+      }
+    ]
+  }
+}

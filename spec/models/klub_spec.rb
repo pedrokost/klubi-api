@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Klub, :type => :model do
-  
-  let!(:klub) { create(:klub, name: 'Karate klub Skocjan') } 
+
+  let!(:klub) { create(:klub, name: 'Karate klub Skocjan') }
 
   subject { klub }
 
-  it { should have_db_index(:slug)  } 
+  it { should have_db_index(:slug)  }
   it { should be_valid } # missing name
 
   it "requires the name" do
@@ -32,6 +32,9 @@ RSpec.describe Klub, :type => :model do
   	expect(klub.slug).to eq('karate-klub-skocjan')
   end
 
+  # TODO: This slug it incocerrect: it leafes first lette capisalized and sumiki
+  # Športno rekreativni center Spartacus
+
   it "should provide alternative slug if already taken" do
   	expect(klub.persisted?).to be true
   	another_klub = create(:klub, name: klub.name)
@@ -44,7 +47,7 @@ RSpec.describe Klub, :type => :model do
 
   describe "complete scope" do
     let!(:klub2) { create(:complete_klub) }
-    
+
     it "Klub.all should return only completed models by default" do
       expect(Klub.all).to eq([klub2])
       expect(Klub.unscoped).to eq([klub, klub2])
