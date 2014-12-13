@@ -14,6 +14,8 @@ gem 'rails_12factor', group: :production
 
 gem 'active_model_serializers', '~> 0.9.0'
 
+gem 'redis'
+
 gem 'randexp'
 
 gem 'rack-cors', github: 'cyu/rack-cors', require: 'rack/cors'
