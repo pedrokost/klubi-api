@@ -18,6 +18,18 @@ RSpec.describe Klub, :type => :model do
   	expect(klub.slug).to eq('karate-klub-skocjan')
   end
 
+  it "should eliminate special characters when creating the slug" do
+    klub.name = "Škocjanski kareški Karate Črni klub"
+    klub.save
+    expect(klub.reload.slug).to eq 'skocjanski-kareski-karate-crni-klub'
+  end
+
+  it "should eliminate special characters from the slug" do
+    klub.name = "Škocjansk!!i kareš~ki   "
+    klub.save
+    expect(klub.reload.slug).to eq 'skocjansk-i-kares-ki'
+  end
+
   it "should update slug on update" do
   	klub.name = 'Karate Klub Grosuplje'
   	klub.save

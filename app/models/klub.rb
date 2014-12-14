@@ -19,7 +19,7 @@ private
 
 	def update_slug
 
-		slug = self.name.gsub(' ', '-').downcase
+		slug = self.name.parameterize
 
 		trySlug = slug
 		while slug_taken(trySlug)
