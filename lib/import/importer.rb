@@ -17,6 +17,7 @@ module Import
     def commit(klubsdata)
       klubsdata.each do |klubdata|
         commit_one(klubdata)
+        sleep 0.2  # Make sure you don't make more than 5 reqs per second
       end
     end
 

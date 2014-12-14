@@ -59,6 +59,7 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.6)
     formatador (0.2.5)
+    geocoder (1.2.6)
     guard (2.10.2)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -195,6 +196,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.9.0)
   factory_girl_rails
+  geocoder
   guard-rspec
   json-schema
   pg

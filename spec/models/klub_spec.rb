@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'pry'
 
 RSpec.describe Klub, :type => :model do
 
@@ -82,4 +83,84 @@ RSpec.describe Klub, :type => :model do
     expect(klub.complete?).to be true
   end
 
+
+  describe "geocoding" do
+
+    Geocoder::Lookup::Test.add_stub(
+      "Trzaska 25, 1000 Ljubljana", [
+        {
+          'latitude'          => 46.0448994,
+          'longitude'         => 14.4892307,
+          'address'           => 'Univerza v Ljubljani, Tržaška cesta 25, 1000 Ljubljana, Slovenija',
+          'city'              => 'Ljubljana',
+          'formatted_address' => 'Univerza v Ljubljani, Tržaška cesta 25, 1000 Ljubljana, Slovenija'
+        }
+      ]
+    )
+
+    context "on create" do
+
+      describe "address provided" do
+        let(:klub) { build(:klub, address: "Trzaska 25, 1000 Ljubljana") }
+
+        it "should compute latlong" do
+          klub.save
+          expect(klub.reload.latitude).not_to be_nil
+          expect(klub.reload.longitude).not_to be_nil
+          expect(klub.reload.town).not_to be_nil
+
+          expect(klub.reload.latitude).to eq 46.044899
+          expect(klub.reload.longitude).to eq 14.489231
+          expect(klub.reload.town).to eq 'Ljubljana'
+        end
+
+        it "should prettify the address" do
+          klub.save
+          expect(klub.reload.address).to eq "Univerza v Ljubljani, Tržaška cesta 25, 1000 Ljubljana, Slovenija"
+        end
+
+        it "should fillin the town" do
+          klub.save
+          expect(klub.reload.town).to eq 'Ljubljana'
+        end
+
+        it "should not run if lat, long, address and town provided as well" do
+          klub.latitude = 20
+          klub.longitude = 35
+          klub.town = 'Lj'
+          klub.save
+
+          expect(klub.reload.latitude).to eq 20
+          expect(klub.reload.longitude).to eq 35
+          expect(klub.reload.town).to eq 'Lj'
+        end
+      end
+
+      describe "address not provided" do
+        before do
+          klub = create(:klub, address: "")
+        end
+        it "shoud not run if no address" do
+          # TODO: assert geocoder not run
+          expect(klub.latitude).to be_nil
+          expect(klub.longitude).to be_nil
+          expect(klub.town).to be_nil
+        end
+      end
+    end
+
+    context "on save" do
+      let(:klub) { create(:klub, address: "Trzaska 25, 1000 Ljubljana") }
+      it "should not run" do
+        expect(klub.latitude).to eq 46.0448994
+        expect(klub.longitude).to eq 14.4892307
+
+        klub.address = "Vrazov trg 2, 1104 Ljubljana, Slovenija"
+        klub.save
+
+        expect(klub.latitude).to eq 46.0448994
+        expect(klub.longitude).to eq 14.4892307
+      end
+    end
+  end
 end
