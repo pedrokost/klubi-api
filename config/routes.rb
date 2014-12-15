@@ -2,8 +2,6 @@ require 'api_constraints'
 
 Rails.application.routes.draw do
 
-  get 'application/index'
-
   constraints subdomain: 'api' do
     scope module: 'api' do
       scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
@@ -15,6 +13,11 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'application/index'
+
+  root 'application#index'
+
+  get '*path' => 'application#index'
   # constraints subdomain: 'import' do
   #   post 'klubs/create'
   #   # resources :klubs, only: [:create]
@@ -24,7 +27,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'application#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
