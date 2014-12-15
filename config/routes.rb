@@ -5,10 +5,7 @@ Rails.application.routes.draw do
   constraints subdomain: 'api' do
     scope module: 'api' do
       scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
-        # defaults format: :json do
-          resources :klubs, only: [:index]
-          post 'klubs/import'
-        # end
+        resources :klubs, only: [:index]
       end
     end
   end
