@@ -24,7 +24,7 @@ private
 	end
 
 	def generate_slug(slug)
-		slug + Randgen.last_name
+		slug + " " + Randgen.last_name.downcase
 	end
 
 	def update_slug
