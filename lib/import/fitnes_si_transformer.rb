@@ -1,5 +1,4 @@
 require 'import/transformer'
-require 'pry'
 
 module Import
   class FitnesSiTransformer < Transformer
