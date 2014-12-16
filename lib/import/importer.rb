@@ -22,7 +22,9 @@ module Import
     end
 
     def commit_one(klubdata)
-      if Klub.unscoped.where(name: klubdata[:name]).empty?
+      # TODO: test no duplicates
+      tbl = Klub.arel_table
+      if Klub.unscoped.where(tbl[:name].matches(klubdata[:name])).empty?
         klub = Klub.new(klubdata)
         print klub.name
 

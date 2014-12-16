@@ -21,7 +21,8 @@ module Import
 
         clean_data << {
           name: name,
-          address: "#{address}, #{post_number}, #{city}"
+          address: "#{address}, #{post_number}, #{city}",
+          caterogies: ['fitnes']
         }
       end
 
