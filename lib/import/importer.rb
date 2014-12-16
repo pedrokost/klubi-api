@@ -22,20 +22,24 @@ module Import
     end
 
     def commit_one(klubdata)
-      if Klub.unscoped.where(name: klubdata['name'], town: klubdata['town']).empty?
+      if Klub.unscoped.where(name: klubdata[:name]).empty?
         klub = Klub.new(klubdata)
+        print klub.name
+
         if klub.valid?
+          print " OK\n"
           # TODO: recompute lat/long if
           klub.save!
           return klub
         else
+          print " INVALID\n"
           # TODO: Send me an email with the klub data
           # Or at least log it so I can find it later
-          render nil
         end
       else
-        p "Duplicate klub", klub
+        p "Duplicate klub", klubdata
       end
+
     end
   end
 end
