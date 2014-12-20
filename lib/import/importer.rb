@@ -1,12 +1,13 @@
 module Import
   class Importer
-    def initialize(datasource, transformer)
+    def initialize(datasource, transformer, verbose=true)
       @transformer = transformer
       @datasource = datasource
+      @verbose = verbose
     end
 
     def run
-      p @transformer.description
+      p @transformer.description if @verbose
       raw_data = @datasource.fetch
       clean_data = @transformer.transform raw_data
       commit(clean_data)
@@ -24,22 +25,31 @@ module Import
     def commit_one(klubdata)
       # TODO: test no duplicates
       tbl = Klub.arel_table
-      if Klub.unscoped.where(tbl[:name].matches(klubdata[:name])).empty?
+      existing_klub = Klub.unscoped.where(tbl[:name].matches(klubdata[:name]))
+
+      if existing_klub.empty?
         klub = Klub.new(klubdata)
-        print klub.name
+        print klub.name if @verbose
 
         if klub.valid?
-          print " OK\n"
+          print " OK\n" if @verbose
           # TODO: recompute lat/long if
           klub.save!
           return klub
         else
-          print " INVALID\n"
+          print " INVALID\n" if @verbose
           # TODO: Send me an email with the klub data
           # Or at least log it so I can find it later
         end
       else
-        p "Duplicate klub", klubdata
+        p "Duplicate klub. Possibly merge categories", klubdata if @verbose
+
+        return unless klubdata[:categories]
+
+        existing_klub = existing_klub.first
+        existing_klub.categories = (existing_klub.categories + klubdata[:categories]).uniq
+        existing_klub.save!
+
       end
 
     end

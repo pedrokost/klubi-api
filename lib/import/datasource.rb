@@ -2,9 +2,10 @@ require 'rest_client'
 
 module Import
   class Datasource
-    def initialize(type, path)
+    def initialize(type, path, verbose=false)
       @type = type
       @path = path
+      @verbose = verbose
     end
 
     def fetch
@@ -14,7 +15,7 @@ module Import
       when :http
         RestClient.get @path
       else
-        p "Not yet implemented"
+        p "Not yet implemented" if @verbose
       end
     end
   end
