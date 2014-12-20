@@ -18,6 +18,8 @@ gem 'redis'
 
 gem 'geocoder'
 
+gem 'skylight'
+
 group :development do
   gem 'pry-rails'
   gem 'pry-rescue'
