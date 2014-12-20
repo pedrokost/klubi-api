@@ -44,7 +44,7 @@
                     "longitude": {
                         "type": ["string", "null"]
                     },
-                    "facebookUrl": {
+                    "facebook_url": {
                       "type": ["string", "null"]
                     }
                 }
