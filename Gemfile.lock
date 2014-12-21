@@ -78,6 +78,9 @@ GEM
     json (1.8.1)
     json-schema (2.5.0)
       addressable (~> 2.3)
+    json_spec (1.1.4)
+      multi_json (~> 1.0)
+      rspec (>= 2.0, < 4.0)
     kgio (2.9.2)
     listen (2.8.3)
       celluloid (>= 0.15.2)
@@ -204,6 +207,7 @@ DEPENDENCIES
   geocoder
   guard-rspec
   json-schema
+  json_spec
   nokogiri
   pg
   pry-byebug

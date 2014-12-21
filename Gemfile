@@ -20,6 +20,8 @@ gem 'geocoder'
 
 gem 'skylight'
 
+gem 'json_spec'
+
 group :development do
   gem 'pry-rails'
   gem 'pry-rescue'
@@ -38,16 +40,16 @@ gem 'rack-rewrite'
 gem 'rest_client', require: false
 
 group :development, :test do
-	gem 'spring-commands-rspec'
- 	gem 'rspec-rails', '~> 3.0'
- 	gem 'guard-rspec'
-	gem 'factory_girl_rails'
+  gem 'spring-commands-rspec'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'guard-rspec'
+  gem 'factory_girl_rails'
 end
 
 gem 'shoulda-matchers', require: false
 
 group :test do
-	gem "json-schema"
+  gem "json-schema"
 end
 
 # To use ActiveModel has_secure_password
