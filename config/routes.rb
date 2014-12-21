@@ -10,11 +10,13 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'application/index'
+  constraints subdomain: ['', 'www'] do
+    get 'application/index'
 
-  root 'application#index'
+    root 'application#index'
 
-  get '*path' => 'application#index'
+    get '*path' => 'application#index'
+  end
   # constraints subdomain: 'import' do
   #   post 'klubs/create'
   #   # resources :klubs, only: [:create]
