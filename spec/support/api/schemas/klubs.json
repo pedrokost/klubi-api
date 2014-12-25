@@ -11,7 +11,8 @@
                     "name",
                     "slug",
                     "latitude",
-                    "longitude"
+                    "longitude",
+                    "categories"
                 ],
                 "properties": {
                     "id": {
@@ -45,7 +46,13 @@
                         "type": ["string", "null"]
                     },
                     "facebook_url": {
-                      "type": ["string", "null"]
+                        "type": ["string", "null"]
+                    },
+                    "categories": {
+                        "type": ["array"],
+                        "items": [{
+                            "type": "string"
+                        }]
                     }
                 }
             }]
