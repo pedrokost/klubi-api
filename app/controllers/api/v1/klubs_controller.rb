@@ -2,18 +2,14 @@ module Api
   module V1
     class KlubsController < ApplicationController
       def index
-        if klub_params[:category]
-          @klubs = Klub.where("? = ANY (categories)", klub_params[:category])
-        else
-          @klubs = Klub.all
-        end
+        @klubs = Klub.where("? = ANY (categories)", category_param)
         render json: @klubs
       end
 
     private
 
-      def klub_params
-        params.permit(:category)
+      def category_param
+        params.require(:category)
       end
     end
   end

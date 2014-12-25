@@ -12,7 +12,7 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
     let!(:klub2) { FactoryGirl.create(:klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes']) }
 
     before do
-      get :index
+      get :index, category: 'fitnes'
     end
     subject { response }
 
@@ -34,7 +34,7 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
         klub1.longitude = nil;
         klub1.save
 
-        get :index
+        get :index, category: 'fitnes'
       end
 
       it "does not return klubs that are incomplete" do
@@ -70,6 +70,12 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
           expect(response).to match_response_schema("klubs")
           expect(klubs.length).to eq 1
           expect(klubs.map{|h| h[:id]}).to match([klub1.id])
+        end
+      end
+
+      context "Missing category filter" do
+        it "should raise an exception" do
+          expect{get :index, category: nil}.to raise_error(ActionController::ParameterMissing)
         end
       end
     end
