@@ -21,7 +21,6 @@ module Import
 
       clean_data = []
       json['results']['collection1'].each do |klubdata|
-        p klubdata
         name = klubdata['name']
         website = klubdata['website']['href']
         address = klubdata['address']['text']

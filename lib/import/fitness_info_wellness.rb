@@ -49,7 +49,6 @@ module Import
           categories: ['wellness']
         }
 
-        p klub
         clean_data << klub
       end
       clean_data
