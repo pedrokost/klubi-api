@@ -1,6 +1,5 @@
 require 'import/transformer'
 require 'import/datasource'
-require 'pry'
 
 module Import
   class SloveniaWellnessDatasource < Datasource
