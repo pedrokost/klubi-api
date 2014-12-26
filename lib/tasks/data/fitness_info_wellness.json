@@ -1,0 +1,2469 @@
+{
+  "name": "Wellness-centri podatki",
+  "count": 123,
+  "frequency": "Manual Crawl",
+  "version": 3,
+  "newdata": true,
+  "lastrunstatus": "success",
+  "lastsuccess": "Sat Dec 13 2014 13:31:01 GMT+0000 (UTC)",
+  "thisversionstatus": "success",
+  "results": {
+    "collection1": [
+      {
+        "name": "Antiq Hotel Spa",
+        "address1": "Naslov: Vegova 5A",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 838 96 700",
+        "contact2": {
+          "href": "mailto:sales@antiqpalace.com",
+          "text": "sales@antiqpalace.com"
+        },
+        "contact3": {
+          "href": "http://www.antiqpalace.com",
+          "text": "http://www.antiqpalace.com"
+        },
+        "contact4": {
+          "href": "http://www.antiqpalace.com",
+          "text": "http://www.antiqpalace.com"
+        }
+      },
+      {
+        "name": "BJ FIT - FITNESS & WELLNESS CENTER",
+        "address1": "Naslov: Pod Hruševco 48c",
+        "address2": "Poštna številka: 1360",
+        "address3": "Mesto: Vrhnika",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 373 500",
+        "contact2": {
+          "href": "mailto:info@bjfit.si",
+          "text": "info@bjfit.si"
+        },
+        "contact3": {
+          "href": "http://bjfit.si/",
+          "text": "http://bjfit.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Bj-Fit-Fitness-and-Wellness-center/358435844243392",
+          "text": "http://www.facebook.com/pages/Bj-Fit-Fitness-and-Wellness-center/358435844243392"
+        }
+      },
+      {
+        "name": "Bodifit Otelo",
+        "address1": "Naslov: Breznikova 17",
+        "address2": "Poštna številka: 1230",
+        "address3": "Mesto: Domžale",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 729 27 27",
+        "contact2": {
+          "href": "mailto:otelo@bodifit.net",
+          "text": "otelo@bodifit.net"
+        },
+        "contact3": {
+          "href": "http://www.otelo.si/",
+          "text": "http://www.otelo.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/BodifitOtelo",
+          "text": "https://www.facebook.com/BodifitOtelo"
+        }
+      },
+      {
+        "name": "Dobra vila",
+        "address1": "Naslov: Šumnik 9",
+        "address2": "Poštna številka: 1272",
+        "address3": "Mesto: Polšnik",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 89 73 907, 01 89 73 906",
+        "contact2": {
+          "href": "mailto:info@dobra-vila.si",
+          "text": "info@dobra-vila.si"
+        },
+        "contact3": {
+          "href": "http://www.dobra-vila.si/kaj-nudi-dobra-vila/wellness/",
+          "text": "http://www.dobra-vila.si/kaj-nudi-dobra-vila/wellness/"
+        },
+        "contact4": {
+          "href": "http://www.dobra-vila.si/kaj-nudi-dobra-vila/wellness/",
+          "text": "http://www.dobra-vila.si/kaj-nudi-dobra-vila/wellness/"
+        }
+      },
+      {
+        "name": "Fitnes center Panter",
+        "photo": "",
+        "address1": "Naslov: Stegne 11",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 5000 100",
+        "contact2": {
+          "href": "mailto:fitnes.panter@t-2.net",
+          "text": "fitnes.panter@t-2.net"
+        },
+        "contact3": {
+          "href": "http://www.panter-klub.si/",
+          "text": "http://www.panter-klub.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/fitnes.center.panter",
+          "text": "https://www.facebook.com/fitnes.center.panter"
+        }
+      },
+      {
+        "name": "Hotel Dom Utrip Prvine",
+        "address1": "Naslov: Dobrljevo 22",
+        "address2": "Poštna številka: 1413",
+        "address3": "Mesto: Čemšenik",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 567 72 46, 041 637 503",
+        "contact2": {
+          "href": "mailto:hotel.utrip@utrip-trzin.si ",
+          "text": "hotel.utrip@utrip-trzin.si"
+        },
+        "contact3": {
+          "href": "http://www.hotel-utrip.si/sl/",
+          "text": "http://www.hotel-utrip.si/sl/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/HOTEL-DOM-UTRIP-PRVINE/102659126437439",
+          "text": "http://www.facebook.com/pages/HOTEL-DOM-UTRIP-PRVINE/102659126437439"
+        }
+      },
+      {
+        "name": "Medico",
+        "address1": "Naslov: Levčeva 11",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 423 45 70, 01 256 15 36",
+        "contact2": {
+          "href": "mailto:medico.center@siol.net",
+          "text": "medico.center@siol.net"
+        },
+        "contact3": {
+          "href": "http://medico.si/",
+          "text": "http://medico.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Medico-dr-Sento%C4%8Dnik/136234689770153",
+          "text": "http://www.facebook.com/pages/Medico-dr-Sento%C4%8Dnik/136234689770153"
+        }
+      },
+      {
+        "name": "Metropolis SPA",
+        "address1": "Naslov: Steletova cesta 25",
+        "address2": "Poštna številka: 1241",
+        "address3": "Mesto: Kamnik",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 83 111 44, 0590 37 500",
+        "contact2": {
+          "href": "mailto:info@metropolis.si",
+          "text": "info@metropolis.si"
+        },
+        "contact3": {
+          "href": "http://www.metropolis.si/",
+          "text": "http://www.metropolis.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/metropolisSPA",
+          "text": "http://www.facebook.com/metropolisSPA"
+        }
+      },
+      {
+        "name": "Naravni zdravilni gaj",
+        "address1": "Naslov: Tunjice 12",
+        "address2": "Poštna številka: 1241",
+        "address3": "Mesto: Kamnik",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 831 70 85, 041 635 078",
+        "contact2": {
+          "href": "mailto:zdravilnigaj@gmail.com",
+          "text": "zdravilnigaj@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.zdravilnigaj.si/",
+          "text": "http://www.zdravilnigaj.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Naravni-zdravilni-gaj-Tunjice-pri-Kamniku/267110625470",
+          "text": "http://www.facebook.com/pages/Naravni-zdravilni-gaj-Tunjice-pri-Kamniku/267110625470"
+        }
+      },
+      {
+        "name": "OPTIMUM fitnes center",
+        "address1": "Naslov: Industrijska cesta 1g",
+        "address2": "Poštna številka: 1290",
+        "address3": "Mesto: Grosuplje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 15 15 00",
+        "contact2": {
+          "href": "mailto:info@fc-optimum.si",
+          "text": "info@fc-optimum.si"
+        },
+        "contact3": {
+          "href": "http://www.fc-optimum.si/index.php",
+          "text": "http://www.fc-optimum.si/index.php"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/Fitnes-Center-Optimum/346373735444073",
+          "text": "https://www.facebook.com/pages/Fitnes-Center-Optimum/346373735444073"
+        }
+      },
+      {
+        "name": "Savna klub Breza",
+        "address1": "Naslov: Lepodvorska ulica 13",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 231 97 13",
+        "contact2": {
+          "href": "mailto: info@savnabreza.com",
+          "text": "info@savnabreza.com"
+        },
+        "contact3": {
+          "href": "http://www.savnabreza.com/sl/",
+          "text": "http://www.savnabreza.com/sl/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Savna-klub-Breza/233257696762656",
+          "text": "http://www.facebook.com/pages/Savna-klub-Breza/233257696762656"
+        }
+      },
+      {
+        "name": "Sense Wellness club",
+        "address1": "Naslov: Dunajska cesta 154",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 58 82 600, 030 388 388",
+        "contact2": {
+          "href": "mailto:sense@sense-club.com",
+          "text": "sense@sense-club.com"
+        },
+        "contact3": {
+          "href": "http://www.sense-club.com/",
+          "text": "http://www.sense-club.com/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/sensewellness",
+          "text": "http://www.facebook.com/sensewellness"
+        }
+      },
+      {
+        "name": "SOKOLvič wellness center",
+        "address1": "Naslov: Koprska 72",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 200 27 55",
+        "contact2": {
+          "href": "mailto:sokolvic@sokolgroup.com",
+          "text": "sokolvic@sokolgroup.com"
+        },
+        "contact3": {
+          "href": "http://www.sokolgroup.com/sokolfit/sokolvic.php?stran=tajska_masaza",
+          "text": "http://www.sokolgroup.com/sokolfit/sokolvic.php?stran=tajska_masaza"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/SOKOLfit/147538485294422",
+          "text": "http://www.facebook.com/pages/SOKOLfit/147538485294422"
+        }
+      },
+      {
+        "name": "Sportclub wellness center",
+        "photo": "",
+        "address1": "Naslov: Gortanova 22",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 520 77 77",
+        "contact2": {
+          "href": "mailto: info@sportclub.si",
+          "text": "info@sportclub.si"
+        },
+        "contact3": {
+          "href": "http://www.sportclub.si/wellness.html",
+          "text": "http://www.sportclub.si/wellness.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/sportclub.fitnes",
+          "text": "http://www.facebook.com/sportclub.fitnes"
+        }
+      },
+      {
+        "name": "Studio Lepa Vida",
+        "address1": "Naslov: Šmartinska 152",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 585 21 22",
+        "contact2": {
+          "href": "mailto:info@lavida.si",
+          "text": "info@lavida.si"
+        },
+        "contact3": {
+          "href": "http://www.lavida.si/",
+          "text": "http://www.lavida.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Studio-Lepa-Vida-doo/237353312964187",
+          "text": "http://www.facebook.com/pages/Studio-Lepa-Vida-doo/237353312964187"
+        }
+      },
+      {
+        "name": "Sunny Studio",
+        "address1": "Naslov: Regentova cesta 37",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "contact1": "Kontaktna številka: 01 513 44 44",
+        "contact2": {
+          "href": "mailto:sunny@siol.net",
+          "text": "sunny@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.sunny.si/",
+          "text": "http://www.sunny.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/SunnyStudio",
+          "text": "http://www.facebook.com/SunnyStudio"
+        }
+      },
+      {
+        "name": "Terme Snovik",
+        "address1": "Naslov: Snovik 7",
+        "address2": "Poštna številka: 1219",
+        "address3": "Mesto: Laze v Tuhinju",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 080 81 23, 01 83 44 100",
+        "contact2": {
+          "href": "mailto:info@terme-snovik.si",
+          "text": "info@terme-snovik.si"
+        },
+        "contact3": {
+          "href": "http://terme-snovik.si/wellness/wellness.php",
+          "text": "http://terme-snovik.si/wellness/wellness.php"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Terme-Snovik/59823555572",
+          "text": "http://www.facebook.com/pages/Terme-Snovik/59823555572"
+        }
+      },
+      {
+        "name": "THAI, tajske masaže in savne",
+        "address1": "Naslov: Šišenska cesta 131",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 514 15 60",
+        "contact2": {
+          "href": "mailto:thai@siol.net",
+          "text": "thai@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.thai.si/",
+          "text": "http://www.thai.si/"
+        },
+        "contact4": {
+          "href": "http://www.thai.si/",
+          "text": "http://www.thai.si/"
+        }
+      },
+      {
+        "name": "Vodno mesto Atlantis",
+        "address1": "Naslov: Šmartinska 152",
+        "address2": "Poštna številka: 1000",
+        "address3": "Mesto: Ljubljana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 585 21 00",
+        "contact2": {
+          "href": "mailto:vodnomesto@btc.si",
+          "text": "vodnomesto@btc.si"
+        },
+        "contact3": {
+          "href": "http://wellness.atlantis-vodnomesto.si/",
+          "text": "http://wellness.atlantis-vodnomesto.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/VodnoMestoAtlantis",
+          "text": "http://www.facebook.com/VodnoMestoAtlantis"
+        }
+      },
+      {
+        "name": "Wellness center Moj FIt",
+        "address1": "Naslov: Brnčičeva 13",
+        "address2": "Poštna številka: 1231",
+        "address3": "Mesto: Ljubljana Črnuče",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 56 09 184, 051 372 606",
+        "contact2": {
+          "href": "mailto:mojfit@mfit.si",
+          "text": "mojfit@mfit.si"
+        },
+        "contact3": {
+          "href": "http://mojfit.com/",
+          "text": "http://mojfit.com/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/MOJ-FIT/246131911325",
+          "text": "http://www.facebook.com/pages/MOJ-FIT/246131911325"
+        }
+      },
+      {
+        "name": "Wellness šport center Harmonija",
+        "address1": "Naslov: Linhartova cesta 33",
+        "address2": "Poštna številka: 1234",
+        "address3": "Mesto: Mengeš",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 01 729 66 50, 040  888 - 021",
+        "contact2": {
+          "href": "mailto:recepcija@harmonija.eu",
+          "text": "recepcija@harmonija.eu"
+        },
+        "contact3": {
+          "href": "http://www.harmonija.eu/",
+          "text": "http://www.harmonija.eu/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Harmonija/133529887118",
+          "text": "http://www.facebook.com/pages/Harmonija/133529887118"
+        }
+      },
+      {
+        "name": "Energijski wellness center",
+        "address1": "Naslov: Pot k mlinu 57",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 614 09 50",
+        "contact2": {
+          "href": "mailto:info@spiritoso.si",
+          "text": "info@spiritoso.si"
+        },
+        "contact3": {
+          "href": "http://www.spiritoso.si",
+          "text": "http://www.spiritoso.si"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/spiritosowellness",
+          "text": "http://www.facebook.com/spiritosowellness"
+        }
+      },
+      {
+        "name": "Fitness in wellness Betnava",
+        "address1": "Naslov: Ulica Eve Lovše 15",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 344 140",
+        "contact2": {
+          "href": "mailto:info@betnava.si",
+          "text": "info@betnava.si"
+        },
+        "contact3": {
+          "href": "http://fitnes-betnava.si/wellness-center-betnava",
+          "text": "http://fitnes-betnava.si/wellness-center-betnava"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/FitnesBetnava",
+          "text": "https://www.facebook.com/FitnesBetnava"
+        }
+      },
+      {
+        "name": "Gorski Wellness center, Hiša dobrega počutja",
+        "address1": "Naslov: Hočko Pohorje 131",
+        "address2": "Poštna številka: 2208",
+        "address3": "Mesto: Hoče",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 603 55 01/06",
+        "contact2": {
+          "href": "mailto:info@spiritoso.si ",
+          "text": "info@spiritoso.si"
+        },
+        "contact3": {
+          "href": "http://fitness-info.si/www.spiritoso.si",
+          "text": "www.spiritoso.si"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/spiritosowellness",
+          "text": "http://www.facebook.com/spiritosowellness"
+        }
+      },
+      {
+        "name": "Hotel in wellness Draš",
+        "address1": "Naslov: Pohorska ulica 57",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 614 14 51, 041 502 836",
+        "contact2": {
+          "href": "mailto:info@dras.si",
+          "text": "info@dras.si"
+        },
+        "contact3": {
+          "href": "http://dras.si/sl/wellness.html",
+          "text": "http://dras.si/sl/wellness.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Center-Dra%C5%A1-Hotel-Wellness-Sport/173912486985",
+          "text": "http://www.facebook.com/pages/Center-Dra%C5%A1-Hotel-Wellness-Sport/173912486985"
+        }
+      },
+      {
+        "name": "Hotel Korošica",
+        "address1": "Naslov: Otiški vrh 25 D",
+        "address2": "Poštna številka: 2373",
+        "address3": "Mesto: Šentjanž pri Dravogradu",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 87 86 912",
+        "contact2": {
+          "href": "mailto:info@korosica.si",
+          "text": "info@korosica.si"
+        },
+        "contact3": {
+          "href": "http://www.korosica.si/index.php?stran=wellness&sklop=main&lang=si",
+          "text": "http://www.korosica.si/index.php?stran=wellness&sklop=main&lang=si"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Hotel-Koro%C5%A1ica/197602400254650",
+          "text": "http://www.facebook.com/pages/Hotel-Koro%C5%A1ica/197602400254650"
+        }
+      },
+      {
+        "name": "Hotel PIRAMIDA ****",
+        "address1": "Naslov: Ulica heroja Šlandra 10",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 234 43 33",
+        "contact2": {
+          "href": "mailto:piramida@termemb.si",
+          "text": "piramida@termemb.si"
+        },
+        "contact3": {
+          "href": "http://www.hotel-piramida.si/wellness/masaze",
+          "text": "http://www.hotel-piramida.si/wellness/masaze"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/HotelPiramidaMB",
+          "text": "https://www.facebook.com/HotelPiramidaMB"
+        }
+      },
+      {
+        "name": "Lotos Spa",
+        "address1": "Naslov: Železnikova ulica 4",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 172 560, 031 393 986",
+        "contact2": {
+          "href": "mailto:info@lotos-spa.si ",
+          "text": "info@lotos-spa.si"
+        },
+        "contact3": {
+          "href": "http://www.lotos-spa.si/index.php",
+          "text": "http://www.lotos-spa.si/index.php"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Lotos-spa/104165659706277",
+          "text": "http://www.facebook.com/pages/Lotos-spa/104165659706277"
+        }
+      },
+      {
+        "name": "MTC fontana",
+        "address1": "Naslov: Koroška cesta 172",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 23 44 100",
+        "contact2": {
+          "href": "mailto:fontana@bodifit.net",
+          "text": "fontana@bodifit.net"
+        },
+        "contact3": {
+          "href": "http://www.termemb.si/si/medicina/mtc-fontana---terme",
+          "text": "http://www.termemb.si/si/medicina/mtc-fontana---terme"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/groups/106351412737510/?ref=ts",
+          "text": "http://www.facebook.com/groups/106351412737510/?ref=ts"
+        }
+      },
+      {
+        "name": "Oaza Miru",
+        "address1": "Naslov: Skrita ulica 5",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 480 34 82, 040 122 299",
+        "contact2": {
+          "href": "mailto:oazamiru@gmail.com, info",
+          "text": "oazamiru@gmail.com, info"
+        },
+        "contact3": {
+          "href": "http://www.oazamiru.si/",
+          "text": "http://www.oazamiru.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/OAZA-MIRU/156181157733503",
+          "text": "http://www.facebook.com/pages/OAZA-MIRU/156181157733503"
+        }
+      },
+      {
+        "name": "Posestvo Herk",
+        "address1": "Naslov: Sveti Jernej nad Muto 36",
+        "address2": "Poštna številka: 2366",
+        "address3": "Mesto: Muta",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 876 30 91",
+        "contact2": {
+          "href": "mailto:info@herk.si ",
+          "text": "info@herk.si"
+        },
+        "contact3": {
+          "href": "http://www.herk.si/PosestvoHERK/Wellness.aspx",
+          "text": "http://www.herk.si/PosestvoHERK/Wellness.aspx"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/posestvo.herk",
+          "text": "http://www.facebook.com/posestvo.herk"
+        }
+      },
+      {
+        "name": "Športni park Ruše",
+        "address1": "Naslov: Šolska ulica 17",
+        "address2": "Poštna številka: 2342",
+        "address3": "Mesto: Ruše",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 673 05 02, 02 673 05 03",
+        "contact2": {
+          "href": "mailto:info@sportniparkruse.si",
+          "text": "info@sportniparkruse.si"
+        },
+        "contact3": {
+          "href": "http://www.sportniparkruse.si/index.php/Sportni-park/savne.html",
+          "text": "http://www.sportniparkruse.si/index.php/Sportni-park/savne.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/sportniparkruse.si",
+          "text": "http://www.facebook.com/sportniparkruse.si"
+        }
+      },
+      {
+        "name": "Valens Augusta Wellness",
+        "address1": "Naslov: Pot v Toplice 9",
+        "address2": "Poštna številka: 2251",
+        "address3": "Mesto: Ptuj",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 74 94 500",
+        "contact2": {
+          "href": "mailto:rezervacije@terme-ptuj.si",
+          "text": "rezervacije@terme-ptuj.si"
+        },
+        "contact3": {
+          "href": "http://www.sava-hotels-resorts.com/si/destinacije/ptuj/programi/wellness/",
+          "text": "http://www.sava-hotels-resorts.com/si/destinacije/ptuj/programi/wellness/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/sava.hotels.resorts",
+          "text": "http://www.facebook.com/sava.hotels.resorts"
+        }
+      },
+      {
+        "name": "Vital Spa",
+        "address1": "Naslov: Dupleška cesta 49",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 47 12 322",
+        "contact2": {
+          "href": "mailto:gostilna.lesnik@siol.net ",
+          "text": "gostilna.lesnik@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.vitalspa.si/uvodna-stran.html",
+          "text": "http://www.vitalspa.si/uvodna-stran.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/Pri.Lesniku",
+          "text": "http://www.facebook.com/Pri.Lesniku"
+        }
+      },
+      {
+        "name": "Wellness - Spa center Habakuk",
+        "address1": "Naslov: Pohorska ulica 59",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 3008 382",
+        "contact2": {
+          "href": "mailto:wellness@termemb.si habakuk",
+          "text": "wellness@termemb.si habakuk"
+        },
+        "contact3": {
+          "href": "http://www.termemb.si/si/wellness/wellness-center-habakuk",
+          "text": "http://www.termemb.si/si/wellness/wellness-center-habakuk"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/Hotel.Habakuk",
+          "text": "http://www.facebook.com/Hotel.Habakuk"
+        }
+      },
+      {
+        "name": "Wellness center Bellevue",
+        "address1": "Naslov: Na Slemenu 35",
+        "address2": "Poštna številka: 2208",
+        "address3": "Mesto: Pohorje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 607 51 00",
+        "contact2": {
+          "href": "mailto:bellevue@termemb.si",
+          "text": "bellevue@termemb.si"
+        },
+        "contact3": {
+          "href": "http://www.termemb.si/si/wellness/wellness-center-bellevue",
+          "text": "http://www.termemb.si/si/wellness/wellness-center-bellevue"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/HotelBellevuePohorje?filter=3",
+          "text": "http://www.facebook.com/HotelBellevuePohorje?filter=3"
+        }
+      },
+      {
+        "name": "Wellness center Lukov dom",
+        "address1": "Naslov: Razborca 65",
+        "address2": "Poštna številka: 2383",
+        "address3": "Mesto: Šmartno pri Slovenj Gradcu",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 88 39 870, 02 88 39 850, 051 310 333",
+        "contact2": {
+          "href": "mailto:lukov.dom@kope.si",
+          "text": "lukov.dom@kope.si"
+        },
+        "contact3": {
+          "href": "http://www.vabo.si/2/Turizem/LetniTurizem/Wellness.aspx",
+          "text": "http://www.vabo.si/2/Turizem/LetniTurizem/Wellness.aspx"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/profile.php?id=100000555390297",
+          "text": "http://www.facebook.com/profile.php?id=100000555390297"
+        }
+      },
+      {
+        "name": "Wellness center Sitar",
+        "address1": "Naslov: Ribnica na Pohorju 24",
+        "address2": "Poštna številka: 2364",
+        "address3": "Mesto: Ribnica na Pohorju",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 8765 300, 031 782 908",
+        "contact2": {
+          "href": "mailto:ribnisko.pohorje@rikom.si",
+          "text": "ribnisko.pohorje@rikom.si"
+        },
+        "contact3": {
+          "href": "http://www.pohorje.org/kope-ribnisko-pohorje-pozimi/wellness-sitar-ribnica-na-pohorju-svet-savn",
+          "text": "http://www.pohorje.org/kope-ribnisko-pohorje-pozimi/wellness-sitar-ribnica-na-pohorju-svet-savn"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/ribnisko.pohorje",
+          "text": "http://www.facebook.com/ribnisko.pohorje"
+        }
+      },
+      {
+        "name": "Wellness Glazer",
+        "address1": "Naslov: Spodnja Vižinga 15",
+        "address2": "Poštna številka: 2360",
+        "address3": "Mesto: Radlje ob Dravi",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 88 73 194, 041 690 767",
+        "contact2": {
+          "href": "mailto:gglazer@siol.net ",
+          "text": "gglazer@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.wellness-glazer.si/",
+          "text": "http://www.wellness-glazer.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Wellness-Glazer/168023059906677",
+          "text": "http://www.facebook.com/pages/Wellness-Glazer/168023059906677"
+        }
+      },
+      {
+        "name": "Wellness salon »Venera«",
+        "address1": "Naslov: Prešernova 6",
+        "address2": "Poštna številka: 2250",
+        "address3": "Mesto: Ptuj",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 78 77 455, 051 603 069",
+        "contact2": {
+          "href": "mailto:info@hotel-mitra.si",
+          "text": "info@hotel-mitra.si"
+        },
+        "contact3": {
+          "href": "http://www.hotel-mitra.si/Wellness",
+          "text": "http://www.hotel-mitra.si/Wellness"
+        },
+        "contact4": {
+          "href": "http://www.hotel-mitra.si/Wellness",
+          "text": "http://www.hotel-mitra.si/Wellness"
+        }
+      },
+      {
+        "name": "Wellness Saloon",
+        "address1": "Naslov: Radvanjska cesta 49a",
+        "address2": "Poštna številka: 2000",
+        "address3": "Mesto: Maribor",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 729 821",
+        "contact2": {
+          "href": "mailto:info@softub.si ",
+          "text": "info@softub.si"
+        },
+        "contact3": {
+          "href": "http://www.wellness-salon.si/",
+          "text": "http://www.wellness-salon.si/"
+        },
+        "contact4": {
+          "href": "http://www.wellness-salon.si/",
+          "text": "http://www.wellness-salon.si/"
+        }
+      },
+      {
+        "name": "Apartmaji in wellness center Korošec",
+        "address1": "Naslov: Ljubija 5",
+        "address2": "Poštna številka: 3330",
+        "address3": "Mesto: Mozirje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 583 11 22, 031 619 634",
+        "contact2": {
+          "href": "mailto:korosec.rebercnik@siol.net",
+          "text": "korosec.rebercnik@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.turizemkorosec.com/",
+          "text": "http://www.turizemkorosec.com/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Apartmaji-in-Wellness-Center-Koro%C5%A1ec/135649928581",
+          "text": "http://www.facebook.com/pages/Apartmaji-in-Wellness-Center-Koro%C5%A1ec/135649928581"
+        }
+      },
+      {
+        "name": "Apartmaji pod macesnovo streho",
+        "address1": "Naslov: Robanov kot 5",
+        "address2": "Poštna številka: 3335",
+        "address3": "Mesto: Solčava",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 838 60 00, 041 287 742, 041 353 023",
+        "contact2": {
+          "href": "mailto:info@pod-macesnovo-streho.si",
+          "text": "info@pod-macesnovo-streho.si"
+        },
+        "contact3": {
+          "href": "http://www.apartma-logarska.si/paketi/mini-wellness/opis",
+          "text": "http://www.apartma-logarska.si/paketi/mini-wellness/opis"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/PodMacesnovoStreho",
+          "text": "http://www.facebook.com/PodMacesnovoStreho"
+        }
+      },
+      {
+        "name": "Fitness & Wellness center Olimpus",
+        "address1": "Naslov: Celjska cesta 8",
+        "address2": "Poštna številka: 3310",
+        "address3": "Mesto: Žalec",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 620 98 04",
+        "contact2": {
+          "href": "mailto:info@olimpus.si",
+          "text": "info@olimpus.si"
+        },
+        "contact3": {
+          "href": "http://center.olimpus.si/?page_id=160",
+          "text": "http://center.olimpus.si/?page_id=160"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/OLIMPUS-fitnes-wellness/114285282007986",
+          "text": "http://www.facebook.com/pages/OLIMPUS-fitnes-wellness/114285282007986"
+        }
+      },
+      {
+        "name": "GALACTICA Športni in Wellness center",
+        "address1": "Naslov: Koroška cesta 55b",
+        "address2": "Poštna številka: 3320",
+        "address3": "Mesto: Velenje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 078 478",
+        "contact2": {
+          "href": "mailto:info@galactica.si",
+          "text": "info@galactica.si"
+        },
+        "contact3": {
+          "href": "http:/www.galactica.si",
+          "text": "http:/www.galactica.si"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/wellnessgalactica",
+          "text": "https://www.facebook.com/wellnessgalactica"
+        }
+      },
+      {
+        "name": "Hiša sonca",
+        "address1": "Naslov: Luče 130",
+        "address2": "Poštna številka: 3334",
+        "address3": "Mesto: Luče",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 070 849 991, 03 839 0840",
+        "contact2": {
+          "href": "mailto:info@hisa-sonca.com",
+          "text": "info@hisa-sonca.com"
+        },
+        "contact3": {
+          "href": "http://www.hisa-sonca.com/",
+          "text": "http://www.hisa-sonca.com/"
+        },
+        "contact4": {
+          "href": "http://www.hisa-sonca.com/",
+          "text": "http://www.hisa-sonca.com/"
+        }
+      },
+      {
+        "name": "Hotel Celjska koča***",
+        "address1": "Naslov: Pečovnik 31",
+        "address2": "Poštna številka: 3000",
+        "address3": "Mesto: Celje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 070 400",
+        "contact2": {
+          "href": "mailto:info@celjska-koca.si",
+          "text": "info@celjska-koca.si"
+        },
+        "contact3": {
+          "href": "http://www.celjska-koca.si/wellness/",
+          "text": "http://www.celjska-koca.si/wellness/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Celjska-ko%C4%8Da/185644798154546",
+          "text": "http://www.facebook.com/pages/Celjska-ko%C4%8Da/185644798154546"
+        }
+      },
+      {
+        "name": "Hotel Golte",
+        "address1": "Naslov: Radegunda 19c",
+        "address2": "Poštna številka: 3330",
+        "address3": "Mesto: Mozirje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 839 12 00",
+        "contact2": {
+          "href": "mailto:info@golte.si",
+          "text": "info@golte.si"
+        },
+        "contact3": {
+          "href": "http://www.golte.si/cms/si/index.php/hotel-golte/wellness",
+          "text": "http://www.golte.si/cms/si/index.php/hotel-golte/wellness"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Golte-Slovenija/213808988643332",
+          "text": "http://www.facebook.com/pages/Golte-Slovenija/213808988643332"
+        }
+      },
+      {
+        "name": "Hotel Plesnik****",
+        "address1": "Naslov: Logarska dolina 10",
+        "address2": "Poštna številka: 3335",
+        "address3": "Mesto: Solčava",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 839 23 00",
+        "contact2": {
+          "href": "mailto:info@plesnik.si",
+          "text": "info@plesnik.si"
+        },
+        "contact3": {
+          "href": "http://www.plesnik.si/wellness",
+          "text": "http://www.plesnik.si/wellness"
+        },
+        "contact4": {
+          "href": "http://www.plesnik.si/wellness",
+          "text": "http://www.plesnik.si/wellness"
+        }
+      },
+      {
+        "name": "Lotus Spa & Beauty center",
+        "address1": "Naslov: Zdraviliški trg 6",
+        "address2": "Poštna številka: 3250",
+        "address3": "Mesto: Rogaška Slatina",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 811 40 00",
+        "contact2": {
+          "href": "mailto:info@hotel-sava-rogaska.si",
+          "text": "info@hotel-sava-rogaska.si"
+        },
+        "contact3": {
+          "href": "http://www.rogaska.si/wellness",
+          "text": "http://www.rogaska.si/wellness"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/gh.sava",
+          "text": "http://www.facebook.com/gh.sava"
+        }
+      },
+      {
+        "name": "Medicinsko - estetski & wellness center Lucija",
+        "address1": "Naslov: Slomškova ulica 6",
+        "address2": "Poštna številka: 3215",
+        "address3": "Mesto: Loče",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 343 006, 03 759 06 08",
+        "contact2": {
+          "href": "mailto:info@kracun.si",
+          "text": "info@kracun.si"
+        },
+        "contact3": {
+          "href": "http://www.wellness-lucija.si/index.php/storitve/wellness_program",
+          "text": "http://www.wellness-lucija.si/index.php/storitve/wellness_program"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/WellnessLucija",
+          "text": "http://www.facebook.com/WellnessLucija"
+        }
+      },
+      {
+        "name": "NN Dimenzije Wellness Club",
+        "address1": "Naslov: Opekarniška 15b",
+        "address2": "Poštna številka: 3000",
+        "address3": "Mesto: Celje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 612 100, 03 490 40 45",
+        "contact2": {
+          "href": "mailto:info@nndimenzije.si",
+          "text": "info@nndimenzije.si"
+        },
+        "contact3": {
+          "href": "http://www.nndimenzije.si/",
+          "text": "http://www.nndimenzije.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/nndimenzije",
+          "text": "https://www.facebook.com/nndimenzije"
+        }
+      },
+      {
+        "name": "Penzion Na Razpotju",
+        "address1": "Naslov: Logarska dolina 14",
+        "address2": "Poštna številka: 3335",
+        "address3": "Mesto: Solčava",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 839 16 50",
+        "contact2": {
+          "href": "mailto:razpotje@siol.net",
+          "text": "razpotje@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.logarska-narazpotju.si/web/index.php?lang=sl",
+          "text": "http://www.logarska-narazpotju.si/web/index.php?lang=sl"
+        },
+        "contact4": {
+          "href": "http://www.logarska-narazpotju.si/web/index.php?lang=sl",
+          "text": "http://www.logarska-narazpotju.si/web/index.php?lang=sl"
+        }
+      },
+      {
+        "name": "Spa Armonia",
+        "address1": "Naslov: Zdraviliška cesta 24",
+        "address2": "Poštna številka: 3254",
+        "address3": "Mesto: Podčetrtek",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 829 60 11",
+        "contact2": {
+          "href": "mailto:spa.armonia@terme-olimia.com",
+          "text": "spa.armonia@terme-olimia.com"
+        },
+        "contact3": {
+          "href": "http://www.terme-olimia.com/si/wellness/armonia/",
+          "text": "http://www.terme-olimia.com/si/wellness/armonia/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/TermeOlimiaSlovenia",
+          "text": "http://www.facebook.com/TermeOlimiaSlovenia"
+        }
+      },
+      {
+        "name": "Terme Dobrna",
+        "address1": "Naslov: Dobrna 50",
+        "address2": "Poštna številka: 3204",
+        "address3": "Mesto: Dobrna",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 78 08 110, 031 658 865",
+        "contact2": {
+          "href": "mailto:info@terme-dobrna.si",
+          "text": "info@terme-dobrna.si"
+        },
+        "contact3": {
+          "href": "http://www.terme-dobrna.si/wellness/",
+          "text": "http://www.terme-dobrna.si/wellness/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/TermeDobrna",
+          "text": "https://www.facebook.com/TermeDobrna"
+        }
+      },
+      {
+        "name": "Terme Olimia",
+        "address1": "Naslov: Zdraviliška cesta 24",
+        "address2": "Poštna številka: 3254",
+        "address3": "Mesto: Podčetrtek",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 829 78 02",
+        "contact2": {
+          "href": "mailto:info@terme-olimia.com",
+          "text": "info@terme-olimia.com"
+        },
+        "contact3": {
+          "href": "http://www.terme-olimia.com/sl/center-zdravja-olimia-238",
+          "text": "http://www.terme-olimia.com/sl/center-zdravja-olimia-238"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/TermeOlimia",
+          "text": "https://www.facebook.com/TermeOlimia"
+        }
+      },
+      {
+        "name": "Terme Zreče",
+        "address1": "Naslov: Cesta na Roglo 15",
+        "address2": "Poštna številka: 3214",
+        "address3": "Mesto: Zreče",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 75 76 268",
+        "contact2": {
+          "href": "mailto:unitur@unitur.eu",
+          "text": "unitur@unitur.eu"
+        },
+        "contact3": {
+          "href": "http://www.terme-zrece.eu/si/poletje/wellness/novo-wellness-spa-center-idila/",
+          "text": "http://www.terme-zrece.eu/si/poletje/wellness/novo-wellness-spa-center-idila/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/TermeZrece",
+          "text": "http://www.facebook.com/TermeZrece"
+        }
+      },
+      {
+        "name": "Vila Aina",
+        "address1": "Naslov: Jagoče 3d",
+        "address2": "Poštna številka: 3270",
+        "address3": "Mesto: Laško",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 030 642 765",
+        "contact2": {
+          "href": "mailto:info@vila-aina.com",
+          "text": "info@vila-aina.com"
+        },
+        "contact3": {
+          "href": "http://www.vila-aina.com/wellness.php",
+          "text": "http://www.vila-aina.com/wellness.php"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/VilaAina",
+          "text": "http://www.facebook.com/VilaAina"
+        }
+      },
+      {
+        "name": "Wellness center \"Patricia\"",
+        "address1": "Naslov: Celjska cesta 8",
+        "address2": "Poštna številka: 3250",
+        "address3": "Mesto: Rogaška Slatina",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 58 16 524",
+        "contact2": {
+          "href": "mailto:info@wellness-center.si",
+          "text": "info@wellness-center.si"
+        },
+        "contact3": {
+          "href": "http://www.wellness-center.si/",
+          "text": "http://www.wellness-center.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/Wellness.Center.Patricia",
+          "text": "http://www.facebook.com/Wellness.Center.Patricia"
+        }
+      },
+      {
+        "name": "Wellness center Amalija",
+        "address1": "Naslov: Toplice 10",
+        "address2": "Poštna številka: 3272",
+        "address3": "Mesto: Rimske Toplice",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 574 20 00",
+        "contact2": {
+          "href": "mailto:info@rimske-terme.si",
+          "text": "info@rimske-terme.si"
+        },
+        "contact3": {
+          "href": "http://www.rimske-terme.si/default.asp?mID=sl&pID=sprostitev",
+          "text": "http://www.rimske-terme.si/default.asp?mID=sl&pID=sprostitev"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/Rimske.terme",
+          "text": "http://www.facebook.com/Rimske.terme"
+        }
+      },
+      {
+        "name": "Wellness center Aspara",
+        "address1": "Naslov: Cesta Leona Dobrotinška 22 B",
+        "address2": "Poštna številka: 3230",
+        "address3": "Mesto: Šentjur",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 494 444, 0590 876 00",
+        "contact2": {
+          "href": "mailto:info@wellness-aspara.com ",
+          "text": "info@wellness-aspara.com"
+        },
+        "contact3": {
+          "href": "http://www.wellness-aspara.com/wellness/",
+          "text": "http://www.wellness-aspara.com/wellness/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/wellness.aspara",
+          "text": "http://www.facebook.com/wellness.aspara"
+        }
+      },
+      {
+        "name": "Wellness center Grand hotel Donat",
+        "address1": "Naslov: Zdraviliški trg 10",
+        "address2": "Poštna številka: 3250",
+        "address3": "Mesto: Rogaška Slatina",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 811 37 19",
+        "contact2": {
+          "href": "mailto:wellness@ghdonat.com",
+          "text": "wellness@ghdonat.com"
+        },
+        "contact3": {
+          "href": "http://www.ghdonat.com/wellness-ponudba/",
+          "text": "http://www.ghdonat.com/wellness-ponudba/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Roga%C5%A1ka-Slatina-Grand-hotel-Donat-Superior/133629499988440",
+          "text": "http://www.facebook.com/pages/Roga%C5%A1ka-Slatina-Grand-hotel-Donat-Superior/133629499988440"
+        }
+      },
+      {
+        "name": "Wellness center Termalija",
+        "address1": "Naslov: Zdraviliška cesta 24",
+        "address2": "Poštna številka: 3254",
+        "address3": "Mesto: Podčetrtek",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 829 78 22",
+        "contact2": {
+          "href": "mailto:spa.beauty@terme-olimia.com",
+          "text": "spa.beauty@terme-olimia.com"
+        },
+        "contact3": {
+          "href": "http://www.terme-olimia.com/si/wellness/termalia/",
+          "text": "http://www.terme-olimia.com/si/wellness/termalia/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/TermeOlimiaSlovenia",
+          "text": "http://www.facebook.com/TermeOlimiaSlovenia"
+        }
+      },
+      {
+        "name": "Wellness Center Zala",
+        "address1": "Naslov: Topolšica 77",
+        "address2": "Poštna številka: 3326",
+        "address3": "Mesto: Topolšica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 896 31 70",
+        "contact2": {
+          "href": "mailto:wellness.zala@t-topolsica.si",
+          "text": "wellness.zala@t-topolsica.si"
+        },
+        "contact3": {
+          "href": "http://www.terme-topolsica.si/wellness/",
+          "text": "http://www.terme-topolsica.si/wellness/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/WellnessCenterZala",
+          "text": "https://www.facebook.com/WellnessCenterZala"
+        }
+      },
+      {
+        "name": "Wellness Orhidelia",
+        "address1": "Naslov: Zdraviliška cesta 24",
+        "address2": "Poštna številka: 3254",
+        "address3": "Mesto: Podčetrtek",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 829 78 05",
+        "contact2": {
+          "href": "mailto:orhidelia@terme-olimia.com",
+          "text": "orhidelia@terme-olimia.com"
+        },
+        "contact3": {
+          "href": "http://www.terme-olimia.com/si/orhidelia/",
+          "text": "http://www.terme-olimia.com/si/orhidelia/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/TermeOlimiaSlovenia",
+          "text": "http://www.facebook.com/TermeOlimiaSlovenia"
+        }
+      },
+      {
+        "name": "Wellness Spa Center",
+        "address1": "Naslov: Zdraviliška cesta 6",
+        "address2": "Poštna številka: 3270",
+        "address3": "Mesto: Laško",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 423 20 00",
+        "contact2": {
+          "href": "mailto:info@thermana.si",
+          "text": "info@thermana.si"
+        },
+        "contact3": {
+          "href": "http://www.thermana.si/wellness/1675",
+          "text": "http://www.thermana.si/wellness/1675"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/thermana.lasko.slovenia",
+          "text": "http://www.facebook.com/thermana.lasko.slovenia"
+        }
+      },
+      {
+        "name": "Wellness Vis Vita",
+        "address1": "Naslov: Zdraviliški trg 12",
+        "address2": "Poštna številka: 3250",
+        "address3": "Mesto: Rogaška Slatina",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 03 811 2470",
+        "contact2": {
+          "href": "mailto:visvita@terme-rogaska.si",
+          "text": "visvita@terme-rogaska.si"
+        },
+        "contact3": {
+          "href": "http://www.terme-rogaska.si/index.php?page=2",
+          "text": "http://www.terme-rogaska.si/index.php?page=2"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/terme.rogaska",
+          "text": "http://www.facebook.com/terme.rogaska"
+        }
+      },
+      {
+        "name": "Alpski wellness Špik",
+        "address1": "Naslov: Jezerci 21",
+        "address2": "Poštna številka: 4282",
+        "address3": "Mesto: Gozd Martuljek",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 587 75 80",
+        "contact2": {
+          "href": "mailto:info@hitholidays-kg.si",
+          "text": "info@hitholidays-kg.si"
+        },
+        "contact3": {
+          "href": "http://www.hitholidays-kg.si/wellness/alpski-wellness-spik",
+          "text": "http://www.hitholidays-kg.si/wellness/alpski-wellness-spik"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/hitholidays",
+          "text": "http://www.facebook.com/hitholidays"
+        }
+      },
+      {
+        "name": "Beli lotos, tajski wellness center",
+        "address1": "Naslov: Poslovna cona A18",
+        "address2": "Poštna številka: 4208",
+        "address3": "Mesto: Šenčur",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 041 790, 040 234 436",
+        "contact2": {
+          "href": "mailto:info@beli-lotos.si",
+          "text": "info@beli-lotos.si"
+        },
+        "contact3": {
+          "href": "http://www.beli-lotos.si/",
+          "text": "http://www.beli-lotos.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/beli.lotos.si",
+          "text": "http://www.facebook.com/beli.lotos.si"
+        }
+      },
+      {
+        "name": "Best Western Premier Hotel Lovec Bled",
+        "address1": "Naslov: Ljubljanska Cesta 6",
+        "address2": "Poštna številka: 4260",
+        "address3": "Mesto: Bled",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 6204 100",
+        "contact2": {
+          "href": "mailto:info.lovec@kompas-lovec.eu",
+          "text": "info.lovec@kompas-lovec.eu"
+        },
+        "contact3": {
+          "href": "http://www.lovechotel.com/index.php?id=25",
+          "text": "http://www.lovechotel.com/index.php?id=25"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Hotel-Lovec-Bled/131867546858273",
+          "text": "http://www.facebook.com/pages/Hotel-Lovec-Bled/131867546858273"
+        }
+      },
+      {
+        "name": "Hotel Marinšek",
+        "address1": "Naslov: Glavna Cesta 2",
+        "address2": "Poštna številka: 4202",
+        "address3": "Mesto: Naklo",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 234 188, 059 234 100",
+        "contact2": {
+          "href": "mailto:wellness@marinsek.net",
+          "text": "wellness@marinsek.net"
+        },
+        "contact3": {
+          "href": "http://www.marinsek.net/si/wellness.htm",
+          "text": "http://www.marinsek.net/si/wellness.htm"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/HOTEL-MARIN%C5%A0EK-NAKLO/288561236702",
+          "text": "http://www.facebook.com/pages/HOTEL-MARIN%C5%A0EK-NAKLO/288561236702"
+        }
+      },
+      {
+        "name": "Penzion Kovač",
+        "address1": "Naslov: Langusova ulica 71",
+        "address2": "Poštna številka: 4240",
+        "address3": "Mesto: Radovljica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 374 740, 04 530 00 00",
+        "contact2": {
+          "href": "mailto:penzion.kovac@telemach.net",
+          "text": "penzion.kovac@telemach.net"
+        },
+        "contact3": {
+          "href": "http://www.penzion-kovac.si/sl/sobe/wellnes/",
+          "text": "http://www.penzion-kovac.si/sl/sobe/wellnes/"
+        },
+        "contact4": {
+          "href": "http://www.penzion-kovac.si/sl/sobe/wellnes/",
+          "text": "http://www.penzion-kovac.si/sl/sobe/wellnes/"
+        }
+      },
+      {
+        "name": "Sprostitveni center Kompas",
+        "address1": "Naslov: Borovška cesta 100",
+        "address2": "Poštna številka: 4280",
+        "address3": "Mesto: Kranjska Gora",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 589 20 86",
+        "contact2": {
+          "href": "mailto:info@hitholidays-kg.si",
+          "text": "info@hitholidays-kg.si"
+        },
+        "contact3": {
+          "href": "http://www.hitholidays-kg.si/Wellness/Sprostitveni-center-Kompas",
+          "text": "http://www.hitholidays-kg.si/Wellness/Sprostitveni-center-Kompas"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/hitholidays",
+          "text": "http://www.facebook.com/hitholidays"
+        }
+      },
+      {
+        "name": "Studio Luisa",
+        "address1": "Naslov: Cesta svobode 12",
+        "address2": "Poštna številka: 4260",
+        "address3": "Mesto: Bled",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 579 13 71",
+        "contact2": {
+          "href": "mailto:studioluisa@hotelibled.com",
+          "text": "studioluisa@hotelibled.com"
+        },
+        "contact3": {
+          "href": "http://www.ghtoplice.com/wellness-luisa-bled.html",
+          "text": "http://www.ghtoplice.com/wellness-luisa-bled.html"
+        },
+        "contact4": {
+          "href": "http://www.ghtoplice.com/wellness-luisa-bled.html",
+          "text": "http://www.ghtoplice.com/wellness-luisa-bled.html"
+        }
+      },
+      {
+        "name": "Thai Bled",
+        "address1": "Naslov: Cesta Svobode 15",
+        "address2": "Poštna številka: 4260",
+        "address3": "Mesto: Bled",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 579 18 19",
+        "contact2": {
+          "href": "mailto:thai@siol.net",
+          "text": "thai@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.thai.si/thai_center_bled.php",
+          "text": "http://www.thai.si/thai_center_bled.php"
+        },
+        "contact4": {
+          "href": "http://www.thai.si/thai_center_bled.php",
+          "text": "http://www.thai.si/thai_center_bled.php"
+        }
+      },
+      {
+        "name": "Vila Triglav",
+        "address1": "Naslov: Goreljek 104",
+        "address2": "Poštna številka: 4247",
+        "address3": "Mesto: Zgornje Gorje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 796 286, 031 561 663",
+        "contact2": {
+          "href": "mailto:vilatriglav@pokljuka.eu",
+          "text": "vilatriglav@pokljuka.eu"
+        },
+        "contact3": {
+          "href": "http://www.pokljuka.eu/?page_id=260",
+          "text": "http://www.pokljuka.eu/?page_id=260"
+        },
+        "contact4": {
+          "href": "http://www.pokljuka.eu/?page_id=260",
+          "text": "http://www.pokljuka.eu/?page_id=260"
+        }
+      },
+      {
+        "name": "Vita center Larix",
+        "address1": "Naslov: Borovška cesta 99",
+        "address2": "Poštna številka: 4280",
+        "address3": "Mesto: Kranjska Gora",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 588 41 00",
+        "contact2": {
+          "href": "mailto:darja.zebaljec@hit-alpinea.si",
+          "text": "darja.zebaljec@hit-alpinea.si"
+        },
+        "contact3": {
+          "href": "http://www.hitholidays-kg.si/wellness/aqua-larix",
+          "text": "http://www.hitholidays-kg.si/wellness/aqua-larix"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/hitholidays",
+          "text": "http://www.facebook.com/hitholidays"
+        }
+      },
+      {
+        "name": "Vodni park Bohinj",
+        "address1": "Naslov: Triglavska cesta 17",
+        "address2": "Poštna številka: 4264",
+        "address3": "Mesto: Bohinjska Bistrica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 08 200 40 80",
+        "contact2": {
+          "href": "mailto:info@vodni-park-bohinj.si",
+          "text": "info@vodni-park-bohinj.si"
+        },
+        "contact3": {
+          "href": "http://www.vodni-park-bohinj.si/vodni_park/wellness/",
+          "text": "http://www.vodni-park-bohinj.si/vodni_park/wellness/"
+        },
+        "contact4": {
+          "href": "http://www.vodni-park-bohinj.si/vodni_park/wellness/",
+          "text": "http://www.vodni-park-bohinj.si/vodni_park/wellness/"
+        }
+      },
+      {
+        "name": "Wellness Essense",
+        "address1": "Naslov: Cankarjeva 20/c",
+        "address2": "Poštna številka: 4260",
+        "address3": "Mesto: Bled",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 57 67 450",
+        "contact2": {
+          "href": "mailto:info@essense.si ",
+          "text": "info@essense.si"
+        },
+        "contact3": {
+          "href": "http://www.essense.si/posebna.asp",
+          "text": "http://www.essense.si/posebna.asp"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/wellness.essense",
+          "text": "http://www.facebook.com/wellness.essense"
+        }
+      },
+      {
+        "name": "Wellness FenikS",
+        "address1": "Naslov: Cankarjeva cesta 2",
+        "address2": "Poštna številka: 4260",
+        "address3": "Mesto: Bled",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 62 05 100",
+        "contact2": {
+          "href": "mailto:squashklubbled@gmail.com",
+          "text": "squashklubbled@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.squashbled.si/index.php?option=com_content&view=article&id=5&Itemid=4",
+          "text": "http://www.squashbled.si/index.php?option=com_content&view=article&id=5&Itemid=4"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/wellness-FenikS-in-SQUASHklubBLED/40260682452",
+          "text": "http://www.facebook.com/pages/wellness-FenikS-in-SQUASHklubBLED/40260682452"
+        }
+      },
+      {
+        "name": "Wellness Prošport",
+        "address1": "Naslov: Jernejeva ulica 12",
+        "address2": "Poštna številka: 4000",
+        "address3": "Mesto: Kranj",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 23 10 240, 031 362 629",
+        "contact2": {
+          "href": "mailto:info@prosport.si",
+          "text": "info@prosport.si"
+        },
+        "contact3": {
+          "href": "http://www.prosport.si/?stran=wellness",
+          "text": "http://www.prosport.si/?stran=wellness"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/prosport.zakon",
+          "text": "http://www.facebook.com/prosport.zakon"
+        }
+      },
+      {
+        "name": "Wellness Studenec",
+        "address1": "Naslov: Ljubljanska cesta 7",
+        "address2": "Poštna številka: 4260",
+        "address3": "Mesto: Bled",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 579 70 00",
+        "contact2": {
+          "href": "mailto:sales@hotel-krim.si",
+          "text": "sales@hotel-krim.si"
+        },
+        "contact3": {
+          "href": "http://www.hotel-krim.si/hotel-krim-bled-wellness.html",
+          "text": "http://www.hotel-krim.si/hotel-krim-bled-wellness.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Sportina-Turizem/370066706361979",
+          "text": "http://www.facebook.com/pages/Sportina-Turizem/370066706361979"
+        }
+      },
+      {
+        "name": "Wellness Živa",
+        "address1": "Naslov: Cankarjeva 4",
+        "address2": "Poštna številka: 4260",
+        "address3": "Mesto: Bled",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 04 579 17 02",
+        "contact2": {
+          "href": "mailto:ziva@hotelibled.com",
+          "text": "ziva@hotelibled.com"
+        },
+        "contact3": {
+          "href": "http://www.sava-hotels-resorts.com/si/destinacije/bled/programi/wellness/wellness-ziva/",
+          "text": "http://www.sava-hotels-resorts.com/si/destinacije/bled/programi/wellness/wellness-ziva/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/sava.hotels.resorts",
+          "text": "http://www.facebook.com/sava.hotels.resorts"
+        }
+      },
+      {
+        "name": "Hotel Kanin",
+        "photo": "",
+        "address1": "Naslov: Ledina 6",
+        "address2": "Poštna številka: 5230",
+        "address3": "Mesto: Bovec",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 38 96 880",
+        "contact2": {
+          "href": "mailto:hotel.kanin@siol.net",
+          "text": "hotel.kanin@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.hotel-kanin.com/sl/wellness",
+          "text": "http://www.hotel-kanin.com/sl/wellness"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Hotel-Kanin/180660571975330",
+          "text": "http://www.facebook.com/pages/Hotel-Kanin/180660571975330"
+        }
+      },
+      {
+        "name": "Hotel Mangart",
+        "address1": "Naslov: Mala vas 107",
+        "address2": "Poštna številka: 5230",
+        "address3": "Mesto: Bovec",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 388 42 50",
+        "contact2": {
+          "href": "mailto:booking@hotel-mangart.com",
+          "text": "booking@hotel-mangart.com"
+        },
+        "contact3": {
+          "href": "http://www.hotel-mangart.com/sl/Ponudba/Wellness",
+          "text": "http://www.hotel-mangart.com/sl/Ponudba/Wellness"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/HOTEL-MANGART-BOVEC/272333985506",
+          "text": "http://www.facebook.com/pages/HOTEL-MANGART-BOVEC/272333985506"
+        }
+      },
+      {
+        "name": "Spa center Perla",
+        "address1": "Naslov: Kidričeva 7",
+        "address2": "Poštna številka: 5000",
+        "address3": "Mesto: Nova Gorica",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 336 33 33",
+        "contact2": {
+          "href": "mailto:spa.perla@hit.si",
+          "text": "spa.perla@hit.si"
+        },
+        "contact3": {
+          "href": "http://www.thecasinoperla.com/index.php?id=sprostitev",
+          "text": "http://www.thecasinoperla.com/index.php?id=sprostitev"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/casinoperla",
+          "text": "http://www.facebook.com/casinoperla"
+        }
+      },
+      {
+        "name": "Wellness center Pulsus",
+        "address1": "Naslov: Cesta 5. maja 14",
+        "address2": "Poštna številka: 5270",
+        "address3": "Mesto: Ajdovščina",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 059 219 092, 031 874 012",
+        "contact2": {
+          "href": "mailto:info@pulsus.si",
+          "text": "info@pulsus.si"
+        },
+        "contact3": {
+          "href": "http://www.pulsuscenter.si/",
+          "text": "http://www.pulsuscenter.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pulsus.fitnes",
+          "text": "http://www.facebook.com/pulsus.fitnes"
+        }
+      },
+      {
+        "name": "Wellness Modrina Kobarid",
+        "address1": "Naslov: Trg Svobode 4b",
+        "address2": "Poštna številka: 5222",
+        "address3": "Mesto: Kobarid",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 388 50 90, 041 494 178, 041 494 507",
+        "contact2": {
+          "href": "mailto:info@modrina.eu",
+          "text": "info@modrina.eu"
+        },
+        "contact3": {
+          "href": "http://www.modrina.eu/",
+          "text": "http://www.modrina.eu/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/modrina.apartmaji?sk=wall",
+          "text": "http://www.facebook.com/modrina.apartmaji?sk=wall"
+        }
+      },
+      {
+        "name": "Acqua Relax wellness center",
+        "address1": "Naslov: Obala 77",
+        "address2": "Poštna številka: 6320",
+        "address3": "Mesto: Portorož",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 690 19 50",
+        "contact2": {
+          "href": "mailto:acquarelax@siol.net",
+          "text": "acquarelax@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.acquarelax.com/",
+          "text": "http://www.acquarelax.com/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/Portoroz.Acqua.Relax.Wellness",
+          "text": "http://www.facebook.com/Portoroz.Acqua.Relax.Wellness"
+        }
+      },
+      {
+        "name": "Aquapark Žusterna Hotel",
+        "address1": "Naslov: Istrska 67",
+        "address2": "Poštna številka: 6000",
+        "address3": "Mesto: Koper",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 61 00 300, 07 49 36 700",
+        "contact2": {
+          "href": "mailto:zusterna@terme-catez.si",
+          "text": "zusterna@terme-catez.si"
+        },
+        "contact3": {
+          "href": "http://www.terme-catez.si/slovenska-obala/wellness-396/",
+          "text": "http://www.terme-catez.si/slovenska-obala/wellness-396/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/TermeCatez",
+          "text": "http://www.facebook.com/TermeCatez"
+        }
+      },
+      {
+        "name": "Bioenergijski center Syra",
+        "address1": "Naslov: Strunjan 14",
+        "address2": "Poštna številka: 6323",
+        "address3": "Mesto: Strunjan",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 690 70 00",
+        "contact2": {
+          "href": "mailto:booking@bernardingroup.si",
+          "text": "booking@bernardingroup.si"
+        },
+        "contact3": {
+          "href": "http://www.salinera.si/si/salinera/2/syra-wellness.html",
+          "text": "http://www.salinera.si/si/salinera/2/syra-wellness.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/Wellness.spa.bernardin.group.portoroz",
+          "text": "http://www.facebook.com/Wellness.spa.bernardin.group.portoroz"
+        }
+      },
+      {
+        "name": "Bodysense fitness & wellness club",
+        "address1": "Naslov: Ulica 15. Maja 24",
+        "address2": "Poštna številka: 6000",
+        "address3": "Mesto: Koper",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 639 11 00",
+        "contact2": {
+          "href": "mailto:bodysensekoper@gmail.com",
+          "text": "bodysensekoper@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.bodysense.si/",
+          "text": "http://www.bodysense.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/bodysense.koper",
+          "text": "http://www.facebook.com/bodysense.koper"
+        }
+      },
+      {
+        "name": "Fitness & Wellness Epicenter",
+        "address1": "Naslov: Kazarje 3",
+        "address2": "Poštna številka: 6230",
+        "address3": "Mesto: Postojna",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 700 22 77, 041 635 797",
+        "contact2": {
+          "href": "mailto:wellness.po@siol.net",
+          "text": "wellness.po@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.fitness-epicenter.si/",
+          "text": "http://www.fitness-epicenter.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/fit.postojna",
+          "text": "http://www.facebook.com/fit.postojna"
+        }
+      },
+      {
+        "name": "Hotel Sport***",
+        "address1": "Naslov: Kolodvorska ulica 1",
+        "address2": "Poštna številka: 6230",
+        "address3": "Mesto: Postojna",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 720 22 44, 051 630 575",
+        "contact2": {
+          "href": "mailto:info@sport-hotel.si",
+          "text": "info@sport-hotel.si"
+        },
+        "contact3": {
+          "href": "http://www.sport-hotel.si/Hotel-Sport/Wellness-ponudba/",
+          "text": "http://www.sport-hotel.si/Hotel-Sport/Wellness-ponudba/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Hotel-%C5%A0port/294498543901214",
+          "text": "http://www.facebook.com/pages/Hotel-%C5%A0port/294498543901214"
+        }
+      },
+      {
+        "name": "Kraljevski salon lepote",
+        "photo": "",
+        "address1": "Naslov: Ferrarska ulica 14 (ogrlica)",
+        "address2": "Poštna številka: 6000",
+        "address3": "Mesto: Koper",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 255 455",
+        "contact2": {
+          "href": "mailto:kraljevskisalon@gmail.com",
+          "text": "kraljevskisalon@gmail.com"
+        },
+        "contact3": {
+          "href": "http://www.kraljevskisalon.com/",
+          "text": "http://www.kraljevskisalon.com/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Kraljevski-salon-lepote/125152690888868",
+          "text": "http://www.facebook.com/pages/Kraljevski-salon-lepote/125152690888868"
+        }
+      },
+      {
+        "name": "Marita spa center",
+        "address1": "Naslov: Obala 89",
+        "address2": "Poštna številka: 6320",
+        "address3": "Mesto: Portorož",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 040 354 102, 05 617 22 00",
+        "contact2": {
+          "href": "mailto:info@hotel-marita.si",
+          "text": "info@hotel-marita.si"
+        },
+        "contact3": {
+          "href": "http://www.hotel-marita.si/Dodatna-ponudba/109/Marita-Spa-Center.shtml",
+          "text": "http://www.hotel-marita.si/Dodatna-ponudba/109/Marita-Spa-Center.shtml"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/hotel.marita.portoroz",
+          "text": "http://www.facebook.com/hotel.marita.portoroz"
+        }
+      },
+      {
+        "name": "Paradise Spa",
+        "address1": "Naslov: Obala 2",
+        "address2": "Poštna številka: 6320",
+        "address3": "Mesto: Portorož",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 695 10 51",
+        "contact2": {
+          "href": "mailto:paradisespa@h-bernardin.si",
+          "text": "paradisespa@h-bernardin.si"
+        },
+        "contact3": {
+          "href": "http://www.h-bernardin.si/si/grand-hotel-bernardin/7/paradise-spa.html",
+          "text": "http://www.h-bernardin.si/si/grand-hotel-bernardin/7/paradise-spa.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/Wellness.spa.bernardin.group.portoroz",
+          "text": "http://www.facebook.com/Wellness.spa.bernardin.group.portoroz"
+        }
+      },
+      {
+        "name": "Penzion in wellness Mirjam",
+        "address1": "Naslov: Razdrto 19",
+        "address2": "Poštna številka: 6225",
+        "address3": "Mesto: Hruševje",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 041 684 988, 041 750 716, 05 75 77 200",
+        "contact2": {
+          "href": "mailto: mirjam.pavlin@mirjam.si",
+          "text": "mirjam.pavlin@mirjam.si"
+        },
+        "contact3": {
+          "href": "http://www.mirjam.si/",
+          "text": "http://www.mirjam.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Penzion-Wellness-Mirjam/203285059772934",
+          "text": "http://www.facebook.com/pages/Penzion-Wellness-Mirjam/203285059772934"
+        }
+      },
+      {
+        "name": "Rose Spa",
+        "address1": "Naslov: Obala 45",
+        "address2": "Poštna številka: 6320",
+        "address3": "Mesto: Portorož",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 692 7040",
+        "contact2": {
+          "href": "mailto:spa.portoroz@kempinski.com",
+          "text": "spa.portoroz@kempinski.com"
+        },
+        "contact3": {
+          "href": "http://www.kempinski.com/en/portoroz/palace-portoroz/luxury-spa/",
+          "text": "http://www.kempinski.com/en/portoroz/palace-portoroz/luxury-spa/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Kempinski-Palace-Portoro%C5%BE/168404973614",
+          "text": "http://www.facebook.com/pages/Kempinski-Palace-Portoro%C5%BE/168404973614"
+        }
+      },
+      {
+        "name": "Terme & Wellness LifeClass Portorož",
+        "address1": "Naslov: Obala 33",
+        "address2": "Poštna številka: 6320",
+        "address3": "Mesto: Portorož",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 692 90 01",
+        "contact2": {
+          "href": "mailto:booking@lifeclass.net",
+          "text": "booking@lifeclass.net"
+        },
+        "contact3": {
+          "href": "http://www.lifeclass.net/si/terme-wellness-lifeclass",
+          "text": "http://www.lifeclass.net/si/terme-wellness-lifeclass"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/lifeclass.portoroz",
+          "text": "http://www.facebook.com/lifeclass.portoroz"
+        }
+      },
+      {
+        "name": "Wellness & Spa Casinò Hotel Carnevale",
+        "address1": "Naslov: Spodnje Škofije 259",
+        "address2": "Poštna številka: 6281",
+        "address3": "Mesto: Škofije",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 66 80 200",
+        "contact2": {
+          "href": "mailto:info@carnevale.sI ",
+          "text": "info@carnevale.sI"
+        },
+        "contact3": {
+          "href": "http://www.carnevale.si/sl/wellness.html",
+          "text": "http://www.carnevale.si/sl/wellness.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/CasinoHotelCarnevale",
+          "text": "http://www.facebook.com/CasinoHotelCarnevale"
+        }
+      },
+      {
+        "name": "Wellness & Spa Mirta",
+        "address1": "Naslov: Morova 6a",
+        "address2": "Poštna številka: 6310",
+        "address3": "Mesto: Izola",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 660 34 00",
+        "contact2": {
+          "href": "mailto:wellness@sansimon.si",
+          "text": "wellness@sansimon.si"
+        },
+        "contact3": {
+          "href": "http://www.bernardingroup.si/si/resort/sansimon/146/service/wellness-amp-spa-mirta/",
+          "text": "http://www.bernardingroup.si/si/resort/sansimon/146/service/wellness-amp-spa-mirta/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/Wellness.spa.bernardin.group.portoroz",
+          "text": "http://www.facebook.com/Wellness.spa.bernardin.group.portoroz"
+        }
+      },
+      {
+        "name": "Wellness center Adria",
+        "address1": "Naslov: Jadranska cesta 25",
+        "address2": "Poštna številka: 6280",
+        "address3": "Mesto: Ankaran",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 66 37 356, 051 634 381",
+        "contact2": {
+          "href": "mailto:wellness@adria-ankaran.si ",
+          "text": "wellness@adria-ankaran.si"
+        },
+        "contact3": {
+          "href": "https://www.adria-ankaran.si/wellness/savne/",
+          "text": "https://www.adria-ankaran.si/wellness/savne/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/Adria-Ankaran-Hotel-Resort/252370071557589",
+          "text": "https://www.facebook.com/pages/Adria-Ankaran-Hotel-Resort/252370071557589"
+        }
+      },
+      {
+        "name": "Wellness center Mitja",
+        "address1": "Naslov: Partizanska cesta 69 A",
+        "address2": "Poštna številka: 6210",
+        "address3": "Mesto: Sežana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 731 33 20",
+        "contact2": {
+          "href": "mailto:mitja.hairteam@siol.net",
+          "text": "mitja.hairteam@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.mitja.biz/Informacije/Wellness-center-Mitja.html",
+          "text": "http://www.mitja.biz/Informacije/Wellness-center-Mitja.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/Mitja.doo",
+          "text": "http://www.facebook.com/Mitja.doo"
+        }
+      },
+      {
+        "name": "Wellness center Salia",
+        "address1": "Naslov: Strunjan 148",
+        "address2": "Poštna številka: 6323",
+        "address3": "Mesto: Strunjan",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 67 64 472",
+        "contact2": {
+          "href": "mailto:salia@terme-krka.si",
+          "text": "salia@terme-krka.si"
+        },
+        "contact3": {
+          "href": "http://www.terme-krka.si/si/strunjan/salia/",
+          "text": "http://www.terme-krka.si/si/strunjan/salia/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/TermeKrka",
+          "text": "http://www.facebook.com/TermeKrka"
+        }
+      },
+      {
+        "name": "Wellness center Sanai",
+        "address1": "Naslov: Partizanska cesta 149",
+        "address2": "Poštna številka: 6210",
+        "address3": "Mesto: Sežana",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 73 14 499, 040 222 526",
+        "contact2": {
+          "href": "mailto:info@safir.si",
+          "text": "info@safir.si"
+        },
+        "contact3": {
+          "href": "http://www.safir.si/wellness_sanai",
+          "text": "http://www.safir.si/wellness_sanai"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Hotel-casino-Safir/382989008412374",
+          "text": "http://www.facebook.com/pages/Hotel-casino-Safir/382989008412374"
+        }
+      },
+      {
+        "name": "Wellness center v Hotelu Marina",
+        "address1": "Naslov: Veliki trg 11",
+        "address2": "Poštna številka: 6310",
+        "address3": "Mesto: Izola",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 660 41 00, 041 605 333",
+        "contact2": {
+          "href": "mailto:recepcija@hotelmarina.si",
+          "text": "recepcija@hotelmarina.si"
+        },
+        "contact3": {
+          "href": "http://www.hotelmarina.si/wellness/",
+          "text": "http://www.hotelmarina.si/wellness/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/hotelmarina.si",
+          "text": "http://www.facebook.com/hotelmarina.si"
+        }
+      },
+      {
+        "name": "Wellness Histrion",
+        "address1": "Naslov: Obala 2",
+        "address2": "Poštna številka: 6320",
+        "address3": "Mesto: Portorož",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 05 695 89 01",
+        "contact2": {
+          "href": "mailto:wellness-histrion@h-bernardin.si",
+          "text": "wellness-histrion@h-bernardin.si"
+        },
+        "contact3": {
+          "href": "http://www.h-bernardin.si/si/hotel-histrion/12/wellness-histrion.html",
+          "text": "http://www.h-bernardin.si/si/hotel-histrion/12/wellness-histrion.html"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/Wellness.spa.bernardin.group.portoroz",
+          "text": "http://www.facebook.com/Wellness.spa.bernardin.group.portoroz"
+        }
+      },
+      {
+        "name": "Alqma wellness center",
+        "address1": "Naslov: Rimska cesta 31, Čatež ob Savi",
+        "address2": "Poštna številka: 8250",
+        "address3": "Mesto: Brežice",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 07 49 66 620",
+        "contact2": {
+          "href": "mailto:info@alqma.si ",
+          "text": "info@alqma.si"
+        }
+      },
+      {
+        "name": "Paradiso Spa & Wellness center",
+        "address1": "Naslov: Selska cesta 15b",
+        "address2": "Poštna številka: 8257",
+        "address3": "Mesto: Dobova",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 07 45 22 988",
+        "contact2": {
+          "href": "mailto:paradiso@siol.net",
+          "text": "paradiso@siol.net"
+        },
+        "contact3": {
+          "href": "http://www.paradiso.si/",
+          "text": "http://www.paradiso.si/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/paradiso.hotel?ref=ts",
+          "text": "http://www.facebook.com/paradiso.hotel?ref=ts"
+        }
+      },
+      {
+        "name": "Posestvo Pule",
+        "address1": "Naslov: Drečji vrh 16",
+        "address2": "Poštna številka: 8231",
+        "address3": "Mesto: Trebelno",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 051 373 662, 07 34 99 700",
+        "contact2": {
+          "href": "mailto:info@pule.si",
+          "text": "info@pule.si"
+        },
+        "contact3": {
+          "href": "http://www.pule.si/index.php?page=wellness",
+          "text": "http://www.pule.si/index.php?page=wellness"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/Puleestate",
+          "text": "http://www.facebook.com/Puleestate"
+        }
+      },
+      {
+        "name": "Spa & wellness center",
+        "address1": "Naslov: Topliška cesta 35",
+        "address2": "Poštna številka: 8251",
+        "address3": "Mesto: Čatež ob Savi",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 07 49 36 744",
+        "contact2": {
+          "href": "mailto:wellness@terme-catez.si",
+          "text": "wellness@terme-catez.si"
+        },
+        "contact3": {
+          "href": "http://www.terme-catez.si/catez/wellness/spa-wellness-center-v-hotelu-catez/",
+          "text": "http://www.terme-catez.si/catez/wellness/spa-wellness-center-v-hotelu-catez/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/TermeCatez",
+          "text": "http://www.facebook.com/TermeCatez"
+        }
+      },
+      {
+        "name": "Vitanova",
+        "address1": "Naslov: Cesta krških žrtev 49A",
+        "address2": "Poštna številka: 8270",
+        "address3": "Mesto: Krško",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 031 693 231 (Blaž), 051 387 788 (Vilma)",
+        "contact2": {
+          "href": "mailto:info@vita-nova.si",
+          "text": "info@vita-nova.si"
+        },
+        "contact3": {
+          "href": "http://www.vita-nova.si/",
+          "text": "http://www.vita-nova.si/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/Vitanova/201962546577657",
+          "text": "https://www.facebook.com/pages/Vitanova/201962546577657"
+        }
+      },
+      {
+        "name": "Wellness Balnea",
+        "address1": "Naslov: Zdraviliški trg 7",
+        "address2": "Poštna številka: 8350",
+        "address3": "Mesto: Dolenjske Toplice",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 07 39 19 400",
+        "contact2": {
+          "href": "mailto:booking.dolenjske@terme-krka.si",
+          "text": "booking.dolenjske@terme-krka.si"
+        },
+        "contact3": {
+          "href": "http://www.terme-krka.si/si/dolenjske/balnea/",
+          "text": "http://www.terme-krka.si/si/dolenjske/balnea/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/TermeKrka",
+          "text": "http://www.facebook.com/TermeKrka"
+        }
+      },
+      {
+        "name": "Wellness Vitarium",
+        "address1": "Naslov: Šmarješke Toplice 100",
+        "address2": "Poštna številka: 8220",
+        "address3": "Mesto: Šmarješke Toplice",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 07 38 43 438",
+        "contact2": {
+          "href": "mailto:vitarium@terme-krka.si",
+          "text": "vitarium@terme-krka.si"
+        },
+        "contact3": {
+          "href": "http://www.terme-krka.si/si/smarjeske/vitarium/",
+          "text": "http://www.terme-krka.si/si/smarjeske/vitarium/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/TermeKrka",
+          "text": "http://www.facebook.com/TermeKrka"
+        }
+      },
+      {
+        "name": "Bioterme Mala Nedelja",
+        "address1": "Naslov: Moravci v Slovenskih goricah 34/b",
+        "address2": "Poštna številka: 9243",
+        "address3": "Mesto: Mala Nedelja",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 565 20 00",
+        "contact2": {
+          "href": "mailto:info@bioterme.si",
+          "text": "info@bioterme.si"
+        },
+        "contact3": {
+          "href": "http://www.bioterme.si/index.php?option=com_content&view=article&id=57&Itemid=109&lang=sl",
+          "text": "http://www.bioterme.si/index.php?option=com_content&view=article&id=57&Itemid=109&lang=sl"
+        },
+        "contact4": {
+          "href": "http://www.bioterme.si/index.php?option=com_content&view=article&id=57&Itemid=109&lang=sl",
+          "text": "http://www.bioterme.si/index.php?option=com_content&view=article&id=57&Itemid=109&lang=sl"
+        }
+      },
+      {
+        "name": "Hotel Diana",
+        "address1": "Naslov: Slovenska ulica 52",
+        "address2": "Poštna številka: 9000",
+        "address3": "Mesto: Murska Sobota",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 51 41 200",
+        "contact2": {
+          "href": "mailto:info@hotel-diana.si",
+          "text": "info@hotel-diana.si"
+        },
+        "contact3": {
+          "href": "http://www.hotel-diana.si/nebesko-polje/",
+          "text": "http://www.hotel-diana.si/nebesko-polje/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/HotelDianaMurskaSobota",
+          "text": "http://www.facebook.com/HotelDianaMurskaSobota"
+        }
+      },
+      {
+        "name": "Hotel Lipa",
+        "address1": "Naslov: Tomšičeva 2a",
+        "address2": "Poštna številka: 9220",
+        "address3": "Mesto: Lendava",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 577 41 00",
+        "contact2": {
+          "href": "mailto:info@terme-lendava.si",
+          "text": "info@terme-lendava.si"
+        },
+        "contact3": {
+          "href": "http://www.sava-hotels-resorts.com/destinacije/lendava/programi/wellness/",
+          "text": "http://www.sava-hotels-resorts.com/destinacije/lendava/programi/wellness/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/sava.hotels.resorts",
+          "text": "http://www.facebook.com/sava.hotels.resorts"
+        }
+      },
+      {
+        "name": "SONČNA HIŠA™",
+        "address1": "Naslov: Banovci 3c",
+        "address2": "Poštna številka: 9241",
+        "address3": "Mesto: Veržej",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 588 82 38, 040 510 340, 040 272 921",
+        "contact2": {
+          "href": "mailto: info@soncna-hisa.si ",
+          "text": "info@soncna-hisa.si"
+        },
+        "contact3": {
+          "href": "http://www.soncna-hisa.si/wellness/",
+          "text": "http://www.soncna-hisa.si/wellness/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/pages/Son%C4%8Dna-hi%C5%A1a/91767903958",
+          "text": "http://www.facebook.com/pages/Son%C4%8Dna-hi%C5%A1a/91767903958"
+        }
+      },
+      {
+        "name": "Terme Banovci",
+        "address1": "Naslov: Banovci 1A",
+        "address2": "Poštna številka: 9241",
+        "address3": "Mesto: Veržej",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 51 31 400",
+        "contact2": {
+          "href": "mailto:terme@terme-banovci.si",
+          "text": "terme@terme-banovci.si"
+        },
+        "contact3": {
+          "href": "http://www.sava-hotels-resorts.com/si/destinacije/banovci/programi/wellness/",
+          "text": "http://www.sava-hotels-resorts.com/si/destinacije/banovci/programi/wellness/"
+        },
+        "contact4": {
+          "href": "https://www.facebook.com/pages/Terme-Banovci/206604399386134",
+          "text": "https://www.facebook.com/pages/Terme-Banovci/206604399386134"
+        }
+      },
+      {
+        "name": "Wellness center Thermalium",
+        "address1": "Naslov: Kranjčeva ulica 12",
+        "address2": "Poštna številka: 9226",
+        "address3": "Mesto: Moravske Toplice",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 512 24 00",
+        "contact2": {
+          "href": "mailto:thermalium@terme3000.si ",
+          "text": "thermalium@terme3000.si"
+        },
+        "contact3": {
+          "href": "http://www.sava-hotels-resorts.com/si/destinacije/moravske/programi/wellness/",
+          "text": "http://www.sava-hotels-resorts.com/si/destinacije/moravske/programi/wellness/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/sava.hotels.resorts",
+          "text": "http://www.facebook.com/sava.hotels.resorts"
+        }
+      },
+      {
+        "name": "Wellness center Vivat",
+        "address1": "Naslov: Ulica ob igrišču 3",
+        "address2": "Poštna številka: 9226",
+        "address3": "Mesto: Moravske Toplice",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 538 21 30",
+        "contact2": {
+          "href": "mailto:wellness@vivat.si  ",
+          "text": "wellness@vivat.si"
+        },
+        "contact3": {
+          "href": "http://www.vivat.si/sl/terme-vivat",
+          "text": "http://www.vivat.si/sl/terme-vivat"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/terme.vivat",
+          "text": "http://www.facebook.com/terme.vivat"
+        }
+      },
+      {
+        "name": "Zdravilišče Radenci",
+        "address1": "Naslov: Zdraviliško naselje 12",
+        "address2": "Poštna številka: 9252",
+        "address3": "Mesto: Radenci",
+        "address4": "Država: Slovenia",
+        "contact1": "Kontaktna številka: 02 520 27 20",
+        "contact2": {
+          "href": "mailto:info@zdravilisce-radenci.si",
+          "text": "info@zdravilisce-radenci.si"
+        },
+        "contact3": {
+          "href": "http://www.sava-hotels-resorts.com/si/destinacije/radenci/programi/wellness/",
+          "text": "http://www.sava-hotels-resorts.com/si/destinacije/radenci/programi/wellness/"
+        },
+        "contact4": {
+          "href": "http://www.facebook.com/sava.hotels.resorts",
+          "text": "http://www.facebook.com/sava.hotels.resorts"
+        }
+      }
+    ]
+  }
+}
