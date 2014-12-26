@@ -1,0 +1,169 @@
+{
+  "name": "Wellness data",
+  "count": 14,
+  "frequency": "Monthly",
+  "version": 2,
+  "newdata": true,
+  "lastrunstatus": "success",
+  "lastsuccess": "Sun Dec 07 2014 10:01:59 GMT+0000 (UTC)",
+  "thisversionstatus": "success",
+  "nextrun": "Thu Jan 01 2015 00:00:00 GMT+0000 (UTC)",
+  "results": {
+    "collection1": [
+      {
+        "name": "Balnea, Dolenjske Toplice",
+        "website": {
+          "href": "http://www.terme-krka.si/si/dolenjske/balnea/",
+          "text": "Povezava na stran podjetja"
+        },
+        "address": {
+          "href": "http://www.terme-krka.si/si/dolenjske/balnea/",
+          "text": "Naslov podjetja: \nZdraviliški trg 7\n8350 Dolenjske Toplice\nPovezava na stran podjetja"
+        }
+      },
+      {
+        "name": "Orhidelia, Terme Olimia",
+        "website": {
+          "href": "http://www.terme-olimia.si/si/orhidelia/",
+          "text": "Povezava na stran podjetja"
+        },
+        "address": {
+          "href": "http://www.terme-olimia.si/si/orhidelia/",
+          "text": "Naslov podjetja: \nZdraviliška cesta 24\n3254 Podčetrtek\nPovezava na stran podjetja"
+        }
+      },
+      {
+        "name": "Sense Wellness Club",
+        "website": {
+          "href": "http://www.sense-club.com/",
+          "text": "Povezava na stran podjetja"
+        },
+        "address": {
+          "href": "http://www.sense-club.com/",
+          "text": "Naslov podjetja: \nDunajska cesta 154\n1000 Ljubljana\nPovezava na stran podjetja"
+        }
+      },
+      {
+        "name": "Spa & Wellness center Terme Čatež",
+        "website": {
+          "href": "http://www.terme-catez.si/si/catez/wellness/spa/",
+          "text": "Povezava na stran podjetja"
+        },
+        "address": {
+          "href": "http://www.terme-catez.si/si/catez/wellness/spa/",
+          "text": "Naslov podjetja: \nTopliška 35\n8251 Čatež ob Savi\nPovezava na stran podjetja"
+        }
+      },
+      {
+        "name": "Športni in wellness center Galactica",
+        "website": {
+          "href": "http://www.galactica.si/si/",
+          "text": "Povezava na stran podjetja"
+        },
+        "address": {
+          "href": "http://www.galactica.si/si/",
+          "text": "Naslov podjetja: \nKoroška cesta 55b\n3320 Velenje\nPovezava na stran podjetja"
+        }
+      },
+      {
+        "name": "Valens Augusta Wellness, Terme Ptuj",
+        "website": {
+          "href": "http://www.sava-hotels-resorts.com/si/destinacije/ptuj/programi/wellness/",
+          "text": "Povezava na stran podjetja"
+        },
+        "address": {
+          "href": "http://www.sava-hotels-resorts.com/si/destinacije/ptuj/programi/wellness/",
+          "text": "Naslov podjetja: \nPot v Toplice 9\n2250 Ptuj\nPovezava na stran podjetja"
+        }
+      },
+      {
+        "name": "Victoria wellness club",
+        "website": {
+          "href": "http://club-victoria.si/",
+          "text": "Povezava na stran podjetja"
+        },
+        "address": {
+          "href": "http://club-victoria.si/",
+          "text": "Naslov podjetja: \nZelenova ulica 24\n1260 Ljubljana - Polje\nPovezava na stran podjetja"
+        }
+      },
+      {
+        "name": "Vitarium, Terme Šmarješke Toplice",
+        "website": {
+          "href": "http://www.terme-krka.si/si/smarjeske/vitarium/",
+          "text": "Povezava na stran podjetja"
+        },
+        "address": {
+          "href": "http://www.terme-krka.si/si/smarjeske/vitarium/",
+          "text": "Naslov podjetja: \nŠmarješke Toplice 100\n8220 Šmarješke Toplice\nPovezava na stran podjetja"
+        }
+      },
+      {
+        "name": "Wellness center Špik, Hit Alpinea",
+        "website": {
+          "href": "http://hitholidays.si/sl/wellness/alpski-wellness-spik",
+          "text": "Povezava na stran podjetja"
+        },
+        "address": {
+          "href": "http://hitholidays.si/sl/wellness/alpski-wellness-spik",
+          "text": "Naslov podjetja: \nAlpski resort Špik, Jezerci 21\n4282 Gozd Martuljek\nPovezava na stran podjetja"
+        }
+      },
+      {
+        "name": "Wellness Spa Center, Thermana Laško",
+        "website": {
+          "href": "http://www.thermana.si/wellness",
+          "text": "Povezava na stran podjetja"
+        },
+        "address": {
+          "href": "http://www.thermana.si/wellness",
+          "text": "Naslov podjetja: \nZdraviliška cesta 6\n3270 Laško\nPovezava na stran podjetja"
+        }
+      },
+      {
+        "name": "Wellness Terme Banovci",
+        "website": {
+          "href": "http://www.sava-hotels-resorts.com/si/destinacije/banovci/programi/wellness/",
+          "text": "Povezava na stran podjetja"
+        },
+        "address": {
+          "href": "http://www.sava-hotels-resorts.com/si/destinacije/banovci/programi/wellness/",
+          "text": "Naslov podjetja: \nBanovci 1a\n9241 Veržej\nPovezava na stran podjetja"
+        }
+      },
+      {
+        "name": "Wellness Vodno mesto Atlantis",
+        "website": {
+          "href": "http://wellness.atlantis-vodnomesto.si/",
+          "text": "Povezava na stran podjetja"
+        },
+        "address": {
+          "href": "http://wellness.atlantis-vodnomesto.si/",
+          "text": "Naslov podjetja: \nŠmartinska 152\n1533 Ljubljana\nPovezava na stran podjetja"
+        }
+      },
+      {
+        "name": "Wellness Živa, Hotel Golf",
+        "website": {
+          "href": "http://www.sava-hotels-resorts.com/si/destinacije/bled/programi/wellness/wellness-ziva/",
+          "text": "Povezava na stran podjetja"
+        },
+        "address": {
+          "href": "http://www.sava-hotels-resorts.com/si/destinacije/bled/programi/wellness/wellness-ziva/",
+          "text": "Naslov podjetja: \nCankarjeva 4\n4260 Bled\nPovezava na stran podjetja"
+        }
+      },
+      {
+        "name": "Zala, Terme Topolšica",
+        "website": {
+          "href": "http://www.terme-topolsica.si/wellness/",
+          "text": "Povezava na stran podjetja"
+        },
+        "address": {
+          "href": "http://www.terme-topolsica.si/wellness/",
+          "text": "Naslov podjetja: \nTopolšica 77\n3326 Topolšica\nPovezava na stran podjetja"
+        }
+      }
+    ]
+  }
+}
