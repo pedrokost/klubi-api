@@ -3,12 +3,17 @@ require 'import/importer'
 require 'import/datasource'
 require 'import/transformer'
 
+require 'stringio'
+require 'highline'
 require 'pry'
 
 RSpec.describe Import::Importer do
 
   let(:datasource) { instance_double(Import::Datasource) }
   let(:transformer) { instance_double(Import::Transformer) }
+  let(:highline) { instance_double(HighLine) }
+  let(:merge_resolution) { Import::Resolution.new(:merge) }
+  let(:create_new_resolution) { Import::Resolution.new(:create_new) }
 
   subject { Import::Importer.new(datasource, transformer, false) }
 
@@ -26,6 +31,9 @@ RSpec.describe Import::Importer do
     allow(datasource).to receive(:fetch).and_return data
     allow(transformer).to receive(:description).and_return('abracadabra')
     allow(transformer).to receive(:transform).and_return data
+
+    allow(HighLine).to receive(:new).and_return highline
+    allow(highline).to receive(:choose)
   end
 
   # Pubic methods
@@ -39,20 +47,79 @@ RSpec.describe Import::Importer do
     expect{subject.run}.to change{Klub.unscoped.count}.by 2
   end
 
-  describe "it add not add duplicate klubs" do
+  describe "it should not create duplicate klubs" do
     before do
       subject.run
+      expect(Klub.unscoped.count).to eq 2
     end
 
-    it "should not add if same name" do
-      expect(Klub.unscoped.count).to eq 2
-
+    it "if same name" do
       expect { subject.run }.not_to change{Klub.unscoped.count}
     end
 
-    it "should prompt for resolution if different address, same name"
+    it "should prompt for resolution if same name" do
+      data = [
+            {
+              name: 'Fitnes 1',
+              address: 'Cesta 5, Maribor',
+              categories: ['fitnes', 'karate']
+            }
+          ]
+      allow(transformer).to receive(:transform).and_return data
+      expect(highline).to receive(:choose)
 
-    it "should not add duplicates - case insensitive" do
+      subject.run
+    end
+
+    it "should merge data if resolution is 'merge'" do
+      allow(Import::Resolution).to receive(:new).and_return(merge_resolution)
+      data = [
+            {
+              name: 'Fitnes 1',
+              address: 'Cesta 5, Maribor',
+              categories: ['fitnes', 'karate']
+            }
+          ]
+      allow(transformer).to receive(:transform).and_return data
+
+      subject.run
+
+      klub = Klub.unscoped.where(name: 'Fitnes 1').first
+      expect(klub.address).to eq 'Cesta 5, Maribor'
+      expect(klub.categories).to match ['fitnes', 'karate']
+    end
+
+    it "should not create new klub for resoultion 'merge'" do
+      allow(Import::Resolution).to receive(:new).and_return(merge_resolution)
+      data = [
+            {
+              name: 'Fitnes 1',
+              address: 'Cesta 5, Maribor',
+              categories: ['fitnes', 'karate']
+            }
+          ]
+      allow(transformer).to receive(:transform).and_return data
+
+      expect{subject.run}.not_to change{Klub.unscoped.count}
+    end
+
+    it "should create new klub for resolution 'create new klub'" do
+      expect(Import::Resolution).to receive(:new).and_return(create_new_resolution)
+      data = [
+            {
+              name: 'Fitnes 1',
+              address: 'Cesta 5, Maribor',
+              categories: ['fitnes', 'karate']
+            }
+          ]
+      allow(transformer).to receive(:transform).and_return data
+
+      expect {subject.run}.to change{Klub.unscoped.count}.by 1
+    end
+
+    it "if same name - case sensitive" do
+      allow(Import::Resolution).to receive(:new).and_return(merge_resolution)
+      # FIXME: and user says merge
       data = [
         {
           name: 'FitNes 1'
@@ -64,8 +131,9 @@ RSpec.describe Import::Importer do
     end
   end
 
-  describe "it should update club category" do
+  describe "it should merge new data" do
     before do
+      allow(Import::Resolution).to receive(:new).and_return(merge_resolution)
       subject.run
     end
 
@@ -82,7 +150,11 @@ RSpec.describe Import::Importer do
       expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['fitnes', 'pilates']
     end
 
-    it "should ammend the address if missing" do
+    it "should amend the address if missing" do
+      klub = Klub.unscoped.where(name: 'Fitnes 1').first
+      klub.address = nil
+      klub.save!
+
       data = [{
               name: 'Fitnes 1',
               address: 'Trzaska 25, 1000 Ljubljana'
@@ -108,7 +180,7 @@ RSpec.describe Import::Importer do
       expect( Klub.unscoped.where(name: 'Fitnes 1').first.address ).to eq 'Nekje 22'
     end
 
-    it "should ammend the facebook_url if missing" do
+    it "should amend the facebook_url if missing" do
       data = [{
               name: 'Fitnes 1',
               facebook_url: 'Trzaska 25, 1000 Ljubljana'
@@ -134,7 +206,7 @@ RSpec.describe Import::Importer do
       expect( Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url ).to eq 'Nekje 22'
     end
 
-    it "should ammend the website if missing" do
+    it "should amend the website if missing" do
       data = [{
               name: 'Fitnes 1',
               website: 'Trzaska 25, 1000 Ljubljana'
@@ -160,7 +232,11 @@ RSpec.describe Import::Importer do
       expect( Klub.unscoped.where(name: 'Fitnes 1').first.website ).to eq 'Nekje 22'
     end
 
-    it "should ammend the town if missing" do
+    it "should amend the town if missing" do
+      klub = Klub.unscoped.where(name: 'Fitnes 1').first
+      klub.town = nil
+      klub.save!
+
       data = [{
               name: 'Fitnes 1',
               town: 'Trzaska 25, 1000 Ljubljana'
@@ -186,7 +262,7 @@ RSpec.describe Import::Importer do
       expect( Klub.unscoped.where(name: 'Fitnes 1').first.town ).to eq 'Nekje 22'
     end
 
-    it "should ammend the phone if missing" do
+    it "should amend the phone if missing" do
       data = [{
               name: 'Fitnes 1',
               phone: 'Trzaska 25, 1000 Ljubljana'
@@ -212,7 +288,7 @@ RSpec.describe Import::Importer do
       expect( Klub.unscoped.where(name: 'Fitnes 1').first.phone ).to eq 'Nekje 22'
     end
 
-    it "should ammend the email if missing" do
+    it "should amend the email if missing" do
       data = [{
               name: 'Fitnes 1',
               email: 'Trzaska 25, 1000 Ljubljana'
@@ -252,6 +328,3 @@ RSpec.describe Import::Importer do
     end
   end
 end
-
-
-# TODO if same club, differ category, add the category

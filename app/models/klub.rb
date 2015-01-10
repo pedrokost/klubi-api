@@ -23,7 +23,6 @@ class Klub < ActiveRecord::Base
 
   def merge_with(klub_attrs)
 
-
     basic_attrs = [:name, :address, :town, :phone, :email, :website, :facebook_url]
     array_attrs = [:categories]
 
@@ -36,11 +35,8 @@ class Klub < ActiveRecord::Base
 
       elsif array_attrs.include?(key)
         self[key] = (self[key] + klub_attrs[key]).uniq
-
       end
     end
-
-
   end
 
 private
