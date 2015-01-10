@@ -42,31 +42,30 @@ module Import
         return
       end
 
-      existing_klub.each do |klub|
-        pp '=' * 60 if @verbose
-        p 'Existing klub:' if @verbose
-        pp klub.as_json.symbolize_keys if @verbose
-        p 'New data:' if @verbose
-        pp klubdata.as_json.symbolize_keys if @verbose
+      klub = existing_klub.first
+      pp '=' * 60 if @verbose
+      p 'Existing klub:' if @verbose
+      pp klub.as_json.symbolize_keys if @verbose
+      p 'New data:' if @verbose
+      pp klubdata.as_json.symbolize_keys if @verbose
 
-        h = HighLine.new
-        selection = Resolution.new
-        h.choose do |menu|
-          menu.prompt = "Merge data into existing klub or Create new klub?" if @verbose
-          menu.choice(:merge) { selection = Resolution.new(:merge) }
-          menu.choices(:create_new) { selection = Resolution.new(:create_new) }
-        end
-        case selection.resolution
-        when :merge
-            klub.merge_with(klubdata)
-            h.say("DONE merging klubs' data") if @verbose
-        when :create_new
-            klub = Klub.new(klubdata)
-            h.say("DONE creating new klub") if @verbose
-        end
-
-        klub.save!
+      h = HighLine.new
+      selection = Resolution.new
+      h.choose do |menu|
+        menu.prompt = "Merge data into existing klub or Create new klub?" if @verbose
+        menu.choice(:merge) { selection = Resolution.new(:merge) }
+        menu.choices(:create_new) { selection = Resolution.new(:create_new) }
       end
+      case selection.resolution
+      when :merge
+          klub.merge_with(klubdata)
+          h.say("DONE merging klubs' data") if @verbose
+      when :create_new
+          klub = Klub.new(klubdata)
+          h.say("DONE creating new klub") if @verbose
+      end
+
+      klub.save!
     end
   end
 end
