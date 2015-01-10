@@ -1,5 +1,6 @@
 require 'highline'
 require 'pry' if Rails.env.test?
+require 'pp'
 
 module Import
   class Resolution

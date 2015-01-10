@@ -1,0 +1,1690 @@
+{
+  "name": "fitnessi-new-data",
+  "count": 335,
+  "frequency": "Manual Crawl",
+  "version": 2,
+  "newdata": true,
+  "lastrunstatus": "partial",
+  "lastsuccess": "Fri Jan 09 2015 22:54:31 GMT+0000 (UTC)",
+  "thisversionstatus": "partial",
+  "thisversionrun": "Fri Jan 09 2015 21:48:04 GMT+0000 (UTC)",
+  "results": {
+    "collection1": [
+      {
+        "name": "CUBE fitness",
+        "address": "Naslov:\nUlica prvoborcev 25, Ljubljana\nTelefon:\n030 674 953\nEmail:\ninfo@cube-fitnes.si",
+        "tags": "HIIT\nCapoeira\nBody Pump\nFitnes\nStep aerobika\nVadba za otroke\nZumba\nOsebni trener\nTae Bo\nSpinning\nPilates"
+      },
+      {
+        "name": "Fitnes SOKOL Laguna",
+        "address": "Naslov:\nDunajska cesta 270 , Ljubljana\nTelefon:\n01 56 91 099; 041 69\nEmail:\nsokollaguna@sokolgroup.com",
+        "tags": "Pilates\nTnz\nZlata leta\nZumba\nBoot Camp\nBody Pump"
+      },
+      {
+        "name": "Fitnes SOKOL Vič",
+        "address": "Naslov:\nKoprska 72, Ljubljana\nTelefon:\n051 391 080\nEmail:\nsokolvic@sokolgroup.com",
+        "tags": "Body Balance\nBody Pump\nFitnes\nBody Step\nBody Combat\nZumba\nZlata leta\nTnz\nPilates"
+      },
+      {
+        "name": "Fitnes SPORTCLUB",
+        "address": "Naslov:\nGortanova 22, Ljubljana\nTelefon:\n01 52 07 777\nEmail:\ninfo@sportclub.si",
+        "tags": "Pilates\nTnz\nJoga\nZumba\nFitnes"
+      },
+      {
+        "name": "Konex Center",
+        "address": "Naslov:\nCesta na Brdo 109, Ljubljana\nTelefon:\n01 24 14 016\nEmail:\ninfo@konex-center.si",
+        "tags": "Pilates\nTnz\nVadba za seniorje\nBoot Camp\nFitnes\nBoks"
+      },
+      {
+        "name": "Center Metulj",
+        "address": "Naslov:\nLitijska c. 148, Ljubljana\nTelefon:\n070 839 386\nEmail:\ncenter.metulj@gmail.com",
+        "tags": "HIIT\nOpen Gym\nSkupinski trening\nFitnes\nIndividualna vadba\nTrx\nPilates"
+      },
+      {
+        "name": "Fitnes Sunny studio",
+        "address": "Naslov:\nRegentova Cesta 37, Ljubljana\nTelefon:\n01 51 34 444\nEmail:\nsunny@siol.net",
+        "tags": "Fitnes\nVodena vadba"
+      },
+      {
+        "name": "Fitline studio",
+        "address": "Naslov:\nUlica Jožeta Jame 12, Ljubljana\nTelefon:\n030 640 530\nEmail:\ninfo@fitline.si",
+        "tags": ""
+      },
+      {
+        "name": "Fitnes center BIT",
+        "address": "Naslov:\nLitijska 57, Ljubljana\nTelefon:\n031 227-225\nEmail:\ninfo@fitnescenterbit.com",
+        "tags": "Pilates\nSpinning\nCrossFit\nTnz\nJoga\nZumba\nPles ob drogu\nBoot Camp\nFitnes"
+      },
+      {
+        "name": "Športni center Millenium BTC",
+        "address": "Naslov:\nŠmartinska 153, Ljubljana\nTelefon:\n01 585 15 00\nEmail:\nmillenium@btc.si",
+        "tags": "BodiOsteo\nBodiFit\nJutranja telovadba\nFitnes"
+      },
+      {
+        "name": "FIT13, fitnes center sončni studio",
+        "address": "Naslov:\nBrnčičeva ulica 13, Ljubljana\nTelefon:\n01 56 09 184\nEmail:\nmojfit@mfit.si",
+        "tags": "P.A.I.N.\nHIIT\nBody Pump\nFitnes\nBody Step\nBody Attack\nBody balance\nZumba\nZlata leta\nPilates"
+      },
+      {
+        "name": "ONE to ONE fitnes klub",
+        "address": "Naslov:\nTržaška cesta 315, Ljubljana\nTelefon:\n041 693 518\nEmail:\ninfo@one2one.si",
+        "tags": "Vadba za seniorje\nVadba za nosečnice\nIndividualna vadba"
+      },
+      {
+        "name": "Bodyshaping studio RUDNIK",
+        "address": "Naslov:\nJurčkova Cesta 231, Ljubljana\nTelefon:\n041 693 302\nEmail:\ninfo@bodyshaping.si",
+        "tags": "Trx\nFitnes"
+      },
+      {
+        "name": "CHAGI športni center",
+        "address": "Naslov:\nVojkova cesta 58, Ljubljana\nTelefon:\n041 30 47 00\nEmail:\ninfo@sportnicenter-chagi.com",
+        "tags": "Joga za nosečnice\nJoga za otroke\nMeditacija\nJoga"
+      },
+      {
+        "name": "SUPERFIT KLUB",
+        "address": "Naslov:\nKopna pot 8, Ljubljana\nTelefon:\n031 233 233\nEmail:\ninfo@superfitklub.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Žabji Fit",
+        "address": "Naslov:\nBevke 92A, Brezovica pri Ljubljani, Ljubljana\nTelefon:\n041 715 501\nEmail:\ngalija@volja.net",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Športni center Dolgi Most",
+        "address": "Naslov:\nDolgi most 6a, Ljubljana\nTelefon:\n031 613 313\nEmail:\ninfo@sc-dolgimost.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "ŠRD Sostro",
+        "address": "Naslov:\nSostrska cesta 22, Ljubljana\nTelefon:\n041 874 080\nEmail:\nfitnes.bitenc@gmail.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Osebni fitnes studio",
+        "address": "Naslov:\nOb železnici 30a, Ljubljana\nTelefon:\n040 307 814\nEmail:\ninfo@osebni-fitnes.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "ŠUS - EVROFITNES",
+        "address": "Naslov:\nVodnikova cesta 155, Ljubljana\nTelefon:\n01 518 16 62\nEmail:\nsus@eurofitness.com",
+        "tags": "Body Pump\nFitnes\nCycling\nVadba za seniorje\nJoga"
+      },
+      {
+        "name": "GRC Zapolje, Fitnes Napoleon",
+        "address": "Naslov:\nIOC Zapolje III/5, Logatec\nTelefon:\n051 624 944\nEmail:\ninfo@grc-zapolje.si",
+        "tags": ""
+      },
+      {
+        "name": "MaXXFitnes",
+        "address": "Naslov:\nDunajska 190 , Ljubljana\nTelefon:\n0590 41 900 \nEmail:\ninfo@maxxfitnes.si",
+        "tags": "Power Joga\nBody Balance\nHIIT\nBody Pump\nFitnes\nBody Step\nBoot Camp\nBody Attack\nZdrava hrbtenica\nTrx\nPilates"
+      },
+      {
+        "name": "B I F I T - FITNESS",
+        "address": "Naslov:\nZaloška cesta 151, Ljubljana\nTelefon:\n031 844 544\nEmail:",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Športni center FIT-FIT",
+        "address": "Naslov:\nSlamnikarska c. 1, Domžale\nTelefon:\n041 232 113\nEmail:\nfit.bar@siol.net",
+        "tags": "Stretch\nBikini Workout\nBoks\nFitnes\nBody Step\nVadba za nosečnice\nZumba\nZlata leta\nTnz\nTrx\nPilates\nN.I.T."
+      },
+      {
+        "name": "Fitnes Ložar",
+        "address": "Naslov:\nJavorjeva ulica 10, Domžale \nTelefon:\n01 72 16 550 \nEmail:\nlozar.marko1@siol.net",
+        "tags": "Body Pump\nFitnes\nBokwa\nBoot Camp\nZumba"
+      },
+      {
+        "name": "Fitnes Sokol Kamnik",
+        "address": "Naslov:\nUsnjarska ulica 8, Kamnik \nTelefon:\n031 899 247\nEmail:\ninfo@fitnes-kamnik.si",
+        "tags": "Pilates\nTnz\nVadba za seniorje\nBody Attack\nBody Step\nFitnes\nBody Pump\nCxWork"
+      },
+      {
+        "name": "Fitnes center OZ",
+        "address": "Naslov:\nGasilska cesta 14, Grosuplje\nTelefon:\n031 802 516\nEmail:\ninfo@osebnotrenerstvo.si",
+        "tags": "Pilates\nJoga\nZumba\nFitnes"
+      },
+      {
+        "name": "Fitnes Energy Ivančna Gorica",
+        "address": "Naslov:\nC. 2. grupe odredov 34, Ivančna Gorica\nTelefon:\n051 353 535\nEmail:",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Fitnes VITALIS",
+        "address": "Naslov:\nPraprošče 15, Litija\nTelefon:\n040 834 736 \nEmail:\nvojko.kodrman@telemach.net",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Fitnes Studio Peter Klepec",
+        "address": "Naslov:\nRimska 33, Log pri Brezovici\nTelefon:\n041 972 169\nEmail:\ninfo@fitnes-peter-klepec.si",
+        "tags": "Trx\nCrossFit\nZumba\nPles ob drogu\nFunkcionalna vadba\nFitnes\nPace"
+      },
+      {
+        "name": "Športna dvorana Medvode",
+        "address": "Naslov:\nOstrovrharjeva ulica 4, Medvode\nTelefon:\n051 381 738\nEmail:\nspela@sportmedvode.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "SHAPE BOXING CENTER",
+        "address": "Naslov:\nVodovodna 99 (3. nadstropje), Ljubljana \nTelefon:\n040 88 44 79\nEmail:\nshape.info@yahoo.com",
+        "tags": "Boot Camp\nShape boxing\nPower Joga"
+      },
+      {
+        "name": "Fitinn Sportstudio GmbH",
+        "address": "Naslov:\nBTC, Šmartinska cesta 152, Hala 8, Ljubljana\nTelefon:\n01 8 10 9503\nEmail:",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Center osebni pristop",
+        "address": "Naslov:\nJamova 95 a, Ljubljana\nTelefon:\n041 861 420\nEmail:\nbostjan@vitalno-telo.com",
+        "tags": "Osebni trening\nOnline program"
+      },
+      {
+        "name": "AMBROSIJA center dobrega počutja",
+        "address": "Naslov:\nZaloška cesta 167, Ljubljana\nTelefon:\n01 54 63 152\nEmail:\ninfo@ambrosija.si",
+        "tags": "Vadba za seniorje\nFitnes"
+      },
+      {
+        "name": "4P FITNESS CLUB LJUBLJANA",
+        "address": "Naslov:\nVerovškova ulica 55 a, Ljubljana\nTelefon:\n040 332 203\nEmail:\noffice@4p-fitness.com",
+        "tags": "Ladylates\nBokwa\nBody Step\nBody Attack\nZumba\nJoga\nPilates"
+      },
+      {
+        "name": "Fitnes Tivoli",
+        "address": "Naslov:\nCelovška 25, Ljubljana\nTelefon:\n051 622 162\nEmail:\nfitnes@tivoli.sport-ljubljana.si",
+        "tags": "Fitnes\nBody Step\nBoot Camp\nZumba\nZlata leta\nTnz\nPilates\nHIIT"
+      },
+      {
+        "name": "ŠAD Mavrica",
+        "address": "Naslov:\nOŠ Rodice, Kettejeva ulica 13, Domžale\nTelefon:\n031 314 870\nEmail:\nsad.mavrica@gmail.com",
+        "tags": "Aerobika\nTrening v naravi"
+      },
+      {
+        "name": "V.I.P.",
+        "address": "Naslov:\nLjubljanska cesta 4 a, Ivančna Gorica\nTelefon:\n041 982 000\nEmail:\ninfo@vip-vadba.si",
+        "tags": "Vadba za otroke\nZumba\nPilates\nVadba za seniorje\nVadba za nosečnice\nBoot Camp\nCrossCore"
+      },
+      {
+        "name": "LIONESS, fitnes za ženske",
+        "address": "Naslov:\nLitostrojska 41, Ljubljana\nTelefon:\n040 163 627\nEmail:\nfitlevinja@hotmail.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Oaza, center vadbenih užitkov",
+        "address": "Naslov:\nLeskoškova 10, Ljubljana\nTelefon:\n01 54 71 900\nEmail:\noaza.cvu@gmail.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "OK fit center",
+        "address": "Naslov:\nRazori 2, Dobrova\nTelefon:\n041 947 947\nEmail:\ninfo@ok-fit.si",
+        "tags": "Tnz\nZlata leta\nVadba za otroke\nAktivno razstezanje\nBody Attack\nBoot Camp\nFitnes\nKundalini joga"
+      },
+      {
+        "name": "Savna klub Breza",
+        "address": "Naslov:\nLepodvorska 13, Ljubljana\nTelefon:\n041 675 075\nEmail:\ninfo@savnabreza.com",
+        "tags": "Vadba za nosečnice\nVadba za mamice z dojenčki\nZdrava hrbtenica\nFitnes"
+      },
+      {
+        "name": "SPIN športni center",
+        "address": "Naslov:\nObrezija 12, Izlake\nTelefon:\n041 779 383\nEmail:",
+        "tags": "Pilates\nAerobika"
+      },
+      {
+        "name": "Športno društvo Sokol Kočevje",
+        "address": "Naslov:\nŠalska vas 4, Kočevje\nTelefon:\n041 503 090\nEmail:\nsokolkocevje@gmail.com",
+        "tags": "Spinning\nAerobika\nFitnes"
+      },
+      {
+        "name": "Klub Kubu",
+        "address": "Naslov:\nPustnice 46, Vodice\nTelefon:\n041 312 706\nEmail:\nkubu.vodice@gmail.com",
+        "tags": "Pilates\nTnz\nJoga\nVadba za seniorje\nBody Step"
+      },
+      {
+        "name": "Fitnes center MOJ FIT - TUŠ Center BTC",
+        "address": "Naslov:\nBratislavska ulica 9, Ljubljana\nTelefon:\n01 60 06 235\nEmail:\nmojfit@mfit.si",
+        "tags": "Poporodna vadba\nShape\nP.A.I.N.\nBody Pump\nFitnes\nCycling\nBody Attack\nVadba za nosečnice\nZumba\nJoga\nZlata leta\nTnz\nTrx\nPilates"
+      },
+      {
+        "name": "Športno društvo Dobrepolje",
+        "address": "Naslov:\nakličev dom na Vidmu, Videm 34, Videm - Dobrepolje\nTelefon:\n041 669 227\nEmail:\nsd.dobrepolje@siol.net",
+        "tags": "Pilates\nAerobika\nFitnes"
+      },
+      {
+        "name": "TRIM studio za kulturo telesa",
+        "address": "Naslov:\nUlica Sallaumines 8, Trbovlje\nTelefon:\n041 267 005\nEmail:\ninfo@studiotrim.si",
+        "tags": "Pilates\nZumba\nFitnes\nSkupinski Fitnes"
+      },
+      {
+        "name": "Vita line",
+        "address": "Naslov:\nBrezje pri Grosupljem 90 (Sončni dvori), Grosuplje\nTelefon:\n051 633 446\nEmail:\ninfo@vitaline.si",
+        "tags": "Spinning\nCrossFit\nPlesi\nFitnes"
+      },
+      {
+        "name": "BJ FIT - FITNESS & WELLNESS CENTER",
+        "address": "Naslov:\nPod Hruševco 48c, Vrhnika\nTelefon:\n031 373 500\nEmail:\ninfo@bjfit.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "OPTIMUM fitnes center",
+        "address": "Naslov:\nIndustrijska cesta 1 g, Grosuplje\nTelefon:\n040 15 15 00\nEmail:\ninfo@fc-optimum.si",
+        "tags": "Pilates\nSpinning\nTrx\nTnz\nVadba za otroke\nBoot Camp"
+      },
+      {
+        "name": "DRUŠTVO POTENTIA",
+        "address": "Naslov:\nSpodnje Pirni?e 50 a, Ljubljana\nTelefon:\n040 130 134\nEmail:\ninfo@potentia.si",
+        "tags": "Boot Camp\nOnline program\nPriprava za športnike"
+      },
+      {
+        "name": "Fitnes Gimnazija Šiška",
+        "address": "Naslov:\nAljaževa 32, Ljubljana\nTelefon:\n040 617 117\nEmail:\ntadej.eposta@gmail.com",
+        "tags": "Boot Camp\nFitnes"
+      },
+      {
+        "name": "Peti element, pilates studio",
+        "address": "Naslov:\nBarjanska 58, Ljubljana\nTelefon:\n041 261 566\nEmail:\nspela.jaksa@petielement.si",
+        "tags": "Pilates\nPilates za nosečnice"
+      },
+      {
+        "name": "Pilates holistični center",
+        "address": "Naslov:\nCankarjeva 10, Ljubljana\nTelefon:\n031 55 05 55\nEmail:\ninfo@pilates.si",
+        "tags": "Pilates"
+      },
+      {
+        "name": "Pilates center Tanergija",
+        "address": "Naslov:\nDunajska 190, Ljubljana\nTelefon:\n040 833 228\nEmail:\ninfo@tanergija.si",
+        "tags": "Pilates"
+      },
+      {
+        "name": "GIBANICA",
+        "address": "Naslov:\nTrg Karla Grabeljška 3, Vrhnika\nTelefon:\n040 390 660\nEmail:\ninfo@gibanica.si",
+        "tags": "Pilates"
+      },
+      {
+        "name": "GIBANICA",
+        "address": "Naslov:\nUlica Jožeta Jame 14, Ljubljana\nTelefon:\n040 390 660\nEmail:\ninfo@gibanica.si",
+        "tags": "Feldenkrais\nPilates"
+      },
+      {
+        "name": "GIBIS-EM",
+        "address": "Naslov:\nOŠ ZALOG, Cerutova ulica 7, Ljubljana\nTelefon:\n041 637 610\nEmail:\nmaja.milic@gibis-em.si",
+        "tags": "Aero Mix"
+      },
+      {
+        "name": "GIBIS-EM",
+        "address": "Naslov:\nOŠ KOSEZE, Ledarska ulica 23, Ljubljana\nTelefon:\n041 637 610\nEmail:\nmaja.milic@gibis-em.si",
+        "tags": "Aero Mix"
+      },
+      {
+        "name": "GIBIS-EM",
+        "address": "Naslov:\nOŠ VIŽMARJE – BROD, Na gaju 2, Ljubljana\nTelefon:\n041 637 610\nEmail:\nmaja.milic@gibis-em.si",
+        "tags": "Aero Mix"
+      },
+      {
+        "name": "GIBIS-EM",
+        "address": "Naslov:\nOŠ TRNOVO, Karunova ulica 14a, Ljubljana\nTelefon:\n041 637 610\nEmail:\nmaja.milic@gibis-em.si",
+        "tags": "Aero Mix"
+      },
+      {
+        "name": "GIBIS-EM",
+        "address": "Naslov:\nOŠ VIČ, Abramova ulica 26, Ljubljana\nTelefon:\n041 637 610\nEmail:\nmaja.milic@gibis-em.si",
+        "tags": "Aero Mix"
+      },
+      {
+        "name": "GIBIS-EM",
+        "address": "Naslov:\nOŠ DRAGOMELJ, Dragomelj 180, Ljubljana\nTelefon:\n041 637 610\nEmail:\nmaja.milic@gibis-em.si",
+        "tags": "Aero Mix"
+      },
+      {
+        "name": "GIBIS-EM",
+        "address": "Naslov:\nOŠ IG, Troštova ulica 24, Ljubljana\nTelefon:\n041 637 610\nEmail:\nmaja.milic@gibis-em.si",
+        "tags": "Aero Mix"
+      },
+      {
+        "name": "GIBIS-EM",
+        "address": "Naslov:\nOŠ V. VODNIKA, Adamičeva ulica 16 , Ljubljana\nTelefon:\n041 637 610\nEmail:\nmaja.milic@gibis-em.si",
+        "tags": "Pilates\nAero Mix"
+      },
+      {
+        "name": "GIBIS-EM",
+        "address": "Naslov:\nOŠ MAKSA PEČARJA, Črnuška cesta 9, Ljubljana\nTelefon:\n041 637 610\nEmail:\nmaja.milic@gibis-em.si",
+        "tags": "Aero Mix"
+      },
+      {
+        "name": "GIBIS-EM",
+        "address": "Naslov:\nOŠ MAKSA PE?ARJA, ?rnuška cesta 9, Ljubljana\nTelefon:\n041 637 610\nEmail:\nmaja.milic@gibis-em.si",
+        "tags": ""
+      },
+      {
+        "name": "GIBIS-EM",
+        "address": "Naslov:\nOŠ SAVSKO NASELJE, Matjaževa ulica 4, Ljubljana\nTelefon:\n041 637 610\nEmail:\nmaja.milic@gibis-em.si",
+        "tags": ""
+      },
+      {
+        "name": "GIBIS-EM",
+        "address": "Naslov:\nOŠ NOVE JARŠE, Celevelandska ulica 11, Ljubljana\nTelefon:\n041 637 610\nEmail:\nmaja.milic@gibis-em.si",
+        "tags": ""
+      },
+      {
+        "name": "GIBIS-EM",
+        "address": "Naslov:\nOŠ MILANA ŠUŠTARŠI?A, Štembalova ulica 2, Ljubljana\nTelefon:\n041 637 610\nEmail:\nmaja.milic@gibis-em.si",
+        "tags": ""
+      },
+      {
+        "name": "GIBIS-EM",
+        "address": "Naslov:\nGIMNAZIJA BEŽIGRAD, Peri?eva ulica 4, Ljubljana\nTelefon:\n041 637 610\nEmail:\nmaja.milic@gibis-em.si",
+        "tags": ""
+      },
+      {
+        "name": "Športni klub v gibanju",
+        "address": "Naslov:\nDom krajanov Pirniče, Zgornje Pirniče 6, Medvode\nTelefon:\n040 990 022\nEmail:\ninfo@vgibanju.si",
+        "tags": "Pilates"
+      },
+      {
+        "name": "Športni klub v gibanju",
+        "address": "Naslov:\nTelovadnica Carka, Medenska cesta 84, Ljubljana\nTelefon:\n040 990 022\nEmail:\ninfo@vgibanju.si",
+        "tags": "Pilates\nFunkcionalna vadba"
+      },
+      {
+        "name": "Športni klub v gibanju",
+        "address": "Naslov:\nŠportna gimnazija Šentvid, Ob zdravstvenem domu 3, Ljubljana\nTelefon:\n040 990 022\nEmail:\ninfo@vgibanju.si",
+        "tags": "Pilates\nFunkcionalna vadba"
+      },
+      {
+        "name": "Športni klub v gibanju",
+        "address": "Naslov:\nOŠ M. Šuštaršiča, Štembalova ulica 2a, Ljubljana\nTelefon:\n040 990 022\nEmail:\ninfo@vgibanju.si",
+        "tags": "Pilates\nFunkcionalna vadba"
+      },
+      {
+        "name": "Športni klub v gibanju",
+        "address": "Naslov:\nOŠ Moste, Moste 40, Moste pri Komendi\nTelefon:\n040 990 022\nEmail:\ninfo@vgibanju.si",
+        "tags": "Pilates"
+      },
+      {
+        "name": "Športni klub v gibanju",
+        "address": "Naslov:\nGD Rudnik, Dolenjska cesta 137, Ljubljana\nTelefon:\n040 990 022\nEmail:\ninfo@vgibanju.si",
+        "tags": "Pilates\nFunkcionalna vadba\nMetabolični trening"
+      },
+      {
+        "name": "Studio Prosapia",
+        "address": "Naslov:\nCelovška 111, Ljubljana\nTelefon:\n040 844 481\nEmail:\ninfo@studio-prosapia.si",
+        "tags": "Vinjasa joga\nKarate otroci\nVadba za seniorje\nFunkcionalna vadba\nTrx\nPilates\nŽenski QI GONG \nShakti Dance"
+      },
+      {
+        "name": "Reebok CrossFit Ljubljana",
+        "address": "Naslov:\nŠmartinska c. 106, Ljubljana\nTelefon:\n070 658 112 \nEmail:\ninfo@reebokcrossfitljubljana.si",
+        "tags": "CrossFit\nBoot Camp"
+      },
+      {
+        "name": "Petit studio",
+        "address": "Naslov:\nParmova 51, Ljubljana\nTelefon:\n031 348 036\nEmail:\npetit@actionmama.com",
+        "tags": "Pilates\nPlesi\nVadba za seniorje\nVodena vadba"
+      },
+      {
+        "name": "Športno društvo Tabor",
+        "address": "Naslov:\nTabor 13, Ljubljana \nTelefon:\n01 23 22 528\nEmail:\nsd.tabor@siol.net",
+        "tags": "Pilates\nVadba za otroke\nAerobika\nVadba za seniorje"
+      },
+      {
+        "name": "Športno društvo Studio Forte",
+        "address": "Naslov:\nSinja gorica 17, Vrhnika- Sinja gorica\nTelefon:\n051 770 477\nEmail:\ninfo@studioforte.si",
+        "tags": "HIIT\nZumba\nJoga\nTrx\nSpinning\nPilates\nPoporodna vadba"
+      },
+      {
+        "name": "Studio MARKO MRAK",
+        "address": "Naslov:\nKrožna pot 30a, Ljubljana\nTelefon:\n040 162 717\nEmail:\ninfo@studiomarkomrak.com",
+        "tags": "Trx\nOsebni trener\nBoot Camp"
+      },
+      {
+        "name": "Parinama center",
+        "address": "Naslov:\nCesta na Brdo 85, Ljubljana\nTelefon:\n030 665 544\nEmail:\ninfo@parinama.si",
+        "tags": "Zdrava hrbtenica\nJoga\nPilates\nVitalno medenično dno"
+      },
+      {
+        "name": "Devi joga center",
+        "address": "Naslov:\nBoben?kova ul. 4, Ljubljana\nTelefon:\n031 205 997\nEmail:\ninfo@devi-jogacenter.si",
+        "tags": "Zdrava hrbtenica\nMasaže\nJoga\nPilates"
+      },
+      {
+        "name": "CITY JOGA CENTER LJUBLJANA",
+        "address": "Naslov:\nUlica Jožeta Jame 12, Ljubljana\nTelefon:\n041 356 432; 041 697\nEmail:\ninfo@cityoga.org",
+        "tags": "Joga za nosečnice\nJoga za otroke\nMeditacija\nJoga"
+      },
+      {
+        "name": "Pilates s Petro",
+        "address": "Naslov:\nBM studio, Dunajska 63, Ljubljana\nTelefon:\n041 394 525\nEmail:\naktivna.pilates@gmail.com",
+        "tags": "Pilates\nPilates za nosečnice"
+      },
+      {
+        "name": "Pilates s Petro",
+        "address": "Naslov:\nOŠ Maksa Pečarja, Dunajska 390, Ljubljana\nTelefon:\n041 394 525\nEmail:\naktivna.pilates@gmail.com",
+        "tags": "Pilates za nosečnice\nPilates"
+      },
+      {
+        "name": "Dom kulture Kamnik",
+        "address": "Naslov:\nFužine 10, Kamnik\nTelefon:\n041 394 525\nEmail:\naktivna.pilates@gmail.com",
+        "tags": "Pilates"
+      },
+      {
+        "name": "Joga studio Sadhana",
+        "address": "Naslov:\nKoprska 52, Ljubljana \nTelefon:\n040 909 192\nEmail:\ninfo@sadhana.si",
+        "tags": "Joga"
+      },
+      {
+        "name": "Joga studio Sadhana",
+        "address": "Naslov:\nNeubergerjeva 9, Ljubljana\nTelefon:\n040 909 192\nEmail:\ninfo@sadhana.si",
+        "tags": "Joga"
+      },
+      {
+        "name": "Joga, svet je lep",
+        "address": "Naslov:\nLeskoškova 6 (BTC), Ljubljana\nTelefon:\n031 340 812\nEmail:\njoga@svet-je-lep.com",
+        "tags": "Joga"
+      },
+      {
+        "name": "Joga, svet je lep",
+        "address": "Naslov:\nCesta II. grupe odredov 47, Ljubljana\nTelefon:\n031 340 812\nEmail:\njoga@svet-je-lep.com",
+        "tags": "Joga"
+      },
+      {
+        "name": "Joga, svet je lep",
+        "address": "Naslov:\nOŠ Polje, Polje 358, Ljubljana\nTelefon:\n031 340 812\nEmail:\njoga@svet-je-lep.com",
+        "tags": "Joga"
+      },
+      {
+        "name": "Joga, svet je lep",
+        "address": "Naslov:\nDvora PIL, Brezje pri Grosupljem 34, Grosuplje\nTelefon:\n031 340 812\nEmail:\njoga@svet-je-lep.com",
+        "tags": "Joga"
+      },
+      {
+        "name": "Joga, svet je lep",
+        "address": "Naslov:\nCenter Avalon, Stari trg 32, Trebnje\nTelefon:\n031 340 812\nEmail:\njoga@svet-je-lep.com",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nJoga Center Ljubljana, Selanova 16, Ljubljana\nTelefon:\n040 221 108\nEmail:\ninfo@joga-ljubljana.org",
+        "tags": ""
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nLjubljanska cesta 58, Domžale\nTelefon:\n031 231 440\nEmail:\ndomzale@jvv.org",
+        "tags": "Joga\nZdrava hrbtenica"
+      },
+      {
+        "name": "mJoga",
+        "address": "Naslov:\nAtalje, Tržaška c.2, Ljubljana\nTelefon:\n051 354 963\nEmail:\nmiha.joga@gmail.com",
+        "tags": "Iyengar joga \nJoga Senior"
+      },
+      {
+        "name": "Anja Studio",
+        "address": "Naslov:\nParmova ul. 51, Ljubljana\nTelefon:\n051 252 252\nEmail:\njoga@ajnastudio.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "BIT-JE Petra Smrtnik",
+        "address": "Naslov:\nStudio Prosapia, Celovška 111, Ljubljana\nTelefon:\n031 377 232\nEmail:\ninfo@bit-je.si",
+        "tags": ""
+      },
+      {
+        "name": "BIT-JE Petra Smrtnik",
+        "address": "Naslov:\nOŠ Ivana Cankarja, Tržaška 2, Vrhnika\nTelefon:\n031 377 232\nEmail:\ninfo@bit-je.si",
+        "tags": "Kundalini joga"
+      },
+      {
+        "name": "BIT-JE Petra Smrtnik",
+        "address": "Naslov:\nOŠ Horjul, Šolska ulica 44, Horjul\nTelefon:\n031 377 232\nEmail:\ninfo@bit-je.si",
+        "tags": "Kundalini joga"
+      },
+      {
+        "name": "INI-MINI",
+        "address": "Naslov:\nTržaška 392, Brezovica pri Ljubljani\nTelefon:\n041 433 033\nEmail:\ninfo@ini-mini.si",
+        "tags": "Pilates\nJoga\nZvočna kopel"
+      },
+      {
+        "name": "Joga do",
+        "address": "Naslov:\nTELODROM, Kolarjeva 45a, Ljubljana\nTelefon:\n070 772 713\nEmail:\njogado48@gmail.com",
+        "tags": "Joga"
+      },
+      {
+        "name": "Joga do",
+        "address": "Naslov:\nCenter veščin Trans4mator, Glinška 6, Ljubljana\nTelefon:\n070 772 713\nEmail:\njogado48@gmail.com",
+        "tags": "Joga"
+      },
+      {
+        "name": "Dvorana Glinek",
+        "address": "Naslov:\nDvorana Glinek, Glinek 22, Škofljica\nTelefon:\n040 688 222\nEmail:\ndvorana.glinek@gmail.com",
+        "tags": "Pilates\nJoga\nZumba\nAerobika\nDeepWork"
+      },
+      {
+        "name": "Center HORTUS VITAE",
+        "address": "Naslov:\nDunajska 205, Ljubljana\nTelefon:\n031 637 913\nEmail:\ninfo@hortusvitae.si",
+        "tags": "Feldenkrais\nJoga\nGong"
+      },
+      {
+        "name": "No Stress Center",
+        "address": "Naslov:\nUlica Milana Majcna 29a, Ljubljana\nTelefon:\n040 522 868\nEmail:\ninfo@nostresscenter.com",
+        "tags": "Pilates\nJoga\nPlesi"
+      },
+      {
+        "name": "LaDiva, Center zdravja in dobrega počutja",
+        "address": "Naslov:\nTrg revolucije 4B, Trbovlje\nTelefon:\n040 245 860\nEmail:",
+        "tags": "Trx\nFunkcionalna vadba"
+      },
+      {
+        "name": "Telodrom",
+        "address": "Naslov:\nKolarjeva 45 a, Ljubljana\nTelefon:\n031 335 465\nEmail:\ninfo@telodrom.com",
+        "tags": "Joga\nVadba za nosečnice\nTolerance Zero\nSOS"
+      },
+      {
+        "name": "Športno društvo Partizan Vič",
+        "address": "Naslov:\nTržaška cesta 76, Ljubljana\nTelefon:\n040 325 148\nEmail:\npartizan.vic@siol.net",
+        "tags": "Pilates\nZumba\nVadba za otroke\nAerobika\nVadba za seniorje"
+      },
+      {
+        "name": "Športno društvo Narodni dom",
+        "address": "Naslov:\nOŠ Prežihovega Voranca, Prežihova ulica 8, Ljubljana\nTelefon:\n051 664 944\nEmail:\ndalibormatijevic@gmail.com",
+        "tags": "Pilates\nJoga"
+      },
+      {
+        "name": "ŠPORTNA SI",
+        "address": "Naslov:\nMC Medvode, Cesta ob Zori 12, Medvode\nTelefon:\n041 276 884\nEmail:\npolona@sportna.si",
+        "tags": "Pilates\nJoga\nDeepWork"
+      },
+      {
+        "name": "ŠPORTNA SI",
+        "address": "Naslov:\nVrtec Montessori, Preška cesta 33A, Medvode\nTelefon:\n041 276 884\nEmail:\npolona@sportna.si",
+        "tags": "Pilates\nJoga\nZumba"
+      },
+      {
+        "name": "Športno društvo Grosuplje",
+        "address": "Naslov:\nŠportna dvorana Brinje, Ljubljanska c. 40A, Grosuplje\nTelefon:\n051 262 881\nEmail:\ninfo@sportno-drustvo-grosuplje.si",
+        "tags": "Funkcionalna vadba\nAerobika\nZumba\nTnz\nPilates"
+      },
+      {
+        "name": "Športno društvo Sokol Bežigrad",
+        "address": "Naslov:\nTrg 9. maja 1, Ljubljana\nTelefon:\n01 43 47 603\nEmail:\ninfo@sokolbezigrad.si",
+        "tags": "Zlata leta\nSplošna telovadba"
+      },
+      {
+        "name": "Športno društvo Trnovo",
+        "address": "Naslov:\nZiherlova 40, Ljubljana\nTelefon:\n040 171 415\nEmail:\nsdtrnovo@gmail.com",
+        "tags": "Pilates\nTnz\nZumba\nVadba za otroke\nBoot Camp"
+      },
+      {
+        "name": "Športno Društvo JEŽICA",
+        "address": "Naslov:\nČŠ Posavje, Bratovševa ploščad 30 , Ljubljana\nTelefon:\n041 722 135\nEmail:\nsdjezica@gmail.com",
+        "tags": "Pilates\nVadba za moč"
+      },
+      {
+        "name": "ŠAD Mavrica",
+        "address": "Naslov:\nPot za Bistrico 65, Domžale\nTelefon:\n031 314 870\nEmail:\nsad.mavrica@gmail.com",
+        "tags": "Vadba za otroke\nAerobika\nVodena vadba"
+      },
+      {
+        "name": "Fit Manija",
+        "address": "Naslov:\nOš veliki Gaber, Veliki Gaber 41, Veliki Gaber\nTelefon:\n041 234 925 \nEmail:\nfitmanija@siol.net",
+        "tags": "Pilates\nZumba\nAerobika\nPlesi"
+      },
+      {
+        "name": "Fit bejba",
+        "address": "Naslov:\nKrimska ulica 4, Ljubljana\nTelefon:\n040 979 626\nEmail:\nfittbejba@gmail.com",
+        "tags": ""
+      },
+      {
+        "name": "ABC šport",
+        "address": "Naslov:\nŠportna špica, Ižanska c.10, Ljubljana\nTelefon:\n040 632 030\nEmail:\ninfo@abcsport.si",
+        "tags": "Pilates\nVadba za otroke\nVodena vadba"
+      },
+      {
+        "name": "Joga studio Sadhana",
+        "address": "Naslov:\nKapitelj, Poljanski nasip 8, Ljubljana\nTelefon:\n040 90 91 92\nEmail:\ninfo@sadhana.si",
+        "tags": "Joga"
+      },
+      {
+        "name": "Hiša radosti",
+        "address": "Naslov:\nDunajska 58, Ljubljana\nTelefon:\n040 504 127\nEmail:\ninfo@hisaradosti.com",
+        "tags": "Joga\nKundalini joga"
+      },
+      {
+        "name": "Gibit",
+        "address": "Naslov:\nOŠ Dravlje, Klopčičeva ulica 1, Ljubljana\nTelefon:\n040 331 833\nEmail:\nnfo@gibit.si",
+        "tags": "BalaBit"
+      },
+      {
+        "name": "Azra Zumba",
+        "address": "Naslov:\nKolarjeva 47, Ljubljana\nTelefon:\n031 555 768\nEmail:\ninfo@azra-zumba.si",
+        "tags": "Zumba"
+      },
+      {
+        "name": "VigorGround",
+        "address": "Naslov:\nTržaška 135, Ljubljana\nTelefon:\n059 059 674\nEmail:\ninfo@vigorground.com",
+        "tags": "Funkcionalna vadba\nBoot Camp\nOsebni trening"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nMaistrov trg 11, Kranj\nTelefon:\n041 891 832\nEmail:\nkranj@jvvz.org",
+        "tags": ""
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nDemšarjeva 7,  Škofja Loka\nTelefon:\n041 919 812\nEmail:\njoga.skofjaloka@gmail.com",
+        "tags": "Joga"
+      },
+      {
+        "name": "CITY JOGA CENTER KRANJ",
+        "address": "Naslov:\nSlovenski trg 5, Kranj\nTelefon:\n041 356 432; 041 697\nEmail:\ninfo@cityoga.org",
+        "tags": "Joga\nMeditacija"
+      },
+      {
+        "name": "Klub športa in zdravja",
+        "address": "Naslov:\nAlpska cesta 43, Lesce\nTelefon:\n041 202 666\nEmail:\nkszlesce@gmail.com",
+        "tags": "Vadba za nosečnice\nVadba za seniorje\nAerobika\nVadba za otroke\nZumba\nJoga\nTnz\nCrossFit\nPilates\nTai Chi\nMetabolični trening"
+      },
+      {
+        "name": "Joga studio Sadhana",
+        "address": "Naslov:\nŠpikova ul. 17, Kranj\nTelefon:\n031 308 144\nEmail:\ninfo@sadhana.si",
+        "tags": "Joga"
+      },
+      {
+        "name": "Center plesa, športa in sprostitve Ritmo Lok",
+        "address": "Naslov:\nKidri?eva c. 75, Škofja Loka\nTelefon:\n041 710 310\nEmail:\nirena@freising.si",
+        "tags": "Plesi\nVadba za otroke\nZumba\nJoga\nTnz\nTrx\nPilates\nZdrava hrbtenica\nZvočna kopel\nCycling\nMeditacija"
+      },
+      {
+        "name": "Padma joga studio",
+        "address": "Naslov:\nŠercerjeva 18, Radovljica\nTelefon:\n040 452 773\nEmail:\nkristina.suchy@gmail.com",
+        "tags": "Joga\nJoga za otroke\nJoga za nosečnice\nIyengar joga"
+      },
+      {
+        "name": "Prana joga center",
+        "address": "Naslov:\nSlovenski trg 5, Kranj\nTelefon:\n040 705 306 \nEmail:\ninfo@pranajoga.si",
+        "tags": "Joga\nIyengar joga"
+      },
+      {
+        "name": "Športno društvo Sokol Stražišče",
+        "address": "Naslov:\nGasilska 10, Kranj\nTelefon:\n031 344 193\nEmail:\nirena@sokol-strazisce.si",
+        "tags": "Pilates\nTnz\nAerobika\nPlesi\nVadba za nosečnice"
+      },
+      {
+        "name": "Moj klub",
+        "address": "Naslov:\nLjubljanska c. 13a, Bled\nTelefon:\n041 602 082\nEmail:\nmojklubbled@gmail.com",
+        "tags": "Funkcionalna vadba\nPlesi\nAerobika\nVadba za otroke\nZumba\nJoga\nPilates\nVadba za seniorje\nBoot Camp"
+      },
+      {
+        "name": "Studio Manca",
+        "address": "Naslov:\nAlpska c. 37b, Lesce\nTelefon:\n04 531 89 10 \nEmail:\ninfo@studiomanca.si",
+        "tags": "Joga\nFeldenkrais"
+      },
+      {
+        "name": "Vita Center",
+        "address": "Naslov:\nPivka 23a, Naklo\nTelefon:\n04 25 19 558\nEmail:\nrecepcija@vitacenter.si",
+        "tags": "Hatha Joga\nFeldenkrais\nZdrava hrbtenica\nVadba za nosečnice\nVadba za seniorje\nVadba za otroke\nZumba\nTnz\nSpinning\nPilates"
+      },
+      {
+        "name": "Rekreacijski center Vogu",
+        "address": "Naslov:\nSpodnja Besnica, Vogel 10, Zgornja Besnica\nTelefon:\n04 25 06 333\nEmail:\nvogu@siol.",
+        "tags": "Pilates\nSpinning\nTnz\nJoga\nZumba\nVadba za seniorje\nVadba za nosečnice\nVadba za mamice z dojenčki\nJogalates"
+      },
+      {
+        "name": "FITPRO klub za dušo in telo",
+        "address": "Naslov:\nC. Staneta Žagarja 37, Kranj\nTelefon:\n041 790 248\nEmail:\nkatja.zupan@fitpro.si",
+        "tags": "Vodena vadba"
+      },
+      {
+        "name": "FITPRO klub za dušo in telo Kranj",
+        "address": "Naslov:\nGimnazija F. Prešerna, Kidričeva cesta 65, Kranj\nTelefon:\n041 790 248\nEmail:\nlea.zupan@fitpro.si",
+        "tags": "Vodena vadba"
+      },
+      {
+        "name": "FITPRO klub za dušo in telo Kranj",
+        "address": "Naslov:\nIBI center, Jelenčeva ulica 1, Kranj\nTelefon:\n041 790 248\nEmail:\nlea.zupan@fitpro.si",
+        "tags": ""
+      },
+      {
+        "name": "FITPRO klub za dušo in telo Kranj",
+        "address": "Naslov:\nProšport center, Jernejeva ulica 12, Kranj\nTelefon:\n041 790 248\nEmail:\nlea.zupan@fitpro.si",
+        "tags": ""
+      },
+      {
+        "name": "FITPRO klub za dušo in telo Kranj",
+        "address": "Naslov:\nCITYJOGA CENTER, Center, Slovenski trg 5, Kranj\nTelefon:\n041 790 248\nEmail:\nlea.zupan@fitpro.si",
+        "tags": "Vodena vadba"
+      },
+      {
+        "name": "Gibalni studio PiZum",
+        "address": "Naslov:\nPredilniška c. 16 , Tržič\nTelefon:\n040 635 534\nEmail:\ntina.grum@gmail.com",
+        "tags": ""
+      },
+      {
+        "name": "Fit Pilates",
+        "address": "Naslov:\nVodni Park Bohinj, Triglavska cesta 17, Bohinjska Bistrica\nTelefon:\n041 282-812\nEmail:\nmarusa.krkoc@gmail.com",
+        "tags": "Pilates\nTnz\nAerobika\nFunkcionalna vadba"
+      },
+      {
+        "name": "Fly box, Športni klub Sunrise",
+        "address": "Naslov:\nHrušica 4, Hrušica\nTelefon:\n031 340 631\nEmail:",
+        "tags": ""
+      },
+      {
+        "name": "SPORT & FUN",
+        "address": "Naslov:\nGimnazija Franceta Prešerna, Kidričeva c. 65, Kranj\nTelefon:\n031 519 129 \nEmail:\ninfo@sportandfun.net",
+        "tags": ""
+      },
+      {
+        "name": "SPORT & FUN",
+        "address": "Naslov:\nPoslovna stavba Cubis, Poslovna cona 2 A, Šenčur\nTelefon:\n031 519 129 \nEmail:\ninfo@sportandfun.net",
+        "tags": "Zumba\nAerolates"
+      },
+      {
+        "name": "SPORT & FUN",
+        "address": "Naslov:\nOŠ Franceta Prešerna, Cesta na Brdo 45a, Kranj\nTelefon:\n031 519 129 \nEmail:\ninfo@sportandfun.net",
+        "tags": "Pilates\nZumba"
+      },
+      {
+        "name": "SPORT & FUN",
+        "address": "Naslov:\nGasilski dom, Britof 316, Preddvor\nTelefon:\n031 519 129 \nEmail:\ninfo@sportandfun.net",
+        "tags": "Zdrava hrbtenica"
+      },
+      {
+        "name": "Cha Cha Cha, plesni center Gorenjske",
+        "address": "Naslov:\nSlovenski trg 7, Kranj\nTelefon:\n04 25 15 000\nEmail:\ninfo@chachacha.si",
+        "tags": "Pilates\nJoga\nZumba\nVadba za otroke\nAerobika\nPlesi"
+      },
+      {
+        "name": "Joga studio Sadhana",
+        "address": "Naslov:\nTrg Davorina Jenka 3, Cerklje na Gorenjskem\nTelefon:\n031 308 144\nEmail:\ninfo@sadhana.si",
+        "tags": "Joga"
+      },
+      {
+        "name": "Fitnes studio IRENA",
+        "address": "Naslov:\nLjubljanska cesta 29a, Kranj\nTelefon:\n04 23 32 018\nEmail:\ninformacije@fitness-studio-irena.si",
+        "tags": ""
+      },
+      {
+        "name": "MEGA center",
+        "address": "Naslov:\nSavska cesta 34, Kranj\nTelefon:\n051 441 963\nEmail:\ninfo@megacenter.si",
+        "tags": ""
+      },
+      {
+        "name": "MAXX FIT Kranj",
+        "address": "Naslov:\nPartizanska 37, Kranj\nTelefon:\n04 23 63 209\nEmail:\ninfo@maxxfit-kranj.si",
+        "tags": ""
+      },
+      {
+        "name": "Metka Šport (bivši Fitnes Popaj)",
+        "address": "Naslov:\nSmledniška 136, Kranj\nTelefon:\n040 808 580\nEmail:\nmetka.krivic@gmail.com",
+        "tags": "Trx\nZumba\nAerobika\nFitnes"
+      },
+      {
+        "name": "Fitnes Stegnar",
+        "address": "Naslov:\nSebenje 47b, Križe\nTelefon:\n059 921 248\nEmail:\ninfo@fitnes-stegnar.si",
+        "tags": ""
+      },
+      {
+        "name": "Pro Šport",
+        "address": "Naslov:\nJernejeva ulica 12, Kranj\nTelefon:\n04 23 10 240\nEmail:\ninfo@prosport.si",
+        "tags": "Fitnes\nTnz\nPilates"
+      },
+      {
+        "name": "Športni park Podmežakla",
+        "address": "Naslov:\nLedarska 4, Jesenice\nTelefon:\n04 58 63 364\nEmail:\nzsj.jesenice@siol.net",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Studio VITAL",
+        "address": "Naslov:\nCesta maršala Tita 86, Jesenice\nTelefon:\n031 755 013\nEmail:",
+        "tags": "Tnz\nPilates\nJoga\nZumba\nFunkcionalna vadba\nVadba za seniorje\nFitnes"
+      },
+      {
+        "name": "DŠRTV PARTIZAN JESENICE",
+        "address": "Naslov:\nCesta železarjev 1, Jesenice\nTelefon:\n040 320 771\nEmail:\npartizan.jesenice@telesat.com",
+        "tags": "Vadba za seniorje\nMasaže\nStep aerobika\nVadba za otroke\nTnz\nFitnes\nBody Mind"
+      },
+      {
+        "name": "SAMSON Fitnes Club",
+        "address": "Naslov:\nKolodvorska cesta 9, Bled\nTelefon:\n041 618 319\nEmail:\ngricar80@gmail.com",
+        "tags": ""
+      },
+      {
+        "name": "DVORANA VITRANC",
+        "address": "Naslov:\nKolodvorska ulica 1c, Kranjska Gora\nTelefon:\n04 58 85 258\nEmail:\ninfo@dvorana-vitranc.com",
+        "tags": ""
+      },
+      {
+        "name": "MINI HOTEL",
+        "address": "Naslov:\nVincarje 47, Škofja Loka \nTelefon:\n04 51 22 182\nEmail:\nmetka@minihotel.si",
+        "tags": "Aerobika\nFitnes"
+      },
+      {
+        "name": "Športno gimnastični center Matrica",
+        "address": "Naslov:\nHafnerjevo naselje 125, Škofja Loka\nTelefon:\n031 870 323\nEmail:\nsgcmatrica@gmail.com",
+        "tags": "Pilates\nTrx\nTnz\nZumba\nVadba za otroke\nAerobika\nPles ob drogu"
+      },
+      {
+        "name": "Fitnes center Sokol Žirovnica",
+        "address": "Naslov:\nŽirovnica 63, Žirovnica\nTelefon:\n059 136 890 \nEmail:\nmatej_zor@yahoo.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Fitnes center TOP",
+        "address": "Naslov:\nCesta Staneta Žagarja 2b, Radovljica\nTelefon:\n041 382 906\nEmail:\nfitnesscentertop@gmail.com",
+        "tags": "Fitnes\nCycling\nZumba\nBody Shoch"
+      },
+      {
+        "name": "No.1 Fitnes RADOVLJICA",
+        "address": "Naslov:\nKranjska cesta 4, Radovljica\nTelefon:\n040 858 432\nEmail:\ninfo@n1-fitnes.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "No.1 Fitnes BLED",
+        "address": "Naslov:\nLjubljanska cesta 5, Bled\nTelefon:\n040 858 432\nEmail:\ninfo@n1-fitnes.si",
+        "tags": ""
+      },
+      {
+        "name": "BIO - FIT",
+        "address": "Naslov:\nKoritno 6, Bled\nTelefon:\n041 582 989\nEmail:\nbiofit.bled@gmail.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Mirjam Penzion & Wellnes",
+        "address": "Naslov:\nRazdrto 1e , Hruševje\nTelefon:\n041 684 988\nEmail:\nmirjam@mirjam.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Fitnes Center Daneu",
+        "address": "Naslov:\nKosovelova 4b, Sežana\nTelefon:\n05 73 01 750\nEmail:\ninfo@fitnesdaneu.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Healthy life fitness",
+        "address": "Naslov:\nGoriška cesta 29a, Ajdovščina\nTelefon:\n040 417 832\nEmail:\ninfo@hl-fitness.net",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Fil-Sport Wellness Center",
+        "address": "Naslov:\nCesta na Polane 43, Sežana\nTelefon:\n05 73 00 800\nEmail:\ninfo@fil-sport.si",
+        "tags": ""
+      },
+      {
+        "name": "Fitnes Manija",
+        "address": "Naslov:\nKopališko nabrežje 5, Koper\nTelefon:\n051 351 070\nEmail:\ninfo@fitmania.net",
+        "tags": "Pilates\nTnz\nZumba\nVadba za otroke\nZdrava hrbtenica\nBoot Camp\nBody Step\nFitnes\nBody Pump\nSkupinski trening"
+      },
+      {
+        "name": "CALIFORNIA Fitness",
+        "address": "Naslov:\nMarežganskega upora 4, Koper\nTelefon:\n041 440 460\nEmail:\ninfo@california-fitness.net",
+        "tags": ""
+      },
+      {
+        "name": "Kardiofitnes Žusterna",
+        "address": "Naslov:\nIstrska 67, Koper\nTelefon:\n05 61 00 304\nEmail:\ninfo@terme-catez.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Gym Bo Fit, rekreacisjki center za ženske",
+        "address": "Naslov:\nPolje 21, Izola\nTelefon:\n05 64 17 005\nEmail:\ngymbofit@gmail.com",
+        "tags": ""
+      },
+      {
+        "name": "LifeClass Hotels & Spa",
+        "address": "Naslov:\nObala 33, Portorož \nTelefon:\n05 69 28 009\nEmail:\nwellness@lifeclass.net",
+        "tags": "Aerobika\nFitnes"
+      },
+      {
+        "name": "Mika šport in rekreacija",
+        "address": "Naslov:\nFitness stadion, Bazoviška ulica 4, Nova Gorica\nTelefon:\n05 99 54 338\nEmail:\ninfo@mikasport.com",
+        "tags": ""
+      },
+      {
+        "name": "Magma X",
+        "address": "Naslov:\nIndustrijska cesta 5, Nova Gorica\nTelefon:\n08 20 04 821\nEmail:\nrezervacije@magma-x.com",
+        "tags": "Country Fitness\nBody Pump\nFitnes\nVadba za nosečnice\nVadba za otroke\nZumba\nZlata leta\nTnz\nSpinning\nPilates\nMagma Boxing"
+      },
+      {
+        "name": "Fitness & Welness Epicenter",
+        "address": "Naslov:\nKazarje 3, Postojna\nTelefon:\n041 635 797\nEmail:\nwellness.po@siol.net",
+        "tags": "Fitnes\nBoot Camp\nVadba za seniorje\nSpinning\nSuperFit"
+      },
+      {
+        "name": "Body Sense Fitness & Wellness club",
+        "address": "Naslov:\nUlica 15. Maja 24 , Koper\nTelefon:\n05 63 91 100\nEmail:\nbodysensekoper@gmail.com",
+        "tags": ""
+      },
+      {
+        "name": "LVCM fitness center Izola",
+        "address": "Naslov:\nUlica oktobrske revolucije 2, Izola\nTelefon:\n041 575 565\nEmail:\nkristjanflego@gmail.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Fitnes Planet Sežana",
+        "address": "Naslov:\nStjenkova 1 , Sežana\nTelefon:\n041 754 737 \nEmail:\ninfo@fitnes-planet.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Invictus fitnes Izola",
+        "address": "Naslov:\nKajuhova ulica 28, Izola\nTelefon:\n041 575 565\nEmail:\nkristjanflego@gmail.com",
+        "tags": ""
+      },
+      {
+        "name": "Power lifting klub Oskar & Co. Postojna",
+        "address": "Naslov:\nLjubljanska cesta 2, Postojna\nTelefon:\n041 688 641\nEmail:\nvlado.schweiger@gmail.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Wellness center Adria",
+        "address": "Naslov:\nHotel&Resort Adria Ankaran, Jadranska cesta 25, Ankaran\nTelefon:\n05 66 37 356 \nEmail:\nwellness@adria-ankaran.si",
+        "tags": ""
+      },
+      {
+        "name": "Fitness club MOJ GIB",
+        "address": "Naslov:\nLapajnetova ulica 53, Idrija\nTelefon:\n05 37 41 549\nEmail:\ninfo@mojgib.si",
+        "tags": ""
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nDruštvo JVVŽ, Čevljarska ulica 17, Koper\nTelefon:\n041 224 281\nEmail:\nkoper@jvvz.org",
+        "tags": ""
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nCankarjeva ulica 30, Nova Gorica\nTelefon:\n031 706 320\nEmail:\nnova.gorica@jvvz.org",
+        "tags": ""
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nVrtec Škofije, Sp.Škofije 40d, Spodnje Škofije\nTelefon:\n041 224 281\nEmail:\nkoper@jvvz.org",
+        "tags": ""
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nZdravstveni dom, Oktobrske revolucije 10, Izola\nTelefon:\n041 224 281\nEmail:\nkoper@jvvz.org",
+        "tags": ""
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nVrtec Morje, Fazanska 3, Portorož - Lucija\nTelefon:\n041 224 281\nEmail:\nkoper@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nGimnazija Piran, Bolniška 11, Piran\nTelefon:\n041 224 281\nEmail:\nkoper@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nCesta 25 junija 1J, Nova Gorica\nTelefon:\n031 706 320\nEmail:\nnova.gorica@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nOŠ Kanala, Grdnikova ulica 25, Kanal ob Soči\nTelefon:\n031 706 320\nEmail:\nnova.gorica@jvvz.org",
+        "tags": ""
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nVrtec Tolmin, Ulica prekomorskih brigad 3, Tolmin\nTelefon:\n031 706 320\nEmail:\nnova.gorica@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Center športa in zabave",
+        "address": "Naslov:\nLjubljanska cesta 2, Koper\nTelefon:\n040 518 877 \nEmail:\nsportcenter007@gmail.com",
+        "tags": ""
+      },
+      {
+        "name": "Fit 365",
+        "address": "Naslov:\nPobeška cesta 54, Koper\nTelefon:\n041 351 071\nEmail:\nmartina@fit365.si",
+        "tags": ""
+      },
+      {
+        "name": "B center",
+        "address": "Naslov:\nObrtna ulica 11, Izola\nTelefon:\n041 662 463\nEmail:\nbcenter@siol.net",
+        "tags": ""
+      },
+      {
+        "name": "Studio Maja",
+        "address": "Naslov:\nFerrarska 8, Koper\nTelefon:\n05 63 92 013\nEmail:\ninfo@studiomaja.si",
+        "tags": "Poporodna vadba\nJutranja telovadba\nZdrava hrbtenica\nVadba za nosečnice\nRehabilitacijski Fitnes"
+      },
+      {
+        "name": "Joga Soba",
+        "address": "Naslov:\nHotel Delfin, Tomažičeva 10, Izola\nTelefon:\n040 250 777\nEmail:\njoga.soba@gmail.com",
+        "tags": ""
+      },
+      {
+        "name": "Inspiria",
+        "address": "Naslov:\nPolje 9E, Izola\nTelefon:\n031 568 856\nEmail:\nstudio.inspiria@gmail.com",
+        "tags": "Metabolični trening\nWelness Joga\nWTS\nBody Tehnika\nKondicijski Mix"
+      },
+      {
+        "name": "S - Fit, šport in rekreacija",
+        "address": "Naslov:\nŠC Gimnazija, Cankarjeva 10, Nova Gorica\nTelefon:\n041 908 475\nEmail:\naerobika.zumba@gmail.com",
+        "tags": "Zumba\nStep aerobika"
+      },
+      {
+        "name": "Mika šport in rekreacija",
+        "address": "Naslov:\nŠportni center Mavrica, Bazoviška ulica 4, Nova Gorica\nTelefon:\n059 954 338\nEmail:\ninfo@mikasport.com",
+        "tags": "Pilates\nTnz\nZumba\nVadba za seniorje\nZdrava hrbtenica\nCycling"
+      },
+      {
+        "name": "Mika šport in rekreacija",
+        "address": "Naslov:\nOš Solkan, Šolska ulica 24, Solkan\nTelefon:\n059 954 338\nEmail:\ninfo@mikasport.com",
+        "tags": "Tnz"
+      },
+      {
+        "name": "Zavod za šport Ajdovščina",
+        "address": "Naslov:\nCesta 5 Maja 14, Ajdovščina\nTelefon:\n051 442 553\nEmail:\ninfo@zs-ajdovscina.si",
+        "tags": "Zumba"
+      },
+      {
+        "name": "Soma Integra Lutman k.d.",
+        "address": "Naslov:\nOŠ Ivana Roba, Ulica Andreja Gabrščka 1, Šempeter pri Gorici\nTelefon:\n041 209 307\nEmail:\nfizio.lutman@siol.net",
+        "tags": ""
+      },
+      {
+        "name": "Soma Integra Lutman k.d.",
+        "address": "Naslov:\nFizioterapija Lutman, Stjenkova 48, Šempeter pri Gorici\nTelefon:\n041 209 307\nEmail:\nfizio.lutman@siol.net",
+        "tags": ""
+      },
+      {
+        "name": "Soma Integra Lutman k.d.",
+        "address": "Naslov:\nŽnidarčičeva 21, Šempeter pri Gorici\nTelefon:\n041 209 307\nEmail:\nfizio.lutman@siol.net",
+        "tags": "Kundalini joga"
+      },
+      {
+        "name": "Fitnes klub Maribor Pristan",
+        "address": "Naslov:\nKoroška cesta 33, Maribor\nTelefon:\n031 24 33 33\nEmail:\ninfo@fitnes-pristan.si",
+        "tags": "Fitnes\nTnz\nPilates\nTae Bo"
+      },
+      {
+        "name": "Unifitnes Betnava",
+        "address": "Naslov:\nUlica Eve Lovše 15 (Jadranska cesta 30), Maribor\nTelefon:\n059 344 140\nEmail:\ninfo@fitnes-betnava.si",
+        "tags": "Intervalni trening\nBody Mind\nFitnes\nZumba\nTnz"
+      },
+      {
+        "name": "Fitnes Forma",
+        "address": "Naslov:\nOsojnikova 4a, Maribor\nTelefon:\n02 48 00 000\nEmail:\nmiro@fitnesforma.com",
+        "tags": "Les Mills\nVodena vadba\nFitnes\nTrx\nKarate"
+      },
+      {
+        "name": "Fitnes center HABAKUK",
+        "address": "Naslov:\nPohorska ulica 59, Maribor\nTelefon:\n02 30 08 100\nEmail:\nhabakuk@termemb.si",
+        "tags": ""
+      },
+      {
+        "name": "Fitnes center Sokol Maribor",
+        "address": "Naslov:\nČrtomirova ul. 9, Maribor\nTelefon:\n02 33 23 382\nEmail:\nvelmark@amis.net",
+        "tags": "Body Balance\nBody Pump\nFitnes\nBody Attack\nStep aerobika\nTnz"
+      },
+      {
+        "name": "Športni center Red Power",
+        "address": "Naslov:\nTržaška cesta 14, Maribor\nTelefon:\n031 280 950\nEmail:\ninfo@redpower.si",
+        "tags": ""
+      },
+      {
+        "name": "Fitnes center BODI AKTIV",
+        "address": "Naslov:\nPesnica pri Mariboru 49a, 2211 Pesnica pri Mariboru 2211\nTelefon:\n070 338 810\nEmail:\nbodiaktiv@gmail.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "TOP POWER STUDIO",
+        "address": "Naslov:\nUlica Staneta Severja 7b, Maribor\nTelefon:\n041 820 460\nEmail:\nbojan.permozer@gmail.com",
+        "tags": "Aerobika\nFitnes"
+      },
+      {
+        "name": "FITNES STUDIO Herman",
+        "address": "Naslov:\nGorkega ulica 20, Maribor\nTelefon:\n040 641 410\nEmail:\nfitnes.herman@gmail.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Center Sonce Fitnes",
+        "address": "Naslov:\nLjubljanska cesta 80, Slovenska Bistrica\nTelefon:\n040 493 928\nEmail:\ninfo@center-sonce.com",
+        "tags": "Skupinski trening\nZdrava hrbtenica\nVadba za seniorje\nOsebni trening"
+      },
+      {
+        "name": "Fitnes Korenjak",
+        "address": "Naslov:\nPartizanska 35, Slovenska Bistrica\nTelefon:\n031 696 379 \nEmail:\nedi.plevnik@gmail.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Herkul Fitnes studio",
+        "address": "Naslov:\nLiptovska 27a, Slovenske Konjice\nTelefon:\n040 559 913\nEmail:\nfitnes.herkul@siol.net",
+        "tags": ""
+      },
+      {
+        "name": "TOP FIT",
+        "address": "Naslov:\nIpavčeva 22, Celje\nTelefon:\n03 42 81 440\nEmail:\ntopfit@siol.net",
+        "tags": "Body Pump\nFitnes\nCycling\nBody Attack\nTai Chi\nVadba za mamice z dojenčki\nVadba za nosečnice\nVadba za seniorje\nFunkcionalna vadba\nStep aerobika\nTnz\nPilates"
+      },
+      {
+        "name": "R&B GYM Fitness",
+        "address": "Naslov:\nLava 2D, Lava 9, Celje\nTelefon:\n03 49 29 710\nEmail:\ninfo@rnb-gym.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Olimpus fitnes & welness center",
+        "address": "Naslov:\nCeljska cesta 8, Žalec\nTelefon:\n03 62 09 804\nEmail:\ninfo@olimpus.si",
+        "tags": ""
+      },
+      {
+        "name": "Rdeča dvorana",
+        "address": "Naslov:\nŠaleška cesta 3, Velenje\nTelefon:\n03 89 87 400\nEmail:\ninfo@srz-rdecadvorana.si",
+        "tags": "Aerobika\nFitnes\nVodena vadba"
+      },
+      {
+        "name": "Fitnes Ahtik",
+        "address": "Naslov:\nGubčeva cesta 5, Velenje\nTelefon:\n041 714 431 \nEmail:\nfit.am.velenje@gmail.com",
+        "tags": ""
+      },
+      {
+        "name": "Fitnes Bela dvorana",
+        "address": "Naslov:\nCesta Simona Blatnika 27, Velenje\nTelefon:\n03 58 66 466\nEmail:",
+        "tags": ""
+      },
+      {
+        "name": "Fit-Life",
+        "address": "Naslov:\nKidričeva 2b (Nakupovalni center), Velenje\nTelefon:\n040 728 842\nEmail:\ninfo@fit-life.si",
+        "tags": ""
+      },
+      {
+        "name": "Fitness studio Fit 2000",
+        "address": "Naslov:\nPotrčeva cesta 4, Ptuj\nTelefon:\n02 74 81 553\nEmail:\nnatalija@fit2000.si",
+        "tags": "Fitnes\nIntenzivna vadba\nBodybuilding"
+      },
+      {
+        "name": "Megafit",
+        "address": "Naslov:\nRonkova 4, Slovenj Gradec\nTelefon:\n02 88 22 135\nEmail:\ninfo@megafit.si",
+        "tags": "Spinning\nTnz\nFunkcionalna vadba\nBody Step\nBody Pump\nCxWork\nDinamična joga"
+      },
+      {
+        "name": "F Fitnes",
+        "address": "Naslov:\nCenter Holermuos, Vrazova ulica 9, Ormož\nTelefon:\n041 779 190\nEmail:\nmarko@f-fitnes.si, info@f-fitnes.si",
+        "tags": ""
+      },
+      {
+        "name": "ANDFIT Fitnes center",
+        "address": "Naslov:\nKoroška cesta 50, Dravograd\nTelefon:\n068 133 011\nEmail:\ninfo@andfit.si",
+        "tags": "Fitnes\nBoot Camp\nCycling\nTnz\nPilates"
+      },
+      {
+        "name": "BODIFIT STUDENCI",
+        "address": "Naslov:\nNa Poljanah 20, Maribor\nTelefon:\n031 222 862\nEmail:\nstudenci@bodifit.net",
+        "tags": "Pilates\nTnz\nJoga\nZdrava hrbtenica\nFitnes"
+      },
+      {
+        "name": "BODIFIT FONTANA",
+        "address": "Naslov:\nKoroška c. 172, Maribor\nTelefon:\n040 812 952\nEmail:\nfontana@bodifit.net",
+        "tags": ""
+      },
+      {
+        "name": "BODIFIT CITY",
+        "address": "Naslov:\nUlica Kneza Koclja 22, Maribor\nTelefon:\n064 135 500\nEmail:\ncity@bodifit.net",
+        "tags": "Fitnes\nBody Step\nZdrava hrbtenica\nVadba za nosečnice\nVadba za seniorje\nZumba\nJoga\nTnz\nTrx\nPilates\nHidrogimnastika"
+      },
+      {
+        "name": "Fitnes Botra",
+        "address": "Naslov:\nGorišnica 28, Gorišnica\nTelefon:\n041 389 807\nEmail:",
+        "tags": ""
+      },
+      {
+        "name": "Fitnes Dijaški dom Drava",
+        "address": "Naslov:\nSmetanova 67, Maribor\nTelefon:\n02 23 48 150\nEmail:\ninfo@dddrava.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Fitnes &Wellnes ELIPSUS",
+        "address": "Naslov:\nIndustrijska ulica 4, Slovenska Bistrica\nTelefon:\n02 45 03 505; 040 70\nEmail:\ninfo@elipsus.si",
+        "tags": "Pilates\nCrossFit\nTnz\nZumba\nVadba za seniorje\nVadba za nosečnice\nFitnes"
+      },
+      {
+        "name": "Fitnes center Zdravo",
+        "address": "Naslov:\nČučkova ulica 6a (PSC Mlekarna), Ptuj\nTelefon:\n059 088 124\nEmail:\ninfo@fitnes-zdravo.si",
+        "tags": ""
+      },
+      {
+        "name": "Fitnes Slavija",
+        "address": "Naslov:\nUlica Vita Kraigherja 3, Maribor\nTelefon:\n031 360 800\nEmail:\ninfo@fitnesslavija.si",
+        "tags": "Fitnes\nVodena vadba"
+      },
+      {
+        "name": "Fitnes studio Popaj",
+        "address": "Naslov:\nUlica Šercerjeve Brigade 20, Ptuj\nTelefon:\n031 324 293\nEmail:",
+        "tags": ""
+      },
+      {
+        "name": "Fitness center hotel Arena",
+        "address": "Naslov:\nPot k mlinu 57, Maribor\nTelefon:\n02 61 40 950\nEmail:\ninfo.arena@sc-pohorje.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Športni center Ravne na Koroškem",
+        "address": "Naslov:\nNa gradu 6, Ravne na Koroškem\nTelefon:\n040 727 893\nEmail:\ninfo@sportravne.si",
+        "tags": "Zumba"
+      },
+      {
+        "name": "Fitness center Jeti",
+        "address": "Naslov:\nUl. Pohorskega bataljona 19, Oplotnica\nTelefon:\n041 944 938\nEmail:",
+        "tags": "Boot Camp\nFitnes"
+      },
+      {
+        "name": "Draš center",
+        "address": "Naslov:\nPohorska ulica 57, Maribor\nTelefon:\n02 61 41 451; 051 24\nEmail:\ninfo@dras.si",
+        "tags": ""
+      },
+      {
+        "name": "Športni park Ruše",
+        "address": "Naslov:\nŠolska ulica 17, Ruše\nTelefon:\n02 67 30 505\nEmail:\nfitnes@sportniparkruse.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Fitnes TŠC Tezno",
+        "address": "Naslov:\nZolajeva ulica 12, Maribor\nTelefon:\n030 660 706\nEmail:",
+        "tags": "Fitnes\nSuperFit"
+      },
+      {
+        "name": "Rekreacijsko Športni Center Rače",
+        "address": "Naslov:\nPtujska cesta 3 , Rače\nTelefon:\n031 670 938\nEmail:\ninfo@fitnes-race.si",
+        "tags": "Pilates\nTrx\nZdrava hrbtenica\nFitnes"
+      },
+      {
+        "name": "Univerzitetni športni center Leona Štuklja",
+        "address": "Naslov:\nKoroška cesta 130, Maribor\nTelefon:\n02 23 55 400\nEmail:\nusc@uni-mb.si",
+        "tags": ""
+      },
+      {
+        "name": "City Gym",
+        "address": "Naslov:\nPrvomajska 41, Rogaška Slatina\nTelefon:\n070 829 544\nEmail:\nbenjamin.fit@gmail.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Fitnes center Revolution",
+        "address": "Naslov:\nMariborska cesta 119, Celje\nTelefon:\n059 235 443\nEmail:\ninfo@fitnes-revolution.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Terme Zreče",
+        "address": "Naslov:\nCesta na Roglo 15, Zreče\nTelefon:\n03 75 76 156\nEmail:\nterme@unitor.eu",
+        "tags": "Pilates\nJoga\nZumba\nBoot Camp\nFitnes"
+      },
+      {
+        "name": "FITNESS STUDIO",
+        "address": "Naslov:\nDvorana Zlatorog, Opekarniška 15, Celje\nTelefon:\n041 335 228\nEmail:\ndarko.ulezic@gmail.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Fitnes center Spartakus",
+        "address": "Naslov:\nToplice 10, Rimske Toplice\nTelefon:\n03 57 42 020\nEmail:\ninfo@rimske-terme.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Fitnes Center Thermana Park Laško",
+        "address": "Naslov:\nZdraviliška cesta 6, Laško\nTelefon:\n03 73 45 770\nEmail:\ninfo@thermana.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "GALACTICA, Športni in Wellness center",
+        "address": "Naslov:\nKoroška cesta 55b, Velenje\nTelefon:\n059 078 478\nEmail:\ninfo@galactica.si",
+        "tags": "Body Step\nBody Combat\nBody Attack\nVadba za nosečnice\nTnz\nPilates\nJogalates\nFitball"
+      },
+      {
+        "name": "Tris Žalec",
+        "address": "Naslov:\nUl. heroja Staneta 9, Žalec\nTelefon:\n03 713 30 37\nEmail:\ntris@rs-biro.si",
+        "tags": "Kundalini joga\nBoot Camp\nCrossFit"
+      },
+      {
+        "name": "Šport center Prodnik",
+        "address": "Naslov:\nJuvanje 1, Ljubno ob Savinji\nTelefon:\n031 752 111\nEmail:\ns.c.prodnik@gmail.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Wellnes center Zala",
+        "address": "Naslov:\nTerme Topolšica, Topolšica 77, Topolšica\nTelefon:\n03 89 63 170\nEmail:\nwellness.zala@t-topolsica.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Wellness Aspara",
+        "address": "Naslov:\nCesta Leona Dobrotinška 22b, Šentjur\nTelefon:\n040 494 444\nEmail:\ninfo@wellness-aspara.com",
+        "tags": "Pilates\nSpinning\nZumba\nAerobika\nStep aerobika\nPlesi\nFitnes\nMetabolični trening"
+      },
+      {
+        "name": "Wellness center Termalija",
+        "address": "Naslov:\nTerme Olimia, Zdraviliška cesta 24, Podčetrtek\nTelefon:\n03 82 97 805\nEmail:\ninfo@terme-olimia.com",
+        "tags": "Funkcionalna vadba\nFitnes"
+      },
+      {
+        "name": "Fitnes Rdeča dvorana",
+        "address": "Naslov:\nŠaleška cesta 3, Velenje\nTelefon:\n03 89 70 204; 041 65\nEmail:",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Fitnes Center ODRANCI",
+        "address": "Naslov:\nPrešernova ulica, Odranci \nTelefon:\n02 57 37 023 \nEmail:\ninfo@fitnes-odranci.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Fitnes studio Fit&Pump",
+        "address": "Naslov:\nMiklošičeva 30, Murska Sobota\nTelefon:\n031 430 135\nEmail:\nfitnes@fit-pump.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Hotel Diana Fitnes",
+        "address": "Naslov:\nSlovenska ulica 52, Murska Sobota\nTelefon:\n02 51 41 224\nEmail:\ninfo@hotel-diana.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "ŠRS Spartacus",
+        "address": "Naslov:\nKopališka ulica 2, Murska Sobota\nTelefon:\n02 53 71 043\nEmail:\ninfo@spartacus.si",
+        "tags": "Fitnes\nBody Step\nZumba\nJoga\nSpinning"
+      },
+      {
+        "name": "Bioterme Mala Nedelja, Ljutomer",
+        "address": "Naslov:\nMoravci v Slovenskih goricah 34 b, Mala Nedelja\nTelefon:\n02 56 52 000\nEmail:\nhotel@bioterme.si",
+        "tags": ""
+      },
+      {
+        "name": "Fitnes center Ljutomer",
+        "address": "Naslov:\nGrossmanova 7, Ljutomer\nTelefon:\n031 325 874\nEmail:\ninfo@sicbar.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Športno društvo Izzy Fit",
+        "address": "Naslov:\nLipovci 19, Beltinci\nTelefon:\n041 328 327\nEmail:\nistok.gomboc@izzy-fit.si",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "ŠD Fitnes Ekstrem",
+        "address": "Naslov:\nUlica dr. Franca Kova?i?a 12, Ljutomer\nTelefon:\n031 807 224\nEmail:\nleon.mursic@gmail.com",
+        "tags": "Fitnes"
+      },
+      {
+        "name": "Fit – Fajn center Lenart",
+        "address": "Naslov:\nIndustrijska ul. 8, Lenart v Slovenskih Goricah\nTelefon:\n040 772 234\nEmail:\nlenart@fit-fajn.si",
+        "tags": "Pilates\nTnz\nJoga\nZumba\nFitnes"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nRuška cesta 104, Maribor\nTelefon:\n031 531 690\nEmail:\nmaribor@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nDvorec Bukovje, Dravograd\nTelefon:\n031 252 686\nEmail:\nmaribor@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nOŠ, Cesta v Dobrovce 21, Miklavž na Dravskem polju\nTelefon:\n031 252 686\nEmail:\nmaribor@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nGasilski dom, Natašina pot 1, Ptuj\nTelefon:\n02 77 32 301, 031 32\nEmail:\nmaribor@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nOŠ Koroški jeklarji, Javornik 35, Ravne na Koroškem\nTelefon:\n041 857 029 \nEmail:\nmaribor@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nPrva osnovna šola, Šercerjeva 7, Slovenj Gradec\nTelefon:\n031 252 686\nEmail:\nmaribor@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nSrednja šola,Ul. dr. Jožeta Pučnika 21, Slovenska Bistrica\nTelefon:\n041 485 604\nEmail:\nmaribor@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nOsnovna šola,Ulica Dušana Jereba1, Slovenske Konjice\nTelefon:\n031 252 686 \nEmail:\nmaribor@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nOŠ Starše, Starše 5, Starše\nTelefon:\n031 252 686\nEmail:\nmaribor@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nDom kulture, Studenice 52  , Studenice pri Poljčanah \nTelefon:\n031 252 686\nEmail:\nmaribor@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nMladinski center, Šmartno ob Paki 13, Šmartno ob Paki\nTelefon:\n03 58 68 435;031 358\nEmail:\nmaribor@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nGlasbena šola Jenkova cesta 4, Velenje\nTelefon:\n03 58 68 435, 031 35\nEmail:\nmaribor@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Joga klub Maribor",
+        "address": "Naslov:\nVinarska 6, Maribor\nTelefon:\n040 232 061 \nEmail:\nzdenkab@siol.net",
+        "tags": "Joga"
+      },
+      {
+        "name": "Go! Center",
+        "address": "Naslov:\nPopovičeva 10, Maribor\nTelefon:\n070 206 509; 040 426\nEmail:\ninfo@gocenter.si",
+        "tags": "Freestyler\nJoga Pilates\nSpinning Boom\nBody Pump\nFunkcionalna vadba\nZumba\nTnz\nSpinning\nPilates"
+      },
+      {
+        "name": "Maxi sport",
+        "address": "Naslov:\nPlaninska ulica 18, Vuzenica \nTelefon:\n040 412 801 \nEmail:\ninfo@maxi-sport.si",
+        "tags": "Joga Senior\nZmigaj se\nRad’mam TEK\nMaxiBOOTfit\nMaxiRUNfit"
+      },
+      {
+        "name": "Vulcano Models, Fit vadba",
+        "address": "Naslov:\nKulturni dom Hoče, Pohorska 15, Hoče\nTelefon:\n041 297 287\nEmail:\ninfo@vulcanomodels.com",
+        "tags": "Boot Camp"
+      },
+      {
+        "name": "Vulcano Models, Fit vadba",
+        "address": "Naslov:\nOŠ Selnica ob Dravi, Mariborska c. 30, Selnica ob Dravi\nTelefon:\n041 297 287\nEmail:\ninfo@vulcanomodels.com",
+        "tags": "Boot Camp"
+      },
+      {
+        "name": "Vulcano Models, Fit vadba",
+        "address": "Naslov:\nOŠ DUPLEK, Podružnica Žitečka vas, Zg. Duplek 98, Spodnji Duplek\nTelefon:\n041 297 287\nEmail:\ninfo@vulcanomodels.com",
+        "tags": "Boot Camp"
+      },
+      {
+        "name": "Fit club Duplek",
+        "address": "Naslov:\nŽitečka vas 1, Zgornji Duplek\nTelefon:\n041 726 755\nEmail:",
+        "tags": "Vodena vadba"
+      },
+      {
+        "name": "Plesna šola ROLLY",
+        "address": "Naslov:\nUl. Heroja Šaranoviča 27, Maribor\nTelefon:\n02 25 25 726\nEmail:\ninfo@rolly.si",
+        "tags": "Zumba\nPlesi"
+      },
+      {
+        "name": "Bodifit Pilates Center",
+        "address": "Naslov:\nNa Poljanah 20, Maribor\nTelefon:\n031 222 862; 02 62 0\nEmail:\ncentri@bodifit.net",
+        "tags": "Pilates\nFitnes\nVodena vadba"
+      },
+      {
+        "name": "ZUMBA Fitness",
+        "address": "Naslov:\nMKC Slovenj Gradec, Ozare 18, Slovenj Gradec\nTelefon:\n041 493 317 \nEmail:\nzumba.slo@gmail.com",
+        "tags": "Zumba"
+      },
+      {
+        "name": "ZUMBA Fitness",
+        "address": "Naslov:\nZgradba kmetijske zadruge, Meža 27, Dravograd\nTelefon:\n041 493 317 \nEmail:\nzumba.slo@gmail.com",
+        "tags": "Zumba"
+      },
+      {
+        "name": "ZUMBA Fitness",
+        "address": "Naslov:\nKulturni center Ravne na Koroškem, Čečovje 5, Ravne na Koroškem\nTelefon:\n041 493 317 \nEmail:\nzumba.slo@gmail.com",
+        "tags": "Zumba"
+      },
+      {
+        "name": "ZUMBA Fitness",
+        "address": "Naslov:\nOŠ Muta, Šolska ulica 6, Muta\nTelefon:\n041 493 317 \nEmail:\nzumba.slo@gmail.com",
+        "tags": "Zumba"
+      },
+      {
+        "name": "ZUMBA Fitness",
+        "address": "Naslov:\nPC Lopan, Šolska cesta 34 , Mislinja\nTelefon:\n041 493 317 \nEmail:\nzumba.slo@gmail.com",
+        "tags": "Zumba"
+      },
+      {
+        "name": "ZUMBA Fitness",
+        "address": "Naslov:\nOŠ Koroški jeklarji, Javornik 35, Ravne na Koroškem\nTelefon:\n041 493 317 \nEmail:\nzumba.slo@gmail.com",
+        "tags": "Zumba"
+      },
+      {
+        "name": "Razgibajmo telo z Vlasto Jakopitsch Soršak",
+        "address": "Naslov:\nŠportna dvorana Slovenj Gradec, Kopališka 29, Ravne na Koroškem\nTelefon:\n041 500 789\nEmail:\nvlasta.sorsak@aerobika-vlasta.si",
+        "tags": "Tnz\nStep aerobika\nBody Pump\nCxWork"
+      },
+      {
+        "name": "Razgibajmo telo z Vlasto Jakopitsch Soršak",
+        "address": "Naslov:\nŠD Ravne na Koroškem,Na gradu 6, Ravne na Koroškem\nTelefon:\n041 500 789\nEmail:\nvlasta.sorsak@aerobika-vlasta.si",
+        "tags": "Tnz\nStep aerobika\nVadba z utežmi"
+      },
+      {
+        "name": "Plesna šola Samba",
+        "address": "Naslov:\nIgriška ulica 19 a, Maribor\nTelefon:\n041 513 655\nEmail:\ninfo@plesnasola-samba.si",
+        "tags": "Pilates\nZumba\nAerobika"
+      },
+      {
+        "name": "Plesna šola Spin",
+        "address": "Naslov:\nTitov trg 4, Velenje\nTelefon:\n041 602 316\nEmail:\ninfo@plesnasolaspin.si",
+        "tags": "Zumba\nPlesi"
+      },
+      {
+        "name": "Blue Buttrfly dance",
+        "address": "Naslov:\nOŠ Antona Aškerca, Jenkova c. 2, Velenje\nTelefon:\n031 607 992 \nEmail:\nkatja.krajnc8@gmail.com",
+        "tags": "Zumba"
+      },
+      {
+        "name": "Blue Buttrfly dance",
+        "address": "Naslov:\nI. gimnazija Celje, Kajuhova 2, Celje\nTelefon:\n031 607 992 \nEmail:\nkatja.krajnc8@gmail.com",
+        "tags": "Zumba"
+      },
+      {
+        "name": "DTV Partizan Tezno",
+        "address": "Naslov:\nPtujska 198, Maribor\nTelefon:\n02 46 14 111; 031 63\nEmail:\ndtvpartizan.tezno@gmail.com",
+        "tags": "Pilates\nJoga\nZumba\nAerobika\nVadba za seniorje\nTai Chi"
+      },
+      {
+        "name": "Športno društvo Center Maribor",
+        "address": "Naslov:\nMladinska 12a, Maribor\nTelefon:\n040 153 324\nEmail:\nmojca@gimnastika-maribor.si",
+        "tags": "Pilates"
+      },
+      {
+        "name": "Avota",
+        "address": "Naslov:\nŠkale 86b, Velenje\nTelefon:\n051 393 077\nEmail:\ninfo@avota.si",
+        "tags": "Pilates"
+      },
+      {
+        "name": "Pro Vitalis",
+        "address": "Naslov:\nCesta na grad 10, Celje\nTelefon:\n031 826 708\nEmail:",
+        "tags": "Pilates\nJoga"
+      },
+      {
+        "name": "Edina, center za sprostitev",
+        "address": "Naslov:\nŠlandrov trg 3, Žalec\nTelefon:\n040 897 129;031 641 \nEmail:\najla.sp@gmail.com",
+        "tags": "Pilates"
+      },
+      {
+        "name": "Motivacijska Daryoga",
+        "address": "Naslov:\nSončni center joga studio, Ojstriška vas 41, Tabor pri Vranskem\nTelefon:\n040 842 771\nEmail:\ninfo@daryoga.si",
+        "tags": "Joga"
+      },
+      {
+        "name": "CF CELJE FUNCTIONAL CENTER",
+        "address": "Naslov:\nMariborska 153, Celje\nTelefon:\n041 876 322\nEmail:\ninfo@cfcelje.si",
+        "tags": "Weightlifting\nBoot Camp\nCrossFit\nOsebni trening\nOpen Gym\nPriprava za športnike"
+      },
+      {
+        "name": "Društvo Joga v vsakdanjem življenju",
+        "address": "Naslov:\nOpekarniška cesta 15a, Celje\nTelefon:\n031 616 998\nEmail:\ncelje@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "ZUMBA z Ano in Nino",
+        "address": "Naslov:\nO. Š. Miklavž, Cesta v Dobrovce 21, Miklavž na Dravskem polju\nTelefon:\n051 271 065\nEmail:\nZUMBAsSebastianom@gmail.com",
+        "tags": "Zumba"
+      },
+      {
+        "name": "ZUMBA z Ano",
+        "address": "Naslov:\nMestna četrt Pobrežje, Kosovelova 11, Maribor\nTelefon:\n051 271 065\nEmail:\nZUMBAsSebastianom@gmail.com",
+        "tags": "Zumba"
+      },
+      {
+        "name": "ZUMBA s Sebastianom",
+        "address": "Naslov:\nFitnes Sokol, Črtomirova 9, Maribor - Studenci\nTelefon:\n051 271 065\nEmail:\nZUMBAsSebastianom@gmail.com",
+        "tags": "Zumba"
+      },
+      {
+        "name": "ZUMBA z Ano",
+        "address": "Naslov:\nFitnes Betnava, Ulica Eve Lovše 15, Maribor\nTelefon:\n051 271 065\nEmail:\nZUMBAsSebastianom@gmail.com",
+        "tags": "Zumba"
+      },
+      {
+        "name": "ZUMBA s Sebastianom",
+        "address": "Naslov:\nOsnovna šola Rudolfa Maistra, Mladinska 13, Šentilj v Slov.enskih goricah\nTelefon:\n051 271 065\nEmail:\nZUMBAsSebastianom@gmail.com",
+        "tags": "Zumba"
+      },
+      {
+        "name": "Center aerobike",
+        "address": "Naslov:\nPoslovni center Omega, Osojnikova cesta 3, Ptuj\nTelefon:\n031 659 596\nEmail:\ncenteraerobike@gmail.com",
+        "tags": "Tnz\nJoga\nTai Chi"
+      },
+      {
+        "name": "Center aerobike",
+        "address": "Naslov:\nOŠ Kidričevo, Kajuhova ulica 10, Kidričevo\nTelefon:\n031 659 596\nEmail:\ncenteraerobike@gmail.com ; cafuta.and@gmail.c",
+        "tags": ""
+      },
+      {
+        "name": "Center aerobike",
+        "address": "Naslov:\nOŠ Olge Meglič, Prešernova ulica 31, Ptuj\nTelefon:\n031 659 596\nEmail:\ncenteraerobike@gmail.com",
+        "tags": "Jogalates\nPilates"
+      },
+      {
+        "name": "Dejan Zavec Gym",
+        "address": "Naslov:\nŽnidari?evo nabrežje 2, Ptuj\nTelefon:\n040 806 000\nEmail:\ngym@dejanzavec.com",
+        "tags": "Borilne veščine\nBoks\nFitnes\nAerobika"
+      },
+      {
+        "name": "Društvo joga v vsakdanjem življenju",
+        "address": "Naslov:\nOŠ Gornja Radgona (likovna učilnica), Prežihova 1, Gornja Radgona\nTelefon:\n041 707 269\nEmail:\npomurje@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo joga v vsakdanjem življenju",
+        "address": "Naslov:\nCenter Bánffy, Glavna ulica 32, Lendava\nTelefon:\n041/707 269\nEmail:\npomurje@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo joga v vsakdanjem življenju",
+        "address": "Naslov:\nEkonomska šola, Noršinska ulica 1 (učilnica 37), Murska Sobota\nTelefon:\n041 707 269\nEmail:\npomurje@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "Društvo joga v vsakdanjem življenju",
+        "address": "Naslov:\nVečnamenski prostor Turnišče, Cvetna ulica 4, Turnišče\nTelefon:\n041 707 269\nEmail:\npomurje@jvvz.org",
+        "tags": "Joga"
+      },
+      {
+        "name": "FIT – FAJN",
+        "address": "Naslov:\nOŠ Gornja Radgona, Prežihova 1, Gornja Radgona\nTelefon:\n040 640 049\nEmail:\ninfo@fit-fajn.si",
+        "tags": "Pilates\nTnz\nZumba\nVadba za otroke\nStep aerobika\nPlesi"
+      },
+      {
+        "name": "FIT – FAJN",
+        "address": "Naslov:\nŠIC Ljutomer, Grossmanova 7, Ljutomer\nTelefon:\n040 640 049\nEmail:\ninfo@fit-fajn.si",
+        "tags": "Pilates\nTnz\nZumba\nVadba za otroke\nAerobika\nFunkcionalna vadba"
+      },
+      {
+        "name": "Plesna šola Zeko",
+        "address": "Naslov:\nVeščica 50b, Murska Sobota \nTelefon:\n041 671 955\nEmail:\ninfo@zekosports.com",
+        "tags": "Tnz\nZumba\nMetabolični trening"
+      }
+    ]
+  }
+}
