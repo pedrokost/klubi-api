@@ -7,6 +7,7 @@ require 'import/fitnes_si_datasource'
 require 'import/slovenia_wellness'
 require 'import/fitness_info_wellness'
 require 'import/fitnes_si_new'
+require 'import/karate_klubi'
 
 namespace :import do
 
@@ -40,6 +41,12 @@ namespace :import do
   task :fitnes_si_new => :environment do
     transformer = Import::FitnesSiNewTransformer.new
     data_source = Import::FitnesSiNewDatasource.new
+    Import::Importer.new(data_source, transformer).run
+  end
+
+  task :karate_klubi => :environment do
+    transformer = Import::KarateKlubiTransformer.new
+    data_source = Import::KarateKlubiDatasource.new
     Import::Importer.new(data_source, transformer).run
   end
 end
