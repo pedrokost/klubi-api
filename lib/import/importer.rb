@@ -35,14 +35,14 @@ module Import
 
     def commit_one(klubdata)
       tbl = Klub.arel_table
-      existing_klub = Klub.unscoped.where(tbl[:name].matches(klubdata[:name]))
+      existing_klubs = Klub.unscoped.where(tbl[:name].matches(klubdata[:name]))
 
-      if existing_klub.empty?
+      if existing_klubs.empty?
         Klub.new(klubdata).save!
         return
       end
 
-      klub = existing_klub.first
+      klub = most_similar_klub(klubdata, existing_klubs)
       pp '=' * 60 if @verbose
       p 'Existing klub:' if @verbose
       pp klub.as_json.symbolize_keys if @verbose
@@ -66,6 +66,26 @@ module Import
       end
 
       klub.save!
+    end
+
+    def most_similar_klub(klubdata, existing_klubs)
+      # Returns the klub from existing_klubs that is most similar to the
+      # klubdata hash in terms of sum of Levenshtein distance between selected
+      # attributes
+
+      attrs = [:name, :address]
+      # Reject any attributes which are not set in all objects
+      attrs.delete_if do |attr|
+        klubdata[attr] == nil || existing_klubs.any?{ |k| k.send(attr) == nil }
+      end
+
+      existing_klubs.min_by do |klub|
+        sum = 0
+        attrs.each do |attr|
+          sum = sum + Levenshtein.distance(klubdata[attr], klub.send(attr))
+        end
+        sum
+      end
     end
   end
 end

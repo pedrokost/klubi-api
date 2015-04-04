@@ -41,6 +41,8 @@ gem 'rest_client', require: false
 
 gem 'highline', '~> 1.6.21'
 
+gem 'levenshtein-ffi', :require => 'levenshtein'
+
 group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 3.0'

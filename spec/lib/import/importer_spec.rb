@@ -71,6 +71,33 @@ RSpec.describe Import::Importer do
       subject.run
     end
 
+    it "should print the most similar duplicate klub" do
+      subject.run
+      expect(Klub.unscoped.count).to eq(2)
+
+      existing_klubs = Klub.unscoped
+
+      # Add two more very similar klub
+      existing_klubs.first.name = "Fitnes X"
+      existing_klubs.first.address = "Metlika"
+      existing_klubs.first.save!
+
+      existing_klubs.last.name = "Fitnes X"
+      existing_klubs.last.address = "Maribor"
+      existing_klubs.last.save!
+
+      # See how the method works
+      klubdata = {
+        name: 'Fitnes X',
+        address: 'Mariborcan',
+        categories: ['fitnes']
+      }
+
+      similar = subject.send(:most_similar_klub, klubdata, existing_klubs)
+
+      expect(similar).to eq(existing_klubs.last)
+    end
+
     it "should merge data if resolution is 'merge'" do
       allow(Import::Resolution).to receive(:new).and_return(merge_resolution)
       data = [

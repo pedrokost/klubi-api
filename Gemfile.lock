@@ -83,6 +83,8 @@ GEM
       multi_json (~> 1.0)
       rspec (>= 2.0, < 4.0)
     kgio (2.9.2)
+    levenshtein-ffi (1.1.0)
+      ffi (~> 1.9)
     listen (2.8.3)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -210,6 +212,7 @@ DEPENDENCIES
   highline (~> 1.6.21)
   json-schema
   json_spec
+  levenshtein-ffi
   nokogiri
   pg
   pry-byebug
