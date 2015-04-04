@@ -3,7 +3,7 @@ require 'pry'
 
 RSpec.describe Klub, :type => :model do
 
-  let!(:klub) { create(:klub, name: 'Karate klub Skocjan') }
+  let!(:klub) { create(:klub, name: 'Karate klub Skocjan -- ') }
 
   subject { klub }
 
@@ -48,14 +48,24 @@ RSpec.describe Klub, :type => :model do
   # TODO: This slug it incocerrect: it leafes first lette capisalized and sumiki
   # Športno rekreativni center Spartacus
 
-  it "should provide alternative slug if already taken" do
-  	expect(klub.persisted?).to be true
-  	another_klub = create(:klub, name: klub.name)
-  	expect(another_klub.slug).not_to eq(klub.slug)
-  	expect(another_klub.slug).not_to be_nil
-  	yet_another_klub = create(:klub, name: klub.name)
-  	expect(yet_another_klub.slug).not_to eq(klub.slug)
-  	expect(yet_another_klub.slug).not_to eq(another_klub.slug)
+  it "should create valid slug when appending strings" do
+    expect(klub.slug).to eq('karate-klub-skocjan')
+
+    expect(Randgen).to receive(:last_name).and_return('2')
+
+    another_klub = create(:klub, name: klub.name)
+  	expect(another_klub.slug).to eq('karate-klub-skocjan-2')
+    expect(another_klub.slug).not_to eq('karate-klub-skocjan 2')
+  end
+
+  it "should make sure there is no space characters in the slug" do
+    expect(klub.persisted?).to be true
+    another_klub = create(:klub, name: klub.name)
+    expect(another_klub.slug).not_to eq(klub.slug)
+    expect(another_klub.slug).not_to be_nil
+    yet_another_klub = create(:klub, name: klub.name)
+    expect(yet_another_klub.slug).not_to eq(klub.slug)
+    expect(yet_another_klub.slug).not_to eq(another_klub.slug)
   end
 
   describe "complete scope" do
