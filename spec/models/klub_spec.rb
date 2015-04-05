@@ -15,6 +15,14 @@ RSpec.describe Klub, :type => :model do
   	expect(klub).not_to be_valid
   end
 
+  it "should support multiple editors" do
+    emails = ['a@google.com', 'b@google.com']
+    klub.editor_emails = emails
+    expect(klub).to be_valid
+    klub.save!
+    expect(klub.reload.editor_emails).to eq(emails)
+  end
+
   it "should generate slug on create" do
   	expect(klub.slug).to eq('karate-klub-skocjan')
   end
