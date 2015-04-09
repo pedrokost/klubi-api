@@ -6,10 +6,23 @@ module Api
         render json: @klubs
       end
 
+      def create
+        editor = new_klub_param['editor']
+        @klub = Klub.new(new_klub_param.except('editor'))
+        @klub.editor_emails << editor
+        @klub.send_review_notification
+
+        render nothing: true
+      end
+
     private
 
       def category_param
         params.require(:category)
+      end
+
+      def new_klub_param
+        params.require(:klub).permit(:name, :address, :town, :latitude, :longitude, :website, :facebook_url, :phone, :email, :categories, :editor)
       end
     end
   end

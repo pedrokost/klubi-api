@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   constraints subdomain: 'api' do
     scope module: 'api' do
       scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
-        resources :klubs, only: [:index]
+        resources :klubs, only: [:index, :create]
       end
     end
   end

@@ -39,6 +39,10 @@ class Klub < ActiveRecord::Base
     end
   end
 
+  def send_review_notification
+    KlubMailer.new_klub_mail(self.inspect).deliver_later
+  end
+
 private
 	def update_complete
 		self.complete = !(self.name.blank? || self.latitude.nil? || self.longitude.nil?)
