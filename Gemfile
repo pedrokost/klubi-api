@@ -12,7 +12,8 @@ gem 'pg'
 
 gem 'rails_12factor', group: :production
 
-gem 'active_model_serializers', '~> 0.9.0'
+# gem 'active_model_serializers', '~> 0.9.0'
+gem 'active_model_serializers', '~> 0.10.0.rc1'
 
 gem 'redis'
 
@@ -37,11 +38,15 @@ gem 'rack-cors', github: 'cyu/rack-cors', require: 'rack/cors'
 
 gem 'rack-rewrite'
 
-gem 'rest_client', require: false
+gem 'rest-client', require: false
 
 gem 'highline', '~> 1.6.21'
 
 gem 'levenshtein-ffi', :require => 'levenshtein'
+
+# Makes caching into memcacher work
+gem "dalli"
+gem "memcachier"
 
 group :development, :test do
   gem 'spring-commands-rspec'
