@@ -23,6 +23,8 @@ gem 'skylight'
 
 gem 'json_spec'
 
+gem 'newrelic_rpm'
+
 group :development do
   gem 'pry-rails'
   gem 'pry-rescue'
