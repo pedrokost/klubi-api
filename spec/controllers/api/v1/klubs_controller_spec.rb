@@ -80,4 +80,29 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
       end
     end
   end
+
+  describe 'GET #klubs/:id' do
+    let!(:klub1) { FactoryGirl.create(:klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
+    let!(:klub2) { FactoryGirl.create(:klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes']) }
+
+    before do
+      get :show, id: klub1.id
+    end
+
+    subject { response }
+
+    it { should be_success }
+
+    it "should return only klub1" do
+      klub = JSON.parse(response.body)['klub']
+      expect(klub.class).to eq Hash
+      expect(klub['id']).to eq klub1.id
+    end
+
+
+    it "should return a list of klubs" do
+      expect(response.status).to eq 200
+      expect(response).to match_response_schema("klub")
+    end
+  end
 end

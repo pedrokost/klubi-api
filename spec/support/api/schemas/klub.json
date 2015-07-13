@@ -20,13 +20,20 @@
         "id" :        { "type": "integer" },
         "name" :      { "type": "string" },
         "slug" :      { "type": "string" },
-        "address" :   { "type": "string" },
-        "town" :      { "type": "string" },
-        "website" :   { "type": "string" },
-        "phone" :     { "type": "string" },
-        "email" :     { "type": "string" },
-        "latitude" :  { "type": "number" },
-        "longitude" : { "type": "number" }
+        "address" :   { "type": ["string", "null"] },
+        "town" :      { "type": ["string", "null"] },
+        "website" :   { "type": ["string", "null"] },
+        "phone" :     { "type": ["string", "null"] },
+        "email" :     { "type": ["string", "null"] },
+        "latitude" :  { "type": ["string", "null"] },
+        "longitude" : { "type": ["string", "null"] },
+        "facebook_url" : { "type": ["string", "null"] },
+        "categories": {
+          "type": ["array"],
+          "items": [{
+            "type": "string"
+          }]
+        }
       }
     }
   }

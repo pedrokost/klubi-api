@@ -15,6 +15,11 @@ module Api
         render nothing: true
       end
 
+      def show
+        klub = Klub.find(params[:id])
+        render json: klub, root: 'klub'
+      end
+
     private
 
       def category_param
@@ -24,6 +29,7 @@ module Api
       def new_klub_param
         params.require(:klub).permit(:name, :address, :town, :latitude, :longitude, :website, :facebook_url, :phone, :email, :categories, :editor)
       end
+
     end
   end
 end
