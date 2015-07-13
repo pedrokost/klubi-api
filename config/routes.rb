@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   constraints subdomain: 'api' do
     scope module: 'api' do
       scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
-        resources :klubs, only: [:index, :create, :show]
+        resources :klubs, only: [:index, :create]
+        get 'klubs/:slug' => 'klubs#find_by_slug'
       end
     end
   end

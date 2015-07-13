@@ -15,8 +15,8 @@ module Api
         render nothing: true
       end
 
-      def show
-        klub = Klub.find(params[:id])
+      def find_by_slug
+        klub = Klub.where(slug: params[:slug]).first
         render json: klub, root: 'klub'
       end
 
