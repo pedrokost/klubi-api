@@ -3,7 +3,12 @@ module Api
     class KlubsController < ApplicationController
       def index
         klubs = Klub.where("? = ANY (categories)", category_param)
-        render json: klubs, root: 'klubs'
+
+        data = Rails.cache.fetch("klubs/#{category_param}-#{klubs.count}-#{klubs.map(&:updated_at).max.to_i}") do
+          klubs.to_json
+        end
+
+        render json: data
       end
 
       def create
@@ -17,7 +22,7 @@ module Api
 
       def find_by_slug
         klub = Klub.where(slug: params[:slug]).first
-        render json: klub, root: 'klub'
+        render json: klub
       end
 
     private
