@@ -5,7 +5,8 @@ module Api
         klubs = Klub.where("? = ANY (categories)", category_param)
 
         data = Rails.cache.fetch("klubs/#{category_param}-#{klubs.count}-#{klubs.map(&:updated_at).max.to_i}") do
-          klubs.to_json
+          serializer = ActiveModel::Serializer::ArraySerializer.new(klubs)
+          ActiveModel::Serializer::Adapter.create(serializer).as_json
         end
 
         render json: data
