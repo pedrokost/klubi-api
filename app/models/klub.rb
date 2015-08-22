@@ -2,6 +2,10 @@ require 'pry' if Rails.env.test?
 
 
 class Klub < ActiveRecord::Base
+
+  has_many :branches, class_name: 'Klub', foreign_key: 'parent_id'
+  belongs_to :parent, class_name: 'Klub', touch: true
+
 	before_save :update_slug
 	before_save :update_complete
 

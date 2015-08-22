@@ -10,10 +10,12 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
   describe 'GET #klubs' do
     let!(:klub1) { FactoryGirl.create(:klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
     let!(:klub2) { FactoryGirl.create(:klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes']) }
+    let!(:klub_branch) { FactoryGirl.create(:klub_branch, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
 
     before do
       get :index, category: 'fitnes'
     end
+
     subject { response }
 
     it { should be_success }
@@ -55,7 +57,7 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
           klubs = json_response[:klubs]
           expect(response).to match_response_schema("klubs")
           expect(klubs.length).to eq 2
-          expect(klubs.map{|h| h[:id]}).to match([klub1, klub2].map(&:id))
+          expect(klubs.map{|h| h[:id]}).to match_array([klub1, klub2].map(&:id))
         end
       end
 
@@ -68,8 +70,8 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
           expect(response.status).to eq 200
           klubs = json_response[:klubs]
           expect(response).to match_response_schema("klubs")
-          expect(klubs.length).to eq 1
-          expect(klubs.map{|h| h[:id]}).to match([klub1.id])
+          expect(klubs.length).to eq 2
+          expect(klubs.map{|h| h[:id]}).to match_array([klub1.id, klub_branch.id])
         end
       end
 

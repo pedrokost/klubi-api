@@ -76,6 +76,27 @@ RSpec.describe Klub, :type => :model do
     expect(yet_another_klub.slug).not_to eq(another_klub.slug)
   end
 
+  it "may have branches" do
+    branch1 = create(:complete_klub_branch, parent: klub)
+    branch2 = create(:complete_klub_branch, parent: klub)
+
+    expect(klub.branches).to match_array [branch1, branch2]
+  end
+
+  it "may have a parent" do
+    branch1 = create(:complete_klub_branch, parent: klub)
+
+    expect(branch1.parent).to eq klub
+  end
+
+  describe "branches" do
+    it "touches the parent when branch is edited" do
+      expect {
+        create(:klub_branch, parent: klub)
+      }.to change(klub, :updated_at).from(klub.updated_at)
+    end
+  end
+
   describe "complete scope" do
     let!(:klub2) { create(:complete_klub) }
 
