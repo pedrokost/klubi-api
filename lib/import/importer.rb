@@ -34,6 +34,8 @@ module Import
     end
 
     def commit_one(klubdata)
+      p "Creating club #{klubdata[:name]}" if @verbose
+
       tbl = Klub.arel_table
       existing_klubs = Klub.unscoped.where(tbl[:name].matches(klubdata[:name]))
 
