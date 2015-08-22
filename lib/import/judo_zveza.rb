@@ -18,30 +18,13 @@ module Import
 
     def transform(data)
       json = JSON.parse(data)
-      # TODO
 
-      # clean_data = []
-      # json['results']['collection1'].each do |klubdata|
-      #   name = klubdata['name']
-      #   website = klubdata['url']
-      #   address = klubdata['address']
-      #   phone = klubdata['phone']
-      #   email = klubdata['email']
-      # #   address = address.sub('Naslov podjetja: ', '').sub('Povezava na stran podjetja', '').gsub("\n", ' ').strip
+      clean_data = []
+      json['results']['collection1'].each do |klubdata|
+        clean_data << klubdata.symbolize_keys
+      end
 
-      #   klub = {
-      #     name: name,
-      #     address: address,
-      #     website: website,
-      #     email: email,
-      #     phone: phone,
-      #     categories: ['gimnastika']
-      #   }
-
-      #   clean_data << klub
-      # end
-
-      # clean_data
+      clean_data
     end
   end
 end
