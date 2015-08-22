@@ -46,6 +46,9 @@ gem 'highline', '~> 1.6.21'
 
 gem 'levenshtein-ffi', :require => 'levenshtein'
 
+gem 'fog-aws'  # for uploading the sitemap
+gem 'sitemap_generator'
+
 # Makes caching into memcacher work
 gem "dalli"
 gem "memcachier"
