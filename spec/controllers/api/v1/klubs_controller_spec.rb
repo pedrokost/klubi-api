@@ -85,6 +85,7 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
 
   describe 'GET #klubs/:id' do
     let!(:klub1) { FactoryGirl.create(:klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
+    let!(:klub_branch) { FactoryGirl.create(:klub_branch, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
 
     before do
       get :find_by_slug, slug: klub1.slug
@@ -103,6 +104,13 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
     it "should return a list of klubs" do
       expect(response.status).to eq 200
       expect(response).to match_response_schema("klub")
+    end
+
+    it "should return the parent's slug" do
+      get :find_by_slug, slug: klub_branch.slug
+      expect(response).to match_response_schema('klub')
+      klub = json_response[:klub]
+      expect(klub[:parent_id]).to eq klub1.slug
     end
   end
 end

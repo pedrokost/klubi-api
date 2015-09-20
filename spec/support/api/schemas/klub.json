@@ -14,7 +14,8 @@
         "phone",
         "email",
         "latitude",
-        "longitude"
+        "longitude",
+        "parent_id"
       ],
       "properties" : {
         "id" :        { "type": "integer" },
@@ -27,6 +28,7 @@
         "email" :     { "type": ["string", "null"] },
         "latitude" :  { "type": ["string", "null"] },
         "longitude" : { "type": ["string", "null"] },
+        "parent_id" :    { "type": ["string", "null"] },
         "facebook_url" : { "type": ["string", "null"] },
         "categories": {
           "type": ["array"],
