@@ -40,8 +40,14 @@ SitemapGenerator::Sitemap.create do
   add '/oprojektu'
   add '/clanki'
 
+  MIN_ITEMS_IN_CATEGORY=5
   # Add all categories
-  Klub.pluck(:categories).flatten.uniq.each do |category|
+  Klub.pluck(:categories).flatten.each_with_object(Hash.new(0)) {
+    |o, h| h[o] += 1
+  }.select{
+    |k, v| v >= MIN_ITEMS_IN_CATEGORY
+  }.keys.each do |category|
+
     add "/?category=#{category}", priority: 0.6, changefreq: 'daily'
   end
 
