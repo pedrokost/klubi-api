@@ -40,6 +40,8 @@ gem 'rack-cors', github: 'cyu/rack-cors', require: 'rack/cors'
 
 gem 'rack-rewrite'
 
+gem 'prerender_rails'
+
 gem 'rest-client', require: false
 
 gem 'highline', '~> 1.6.21'
