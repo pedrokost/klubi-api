@@ -36,6 +36,8 @@ gem 'randexp'
 
 gem 'nokogiri'
 
+gem 'rack-attack'
+
 gem 'rack-cors', github: 'cyu/rack-cors', require: 'rack/cors'
 
 gem 'rack-rewrite'

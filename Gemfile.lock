@@ -166,6 +166,8 @@ GEM
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
     rack (1.6.1)
+    rack-attack (4.3.0)
+      rack
     rack-rewrite (1.5.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -287,6 +289,7 @@ DEPENDENCIES
   pry-rails
   pry-rescue
   pry-stack_explorer
+  rack-attack
   rack-cors!
   rack-rewrite
   rails (= 4.2.1)

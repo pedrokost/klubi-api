@@ -44,5 +44,7 @@ module ZatresiApi
         'X-Frame-Options' => 'ALLOWALL'
     }
 
+    config.middleware.use Rack::Attack
+
   end
 end
