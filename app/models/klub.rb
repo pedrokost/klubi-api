@@ -44,7 +44,7 @@ class Klub < ActiveRecord::Base
   end
 
   def send_review_notification
-    KlubMailer.new_klub_mail(self.inspect).deliver_later
+    KlubMailer.new_klub_mail(self.to_json).deliver_later
   end
 
 private
