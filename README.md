@@ -21,3 +21,9 @@ git push heroku master
 ```
 
 Setup the cron job to execute `rake sitemap:refresh` regularly (e.g. daily)
+
+Sitemap:
+```
+rake sitemap:refresh
+rake sitemap:refresh:no_ping
+```

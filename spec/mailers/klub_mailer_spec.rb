@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe KlubMailer, :type => :mailer do
 
-  let(:klub) { build(:klub, name: 'My klub', editor_emails: ['submitter@email.com']) }
+  let(:klub) { build(:klub, name: 'My klub', editor_emails: ['submitter@email.com'], categories: ['fitnes', 'zumba']) }
   let(:mail) { KlubMailer.new_klub_mail(klub.inspect) }
 
   it 'renders the subject' do
@@ -23,5 +23,9 @@ RSpec.describe KlubMailer, :type => :mailer do
 
   it 'send klubs data' do
     expect(mail.body.encoded).to match('My klub')
+  end
+
+  it 'send klub\'s categories' do
+    expect(mail.body.encoded).to match('fitnes.*zumba')
   end
 end

@@ -6,7 +6,6 @@ require 'pry'
 
 RSpec.describe Api::V1::KlubsController, :type => :controller do
 
-
   describe 'GET #klubs' do
     let!(:klub1) { FactoryGirl.create(:klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
     let!(:klub2) { FactoryGirl.create(:klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes']) }
@@ -111,6 +110,26 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
       expect(response).to match_response_schema('klub')
       klub = json_response[:klub]
       expect(klub[:parent_id]).to eq klub1.slug
+    end
+  end
+
+  describe 'POST #klubs' do
+
+    it "should send an email" do
+      expect_any_instance_of(Klub).to receive(:send_review_notification)
+
+      post :create, klub: {name: "Fitnes Maribor"}
+    end
+
+    it "should accept categories and other parameters" do
+
+      ok_params = {name: "Fitnes Maribor", address: "Mariborska cesta 5", latitude: "46.5534849", longitude: "15.503709399999934", website: "http://www.fitnes-zumba.si",categories: ["fitnes","zumba"], editor: "jaz@ti.com"}
+      expect(Klub).to receive(:new).
+        with(ok_params.except(:editor).with_indifferent_access)
+        .and_return Klub.new(ok_params.except(:editor))
+
+
+      post :create, klub: ok_params
     end
   end
 end
