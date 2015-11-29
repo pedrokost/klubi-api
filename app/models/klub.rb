@@ -48,6 +48,20 @@ class Klub < ActiveRecord::Base
     KlubMailer.new_klub_mail(self.to_json).deliver_later
   end
 
+  def create_updates(new_attrs)
+    editor = new_attrs['editor']
+    new_attrs.except('editor').each do |key, val|
+      next if self.send(key) == val
+      Update.create(
+        updatable: self,
+        field: key,
+        oldvalue: self.send(key).to_json,
+        newvalue: val.to_json,
+        editor_email: editor
+      )
+    end
+  end
+
 private
 	def update_complete
 		self.complete = !(self.name.blank? || self.latitude.nil? || self.longitude.nil?)

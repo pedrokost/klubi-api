@@ -132,4 +132,70 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
       post :create, klub: ok_params
     end
   end
+
+  describe 'PUT #klub/:id' do
+
+    let(:old_attrs) do
+      {
+        name: 'Old club',
+        address: 'Univerza v Ljubljani, Tržaška cesta 25, 1000 Ljubljana, Slovenija',
+        website: 'http://oldclub.com',
+        phone: '040 040 040',
+        email: 'old@club.com',
+        categories: ['fitnes'],
+        facebook_url: 'http://facebook.com/oldclub',
+        editor_emails: []
+      }
+    end
+    let(:new_attrs) do
+      {
+        name: 'New club',
+        address: 'Trzaska 26, Ljubljana',
+        website: 'http://newclub.com',
+        phone: '404 404 404',
+        email: 'new@club.com',
+        categories: ['fitnes', 'rugby'],
+        facebook_url: 'http://facebook.com/newclub'
+      }
+    end
+    let!(:klub) { FactoryGirl.create(:klub, old_attrs) }
+
+    it "should be accepted" do
+      patch :update, id: klub.id, klub: new_attrs
+      expect(response.status).to eq 202  # Accepted -- no need to reply with changes
+    end
+
+    it "should create Update objects for each changed attributes" do
+      expect {
+        patch :update, id: klub.id, klub: new_attrs.merge(editor: 'joe@doe.com')
+      }.to change(Update, :count).by(7)
+
+      new_attrs.each do |key, val|
+        # p key, val
+        expect(
+          Update.find_by(
+            updatable: klub,
+            field: key,
+            oldvalue: old_attrs[key].to_json,
+            newvalue: val.to_json,
+            status: :unverified,
+            editor_email: 'joe@doe.com'
+        )).to be_truthy
+      end
+    end
+
+    it "should not create Update objects for unchanged attributes" do
+      new_attrs = old_attrs.merge(name: 'Some club')
+
+      expect {
+        patch :update, id: klub.id, klub: new_attrs.merge(editor: 'joe@doe.com')
+      }.to change(Update, :count).by(1)
+    end
+
+    it "should not change the Klub model" do
+      patch :update, id: klub.id, klub: new_attrs.merge(editor: 'joe@doe.com')
+
+      expect(klub.reload).to have_attributes(old_attrs)
+    end
+  end
 end

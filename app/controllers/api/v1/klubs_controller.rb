@@ -21,6 +21,12 @@ module Api
         render nothing: true
       end
 
+      def update
+        klub = Klub.find(params[:id])
+        klub.create_updates update_klub_param
+        render nothing: true, status: :accepted
+      end
+
       def find_by_slug
         klub = Klub.where(slug: params[:slug]).first
         render json: klub
@@ -33,6 +39,10 @@ module Api
       end
 
       def new_klub_param
+        params.require(:klub).permit(:name, :address, :town, :latitude, :longitude, :website, :facebook_url, :phone, :email, {:categories => []}, :editor)
+      end
+
+      def update_klub_param
         params.require(:klub).permit(:name, :address, :town, :latitude, :longitude, :website, :facebook_url, :phone, :email, {:categories => []}, :editor)
       end
 
