@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150822135854) do
+ActiveRecord::Schema.define(version: 20151129142053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,5 +40,8 @@ ActiveRecord::Schema.define(version: 20150822135854) do
   add_index "klubs", ["editor_emails"], name: "index_klubs_on_editor_emails", using: :gin
   add_index "klubs", ["parent_id"], name: "index_klubs_on_parent_id", using: :btree
   add_index "klubs", ["slug"], name: "index_klubs_on_slug", using: :btree
+
+# Could not dump table "updates" because of following StandardError
+#   Unknown type 'update_status' for column 'status'
 
 end

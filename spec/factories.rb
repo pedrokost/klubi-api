@@ -1,5 +1,8 @@
 # This will guess the User class
-FactoryGirl.define do
+FactoryGirl.define do  factory :update do
+    
+  end
+
 
   factory :klub do
 
