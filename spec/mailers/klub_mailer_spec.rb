@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe KlubMailer, :type => :mailer do
 
   let(:klub) { build(:klub, name: 'My klub' * 10, editor_emails: ['submitter@email.com'], categories: ['fitnes', 'zumba']) }
-  let(:mail) { KlubMailer.new_klub_mail(klub.inspect) }
+  let(:mail) { KlubMailer.new_klub_mail(klub.to_json) }
 
   it 'renders the subject' do
     expect(mail.subject).to eql('A new klub has been added for review')
