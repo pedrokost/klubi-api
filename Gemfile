@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.1'
 
-gem 'rails-api'
+gem 'rails-api', require: false
 
 gem 'spring', :group => :development
 
@@ -52,6 +52,8 @@ gem 'levenshtein-ffi', :require => 'levenshtein'
 
 gem 'fog-aws'  # for uploading the sitemap
 gem 'sitemap_generator'
+
+gem "administrate", "~> 0.1.2"
 
 # Makes caching into memcacher work
 gem "dalli"

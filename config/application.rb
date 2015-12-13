@@ -45,6 +45,8 @@ module ZatresiApi
     }
 
     config.middleware.use Rack::Attack
+    config.middleware.use ActionDispatch::Flash
+    config.middleware.use Rack::MethodOverride
 
     config.active_record.schema_format = :sql
 

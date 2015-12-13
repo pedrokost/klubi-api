@@ -2,6 +2,15 @@ require 'api_constraints'
 
 Rails.application.routes.draw do
 
+  constraints subdomain: 'admin' do
+    scope module: 'admin', as: 'admin' do
+      DashboardManifest::DASHBOARDS.each do |dashboard_resource|
+        resources dashboard_resource
+      end
+      root controller: DashboardManifest::ROOT_DASHBOARD, action: :index, as: :admin
+    end
+  end
+
   constraints subdomain: 'api' do
     scope module: 'api' do
       scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
