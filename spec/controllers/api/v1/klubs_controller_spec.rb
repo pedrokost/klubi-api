@@ -161,13 +161,13 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
     let!(:klub) { FactoryGirl.create(:klub, old_attrs) }
 
     it "should be accepted" do
-      patch :update, id: klub.id, klub: new_attrs
+      patch :update, id: klub.slug, klub: new_attrs
       expect(response.status).to eq 202  # Accepted -- no need to reply with changes
     end
 
     it "should create Update objects for each changed attributes" do
       expect {
-        patch :update, id: klub.id, klub: new_attrs.merge(editor: 'joe@doe.com')
+        patch :update, id: klub.slug, klub: new_attrs.merge(editor: 'joe@doe.com')
       }.to change(Update, :count).by(7)
 
       new_attrs.each do |key, val|
@@ -188,12 +188,12 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
       new_attrs = old_attrs.merge(name: 'Some club')
 
       expect {
-        patch :update, id: klub.id, klub: new_attrs.merge(editor: 'joe@doe.com')
+        patch :update, id: klub.slug, klub: new_attrs.merge(editor: 'joe@doe.com')
       }.to change(Update, :count).by(1)
     end
 
     it "should not change the Klub model" do
-      patch :update, id: klub.id, klub: new_attrs.merge(editor: 'joe@doe.com')
+      patch :update, id: klub.slug, klub: new_attrs.merge(editor: 'joe@doe.com')
 
       expect(klub.reload).to have_attributes(old_attrs)
     end

@@ -22,7 +22,7 @@ module Api
       end
 
       def update
-        klub = Klub.find(params[:id])
+        klub = Klub.where(slug: params[:id]).first
         klub.create_updates update_klub_param
         render nothing: true, status: :accepted
       end
