@@ -15,5 +15,33 @@ module Admin
 
     # See https://administrate-docs.herokuapp.com/customizing_controller_actions
     # for more information
+
+
+    def update
+      updated_success = false
+
+      requested_resource.transaction do
+        old_status = requested_resource.status
+        if requested_resource.update(resource_params)
+
+          if old_status != resource_params[:status]
+            requested_resource.resolve!
+          end
+
+          updated_success = true
+        end
+      end
+
+      if updated_success
+        redirect_to(
+          [:admin, requested_resource],
+          notice: translate_with_resource("update.success"),
+        )
+      else
+        render :edit, locals: {
+          page: Administrate::Page::Form.new(dashboard, requested_resource),
+        }
+      end
+    end
   end
 end

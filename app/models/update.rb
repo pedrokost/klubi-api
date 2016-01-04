@@ -5,4 +5,10 @@ class Update < ActiveRecord::Base
     rejected:   'rejected',
   }
   belongs_to :updatable, polymorphic: true
+
+  def resolve!
+    if status == 'accepted'
+      updatable.update_attributes(field => newvalue)
+    end
+  end
 end

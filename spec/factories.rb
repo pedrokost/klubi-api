@@ -1,6 +1,11 @@
 # This will guess the User class
-FactoryGirl.define do  factory :update do
-    
+FactoryGirl.define do
+
+  factory :update do
+    field 'name'
+    oldvalue 'banana'
+    newvalue 'pear'
+    status 'unverified'
   end
 
 
