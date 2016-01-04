@@ -72,6 +72,10 @@ group :test do
   gem "json-schema"
 end
 
+group :assets do
+  gem 'uglifier'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
