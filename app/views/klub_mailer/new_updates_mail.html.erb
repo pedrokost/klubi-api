@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Hi Pedro</p>
+    <p>
+      <%= @editor_mail =%> has updated the klub '<%= @klub_name %>',
+    </p>
+    <p>
+      Here are the details: <br>
+      <br>
+      <% @updates.each do |update| %>
+        <%= update.field %>: <%= update.oldvalue %> -> <%= update.newvalue%> <br>
+      <% end %>
+    </p>
+    <p>Review this promptly to add it to the site!</p>
+    <br>
+    <p>Cheers,</p>
+    <p>Peter from zatresi.si</p>
+  </body>
+</html>

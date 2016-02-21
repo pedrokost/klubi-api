@@ -197,5 +197,11 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
 
       expect(klub.reload).to have_attributes(old_attrs)
     end
+
+    it "should send an email notification" do
+      expect_any_instance_of(Klub).to receive(:send_updates_notification)
+
+      patch :update, id: klub.slug, klub: new_attrs.merge(editor: 'joe@doe.com')
+    end
   end
 end

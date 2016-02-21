@@ -122,10 +122,13 @@ RSpec.describe Klub, :type => :model do
     expect(klub.complete?).to be true
   end
 
-  it "sends an email" do
+  it "sends an email upon creation" do
     expect { subject.send_review_notification }.to change { ActionMailer::Base.deliveries.count }.by(1)
   end
 
+  it "sends an email upon updated" do
+    expect { subject.send_updates_notification([]) }.to change { ActionMailer::Base.deliveries.count }.by(1)
+  end
 
   describe "geocoding" do
 

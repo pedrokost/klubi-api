@@ -23,7 +23,8 @@ module Api
 
       def update
         klub = Klub.where(slug: params[:id]).first
-        klub.create_updates update_klub_param
+        updates = klub.create_updates update_klub_param
+        klub.send_updates_notification(updates)
         render nothing: true, status: :accepted
       end
 
