@@ -14,7 +14,7 @@ class ApplicationController < ActionController::API
 private
 
   def bootstrap_index(index_key)
-    index_key ||= REDIS.get('zatresi:current')
+    index_key ||= 'zatresi:current-content'
     REDIS.get(index_key)
   end
 
