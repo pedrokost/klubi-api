@@ -171,13 +171,12 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
       }.to change(Update, :count).by(7)
 
       new_attrs.each do |key, val|
-        # p key, val
         expect(
           Update.find_by(
             updatable: klub,
             field: key,
-            oldvalue: old_attrs[key].to_json,
-            newvalue: val.to_json,
+            oldvalue: old_attrs[key].to_s,
+            newvalue: val.to_s,
             status: :unverified,
             editor_email: 'joe@doe.com'
         )).to be_truthy

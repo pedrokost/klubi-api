@@ -60,8 +60,8 @@ class Klub < ActiveRecord::Base
       updates << Update.create(
         updatable: self,
         field: key,
-        oldvalue: self.send(key).to_json,
-        newvalue: val.to_json,
+        oldvalue: self.send(key).to_s,
+        newvalue: val.to_s,
         editor_email: editor
       )
     end
