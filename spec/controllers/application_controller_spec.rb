@@ -4,7 +4,6 @@ RSpec.describe ApplicationController, :type => :controller do
   describe "GET #index" do
     before do
       returns = [
-        'zatresi:hash',
         '<html>zatresi</html>'
       ]
       expect(REDIS).to receive(:get).and_return(*returns)
