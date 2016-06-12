@@ -53,7 +53,7 @@ gem 'levenshtein-ffi', :require => 'levenshtein'
 gem 'fog-aws'  # for uploading the sitemap
 gem 'sitemap_generator'
 
-gem "administrate", "~> 0.1.2"
+gem "administrate", "~> 0.2.2"
 
 # Makes caching into memcacher work
 gem "dalli"

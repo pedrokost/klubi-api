@@ -16,6 +16,21 @@ module Admin
     # See https://administrate-docs.herokuapp.com/customizing_controller_actions
     # for more information
 
+    def reject
+      requested_resource.reject!
+      redirect_to(
+        [:admin, requested_resource],
+        notice: translate_with_resource("update.success")
+      )
+    end
+
+    def accept
+      requested_resource.accept!
+      redirect_to(
+        [:admin, requested_resource],
+        notice: translate_with_resource("update.success")
+      )
+    end
 
     def update
       updated_success = false

@@ -7,6 +7,14 @@ Rails.application.routes.draw do
       DashboardManifest::DASHBOARDS.each do |dashboard_resource|
         resources dashboard_resource
       end
+
+      resources :updates do
+        member do
+          post 'accept'
+          post 'reject'
+        end
+      end
+
       root controller: DashboardManifest::ROOT_DASHBOARD, action: :index, as: :admin
     end
   end

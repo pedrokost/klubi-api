@@ -48,4 +48,46 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
       expect(klub.editor_emails.length).to eq 1
     end
   end
+
+  describe 'POST #updates/:id/reject' do
+    let!(:klub) { FactoryGirl.create(:complete_klub) }
+    let!(:update) { FactoryGirl.create(:update, updatable: klub, field: 'name', oldvalue: klub.name, newvalue: 'Scented') }
+
+    it "should set the correct status" do
+      expect {
+        post :reject, id: update.id
+        update.reload
+      }.to change(update, :status)
+      expect(update.status).to eq('rejected')
+    end
+
+    it "should not alter the attribute" do
+      expect {
+        post :reject, id: update.id
+        klub.reload
+      }.not_to change(klub, :name)
+    end
+
+  end
+
+  describe 'POST #updates/:id/accept' do
+    let!(:klub) { FactoryGirl.create(:complete_klub) }
+    let!(:update) { FactoryGirl.create(:update, updatable: klub, field: 'name', oldvalue: klub.name, newvalue: 'Scented') }
+
+    it "should set the correct status" do
+      expect {
+        post :accept, id: update.id
+        update.reload
+      }.to change(update, :status)
+      expect(update.status).to eq('accepted')
+    end
+
+    it "should not alter the attribute" do
+      expect {
+        post :accept, id: update.id
+        klub.reload
+      }.to change(klub, :name)
+      expect(klub.name).to eq 'Scented'
+    end
+  end
 end

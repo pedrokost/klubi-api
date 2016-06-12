@@ -12,7 +12,17 @@ class Update < ActiveRecord::Base
         updatable.editor_emails << editor_email
       end
 
-      updatable.update_attributes(field => newvalue)
+      updatable.update_attributes field => newvalue
     end
+  end
+
+  def accept!
+    accepted!
+    resolve!
+  end
+
+  def reject!
+    rejected!
+    resolve!
   end
 end
