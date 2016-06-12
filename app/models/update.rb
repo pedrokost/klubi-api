@@ -8,6 +8,10 @@ class Update < ActiveRecord::Base
 
   def resolve!
     if status == 'accepted'
+      unless updatable.editor_emails.include? editor_email
+        updatable.editor_emails << editor_email
+      end
+
       updatable.update_attributes(field => newvalue)
     end
   end
