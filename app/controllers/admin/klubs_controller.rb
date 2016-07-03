@@ -15,5 +15,18 @@ module Admin
 
     # See https://administrate-docs.herokuapp.com/customizing_controller_actions
     # for more information
+
+    def toggleverify
+      requested_resource.toggle!(:verified)
+
+      redirect_to(
+        [:admin, requested_resource],
+        notice: translate_with_resource("update.success")
+      )
+    end
+
+    def find_resource(param)
+      resource_class.unscoped.find(param)
+    end
   end
 end

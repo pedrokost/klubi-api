@@ -3,8 +3,8 @@ require "rails_helper"
 RSpec.describe KlubMailer, :type => :mailer do
 
   describe "new_klub_mail" do
-    let(:klub) { build(:klub, name: 'My klub' * 10, editor_emails: ['submitter@email.com'], categories: ['fitnes', 'zumba']) }
-    let(:mail) { KlubMailer.new_klub_mail(klub.to_json) }
+    let!(:klub) { create(:klub, name: 'My klub' * 10, editor_emails: ['submitter@email.com'], categories: ['fitnes', 'zumba']) }
+    let(:mail) { KlubMailer.new_klub_mail(klub.id) }
 
     it 'renders the subject' do
       expect(mail.subject).to eql('A new klub has been added for review')
@@ -32,6 +32,10 @@ RSpec.describe KlubMailer, :type => :mailer do
 
     it 'should send long parameters in full length' do
       expect(mail.body.encoded).to match('My klub' * 10)
+    end
+
+    it "should contain direct link to admin's klub page" do
+      expect(mail.body.encoded).to match("/klubs/#{klub.id}")
     end
   end
 

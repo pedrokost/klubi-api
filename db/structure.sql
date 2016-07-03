@@ -61,7 +61,8 @@ CREATE TABLE klubs (
     categories character varying(255)[] DEFAULT '{}'::character varying[],
     facebook_url character varying(255),
     editor_emails character varying(255)[] DEFAULT '{}'::character varying[],
-    parent_id integer
+    parent_id integer,
+    verified boolean DEFAULT false
 );
 
 
@@ -246,4 +247,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150405101024');
 INSERT INTO schema_migrations (version) VALUES ('20150822135854');
 
 INSERT INTO schema_migrations (version) VALUES ('20151129142053');
+
+INSERT INTO schema_migrations (version) VALUES ('20160703105120');
 

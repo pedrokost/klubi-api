@@ -2,7 +2,7 @@ module Api
   module V1
     class KlubsController < ApplicationController
       def index
-        klubs = Klub.where("? = ANY (categories)", category_param)
+        klubs = Klub.completed.where("? = ANY (categories)", category_param)
 
         data = Rails.cache.fetch("klubs/#{category_param}-#{klubs.count}-#{klubs.map(&:updated_at).max.to_i}") do
           serializer = ActiveModel::Serializer::ArraySerializer.new(klubs)
@@ -13,23 +13,22 @@ module Api
       end
 
       def create
-        editor = new_klub_param['editor']
         @klub = Klub.new(new_klub_param.except('editor'))
-        @klub.editor_emails << editor
+        @klub.editor_emails << new_klub_param['editor']
+        @klub.save!
         @klub.send_review_notification
-
         render nothing: true
       end
 
       def update
-        klub = Klub.where(slug: params[:id]).first
+        klub = Klub.completed.where(slug: params[:id]).first
         updates = klub.create_updates update_klub_param
         klub.send_updates_notification(updates)
         render nothing: true, status: :accepted
       end
 
       def find_by_slug
-        klub = Klub.where(slug: params[:slug]).first
+        klub = Klub.completed.where(slug: params[:slug]).first
         render json: klub
       end
 

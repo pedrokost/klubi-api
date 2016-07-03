@@ -91,4 +91,6 @@ Rails.application.configure do
 
   # For prerendering the JS website
   config.middleware.use Rack::Prerender
+
+  config.action_mailer.default_url_options = { :host => 'www.zatresi.si' }
 end

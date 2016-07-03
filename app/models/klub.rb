@@ -13,7 +13,7 @@ class Klub < ActiveRecord::Base
 	validates :slug, uniqueness: true
 	validates :name, presence: true
 
-	default_scope { where(complete: true) }
+	scope :completed, -> { where(complete: true) }
 
   geocoded_by :address do |obj,results|
     if geo = results.first
@@ -45,7 +45,7 @@ class Klub < ActiveRecord::Base
   end
 
   def send_review_notification
-    KlubMailer.new_klub_mail(self.to_json).deliver_later
+    KlubMailer.new_klub_mail(self.id).deliver_later
   end
 
   def send_updates_notification(updates)
@@ -70,7 +70,10 @@ class Klub < ActiveRecord::Base
 
 private
 	def update_complete
-		self.complete = !(self.name.blank? || self.latitude.nil? || self.longitude.nil?)
+		self.complete = !(self.name.blank? ||
+                      self.latitude.nil? ||
+                      self.longitude.nil?) &&
+                    self.verified?
 		nil
 	end
 

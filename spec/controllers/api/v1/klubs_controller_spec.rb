@@ -7,9 +7,9 @@ require 'pry'
 RSpec.describe Api::V1::KlubsController, :type => :controller do
 
   describe 'GET #klubs' do
-    let!(:klub1) { FactoryGirl.create(:klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
-    let!(:klub2) { FactoryGirl.create(:klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes']) }
-    let!(:klub_branch) { FactoryGirl.create(:klub_branch, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
+    let!(:klub1) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
+    let!(:klub2) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes']) }
+    let!(:klub_branch) { FactoryGirl.create(:klub_branch, verified: true, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
 
     before do
       get :index, category: 'fitnes'
@@ -83,8 +83,8 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
   end
 
   describe 'GET #klubs/:id' do
-    let!(:klub1) { FactoryGirl.create(:klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
-    let!(:klub_branch) { FactoryGirl.create(:klub_branch, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
+    let!(:klub1) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
+    let!(:klub_branch) { FactoryGirl.create(:klub_branch, verified: true, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
 
     before do
       get :find_by_slug, slug: klub1.slug
@@ -128,8 +128,16 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
         with(ok_params.except(:editor).with_indifferent_access)
         .and_return Klub.new(ok_params.except(:editor))
 
-
       post :create, klub: ok_params
+    end
+
+    it "should create a new unverified klub" do
+      expect {
+        post :create, klub: { name: 'Fitnes Mariborcan 22' }
+      }.to change(Klub.unscoped, :count).by 1
+
+      klub = Klub.unscoped.last
+      expect(klub.verified?).to be_falsy
     end
   end
 
@@ -158,7 +166,7 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
         facebook_url: 'http://facebook.com/newclub'
       }
     end
-    let!(:klub) { FactoryGirl.create(:klub, old_attrs) }
+    let!(:klub) { FactoryGirl.create(:klub, old_attrs.merge(verified: true)) }
 
     it "should be accepted" do
       patch :update, id: klub.slug, klub: new_attrs

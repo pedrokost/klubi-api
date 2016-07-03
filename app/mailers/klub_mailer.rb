@@ -1,7 +1,8 @@
 class KlubMailer < ApplicationMailer
 
-  def new_klub_mail(klub_data)
-    @klub_data = klub_data
+  def new_klub_mail(klub_id)
+    @klub = Klub.unscoped.find(klub_id)
+    @klub_data = @klub.to_json
     email = ENV['DEFAULT_EMAIL']
     mail(to: email, subject: 'A new klub has been added for review')
   end

@@ -23,6 +23,7 @@ class KlubDashboard < Administrate::BaseDashboard
     longitude: Field::String.with_options(searchable: false),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
+    verified: Field::Boolean.with_options(searchable: true),
     complete: Field::Boolean.with_options(searchable: false),
     categories: Field::String.with_options(searchable: false),
     facebook_url: Field::String.with_options(searchable: true),
@@ -39,7 +40,8 @@ class KlubDashboard < Administrate::BaseDashboard
     :name,
     :town,
     :complete,
-    :updates
+    :updates,
+    :verified
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -67,6 +69,7 @@ class KlubDashboard < Administrate::BaseDashboard
     :facebook_url,
     :editor_emails,
     :parent_id,
+    :verified
   ]
 
   # Overwrite this method to customize how klubs are displayed

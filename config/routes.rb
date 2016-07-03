@@ -10,8 +10,14 @@ Rails.application.routes.draw do
 
       resources :updates do
         member do
-          post 'accept'
-          post 'reject'
+          post :accept
+          post :reject
+        end
+      end
+
+      resources :klubs do
+        member do
+          post :toggleverify
         end
       end
 

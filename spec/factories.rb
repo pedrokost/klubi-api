@@ -18,7 +18,8 @@ FactoryGirl.define do
 		factory :complete_klub do
 			latitude 12.25566
 			longitude 45.25566
-		end
+      verified true
+    end
 
     factory :klub_branch do
       association :parent, factory: :complete_klub
@@ -27,6 +28,7 @@ FactoryGirl.define do
     factory :complete_klub_branch do
       latitude 12.25566
       longitude 45.25566
+      verified true
       association :parent, factory: :complete_klub
     end
 

@@ -38,4 +38,6 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.cache_store = :null_store
+
+  config.action_mailer.default_url_options = { :host => 'www.zatresi.si' }
 end

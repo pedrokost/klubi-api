@@ -100,16 +100,19 @@ RSpec.describe Klub, :type => :model do
   describe "complete scope" do
     let!(:klub2) { create(:complete_klub) }
 
-    it "Klub.all should return only completed models by default" do
-      expect(Klub.all).to eq([klub2])
-      expect(Klub.unscoped).to eq([klub, klub2])
+    it "Klub.completed.all should return only completed models" do
+      expect(Klub.completed.all).to eq([klub2])
+      expect(Klub.completed.unscoped).to eq([klub, klub2])
     end
   end
 
-  it "should be complete if name, latitude and longitude are given" do
+  it "should be complete if name, latitude and longitude are given and verified" do
     expect(klub.complete?).to be false
     klub.latitude = 12
     klub.longitude = 45
+    klub.save
+    expect(klub.complete?).to be false
+    klub.verified = true
     klub.save
     expect(klub.complete?).to be true
   end
@@ -117,6 +120,7 @@ RSpec.describe Klub, :type => :model do
   it "should update complete attribute when saving" do
     klub.latitude = 12
     klub.longitude = 45
+    klub.verified = true
     klub.save
 
     expect(klub.complete?).to be true
