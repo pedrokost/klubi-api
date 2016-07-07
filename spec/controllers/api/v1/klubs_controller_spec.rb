@@ -123,7 +123,7 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
 
     it "should accept categories and other parameters" do
 
-      ok_params = {name: "Fitnes Maribor", address: "Mariborska cesta 5", latitude: "46.5534849", longitude: "15.503709399999934", website: "http://www.fitnes-zumba.si",categories: ["fitnes","zumba"], editor: "jaz@ti.com"}
+      ok_params = {name: "Fitnes Maribor", address: "Mariborska cesta 5", latitude: "46.5534849", longitude: "15.503709399999934", website: "http://www.fitnes-zumba.si",categories: ["fitnes","zumba"], editor: "jaz@ti.com", notes: "Ta klub ne obstaja"}
       expect(Klub).to receive(:new).
         with(ok_params.except(:editor).with_indifferent_access)
         .and_return Klub.new(ok_params.except(:editor))
@@ -163,6 +163,7 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
         phone: '404 404 404',
         email: 'new@club.com',
         categories: ['fitnes', 'rugby'],
+        notes: "Kera stvar",
         facebook_url: 'http://facebook.com/newclub'
       }
     end
@@ -176,7 +177,7 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
     it "should create Update objects for each changed attributes" do
       expect {
         patch :update, id: klub.slug, klub: new_attrs.merge(editor: 'joe@doe.com')
-      }.to change(Update, :count).by(7)
+      }.to change(Update, :count).by(8)
 
       new_attrs.each do |key, val|
         expect(

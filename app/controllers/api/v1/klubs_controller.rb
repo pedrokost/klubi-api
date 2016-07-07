@@ -39,11 +39,11 @@ module Api
       end
 
       def new_klub_param
-        params.require(:klub).permit(:name, :address, :town, :latitude, :longitude, :website, :facebook_url, :phone, :email, {:categories => []}, :editor)
+        params.require(:klub).permit(:name, :address, :town, :latitude, :longitude, :website, :facebook_url, :phone, :email, :notes, {:categories => []}, :editor)
       end
 
       def update_klub_param
-        params.require(:klub).permit(:name, :address, :town, :latitude, :longitude, :website, :facebook_url, :phone, :email, {:categories => []}, :editor)
+        params.require(:klub).permit(:name, :address, :town, :latitude, :longitude, :website, :facebook_url, :phone, :email, :notes, {:categories => []}, :editor)
       end
 
     end
