@@ -25,6 +25,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/rails/mailers' => "rails/mailers#index"
+  get '/rails/mailers/*path' => "rails/mailers#preview"
+
   constraints subdomain: 'api' do
     scope module: 'api' do
       scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do

@@ -14,4 +14,13 @@ class KlubMailer < ApplicationMailer
     email = ENV['DEFAULT_EMAIL']
     mail(to: email, subject: "Updates submitted for '#{klub_name}'")
   end
+
+  def confirmation_for_pending_updates_mail(klub_id, editor_email, update_ids)
+    @klub = Klub.unscoped.find(klub_id)
+    @updates = Update.find(update_ids)
+
+    from_email = ENV['DEFAULT_BOT_EMAIL']
+    subject = "🚶 Vaši popravki za #{@klub.name} ( ͡° ͜ʖ ͡°)"
+    mail(from: from_email, to: editor_email, subject: subject)
+  end
 end

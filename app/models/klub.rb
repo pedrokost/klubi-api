@@ -52,6 +52,10 @@ class Klub < ActiveRecord::Base
     KlubMailer.new_updates_mail(self.name, updates).deliver_later
   end
 
+  def send_confirm_notification(editor, updates)
+    KlubMailer.confirmation_for_pending_updates_mail(self.id, editor, updates.map(&:id)).deliver_later
+  end
+
   def create_updates(new_attrs)
     editor = new_attrs['editor']
     updates = []
@@ -66,6 +70,14 @@ class Klub < ActiveRecord::Base
       )
     end
     updates
+  end
+
+  def spa_url
+    "#{ENV['WEBSITE_FULL_HOST']}/#{self.categories.first}/#{self.slug}/".freeze
+  end
+
+  def spa_edit_url
+    "#{ENV['WEBSITE_FULL_HOST']}/#{self.categories.first}/#{self.slug}/uredi/".freeze
   end
 
 private

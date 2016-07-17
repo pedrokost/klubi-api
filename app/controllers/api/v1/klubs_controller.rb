@@ -24,6 +24,7 @@ module Api
         klub = Klub.completed.where(slug: params[:id]).first
         updates = klub.create_updates update_klub_param
         klub.send_updates_notification(updates)
+        klub.send_confirm_notification(update_klub_param[:editor], updates) if update_klub_param[:editor]
         render nothing: true, status: :accepted
       end
 

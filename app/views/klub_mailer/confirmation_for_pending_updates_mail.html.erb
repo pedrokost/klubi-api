@@ -1,0 +1,28 @@
+Pozdravljeni,
+
+<br>
+
+<p>
+  Pošiljam vam predogled vaših popravkov za klub <%= link_to @klub.name, @klub.spa_url %>:
+  <br>
+
+  <dl>
+  <% @updates.each do |update| %>
+    <dt><%= Klub.human_attribute_name(update.field) %>:</dt>
+    <dd><%= update.newvalue %></dd>
+  <% end %>
+  </dl>
+</p>
+
+<p>Če želite popraviti še kateri podatek za ta klub, lahko to storite na <%= link_to "tej povezavi", @klub.spa_edit_url %>.</p>
+
+<p>Vaše spremembe bomo pregledali in nato posodobili podatke na <%= link_to "spletni strani", @klub.spa_url %>.</p>
+
+<p>Najlepša hvala za predloge popravkov ✌(-‿-)✌!</p>
+
+<p>
+  <small>Niste vi poslali zgornje popravke na zatresi.si? Če tega niste storili vi, se vam opravičujem. Nekdo je na spletni strani vnesel vaš e-poštni naslov.</small>
+</p>
+
+Lep pozdrav, <br>
+<%= ENV['DEFAULT_BOT_NAME'] || 'Ekipa zatresi.si' %>

@@ -64,4 +64,45 @@ RSpec.describe KlubMailer, :type => :mailer do
       expect(mail.body.encoded).to match('my_field').and match('old_val').and match('new_val')
     end
   end
+
+  describe "confirmation_for_pending_updates_mail" do
+    let(:klub) {
+      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'])
+    }
+    let(:update) {
+      create( :update, field: 'polje', oldvalue: 'staro', newvalue: 'novo', updatable: klub )
+    }
+    let(:mail) {
+      KlubMailer.confirmation_for_pending_updates_mail(
+        klub.id,
+        'joe@email.com',
+        [update.id]
+      )
+    }
+
+    it "is sent to the editor" do
+      expect(mail.to).to eql(['joe@email.com'])
+    end
+
+    it "is sent from piotr bot" do
+      expect(mail.from).to eql(['piotr@zatresi.si'])
+    end
+
+    it "renders the subject" do
+      expect(mail.subject).to match('Vaši popravki za MyKlub')
+    end
+
+    it "contains link to the klub" do
+      expect(mail.body.encoded).to match("http://www.zatresi.si/fitnes/#{klub.slug}/")
+    end
+
+    it "contains link to edit the klub" do
+      expect(mail.body.encoded).to match("http://www.zatresi.si/fitnes/#{klub.slug}/uredi")
+    end
+
+    it "contains the list of updates" do
+      expect(mail.body.encoded.downcase).to match('polje')
+      expect(mail.body.encoded.downcase).to match('novo')
+    end
+  end
 end
