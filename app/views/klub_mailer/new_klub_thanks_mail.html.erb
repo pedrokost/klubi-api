@@ -1,0 +1,21 @@
+Pozdravljeni,
+
+<br>
+
+<p>
+  Hvala lepa za posredovanje informacije o klubu <em><%= @klub.name %></em>. <br>
+
+  Poslali ste naslednje podatke:
+
+  <dl>
+  <% %w(name address website phone email categories facebook_url).each do |key| %>
+    <dt><%= Klub.human_attribute_name(key) %>:</dt>
+    <dd><%= @klub.send(key).blank? ? '...' : @klub.send(key) %></dd>
+  <% end %>
+
+<p>Poslane podatke bomo pregledali in nato posodobili podatke na <%= link_to "spletni strani", ENV["WEBSITE_FULL_HOST"] %>.</p>
+
+<p>Najlepša hvala za novi klub ✌(-‿-)✌!</p>
+
+Lep pozdrav, <br>
+<%= ENV['DEFAULT_BOT_NAME'] || 'Ekipa zatresi.si' %>

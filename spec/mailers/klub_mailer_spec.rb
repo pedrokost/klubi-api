@@ -39,6 +39,31 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
   end
 
+  describe "new_klub_thanks_mail" do
+    let!(:klub) { create(:klub, name: 'My klub' * 10, editor_emails: ['submitter@email.com'], categories: ['fitnes', 'zumba']) }
+    let(:mail) { KlubMailer.new_klub_thanks_mail(klub.id, 'submitter@email.com') }
+
+    it 'renders the subject' do
+      expect(mail.subject).to match('Hvala za dodani klub')
+    end
+
+    it 'is sent to the editor' do
+      expect(mail.to).to eql(['submitter@email.com'])
+    end
+
+    it 'is sent by the zatresi bot' do
+      expect(mail.from).to eql(['piotr@zatresi.si'])
+    end
+
+    it 'send klubs data' do
+      expect(mail.body.encoded).to match('My klub')
+    end
+
+    it 'send klub\'s categories' do
+      expect(mail.body.encoded).to match('fitnes.*zumba')
+    end
+  end
+
   describe "new_updates_mail" do
     let(:klub) { build(:klub, name: 'My klub' * 10, editor_emails: ['submitter@email.com'], categories: ['fitnes', 'zumba']) }
     let(:update) { build(:update, editor_email: 'joe@doe.com', field: 'my_field', oldvalue: 'old_val', newvalue: 'new_val') }

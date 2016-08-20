@@ -48,6 +48,10 @@ class Klub < ActiveRecord::Base
     KlubMailer.new_klub_mail(self.id).deliver_later
   end
 
+  def send_thanks_notification(editor)
+    KlubMailer.new_klub_thanks_mail(self.id, editor).deliver_later
+  end
+
   def send_updates_notification(updates)
     KlubMailer.new_updates_mail(self.name, updates).deliver_later
   end

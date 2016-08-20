@@ -115,10 +115,22 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
 
   describe 'POST #klubs' do
 
-    it "should send an email" do
+    it "should send an email to admin" do
       expect_any_instance_of(Klub).to receive(:send_review_notification)
 
       post :create, klub: {name: "Fitnes Maribor"}
+    end
+
+    it "should send an email to the submitter" do
+      expect_any_instance_of(Klub).to receive(:send_thanks_notification)
+
+      post :create, klub: { name: "Qien eres?", editor: 'joe@doe.com' }
+    end
+
+    it "should not send thanks email if no submitter" do
+      expect_any_instance_of(Klub).not_to receive(:send_thanks_notification)
+
+      post :create, klub: { name: "Qien eres?" }
     end
 
     it "should accept categories and other parameters" do

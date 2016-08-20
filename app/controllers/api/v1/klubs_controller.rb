@@ -17,6 +17,7 @@ module Api
         @klub.editor_emails << new_klub_param['editor']
         @klub.save!
         @klub.send_review_notification
+        @klub.send_thanks_notification new_klub_param['editor'] if new_klub_param['editor']
         render nothing: true
       end
 
