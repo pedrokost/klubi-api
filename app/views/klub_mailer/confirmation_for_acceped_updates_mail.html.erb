@@ -16,7 +16,7 @@ Pozdravljeni,
     <dt><%= Klub.human_attribute_name('address') %> <%= "*" if updated_fields.include? 'address' %>:</dt>
     <dd><%= @klub.address %></dd>
     <dd><%= link_to @klub.spa_url do %>
-      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@klub.latitude},#{@klub.longitude}&zoom=15&size=400x300&maptype=roadmap&markers=color:blue%7Clabel:C%7#{@klub.name[0]}#{@klub.latitude},#{@klub.longitude}", alt: "#{@klub.latitude}, #{@klub.longitude}" unless @klub.address.blank? %>
+      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@klub.latitude},#{@klub.longitude}&zoom=15&size=400x300&maptype=roadmap&markers=color:blue%7Clabel:%7C#{@klub.latitude},#{@klub.longitude}", alt: "#{@klub.latitude}, #{@klub.longitude}" unless @klub.address.blank? %>
       <% end %>
       </dd>
 
