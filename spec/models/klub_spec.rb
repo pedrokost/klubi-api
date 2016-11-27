@@ -144,6 +144,12 @@ RSpec.describe Klub, :type => :model do
     }.by 1
   end
 
+  it "send_updates_accepted_notification" do
+    expect { subject.send_updates_accepted_notification('test@email.com', []) }.to change {
+      ActionMailer::Base.deliveries.count
+    }.by 1
+  end
+
   describe "geocoding" do
 
     Geocoder::Lookup::Test.add_stub(

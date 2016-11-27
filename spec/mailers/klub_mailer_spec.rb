@@ -130,4 +130,51 @@ RSpec.describe KlubMailer, :type => :mailer do
       expect(mail.body.encoded.downcase).to match('novo')
     end
   end
+
+  describe "confirmation_for_acceped_updates_mail" do
+    let(:klub) {
+      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'])
+    }
+    let(:update) {
+      create( :update, field: 'polje', oldvalue: 'staro', newvalue: 'novo', updatable: klub )
+    }
+    let(:update2) {
+      create( :update, field: 'telefon', oldvalue: '043224', newvalue: '012312', updatable: klub )
+    }
+    let(:mail) {
+      KlubMailer.confirmation_for_acceped_updates_mail(
+        klub.id,
+        'joe@email.com',
+        [update.id, update2.id]
+      )
+    }
+
+    it "is sent to the editor" do
+      expect(mail.to).to eql(['joe@email.com'])
+    end
+
+    it "is sent from piotr bot" do
+      expect(mail.from).to eql(['piotr@zatresi.si'])
+    end
+
+    it "renders the subject" do
+      expect(mail.subject).to match('Vaši popravki za MyKlub so bili sprejeti')
+    end
+
+    it "contains link to the klub" do
+      expect(mail.body.encoded).to match("http://www.zatresi.si/fitnes/#{klub.slug}/")
+    end
+
+    it "contains link to edit the klub" do
+      expect(mail.body.encoded).to match("http://www.zatresi.si/fitnes/#{klub.slug}/uredi")
+    end
+
+    it "contains the list of updates" do
+      expect(mail.body.encoded.downcase).to match('polje')
+      expect(mail.body.encoded.downcase).to match('novo')
+
+      expect(mail.body.encoded.downcase).to match('telefon')
+      expect(mail.body.encoded.downcase).to match('012312')
+    end
+  end
 end

@@ -60,6 +60,10 @@ class Klub < ActiveRecord::Base
     KlubMailer.confirmation_for_pending_updates_mail(self.id, editor, updates.map(&:id)).deliver_later
   end
 
+  def send_updates_accepted_notification(editor, updates)
+    KlubMailer.confirmation_for_acceped_updates_mail(self.id, editor, updates.map(&:id)).deliver_later
+  end
+
   def create_updates(new_attrs)
     editor = new_attrs['editor']
     updates = []

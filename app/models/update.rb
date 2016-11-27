@@ -25,4 +25,8 @@ class Update < ActiveRecord::Base
     rejected!
     resolve!
   end
+
+  def self.should_notify
+    Update.where(status: :accepted, acceptance_email_sent: false)
+  end
 end

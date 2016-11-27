@@ -31,4 +31,13 @@ class KlubMailer < ApplicationMailer
     subject = "🚶 Hvala za dodani klub ( ͡° ͜ʖ ͡°)"
     mail(from: from_email, to: editor_email, subject: subject)
   end
+
+  def confirmation_for_acceped_updates_mail(klub_id, editor_email, update_ids)
+    @klub = Klub.unscoped.find(klub_id)
+    @updates = Update.find(update_ids)
+
+    from_email = ENV['DEFAULT_BOT_EMAIL']
+    subject = "🚶 Vaši popravki za #{@klub.name} so bili sprejeti (๑˃̵ᴗ˂̵)و"
+    mail(from: from_email, to: editor_email, subject: subject)
+  end
 end

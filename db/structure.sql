@@ -109,7 +109,8 @@ CREATE TABLE updates (
     status update_status DEFAULT 'unverified'::update_status,
     editor_email character varying,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    acceptance_email_sent boolean DEFAULT false
 );
 
 
@@ -252,4 +253,6 @@ INSERT INTO schema_migrations (version) VALUES ('20151129142053');
 INSERT INTO schema_migrations (version) VALUES ('20160703105120');
 
 INSERT INTO schema_migrations (version) VALUES ('20160707185547');
+
+INSERT INTO schema_migrations (version) VALUES ('20161127143702');
 

@@ -23,7 +23,6 @@ si:
   activerecord:
     attributes:
       klub:
-        hello: "Zdravo svet"
         name: "Ime"
         phone: "Telefon"
         email: "E-pošta"
@@ -32,4 +31,5 @@ si:
         website: "Spletna stran"
         categories: "Kategorije"
         facebook_url: "Facebook stran"
+        notes: "Opombe"
 

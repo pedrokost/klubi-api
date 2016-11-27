@@ -12,4 +12,12 @@ class KlubMailerPreview < ActionMailer::Preview
     editor = 'json@brad.com'
     KlubMailer.new_klub_thanks_mail(klub.id, editor)
   end
+
+  def confirmation_for_acceped_updates_mail
+    updates = Update.all[1..3]
+    klub = updates[0].updatable
+    editor = 'you@me.com'
+
+    KlubMailer.confirmation_for_acceped_updates_mail(klub.id, editor, updates.map(&:id))
+  end
 end
