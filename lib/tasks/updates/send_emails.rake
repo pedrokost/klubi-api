@@ -7,8 +7,9 @@
 
 namespace :updates do
   desc "Send email to editors for accepted updates"
-  task :send_emails do
-    # p "hi"
-    p UpdateAcceptedMailer.send_emails
+  task :send_emails => :environment do
+    puts "Sending emails for accepted updates"
+    UpdateAcceptedMailer.send_emails
+    puts "Finished sending emails for accepted updates"
   end
 end
