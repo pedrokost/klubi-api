@@ -27,3 +27,10 @@ Sitemap:
 rake sitemap:refresh
 rake sitemap:refresh:no_ping
 ```
+
+## Tasks
+
+1. Daily: Send an email for accepted klub updates
+```
+foreman run rake updates:send_emails
+```
