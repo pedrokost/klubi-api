@@ -16,7 +16,7 @@ Pozdravljeni,
     <dt><%= Klub.human_attribute_name('address') %> <%= "*" if updated_fields.include? 'address' %>:</dt>
     <dd><%= @klub.address %></dd>
     <dd><%= link_to @klub.spa_url do %>
-      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@klub.latitude},#{@klub.longitude}&zoom=15&size=400x300&maptype=roadmap&markers=color:blue%7Clabel:C%7#{@klub.name[0]}#{@klub.latitude},#{@klub.longitude}", alt: "#{@klub.latitude}, #{@klub.longitude}" %>
+      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@klub.latitude},#{@klub.longitude}&zoom=15&size=400x300&maptype=roadmap&markers=color:blue%7Clabel:C%7#{@klub.name[0]}#{@klub.latitude},#{@klub.longitude}", alt: "#{@klub.latitude}, #{@klub.longitude}" unless @klub.address.blank? %>
       <% end %>
       </dd>
 
@@ -24,13 +24,13 @@ Pozdravljeni,
     <dd><%= @klub.phone %></dd>
 
     <dt><%= Klub.human_attribute_name('email') %> <%= "*" if updated_fields.include? 'email' %>:</dt>
-    <dd><%= link_to @klub.email, "mailto:#{@klub.email}" %></dd>
+    <dd><%= link_to @klub.email, "mailto:#{@klub.email}" unless @klub.email.blank? %></dd>
 
     <dt><%= Klub.human_attribute_name('website') %> <%= "*" if updated_fields.include? 'website' %>:</dt>
-    <dd><%= link_to @klub.website, @klub.website %></dd>
+    <dd><%= link_to @klub.website, @klub.website unless @klub.website.blank? %></dd>
 
     <dt><%= Klub.human_attribute_name('facebook_url') %> <%= "*" if updated_fields.include? 'facebook_url' %>:</dt>
-    <dd><%= link_to @klub.facebook_url, @klub.facebook_url %></dd>
+    <dd><%= link_to @klub.facebook_url, @klub.facebook_url unless @klub.facebook_url.blank? %></dd>
 
     <dt><%= Klub.human_attribute_name('categories') %> <%= "*" if updated_fields.include? 'categories' %>:</dt>
     <dd><%= @klub.categories.join(', ') %></dd>
