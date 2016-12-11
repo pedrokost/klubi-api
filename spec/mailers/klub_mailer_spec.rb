@@ -95,7 +95,7 @@ RSpec.describe KlubMailer, :type => :mailer do
       create(:complete_klub, name: 'MyKlub', categories: ['fitnes'])
     }
     let(:update) {
-      create( :update, field: 'polje', oldvalue: 'staro', newvalue: 'novo', updatable: klub )
+      create( :update, field: 'phone', oldvalue: 'staro', newvalue: 'novo', updatable: klub )
     }
     let(:mail) {
       KlubMailer.confirmation_for_pending_updates_mail(
@@ -126,20 +126,20 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it "contains the list of updates" do
-      expect(mail.body.encoded.downcase).to match('polje')
+      expect(mail.body.encoded.downcase).to match('telefon')
       expect(mail.body.encoded.downcase).to match('novo')
     end
   end
 
-  describe "confirmation_for_acceped_updates_mail" do
+  describe "confirmation for accepted updates mail" do
     let(:klub) {
       create(:complete_klub, name: 'MyKlub', categories: ['fitnes'])
     }
     let(:update) {
-      create( :update, field: 'polje', oldvalue: 'staro', newvalue: 'novo', updatable: klub )
+      create( :update, field: 'address', oldvalue: 'staro', newvalue: 'novo', updatable: klub )
     }
     let(:update2) {
-      create( :update, field: 'telefon', oldvalue: '043224', newvalue: '012312', updatable: klub )
+      create( :update, field: 'phone', oldvalue: '043224', newvalue: '012312', updatable: klub )
     }
     let(:mail) {
       KlubMailer.confirmation_for_acceped_updates_mail(
@@ -148,6 +148,11 @@ RSpec.describe KlubMailer, :type => :mailer do
         [update.id, update2.id]
       )
     }
+
+    before do
+      update.accept!
+      update2.accept!
+    end
 
     it "is sent to the editor" do
       expect(mail.to).to eql(['joe@email.com'])
@@ -170,7 +175,7 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it "contains the list of updates" do
-      expect(mail.body.encoded.downcase).to match('polje')
+      expect(mail.body.encoded.downcase).to match('naslov')
       expect(mail.body.encoded.downcase).to match('novo')
 
       expect(mail.body.encoded.downcase).to match('telefon')

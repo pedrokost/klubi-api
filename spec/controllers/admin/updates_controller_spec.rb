@@ -55,6 +55,7 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
 
     it "should set the correct status" do
       expect {
+        @request.env["HTTP_REFERER"] = '/'
         post :reject, id: update.id
         update.reload
       }.to change(update, :status)
@@ -63,6 +64,7 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
 
     it "should not alter the attribute" do
       expect {
+        @request.env["HTTP_REFERER"] = '/'
         post :reject, id: update.id
         klub.reload
       }.not_to change(klub, :name)
@@ -76,6 +78,7 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
 
     it "should set the correct status" do
       expect {
+        @request.env["HTTP_REFERER"] = '/'
         post :accept, id: update.id
         update.reload
       }.to change(update, :status)
@@ -84,6 +87,7 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
 
     it "should not alter the attribute" do
       expect {
+        @request.env["HTTP_REFERER"] = '/'
         post :accept, id: update.id
         klub.reload
       }.to change(klub, :name)

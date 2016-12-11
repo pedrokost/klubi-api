@@ -3,7 +3,7 @@ require 'pry'
 
 RSpec.describe Klub, :type => :model do
 
-  let!(:klub) { create(:klub, name: 'Karate klub Skocjan -- ') }
+  let(:klub) { build(:klub, name: 'Karate klub Skocjan -- ') }
 
   subject { klub }
 
@@ -19,62 +19,69 @@ RSpec.describe Klub, :type => :model do
     emails = ['a@google.com', 'b@google.com']
     klub.editor_emails = emails
     expect(klub).to be_valid
-    klub.save!
+    klub.save
     expect(klub.reload.editor_emails).to eq(emails)
   end
 
-  it "should generate slug on create" do
-  	expect(klub.slug).to eq('karate-klub-skocjan')
+  describe "slug creation" do
+    it "should generate slug on create" do
+      klub.save
+    	expect(klub.slug).to eq('karate-klub-skocjan')
+    end
+
+    it "should eliminate special characters when creating the slug" do
+      klub.name = "Škocjanski kareški Karate Črni klub"
+      klub.save
+      expect(klub.reload.slug).to eq 'skocjanski-kareski-karate-crni-klub'
+    end
+
+    it "should eliminate special characters from the slug" do
+      klub.name = "Škocjansk!!i kareš~ki   "
+      klub.save
+      expect(klub.reload.slug).to eq 'skocjansk-i-kares-ki'
+    end
+
+    it "should update slug on update" do
+    	klub.name = 'Karate Klub Grosuplje'
+    	klub.save
+    	klub.reload
+    	expect(klub.slug).to eq('karate-klub-grosuplje')
+    end
+
+    it "should keep slug if not changed" do
+    	klub.name = 'Karate Klub Skocjan'
+    	klub.save
+    	klub.reload
+    	expect(klub.slug).to eq('karate-klub-skocjan')
+    end
+
+    # TODO: This slug it incocerrect: it leafes first lette capisalized and sumiki
+    # Športno rekreativni center Spartacus
+
+    it "should create valid slug when appending strings" do
+      klub.save
+      expect(klub.slug).to eq('karate-klub-skocjan')
+
+      expect(Randgen).to receive(:last_name).and_return('2')
+
+      another_klub = create(:klub, name: klub.name)
+    	expect(another_klub.slug).to eq('karate-klub-skocjan-2')
+      expect(another_klub.slug).not_to eq('karate-klub-skocjan 2')
+    end
+
+    it "should make sure there is no space characters in the slug" do
+      klub.save
+      expect(klub.persisted?).to be true
+      another_klub = create(:klub, name: klub.name)
+      expect(another_klub.slug).not_to eq(klub.slug)
+      expect(another_klub.slug).not_to be_nil
+      yet_another_klub = create(:klub, name: klub.name)
+      expect(yet_another_klub.slug).not_to eq(klub.slug)
+      expect(yet_another_klub.slug).not_to eq(another_klub.slug)
+    end
   end
 
-  it "should eliminate special characters when creating the slug" do
-    klub.name = "Škocjanski kareški Karate Črni klub"
-    klub.save
-    expect(klub.reload.slug).to eq 'skocjanski-kareski-karate-crni-klub'
-  end
 
-  it "should eliminate special characters from the slug" do
-    klub.name = "Škocjansk!!i kareš~ki   "
-    klub.save
-    expect(klub.reload.slug).to eq 'skocjansk-i-kares-ki'
-  end
-
-  it "should update slug on update" do
-  	klub.name = 'Karate Klub Grosuplje'
-  	klub.save
-  	klub.reload
-  	expect(klub.slug).to eq('karate-klub-grosuplje')
-  end
-
-  it "should keep slug if not changed" do
-  	klub.name = 'Karate Klub Skocjan'
-  	klub.save
-  	klub.reload
-  	expect(klub.slug).to eq('karate-klub-skocjan')
-  end
-
-  # TODO: This slug it incocerrect: it leafes first lette capisalized and sumiki
-  # Športno rekreativni center Spartacus
-
-  it "should create valid slug when appending strings" do
-    expect(klub.slug).to eq('karate-klub-skocjan')
-
-    expect(Randgen).to receive(:last_name).and_return('2')
-
-    another_klub = create(:klub, name: klub.name)
-  	expect(another_klub.slug).to eq('karate-klub-skocjan-2')
-    expect(another_klub.slug).not_to eq('karate-klub-skocjan 2')
-  end
-
-  it "should make sure there is no space characters in the slug" do
-    expect(klub.persisted?).to be true
-    another_klub = create(:klub, name: klub.name)
-    expect(another_klub.slug).not_to eq(klub.slug)
-    expect(another_klub.slug).not_to be_nil
-    yet_another_klub = create(:klub, name: klub.name)
-    expect(yet_another_klub.slug).not_to eq(klub.slug)
-    expect(yet_another_klub.slug).not_to eq(another_klub.slug)
-  end
 
   it "may have branches" do
     branch1 = create(:complete_klub_branch, parent: klub)
@@ -101,8 +108,9 @@ RSpec.describe Klub, :type => :model do
     let!(:klub2) { create(:complete_klub) }
 
     it "Klub.completed.all should return only completed models" do
+      klub.save
       expect(Klub.completed.all).to eq([klub2])
-      expect(Klub.completed.unscoped).to eq([klub, klub2])
+      expect(Klub.completed.unscoped).to eq([klub2, klub])
     end
   end
 
@@ -127,24 +135,29 @@ RSpec.describe Klub, :type => :model do
   end
 
   it "sends an email upon creation" do
+    klub.save
     expect { subject.send_review_notification }.to change { ActionMailer::Base.deliveries.count }.by(1)
   end
 
   it "sends a thank you email upon creation" do
+    klub.save
     expect { subject.send_thanks_notification('test@test.com') }.to change { ActionMailer::Base.deliveries.count }.by(1)
   end
 
   it "sends an email upon updated" do
+    klub.save
     expect { subject.send_updates_notification([]) }.to change { ActionMailer::Base.deliveries.count }.by(1)
   end
 
   it "send_confirm_notification" do
+    klub.save
     expect { subject.send_confirm_notification('test@email.com', []) }.to change {
       ActionMailer::Base.deliveries.count
     }.by 1
   end
 
   it "send_updates_accepted_notification" do
+    klub.save
     expect { subject.send_updates_accepted_notification('test@email.com', []) }.to change {
       ActionMailer::Base.deliveries.count
     }.by 1

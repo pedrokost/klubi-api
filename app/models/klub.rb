@@ -7,7 +7,7 @@ class Klub < ActiveRecord::Base
   belongs_to :parent, class_name: 'Klub', touch: true
   has_many :updates, as: :updatable
 
-	before_save :update_slug
+	before_create :update_slug
 	before_save :update_complete
 
 	validates :slug, uniqueness: true
