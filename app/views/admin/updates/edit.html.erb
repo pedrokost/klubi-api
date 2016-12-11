@@ -20,12 +20,17 @@ It displays a header, and renders the `_form` partial to do the heavy lifting.
 <header class="header">
   <h1 class="header__heading"><%= content_for(:title) %></h1>
   <div class="header__actions">
-    <%= form_tag([:accept, namespace, page.resource]) do %>
-      <%= submit_tag("Accept", class: 'button') %>
+
+    <% if page.resource.status != Update.statuses[:accepted] %>
+      <%= form_tag([:accept, namespace, page.resource]) do %>
+        <%= submit_tag("Accept", class: 'button') %>
+      <% end %>
     <% end %>
 
-    <%= form_tag([:reject, namespace, page.resource]) do %>
-      <%= submit_tag("Reject", class: 'button button--danger') %>
+    <% if page.resource.status != Update.statuses[:rejected] %>
+      <%= form_tag([:reject, namespace, page.resource]) do %>
+        <%= submit_tag("Reject", class: 'button button--danger') %>
+      <% end %>
     <% end %>
 
     <%= link_to(

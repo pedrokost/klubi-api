@@ -13,7 +13,10 @@ class UpdateDashboard < Administrate::BaseDashboard
     field: Field::String,
     oldvalue: Field::String,
     newvalue: Field::String,
-    status: Field::String.with_options(searchable: false),
+    status: SelectField.with_options(
+      searchable: false,
+      choices: Update.statuses.keys
+    ),
     editor_email: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
