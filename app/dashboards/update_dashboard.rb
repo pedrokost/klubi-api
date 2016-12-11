@@ -17,6 +17,7 @@ class UpdateDashboard < Administrate::BaseDashboard
     editor_email: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    acceptance_email_sent: Field::Boolean.with_options(searchable: false),
   }
 
   # COLLECTION_ATTRIBUTES
