@@ -105,6 +105,8 @@ GEM
     fog-xml (0.1.2)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    foreman (0.82.0)
+      thor (~> 0.19.1)
     formatador (0.2.5)
     geocoder (1.2.8)
     globalid (0.3.5)
@@ -127,6 +129,9 @@ GEM
     hitimes (1.2.2)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     interception (0.5)
     ipaddress (0.8.0)
@@ -163,6 +168,7 @@ GEM
     momentjs-rails (2.11.1)
       railties (>= 3.1)
     multi_json (1.11.0)
+    multi_xml (0.6.0)
     neat (1.7.4)
       bourbon (>= 4.0)
       sass (>= 3.3)
@@ -238,6 +244,10 @@ GEM
     raindrops (0.13.0)
     rake (10.4.2)
     randexp (0.1.7)
+    raygun4ruby (1.1.11)
+      httparty (~> 0.13.7)
+      json
+      rack
     rb-fsevent (0.9.5)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -316,41 +326,40 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.10.0.rc2)
   administrate (~> 0.2.2)
-  dalli
+  dalli (~> 2.7.4)
   factory_girl_rails
-  fog-aws
-  geocoder
+  fog-aws (~> 0.7.4)
+  foreman
+  geocoder (~> 1.2.8)
   guard-rspec
   highline (~> 1.6.21)
   json-schema
-  json_spec
+  json_spec (~> 1.1.4)
   levenshtein-ffi
-  memcachier
-  newrelic_rpm
-  nokogiri
-  pg
-  prerender_rails
+  memcachier (~> 0.0.2)
+  newrelic_rpm (~> 3.12.0.288)
+  nokogiri (~> 1.5)
+  pg (~> 0.18.2)
+  prerender_rails (~> 1.2.0)
   pry-byebug
   pry-rails
   pry-rescue
   pry-stack_explorer
-  rack-attack
+  rack-attack (~> 4.3.0)
   rack-cors!
-  rack-rewrite
+  rack-rewrite (~> 1.5.1)
   rails (= 4.2.1)
   rails-api
   rails_12factor
-  randexp
-  redis
+  randexp (~> 0.1.7)
+  raygun4ruby (~> 1.1.11)
+  redis (~> 3.2.1)
   rest-client
   rspec-rails (~> 3.0)
-  shoulda-matchers
-  sitemap_generator
-  skylight
+  shoulda-matchers (~> 2.8.0)
+  sitemap_generator (~> 5.1.0)
+  skylight (~> 0.6.1)
   spring
   spring-commands-rspec
   uglifier
-  unicorn
-
-BUNDLED WITH
-   1.10.6
+  unicorn (~> 4.9.0)

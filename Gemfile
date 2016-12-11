@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.2.1'
 
 gem 'rails', '4.2.1'
 
@@ -7,42 +8,43 @@ gem 'rails-api', require: false
 
 gem 'spring', :group => :development
 
-gem 'unicorn'
-gem 'pg'
+gem 'unicorn', '~>4.9.0'
+gem 'pg', '~>0.18.2'
 
 gem 'rails_12factor', group: :production
 
 # gem 'active_model_serializers', '~> 0.9.0'
 gem 'active_model_serializers', '~> 0.10.0.rc2'
 
-gem 'redis'
+gem 'redis', '~> 3.2.1'
 
-gem 'geocoder'
+gem 'geocoder', '~> 1.2.8'
 
-gem 'skylight'
+gem 'skylight', '~> 0.6.1'
 
-gem 'json_spec'
+gem 'json_spec', '~>1.1.4'
 
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', '~> 3.12.0.288'
 
 group :development do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
   gem 'pry-byebug'
+  gem 'foreman'
 end
 
-gem 'randexp'
+gem 'randexp', '~> 0.1.7'
 
-gem 'nokogiri'
+gem 'nokogiri', '~> 1.5'
 
-gem 'rack-attack'
+gem 'rack-attack', '~> 4.3.0'
 
 gem 'rack-cors', github: 'cyu/rack-cors', require: 'rack/cors'
 
-gem 'rack-rewrite'
+gem 'rack-rewrite', '~> 1.5.1'
 
-gem 'prerender_rails'
+gem 'prerender_rails', '~> 1.2.0'
 
 gem 'rest-client', require: false
 
@@ -50,14 +52,16 @@ gem 'highline', '~> 1.6.21'
 
 gem 'levenshtein-ffi', :require => 'levenshtein'
 
-gem 'fog-aws'  # for uploading the sitemap
-gem 'sitemap_generator'
+gem 'fog-aws', '~> 0.7.4'  # for uploading the sitemap
+gem 'sitemap_generator', '~> 5.1.0'
 
 gem 'administrate', '~> 0.2.2'
 
 # Makes caching into memcacher work
-gem "dalli"
-gem "memcachier"
+gem "dalli", '~> 2.7.4'
+gem "memcachier", '~> 0.0.2'
+
+gem 'raygun4ruby', '~> 1.1.11'
 
 group :development, :test do
   gem 'spring-commands-rspec'
@@ -66,7 +70,7 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
-gem 'shoulda-matchers', require: false
+gem 'shoulda-matchers', '~> 2.8.0',  require: false
 
 group :test do
   gem "json-schema"
@@ -91,4 +95,3 @@ end
 # To use debugger
 # gem 'debugger', :require => 'ruby-debug'
 
-ruby '2.1.5'
