@@ -19,7 +19,7 @@ module Admin
     def reject
       requested_resource.reject!
       redirect_to(
-        [:admin, requested_resource],
+        :back,
         notice: translate_with_resource("update.success")
       )
     end
@@ -27,7 +27,7 @@ module Admin
     def accept
       requested_resource.accept!
       redirect_to(
-        [:admin, requested_resource],
+        :back,
         notice: translate_with_resource("update.success")
       )
     end

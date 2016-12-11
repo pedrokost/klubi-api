@@ -18,6 +18,10 @@
   }
 }
 
+.table__row--faded {
+  background-color: $grey-2;
+}
+
 .table__action--destroy {
   color: $light-red;
 }

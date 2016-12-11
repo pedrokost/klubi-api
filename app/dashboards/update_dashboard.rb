@@ -32,8 +32,7 @@ class UpdateDashboard < Administrate::BaseDashboard
     :updatable,
     :field,
     :oldvalue,
-    :newvalue,
-    :status
+    :newvalue
   ]
 
   # SHOW_PAGE_ATTRIBUTES

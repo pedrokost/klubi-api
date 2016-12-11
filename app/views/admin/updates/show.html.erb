@@ -21,18 +21,30 @@ as well as a link to its edit page.
 <header class="header">
   <h1 class="header__heading"><%= content_for(:title) %></h1>
   <div class="header__actions">
-    <%= form_tag([:accept, namespace, page.resource]) do %>
-      <%= submit_tag("Accept", class: 'button') %>
+    <% if page.resource.status != Update.statuses[:accepted] %>
+      <%= form_tag([:accept, namespace, page.resource]) do %>
+        <%= submit_tag("Accept", class: 'button') %>
+      <% end %>
     <% end %>
 
-    <%= form_tag([:reject, namespace, page.resource]) do %>
-      <%= submit_tag("Reject", class: 'button button--danger') %>
+    <% if page.resource.status != Update.statuses[:rejected] %>
+      <%= form_tag([:reject, namespace, page.resource]) do %>
+        <%= submit_tag("Reject", class: 'button button--danger') %>
+      <% end %>
     <% end %>
 
     <%= link_to(
       "Edit",
       [:edit, namespace, page.resource],
       class: "button",
+    ) %>
+
+    <%= link_to(
+      t("administrate.actions.destroy"),
+      [namespace, page.resource],
+      class: "table__action--destroy",
+      method: :delete,
+      data: { confirm: t("administrate.actions.confirm") }
     ) %>
   </div>
 </header>
