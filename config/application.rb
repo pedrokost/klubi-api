@@ -22,7 +22,7 @@ module ZatresiApi
 
     config.i18n.default_locale = :si
 
-    config.i18n.fallbacks =[:si, :en]
+    config.i18n.fallbacks =[:en]
 
     config.middleware.insert_before ActionDispatch::Static, Rack::Cors, logger: Rails.logger do
       allow do

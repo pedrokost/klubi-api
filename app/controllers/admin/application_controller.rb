@@ -7,6 +7,7 @@
 module Admin
   class ApplicationController < Administrate::ApplicationController
 
+    before_action :set_locale
     before_action :default_params
 
     # before_filter :authenticate_admin
@@ -26,6 +27,10 @@ module Admin
     def default_params
       params[:order] ||= "created_at"
       params[:direction] ||= "desc"
+    end
+
+    def set_locale
+      I18n.locale = :en
     end
   end
 end
