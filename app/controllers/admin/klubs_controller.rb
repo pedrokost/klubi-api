@@ -28,5 +28,12 @@ module Admin
     def find_resource(param)
       resource_class.unscoped.find(param)
     end
+
+    def resource_params
+      # Transform string for storage as a Postgres array:
+      params["klub"]["categories"] = params["klub"]["categories"].split(' ')
+      params["klub"]["editor_emails"] = params["klub"]["editor_emails"].split(' ')
+      params.require(resource_name).permit(*permitted_attributes, categories: [], editor_emails: [])
+    end
   end
 end

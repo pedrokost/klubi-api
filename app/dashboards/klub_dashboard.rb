@@ -24,7 +24,7 @@ class KlubDashboard < Administrate::BaseDashboard
     longitude: Field::String.with_options(searchable: false),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
-    verified: Field::Boolean.with_options(searchable: true),
+    verified: Field::Boolean.with_options(searchable: false),
     complete: Field::Boolean.with_options(searchable: false),
     categories: Field::String.with_options(searchable: false),
     facebook_url: Field::String.with_options(searchable: true),
@@ -53,25 +53,18 @@ class KlubDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :branches,
-    :parent,
-    :updates,
+    :verified,
     :name,
     :slug,
     :address,
-    :town,
     :website,
     :phone,
     :email,
-    :latitude,
-    :longitude,
-    :complete,
     :categories,
-    :notes,
     :facebook_url,
     :editor_emails,
-    :parent_id,
-    :verified
+    :notes,
+    :branches
   ]
 
   # Overwrite this method to customize how klubs are displayed
