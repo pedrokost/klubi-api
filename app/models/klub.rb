@@ -88,6 +88,10 @@ class Klub < ActiveRecord::Base
     "#{ENV['WEBSITE_FULL_HOST']}/#{self.categories.first}/#{self.slug}/uredi/".freeze
   end
 
+  def static_map_url
+    "https://maps.googleapis.com/maps/api/staticmap?center=#{self.latitude},#{self.longitude}&zoom=15&size=400x300&maptype=roadmap&markers=color:blue%7Clabel:%7C#{self.latitude},#{self.longitude}&key=#{ENV['GOOGLE_STATIC_MAPS_SERVER_API_KEY']}".freeze
+  end
+
 private
 	def update_complete
 		self.complete = !(self.name.blank? ||

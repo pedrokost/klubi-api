@@ -14,7 +14,7 @@ class KlubMailerPreview < ActionMailer::Preview
   end
 
   def confirmation_for_acceped_updates_mail
-    updates = Update.all[1..3]
+    updates = Update.all[3..5]
     klub = updates[0].updatable
     editor = 'you@me.com'
 
