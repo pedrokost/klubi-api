@@ -30,7 +30,7 @@ module Admin
     end
 
     def set_locale
-      I18n.locale = :en
+      I18n.locale = :en if Rails.env.production?
     end
   end
 end
