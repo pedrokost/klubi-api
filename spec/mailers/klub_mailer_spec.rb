@@ -209,6 +209,10 @@ RSpec.describe KlubMailer, :type => :mailer do
       expect(mail.from).to eql(['peter@zatresi.si'])
     end
 
+    it "is bbc's to bcc@zatresi.si" do
+      expect(mail.bcc).to eql(['bcc@zatresi.si'])
+    end
+
     it "renders the correct subject" do
       expect(mail.subject).to match('Preverite podatke vašega kluba')
     end
