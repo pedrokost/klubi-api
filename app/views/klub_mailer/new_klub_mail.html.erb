@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <p>Hi Pedro</p>
-    <p>
-      Someone has submitted a new klub with id <%= @klub.id %>,
-    </p>
-    <p>
-      Here are the details: <br>
-      <br>
-      Klub:
-      <pre><%= @klub_data %></pre>
-    </p>
-    <p>Visit <%= link_to "the klub's admin page", admin_klub_url(@klub) %> to review it and add it to the site!</p>
-    <br>
-    <p>Cheers,</p>
-    <p>Peter from zatresi.si</p>
-  </body>
-</html>
+<p>Hi Pedro</p>
+<p>
+  Someone has submitted a new klub with id <%= @klub.id %>,
+</p>
+<p>
+  Here are the details: <br>
+  <br>
+  Klub:
+  <pre><%= @klub_data %></pre>
+</p>
+<p>Visit <%= link_to "the klub's admin page", admin_klub_url(@klub) %> to review it and add it to the site!</p>
+<br>
+<p>Cheers,</p>
+<p>Peter from zatresi.si</p>

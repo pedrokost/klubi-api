@@ -12,3 +12,15 @@ Geocoder::Lookup::Test.set_default_stub(
   ]
 )
 
+Geocoder::Lookup::Test.add_stub(
+  "Cesta XV. brigade 2, Metlika", [
+    {
+      'latitude'          => 45.6474851,
+      'longitude'         => 15.3155356,
+      'address'           => 'Cesta XV. brigade 2, 8330 Metlika, Slovenija',
+      'city'              => 'Metlika',
+      'formatted_address' => 'Cesta XV. brigade 2, 8330 Metlika, Slovenija'
+    }
+  ]
+)
+

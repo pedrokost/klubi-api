@@ -40,4 +40,11 @@ class KlubMailer < ApplicationMailer
     subject = "🚶 Vaši popravki za #{@klub.name} so bili sprejeti (๑˃̵ᴗ˂̵)و"
     mail(from: from_email, to: editor_email, subject: subject)
   end
+
+  def request_verify_klub_mail(klub_id, editor_email)
+    @klub = Klub.unscoped.find(klub_id)
+    from_email = ENV['DEFAULT_BOT_EMAIL']
+    subject = "🚶 Preverite podatke vašega kluba in pridobite nove člane!"
+    mail(from: from_email, to: editor_email, subject: subject)
+  end
 end

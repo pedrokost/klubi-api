@@ -52,7 +52,7 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it 'is sent by the zatresi bot' do
-      expect(mail.from).to eql(['piotr@zatresi.si'])
+      expect(mail.from).to eql(['peter@zatresi.si'])
     end
 
     it 'send klubs data' do
@@ -109,8 +109,8 @@ RSpec.describe KlubMailer, :type => :mailer do
       expect(mail.to).to eql(['joe@email.com'])
     end
 
-    it "is sent from piotr bot" do
-      expect(mail.from).to eql(['piotr@zatresi.si'])
+    it "is sent from peter bot" do
+      expect(mail.from).to eql(['peter@zatresi.si'])
     end
 
     it "renders the subject" do
@@ -158,8 +158,8 @@ RSpec.describe KlubMailer, :type => :mailer do
       expect(mail.to).to eql(['joe@email.com'])
     end
 
-    it "is sent from piotr bot" do
-      expect(mail.from).to eql(['piotr@zatresi.si'])
+    it "is sent from peter bot" do
+      expect(mail.from).to eql(['peter@zatresi.si'])
     end
 
     it "renders the subject" do
@@ -180,6 +180,57 @@ RSpec.describe KlubMailer, :type => :mailer do
 
       expect(mail.body.encoded.downcase).to match('telefon')
       expect(mail.body.encoded.downcase).to match('012312')
+    end
+  end
+
+  describe "emails to request verification of klub data" do
+    let(:klub) {
+      create(:complete_klub,
+        name: 'MyKlub',
+        categories: ['fitnes'],
+        email: 'owner@test.com',
+        facebook_url: 'http://facebook.com',
+        website: 'http://website.com',
+        address: "Cesta XV. brigade 2, Metlika",
+        phone: "041 444 222")
+    }
+    let(:mail) {
+      KlubMailer.request_verify_klub_mail(
+        klub.id,
+        klub.email,
+      )
+    }
+
+    it "is sent to the klub owner" do
+      expect(mail.to).to eql(['owner@test.com'])
+    end
+
+    it "is sent from peter bot" do
+      expect(mail.from).to eql(['peter@zatresi.si'])
+    end
+
+    it "renders the correct subject" do
+      expect(mail.subject).to match('Preverite podatke vašega kluba')
+    end
+
+    it "contains link to the klub's edit page" do
+      expect(mail.body.encoded).to match("http://www.zatresi.si/fitnes/#{klub.slug}/")
+    end
+
+    it "contains the the klub data" do
+      expect(mail.body.encoded.downcase).to match('ime')
+      expect(mail.body.encoded.downcase).to match('kraj treningov')
+      expect(mail.body.encoded.downcase).to match('e-pošta')
+      expect(mail.body.encoded.downcase).to match('spletna stran')
+      expect(mail.body.encoded.downcase).to match('facebook stran')
+      expect(mail.body.encoded.downcase).to match('telefon')
+
+      expect(mail.body.encoded.downcase).to match('myklub')
+      expect(mail.body.encoded.downcase).to match('cesta xv. brigade 2, 8330 metlika')
+      expect(mail.body.encoded.downcase).to match('owner@test.com')
+      expect(mail.body.encoded.downcase).to match('http://facebook.com')
+      expect(mail.body.encoded.downcase).to match('http://website.com')
+      expect(mail.body.encoded.downcase).to match('041 444 222')
     end
   end
 end

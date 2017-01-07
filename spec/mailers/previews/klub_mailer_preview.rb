@@ -20,4 +20,10 @@ class KlubMailerPreview < ActionMailer::Preview
 
     KlubMailer.confirmation_for_acceped_updates_mail(klub.id, editor, updates.map(&:id))
   end
+
+  def request_verify_klub_mail
+    klub = Klub.first
+    editor = 'owner@klub.com'
+    KlubMailer.request_verify_klub_mail(klub.id, editor)
+  end
 end
