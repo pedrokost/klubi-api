@@ -30,6 +30,7 @@ class KlubDashboard < Administrate::BaseDashboard
     facebook_url: Field::String.with_options(searchable: true),
     editor_emails: Field::String.with_options(searchable: false),
     parent_id: Field::Number.with_options(searchable: false),
+    last_verification_reminder_at: Field::DateTime.with_options(searchable: false)
   }
 
   # COLLECTION_ATTRIBUTES

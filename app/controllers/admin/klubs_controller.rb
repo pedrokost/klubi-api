@@ -25,6 +25,14 @@ module Admin
       )
     end
 
+    def send_data_verification_email
+      requested_resource.send_request_verify_klub_data_mail
+      redirect_to(
+        [:admin, requested_resource],
+        notice: "A verification email has just been sent to #{requested_resource.email}"
+      )
+    end
+
     def find_resource(param)
       resource_class.unscoped.find(param)
     end

@@ -31,6 +31,9 @@ as well as a link to its edit page.
       <% end %>
     <% end %>
 
+    <%= form_tag([:send_data_verification_email, namespace, page.resource]) do %>
+      <%= submit_tag("Send verification email", class: 'button button', data: { confirm: "Sure to send the email? The last one was sent #{page.resource.last_verification_reminder_at.blank? ? 'never' : time_ago_in_words(page.resource.last_verification_reminder_at)} ago." }) %>
+    <% end %>
 
     <%= link_to(
       "Edit",

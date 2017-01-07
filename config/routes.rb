@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :klubs do
         member do
           post :toggleverify
+          post :send_data_verification_email
         end
       end
 
