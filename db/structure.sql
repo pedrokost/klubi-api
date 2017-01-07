@@ -63,7 +63,8 @@ CREATE TABLE klubs (
     editor_emails character varying(255)[] DEFAULT '{}'::character varying[],
     parent_id integer,
     verified boolean DEFAULT false,
-    notes character varying
+    notes character varying,
+    last_verification_reminder_at timestamp without time zone
 );
 
 
@@ -255,4 +256,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160703105120');
 INSERT INTO schema_migrations (version) VALUES ('20160707185547');
 
 INSERT INTO schema_migrations (version) VALUES ('20161127143702');
+
+INSERT INTO schema_migrations (version) VALUES ('20170107115719');
 

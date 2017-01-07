@@ -3,7 +3,7 @@ require 'pry'
 
 RSpec.describe Klub, :type => :model do
 
-  let(:klub) { build(:klub, name: 'Karate klub Skocjan -- ') }
+  let(:klub) { build(:klub, name: 'Karate klub Skocjan -- ', email: 'owner@test.com') }
 
   subject { klub }
 
@@ -161,6 +161,35 @@ RSpec.describe Klub, :type => :model do
     expect { subject.send_updates_accepted_notification('test@email.com', []) }.to change {
       ActionMailer::Base.deliveries.count
     }.by 1
+  end
+
+  it "should be able to send a data verification email" do
+    klub.save # klub must exist
+    expect { subject.send_request_verify_klub_data_mail }.to change{
+      ActionMailer::Base.deliveries.count
+    }.by 1
+  end
+
+  it "should send data verification email to correct addresee" do
+    klub.save # klub must exist
+    expect(KlubMailer).to receive(:request_verify_klub_mail).twice.with(klub.id, 'owner@test.com').and_call_original
+    subject.send_request_verify_klub_data_mail
+  end
+
+  it "should not attempt to send data verification email to klubs without email" do
+    klub.email = nil
+    klub.save
+
+    expect(KlubMailer).not_to receive(:request_verify_klub_mail)
+
+    subject.send_request_verify_klub_data_mail
+  end
+
+  it "remembers when it last sent a data verification email" do
+    klub.save # klub must exist
+    expect { subject.send_request_verify_klub_data_mail }.to change{
+      klub.last_verification_reminder_at
+    }
   end
 
   describe "geocoding" do
