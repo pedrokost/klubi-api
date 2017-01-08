@@ -52,8 +52,8 @@ gem 'highline', '~> 1.6.21'
 
 gem 'levenshtein-ffi', :require => 'levenshtein'
 
-gem 'fog-aws', '~> 0.7.4'  # for uploading the sitemap
-gem 'sitemap_generator', '~> 5.1.0'
+gem 'aws-sdk' , '~> 2.6.44'  # for uploading the sitemap
+gem 'sitemap_generator', '~> 5.2.0'
 
 gem 'administrate', '~> 0.2.2'
 

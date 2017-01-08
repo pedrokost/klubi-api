@@ -1,14 +1,13 @@
-require 'fog/aws'
+# require 'fog/aws'
 
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "http://www.zatresi.si"
 # pick a place safe to write the files
 SitemapGenerator::Sitemap.public_path = 'tmp/'
 # store on S3 using Fog (pass in configuration values as shown above if needed)
-SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(ENV['AWS_BUCKET'])
 # inform the map cross-linking where to find the other maps
-SitemapGenerator::Sitemap.sitemaps_host = "
-https://s3-#{ENV['FOG_REGION']}.amazonaws.com/#{ENV['FOG_DIRECTORY']}/"
+SitemapGenerator::Sitemap.sitemaps_host = "https://s3-#{ENV['AWS_REGION']}.amazonaws.com/#{ENV['AWS_BUCKET']}/"
 # pick a namespace within your bucket to organize your maps
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 
@@ -37,8 +36,8 @@ SitemapGenerator::Sitemap.create do
   #   end
 
   add '/dodaj-klub'
+  add '/seznam-klubov'
   add '/oprojektu'
-  add '/clanki'
 
   MIN_ITEMS_IN_CATEGORY=5
   # Add all categories
@@ -48,11 +47,14 @@ SitemapGenerator::Sitemap.create do
     |k, v| v >= MIN_ITEMS_IN_CATEGORY
   }.keys.each do |category|
 
-    add "/?category=#{category}", priority: 0.6, changefreq: 'daily'
+    add "/#{category}", priority: 0.6, changefreq: 'daily'
+    add "/seznam-klubov/#{category}", priority: 0.6, changefreq: 'daily'
   end
 
   # Add all klubs
   Klub.find_each do |klub|  # does it in batches
-    add "/#{klub.slug}", lastmod: klub.updated_at, changefreq: 'weekly'
+    add "/#{klub.categories.first}/#{klub.slug}", lastmod: klub.updated_at, changefreq: 'weekly', priority: 0.8
+    add "/#{klub.categories.first}/#{klub.slug}/uredi", lastmod: klub.updated_at, changefreq: 'weekly', priority: 0.2
+    add "/#{klub.slug}", lastmod: klub.updated_at, changefreq: 'weekly', priority: 0.1
   end
 end
