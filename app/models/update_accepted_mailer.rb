@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2016-11-20 14:20:02
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-01-09 20:53:38
+# @Last Modified time: 2017-01-09 22:04:50
 
 class UpdateAcceptedMailer
   # Sends emails daily for all accepted updates to the editors to notify and
