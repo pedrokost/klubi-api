@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2016-11-27 15:42:50
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-01-10 23:08:47
+# @Last Modified time: 2017-01-10 23:16:04
 
 
 require 'rails_helper'
@@ -13,7 +13,8 @@ RSpec.describe DataVerificationMailer, type: :model do
   let!(:klub2) { create(:complete_klub, email: 'test@test.com', last_verification_reminder_at: 1.year.ago ) }
   let!(:klub3) { create(:complete_klub, email: 'test@test.com') }
   let!(:klub4) { create(:complete_klub, email: 'test@test.com') }
-  let!(:klub5) { create(:complete_klub, email: nil) }
+  let!(:klub_nil_email) { create(:complete_klub, email: nil) }
+  let!(:klub_blank_email) { create(:complete_klub, email: '') }
   let!(:unverified_klub) { create(:complete_klub, email: 'test@test.com', verified: false) }
   let!(:unsupported_category_klub) { create(:complete_klub, email: 'test@test.com', categories: ['pentafloss']) }
 
@@ -59,9 +60,14 @@ RSpec.describe DataVerificationMailer, type: :model do
       expect(DataVerificationMailer.awaiting_klubs.map(&:id)).to match([klub3.id, klub4.id])
     end
 
-    it "should only filter klubs with emails" do
+    it "should only filter klubs with nil emails" do
       allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(2)
-      expect(DataVerificationMailer.awaiting_klubs.map(&:id)).to match([klub3.id, klub4.id])
+      expect(DataVerificationMailer.awaiting_klubs.map(&:id)).not_to include(klub_nil_email)
+    end
+
+    it "should only filter klubs with blank emails" do
+      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(2)
+      expect(DataVerificationMailer.awaiting_klubs.map(&:id)).not_to include(klub_blank_email)
     end
   end
 
@@ -75,18 +81,4 @@ RSpec.describe DataVerificationMailer, type: :model do
       DataVerificationMailer.send_emails
     end
   end
-
-  # describe "self.send_email" do
-  #   it "should send an email" do
-  #     expect(klub2).to receive(:send_updates_accepted_notification).with('another@editor.com', [update4, update5])
-
-  #     args = ['another@editor.com', klub2, [update4, update5]]
-  #     DataVerificationMailer.send_email(*args)
-  #   end
-
-  #   it "should mark the updates as emails-sent" do
-  #     args = ['another@editor.com', klub2, [update4, update5]]
-  #     expect { DataVerificationMailer.send_email(*args) }.to change( Update.should_notify, :count ).by(-2)
-  #   end
-  # end
 end

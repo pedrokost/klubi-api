@@ -16,7 +16,7 @@ class DataVerificationMailer
     Klub.where('last_verification_reminder_at IS NULL OR last_verification_reminder_at < ?', threshold_date)
       .where(verified: true)
       .where('ARRAY[?]::varchar[] && categories', supported_categories)
-      .where.not(email: nil)
+      .where.not(email: [nil, ''])
       .order('last_verification_reminder_at ASC NULLS FIRST')
       .limit(ENV['NUM_DAILY_DATA_VERIFICATION_EMAILS'])
   end
