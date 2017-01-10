@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2017-01-07 21:23:02
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-01-10 22:34:52
+# @Last Modified time: 2017-01-10 23:13:22
 
 class DataVerificationMailer
   # Sends email to klub owners who have not verified their klub data for a
@@ -23,10 +23,15 @@ class DataVerificationMailer
 
   def self.send_emails
     begin
-      self.awaiting_klubs.each do |klub|
+      klubs_to_email = self.awaiting_klubs
+
+      Rails.logger.info "Will send #{klubs_to_email.count} emails for data verification"
+      klubs_to_email.each do |klub|
+        Rails.logger.info "Sending data verification request email to #{klub.email} for klub #{klub.name}"
         klub.send_request_verify_klub_data_mail
       end
     rescue Exception => e
+      Rails.logger.error e
       Raygun.track_exception(e)
     end
   end
