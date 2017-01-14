@@ -1,3 +1,5 @@
+require 'yaml'
+
 class Update < ActiveRecord::Base
   enum status: {
     unverified: 'unverified',
@@ -12,7 +14,12 @@ class Update < ActiveRecord::Base
         updatable.editor_emails << editor_email
       end
 
-      updatable.update_attributes field => newvalue
+      the_new_value = newvalue
+      if field == "categories"
+        the_new_value = YAML.load(newvalue).uniq.map(&:parameterize)
+      end
+
+      updatable.update_attributes field => the_new_value
     end
   end
 
