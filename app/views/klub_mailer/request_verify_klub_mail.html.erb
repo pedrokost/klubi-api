@@ -3,35 +3,35 @@ Pozdravljeni, <br>
 <p>
   zanima me, če so sledeči podatki za klub <%= @klub.name %> pravilni: <br>
 
-  <dl>
-    <dt><%= Klub.human_attribute_name('name') %>:</dt>
-    <dd><%= @klub.name %></dd>
-
-    <dt><%= Klub.human_attribute_name('address') %>:</dt>
-    <dd><%= @klub.address %></dd>
-    <dd><%= image_tag @klub.static_map_url unless @klub.address.blank? %></dd>
-
-    <dt><%= Klub.human_attribute_name('phone') %>:</dt>
-    <dd><%= @klub.phone %></dd>
-
-    <dt><%= Klub.human_attribute_name('email') %>:</dt>
-    <dd><%= @klub.email unless @klub.email.blank? %></dd>
-
-    <dt><%= Klub.human_attribute_name('website') %>:</dt>
-    <dd><%= link_to @klub.website, @klub.website unless @klub.website.blank? %></dd>
-
-    <dt><%= Klub.human_attribute_name('facebook_url') %>:</dt>
-    <dd><%= link_to @klub.facebook_url, @klub.facebook_url unless @klub.facebook_url.blank? %></dd>
-  </dl>
+  <ul>
+    <li>
+      <%= Klub.human_attribute_name('name') %>: <em><%= @klub.name %></em>
+    </li>
+    <li>
+      <%= Klub.human_attribute_name('phone') %>: <em><%= @klub.phone.blank? ? '<b>ni podatka</b>'.html_safe : @klub.phone %></em>
+    </li>
+    <li>
+      <%= Klub.human_attribute_name('email') %>: <em><%= @klub.email.blank? ? '<b>ni podatka</b>'.html_safe : @klub.email %></em>
+    </li>
+    <li>
+      <%= Klub.human_attribute_name('website') %>: <em><%= @klub.website.blank? ? '<b>ni podatka</b>'.html_safe : link_to(@klub.website, @klub.website) %></em>
+    </li>
+    <li>
+      <%= Klub.human_attribute_name('facebook_url') %>: <em><%= @klub.facebook_url.blank? ? ('<b>ni podatka</b>'.html_safe) : link_to(@klub.facebook_url, @klub.facebook_url) %></em>
+    </li>
+    <li>
+      <%= Klub.human_attribute_name('address') %>: <em><%= @klub.address.blank? ? '<b>ni podatka</b>'.html_safe : @klub.address %></em> <br>
+      <%= image_tag @klub.static_map_url(width: 300, height: 200) unless @klub.address.blank? %>
+    </li>
+  </ul>
 </p>
 
-<p>V primeru, da je zgoraj naveden kakšen napačen podatek, bi vas lepo prosil, da <b><%= link_to 'kliknete tukaj, da ga uredite', @klub.spa_edit_url %></b>. Vzelo vam bo samo 1 minuto!
+<p>Vabim vas, da podatke uredite in dopolnite s klikom na povezavo: <mark><b><%= link_to 'Uredite podatke!', @klub.spa_edit_url %></b></mark>. Vzelo vam bo samo 1 minuto!
 </p>
 
 <p>Klub <%= @klub.name %> je objavljen na <%= link_to 'www.zatresi.si', @klub.spa_url %>, največjim portalom športnih klubov v Sloveniji. S tem, da popravite morebitne napake v podatkih omogočate obiskovalcem spletnega portala, da lažje najdejo in obiščejo klub!</p>
 
-<p>Kliknite <%= link_to 'tukaj', @klub.spa_edit_url %> za ureditev podatkov. Če so vsi podatki pravilni, vam ni potrebno storiti ničesar!
-</p>
 
 Najlepša hvala in lep pozdrav, <br>
 <%= ENV['DEFAULT_BOT_NAME'] || 'Ekipa zatresi.si' %>
+

@@ -46,6 +46,7 @@ class KlubMailer < ApplicationMailer
     from_email = ENV['DEFAULT_BOT_EMAIL']
     bcc_email = ENV['DEFAULT_BCC_EMAIL']
     subject = "🚶 Preverite podatke vašega kluba in pridobite nove člane!"
+
     mail(from: from_email, to: editor_email, subject: subject, bcc: bcc_email)
   end
 end

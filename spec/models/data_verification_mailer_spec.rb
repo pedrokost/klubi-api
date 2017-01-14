@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2016-11-27 15:42:50
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-01-10 23:16:04
+# @Last Modified time: 2017-01-14 13:41:24
 
 
 require 'rails_helper'
@@ -17,6 +17,7 @@ RSpec.describe DataVerificationMailer, type: :model do
   let!(:klub_blank_email) { create(:complete_klub, email: '') }
   let!(:unverified_klub) { create(:complete_klub, email: 'test@test.com', verified: false) }
   let!(:unsupported_category_klub) { create(:complete_klub, email: 'test@test.com', categories: ['pentafloss']) }
+  let!(:klub_branch) { create(:complete_klub, email: 'test@test.com', parent: klub4) }
 
 
   describe "self.awaiting_klubs" do
@@ -45,6 +46,11 @@ RSpec.describe DataVerificationMailer, type: :model do
       expect(DataVerificationMailer.awaiting_klubs.map(&:id)).to include(klub3.id, klub4.id)
     end
 
+    it "should filter out branches" do
+      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
+      expect(DataVerificationMailer.awaiting_klubs.map(&:id)).not_to include(klub_branch.id)
+    end
+
     it "should include klubs to which a notif was sent long ago" do
       allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
       expect(DataVerificationMailer.awaiting_klubs.map(&:id)).to include(klub2.id)
@@ -57,18 +63,19 @@ RSpec.describe DataVerificationMailer, type: :model do
 
     it "should limit the number of daily emails" do
       allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(2)
-      expect(DataVerificationMailer.awaiting_klubs.map(&:id)).to match([klub3.id, klub4.id])
+      expect(DataVerificationMailer.awaiting_klubs.map(&:id)).to match_array([klub3.id, klub4.id])
     end
 
-    it "should only filter klubs with nil emails" do
-      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(2)
+    it "should filter out klubs with nil emails" do
+      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
       expect(DataVerificationMailer.awaiting_klubs.map(&:id)).not_to include(klub_nil_email)
     end
 
-    it "should only filter klubs with blank emails" do
-      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(2)
+    it "should filter out klubs with blank emails" do
+      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
       expect(DataVerificationMailer.awaiting_klubs.map(&:id)).not_to include(klub_blank_email)
     end
+
   end
 
   describe "self.send_emails" do
