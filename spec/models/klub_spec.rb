@@ -104,6 +104,18 @@ RSpec.describe Klub, :type => :model do
     end
   end
 
+
+  describe "deleting a klub with updates" do
+    let!(:update1) { create(:update, updatable: subject) }
+    let!(:update2) { create(:update, updatable: subject) }
+
+    it { expect(subject).to have_many(:updates).dependent(:destroy) }
+
+    it "should delete its updates when deleted" do
+      expect { subject.destroy }.to change { Update.count }.by(-2)
+    end
+  end
+
   describe "complete scope" do
     let!(:klub2) { create(:complete_klub) }
 
