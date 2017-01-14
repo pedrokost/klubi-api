@@ -2,13 +2,13 @@
 # @Author: Pedro Kostelec
 # @Date:   2016-11-20 14:20:02
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-01-09 22:04:50
+# @Last Modified time: 2017-01-14 18:16:33
 
-class UpdateAcceptedMailer
+class SendUpdateAcceptedEmails
   # Sends emails daily for all accepted updates to the editors to notify and
   # thank them for the update
 
-  def self.groups
+  def groups
     update_groups = Update.should_notify.group_by { |u| { editor: u.editor_email, klub_id: u.updatable_id } }
 
     update_groups.each do |key, updates|
@@ -18,11 +18,11 @@ class UpdateAcceptedMailer
     end
   end
 
-  def self.send_emails
+  def call
 
     begin
-      self.groups do |group|
-        self.send_email *group
+      groups do |group|
+        send_email *group
       end
     rescue Exception => e
       Raygun.track_exception(e)
@@ -30,7 +30,7 @@ class UpdateAcceptedMailer
 
   end
 
-  def self.send_email(editor, klub, updates)
+  def send_email(editor, klub, updates)
     ActiveRecord::Base.logger.info "Sending update accepted emails to #{editor} for klub #{klub.name}"
     klub.send_updates_accepted_notification(editor, updates)
 
