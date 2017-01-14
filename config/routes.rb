@@ -34,6 +34,8 @@ Rails.application.routes.draw do
       scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
         resources :klubs, only: [:index, :create, :update]
         get 'klubs/:slug' => 'klubs#find_by_slug'
+
+        post 'email_stats/webhook' => 'email_stats#webhook'
       end
     end
   end

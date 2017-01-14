@@ -1,6 +1,19 @@
 # This will guess the User class
 FactoryGirl.define do
 
+  factory :email_stat do
+    # last_opened_at "2017-01-14 17:37:33"
+    # last_clicked_at "2017-01-14 17:37:33"
+    # last_bounced_at "2017-01-14 17:37:33"
+    # last_dropped_at "2017-01-14 17:37:33"
+    # last_delivered_at "2017-01-14 17:37:33"
+  end
+
+  factory :email_stum, :class => 'EmailSta' do
+    last_delivery_at "2017-01-14 17:35:02"
+  end
+
+
   factory :update do
     field 'name'
     oldvalue 'banana'

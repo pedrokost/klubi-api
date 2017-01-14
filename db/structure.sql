@@ -41,6 +41,42 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: email_stats; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE email_stats (
+    id integer NOT NULL,
+    email character varying NOT NULL,
+    last_opened_at timestamp without time zone,
+    last_clicked_at timestamp without time zone,
+    last_bounced_at timestamp without time zone,
+    last_dropped_at timestamp without time zone,
+    last_delivered_at timestamp without time zone,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: email_stats_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE email_stats_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: email_stats_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE email_stats_id_seq OWNED BY email_stats.id;
+
+
+--
 -- Name: klubs; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -138,6 +174,13 @@ ALTER SEQUENCE updates_id_seq OWNED BY updates.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY email_stats ALTER COLUMN id SET DEFAULT nextval('email_stats_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY klubs ALTER COLUMN id SET DEFAULT nextval('klubs_id_seq'::regclass);
 
 
@@ -146,6 +189,14 @@ ALTER TABLE ONLY klubs ALTER COLUMN id SET DEFAULT nextval('klubs_id_seq'::regcl
 --
 
 ALTER TABLE ONLY updates ALTER COLUMN id SET DEFAULT nextval('updates_id_seq'::regclass);
+
+
+--
+-- Name: email_stats_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY email_stats
+    ADD CONSTRAINT email_stats_pkey PRIMARY KEY (id);
 
 
 --
@@ -162,6 +213,13 @@ ALTER TABLE ONLY klubs
 
 ALTER TABLE ONLY updates
     ADD CONSTRAINT updates_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: index_email_stats_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX index_email_stats_on_email ON email_stats USING btree (email);
 
 
 --
@@ -258,4 +316,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160707185547');
 INSERT INTO schema_migrations (version) VALUES ('20161127143702');
 
 INSERT INTO schema_migrations (version) VALUES ('20170107115719');
+
+INSERT INTO schema_migrations (version) VALUES ('20170114173733');
 
