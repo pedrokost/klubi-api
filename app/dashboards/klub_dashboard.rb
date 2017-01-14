@@ -31,7 +31,7 @@ class KlubDashboard < Administrate::BaseDashboard
     editor_emails: Field::String.with_options(searchable: false),
     parent_id: Field::Number.with_options(searchable: false),
     last_verification_reminder_at: Field::DateTime.with_options(searchable: false)
-  }
+  }.freeze
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -44,7 +44,7 @@ class KlubDashboard < Administrate::BaseDashboard
     :complete,
     :updates,
     :verified
-  ]
+  ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -66,7 +66,7 @@ class KlubDashboard < Administrate::BaseDashboard
     :editor_emails,
     :notes,
     :branches
-  ]
+  ].freeze
 
   # Overwrite this method to customize how klubs are displayed
   # across all pages of the admin dashboard.

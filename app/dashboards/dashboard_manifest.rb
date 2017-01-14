@@ -11,8 +11,9 @@ class DashboardManifest
   # to work correctly.
   DASHBOARDS = [
     :klubs,
-    :updates
-  ]
+    :updates,
+    :email_stats
+  ].freeze
 
   # `ROOT_DASHBOARD`
   # the name of the dashboard that will be displayed

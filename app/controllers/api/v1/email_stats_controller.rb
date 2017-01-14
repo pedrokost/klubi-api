@@ -1,7 +1,5 @@
 require 'openssl'
 
-require 'pry'
-
 module Api
   module V1
     class EmailStatsController < ApplicationController
