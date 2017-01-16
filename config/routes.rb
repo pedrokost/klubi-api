@@ -41,7 +41,8 @@ Rails.application.routes.draw do
   end
 
   constraints subdomain: ['', 'www'] do
-    get 'application/index'
+
+    get '/heartbeat' => 'application#heartbeat'
 
     root 'application#index'
 

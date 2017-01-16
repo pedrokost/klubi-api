@@ -5,10 +5,13 @@ class ApplicationController < ActionController::API
 
 	skip_before_filter :verify_authenticity_token
 
-
   def index
     html = bootstrap_index(params[:index_key])
     render text: html
+  end
+
+  def heartbeat
+    render 'application/heartbeat', :formats=>[:html]
   end
 
 private

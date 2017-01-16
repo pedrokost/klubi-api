@@ -1,6 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe ApplicationController, :type => :controller do
+
+  describe "GET #heartbeat" do
+
+    it "returns http success" do
+      get :heartbeat
+      expect(response).to have_http_status(:success)
+    end
+  end
+
   describe "GET #index" do
     before do
       returns = [
