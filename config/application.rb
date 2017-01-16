@@ -53,5 +53,8 @@ module ZatresiApi
 
     config.active_record.schema_format = :sql
 
+
+    # Skylight config
+    config.skylight.probes += %w(redis active_model_serializers)
   end
 end
