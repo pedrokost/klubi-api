@@ -2,11 +2,13 @@ module Api
   module V1
     class KlubsController < ApplicationController
       def index
-        klubs = Klub.completed.where("? = ANY (categories)", category_param)
+        stats = Klub.select('count(*) as count, max(updated_at) as last_update_at').completed.where("? = ANY (categories)", category_param).order(nil).first
 
-        data = Rails.cache.fetch("klubs/#{category_param}-#{klubs.count}-#{klubs.map(&:updated_at).max.to_i}") do
-          serializer = ActiveModel::Serializer::ArraySerializer.new(klubs)
-          ActiveModel::Serializer::Adapter.create(serializer).as_json
+        data = Rails.cache.fetch("klubs/#{category_param}-#{stats.count}-#{stats.last_update_at.to_i}") do
+          klubs = Klub.completed.where("? = ANY (categories)", category_param)
+          serializer = ActiveModel::Serializer::CollectionSerializer.new(klubs)
+          ActiveModelSerializers::Adapter.create(serializer).as_json
+
         end
 
         render json: data

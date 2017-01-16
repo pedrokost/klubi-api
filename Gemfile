@@ -14,7 +14,7 @@ gem 'pg', '~>0.18.2'
 gem 'rails_12factor', group: :production
 
 # gem 'active_model_serializers', '~> 0.9.0'
-gem 'active_model_serializers', '~> 0.10.0.rc2'
+gem 'active_model_serializers', '~> 0.10.4'
 
 gem 'redis', '~> 3.2.1'
 
