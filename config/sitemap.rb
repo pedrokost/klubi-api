@@ -39,22 +39,26 @@ SitemapGenerator::Sitemap.create do
   add '/seznam-klubov'
   add '/oprojektu'
 
-  MIN_ITEMS_IN_CATEGORY=5
-  # Add all categories
-  Klub.pluck(:categories).flatten.each_with_object(Hash.new(0)) {
-    |o, h| h[o] += 1
-  }.select{
-    |k, v| v >= MIN_ITEMS_IN_CATEGORY
-  }.keys.each do |category|
+  supported_categories = ENV['SUPPORTED_CATEGORIES'].split(',')
 
+  # Add all categories
+  supported_categories.each do |category|
     add "/#{category}", priority: 0.6, changefreq: 'daily'
     add "/seznam-klubov/#{category}", priority: 0.6, changefreq: 'daily'
+
+    # Add all klubs of supported categories (this may add duplicates - that's
+    # fine since the category is different)
+
+    Klub.completed.where('? = ANY (categories)', category).find_each do |klub|  # does it in batches
+      add "/#{category}/#{klub.slug}", lastmod: klub.updated_at, changefreq: 'weekly', priority: 0.8
+      add "/#{category}/#{klub.slug}/uredi", lastmod: klub.updated_at, changefreq: 'weekly', priority: 0.2
+      # add "/#{klub.slug}", lastmod: klub.updated_at, changefreq: 'weekly', priority: 0.1
+    end
   end
 
-  # Add all klubs
-  Klub.find_each do |klub|  # does it in batches
-    add "/#{klub.categories.first}/#{klub.slug}", lastmod: klub.updated_at, changefreq: 'weekly', priority: 0.8
-    add "/#{klub.categories.first}/#{klub.slug}/uredi", lastmod: klub.updated_at, changefreq: 'weekly', priority: 0.2
-    add "/#{klub.slug}", lastmod: klub.updated_at, changefreq: 'weekly', priority: 0.1
-  end
+  # See output with:
+  # gunzip -c tmp/sitemaps/sitemap.xml.gz | grep -oE "<loc>([^<]+)</loc>"  | cut -c 6- | cut -d'<' -f1
+
+
+
 end
