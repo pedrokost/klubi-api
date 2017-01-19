@@ -2,12 +2,14 @@ module Api
   module V1
     class KlubsController < ApplicationController
 
+      before_action :select_ams_adapter
+
       def index
         stats = Klub.select('count(*) as count, max(updated_at) as last_update_at').completed.where("? = ANY (categories)", category_param).order(nil).first
 
         data = Rails.cache.fetch("klubs/#{category_param}-#{stats.count}-#{stats.last_update_at.to_i}") do
           klubs = Klub.completed.where("? = ANY (categories)", category_param)
-          serializer = ActiveModel::Serializer::CollectionSerializer.new(klubs)
+          serializer = ActiveModel::Serializer::CollectionSerializer.new(klubs, serializer: Api::V1::KlubSerializer)
           ActiveModelSerializers::Adapter.create(serializer).to_json
         end
 
@@ -50,6 +52,10 @@ module Api
         params.require(:klub).permit(:name, :address, :town, :latitude, :longitude, :website, :facebook_url, :phone, :email, :notes, {:categories => []}, :editor)
       end
 
+
+      def select_ams_adapter
+        ActiveModelSerializers.config.adapter = :json # Default: `:attributes`
+      end
     end
   end
 end

@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+
+  "definitions": {
+    "klub": {
+      "type" : "object",
+      "required" : [
+        "id",
+        "type",
+        "attributes"
+      ],
+      "properties": {
+        "id" : { "type": "string" },
+        "type" : { "type": "string" },
+        "attributes": {
+          "type": "object",
+          "required": [
+            "name",
+            "town",
+            "latitude",
+            "longitude",
+            "categories"
+          ],
+          "properties": {
+            "name" :      { "type": "string" },
+            "town" :      { "type": ["string", "null"] },
+            "latitude" :  { "type": ["string", "null"] },
+            "longitude" : { "type": ["string", "null"] },
+            "categories": {
+              "type": "array",
+              "items": [{
+                "type": "string"
+              }]
+            }
+          }
+        },
+        "relationships": {
+          "type": "object",
+          "required": [
+            "parent"
+          ],
+          "properties":  {
+            "parent": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": { "$ref": "#/definitions/parent" }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "parent": {
+      "type" : ["object", "null"],
+      "required" : [
+        "id",
+        "type"
+      ],
+      "properties": {
+        "id" : { "type": "string" },
+        "type" : { "type": "string" }
+      }
+    }
+  },
+  "type": "object",
+  "required": [
+    "data"
+  ],
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": [{ "$ref": "#/definitions/klub" }]
+    }
+  }
+}

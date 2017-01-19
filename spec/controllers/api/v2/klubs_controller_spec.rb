@@ -4,7 +4,7 @@ require 'json'
 
 require 'pry'
 
-RSpec.describe Api::V1::KlubsController, :type => :controller do
+RSpec.describe Api::V2::KlubsController, :type => :controller do
 
   describe 'GET #klubs' do
     let!(:klub1) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
@@ -20,13 +20,13 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
     it { should be_success }
 
     it "should return all items" do
-      klubs = JSON.parse(response.body)['klubs']
+      klubs = JSON.parse(response.body)['data']
       expect(klubs.length).to eq 2
     end
 
     it "should return a list of klubs" do
       expect(response.status).to eq 200
-      expect(response).to match_response_schema("v1/klubs")
+      expect(response).to match_response_schema("v2/klubs")
     end
 
     describe "very incomplete data" do
@@ -40,7 +40,7 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
 
       it "does not return klubs that are incomplete" do
         # incomplete: no lat, long and name
-        klubs = JSON.parse(response.body)['klubs']
+        klubs = JSON.parse(response.body)['data']
         expect(klubs.length).to eq 1
       end
     end
@@ -48,15 +48,17 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
     describe '?category' do
 
       context "=fitnes" do
+
         before do
           get :index, category: 'fitnes'
         end
+
         it "should return only fitnes klubs" do
           expect(response.status).to eq 200
-          klubs = json_response[:klubs]
-          expect(response).to match_response_schema("v1/klubs")
+          klubs = json_response[:data]
+          expect(response).to match_response_schema("v2/klubs")
           expect(klubs.length).to eq 2
-          expect(klubs.map{|h| h[:id]}).to match_array([klub1, klub2].map(&:id))
+          expect(klubs.map{|h| h[:id]}).to match_array([klub1, klub2].map(&:url_slug))
         end
       end
 
@@ -67,10 +69,10 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
 
         it "should return only gimnastika klubs" do
           expect(response.status).to eq 200
-          klubs = json_response[:klubs]
-          expect(response).to match_response_schema("v1/klubs")
-          expect(klubs.length).to eq 2
-          expect(klubs.map{|h| h[:id]}).to match_array([klub1.id, klub_branch.id])
+          klubs = json_response
+          expect(response).to match_response_schema("v2/klubs")
+          expect(klubs[:data].length).to eq 2
+          expect(klubs[:data].map{|h| h[:id]}).to match_array([klub1, klub_branch].map(&:url_slug))
         end
       end
 
@@ -87,7 +89,7 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
     let!(:klub_branch) { FactoryGirl.create(:klub_branch, verified: true, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
 
     before do
-      get :find_by_slug, slug: klub1.slug
+      get :show, id: klub1.slug
     end
 
     subject { response }
@@ -95,21 +97,20 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
     it { should be_success }
 
     it "should return only klub1" do
-      klub = JSON.parse(response.body)['klub']
-      expect(klub.class).to eq Hash
-      expect(klub['slug']).to eq klub1.slug
+      expect(json_response[:data].class).to eq Hash
+      expect(json_response[:data][:id]).to eq klub1.url_slug
     end
 
-    it "should return a list of klubs" do
+    it "should return the matched klub" do
       expect(response.status).to eq 200
-      expect(response).to match_response_schema("v1/klub")
+      expect(response).to match_response_schema("v2/klub")
     end
 
     it "should return the parent's slug" do
-      get :find_by_slug, slug: klub_branch.slug
-      expect(response).to match_response_schema('v1/klub')
-      klub = json_response[:klub]
-      expect(klub[:parent_id]).to eq klub1.slug
+      get :show, id: klub_branch.slug
+      expect(response).to match_response_schema('v2/klub')
+      klub = json_response[:data]
+      expect(klub[:relationships][:parent][:data][:id]).to eq klub1.url_slug
     end
   end
 
@@ -118,42 +119,89 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
     it "should send an email to admin" do
       expect_any_instance_of(Klub).to receive(:send_review_notification)
 
-      post :create, klub: {name: "Fitnes Maribor"}
+      post :create, data: {
+        type: 'klubs',
+        attributes: {
+          name: "Fitnes Maribor"
+        }
+      }
     end
 
     it "should send an email to the submitter" do
       expect_any_instance_of(Klub).to receive(:send_thanks_notification)
 
-      post :create, klub: { name: "Qien eres?", editor: 'joe@doe.com' }
+      post :create, data: {
+        type: 'klubs',
+        attributes: {
+          name: "Qien eres?",
+          editor: 'joe@doe.com'
+        }
+      }
     end
 
     it "should not send thanks email if no submitter" do
       expect_any_instance_of(Klub).not_to receive(:send_thanks_notification)
 
-      post :create, klub: { name: "Qien eres?" }
+      post :create, data: {
+        type: 'klubs',
+        attributes: {
+          name: 'Quien eres?'
+        }
+      }
     end
 
     it "should accept categories and other parameters" do
 
-      ok_params = {name: "Fitnes Maribor", address: "Mariborska cesta 5", latitude: "46.5534849", longitude: "15.503709399999934", website: "http://www.fitnes-zumba.si",categories: ["fitnes","zumba"], editor: "jaz@ti.com", notes: "Ta klub ne obstaja"}
-      expect(Klub).to receive(:new).
-        with(ok_params.except(:editor).with_indifferent_access)
-        .and_return Klub.new(ok_params.except(:editor))
+      valid_attrs = {name: "Fitnes Maribor", address: "Mariborska cesta 5", latitude: "46.5534849", longitude: "15.503709399999934", website: "http://www.fitnes-zumba.si",categories: ["fitnes","zumba"], editor: "jaz@ti.com", notes: "Ta klub ne obstaja"}
 
-      post :create, klub: ok_params
+      expect(Klub).to receive(:new).
+        with(valid_attrs.except(:editor).with_indifferent_access)
+        .and_return Klub.new(valid_attrs.except(:editor))
+
+      post :create, data: {
+        type: 'klubs',
+        attributes: valid_attrs
+      }
     end
 
     it "should create a new unverified klub" do
       expect {
-        post :create, klub: { name: 'Fitnes Mariborcan 22' }
+        post :create, data: {
+          type: 'klubs',
+          attributes: {
+            name: 'Fitnes Mariborcan 22'
+          }
+        }
       }.to change(Klub.unscoped, :count).by 1
 
       klub = Klub.unscoped.last
       expect(klub.verified?).to be_falsy
     end
+
+    it "should return 202 Accepted" do
+      post :create, data: {
+        type: 'klubs',
+        attributes: {
+          name: 'Fitnes'
+        }
+      }
+
+      expect(response.status).to eq 202
+    end
+
+    it "should respond with no content" do
+      post :create, data: {
+        type: 'klubs',
+        attributes: {
+          name: 'Fitnes'
+        }
+      }
+
+      expect(response.body).to eq ""
+    end
   end
 
-  describe 'PUT #klub/:id' do
+  describe 'PATCH #klub/:id' do
 
     let(:old_attrs) do
       {
@@ -182,13 +230,21 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
     let!(:klub) { FactoryGirl.create(:klub, old_attrs.merge(verified: true)) }
 
     it "should be accepted" do
-      patch :update, id: klub.slug, klub: new_attrs
+      patch :update, id: klub.slug, data: {
+        type: 'klubs',
+        id: klub.slug,
+        attributes: new_attrs
+      }
       expect(response.status).to eq 202  # Accepted -- no need to reply with changes
     end
 
     it "should create Update objects for each changed attributes" do
       expect {
-        patch :update, id: klub.slug, klub: new_attrs.merge(editor: 'joe@doe.com')
+        patch :update, id: klub.slug, data: {
+          type: 'klubs',
+          id: klub.slug,
+          attributes: new_attrs.merge(editor: 'joe@doe.com')
+        }
       }.to change(Update, :count).by(8)
 
       new_attrs.each do |key, val|
@@ -208,12 +264,20 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
       new_attrs = old_attrs.merge(name: 'Some club')
 
       expect {
-        patch :update, id: klub.slug, klub: new_attrs.merge(editor: 'joe@doe.com')
+        patch :update, id: klub.slug, data: {
+          type: 'klubs',
+          id: klub.slug,
+          attributes: new_attrs.merge(editor: 'joe@doe.com')
+        }
       }.to change(Update, :count).by(1)
     end
 
     it "should not change the Klub model" do
-      patch :update, id: klub.slug, klub: new_attrs.merge(editor: 'joe@doe.com')
+      patch :update, id: klub.slug, data: {
+        type: 'klubs',
+        id: klub.slug,
+        attributes: new_attrs.merge(editor: 'joe@doe.com')
+      }
 
       expect(klub.reload).to have_attributes(old_attrs)
     end
@@ -221,19 +285,31 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
     it "should send an email notification to admin" do
       expect_any_instance_of(Klub).to receive(:send_updates_notification)
 
-      patch :update, id: klub.slug, klub: new_attrs.merge(editor: 'joe@doe.com')
+      patch :update, id: klub.slug, data: {
+        type: 'klubs',
+        id: klub.slug,
+        attributes: new_attrs.merge(editor: 'joe@doe.com')
+      }
     end
 
     it "should send an email to the editor" do
       expect_any_instance_of(Klub).to receive(:send_confirm_notification)
 
-      patch :update, id: klub.slug, klub: new_attrs.merge(editor: 'editor@email.com')
+      patch :update, id: klub.slug, data: {
+        type: 'klubs',
+        id: klub.slug,
+        attributes: new_attrs.merge(editor: 'joe@doe.com')
+      }
     end
 
     it "should not send confirm email if no editor" do
       expect_any_instance_of(Klub).not_to receive(:send_confirm_notification)
 
-      patch :update, id: klub.slug, klub: new_attrs.merge(editor: nil)
+      patch :update, id: klub.slug, data: {
+        type: 'klubs',
+        id: klub.slug,
+        attributes: new_attrs.merge(editor: nil)
+      }
     end
   end
 end

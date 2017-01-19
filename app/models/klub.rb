@@ -86,12 +86,16 @@ class Klub < ActiveRecord::Base
     updates
   end
 
+  def url_slug
+    "#{slug}"
+  end
+
   def spa_url
-    "#{ENV['WEBSITE_FULL_HOST']}/#{self.categories.first}/#{self.slug}/".freeze
+    "#{ENV['WEBSITE_FULL_HOST']}/#{self.categories.first}/#{self.url_slug}/".freeze
   end
 
   def spa_edit_url
-    "#{ENV['WEBSITE_FULL_HOST']}/#{self.categories.first}/#{self.slug}/uredi/".freeze
+    "#{ENV['WEBSITE_FULL_HOST']}/#{self.categories.first}/#{self.url_slug}/uredi/".freeze
   end
 
   def static_map_url(width: 400, height: 300)
