@@ -232,7 +232,6 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
     it "should be accepted" do
       patch :update, id: klub.slug, data: {
         type: 'klubs',
-        id: klub.slug,
         attributes: new_attrs
       }
       expect(response.status).to eq 202  # Accepted -- no need to reply with changes
@@ -242,7 +241,6 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       expect {
         patch :update, id: klub.slug, data: {
           type: 'klubs',
-          id: klub.slug,
           attributes: new_attrs.merge(editor: 'joe@doe.com')
         }
       }.to change(Update, :count).by(8)
@@ -266,7 +264,6 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       expect {
         patch :update, id: klub.slug, data: {
           type: 'klubs',
-          id: klub.slug,
           attributes: new_attrs.merge(editor: 'joe@doe.com')
         }
       }.to change(Update, :count).by(1)
@@ -275,7 +272,6 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
     it "should not change the Klub model" do
       patch :update, id: klub.slug, data: {
         type: 'klubs',
-        id: klub.slug,
         attributes: new_attrs.merge(editor: 'joe@doe.com')
       }
 
@@ -287,7 +283,6 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
 
       patch :update, id: klub.slug, data: {
         type: 'klubs',
-        id: klub.slug,
         attributes: new_attrs.merge(editor: 'joe@doe.com')
       }
     end
@@ -297,7 +292,6 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
 
       patch :update, id: klub.slug, data: {
         type: 'klubs',
-        id: klub.slug,
         attributes: new_attrs.merge(editor: 'joe@doe.com')
       }
     end
@@ -307,7 +301,6 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
 
       patch :update, id: klub.slug, data: {
         type: 'klubs',
-        id: klub.slug,
         attributes: new_attrs.merge(editor: nil)
       }
     end

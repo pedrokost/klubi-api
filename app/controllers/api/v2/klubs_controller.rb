@@ -29,7 +29,7 @@ module Api
       end
 
       def update
-        klub = Klub.completed.where(slug: update_klub_params[:id]).first
+        klub = Klub.completed.where(slug: params[:id]).first
         updates = klub.create_updates update_klub_attributes
         klub.send_updates_notification(updates)
         klub.send_confirm_notification(update_klub_attributes[:editor], updates) if update_klub_attributes[:editor]
