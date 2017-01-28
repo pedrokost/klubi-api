@@ -19,6 +19,8 @@ Rails.application.configure do
   # Send emails by smtp
   config.action_mailer.delivery_method = :smtp
 
+  config.action_mailer.perform_deliveries = false
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
