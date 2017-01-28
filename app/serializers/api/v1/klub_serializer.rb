@@ -7,7 +7,6 @@ module Api
       def parent_id
         object.parent.try(:slug)
       end
-
     end
   end
 end

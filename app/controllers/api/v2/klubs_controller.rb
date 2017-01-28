@@ -17,11 +17,11 @@ module Api
       end
 
       def create
-        @klub = Klub.new(new_klub_attributes.except('editor'))
-        @klub.editor_emails << new_klub_attributes['editor']
+        @klub = Klub.new(new_klub_params.except(:editor))
+        @klub.editor_emails << new_klub_params[:editor]
         @klub.save!
         @klub.send_review_notification
-        @klub.send_thanks_notification new_klub_attributes['editor'] if new_klub_attributes['editor']
+        @klub.send_thanks_notification new_klub_params[:editor] if new_klub_params[:editor]
         render nothing: true, status: :accepted
 
         # TODO: impelement error handling
@@ -29,10 +29,10 @@ module Api
       end
 
       def update
-        klub = Klub.completed.where(slug: params[:id]).first
-        updates = klub.create_updates update_klub_attributes
+        klub = Klub.completed.find_by(slug: params[:id])
+        updates = klub.create_updates update_klub_params
         klub.send_updates_notification(updates)
-        klub.send_confirm_notification(update_klub_attributes[:editor], updates) if update_klub_attributes[:editor]
+        klub.send_confirm_notification(update_klub_params[:editor], updates) if update_klub_params[:editor]
         render nothing: true, status: :accepted
       end
 
@@ -48,52 +48,42 @@ module Api
       end
 
       def new_klub_params
-        params.require(:data).permit(:type, {
-          attributes: [
+
+        ActiveModelSerializers::Deserialization.jsonapi_parse!(params,
+          only: [
             :name,
             :address,
             :town,
             :latitude,
             :longitude,
             :website,
-            :facebook_url,
+            :'facebook-url',
             :phone,
             :email,
             :notes,
-            {
-              :categories => []
-            },
-            :editor]
-        })
-      end
-
-      def new_klub_attributes
-        new_klub_params[:attributes] || {}
+            :categories,
+            :editor
+          ]
+        )
       end
 
       def update_klub_params
-        params.require(:data).permit(:type, :id, {
-          attributes: [
+        ActiveModelSerializers::Deserialization.jsonapi_parse!(params,
+          only: [
             :name,
             :address,
             :town,
             :latitude,
             :longitude,
             :website,
-            :facebook_url,
+            :'facebook-url',
             :phone,
             :email,
             :notes,
-            {
-              :categories => []
-            },
+            :categories,
             :editor
           ]
-        })
-      end
-
-      def update_klub_attributes
-        update_klub_params[:attributes] || {}
+        )
       end
 
       def select_ams_adapter

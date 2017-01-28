@@ -155,7 +155,7 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       valid_attrs = {name: "Fitnes Maribor", address: "Mariborska cesta 5", latitude: "46.5534849", longitude: "15.503709399999934", website: "http://www.fitnes-zumba.si",categories: ["fitnes","zumba"], editor: "jaz@ti.com", notes: "Ta klub ne obstaja"}
 
       expect(Klub).to receive(:new).
-        with(valid_attrs.except(:editor).with_indifferent_access)
+        with(valid_attrs.except(:editor))
         .and_return Klub.new(valid_attrs.except(:editor))
 
       post :create, data: {
@@ -224,7 +224,7 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
         email: 'new@club.com',
         categories: ['fitnes', 'rugby'],
         notes: "Kera stvar",
-        facebook_url: 'http://facebook.com/newclub'
+        'facebook-url': 'http://facebook.com/newclub'
       }
     end
     let!(:klub) { FactoryGirl.create(:klub, old_attrs.merge(verified: true)) }
@@ -249,8 +249,8 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
         expect(
           Update.find_by(
             updatable: klub,
-            field: key,
-            oldvalue: old_attrs[key].to_s,
+            field: key.to_s.underscore,
+            oldvalue: old_attrs[key.to_s.underscore.to_sym].to_s,
             newvalue: val.to_s,
             status: :unverified,
             editor_email: 'joe@doe.com'

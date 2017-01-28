@@ -71,11 +71,13 @@ class Klub < ActiveRecord::Base
   end
 
   def create_updates(new_attrs)
-    editor = new_attrs['editor']
+    editor = new_attrs[:editor]
     updates = []
-    new_attrs.except('editor').each do |key, val|
+
+    new_attrs.except(:editor).each do |key, val|
       next if self.send(key) == val
-      updates << Update.create(
+
+      updates << Update.create!(
         updatable: self,
         field: key,
         oldvalue: self.send(key).to_s,
