@@ -13,6 +13,7 @@ class ApplicationController < ActionController::API
     render text: html
   end
 
+
   def heartbeat
     render 'application/heartbeat', :formats=>[:html]
   end
