@@ -50,8 +50,8 @@ SitemapGenerator::Sitemap.create do
     # fine since the category is different)
 
     Klub.completed.where('? = ANY (categories)', category).find_each do |klub|  # does it in batches
-      add "/#{category}/#{klub.slug}", lastmod: klub.updated_at, changefreq: 'weekly', priority: 0.8
-      add "/#{category}/#{klub.slug}/uredi", lastmod: klub.updated_at, changefreq: 'weekly', priority: 0.2
+      add "/#{category}/#{klub.url_slug}", lastmod: klub.updated_at, changefreq: 'weekly', priority: 0.8
+      add "/#{category}/#{klub.url_slug}/uredi", lastmod: klub.updated_at, changefreq: 'weekly', priority: 0.2
       # add "/#{klub.slug}", lastmod: klub.updated_at, changefreq: 'weekly', priority: 0.1
     end
   end

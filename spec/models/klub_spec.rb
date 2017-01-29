@@ -28,6 +28,13 @@ RSpec.describe Klub, :type => :model do
     expect(klub.reload.editor_emails).to eq(emails)
   end
 
+  describe "url slug" do
+    it "should also contain slug and ID" do
+      klub.save
+      expect(klub.url_slug).to eq("karate-klub-skocjan-#{klub.id}")
+    end
+  end
+
   describe "slug creation" do
     it "should generate slug on create" do
       klub.save
@@ -41,16 +48,18 @@ RSpec.describe Klub, :type => :model do
     end
 
     it "should eliminate special characters from the slug" do
+      klub.save
+      expect(klub.slug).to eq('karate-klub-skocjan')
       klub.name = "Škocjansk!!i kareš~ki   "
       klub.save
       expect(klub.reload.slug).to eq 'skocjansk-i-kares-ki'
     end
 
     it "should update slug on update" do
-    	klub.name = 'Karate Klub Grosuplje'
+    	klub.name = 'Šarate Klub Grosuplje'
     	klub.save
     	klub.reload
-    	expect(klub.slug).to eq('karate-klub-grosuplje')
+    	expect(klub.slug).to eq('sarate-klub-grosuplje')
     end
 
     it "should keep slug if not changed" do
@@ -60,33 +69,14 @@ RSpec.describe Klub, :type => :model do
     	expect(klub.slug).to eq('karate-klub-skocjan')
     end
 
-    # TODO: This slug it incocerrect: it leafes first lette capisalized and sumiki
-    # Športno rekreativni center Spartacus
-
-    it "should create valid slug when appending strings" do
-      klub.save
-      expect(klub.slug).to eq('karate-klub-skocjan')
-
-      expect(Randgen).to receive(:last_name).and_return('2')
-
-      another_klub = create(:klub, name: klub.name, categories: ['karate'])
-    	expect(another_klub.slug).to eq('karate-klub-skocjan-2')
-      expect(another_klub.slug).not_to eq('karate-klub-skocjan 2')
-    end
-
-    it "should make sure there is no space characters in the slug" do
-      klub.save
-      expect(klub.persisted?).to be true
-      another_klub = create(:klub, name: klub.name, categories: ['karate'])
-      expect(another_klub.slug).not_to eq(klub.slug)
-      expect(another_klub.slug).not_to be_nil
-      yet_another_klub = create(:klub, name: klub.name, categories: ['karate'])
-      expect(yet_another_klub.slug).not_to eq(klub.slug)
-      expect(yet_another_klub.slug).not_to eq(another_klub.slug)
+    it "should allow two different klubs to have same slug" do
+      # Differentiation is then in the IDs
+      klub.save!
+      another_klub = build(:klub, name: 'Karate klub Skocjan', email: 'owner@test.com', categories: ['football'])
+      another_klub.save!
+      expect(klub.reload.slug).to eq(another_klub.reload.slug)
     end
   end
-
-
 
   it "may have branches" do
     branch1 = create(:complete_klub_branch, parent: klub)

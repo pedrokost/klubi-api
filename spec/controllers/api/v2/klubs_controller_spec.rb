@@ -89,7 +89,7 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
     let!(:klub_branch) { FactoryGirl.create(:klub_branch, verified: true, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
 
     before do
-      get :show, id: klub1.slug
+      get :show, id: klub1.url_slug
     end
 
     subject { response }
@@ -107,7 +107,7 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
     end
 
     it "should return the parent's slug" do
-      get :show, id: klub_branch.slug
+      get :show, id: klub_branch.url_slug
       expect(response).to match_response_schema('v2/klub')
       klub = json_response[:data]
       expect(klub[:relationships][:parent][:data][:id]).to eq klub1.url_slug
@@ -252,7 +252,7 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
     let!(:klub) { FactoryGirl.create(:klub, old_attrs.merge(verified: true)) }
 
     it "should be accepted" do
-      patch :update, id: klub.slug, data: {
+      patch :update, id: klub.url_slug, data: {
         type: 'klubs',
         attributes: new_attrs
       }
@@ -261,7 +261,7 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
 
     it "should create Update objects for each changed attributes" do
       expect {
-        patch :update, id: klub.slug, data: {
+        patch :update, id: klub.url_slug, data: {
           type: 'klubs',
           attributes: new_attrs.merge(editor: 'joe@doe.com')
         }
@@ -284,7 +284,7 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       new_attrs = old_attrs.merge(name: 'Some club')
 
       expect {
-        patch :update, id: klub.slug, data: {
+        patch :update, id: klub.url_slug, data: {
           type: 'klubs',
           attributes: new_attrs.merge(editor: 'joe@doe.com')
         }
@@ -292,7 +292,7 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
     end
 
     it "should not change the Klub model" do
-      patch :update, id: klub.slug, data: {
+      patch :update, id: klub.url_slug, data: {
         type: 'klubs',
         attributes: new_attrs.merge(editor: 'joe@doe.com')
       }
@@ -303,7 +303,7 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
     it "should send an email notification to admin" do
       expect_any_instance_of(Klub).to receive(:send_updates_notification)
 
-      patch :update, id: klub.slug, data: {
+      patch :update, id: klub.url_slug, data: {
         type: 'klubs',
         attributes: new_attrs.merge(editor: 'joe@doe.com')
       }
@@ -312,7 +312,7 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
     it "should send an email to the editor" do
       expect_any_instance_of(Klub).to receive(:send_confirm_notification)
 
-      patch :update, id: klub.slug, data: {
+      patch :update, id: klub.url_slug, data: {
         type: 'klubs',
         attributes: new_attrs.merge(editor: 'joe@doe.com')
       }
@@ -321,7 +321,7 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
     it "should not send confirm email if no editor" do
       expect_any_instance_of(Klub).not_to receive(:send_confirm_notification)
 
-      patch :update, id: klub.slug, data: {
+      patch :update, id: klub.url_slug, data: {
         type: 'klubs',
         attributes: new_attrs.merge(editor: nil)
       }

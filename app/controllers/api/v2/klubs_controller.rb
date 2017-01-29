@@ -32,7 +32,7 @@ module Api
       end
 
       def update
-        klub = Klub.find_by(slug: params[:id])
+        klub = find_klub
         updates = klub.create_updates update_klub_params
         klub.send_updates_notification(updates)
         klub.send_confirm_notification(update_klub_params[:editor], updates) if update_klub_params[:editor]
@@ -41,11 +41,16 @@ module Api
       end
 
       def show
-        klub = Klub.completed.where(slug: params[:id]).first
+        klub = find_klub
         render json: klub
       end
 
     private
+      def find_klub
+        slug_with_id = params[:id]
+        id = slug_with_id.split('-').last
+        Klub.find(id)
+      end
 
       def category_params
         params.require(:category)

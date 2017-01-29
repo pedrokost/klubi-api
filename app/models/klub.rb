@@ -7,10 +7,9 @@ class Klub < ActiveRecord::Base
   belongs_to :parent, class_name: 'Klub', touch: true
   has_many :updates, as: :updatable, dependent: :destroy
 
-	before_create :update_slug
+	before_save :update_slug
 	before_save :update_complete
 
-	validates :slug, uniqueness: true
 	validates :name, presence: true
   validates :categories, presence: true
 
@@ -90,7 +89,7 @@ class Klub < ActiveRecord::Base
   end
 
   def url_slug
-    "#{slug}"
+    "#{slug}-#{id}"
   end
 
   def spa_url
@@ -114,27 +113,9 @@ private
 		nil
 	end
 
-	def generate_slug(slug)
-		slug + "-" + Randgen.last_name.downcase
-	end
-
 	def update_slug
-		slug = self.name.parameterize
-
-		trySlug = slug
-		while slug_taken(trySlug)
-			trySlug = generate_slug(slug)
-		end
-
-		self.slug = trySlug
+		self.slug = self.name.parameterize
 		nil
-	end
-
-	def slug_taken(slug)
-		klub = Klub.unscoped.where(slug: slug).first
-		return false unless klub
-		return false if klub.id == self.id
-		true
 	end
 
   def has_address?
