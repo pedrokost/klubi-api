@@ -17,23 +17,27 @@ module Api
       end
 
       def create
-        @klub = Klub.new(new_klub_params.except(:editor))
-        @klub.editor_emails << new_klub_params[:editor]
-        @klub.save!
-        @klub.send_review_notification
-        @klub.send_thanks_notification new_klub_params[:editor] if new_klub_params[:editor]
-        render nothing: true, status: :accepted
+        klub = Klub.new(new_klub_params.except(:editor))
+        klub.editor_emails << new_klub_params[:editor]
+
+        head 403 and return unless klub.valid?
+
+        klub.save!
+        klub.send_review_notification
+        klub.send_thanks_notification new_klub_params[:editor] if new_klub_params[:editor]
+        render json: klub, status: :accepted
 
         # TODO: impelement error handling
         # https://blog.codeship.com/the-json-api-spec/
       end
 
       def update
-        klub = Klub.completed.find_by(slug: params[:id])
+        klub = Klub.find_by(slug: params[:id])
         updates = klub.create_updates update_klub_params
         klub.send_updates_notification(updates)
         klub.send_confirm_notification(update_klub_params[:editor], updates) if update_klub_params[:editor]
-        render nothing: true, status: :accepted
+
+        render json: 'null', status: :accepted
       end
 
       def show

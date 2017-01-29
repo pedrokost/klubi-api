@@ -42,6 +42,7 @@ FactoryGirl.define do
     factory :complete_klub_branch do
       latitude 12.25566
       longitude 45.25566
+      categories ['fitnes']
       verified true
       association :parent, factory: :complete_klub
     end

@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2016-11-27 15:42:50
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-01-14 18:17:11
+# @Last Modified time: 2017-01-29 10:55:07
 
 
 require 'rails_helper'
@@ -11,8 +11,8 @@ RSpec.describe SendUpdateAcceptedEmails do
 
   subject { SendUpdateAcceptedEmails.new }
 
-  let(:klub1) { create(:klub) }
-  let(:klub2) { create(:klub) }
+  let(:klub1) { create(:klub, categories: ['karate']) }
+  let(:klub2) { create(:klub, categories: ['karate']) }
 
   let!(:update1) { create(:update, updatable: klub1, status: :accepted, field: 'name', newvalue: 'Pear', editor_email: 'first@editor.com', acceptance_email_sent: false) }
   let!(:update2) { create(:update, updatable: klub1, status: :unverified, field: 'address', newvalue: 'The address', editor_email: 'first@editor.com', acceptance_email_sent: false) }

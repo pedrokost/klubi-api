@@ -118,19 +118,19 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
     it "should send an email to admin" do
       expect_any_instance_of(Klub).to receive(:send_review_notification)
 
-      post :create, klub: {name: "Fitnes Maribor"}
+      post :create, klub: {name: "Fitnes Maribor", categories: ['football']}
     end
 
     it "should send an email to the submitter" do
       expect_any_instance_of(Klub).to receive(:send_thanks_notification)
 
-      post :create, klub: { name: "Qien eres?", editor: 'joe@doe.com' }
+      post :create, klub: { name: "Qien eres?", editor: 'joe@doe.com', categories: ['football'] }
     end
 
     it "should not send thanks email if no submitter" do
       expect_any_instance_of(Klub).not_to receive(:send_thanks_notification)
 
-      post :create, klub: { name: "Qien eres?" }
+      post :create, klub: { name: "Qien eres?", categories: ['football'] }
     end
 
     it "should accept categories and other parameters" do
@@ -145,7 +145,7 @@ RSpec.describe Api::V1::KlubsController, :type => :controller do
 
     it "should create a new unverified klub" do
       expect {
-        post :create, klub: { name: 'Fitnes Mariborcan 22' }
+        post :create, klub: { name: 'Fitnes Mariborcan 22', categories: ['football'] }
       }.to change(Klub.unscoped, :count).by 1
 
       klub = Klub.unscoped.last

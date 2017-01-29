@@ -122,7 +122,8 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       post :create, data: {
         type: 'klubs',
         attributes: {
-          name: "Fitnes Maribor"
+          name: "Fitnes Maribor",
+          categories: ['football']
         }
       }
     end
@@ -134,7 +135,8 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
         type: 'klubs',
         attributes: {
           name: "Qien eres?",
-          editor: 'joe@doe.com'
+          editor: 'joe@doe.com',
+          categories: ['football']
         }
       }
     end
@@ -145,7 +147,8 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       post :create, data: {
         type: 'klubs',
         attributes: {
-          name: 'Quien eres?'
+          name: 'Quien eres?',
+          categories: ['football']
         }
       }
     end
@@ -169,7 +172,8 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
         post :create, data: {
           type: 'klubs',
           attributes: {
-            name: 'Fitnes Mariborcan 22'
+            name: 'Fitnes Mariborcan 22',
+          categories: ['football']
           }
         }
       }.to change(Klub.unscoped, :count).by 1
@@ -182,22 +186,40 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       post :create, data: {
         type: 'klubs',
         attributes: {
-          name: 'Fitnes'
+          name: 'Fitnes',
+          categories: ['football']
         }
       }
 
       expect(response.status).to eq 202
     end
 
-    it "should respond with no content" do
+    it 'should not create klubs without category' do
+      expect {
+        post :create, data: {
+          type: 'klubs',
+          attributes: {
+            name: 'Fitnes',
+            categories: nil
+          }
+        }
+      }.not_to change(Klub.unscoped, :count)
+
+      expect(response.status).to eq 403
+    end
+
+    it "should respond with created klub" do
       post :create, data: {
         type: 'klubs',
         attributes: {
-          name: 'Fitnes'
+          name: 'Fitnes',
+          categories: ['football']
         }
       }
 
-      expect(response.body).to eq ""
+      expect(json_response[:data][:id]).to be_truthy
+      expect(json_response[:data][:attributes][:categories]).to match(['football'])
+      expect(response).to match_response_schema('v2/klub')
     end
   end
 

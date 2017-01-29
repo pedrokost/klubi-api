@@ -3,7 +3,7 @@ require 'pry'
 
 RSpec.describe Klub, :type => :model do
 
-  let(:klub) { build(:klub, name: 'Karate klub Skocjan -- ', email: 'owner@test.com') }
+  let(:klub) { build(:klub, name: 'Karate klub Skocjan -- ', email: 'owner@test.com', categories: ['football']) }
 
   subject { klub }
 
@@ -13,6 +13,11 @@ RSpec.describe Klub, :type => :model do
   it "requires the name" do
   	klub.name = nil
   	expect(klub).not_to be_valid
+  end
+
+  it "should require categories" do
+    klub.categories = []
+    expect(klub.valid?).to be_falsy
   end
 
   it "should support multiple editors" do
@@ -64,7 +69,7 @@ RSpec.describe Klub, :type => :model do
 
       expect(Randgen).to receive(:last_name).and_return('2')
 
-      another_klub = create(:klub, name: klub.name)
+      another_klub = create(:klub, name: klub.name, categories: ['karate'])
     	expect(another_klub.slug).to eq('karate-klub-skocjan-2')
       expect(another_klub.slug).not_to eq('karate-klub-skocjan 2')
     end
@@ -72,10 +77,10 @@ RSpec.describe Klub, :type => :model do
     it "should make sure there is no space characters in the slug" do
       klub.save
       expect(klub.persisted?).to be true
-      another_klub = create(:klub, name: klub.name)
+      another_klub = create(:klub, name: klub.name, categories: ['karate'])
       expect(another_klub.slug).not_to eq(klub.slug)
       expect(another_klub.slug).not_to be_nil
-      yet_another_klub = create(:klub, name: klub.name)
+      yet_another_klub = create(:klub, name: klub.name, categories: ['karate'])
       expect(yet_another_klub.slug).not_to eq(klub.slug)
       expect(yet_another_klub.slug).not_to eq(another_klub.slug)
     end
@@ -99,7 +104,7 @@ RSpec.describe Klub, :type => :model do
   describe "branches" do
     it "touches the parent when branch is edited" do
       expect {
-        create(:klub_branch, parent: klub)
+        create(:klub_branch, parent: klub, categories: ['karate'])
       }.to change(klub, :updated_at).from(klub.updated_at)
     end
   end
@@ -221,7 +226,7 @@ RSpec.describe Klub, :type => :model do
     context "on create" do
 
       describe "address provided" do
-        let(:klub) { build(:klub, address: "Trzaska 25, 1000 Ljubljana") }
+        let(:klub) { build(:klub, address: "Trzaska 25, 1000 Ljubljana", categories: ['karate']) }
 
         it "should compute latlong" do
           klub.save
@@ -258,7 +263,7 @@ RSpec.describe Klub, :type => :model do
 
       describe "address not provided" do
         before do
-          klub = create(:klub, address: "")
+          klub = create(:klub, address: "", categories: ['karate'])
         end
         it "shoud not run if no address" do
           # TODO: assert geocoder not run
@@ -270,7 +275,7 @@ RSpec.describe Klub, :type => :model do
     end
 
     context "on save" do
-      let(:klub) { create(:klub, address: "Trzaska 25, 1000 Ljubljana") }
+      let(:klub) { create(:klub, address: "Trzaska 25, 1000 Ljubljana", categories: ['karate']) }
       it "should not run" do
         expect(klub.latitude).to eq 46.0448994
         expect(klub.longitude).to eq 14.4892307

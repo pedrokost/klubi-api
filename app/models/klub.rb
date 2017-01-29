@@ -12,6 +12,7 @@ class Klub < ActiveRecord::Base
 
 	validates :slug, uniqueness: true
 	validates :name, presence: true
+  validates :categories, presence: true
 
 	scope :completed, -> { where(complete: true) }
 
