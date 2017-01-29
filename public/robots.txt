@@ -6,4 +6,4 @@
 
 User-agent: *
 Disallow:
-Sitemap: https://s3-eu-west-1.amazonaws.com/zatresi-si/sitemaps/sitemap.xml.gz
+Sitemap: http://www.zatresi.si/sitemaps/sitemap.xml.gz

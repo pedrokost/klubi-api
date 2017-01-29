@@ -13,6 +13,9 @@ class ApplicationController < ActionController::API
     render text: html
   end
 
+  def sitemap
+    redirect_to 'https://s3-eu-west-1.amazonaws.com/zatresi-si/sitemaps/sitemap.xml.gz'
+  end
 
   def heartbeat
     render 'application/heartbeat', :formats=>[:html]

@@ -49,6 +49,8 @@ Rails.application.routes.draw do
 
     get '/heartbeat' => 'application#heartbeat'
 
+    get '/sitemaps/sitemap.xml.gz' => 'application#sitemap'
+
     root 'application#index'
 
     get '*path' => 'application#index'
