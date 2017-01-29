@@ -1779,7 +1779,7 @@ td {
   font-variant-numeric: lining-nums, tabular-nums;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  /*white-space: nowrap;*/
   word-wrap: normal;
 }
 
