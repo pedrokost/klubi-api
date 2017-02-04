@@ -14,7 +14,7 @@ class ApplicationController < ActionController::API
   end
 
   def sitemap
-    redirect_to 'https://s3-eu-west-1.amazonaws.com/zatresi-si/sitemaps/sitemap.xml.gz'
+    redirect_to 'https://s3-eu-west-1.amazonaws.com/www.klubi.si/sitemaps/sitemap.xml.gz'
   end
 
   def heartbeat
@@ -68,7 +68,7 @@ private
   end
 
   def bootstrap_index(index_key)
-    index_key ||= 'zatresi:current-content'
+    index_key ||= 'klubi:current-content'
     REDIS.get(index_key)
   end
 

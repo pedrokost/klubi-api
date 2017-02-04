@@ -6,4 +6,4 @@
 
 User-agent: *
 Disallow:
-Sitemap: http://www.zatresi.si/sitemaps/sitemap.xml.gz
+Sitemap: http://www.klubi.si/sitemaps/sitemap.xml.gz

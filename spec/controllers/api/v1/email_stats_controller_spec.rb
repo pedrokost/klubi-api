@@ -6,7 +6,7 @@ RSpec.describe Api::V1::EmailStatsController, type: :controller do
     describe "valid authenticity" do
       let(:valid_request_params) {
         {
-          domain: 'mg.zatresi.si',
+          domain: 'mg.klubi.si',
           recipient: 'alice@example.com',
           event: 'delivered',
           timestamp: '1484415909',
@@ -28,7 +28,7 @@ RSpec.describe Api::V1::EmailStatsController, type: :controller do
     describe "invalid authenticity" do
       let(:invalid_request_params) {
         {
-          domain: 'mg.zatresi.si',
+          domain: 'mg.klubi.si',
           recipient: 'alice@example.com',
           event: 'delivered',
           timestamp: '1484415909',

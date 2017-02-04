@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module ZatresiApi
+module KlubiApi
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -26,7 +26,7 @@ module ZatresiApi
 
     config.middleware.insert_before ActionDispatch::Static, Rack::Cors, logger: Rails.logger do
       allow do
-        origins 'app.local:4200' , 'zatresi.si', 'dev.zatresi.si', 'www.zatresi.si', 'd3s8w0mc0h7w8s.cloudfront.net', '*'
+        origins 'app.local:4200' , 'klubi.si', 'dev.klubi.si', 'www.klubi.si', 'd2ne2albfoowfo.cloudfront.net', '*'
 
         resource '*',
           :headers => :any,
@@ -38,9 +38,10 @@ module ZatresiApi
     config.middleware.insert_before(Rack::Cors, Rack::Rewrite) do
 
       # Redirect to the www version of the domain
-      r301 %r{.*}, "http://www.zatresi.si$&", :if => Proc.new {|rack_env|
-        rack_env['SERVER_NAME'] == "zatresi.si"
+      r301 %r{.*}, "http://www.klubi.si$&", :if => Proc.new {|rack_env|
+        rack_env['SERVER_NAME'] == "klubi.si"
       }
+
     end
 
     config.action_dispatch.default_headers = {

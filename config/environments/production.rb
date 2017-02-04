@@ -59,7 +59,7 @@ Rails.application.configure do
                        :password => ENV["MEMCACHIER_PASSWORD"],
                        :failover => true,
                        :socket_timeout => 1.5,
-                       :namespace => 'zatresiapi',
+                       :namespace => 'klubiapi',
                        :compress => true,
                        :socket_failure_delay => 0.2
                       }
@@ -96,5 +96,5 @@ Rails.application.configure do
   # For prerendering the JS website
   config.middleware.use Rack::Prerender
 
-  config.action_mailer.default_url_options = { :host => 'www.zatresi.si' }
+  config.action_mailer.default_url_options = { :host => 'www.klubi.si' }
 end

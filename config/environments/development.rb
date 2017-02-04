@@ -28,7 +28,7 @@ Rails.application.configure do
   config.active_record.migration_error = :page_load
 
   config.cache_store = :dalli_store, nil,
-  { :namespace => 'zatresiapi', :expires_in => 1.hour, :compress => true }
+  { :namespace => 'klubiapi', :expires_in => 1.hour, :compress => true }
 
 
 

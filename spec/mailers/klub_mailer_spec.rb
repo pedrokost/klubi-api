@@ -11,11 +11,11 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it 'renders the receiver email' do
-      expect(mail.to).to eql(['pedro@zatresi.si'])
+      expect(mail.to).to eql(['pedro@klubi.si'])
     end
 
     it 'renders the sender email' do
-      expect(mail.from).to eql(['pedro@zatresi.si'])
+      expect(mail.from).to eql(['pedro@klubi.si'])
     end
 
     it 'sends submitter email' do
@@ -51,8 +51,8 @@ RSpec.describe KlubMailer, :type => :mailer do
       expect(mail.to).to eql(['submitter@email.com'])
     end
 
-    it 'is sent by the zatresi bot' do
-      expect(mail.from).to eql(['peter@zatresi.si'])
+    it 'is sent by the klubi bot' do
+      expect(mail.from).to eql(['peter@klubi.si'])
     end
 
     it 'send klubs data' do
@@ -74,11 +74,11 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it 'renders the receiver email' do
-      expect(mail.to).to eql(['pedro@zatresi.si'])
+      expect(mail.to).to eql(['pedro@klubi.si'])
     end
 
     it 'renders the sender email' do
-      expect(mail.from).to eql(['pedro@zatresi.si'])
+      expect(mail.from).to eql(['pedro@klubi.si'])
     end
 
     it 'sends submitter email' do
@@ -110,7 +110,7 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it "is sent from peter bot" do
-      expect(mail.from).to eql(['peter@zatresi.si'])
+      expect(mail.from).to eql(['peter@klubi.si'])
     end
 
     it "renders the subject" do
@@ -118,11 +118,11 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it "contains link to the klub" do
-      expect(mail.body.encoded).to match("http://www.zatresi.si/fitnes/#{klub.url_slug}/")
+      expect(mail.body.encoded).to match("http://www.klubi.si/fitnes/#{klub.url_slug}/")
     end
 
     it "contains link to edit the klub" do
-      expect(mail.body.encoded).to match("http://www.zatresi.si/fitnes/#{klub.url_slug}/uredi")
+      expect(mail.body.encoded).to match("http://www.klubi.si/fitnes/#{klub.url_slug}/uredi")
     end
 
     it "contains the list of updates" do
@@ -159,7 +159,7 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it "is sent from peter bot" do
-      expect(mail.from).to eql(['peter@zatresi.si'])
+      expect(mail.from).to eql(['peter@klubi.si'])
     end
 
     it "renders the subject" do
@@ -167,11 +167,11 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it "contains link to the klub" do
-      expect(mail.body.encoded).to match("http://www.zatresi.si/fitnes/#{klub.url_slug}/")
+      expect(mail.body.encoded).to match("http://www.klubi.si/fitnes/#{klub.url_slug}/")
     end
 
     it "contains link to edit the klub" do
-      expect(mail.body.encoded).to match("http://www.zatresi.si/fitnes/#{klub.url_slug}/uredi")
+      expect(mail.body.encoded).to match("http://www.klubi.si/fitnes/#{klub.url_slug}/uredi")
     end
 
     it "contains the list of updates" do
@@ -206,11 +206,11 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it "is sent from peter bot" do
-      expect(mail.from).to eql(['peter@zatresi.si'])
+      expect(mail.from).to eql(['peter@klubi.si'])
     end
 
-    it "is bbc's to bcc@zatresi.si" do
-      expect(mail.bcc).to eql(['bcc@zatresi.si'])
+    it "is bbc's to bcc@klubi.si" do
+      expect(mail.bcc).to eql(['bcc@klubi.si'])
     end
 
     it "renders the correct subject" do
@@ -218,7 +218,7 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it "contains link to the klub's edit page" do
-      expect(mail.body.encoded).to match("http://www.zatresi.si/fitnes/#{klub.url_slug}/")
+      expect(mail.body.encoded).to match("http://www.klubi.si/fitnes/#{klub.url_slug}/")
     end
 
     it "contains the the klub data" do

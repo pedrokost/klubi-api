@@ -39,5 +39,5 @@ Rails.application.configure do
 
   config.cache_store = :null_store
 
-  config.action_mailer.default_url_options = { :host => 'www.zatresi.si' }
+  config.action_mailer.default_url_options = { :host => 'www.klubi.si' }
 end

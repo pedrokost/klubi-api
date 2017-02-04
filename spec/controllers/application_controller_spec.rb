@@ -13,7 +13,7 @@ RSpec.describe ApplicationController, :type => :controller do
   describe "GET #index" do
     before do
       returns = [
-        '<html>zatresi</html>'
+        '<html>klubi</html>'
       ]
       expect(REDIS).to receive(:get).and_return(*returns)
       get :index
@@ -30,10 +30,10 @@ RSpec.describe ApplicationController, :type => :controller do
     context "index_key provided" do
       before do
         returns = [
-          '<html>zatresi12345</html>',
+          '<html>klubi12345</html>',
         ]
-        expect(REDIS).to receive(:get).with('zatresi:12345').and_return(*returns)
-        get :index, index_key: 'zatresi:12345'
+        expect(REDIS).to receive(:get).with('klubi:12345').and_return(*returns)
+        get :index, index_key: 'klubi:12345'
       end
 
       it "should return correct index key" do
