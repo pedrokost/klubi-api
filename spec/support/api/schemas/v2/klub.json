@@ -40,7 +40,8 @@
             "latitude",
             "longitude",
             "notes",
-            "categories"
+            "categories",
+            "verified"
           ],
           "properties": {
             "name" :      { "type": "string" },
@@ -52,6 +53,7 @@
             "latitude" :  { "type": ["string", "null"] },
             "longitude" : { "type": ["string", "null"] },
             "facebook-url" : { "type": ["string", "null"] },
+            "verified":   { "type": "boolean" },
             "notes":      {"type": ["string", "null"] },
             "categories": {
               "type": "array",
