@@ -31,15 +31,9 @@ Rails.application.routes.draw do
 
   constraints subdomain: 'api' do
     scope module: 'api' do
-      scope module: :v2, constraints: ApiConstraints.new(version: 2, default: false) do
+      scope module: :v2, constraints: ApiConstraints.new(version: 2, default: true) do
         resources :klubs, only: [:index, :create, :update, :show]
 
-        post 'email_stats/webhook' => 'email_stats#webhook'
-      end
-
-      scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
-        resources :klubs, only: [:index, :create, :update]
-        get 'klubs/:slug' => 'klubs#find_by_slug'
         post 'email_stats/webhook' => 'email_stats#webhook'
       end
     end
