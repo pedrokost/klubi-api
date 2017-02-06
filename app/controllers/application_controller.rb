@@ -14,7 +14,7 @@ class ApplicationController < ActionController::API
   end
 
   def sitemap
-    redirect_to 'https://s3-eu-west-1.amazonaws.com/www.klubi.si/sitemaps/sitemap.xml.gz'
+    redirect_to 'https://s3.eu-central-1.amazonaws.com/www.klubi.si/sitemaps/sitemap.xml.gz'
   end
 
   def heartbeat
