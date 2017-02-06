@@ -42,6 +42,15 @@ module KlubiApi
         ["klubi.si", "www.zatresi.si", "zatresi.si"].include? rack_env['SERVER_NAME']
       }
 
+      # Redirect the admin from old domain to the new domain
+      r301 %r{.*}, "http://admin.klubi.si$&", :if => Proc.new {|rack_env|
+        ["admin.zatresi.si"].include? rack_env['SERVER_NAME']
+      }
+
+      r301 %r{.*}, "http://api.klubi.si$&", :if => Proc.new {|rack_env|
+        ["api.zatresi.si"].include? rack_env['SERVER_NAME']
+      }
+
     end
 
     config.action_dispatch.default_headers = {
