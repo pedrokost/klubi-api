@@ -39,7 +39,7 @@ module KlubiApi
 
       # Redirect to the www version of the domain
       r301 %r{.*}, "http://www.klubi.si$&", :if => Proc.new {|rack_env|
-        rack_env['SERVER_NAME'] == "klubi.si"
+        ["klubi.si", "www.zatresi.si", "zatresi.si"].include? rack_env['SERVER_NAME']
       }
 
     end
