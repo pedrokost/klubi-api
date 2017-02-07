@@ -21,7 +21,7 @@ Pozdravljeni, <br>
     </li>
     <li>
       <%= Klub.human_attribute_name('address') %>: <em><%= @klub.address.blank? ? '<b>ni podatka</b>'.html_safe : @klub.address %></em> <br>
-      <%= image_tag @klub.static_map_url(width: 300, height: 200) unless @klub.address.blank? %>
+      <%= image_tag @klub.static_map_url(width: 300, height: 200), alt: @klub.name unless @klub.address.blank? %>
     </li>
   </ul>
 </p>

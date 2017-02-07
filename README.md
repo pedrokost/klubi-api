@@ -34,3 +34,8 @@ rake sitemap:refresh:no_ping
 ```
 foreman run rake updates:send_emails
 ```
+
+2. Daily: Send email to request data verification to klubs
+```
+foreman run rake klubs:send_emails
+```

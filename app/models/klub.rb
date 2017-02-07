@@ -101,7 +101,7 @@ class Klub < ActiveRecord::Base
   end
 
   def static_map_url(width: 400, height: 300)
-    "https://maps.googleapis.com/maps/api/staticmap?center=#{self.latitude},#{self.longitude}&zoom=15&size=#{width}x#{height}&maptype=roadmap&markers=color:blue%7Clabel:%7C#{self.latitude},#{self.longitude}&key=#{ENV['GOOGLE_STATIC_MAPS_SERVER_API_KEY']}".freeze
+    "https://maps.googleapis.com/maps/api/staticmap?center=#{self.latitude},#{self.longitude}&zoom=15&size=#{width}x#{height}&maptype=roadmap&markers=color:blue%7Clabel:%7C#{self.latitude},#{self.longitude}&key=#{ENV['GOOGLE_STATIC_MAPS_SERVER_API_KEY']}".html_safe.freeze
   end
 
 private
