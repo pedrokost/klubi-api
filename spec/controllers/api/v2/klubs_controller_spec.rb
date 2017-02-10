@@ -81,6 +81,25 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
           expect{get :index, category: nil}.to raise_error(ActionController::ParameterMissing)
         end
       end
+
+      context "unsupporte cattegory" do
+        before do
+          expect(klub2.categories).to include 'fitnes' # expect at least one match
+          allow(ENV).to receive(:[]).and_call_original
+          expect(ENV).to receive(:[]).with("SUPPORTED_CATEGORIES").and_return('whatever,notit')
+          get :index, category: 'fitnes'
+        end
+
+        it "should return 200" do
+          expect(response).to be_success
+        end
+
+        it "should return an empty result set" do
+          klubs = json_response
+          expect(response).to match_response_schema("v2/klubs")
+          expect(klubs[:data].length).to eq 0
+        end
+      end
     end
   end
 
@@ -111,6 +130,25 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       expect(response).to match_response_schema('v2/klub')
       klub = json_response[:data]
       expect(klub[:relationships][:parent][:data][:id]).to eq klub1.url_slug
+    end
+
+    context "unsupported cattegory" do
+      before do
+        allow(ENV).to receive(:[]).and_call_original
+        allow(ENV).to receive(:[]).with("SUPPORTED_CATEGORIES").and_return('whatever,notit')
+        get :show, id: klub1.url_slug
+      end
+
+      it "should return 200" do
+        expect(response).to be_success
+      end
+
+      it "should return return the klub" do
+        klubs = json_response
+        expect(response).to match_response_schema("v2/klub")
+        klub = json_response[:data]
+        expect(klub[:id]).to eq klub1.url_slug
+      end
     end
   end
 

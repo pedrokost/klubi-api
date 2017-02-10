@@ -5,6 +5,9 @@ module Api
       before_action :select_ams_adapter
 
       def index
+
+        render json: [] and return unless supported_categories.include? category_params
+
         stats = Klub.select('count(*) as count, max(updated_at) as last_update_at').completed.where("? = ANY (categories)", category_params).order(nil).first
 
         data = Rails.cache.fetch("v2/klubs/#{category_params}-#{stats.count}-#{stats.last_update_at.to_i}") do
@@ -54,6 +57,10 @@ module Api
 
       def category_params
         params.require(:category)
+      end
+
+      def supported_categories
+        ENV['SUPPORTED_CATEGORIES'].split(',')
       end
 
       def new_klub_params

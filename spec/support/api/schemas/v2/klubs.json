@@ -73,7 +73,7 @@
   "properties": {
     "data": {
       "type": "array",
-      "items": [{ "$ref": "#/definitions/klub" }]
+      "items": { "type": [{ "$ref": "#/definitions/klub" }, "null"] }
     }
   }
 }
