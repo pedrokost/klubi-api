@@ -1,21 +1,15 @@
-Pozdravljeni,
-
-<br>
+<p>Pozdravljeni,</p>
 
 <p>
-  Hvala lepa za posredovanje informacije o klubu <em><%= @klub.name %></em>. <br>
+  Rad bi se vam zahvalil za dodani klub <em><%= @klub.name %></em>. Klub si lahko ogledate <%= link_to @klub.spa_url do %> s klikom na to povezavo<% end %>.
+</p>
 
-  Poslali ste naslednje podatke:
+<p>
+  Poslane podatke bomo ročno pregledali in potrdili, kar lahko traja nekaj dni. Ko se postopek preverjanja zaključi, se bo klub prikazal tudi na interaktivnem zemljevidu in seznamu klubov na <%= link_to 'www.klubi.si', ENV['WEBSITE_FULL_HOST'] %>.
+</p>
 
-  <dl>
-  <% %w(name address website phone email categories facebook_url).each do |key| %>
-    <dt><%= Klub.human_attribute_name(key) %>:</dt>
-    <dd><%= @klub.send(key).blank? ? '...' : @klub.send(key) %></dd>
-  <% end %>
-
-<p>Poslane podatke bomo pregledali in nato posodobili podatke na <%= link_to "spletni strani", ENV["WEBSITE_FULL_HOST"] %>.</p>
-
-<p>Najlepša hvala za novi klub ✌(-‿-)✌!</p>
+<p>Še enkrat najlepša hvala za novi klub ✌(-‿-)✌!</p>
 
 Lep pozdrav, <br>
-<%= ENV['DEFAULT_BOT_NAME'] || 'Ekipa klubi.si' %>
+<%= ENV['DEFAULT_BOT_NAME'] %> <br>
+<%= link_to 'www.klubi.si', ENV['WEBSITE_FULL_HOST'] %>

@@ -55,12 +55,12 @@ RSpec.describe KlubMailer, :type => :mailer do
       expect(mail.from).to eql(['peter@klubi.si'])
     end
 
-    it 'send klubs data' do
+    it 'send klubs name' do
       expect(mail.body.encoded).to match('My klub')
     end
 
-    it 'send klub\'s categories' do
-      expect(mail.body.encoded).to match('fitnes.*zumba')
+    it 'sends a link to the klub' do
+      expect(mail.body.encoded).to match(klub.spa_url)
     end
   end
 
