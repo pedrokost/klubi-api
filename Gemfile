@@ -26,8 +26,8 @@ gem 'json_spec', '~>1.1.4'
 
 gem 'newrelic_rpm', '~> 3.12.0.288'
 
+gem 'pry-rails'
 group :development do
-  gem 'pry-rails'
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
   gem 'pry-byebug'
