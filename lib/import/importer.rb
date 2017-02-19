@@ -17,7 +17,8 @@ module Import
       @verbose = verbose
     end
 
-    def run
+    def run(do_not_merge: [])
+      @do_not_merge = do_not_merge
       p @transformer.description if @verbose
       raw_data = @datasource.fetch
       clean_data = @transformer.transform raw_data
@@ -39,32 +40,39 @@ module Import
       tbl = Klub.arel_table
       existing_klubs = Klub.unscoped.where(tbl[:name].matches(klubdata[:name]))
 
-      if existing_klubs.empty?
-        Klub.new(klubdata).save!
-        return
-      end
-
       klub = most_similar_klub(klubdata, existing_klubs)
-      pp '=' * 60 if @verbose
-      p 'Existing klub:' if @verbose
-      pp klub.as_json.symbolize_keys if @verbose
-      p 'New data:' if @verbose
-      pp klubdata.as_json.symbolize_keys if @verbose
 
-      h = HighLine.new
-      selection = Resolution.new
-      h.choose do |menu|
-        menu.prompt = "Merge data into existing klub or Create new klub?" if @verbose
-        menu.choice(:merge) { selection = Resolution.new(:merge) }
-        menu.choices(:create_new) { selection = Resolution.new(:create_new) }
-      end
-      case selection.resolution
-      when :merge
-          klub.merge_with(klubdata)
+      if not klub
+        klub = Klub.new(klubdata)
+        p 'New klub:' if @verbose
+        pp klub.as_json.symbolize_keys if @verbose
+      else
+        pp '=' * 60 if @verbose
+        p 'Existing klub:' if @verbose
+        pp klub.as_json.symbolize_keys if @verbose
+        p 'New data:' if @verbose
+        pp klubdata.as_json.symbolize_keys if @verbose
+
+        h = HighLine.new
+        selection = Resolution.new
+        h.choose do |menu|
+          menu.prompt = "Merge data into existing klub or Create new klub?" if @verbose
+          menu.choice(:merge) { selection = Resolution.new(:merge) }
+          menu.choices(:create_new) { selection = Resolution.new(:create_new) }
+          menu.choices(:skip) { selection = Resolution.new(:skip) }
+        end
+        case selection.resolution
+        when :merge
+          require 'pry'; binding.pry unless Rails.env.test? # let me adjust stuff before merging
+          klub.merge_with(klubdata, skip: @do_not_merge)
           h.say("DONE merging klubs' data") if @verbose
-      when :create_new
+        when :create_new
           klub = Klub.new(klubdata)
           h.say("DONE creating new klub") if @verbose
+        when :skip
+          h.say('SKIPPING klub')
+          return
+        end
       end
 
       klub.save!

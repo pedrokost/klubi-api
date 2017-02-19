@@ -26,9 +26,9 @@ class Klub < ActiveRecord::Base
   end
   after_create :geocode, :if => :has_address?, :unless => :has_lat_lng_town_and_address?
 
-  def merge_with(klub_attrs)
+  def merge_with(klub_attrs, skip: [])
 
-    basic_attrs = [:name, :address, :town, :phone, :email, :website, :facebook_url]
+    basic_attrs = [:name, :address, :town, :phone, :email, :website, :facebook_url] - skip
     array_attrs = [:categories]
 
     klub_attrs.each do |key, val|
