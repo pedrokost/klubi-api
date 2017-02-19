@@ -17,7 +17,7 @@ class Klub < ActiveRecord::Base
 
   geocoded_by :address do |obj,results|
     if geo = results.first
-      obj.town = geo.city
+      obj.town = geo.city || geo.state
       obj.address = geo.formatted_address
       obj.latitude = geo.latitude
       obj.longitude = geo.longitude

@@ -28,7 +28,6 @@ module Import
         clean_data << klubdata.symbolize_keys
       end
 
-      require 'pry'; binding.pry
       clean_data = clean_data.uniq
     end
   end
