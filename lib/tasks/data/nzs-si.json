@@ -1,0 +1,2282 @@
+[
+  [
+    "Celje",
+    "Brežice - Terme Čatež",
+    "Cesta bratov Milavcev 18",
+    "8250",
+    "Brežice",
+    "nkbrezice.1919@gmail.com",
+    "http://www.nkbrezice1919.com",
+    "2013"
+  ],
+  [
+    "Celje",
+    "Celje",
+    "Opekarniška cesta 15a",
+    "3000",
+    "Celje",
+    "info@nk-celje.si",
+    "http://www.nkcelje.si",
+    "1919"
+  ],
+  [
+    "Celje",
+    "DNŠ MU Šentjur",
+    "Cesta Miloša Zidanška 28",
+    "3230",
+    "Šentjur",
+    "klemen.grdina@siol.net",
+    "http://www.nksentjur.si",
+    "2000"
+  ],
+  [
+    "Celje",
+    "Dravinja",
+    "Dobrava pri Konjicah 2",
+    "3210",
+    "Slovenske Konjice",
+    "nd.dravinja@gmail.com",
+    "http://www.nd-dravinja.si",
+    "1934"
+  ],
+  [
+    "Celje",
+    "Hrastnik",
+    "Log 3",
+    "1430",
+    "Hrastnik",
+    "suzanase@gmail.com",
+    "http://www.nogometni-klub-hrastnik.si",
+    "1924. darko.sergan@siol.com"
+  ],
+  [
+    "Celje",
+    "Krško",
+    "Cesta krških žrtev 130a",
+    "8270",
+    "Krško",
+    "jozica.pirc@nkkrsko.com",
+    "http://www.nkkrsko.com",
+    "1922"
+  ],
+  [
+    "Celje",
+    "Laško",
+    "Huda jama 1",
+    "3270",
+    "Laško",
+    "tomaz.novak@komunala-lasko.si",
+    "http://www.nk-lasko.si",
+    "1993"
+  ],
+  [
+    "Celje",
+    "Ljubno",
+    "Cesta v Rastke 12",
+    "3333",
+    "Ljubno ob Savinji",
+    "nkljubno@gmail.com",
+    null,
+    "1997"
+  ],
+  [
+    "Celje",
+    "Mons Claudius",
+    "Ptujska cesta 30",
+    "3252",
+    "Rogatec",
+    "monsclaudius@gmail.com",
+    "http://www.mons-claudius.si",
+    "1992"
+  ],
+  [
+    "Celje",
+    "ND Mozirje",
+    "Cesta v Loke 2",
+    "3330",
+    "Mozirje",
+    "nd.mozirje@gmail.com",
+    null,
+    "2007"
+  ],
+  [
+    "Celje",
+    "NK Imeno Kozje",
+    "Kozje 132",
+    "3260",
+    "Kozje",
+    "danijel.stus@siol.net",
+    null,
+    "1976"
+  ],
+  [
+    "Celje",
+    "Radeče",
+    "Šolska pot 7",
+    "1433",
+    "Radeče",
+    "info@nk-radece.si",
+    "http://www.nk-radece.si",
+    "1930"
+  ],
+  [
+    "Celje",
+    "Rogaška",
+    "Sotelska cesta 55",
+    "3250",
+    "Rogaška Slatina",
+    "potocnik.robert@yahoo.com",
+    null,
+    "1946"
+  ],
+  [
+    "Celje",
+    "Rudar Velenje",
+    "Cesta na jezero 7",
+    "3320",
+    "Velenje",
+    "info@nkrudarvelenje.com",
+    "http://www.nkrudarvelenje.com",
+    "1948"
+  ],
+  [
+    "Celje",
+    "Šampion",
+    "Valvazorjeva ulica 12",
+    "3000",
+    "Celje",
+    "nksampion@gmail.com",
+    "http://www.sampion.si",
+    "1999. ksenija.zilnik@gmail.com"
+  ],
+  [
+    "Celje",
+    "ŠD Kovinar Štore",
+    "Udarniška 10",
+    "3220",
+    "Štore",
+    "kovinar.store@siol.net",
+    "http://www.kovinar-store.si",
+    "1930"
+  ],
+  [
+    "Celje",
+    "Šmarje pri Jelšah",
+    "Kolodvorska ulica 11",
+    "3240",
+    "Šmarje pri Jelšah",
+    "nksmarjeprijelsah@gmail.com",
+    null,
+    "1942"
+  ],
+  [
+    "Celje",
+    "Šmartno 1928",
+    "Šmartno ob Paki 117",
+    "3327",
+    "Šmartno ob Paki",
+    "sdsmartno@gmail.com",
+    "http://www.nksmartno1928.si",
+    "2005"
+  ],
+  [
+    "Celje",
+    "Šoštanj",
+    "Metleče 3",
+    "3325",
+    "Šoštanj",
+    "nk.sostanj@gmail.com",
+    "http://www.nk-sostanj.si",
+    "1920"
+  ],
+  [
+    "Celje",
+    "Vojnik",
+    "Prušnikova ulica 12",
+    "3212",
+    "Vojnik",
+    "saso.hren@emo-ett.si",
+    null,
+    "2001"
+  ],
+  [
+    "Celje",
+    "Vransko",
+    "Vransko 24",
+    "3305",
+    "Vransko",
+    "nkvransko@gmail.com",
+    "http://www.nkvransko.si",
+    "1938"
+  ],
+  [
+    "Celje",
+    "Zreče",
+    "Šolska cesta 3",
+    "3214",
+    "Zreče",
+    "nk.zrece@siol.net",
+    null,
+    "1961"
+  ],
+  [
+    "Celje",
+    "Žalec",
+    "Aškerčeva 15",
+    "3310",
+    "Žalec",
+    "nkzalec@gmail.com",
+    "http://www.nk-zalec.com",
+    "1920"
+  ],
+  [
+    "Gorenjska",
+    "Alpina Žiri",
+    "Gasilska ulica 4",
+    "4226",
+    "Žiri",
+    "tomaz_vehar@t-2.net",
+    "http://www.nklub-ziri.si",
+    "1973"
+  ],
+  [
+    "Gorenjska",
+    "Bitnje",
+    "Zgornje Bitnje 253",
+    "4209",
+    "Žabnica",
+    "nk.bitnje@gmail.com",
+    "http://www.nk.bitnje.si",
+    "1983"
+  ],
+  [
+    "Gorenjska",
+    "Bled",
+    "Rečiška cesta 2",
+    "4260",
+    "Bled",
+    "nogometniklub.bled@gmail.com",
+    "http://www.nkbled.si",
+    "1938"
+  ],
+  [
+    "Gorenjska",
+    "Bohinj",
+    "Majhnova ulica 9",
+    "4264",
+    "Bohinjska Bistrica",
+    "majhnova1@gmail.com",
+    "http://www.nkbohinj.si",
+    "1999"
+  ],
+  [
+    "Gorenjska",
+    "Britof",
+    "Britof 28a",
+    "4000",
+    "Kranj",
+    "nkbritof@siol.net",
+    "http://www.nkbritof.com",
+    "1968"
+  ],
+  [
+    "Gorenjska",
+    "Društvo ljubiteljev nogometa",
+    "Srednja vas pri Šenčurju 30",
+    "4208",
+    "Šenčur",
+    "drustvoljubiteljevnogometa@gmail.com",
+    null,
+    "2008"
+  ],
+  [
+    "Gorenjska",
+    "Jesenice",
+    "Ledarska ulica 4",
+    "4270",
+    "Jesenice",
+    "nkjesenice@gmail.com",
+    "http://www.nkjesenice.si",
+    "1912"
+  ],
+  [
+    "Gorenjska",
+    "Ločan Škofja Loka",
+    "Pungert 25",
+    "4220",
+    "Škofja Loka",
+    "jemec4@siol.net",
+    null,
+    "1929"
+  ],
+  [
+    "Gorenjska",
+    "Naklo",
+    "Stara cesta 61",
+    "4202",
+    "Naklo",
+    "info@nknaklo.si",
+    "http://www.nknaklo.si",
+    "2010"
+  ],
+  [
+    "Gorenjska",
+    "Sava Kranj",
+    "Škofjeloška cesta 12",
+    "4000",
+    "Kranj",
+    "nksava@siol.net",
+    "http://www.nksava.si",
+    "1933"
+  ],
+  [
+    "Gorenjska",
+    "ŠD Polet Sv. Duh Virmaše",
+    "Sv. Duh 10",
+    "4220",
+    "Škofja Loka",
+    "info@sdpolet.si",
+    "http://www.sdpolet.si",
+    "1977. bogdan.stanonik@gmail.com"
+  ],
+  [
+    "Gorenjska",
+    "ŠD Storžič-Preddvor",
+    "Srednja Bela 52A",
+    "4205",
+    "Preddvor",
+    "info@sd-preddvor.si",
+    "http://www.sd-preddvor.si",
+    "1960"
+  ],
+  [
+    "Gorenjska",
+    "ŠD Šenčur",
+    "Pipanova cesta 45",
+    "4208",
+    "Šenčur",
+    "nksencur@t-2.net",
+    "http://www.sportnodrustvo-sencur.si",
+    "1951"
+  ],
+  [
+    "Gorenjska",
+    "ŠD Visoko",
+    "Visoko 67",
+    "4212",
+    "Visoko",
+    "sd.visoko.nogomet@gmail.com",
+    null,
+    "1978"
+  ],
+  [
+    "Gorenjska",
+    "Šobec Lesce",
+    "Alpska cesta 58",
+    "4248",
+    "Lesce",
+    "info@nk-lesce.si",
+    "http://www.nk-lesce.si",
+    "1946"
+  ],
+  [
+    "Gorenjska",
+    "Triglav Kranj",
+    "Partizanska 37",
+    "4000",
+    "Kranj",
+    "info@nktriglav.si",
+    "http://www.nktriglav.si",
+    "1997"
+  ],
+  [
+    "Gorenjska",
+    "TVD Partizan Podbrezje",
+    "Bistrica 20",
+    "4202",
+    "Naklo",
+    "nkpodbrezje@gmail.com",
+    null,
+    "1948"
+  ],
+  [
+    "Gorenjska",
+    "Velesovo",
+    "Velesovo 100",
+    "4207",
+    "Cerklje na Gorenjskem",
+    "info@nkvelesovo.si",
+    "http://www.nkvelesovo.si",
+    "1984"
+  ],
+  [
+    "Gorenjska",
+    "Zarica Kranj",
+    "Savska Loka 24",
+    "4000",
+    "Kranj",
+    "nkkranj@t-2.net",
+    "http://www.nkkranj.si",
+    "1974"
+  ],
+  [
+    "Gorenjska",
+    "Železniki",
+    "Trnje 39",
+    "4228",
+    "Železniki",
+    "nogometni.klub.ze@siol.net",
+    "http://www.nkzelezniki.si",
+    "1991"
+  ],
+  [
+    "Koper",
+    "Ankaran",
+    "Jadranska cesta 15A",
+    "6280",
+    "Ankaran - Ancarano",
+    "info@nkankaran.si",
+    "http://www.nkankaran-hrvatini.com",
+    "1966"
+  ],
+  [
+    "Koper",
+    "Branik Šmarje",
+    "Šmarje 1",
+    "6274",
+    "Šmarje",
+    "edko.pribac@telekom.si",
+    null,
+    "1951"
+  ],
+  [
+    "Koper",
+    "Cerknica",
+    "Notranjska cesta 67",
+    "1380",
+    "Cerknica",
+    "tomaz@korida.si",
+    "http://www.nk-cerknica.si",
+    "1926"
+  ],
+  [
+    "Koper",
+    "Gažon",
+    "Gažon 88",
+    "6274",
+    "Šmarje",
+    "alan.pozru@siol.com, ons.obala@gmail.com",
+    null,
+    "1976"
+  ],
+  [
+    "Koper",
+    "Ilirska Bistrica",
+    "Bazoviška ulica 26",
+    "6250",
+    "Ilirska Bistrica",
+    "nk.ilbistrica@gmail.com",
+    null,
+    "1926"
+  ],
+  [
+    "Koper",
+    "Jadran Dekani",
+    "Dekani 75/a",
+    "6271",
+    "Dekani",
+    "nk.dekani@siol.net",
+    "http://www.nkdekani.si",
+    "1938"
+  ],
+  [
+    "Koper",
+    "Jadran Herpelje Kozina",
+    "Reška cesta 14",
+    "6240",
+    "Kozina",
+    "nk.jadran.hk@siol.net",
+    null,
+    "1976"
+  ],
+  [
+    "Koper",
+    "KMN ŠD Božidar Kolarič",
+    "Ivančičeva 10",
+    "6280",
+    "Ankaran",
+    "ankaran.ns@gmail.com",
+    null,
+    "1981"
+  ],
+  [
+    "Koper",
+    "Komen",
+    "Komen 60B",
+    "6223",
+    "Komen",
+    "mladi.nkkomen@gmail.com",
+    null,
+    "1972"
+  ],
+  [
+    "Koper",
+    "Koper",
+    "Ljubljanska cesta 2",
+    "6000",
+    "Koper - Capodistria",
+    "info@fckoper.si",
+    "http://www.fckoper.si",
+    "1920"
+  ],
+  [
+    "Koper",
+    "Korte",
+    "Korte 44",
+    "6310",
+    "Izola - Isola",
+    "nkkorte@obala-alter.net",
+    null,
+    "1976"
+  ],
+  [
+    "Koper",
+    "Košana",
+    "Dolnja Košana 60",
+    "6256",
+    "Košana",
+    "sdkosana@gmail.com",
+    null,
+    "1976"
+  ],
+  [
+    "Koper",
+    "MND Tabor Sežana",
+    "Kosovelova ulica 1B",
+    "6210",
+    "Sežana",
+    "nktabor.sezana@gmail.com",
+    "http://www.nktabor.si",
+    "2002"
+  ],
+  [
+    "Koper",
+    "MNK Izola",
+    "Cankarjev drevored 28",
+    "6310",
+    "Izola - Isola",
+    "mnkizola@gmail.com",
+    "http://www.mnkizola.si",
+    "1996"
+  ],
+  [
+    "Koper",
+    "Plama Pur",
+    "Podgrad 12",
+    "6244",
+    "Podgrad",
+    "purplatex@siol.net",
+    null,
+    "1982"
+  ],
+  [
+    "Koper",
+    "Portorož Piran",
+    "Ulica IX. korpusa 31",
+    "6330",
+    "Piran - Pirano",
+    "nk.portorozpiran@t-2.net",
+    "http://www.nkportoroz-piran.si",
+    "1998"
+  ],
+  [
+    "Koper",
+    "Postojna",
+    "Pot k Pivki 4",
+    "6230",
+    "Postojna",
+    "nk.postojna@gmail.com",
+    "http://www.nkpostojna.com",
+    "1999"
+  ],
+  [
+    "Koper",
+    "Rakek",
+    "Ivanje selo 19",
+    "1381",
+    "Rakek",
+    "zdene71@siol.net",
+    null,
+    "1926"
+  ],
+  [
+    "Koper",
+    "Železničar Divača",
+    "Kraška cesta 67",
+    "6215",
+    "Divača",
+    "nkzeleznicar.divaca@gmail.com",
+    null,
+    "1981"
+  ],
+  [
+    "Lendava",
+    "Bistrica, Srednja Bistrica",
+    "Srednja Bistrica 49b",
+    "9232",
+    "Črenšovci",
+    "virsbistrica@gmail.com",
+    "http://www.nkbistrica.com",
+    "1973"
+  ],
+  [
+    "Lendava",
+    "Čentiba",
+    "Notranja ulica 20, Čentiba",
+    "9220",
+    "Lendava - Lendva",
+    "nkcentiba@gmail.com",
+    "http://www.nkcentiba.si",
+    "1948"
+  ],
+  [
+    "Lendava",
+    "Črenšovci",
+    "Ulica Juša Kramarja 10",
+    "9232",
+    "Črenšovci",
+    "nk.crensovci@siol.net",
+    "http://www.nk.crensovci.si",
+    "1976"
+  ],
+  [
+    "Lendava",
+    "Dobrovnik",
+    "Dobrovnik 297",
+    "9223",
+    "Dobrovnik - Dobronak",
+    "nogometniklub dobrovnik@gmail.com",
+    null,
+    "1947"
+  ],
+  [
+    "Lendava",
+    "Graničar",
+    "Pince Marof 30",
+    "9220",
+    "Lendava - Lendva",
+    "info@nkgranicar.si",
+    "http://www.nkgranicar.si",
+    "1963"
+  ],
+  [
+    "Lendava",
+    "Hotiza",
+    "Strnčka ulica 2, Hotiza",
+    "9220",
+    "Lendava - Lendva",
+    "dule.hozjan@gmail.com",
+    null,
+    "1970"
+  ],
+  [
+    "Lendava",
+    "Kapca",
+    "Gornja ulica 25",
+    "9220",
+    "Lendava - Lendva",
+    "balazic.benjamin@gmail.com",
+    "http://www.nkkapca.si",
+    "1972"
+  ],
+  [
+    "Lendava",
+    "Mostje",
+    "Mostje 39",
+    "9220",
+    "Lendava - Lendva",
+    "nkmostjehidveg@gmail.com",
+    null,
+    "1975"
+  ],
+  [
+    "Lendava",
+    "Nafta veterani",
+    "Kolodvorska ulica 7",
+    "9220",
+    "Lendava - Lendva",
+    "andrej.pecelin@petrol.si",
+    null,
+    "2003"
+  ],
+  [
+    "Lendava",
+    "ND Nedelica",
+    "Nedelica 132",
+    "9224",
+    "Turnišče",
+    "bojan.zizek7@gmail.com",
+    null,
+    "1978"
+  ],
+  [
+    "Lendava",
+    "ND Renkovci",
+    "Renkovci 53/d",
+    "9224",
+    "Turnišče",
+    "tadej.cicek@gmail.com",
+    null,
+    "1978"
+  ],
+  [
+    "Lendava",
+    "ND Zvezda Dolina",
+    "Glavna ulica 29, Dolina",
+    "9220",
+    "Lendava - Lendva",
+    "ndzvezdadolina@gmail.com",
+    null,
+    "1977"
+  ],
+  [
+    "Lendava",
+    "Odranci",
+    "Prešernova ulica 23",
+    "9233",
+    "Odranci",
+    "hajal86@gmail.com",
+    "http://www.nk-odranci.com",
+    "1973"
+  ],
+  [
+    "Lendava",
+    "Olimpija Dolga vas",
+    "Opekarniška 2, Dolga vas",
+    "9220",
+    "Lendava - Lendva",
+    "zlatko.kostric@nk-olimpija.net",
+    "http://www.nk-olimpija.net/",
+    "1961"
+  ],
+  [
+    "Lendava",
+    "Panonija Gaberje",
+    "Glavna ulica 52, Gaberje",
+    "9220",
+    "Lendava - Lendva",
+    "nkpanonija@gmail.com",
+    "http://www.nkpanonijagaberje.tk",
+    "1948"
+  ],
+  [
+    "Lendava",
+    "ŠD Kobilje",
+    "Kobilje 35",
+    "9227",
+    "Kobilje",
+    "sdkobilje@gmail.com",
+    null,
+    "1946"
+  ],
+  [
+    "Lendava",
+    "ŠD Velika Polana",
+    "Velika Polana 105",
+    "9225",
+    "Velika Polana",
+    "nkpolana@gmail.com",
+    null,
+    "1977"
+  ],
+  [
+    "Lendava",
+    "Turnišče",
+    "Štefana Kovača 73",
+    "9224",
+    "Turnišče",
+    "nkturnisce@amis.net",
+    "http://www.nkturnisce.com",
+    "1941"
+  ],
+  [
+    "Lendava",
+    "Veterani Turnišče",
+    "Ulica Štefana Kovača 73",
+    "9224",
+    "Turnišče",
+    "kavas.danilo@siol.net",
+    null,
+    "2001"
+  ],
+  [
+    "Ljubljana",
+    "Bela Krajina",
+    "Pri stadionu 2",
+    "8340",
+    "Črnomelj",
+    "nkbk@siol.net",
+    "http://www.nkbk.si",
+    "1926"
+  ],
+  [
+    "Ljubljana",
+    "Bravo Publikum",
+    "Milčinskega 2",
+    "1000",
+    "Ljubljana",
+    "info@nk-bravo.si",
+    "http://www.nk-bravo.si",
+    "2006"
+  ],
+  [
+    "Ljubljana",
+    "Brinje Grosuplje",
+    "Ob Grosupeljščici 19",
+    "1290",
+    "Grosuplje",
+    "info@nkbrinje.si",
+    "http://www.nogometniklub-brinje.si",
+    "2003"
+  ],
+  [
+    "Ljubljana",
+    "DD Dren",
+    "Tržaška cesta 9",
+    "1360",
+    "Vrhnika",
+    "barbar.sigulin@mrak.si",
+    "http://www.sd-dren.si",
+    "1999"
+  ],
+  [
+    "Ljubljana",
+    "Dol",
+    "Zaboršt pri Dolu 90",
+    "1262",
+    "Dol pri Ljubljani",
+    "info@nk-dol.com",
+    "http://www.nk-dol.si",
+    "1995"
+  ],
+  [
+    "Ljubljana",
+    "Domžale",
+    "Kopališka cesta 4",
+    "1230",
+    "Domžale",
+    "info@nkdomzale.si",
+    "http://www.nkdomzale.si",
+    "1921"
+  ],
+  [
+    "Ljubljana",
+    "Dragomer",
+    "Na Grivi 5",
+    "1351",
+    "Brezovica pri Ljubljani",
+    "nkdragomer@gmail.com",
+    "http://www.nkdragomer.si",
+    "2007"
+  ],
+  [
+    "Ljubljana",
+    "Ihan",
+    "Taborska cesta 7",
+    "1230",
+    "Domžale",
+    "viljem.krzan@siol.net",
+    null,
+    "1930"
+  ],
+  [
+    "Ljubljana",
+    "Interblock",
+    "Tesovnikova 54",
+    "1000",
+    "Ljubljana",
+    "info@nkinterblock.com",
+    "http://www.nkinterblock.com",
+    "2007"
+  ],
+  [
+    "Ljubljana",
+    "Jevnica",
+    "Jevnica 27",
+    "1281",
+    "Kresnice",
+    "nk.jevnica@gmail.com",
+    "http://www.jevnica-sport.eu",
+    "1958"
+  ],
+  [
+    "Ljubljana",
+    "Jezero Medvode",
+    "Medvoška cesta 9",
+    "1215",
+    "Medvode",
+    "jezero.medvode@t-2.net",
+    "http://www.nkm-jezero.si",
+    "1973"
+  ],
+  [
+    "Ljubljana",
+    "Kalcer Radomlje",
+    "Prešernova cesta 43",
+    "1235",
+    "Radomlje",
+    "klub@nk-radomlje.si",
+    "http://www.nk-radomlje.si",
+    "1972"
+  ],
+  [
+    "Ljubljana",
+    "Kamnik",
+    "Cankarjeva cesta 23",
+    "1241",
+    "Kamnik",
+    "nk.kamnik@kks-kamnik.si",
+    "http://www.nklub-kamnik.si",
+    "1920"
+  ],
+  [
+    "Ljubljana",
+    "Kočevje",
+    "Trg zbora odposlancev 30",
+    "1330",
+    "Kočevje",
+    "nkkocevje@gmail.com",
+    null,
+    "1920"
+  ],
+  [
+    "Ljubljana",
+    "Kolpa",
+    "Podzemelj 4",
+    "8332",
+    "Gradac",
+    "nk.kolpa@siol.net",
+    "http://www.nk-kolpa.si",
+    "1990"
+  ],
+  [
+    "Ljubljana",
+    "Komenda",
+    "Glavarjeva ulica 98",
+    "1218",
+    "Komenda",
+    "komenda@gmail.com",
+    "http://www.nk-komenda.si",
+    "1957"
+  ],
+  [
+    "Ljubljana",
+    "Kresnice",
+    "Kresnice 137",
+    "1281",
+    "Kresnice",
+    "nk.kresnice@siol.net",
+    "http://www.nk-kresnice.info",
+    "1971"
+  ],
+  [
+    "Ljubljana",
+    "Krim",
+    "Pot k ribniku 6",
+    "1000",
+    "Ljubljana",
+    "nkkrim@siol.net",
+    "http://www.nk-krim.si",
+    "1945"
+  ],
+  [
+    "Ljubljana",
+    "Krka",
+    "Topliška cesta 4",
+    "8000",
+    "Novo mesto",
+    "novomescan@gmail.com",
+    "http://www.nkkrka.com",
+    "1922"
+  ],
+  [
+    "Ljubljana",
+    "Litija",
+    "Kidričeva cesta 2",
+    "1270",
+    "Litija",
+    "nogometniklublitija@gmail.com",
+    null,
+    "1929"
+  ],
+  [
+    "Ljubljana",
+    "Livar Ivančna Gorica",
+    "Ljubljanska cesta 2a",
+    "1295",
+    "Ivančna Gorica",
+    "ebonit.rafael@gmail.com",
+    "http://www.nkivancnagorica.si",
+    "1973"
+  ],
+  [
+    "Ljubljana",
+    "Mengo 28",
+    "Slovenska cesta 30",
+    "1234",
+    "Mengeš",
+    "info@nkmengo28.si",
+    "http://www.nkmengo28.si",
+    "1997"
+  ],
+  [
+    "Ljubljana",
+    "Mirna",
+    "Cesta na Fužine 3",
+    "8233",
+    "Mirna",
+    "nogometni.klub.mirna@siol.net",
+    null,
+    "1967"
+  ],
+  [
+    "Ljubljana",
+    "ND Črnuče",
+    "Dunajska cesta 315",
+    "1231",
+    "Ljubljana - Črnuče",
+    "info@nd-crnuce.si",
+    "http://www.nd-crnuce.si",
+    "1971"
+  ],
+  [
+    "Ljubljana",
+    "ND Ilirija",
+    "Vodnikova cesta 155",
+    "1000",
+    "Ljubljana",
+    "info@ndilirija1911.si",
+    "http://www.ndilirija1911.si",
+    "1911"
+  ],
+  [
+    "Ljubljana",
+    "ND Slovan",
+    "Gortanova ulica 21",
+    "1000",
+    "Ljubljana",
+    "info@nd-slovan.si",
+    "http://www.nd-slovan.si",
+    "1913"
+  ],
+  [
+    "Ljubljana",
+    "Olimpija Ljubljana",
+    "Dunajska 159",
+    "1000",
+    "Ljubljana",
+    "info@nkolimpija.si",
+    "http://www.nkolimpija.si",
+    "2005"
+  ],
+  [
+    "Ljubljana",
+    "Roltek Dob",
+    "Ljubljanska cesta 33",
+    "1233",
+    "Dob",
+    "nk.dob@siol.net",
+    "http://www.nkdob.com",
+    "1961"
+  ],
+  [
+    "Ljubljana",
+    "Rudar Trbovlje",
+    "Rudarska cesta 6",
+    "1420",
+    "Trbovlje",
+    "nkrudartrbovlje@amis.net",
+    "http://www.nkrudar.si",
+    "1922"
+  ],
+  [
+    "Ljubljana",
+    "Svoboda Kisovec",
+    "Naselje na Šahtu 37",
+    "1412",
+    "Kisovec",
+    "aljosa@dajan.si",
+    null,
+    "1932"
+  ],
+  [
+    "Ljubljana",
+    "Svoboda Ljubljana",
+    "Gerbičeva 61",
+    "1000",
+    "Ljubljana",
+    "nksvoboda.ljubljana@gmail.com",
+    "http://www.nksvobodavic.webs.com",
+    "1952"
+  ],
+  [
+    "Ljubljana",
+    "ŠD Dobrova",
+    "Cesta dveh potokov 2",
+    "1356",
+    "Dobrova",
+    "info@dolomiti.si",
+    "http://www.dolomiti.si",
+    "1977"
+  ],
+  [
+    "Ljubljana",
+    "ŠD Dren Drenov Grič",
+    "Drenov Grič 25",
+    "1360",
+    "Vrhnika",
+    "tomaz@sd-dren.si",
+    "http://www.sd-dren.si",
+    "1981"
+  ],
+  [
+    "Ljubljana",
+    "ŠD NŠ Bela Krajina",
+    "Pri stadionu 2",
+    "8340",
+    "Črnomelj",
+    "lori.kadragic@gmail.com",
+    "http://www.nkbk.si",
+    "2012"
+  ],
+  [
+    "Ljubljana",
+    "ŠD Tabor 69 Vižmarje - Brod",
+    "Na Gmajni 1",
+    "1210",
+    "Ljubljana - Šentvid",
+    "nkarnetabor69@gmail.com",
+    "http://www.arne-tabor69.si",
+    "1969"
+  ],
+  [
+    "Ljubljana",
+    "ŠD Vir",
+    "Zoisova ulica 43, Vir",
+    "1230",
+    "Domžale",
+    "sdnvir@gmail.com",
+    "http://www.nkvir.si",
+    "1980"
+  ],
+  [
+    "Ljubljana",
+    "Šentjernej",
+    "Gorenje Vrhpolje 94",
+    "8310",
+    "Šentjernej",
+    "nk.sentjernej@gmail.com",
+    "http://www.nk-sentjernej.si",
+    "1997"
+  ],
+  [
+    "Ljubljana",
+    "Šmartno 1928",
+    "Jarška cesta 36A",
+    "1000",
+    "Ljubljana",
+    "info@nksmartno.si",
+    "http://www.nksmartno.si",
+    "1979"
+  ],
+  [
+    "Ljubljana",
+    "Termit",
+    "Vegova ulica 9",
+    "1251",
+    "Moravče",
+    "info@nktermit.si",
+    "http://www.nktermit.si",
+    "1974"
+  ],
+  [
+    "Ljubljana",
+    "Vrhnika",
+    "Tržaška cesta 9",
+    "1360",
+    "Vrhnika",
+    "info@nkvrhnika.si",
+    "http://www.nkvrhnika.si",
+    "1973"
+  ],
+  [
+    "Ljubljana",
+    "Zagorje",
+    "Cesta 9. avgusta 48",
+    "1410",
+    "Zagorje ob Savi",
+    "info@nogometniklub-zagorje.si",
+    "http://www.nogometniklub-zagorje.si",
+    "1923"
+  ],
+  [
+    "Maribor",
+    "Akumulator",
+    "Knapovška ulica 19",
+    "2392",
+    "Mežica",
+    "nk.akumulator@siol.net",
+    "http://www.nkakumulator.com",
+    "1969"
+  ],
+  [
+    "Maribor",
+    "Cerkvenjak",
+    "Cerkvenjak 25",
+    "2236",
+    "Cerkvenjak",
+    "zorko.klavdija@siol.net",
+    "http://www.nkcerkvenjak.si",
+    "1999"
+  ],
+  [
+    "Maribor",
+    "DNŠ Prevalje",
+    "Ugasle peči 1",
+    "2391",
+    "Prevalje",
+    "info@korotan-prevalje.si",
+    "http://www.korotan-prevalje.si",
+    "2002"
+  ],
+  [
+    "Maribor",
+    "Dobrovce",
+    "Kidričeva cesta 55, Dobrovce",
+    "2204",
+    "Miklavž na Dravskem polju",
+    "egon.repnik@kidricevo.si",
+    "http://www.nkdobrovce.si",
+    "1986"
+  ],
+  [
+    "Maribor",
+    "Dogoše",
+    "Nad reko 26a",
+    "2000",
+    "Maribor",
+    "nkdogose@gmail.com",
+    null,
+    "1977"
+  ],
+  [
+    "Maribor",
+    "Dravograd-Avto Grubelnik",
+    "Trg 4. julija 7",
+    "2370",
+    "Dravograd",
+    "nkdravograd@gmail.com",
+    "http://www.nkdravograd.com",
+    "1948"
+  ],
+  [
+    "Maribor",
+    "DTV Partizan Fram",
+    "Turnerjeva 113",
+    "2313",
+    "Fram",
+    "satlermarko@gmail.com",
+    null,
+    "1983"
+  ],
+  [
+    "Maribor",
+    "Duplek",
+    "Cesta 4. julija 106",
+    "2241",
+    "Spodnji Duplek",
+    "nogometniklub.duplek@gmail.com",
+    null,
+    "1963"
+  ],
+  [
+    "Maribor",
+    "Jarenina",
+    "Jareninski dol 19",
+    "2221",
+    "Jarenina",
+    "nogometni.klub.jarenina@siol.net",
+    "http://www.nkjarenina.com",
+    "1956"
+  ],
+  [
+    "Maribor",
+    "KNK Fužinar",
+    "Na gradu 6",
+    "2390",
+    "Ravne na Koroškem",
+    "tajnistvo.fuzinar@gmail.com",
+    null,
+    "1937"
+  ],
+  [
+    "Maribor",
+    "Kungota",
+    "Rošpoh - del 143",
+    "2211",
+    "Pesnica pri Mariboru",
+    "nogometni.klub.kungota@siol.net",
+    null,
+    "1976"
+  ],
+  [
+    "Maribor",
+    "Lenart",
+    "Trg osvoboditve 1",
+    "2230",
+    "Lenart v Slovenskih goricah",
+    "nk.lenart@siol.net",
+    null,
+    "1996"
+  ],
+  [
+    "Maribor",
+    "Limbuš Pekre",
+    "Limbuška cesta 53",
+    "2341",
+    "Limbuš",
+    "nk.limbus-pekre@amis.net",
+    "http://www.nklub-limbus-pekre.si",
+    "1973"
+  ],
+  [
+    "Maribor",
+    "Malečnik",
+    "Malečnik 55",
+    "2229",
+    "Malečnik",
+    "nogometni.klub.malecnik@siol.net",
+    "http://www.nk-malecnik.si",
+    "1960"
+  ],
+  [
+    "Maribor",
+    "Maribor",
+    "Mladinska ulica 29",
+    "2000",
+    "Maribor",
+    "info@nkmaribor.com",
+    "http://www.nkmaribor.com",
+    "1960"
+  ],
+  [
+    "Maribor",
+    "Miklavž",
+    "Nad izviri 6",
+    "2204",
+    "Miklavž na Dravskem polju",
+    "nkmiklavz@nk-miklavz.si",
+    null,
+    "1980"
+  ],
+  [
+    "Maribor",
+    "ND Slovenj Gradec",
+    "Vorančev trg 1",
+    "2380",
+    "Slovenj Gradec",
+    "nd-sg@amis.net",
+    "http://www.nd-sg.si",
+    "2004"
+  ],
+  [
+    "Maribor",
+    "NK MB Tabor",
+    "Ruplova ulica 4",
+    "2000",
+    "Maribor",
+    "igor@nkmaribortabor.si",
+    "http://www.nkmaribortabor.si",
+    "2008"
+  ],
+  [
+    "Maribor",
+    "Paloma Sladki Vrh",
+    "Sladki Vrh 1",
+    "2214",
+    "Sladki vrh",
+    "nkpaloma@gmail.com",
+    "http://www.nkpaloma.si",
+    "1957"
+  ],
+  [
+    "Maribor",
+    "Peca",
+    "Pristava 2",
+    "2393",
+    "Črna na Koroškem",
+    "nkpeca@yahoo.com",
+    "http://www.nkpeca.com",
+    "1962"
+  ],
+  [
+    "Maribor",
+    "Pesnica",
+    "Pesnica pri Mariboru 20",
+    "2211",
+    "Pesnica pri Mariboru",
+    "nkpesnica@gmail.com",
+    "http://www.nkpesnica-drustvo.si",
+    "1946"
+  ],
+  [
+    "Maribor",
+    "Pobrežje",
+    "Kosovelova ulica 8",
+    "2000",
+    "Maribor",
+    "nkpobrezje@siol.net",
+    null,
+    "1972"
+  ],
+  [
+    "Maribor",
+    "Pohorje",
+    "Stadionska ulica 15",
+    "2342",
+    "Ruše",
+    "info@nk-pohorje.si",
+    "http://www.nk-pohorje.si",
+    "1956"
+  ],
+  [
+    "Maribor",
+    "Rače",
+    "Kolodvorska ulica 6",
+    "2327",
+    "Rače",
+    "nkrace@gmail.com",
+    null,
+    "1946"
+  ],
+  [
+    "Maribor",
+    "ŠD Brunšvik",
+    "Brunšvik 49/b",
+    "2327",
+    "Rače",
+    "sdbrunsvik@gmail.com",
+    "http://www.sdbrunsvik.si",
+    "1978"
+  ],
+  [
+    "Maribor",
+    "ŠD Inter Jakob",
+    "Vukovski dol 15 A",
+    "2221",
+    "Jarenina",
+    "bostjan.rose@gmail.com",
+    null,
+    "1997"
+  ],
+  [
+    "Maribor",
+    "ŠD Loka-Rošnja",
+    "Loka 23a",
+    "2205",
+    "Starše",
+    "bostjan.pesek@gmail.com",
+    null,
+    "1976"
+  ],
+  [
+    "Maribor",
+    "ŠD Marjeta",
+    "Marjeta na Dravskem polju 56 A",
+    "2206",
+    "Marjeta na Dravskem polju",
+    "sdmarjeta1972@gmail.com",
+    null,
+    "1972"
+  ],
+  [
+    "Maribor",
+    "ŠD Radlje ob Dravi",
+    "Pohorska cesta 20",
+    "2360",
+    "Radlje ob Dravi",
+    "szr@radlje.com",
+    "http://www.ndradlje.phpzofa.net",
+    "1945"
+  ],
+  [
+    "Maribor",
+    "ŠD Radvanje",
+    "Korbunova ulica 22",
+    "2000",
+    "Maribor",
+    "nkradvanje@gmail.com",
+    "http://www.nkradvanje.com",
+    "1973"
+  ],
+  [
+    "Maribor",
+    "ŠD Rogoza",
+    "Rogoška cesta 60",
+    "2204",
+    "Miklavž na Dravskem polju",
+    "sportnodrustvo.rogoza@gmail.com",
+    "http://www.sportnodrustvorogoza.si",
+    "1963"
+  ],
+  [
+    "Maribor",
+    "ŠD Slivnica",
+    "Mariborska cesta 10",
+    "2312",
+    "Orehova vas",
+    "nk.slivnica1960@gmail.com",
+    "http://www.nkslivnica.si",
+    "1932"
+  ],
+  [
+    "Maribor",
+    "ŠD Starše",
+    "Starše 19a",
+    "2205",
+    "Starše",
+    "nkstarse@gmail.com",
+    "http://www.sd-starse.si",
+    "1974"
+  ],
+  [
+    "Maribor",
+    "ŠD Sv. Jurij Jurovski dol",
+    "Jurovski Dol 2",
+    "2223",
+    "Jurovski dol",
+    "robert.crncec@gmail.com",
+    null,
+    "1967"
+  ],
+  [
+    "Maribor",
+    "ŠD Zlatoličje",
+    "Zlatoličje 46a",
+    "2205",
+    "Starše",
+    "sd.zlatolicje@gmail.com",
+    null,
+    "1951"
+  ],
+  [
+    "Maribor",
+    "Šentilj",
+    "Maistrova ulica 7",
+    "2212",
+    "Šentilj v Slovenskih goricah",
+    "1933nk.sentilj@gmail.com",
+    null,
+    "1952"
+  ],
+  [
+    "Maribor",
+    "Tezno Maribor",
+    "Ptujska cesta 84",
+    "2000",
+    "Maribor",
+    "info@nktezno.si",
+    "http://www.nktezno.si",
+    "2006"
+  ],
+  [
+    "Maribor",
+    "Železničar MB",
+    "Engelsova ulica 6",
+    "2000",
+    "Maribor",
+    "info@nkzeleznicar.si",
+    "http://www.nkzeleznicar.si",
+    "1927"
+  ],
+  [
+    "Murska Sobota",
+    "Apače",
+    "Apače 38",
+    "9253",
+    "Apače",
+    "nk.apace@gmail.com",
+    "http://www.nk-apace.si",
+    "1948"
+  ],
+  [
+    "Murska Sobota",
+    "Bogojina",
+    "Bogojina 2A",
+    "9222",
+    "Bogojina",
+    "nkbogojina@gmail.com",
+    "http://www.nk-bogojina.si",
+    "1944"
+  ],
+  [
+    "Murska Sobota",
+    "Cankova",
+    "Cankova 72",
+    "9261",
+    "Cankova",
+    "nino.kacijan@gmail.com",
+    null,
+    "1976"
+  ],
+  [
+    "Murska Sobota",
+    "Čarda",
+    "Martjanci 19",
+    "9221",
+    "Martjanci",
+    "nkcarda@hotmail.com, goranpintaric@gmail.com",
+    "http://www.nkcarda.com",
+    "1972"
+  ],
+  [
+    "Murska Sobota",
+    "Dokležovje",
+    "Glavna ulica 18",
+    "9231",
+    "Beltinci",
+    "nkdoklezovje@gmail.com",
+    null,
+    "1963"
+  ],
+  [
+    "Murska Sobota",
+    "Farmtech Veržej",
+    "Mlinska ulica 23",
+    "9241",
+    "Veržej",
+    "magdic.dusan@gmail.com",
+    "http://www.nkverzej.si",
+    "1962"
+  ],
+  [
+    "Murska Sobota",
+    "Gančani",
+    "Gančani 1",
+    "9231",
+    "Beltinci",
+    "info@nkgancani.net",
+    "http://www.nkgancani.net",
+    "1973"
+  ],
+  [
+    "Murska Sobota",
+    "Grad",
+    "Grad 172",
+    "9264",
+    "Grad",
+    "emilseruga@gmail.com",
+    null,
+    "1967"
+  ],
+  [
+    "Murska Sobota",
+    "Hodoš",
+    "Hodoš 52",
+    "9205",
+    "Hodoš - Hodos",
+    "nkhodos@gmail.com",
+    null,
+    "1984"
+  ],
+  [
+    "Murska Sobota",
+    "Lipa",
+    "Lipa 135",
+    "9231",
+    "Beltinci",
+    "ivan.tkalec@teleing.com",
+    null,
+    "1974"
+  ],
+  [
+    "Murska Sobota",
+    "Ljutomer",
+    "Cesta 1. slovenskega tabora 15",
+    "9240",
+    "Ljutomer",
+    "sasa@makoter.si",
+    "http://www.nk-ljutomer.com",
+    "1975"
+  ],
+  [
+    "Murska Sobota",
+    "ND Beltinci",
+    "Ravenska cesta 8A",
+    "9231",
+    "Beltinci",
+    "igor.adzic@teleing.com",
+    "http://www.ndbeltinci.com",
+    "2007"
+  ],
+  [
+    "Murska Sobota",
+    "Puconci",
+    "Puconci 178",
+    "9201",
+    "Puconci",
+    "kuhar.andrej@siol.net",
+    "http://www.nkpuconci.si",
+    "1953"
+  ],
+  [
+    "Murska Sobota",
+    "Rakičan",
+    "Panonska ulica 4A",
+    "9000",
+    "Murska Sobota",
+    "nogometni.klub.rakican@siol.net",
+    "http://www.facebook.com/nkrakican",
+    "1950"
+  ],
+  [
+    "Murska Sobota",
+    "Rogašovci",
+    "Rogašovci 14B",
+    "9262",
+    "Rogašovci",
+    "nkgoricanka@gmail.com",
+    null,
+    "1977"
+  ],
+  [
+    "Murska Sobota",
+    "Roma",
+    "Vanča vas 65B",
+    "9251",
+    "Tišina",
+    "sd.roma1970@gmail.com",
+    null,
+    "1970"
+  ],
+  [
+    "Murska Sobota",
+    "Serdica",
+    "Serdica 42",
+    "9262",
+    "Rogašovci",
+    "nkserdica1@gmail.com",
+    "http://www.nk-serdica.net",
+    "1974"
+  ],
+  [
+    "Murska Sobota",
+    "Slatina",
+    "Slatinska cesta 2",
+    "9252",
+    "Radenci",
+    null,
+    null,
+    "1997"
+  ],
+  [
+    "Murska Sobota",
+    "Šalovci",
+    "Šalovci 162",
+    "9204",
+    "Šalovci",
+    "nk.salovci@siol.net",
+    "http://www.nksalovci.com",
+    "1976"
+  ],
+  [
+    "Murska Sobota",
+    "ŠD Cven",
+    "Cven 3D",
+    "9240",
+    "Ljutomer",
+    "info@sdrustvo-cven.si",
+    "http://www.sdrustvo-cven.si",
+    "1993"
+  ],
+  [
+    "Murska Sobota",
+    "ŠD Ižakovci",
+    "Ižakovci 64",
+    "9231",
+    "Beltinci",
+    "ales.poredos@gmail.com",
+    null,
+    "1975"
+  ],
+  [
+    "Murska Sobota",
+    "ŠD NK Križevci",
+    "Gornji Petrovci 31D",
+    "9203",
+    "Petrovci",
+    "obcina.gpetrovci@siol.net",
+    "http://www.nkkrizevci.webs.com",
+    "1963"
+  ],
+  [
+    "Murska Sobota",
+    "ŠD NK Pušča",
+    "Ulica ob kapelici 49",
+    "9000",
+    "Murska Sobota",
+    "sd.nk.pusca@gmail.com",
+    null,
+    "1958"
+  ],
+  [
+    "Murska Sobota",
+    "ŠD NK Rotunda",
+    "Selo 32B",
+    "9207",
+    "Prosenjakovci - Partosfalva",
+    "nk.rotunda@gmail.com",
+    null,
+    "1973"
+  ],
+  [
+    "Murska Sobota",
+    "ŠNK Bakovci",
+    "Partizanska ulica 36",
+    "9000",
+    "Murska Sobota",
+    "snkbakovci@gmail.com",
+    null,
+    "1953"
+  ],
+  [
+    "Murska Sobota",
+    "ŠNK Radgona",
+    "Cesta na stadion 999",
+    "9250",
+    "Gornja Radgona",
+    "snk.radgona@gmail.com",
+    "http://www.snk-radgona.si",
+    "1945"
+  ],
+  [
+    "Murska Sobota",
+    "Tišina",
+    "Tišina 4C",
+    "9251",
+    "Tišina",
+    "nk.tisina@yahoo.com",
+    null,
+    "1959"
+  ],
+  [
+    "Murska Sobota",
+    "Tromejnik",
+    "Kuzma 57",
+    "9263",
+    "Kuzma",
+    "drago.safer@guest.arnes.si",
+    "http://www.nktromejnik.com",
+    "1979"
+  ],
+  [
+    "Nova Gorica",
+    "Brda",
+    "Trg 25. maja 2",
+    "5212",
+    "Dobrovo v Brdih",
+    "nkbrda1@siol.net",
+    "http://www.nkbrda.si",
+    "1973"
+  ],
+  [
+    "Nova Gorica",
+    "Gorica",
+    "Bazoviška ulica 4",
+    "5000",
+    "Nova Gorica",
+    "info@nd-gorica.com",
+    "http://www.nd-gorica.com",
+    "2003"
+  ],
+  [
+    "Nova Gorica",
+    "Gostilna Kogoj Bilje",
+    "Bilje 3",
+    "5292",
+    "Renče",
+    "info@nkbilje.si",
+    "http://www.nkbilje.si",
+    "1946"
+  ],
+  [
+    "Nova Gorica",
+    "ND Adria",
+    "Miren 186B",
+    "5291",
+    "Miren",
+    "nkadria@siol.net",
+    "http://www.ndadria.si",
+    "1957"
+  ],
+  [
+    "Nova Gorica",
+    "ND Idrija",
+    "Slovenska cesta 23",
+    "5281",
+    "Spodnja Idrija",
+    "ndidrija@gmail.com",
+    "http://www.nkidrija.si",
+    "2000"
+  ],
+  [
+    "Nova Gorica",
+    "ND Renče",
+    "Trg 25",
+    "5292",
+    "Renče",
+    "nd.rence@siol.net",
+    null,
+    "2000"
+  ],
+  [
+    "Nova Gorica",
+    "Tolmin",
+    "Ulica Padlih borcev 1d",
+    "5220",
+    "Tolmin",
+    "nktolmin1921@gmail.com",
+    "http://www.nktolmin.si",
+    "1921"
+  ],
+  [
+    "Nova Gorica",
+    "Vipava",
+    "Glavni trg 15",
+    "5271",
+    "Vipava",
+    "dominik.panic@siol.com",
+    null,
+    "1996"
+  ],
+  [
+    "Nova Gorica",
+    "Vodice Šempas",
+    "Šempas 29",
+    "5261",
+    "Šempas",
+    "info@nkvodice.si",
+    "http://www.nkvodice.si",
+    "1972"
+  ],
+  [
+    "Ptuj",
+    "Aha Emmi Bistrica",
+    "Partizanska ulica 35",
+    "2310",
+    "Slovenska Bistrica",
+    "nkslovenskabistrica@siol.net",
+    "http://www.nk-bistrica.si",
+    "1958"
+  ],
+  [
+    "Ptuj",
+    "Aluminij",
+    "Kajuhova 16",
+    "2325",
+    "Kidričevo",
+    "nkaluminij@telemach.net",
+    "http://www.nkaluminij.net",
+    "1946"
+  ],
+  [
+    "Ptuj",
+    "Boč-Poljčane",
+    "Bistriška cesta 91",
+    "2319",
+    "Poljčane",
+    "vojko.volavsek@gmail.com",
+    null,
+    "1932"
+  ],
+  [
+    "Ptuj",
+    "Drava Ptuj",
+    "Čučkova ulica 7",
+    "2250",
+    "Ptuj",
+    "info@ns-drava.com",
+    "http://www.ns-drava.com",
+    "2004"
+  ],
+  [
+    "Ptuj",
+    "DTV Zg. Polskava",
+    "Mladinska ulica 12",
+    "2314",
+    "Zgornja Polskava",
+    "kotnik.dusan@siol.net",
+    null,
+    "1998"
+  ],
+  [
+    "Ptuj",
+    "Gerečja vas Hajdina",
+    "Gerečja vas 7a",
+    "2288",
+    "Hajdina",
+    "blaz.slacek@triera.net",
+    null,
+    "1967"
+  ],
+  [
+    "Ptuj",
+    "KN Oplotnica",
+    "Partizanska cesta 78",
+    "2317",
+    "Oplotnica",
+    "nkoplotnica@gmail.com",
+    null,
+    "1971"
+  ],
+  [
+    "Ptuj",
+    "Ormož",
+    "Ptujska cesta 12d",
+    "2270",
+    "Ormož",
+    "nk.ormoz@teleing.si",
+    "http://www.nk-ormoz.si",
+    "1995"
+  ],
+  [
+    "Ptuj",
+    "Podvinci",
+    "Podvinci 46",
+    "2250",
+    "Ptuj",
+    "mitja.lah@amis.net",
+    "http://www.nkpodvinci.si",
+    "1979"
+  ],
+  [
+    "Ptuj",
+    "Slovenja vas",
+    "Slovenja vas 54",
+    "2288",
+    "Hajdina",
+    "sd.slovenja.vas@gmail.com",
+    null,
+    "1975"
+  ],
+  [
+    "Ptuj",
+    "Središče ob Dravi",
+    "Trate 10A",
+    "2277",
+    "Središče ob Dravi",
+    "nksredisce@volja.net",
+    null,
+    "1977"
+  ],
+  [
+    "Ptuj",
+    "ŠD Apače",
+    "Apače 280",
+    "2324",
+    "Lovrenc na Dravskem polju",
+    "dejan.lendero@gmail.com",
+    null,
+    "1980"
+  ],
+  [
+    "Ptuj",
+    "ŠD Bukovci",
+    "Bukovci 98 E",
+    "2281",
+    "Markovci",
+    "info@sdbukovci.com",
+    "http://www.sdbukovci.com",
+    "1977"
+  ],
+  [
+    "Ptuj",
+    "ŠD Cirkulane",
+    "Cirkulane 40a",
+    "2282",
+    "Cirkulane",
+    "rajko.klajderic@siol.net",
+    null,
+    "1993"
+  ],
+  [
+    "Ptuj",
+    "ŠD Dornava",
+    "Dornava 137",
+    "2252",
+    "Dornava",
+    "nkdornava1@gmail.com",
+    "http://www.sd-dornava.si",
+    "1954"
+  ],
+  [
+    "Ptuj",
+    "ŠD Gorišnica",
+    "Gorišnica 83A",
+    "2272",
+    "Gorišnica",
+    "sdgorisnica@gmail.com",
+    null,
+    "1954"
+  ],
+  [
+    "Ptuj",
+    "ŠD Grajena",
+    "Grajena 56",
+    "2250",
+    "Ptuj",
+    "nkgrajena@gmail.com",
+    "http://www.sdgrajena.com",
+    "1972"
+  ],
+  [
+    "Ptuj",
+    "ŠD Hajdina",
+    "Spodnja Hajdina 37A",
+    "2288",
+    "Hajdina",
+    "info@nkhajdina.com",
+    "http://www.nkhajdina.com",
+    "1946"
+  ],
+  [
+    "Ptuj",
+    "ŠD Hajdoše",
+    "Hajdoše 109",
+    "2288",
+    "Hajdina",
+    "nk.hajdose@gmail.com",
+    null,
+    "1979"
+  ],
+  [
+    "Ptuj",
+    "ŠD Leskovec",
+    "Zgornji Leskovec 9",
+    "2285",
+    "Zgornji Leskovec",
+    "klemenkozel@gmail.com",
+    null,
+    "1963"
+  ],
+  [
+    "Ptuj",
+    "ŠD Makole",
+    "Makole 34",
+    "2321",
+    "Makole",
+    "nkmakole2012@gmail.com",
+    null,
+    "2008"
+  ],
+  [
+    "Ptuj",
+    "ŠD Markovci",
+    "Markovci 33B",
+    "2281",
+    "Markovci",
+    "info@nkmarkovci.si",
+    null,
+    "1950. kukovec.alojz@gmail.com"
+  ],
+  [
+    "Ptuj",
+    "ŠD Mladinec",
+    "Lovrenc na Dravskem polju 7",
+    "2324",
+    "Lovrenc na Dravskem polju",
+    "robnov1@gmail.com",
+    null,
+    "1966"
+  ],
+  [
+    "Ptuj",
+    "ŠD Podlehnik",
+    "Podlehnik 9",
+    "2286",
+    "Podlehnik",
+    "bostjan.grabrovec@gmail.com",
+    null,
+    "1995"
+  ],
+  [
+    "Ptuj",
+    "ŠD Pragersko 75",
+    "Ulica Pohorskega bataljona 10",
+    "2331",
+    "Pragersko",
+    "nogometniklubpragersko@gmail.com",
+    "http://www.nk-pragersko.eu.pn",
+    "1976"
+  ],
+  [
+    "Ptuj",
+    "ŠD Rogoznica",
+    "Kratka ulica 7",
+    "2250",
+    "Ptuj",
+    "miha_potocnik@t-2.net",
+    null,
+    "1962"
+  ],
+  [
+    "Ptuj",
+    "ŠD Skorba",
+    "Skorba 41",
+    "2288",
+    "Hajdina",
+    "ivi.vogrinec@gmail.com",
+    null,
+    "1970"
+  ],
+  [
+    "Ptuj",
+    "ŠD Stojnci",
+    "Stojnci 34",
+    "2281",
+    "Markovci",
+    "nkstojnci@gmail.com",
+    "http://www.nkstojnci.net",
+    "1964"
+  ],
+  [
+    "Ptuj",
+    "ŠD Videm",
+    "Videm pri Ptuju 49",
+    "2284",
+    "Videm pri Ptuju",
+    "sdvidem@videm.si",
+    null,
+    ""
+  ],
+  [
+    "Ptuj",
+    "Tržec",
+    "Tržec 45",
+    "2284",
+    "Videm pri Ptuju",
+    "nktrzec@gmail.com",
+    null,
+    "1977"
+  ],
+  [
+    "Ptuj",
+    "Zavrč",
+    "Zavrč 11",
+    "2283",
+    "Zavrč",
+    "marjanprelog74@gmail.com",
+    "http://www.nkzavrc.si",
+    "1969"
+  ]
+]

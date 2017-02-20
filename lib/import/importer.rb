@@ -22,6 +22,7 @@ module Import
       p @transformer.description if @verbose
       raw_data = @datasource.fetch
       clean_data = @transformer.transform raw_data
+
       commit(clean_data)
     end
 
