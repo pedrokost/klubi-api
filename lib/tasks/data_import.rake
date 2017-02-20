@@ -75,7 +75,7 @@ namespace :import do
   task :nzs => :environment do
     transformer = Import::NZSTransformer.new
     data_source = Import::NZSDatasource.new
-    Import::Importer.new(data_source, transformer).run(do_not_merge: [:address])
+    Import::Importer.new(data_source, transformer).run()
   end
 end
 
