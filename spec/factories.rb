@@ -36,6 +36,7 @@ FactoryGirl.define do
     end
 
     factory :klub_branch do
+      address 'Trzaska cesta 25, 1000 Ljubljana'
       association :parent, factory: :complete_klub
     end
 

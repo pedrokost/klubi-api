@@ -12,11 +12,48 @@
         "id" : { "type": "string" },
         "type" : { "type": "string" }
       }
+    },
+    "branch_reference": {
+      "type" : ["object", "null"],
+      "required" : [
+        "id",
+        "type"
+      ],
+      "properties": {
+        "id" : { "type": "string" },
+        "type" : { "type": "string" }
+      }
+    },
+    "branch": {
+      "type" : ["object", "null"],
+      "required" : [
+        "id",
+        "type"
+      ],
+      "properties": {
+        "id" : { "type": "string" },
+        "type" : { "type": "string" },
+        "additionalProperties": false,
+        "attributes": {
+          "type": "object",
+          "required": [
+            "address",
+            "latitude",
+            "longitude"
+          ],
+          "properties": {
+            "address" :   { "type": ["string", "null"] },
+            "latitude" :  { "type": ["string", "null"] },
+            "longitude" : { "type": ["string", "null"] }
+          }
+        }
+      }
     }
   },
-
   "type": "object",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data" : {
       "type" : "object",
@@ -77,10 +114,30 @@
               "properties": {
                 "data": { "$ref": "#/definitions/parent" }
               }
+            },
+            "branches": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": [ "array", "null"],
+                  "items": [{
+                    "$ref": "#/definitions/branch_reference"
+                  }]
+                }
+              }
             }
           }
         }
       }
+    },
+    "included": {
+      "type": "array",
+      "items": [{
+        "$ref": "#/definitions/branch"
+      }]
     }
   }
 }

@@ -132,6 +132,23 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       expect(klub[:relationships][:parent][:data][:id]).to eq klub1.url_slug
     end
 
+    it "should return the branches's id" do
+      get :show, id: klub1.url_slug
+      expect(response).to match_response_schema('v2/klub')
+      klub = json_response[:data]
+      expect(klub[:relationships][:branches][:data].count).to eq 1
+      expect(klub[:relationships][:branches][:data][0][:id]).to eq klub_branch.url_slug
+    end
+
+    it "should include the branches" do
+      get :show, id: klub1.url_slug
+      expect(response).to match_response_schema('v2/klub')
+      branches = json_response[:included]
+      expect(branches.length).to eq 1
+      branch = branches[0]
+      expect(branch[:id]).to eq klub_branch.url_slug
+    end
+
     context "unsupported cattegory" do
       before do
         allow(ENV).to receive(:[]).and_call_original
