@@ -45,7 +45,7 @@ module Api
 
       def show
         klub = find_klub
-        render json: klub, include: :branches
+        render json: klub, include: [:branches, :parent]
       end
 
     private

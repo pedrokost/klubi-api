@@ -132,7 +132,17 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       expect(klub[:relationships][:parent][:data][:id]).to eq klub1.url_slug
     end
 
-    it "should return the branches's id" do
+    it "should include the parent" do
+      get :show, id: klub_branch.url_slug
+      expect(response).to match_response_schema('v2/klub')
+      pp json_response
+      parent = json_response[:included]
+      expect(parent.length).to eq 1
+      parent = parent[0]
+      expect(parent[:id]).to eq klub1.url_slug
+    end
+
+    it "should return the branches's slug" do
       get :show, id: klub1.url_slug
       expect(response).to match_response_schema('v2/klub')
       klub = json_response[:data]
