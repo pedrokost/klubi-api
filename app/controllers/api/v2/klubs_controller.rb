@@ -20,25 +20,52 @@ module Api
       end
 
       def create
-        klub = Klub.new(new_klub_params.except(:editor))
+        klub = Klub.new(new_klub_params.except(:editor, :branches_attributes))
         klub.editor_emails << new_klub_params[:editor]
 
         head 403 and return unless klub.valid?
 
-        klub.save!
-        klub.send_review_notification
-        klub.send_thanks_notification new_klub_params[:editor] if new_klub_params[:editor]
-        render json: klub, status: :accepted
+        # Create branches
+        new_klub_params[:branches_attributes].each do |branch_attrs|
+          branch = klub.created_branch branch_attrs
+          head 403 and return unless branch
+        end
 
-        # TODO: impelement error handling
-        # https://blog.codeship.com/the-json-api-spec/
+        klub.save!
+
+        klub.send_on_create_notifications new_klub_params[:editor]
+
+        render json: klub, include: [:branches], status: :accepted
       end
 
       def update
         klub = find_klub
-        updates = klub.create_updates update_klub_params
-        klub.send_updates_notification(updates)
-        klub.send_confirm_notification(update_klub_params[:editor], updates) if update_klub_params[:editor]
+
+        updates = klub.create_updates update_klub_params.except(:branches_attributes)
+        editor = update_klub_params[:editor]
+
+        # Delete any of the other branches
+        updated_branch_ids = update_klub_params[:branches_attributes].select{ |branch| branch[:id] }.map{ |branch| extract_slug(branch[:id]).to_i }
+        deleted_branch_ids = klub.branches.map(&:id) - updated_branch_ids
+        deleted_branch_ids.each do |branch_id|
+          klub.suggest_branch_removal branch_id, editor
+        end
+
+        # Update existing branches
+        branches_updates = []
+        update_klub_params[:branches_attributes].each do |branch_attrs|
+          branch = find_by_url_slug branch_attrs[:id]
+          if branch
+            branch_updates = branch.create_updates branch_attrs.merge(editor: editor)
+            branches_updates.concat branches_updates
+          else
+            branch = klub.created_branch branch_attrs
+          end
+        end
+
+        klub.save!
+
+        klub.send_on_update_notifications update_klub_params[:editor], updates, branches_updates, deleted_branch_ids
 
         render json: 'null', status: :accepted
       end
@@ -55,6 +82,18 @@ module Api
         Klub.find(id)
       end
 
+      def find_by_url_slug url_slug
+        return nil unless url_slug
+        slug_with_id = url_slug
+        id = slug_with_id.split('-').last
+        Klub.find(id)
+      end
+
+      def extract_slug url_slug
+        return nil unless url_slug
+        url_slug.split('-').last
+      end
+
       def category_params
         params.require(:category)
       end
@@ -64,46 +103,59 @@ module Api
       end
 
       def new_klub_params
-
-        ActiveModelSerializers::Deserialization.jsonapi_parse!(params,
-          only: [
-            :name,
-            :address,
-            :town,
-            :latitude,
-            :longitude,
-            :website,
-            :'facebook-url',
-            :phone,
-            :email,
-            :notes,
-            :categories,
-            :editor
-          ]
+        parameters = ActionController::Parameters.new(
+          ActiveModelSerializers::Deserialization.jsonapi_parse!(params,
+            embedded: [:branches],
+          )
+        ).permit(
+          :name,
+          :address,
+          :town,
+          :latitude,
+          :longitude,
+          :website,
+          :facebook_url,
+          :phone,
+          :email,
+          :notes,
+          { :categories => [] },
+          :editor,
+          :branches_attributes => [:address, :latitude, :longitude, :town]
         )
+
+        parameters[:branches_attributes] ||= []
+
+        parameters
       end
 
       def update_klub_params
-        ActiveModelSerializers::Deserialization.jsonapi_parse!(params,
-          only: [
-            :name,
-            :address,
-            :town,
-            :latitude,
-            :longitude,
-            :website,
-            :'facebook-url',
-            :phone,
-            :email,
-            :notes,
-            :categories,
-            :editor
-          ]
+        parameters = ActionController::Parameters.new(
+          ActiveModelSerializers::Deserialization.jsonapi_parse!(params,
+            embedded: [:branches],
+          )
+        ).permit(
+          :name,
+          :address,
+          :town,
+          :latitude,
+          :longitude,
+          :website,
+          :facebook_url,
+          :phone,
+          :email,
+          :notes,
+          { :categories => [] },
+          :editor,
+          :branches_attributes => [:id, :address, :latitude, :longitude, :town]
         )
+
+        parameters[:branches_attributes] ||= []
+
+        parameters
       end
 
       def select_ams_adapter
-        ActiveModelSerializers.config.adapter = :json_api # Default: `:attributes`
+        ActiveModelSerializers.config.adapter = :json_api
       end
 
     end

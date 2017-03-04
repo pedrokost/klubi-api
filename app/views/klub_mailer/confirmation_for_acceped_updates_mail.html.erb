@@ -2,47 +2,15 @@ Pozdravljeni,
 
 <br>
 
-<p>
-  Čestitam! Vaši popravki za klub <%= link_to @klub.name, @klub.spa_url %> so bili sprejeti!
+<p>Čestitam! Vaši popravki za klub <%= link_to @klub.name, @klub.spa_url %> so bili sprejeti!</p>
 
-  <br>
+<p>Shranjeni podatki so: </p>
 
-  <% updated_fields = @updates.map(&:field) %>
-
-  <dl>
-    <dt><%= Klub.human_attribute_name('name') %> <%= "*" if updated_fields.include? 'name' %>:</dt>
-    <dd><%= @klub.name %></dd>
-
-    <dt><%= Klub.human_attribute_name('address') %> <%= "*" if updated_fields.include? 'address' %>:</dt>
-    <dd><%= @klub.address %></dd>
-    <dd><%= link_to @klub.spa_url do %>
-      <%= image_tag @klub.static_map_url unless @klub.address.blank? %>
-      <% end %>
-      </dd>
-
-    <dt><%= Klub.human_attribute_name('phone') %> <%= "*" if updated_fields.include? 'phone' %>:</dt>
-    <dd><%= @klub.phone %></dd>
-
-    <dt><%= Klub.human_attribute_name('email') %> <%= "*" if updated_fields.include? 'email' %>:</dt>
-    <dd><%= link_to @klub.email, "mailto:#{@klub.email}" unless @klub.email.blank? %></dd>
-
-    <dt><%= Klub.human_attribute_name('website') %> <%= "*" if updated_fields.include? 'website' %>:</dt>
-    <dd><%= link_to @klub.website, @klub.website unless @klub.website.blank? %></dd>
-
-    <dt><%= Klub.human_attribute_name('facebook_url') %> <%= "*" if updated_fields.include? 'facebook_url' %>:</dt>
-    <dd><%= link_to @klub.facebook_url, @klub.facebook_url unless @klub.facebook_url.blank? %></dd>
-
-    <dt><%= Klub.human_attribute_name('categories') %> <%= "*" if updated_fields.include? 'categories' %>:</dt>
-    <dd><%= @klub.categories.join(', ') %></dd>
-
-    <dt><%= Klub.human_attribute_name('notes') %> <%= "*" if updated_fields.include? 'notes' %>:</dt>
-    <dd><%= @klub.notes || '(brez opomb)' %></dd>
-  </dl>
-</p>
+<%= render partial: 'klub_attributes', locals: { klub: @klub } %>
 
 <p>Če želite popraviti še kateri podatek za ta klub, lahko to storite na <%= link_to "tej povezavi", @klub.spa_edit_url %>.</p>
 
-<p>Najlepša hvala za popravke ✌(-‿-)✌!</p>
+<p>Še enkrat najlepša hvala za popravke ✌(-‿-)✌!</p>
 
 <p>
   <small>Niste vi poslali zgornje popravke na klubi.si? Če tega niste storili vi, se vam opravičujem. Nekdo je na spletni strani vnesel vaš e-poštni naslov.</small>

@@ -22,6 +22,11 @@
   background-color: $light-yellow;
 }
 
+.table__row--danger {
+  background-color: $light-red;
+}
+
+
 .table__action--destroy {
   color: $light-red;
 }

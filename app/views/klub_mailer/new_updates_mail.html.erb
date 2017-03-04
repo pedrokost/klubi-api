@@ -1,15 +1,7 @@
 <p>Hi Pedro</p>
 <p>
-  <%= @editor_mail =%> has updated the klub '<%= @klub_name %>',
-</p>
-<p>
-  Here are the details: <br>
-  <br>
-  <% @updates.each do |update| %>
-    <%= update.field %>: <%= update.oldvalue %> -> <%= update.newvalue%> <br>
-  <% end %>
+  <%= @editor_mail =%> has updated the klub '<%= link_to @klub_name, admin_klub_url(@klub) %>'
 </p>
 <p>Review this promptly to add it to the site!</p>
-<br>
 <p>Cheers,</p>
 <p>Peter from klubi.si</p>

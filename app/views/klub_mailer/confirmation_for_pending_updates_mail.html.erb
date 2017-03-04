@@ -8,9 +8,29 @@ Pozdravljeni,
 
   <dl>
   <% @updates.each do |update| %>
-    <dt><%= Klub.human_attribute_name(update.field) %>:</dt>
-    <dd><%= update.newvalue %></dd>
+    <% unless ['address', 'latitude', 'longitude'].include? update.field  %>
+      <dt><%= Klub.human_attribute_name(update.field) %>:</dt>
+      <dd><%= update.newvalue %></dd>
+    <% end %>
   <% end %>
+
+  <% @updates.each do |update| %>
+    <% if ['address'].include? update.field  %>
+      <dt><%= Klub.human_attribute_name(update.field) %>:</dt>
+      <dd><%= update.newvalue %></dd>
+    <% end %>
+  <% end %>
+
+  <% @branch_updates.each do |update| %>
+    <% if ['address'].include? update.field  %>
+      <dd><%= update.newvalue %></dd>
+    <% end %>
+  <% end %>
+
+  <% @deleted_branches.each do |branch| %>
+    <dd><strike><%= branch.address %></strike></dd>
+  <% end %>
+
   </dl>
 </p>
 

@@ -44,20 +44,14 @@ class Klub < ActiveRecord::Base
     end
   end
 
-  def send_review_notification
-    KlubMailer.new_klub_mail(self.id).deliver_later
+  def send_on_create_notifications editor
+    send_review_notification
+    send_thanks_notification editor if editor
   end
 
-  def send_thanks_notification(editor)
-    KlubMailer.new_klub_thanks_mail(self.id, editor).deliver_later
-  end
-
-  def send_updates_notification(updates)
-    KlubMailer.new_updates_mail(self.name, updates).deliver_later
-  end
-
-  def send_confirm_notification(editor, updates)
-    KlubMailer.confirmation_for_pending_updates_mail(self.id, editor, updates.map(&:id)).deliver_later
+  def send_on_update_notifications(editor, updates, branch_updates, deleted_branch_ids)
+    send_updates_notification
+    send_confirm_notification(editor, updates, branch_updates, deleted_branch_ids) if editor
   end
 
   def send_updates_accepted_notification(editor, updates)
@@ -74,7 +68,7 @@ class Klub < ActiveRecord::Base
     editor = new_attrs[:editor]
     updates = []
 
-    new_attrs.except(:editor).each do |key, val|
+    new_attrs.except(:editor, :id).each do |key, val|
       next if self.send(key) == val
 
       updates << Update.create!(
@@ -86,6 +80,19 @@ class Klub < ActiveRecord::Base
       )
     end
     updates
+  end
+
+  def suggest_branch_removal(branch_id, editor)
+    branch = self.branches.find(branch_id)
+    return false unless branch
+
+    Update.create!(
+      updatable: branch,
+      field: 'marked_for_deletion',
+      oldvalue: false,
+      newvalue: true,
+      editor_email: editor
+    )
   end
 
   def url_slug
@@ -102,6 +109,20 @@ class Klub < ActiveRecord::Base
 
   def static_map_url(width: 400, height: 300)
     "https://maps.googleapis.com/maps/api/staticmap?center=#{self.latitude},#{self.longitude}&zoom=15&size=#{width}x#{height}&maptype=roadmap&markers=color:blue%7Clabel:%7C#{self.latitude},#{self.longitude}&key=#{ENV['GOOGLE_STATIC_MAPS_SERVER_API_KEY']}".html_safe.freeze
+  end
+
+  def created_branch branch_attrs
+    return false if branch_attrs[:address].blank? || branch_attrs[:latitude].blank? || branch_attrs[:longitude].blank? || branch_attrs[:town].blank?
+
+    branch = Klub.new(self.attributes
+      .merge( verified: false )
+      .except("id", "created_at", "updated_at")
+      .merge(branch_attrs)
+    )
+
+    self.branches << branch
+
+    branch
   end
 
 private
@@ -124,5 +145,21 @@ private
 
   def has_lat_lng_town_and_address?
     return has_address? && self.latitude? && self.longitude? && self.town?
+  end
+
+  def send_review_notification
+    KlubMailer.new_klub_mail(self.id).deliver_later
+  end
+
+  def send_thanks_notification(editor)
+    KlubMailer.new_klub_thanks_mail(self.id, editor).deliver_later
+  end
+
+  def send_updates_notification
+    KlubMailer.new_updates_mail(self.id, updates.first.try(:editor)).deliver_later
+  end
+
+  def send_confirm_notification(editor, updates, branch_updates, deleted_branch_ids)
+    KlubMailer.confirmation_for_pending_updates_mail(self.id, editor, updates.map(&:id), branch_updates.map(&:id), deleted_branch_ids).deliver_later
   end
 end

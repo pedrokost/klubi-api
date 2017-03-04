@@ -14,6 +14,11 @@ class Update < ActiveRecord::Base
         updatable.editor_emails << editor_email
       end
 
+      if field == "marked_for_deletion"
+        updatable.destroy!
+        return
+      end
+
       the_new_value = newvalue
       if field == "categories"
         the_new_value = YAML.load(newvalue).uniq.map(&:parameterize)

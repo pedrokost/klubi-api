@@ -31,6 +31,9 @@ GEM
       activemodel (>= 4.1, < 6)
       case_transform (>= 0.2)
       jsonapi (= 0.1.1.beta6)
+    active_model_serializers-jsonapi_embedded_records_deserializer (0.1.1)
+      active_model_serializers
+      railties (>= 4.0)
     activejob (4.2.1)
       activesupport (= 4.2.1)
       globalid (>= 0.3.0)
@@ -321,6 +324,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.4)
+  active_model_serializers-jsonapi_embedded_records_deserializer (~> 0.1.1)
   administrate (~> 0.2.2)
   aws-sdk (~> 2.6.44)
   dalli (~> 2.7.6)

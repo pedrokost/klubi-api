@@ -16,6 +16,8 @@ gem 'rails_12factor', group: :production
 # gem 'active_model_serializers', '~> 0.9.0'
 gem 'active_model_serializers', '~> 0.10.4'
 
+gem 'active_model_serializers-jsonapi_embedded_records_deserializer', '~> 0.1.1'
+
 gem 'redis', '~> 3.2.1'
 
 gem 'geocoder', '~> 1.2.8'

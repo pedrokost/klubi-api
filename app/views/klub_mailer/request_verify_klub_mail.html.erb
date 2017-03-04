@@ -3,27 +3,7 @@ Pozdravljeni, <br>
 <p>
   zanima me, če so sledeči podatki za klub <em><%= @klub.name %></em> pravilni: <br>
 
-  <ul>
-    <li>
-      <%= Klub.human_attribute_name('name') %>: <em><%= @klub.name %></em>
-    </li>
-    <li>
-      <%= Klub.human_attribute_name('phone') %>: <em><%= @klub.phone.blank? ? '<b>ni podatka</b>'.html_safe : @klub.phone %></em>
-    </li>
-    <li>
-      <%= Klub.human_attribute_name('email') %>: <em><%= @klub.email.blank? ? '<b>ni podatka</b>'.html_safe : @klub.email %></em>
-    </li>
-    <li>
-      <%= Klub.human_attribute_name('website') %>: <em><%= @klub.website.blank? ? '<b>ni podatka</b>'.html_safe : link_to(@klub.website, @klub.website) %></em>
-    </li>
-    <li>
-      <%= Klub.human_attribute_name('facebook_url') %>: <em><%= @klub.facebook_url.blank? ? ('<b>ni podatka</b>'.html_safe) : link_to(@klub.facebook_url, @klub.facebook_url) %></em>
-    </li>
-    <li>
-      <%= Klub.human_attribute_name('address') %>: <em><%= @klub.address.blank? ? '<b>ni podatka</b>'.html_safe : @klub.address %></em> <br>
-      <%= image_tag @klub.static_map_url(width: 300, height: 200), alt: @klub.name unless @klub.address.blank? %>
-    </li>
-  </ul>
+  <%= render partial: 'klub_attributes', locals: { klub: @klub } %>
 </p>
 
 <p>Vabim vas, da podatke uredite in dopolnite s klikom na povezavo: <mark><b><%= link_to 'Uredite podatke!', @klub.spa_edit_url %></b></mark>. Vzelo vam bo samo 1 minuto!

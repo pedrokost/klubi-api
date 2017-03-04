@@ -24,3 +24,16 @@ Geocoder::Lookup::Test.add_stub(
   ]
 )
 
+
+Geocoder::Lookup::Test.add_stub(
+  "Videm pri Ptuju 49, Videm pri Ptuju", [
+    {
+      'latitude'          => 46.369447,
+      'longitude'         => 15.902942,
+      'address'           => 'Videm pri Ptuju 49, 2284 Videm pri Ptuju, Slovenija',
+      'city'              => 'Ptuj',
+      'formatted_address' => 'Videm pri Ptuju 49, 2284 Videm pri Ptuju, Slovenija'
+    }
+  ]
+)
+

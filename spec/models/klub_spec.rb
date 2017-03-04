@@ -143,22 +143,22 @@ RSpec.describe Klub, :type => :model do
 
   it "sends an email upon creation" do
     klub.save
-    expect { subject.send_review_notification }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    expect { subject.send(:send_review_notification) }.to change { ActionMailer::Base.deliveries.count }.by(1)
   end
 
   it "sends a thank you email upon creation" do
     klub.save
-    expect { subject.send_thanks_notification('test@test.com') }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    expect { subject.send(:send_thanks_notification, 'test@test.com') }.to change { ActionMailer::Base.deliveries.count }.by(1)
   end
 
   it "sends an email upon updated" do
     klub.save
-    expect { subject.send_updates_notification([]) }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    expect { subject.send(:send_updates_notification) }.to change { ActionMailer::Base.deliveries.count }.by(1)
   end
 
   it "send_confirm_notification" do
     klub.save
-    expect { subject.send_confirm_notification('test@email.com', []) }.to change {
+    expect { subject.send(:send_confirm_notification, 'test@email.com', [], [], []) }.to change {
       ActionMailer::Base.deliveries.count
     }.by 1
   end

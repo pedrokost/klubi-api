@@ -5,6 +5,7 @@ require 'json'
 require 'pry'
 
 RSpec.describe Api::V2::KlubsController, :type => :controller do
+  include ActiveSupport::Testing::TimeHelpers
 
   describe 'GET #klubs' do
     let!(:klub1) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
@@ -135,7 +136,6 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
     it "should include the parent" do
       get :show, id: klub_branch.url_slug
       expect(response).to match_response_schema('v2/klub')
-      pp json_response
       parent = json_response[:included]
       expect(parent.length).to eq 1
       parent = parent[0]
@@ -157,6 +157,32 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       expect(branches.length).to eq 1
       branch = branches[0]
       expect(branch[:id]).to eq klub_branch.url_slug
+    end
+
+    it "should include all branches for unverified klubs" do
+      klub1.verified = false
+      klub_branch.verified = false
+      klub1.save
+      klub_branch.save
+
+      get :show, id: klub1.url_slug
+      expect(response).to match_response_schema('v2/klub')
+      branches = json_response[:data][:relationships][:branches][:data]
+      expect(branches.length).to eq 1
+      branch = branches[0]
+      expect(branch[:id]).to eq klub_branch.url_slug
+    end
+
+    it "should not include unverified branches for verified klubs" do
+      expect(klub1.verified).to eq true
+      klub_branch.verified = false
+      klub_branch.save
+
+      get :show, id: klub1.url_slug
+      expect(response).to match_response_schema('v2/klub')
+
+      branches = json_response[:data][:relationships][:branches][:data]
+      expect(branches.length).to eq 0
     end
 
     context "unsupported cattegory" do
@@ -286,6 +312,182 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       expect(json_response[:data][:attributes][:categories]).to match(['football'])
       expect(response).to match_response_schema('v2/klub')
     end
+
+    context "a klub with branches" do
+
+      it "should require latitude, longitude, address and town on branches" do
+        expect {
+          post :create, data: {
+            type: 'klub',
+            attributes: {
+              name: 'Fitnes Mariborcan 22',
+              address: 'Address 1',
+              categories: ['football']
+            },
+            relationships: {
+              branches: {
+                data: [{
+                  type: 'klub',
+                  attributes: {
+                    name: 'Fitnes Mariborcan 22',
+                    address: 'Address 2',
+                    categories: ['football']
+                  }
+                }]
+              }
+            }
+          }
+        }.not_to change(Klub.unscoped, :count)
+
+        expect(response.status).to eq 403
+      end
+
+      it "should create parent and the branch" do
+        expect {
+          post :create, data: {
+            type: 'klub',
+            attributes: {
+              name: 'Fitnes Mariborcan 22',
+              address: 'Address 1',
+              categories: ['football']
+            },
+            relationships: {
+              branches: {
+                data: [{
+                  type: 'klub',
+                  attributes: {
+                    name: 'Fitnes Mariborcan 22',
+                    address: 'Address 2',
+                    town: 'None',
+                    latitude: 123,
+                    longitude: 231
+                  }
+                }]
+              }
+            }
+          }
+        }.to change(Klub.unscoped, :count).by(2)
+
+        expect(response.status).to eq 202
+      end
+      it "should mark both parent and branches as unverified" do
+        post :create, data: {
+          type: 'klub',
+          attributes: {
+            name: 'Fitnes Mariborcan 22',
+            address: 'Cesta XV. brigade 2, Metlika',
+            categories: ['mycategor987y']
+          },
+          relationships: {
+            branches: {
+              data: [{
+                type: 'klub',
+                attributes: {
+                  name: 'Fitnes Mariborcan 22',
+                  address: 'Videm pri Ptuju 49, 2284 Videm pri Ptuju, Slovenija',
+                  town: 'None',
+                  latitude: 123,
+                  longitude: 231
+                }
+              }]
+            }
+          }
+        }
+        klub = Klub.unscoped.where("'mycategor987y' = ANY(categories)").first
+
+        expect(klub.verified).to eq false
+        expect(klub.branches.count).to eq 1
+        expect(klub.branches.first.verified).to eq false
+      end
+
+      it "should send an email for the parent to admin" do
+        expect_any_instance_of(Klub).to receive(:send_review_notification)
+
+        post :create, data: {
+          type: 'klub',
+          attributes: {
+            name: 'Fitnes Mariborcan 22',
+            address: 'Address 1',
+            categories: ['football']
+          },
+          relationships: {
+            branches: {
+              data: [{
+                type: 'klub',
+                attributes: {
+                  name: 'Fitnes Mariborcan 22',
+                  address: 'Address 2',
+                  town: 'Hehe',
+                  latitude: 123,
+                  longitude: 231
+                }
+              }]
+            }
+          }
+        }
+      end
+
+      it "should send an email for the parent to editor" do
+        expect_any_instance_of(Klub).to receive(:send_thanks_notification)
+
+        post :create, data: {
+          type: 'klub',
+          attributes: {
+            name: 'Fitnes Mariborcan 22',
+            address: 'Address 1',
+            editor: 'bla@bla',
+            categories: ['football']
+          },
+          relationships: {
+            branches: {
+              data: [{
+                type: 'klub',
+                attributes: {
+                  name: 'Fitnes Mariborcan 22',
+                  address: 'Address 2',
+                  town: 'Town',
+                  latitude: 123,
+                  longitude: 231
+                }
+              }]
+            }
+          }
+        }
+      end
+
+      it "should respond with created klub and the branches" do
+        post :create, data: {
+          type: 'klub',
+          attributes: {
+            name: 'Fitnes Mariborcan 22',
+            address: 'Address 1',
+            categories: ['football']
+          },
+          relationships: {
+            branches: {
+              data: [{
+                type: 'klub',
+                attributes: {
+                  name: 'Fitnes Mariborcan 22',
+                  address: 'Address 2',
+                  town: 'Metlika',
+                  latitude: 45.6474851,
+                  longitude: 15.3155356
+                }
+              }]
+            }
+          }
+        }
+
+        expect(json_response[:data][:id]).to be_truthy
+        expect(json_response[:data][:attributes][:categories]).to match(['football'])
+        expect(json_response[:data][:relationships][:branches][:data][0][:id]).to be_truthy
+        expect(json_response[:included][0][:attributes][:address]).to eq 'Address 2'
+        expect(json_response[:included][0][:attributes][:latitude]).to eq "45.6474851"
+        expect(json_response[:included][0][:attributes][:longitude]).to eq "15.3155356"
+        expect(response).to match_response_schema('v2/klub')
+      end
+    end
   end
 
   describe 'PATCH #klub/:id' do
@@ -390,6 +592,185 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
         type: 'klubs',
         attributes: new_attrs.merge(editor: nil)
       }
+    end
+
+    context "a klub with branches [expectations]" do
+
+      let!(:klub_branch) { FactoryGirl.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
+      let!(:second_branch) { FactoryGirl.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
+
+      def send_request
+        patch :update, id: klub.url_slug, data: {
+          type: 'klub',
+          id: klub.url_slug,
+          attributes: new_attrs.merge(editor: 'joe@doe.com'),
+          relationships: {
+            branches: {
+              data: [{
+                type: 'klubs',
+                id: klub_branch.url_slug,
+                attributes: {
+                  address: 'Cesta XV. brigade 2, Metlika',
+                  latitude: 45.6474851,
+                  longitude:  15.3155356,
+                  town: 'Logatec'
+                }
+              }, {
+                type: 'klubs',
+                attributes: {
+                  address: 'Videm pri Ptuju 49, 2284 Videm pri Ptuju, Slovenija',
+                  latitude: 46.369447,
+                  longitude:  15.902942,
+                  town: 'Logatec'
+                }
+              }]
+            }
+          }
+        }
+      end
+
+      it "should persist new branches" do
+        expect { send_request() }.to change(Klub, :count).by(1)
+      end
+
+
+      it "should send an email notification for the parent only to admin" do
+        expect_any_instance_of(Klub).to receive(:send_updates_notification).once
+        send_request()
+      end
+
+      it "should send an email for the parent only  to the editor" do
+        expect_any_instance_of(Klub).to receive(:send_confirm_notification).once.with(anything, anything, anything, anything)
+        send_request()
+      end
+    end
+
+    context "a klub with branches" do
+
+      let!(:klub_branch) { FactoryGirl.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
+      let!(:second_branch) { FactoryGirl.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
+
+      before do
+
+        allow_any_instance_of(Klub).to receive(:send_updates_notification)
+        allow_any_instance_of(Klub).to receive(:send_confirm_notification)
+
+        travel_to Time.new(2024, 11, 24, 01, 04, 44) do
+
+          patch :update, id: klub.url_slug, data: {
+            type: 'klub',
+            id: klub.url_slug,
+            attributes: new_attrs.merge(editor: 'joe@doe.com'),
+            relationships: {
+              branches: {
+                data: [{
+                  type: 'klubs',
+                  id: klub_branch.url_slug,
+                  attributes: {
+                    address: 'Cesta XV. brigade 2, Metlika',
+                    latitude: 45.6474851,
+                    longitude:  15.3155356,
+                    town: 'Logatec'
+                  }
+                }, {
+                  type: 'klubs',
+                  attributes: {
+                    address: 'Videm pri Ptuju 49, 2284 Videm pri Ptuju, Slovenija',
+                    latitude: 46.369447,
+                    longitude:  15.902942,
+                    town: 'Ptuj'
+                  }
+                }]
+              }
+            }
+          }
+        end
+      end
+
+      it "should be accepted" do
+        expect(response.status).to eq 202  # Accepted -- no need to reply with changes
+      end
+
+      it "should create update objects for each changed attributes of the branch" do
+        address_update = Update.find_by(
+          updatable: klub_branch,
+          field: 'address',
+          oldvalue: 'Univerza v Ljubljani, Tržaška cesta 25, 1000 Ljubljana, Slovenija',
+          newvalue: 'Cesta XV. brigade 2, Metlika',
+          status: :unverified,
+          editor_email: 'joe@doe.com'
+        )
+        town_update = Update.find_by(
+          updatable: klub_branch,
+          field: 'town',
+          oldvalue: 'Ljubljana',
+          newvalue: 'Logatec',
+          status: :unverified,
+          editor_email: 'joe@doe.com'
+        )
+        latitude_update = Update.find_by(
+          updatable: klub_branch,
+          field: 'latitude',
+          oldvalue: '46.044899',
+          newvalue: '45.6474851',
+          status: :unverified,
+          editor_email: 'joe@doe.com'
+        )
+        longitude_update = Update.find_by(
+          updatable: klub_branch,
+          field: 'longitude',
+          oldvalue: '14.489231',
+          newvalue: '15.3155356',
+          status: :unverified,
+          editor_email: 'joe@doe.com'
+        )
+
+        expect(address_update).to be_present
+        expect(town_update).to be_present
+        expect(latitude_update).to be_present
+        expect(longitude_update).to be_present
+
+        # Make sure no other updates where created
+        expect(Update.where(updatable: klub_branch).count).to eq 4
+      end
+
+      it "should not copy over the :created_at attribute" do
+        expect(klub.branches.order('id ASC').last.created_at).to eq Time.new(2024, 11, 24, 01, 04, 44)
+        expect(klub.branches.order('id ASC').last.updated_at).to eq Time.new(2024, 11, 24, 01, 04, 44)
+      end
+
+      it "should not change the Klub model" do
+        expect(klub_branch.reload).to have_attributes(old_attrs)
+      end
+
+      it "should create new branches as unverified klub" do
+        klub_branches = klub.reload.branches
+
+        expect(klub_branches.count).to eq 3
+        expect(klub_branches.map(&:verified)).to match_array [false, true, true]
+      end
+
+      it "should marked deleted branches for deletion" do
+        expect(
+          Update.where(
+            updatable: second_branch,
+            field: :marked_for_deletion,
+            oldvalue: false,
+            newvalue: true,
+            status: :unverified,
+            editor_email: 'joe@doe.com'
+          )
+        ).to exist
+      end
+
+      it "should not change the parent model" do
+        expect(klub.reload).to have_attributes(old_attrs)
+      end
+
+      it "should not change the branch model" do
+        expect(klub_branch.reload).to have_attributes(old_attrs)
+
+      end
     end
   end
 end

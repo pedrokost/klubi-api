@@ -65,9 +65,10 @@ RSpec.describe KlubMailer, :type => :mailer do
   end
 
   describe "new_updates_mail" do
-    let(:klub) { build(:klub, name: 'My klub' * 10, editor_emails: ['submitter@email.com'], categories: ['fitnes', 'zumba']) }
-    let(:update) { build(:update, editor_email: 'joe@doe.com', field: 'my_field', oldvalue: 'old_val', newvalue: 'new_val') }
-    let(:mail) { KlubMailer.new_updates_mail(klub.name, [update]) }
+    let!(:klub) { create(:klub, name: 'My klub' * 10, editor_emails: ['submitter@email.com'], categories: ['fitnes', 'zumba']) }
+
+    let!(:update) { create(:update, updatable: klub, editor_email: 'joe@doe.com', field: 'my_field', oldvalue: 'old_val', newvalue: 'new_val') }
+    let(:mail) { KlubMailer.new_updates_mail(klub.id, [update]) }
 
     it 'renders the subject' do
       expect(mail.subject).to eql("Updates submitted for 'My klubMy klubMy klubMy klubMy klubMy klubMy klubMy klubMy klubMy klub'")
@@ -91,17 +92,25 @@ RSpec.describe KlubMailer, :type => :mailer do
   end
 
   describe "confirmation_for_pending_updates_mail" do
-    let(:klub) {
+    let!(:klub) {
       create(:complete_klub, name: 'MyKlub', categories: ['fitnes'])
     }
-    let(:update) {
+    let!(:klub_branch) {
+      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'], address: "Univerza v ljubljani, tržaška cesta 25, 1000 ljubljana, slovenija", parent: klub)
+    }
+    let!(:update) {
       create( :update, field: 'phone', oldvalue: 'staro', newvalue: 'novo', updatable: klub )
+    }
+    let!(:branch_update) {
+      create( :update, field: 'address', oldvalue: 'addressOld', newvalue: 'addressNew', updatable: klub )
     }
     let(:mail) {
       KlubMailer.confirmation_for_pending_updates_mail(
         klub.id,
         'joe@email.com',
-        [update.id]
+        [update.id],
+        [branch_update.id],
+        [klub_branch.id]
       )
     }
 
@@ -129,11 +138,22 @@ RSpec.describe KlubMailer, :type => :mailer do
       expect(mail.body.encoded.downcase).to match('telefon')
       expect(mail.body.encoded.downcase).to match('novo')
     end
+
+    it "contains the addresses of updated branches" do
+      expect(mail.body.encoded.downcase).to match('addressnew')
+    end
+
+    it "contains the addresses of deleted branches" do
+      expect(mail.body.encoded.downcase).to match('<strike>univerza v ljubljani, tržaška cesta 25, 1000 ljubljana, slovenija</strike>')
+    end
   end
 
   describe "confirmation for accepted updates mail" do
-    let(:klub) {
+    let!(:klub) {
       create(:complete_klub, name: 'MyKlub', categories: ['fitnes'])
+    }
+    let!(:klub_branch) {
+      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'], address: "Cesta XV. brigade 2, Metlika", parent: klub)
     }
     let(:update) {
       create( :update, field: 'address', oldvalue: 'staro', newvalue: 'novo', updatable: klub )
@@ -174,17 +194,14 @@ RSpec.describe KlubMailer, :type => :mailer do
       expect(mail.body.encoded).to match("http://www.klubi.si/fitnes/#{klub.url_slug}/uredi")
     end
 
-    it "contains the list of updates" do
-      expect(mail.body.encoded.downcase).to match('naslov')
-      expect(mail.body.encoded.downcase).to match('novo')
-
-      expect(mail.body.encoded.downcase).to match('telefon')
-      expect(mail.body.encoded.downcase).to match('012312')
+    it "list all klub data, together with branches" do
+      expect(mail.body.encoded.downcase).to match(klub.address.downcase)
+      expect(mail.body.encoded.downcase).to match('cesta xv. brigade 2, 8330 metlika, slovenija')
     end
   end
 
   describe "emails to request verification of klub data" do
-    let(:klub) {
+    let!(:klub) {
       create(:complete_klub,
         name: 'MyKlub',
         categories: ['fitnes'],
@@ -193,6 +210,9 @@ RSpec.describe KlubMailer, :type => :mailer do
         website: 'http://website.com',
         address: "Cesta XV. brigade 2, Metlika",
         phone: "041 444 222")
+    }
+    let!(:klub_branch) {
+      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'], address: "Videm pri Ptuju 49, Videm pri Ptuju", parent: klub)
     }
     let(:mail) {
       KlubMailer.request_verify_klub_mail(
@@ -235,6 +255,11 @@ RSpec.describe KlubMailer, :type => :mailer do
       expect(mail.body.encoded.downcase).to match('http://facebook.com')
       expect(mail.body.encoded.downcase).to match('http://website.com')
       expect(mail.body.encoded.downcase).to match('041 444 222')
+    end
+
+    it "list all klub data, together with branches" do
+      expect(mail.body.encoded.downcase).to match(klub.address.downcase)
+      expect(mail.body.encoded.downcase).to match('videm pri ptuju 49, 2284 videm pri ptuju, slovenija')
     end
   end
 end

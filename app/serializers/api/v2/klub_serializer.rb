@@ -13,14 +13,20 @@ module Api
       cache key: 'v2/klub'
       attributes :name, :address, :email, :latitude, :longitude, :phone, :town, :website, :facebook_url, :categories, :notes, :verified
 
-      def id
-        object.url_slug
-      end
-
       has_many :branches, serializer: BranchSerializer
 
       belongs_to :parent, serializer: KlubSerializer
 
+
+      def id
+        object.url_slug
+      end
+
+      def branches
+        return object.branches unless object.verified
+
+        object.branches.where(verified: true)
+      end
 
     end
   end

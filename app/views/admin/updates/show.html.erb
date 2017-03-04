@@ -23,7 +23,7 @@ as well as a link to its edit page.
   <div class="header__actions">
     <% if page.resource.status != Update.statuses[:accepted] %>
       <%= form_tag([:accept, namespace, page.resource]) do %>
-        <%= submit_tag("Accept", class: 'button') %>
+        <%= submit_tag("Accept", class: 'button', data: { confirm: "This will delete the klub/branch  #{page.resource.updatable.name}!" }) %>
       <% end %>
     <% end %>
 

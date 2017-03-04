@@ -5,6 +5,7 @@ RSpec.describe Update, type: :model do
 
   let!(:klub) { create(:klub, categories: ['running']) }
   let(:update) { create(:update, updatable: klub, status: :unverified, field: 'name', newvalue: 'Pear') }
+
   let(:category_update) { create(:update, updatable: klub, status: :accepted, field: 'categories', newvalue: ['swimming', 'dance']) }
 
   subject { update }
@@ -30,6 +31,12 @@ RSpec.describe Update, type: :model do
       category_update.newvalue = ['jazz dance', 'judo magic']
       category_update.resolve!
       expect( klub.reload.categories ).to match(['jazz-dance', 'judo-magic'])
+    end
+
+    it "shoud delete updatable if accepting a marked-for-deletion" do
+      update.field = "marked_for_deletion"
+      update.status = :accepted
+      expect { update.resolve! }.to change(Klub, :count).by(-1)
     end
   end
 
