@@ -93,24 +93,32 @@ RSpec.describe KlubMailer, :type => :mailer do
 
   describe "confirmation_for_pending_updates_mail" do
     let!(:klub) {
-      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'])
+      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'], address: 'Videm pri Ptuju 49, Videm pri Ptuju')
     }
     let!(:klub_branch) {
       create(:complete_klub, name: 'MyKlub', categories: ['fitnes'], address: "Univerza v ljubljani, tržaška cesta 25, 1000 ljubljana, slovenija", parent: klub)
+    }
+    let!(:klub_branch2) {
+      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'], address: "Univerza v ljubljani, tržaška cesta 25, 1000 ljubljana, slovenija", parent: klub)
+    }
+    let!(:new_branch) {
+      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'], address: "Cesta XV. brigade 2, Metlika", parent: klub)
     }
     let!(:update) {
       create( :update, field: 'phone', oldvalue: 'staro', newvalue: 'novo', updatable: klub )
     }
     let!(:branch_update) {
-      create( :update, field: 'address', oldvalue: 'addressOld', newvalue: 'addressNew', updatable: klub )
+      create( :update, field: 'address', oldvalue: 'addressOld', newvalue: 'addressNew', updatable: klub_branch2 )
+    }
+    let!(:klub_branch_delete_update) {
+      create( :update, field: 'marked_for_deletion', oldvalue: false, newvalue: true, updatable: klub_branch )
     }
     let(:mail) {
       KlubMailer.confirmation_for_pending_updates_mail(
         klub.id,
         'joe@email.com',
-        [update.id],
-        [branch_update.id],
-        [klub_branch.id]
+        [update.id, branch_update.id, klub_branch_delete_update.id],
+        [new_branch.id]
       )
     }
 
@@ -130,9 +138,9 @@ RSpec.describe KlubMailer, :type => :mailer do
       expect(mail.body.encoded).to match("http://www.klubi.si/fitnes/#{klub.url_slug}/")
     end
 
-    it "contains link to edit the klub" do
-      expect(mail.body.encoded).to match("http://www.klubi.si/fitnes/#{klub.url_slug}/uredi")
-    end
+    # it "contains link to edit the klub" do
+    #   expect(mail.body.encoded).to match("http://www.klubi.si/fitnes/#{klub.url_slug}/uredi")
+    # end
 
     it "contains the list of updates" do
       expect(mail.body.encoded.downcase).to match('telefon')
@@ -143,9 +151,57 @@ RSpec.describe KlubMailer, :type => :mailer do
       expect(mail.body.encoded.downcase).to match('addressnew')
     end
 
+    it "contains the addresses of new branches" do
+      expect(mail.body.encoded.downcase).to match('cesta xv.')
+    end
+
+    it "contains the address of new branches just once" do
+      expect(mail.body.encoded.downcase.scan('cesta xv.').length).to eq 1
+    end
+
     it "contains the addresses of deleted branches" do
       expect(mail.body.encoded.downcase).to match('<strike>univerza v ljubljani, tržaška cesta 25, 1000 ljubljana, slovenija</strike>')
     end
+
+    it "should list klub address if only branch changed" do
+      mail = KlubMailer.confirmation_for_pending_updates_mail(
+        klub.id,
+        'joe@email.com',
+        [branch_update.id],
+        []
+      )
+      # Parent address
+      expect(mail.body.encoded.downcase).to match('videm pri ptuju 49, 2284 videm pri ptuju, slovenija')
+      # Branch updated address
+      expect(mail.body.encoded.downcase).to match('addressnew')
+    end
+
+    it "should list klub address if only branch deleted" do
+      mail = KlubMailer.confirmation_for_pending_updates_mail(
+        klub.id,
+        'joe@email.com',
+        [klub_branch_delete_update.id],
+        []
+      )
+      # Parent address
+      expect(mail.body.encoded.downcase).to match('videm pri ptuju 49, 2284 videm pri ptuju, slovenija')
+      # Deleted branch
+      expect(mail.body.encoded.downcase).to match('<strike>univerza v ljubljani, tržaška cesta 25, 1000 ljubljana, slovenija</strike>')
+    end
+
+    it "should list klub address if only branch added" do
+      mail = KlubMailer.confirmation_for_pending_updates_mail(
+        klub.id,
+        'joe@email.com',
+        [],
+        [new_branch.id]
+      )
+      # Parent address
+      expect(mail.body.encoded.downcase).to match('videm pri ptuju 49, 2284 videm pri ptuju, slovenija')
+      # New branch
+      expect(mail.body.encoded.downcase).to match('cesta xv')
+    end
+
   end
 
   describe "confirmation for accepted updates mail" do

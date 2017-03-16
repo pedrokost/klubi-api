@@ -49,9 +49,9 @@ class Klub < ActiveRecord::Base
     send_thanks_notification editor if editor
   end
 
-  def send_on_update_notifications(editor, updates, branch_updates, deleted_branch_ids)
+  def send_on_update_notifications(editor, updates, new_branches)
     send_updates_notification
-    send_confirm_notification(editor, updates, branch_updates, deleted_branch_ids) if editor
+    send_confirm_notification(editor, updates, new_branches) if editor
   end
 
   def send_updates_accepted_notification(editor, updates)
@@ -159,7 +159,7 @@ private
     KlubMailer.new_updates_mail(self.id, updates.first.try(:editor)).deliver_later
   end
 
-  def send_confirm_notification(editor, updates, branch_updates, deleted_branch_ids)
-    KlubMailer.confirmation_for_pending_updates_mail(self.id, editor, updates.map(&:id), branch_updates.map(&:id), deleted_branch_ids).deliver_later
+  def send_confirm_notification(editor, updates, new_branches)
+    KlubMailer.confirmation_for_pending_updates_mail(self.id, editor, updates.map(&:id), new_branches.map(&:id)).deliver_later
   end
 end

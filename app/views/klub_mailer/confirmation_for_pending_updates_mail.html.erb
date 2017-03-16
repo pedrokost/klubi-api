@@ -7,34 +7,28 @@ Pozdravljeni,
   <br>
 
   <dl>
+
   <% @updates.each do |update| %>
-    <% unless ['address', 'latitude', 'longitude'].include? update.field  %>
+    <% unless ['latitude', 'longitude', 'marked_for_deletion', 'town', 'address'].include? update.field  %>
       <dt><%= Klub.human_attribute_name(update.field) %>:</dt>
       <dd><%= update.newvalue %></dd>
     <% end %>
   <% end %>
 
-  <% @updates.each do |update| %>
-    <% if ['address'].include? update.field  %>
-      <dt><%= Klub.human_attribute_name(update.field) %>:</dt>
-      <dd><%= update.newvalue %></dd>
+  <dt><%= Klub.human_attribute_name('address') %>:</dt>
+
+  <% @branches.each do |branch| %>
+    <% if @updates.find{ |update| update.updatable == branch && update.field == 'marked_for_deletion' } %>
+      <dd><strike><%= branch.address %></strike></dd>
+    <% elsif branch.verified == false && !@updates.find{ |update| update.updatable == branch && update.field == 'marked_for_deletion' } %>
+      <dd>Novo: <%= branch.address %></dd>
+    <% elsif @updates.find{ |update| update.updatable == branch && update.field == 'address' } %>
+      <dd>Posodobljeno: <%= @updates.find{ |update| update.updatable == branch && update.field == 'address' }.newvalue %></dd>
+    <% else %>
+      <dd><%= branch.address %></dd>
     <% end %>
   <% end %>
-
-  <% @branch_updates.each do |update| %>
-    <% if ['address'].include? update.field  %>
-      <dd><%= update.newvalue %></dd>
-    <% end %>
-  <% end %>
-
-  <% @deleted_branches.each do |branch| %>
-    <dd><strike><%= branch.address %></strike></dd>
-  <% end %>
-
-  </dl>
 </p>
-
-<p>Če želite popraviti še kateri podatek za ta klub, lahko to storite na <%= link_to "tej povezavi", @klub.spa_edit_url %>.</p>
 
 <p>Vaše spremembe bomo pregledali in nato posodobili podatke na <%= link_to "spletni strani", @klub.spa_url %>.</p>
 

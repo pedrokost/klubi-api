@@ -78,13 +78,16 @@ RSpec.describe Import::Importer do
       existing_klubs = Klub.unscoped
 
       # Add two more very similar klub
-      existing_klubs.first.name = "Fitnes X"
-      existing_klubs.first.address = "Metlika"
-      existing_klubs.first.save!
+      first_klub = existing_klubs.first
+      last_klub = existing_klubs.last
 
-      existing_klubs.last.name = "Fitnes X"
-      existing_klubs.last.address = "Maribor"
-      existing_klubs.last.save!
+      first_klub.name = "Fitnes X"
+      first_klub.address = "Metlika"
+      first_klub.save!
+
+      last_klub.name = "Fitnes X"
+      last_klub.address = "Maribor"
+      last_klub.save!
 
       # See how the method works
       klubdata = {
@@ -95,7 +98,7 @@ RSpec.describe Import::Importer do
 
       similar = subject.send(:most_similar_klub, klubdata, existing_klubs)
 
-      expect(similar).to eq(existing_klubs.last)
+      expect(similar).to eq(last_klub)
     end
 
     it "should merge data if resolution is 'merge'" do

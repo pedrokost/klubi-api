@@ -158,7 +158,7 @@ RSpec.describe Klub, :type => :model do
 
   it "send_confirm_notification" do
     klub.save
-    expect { subject.send(:send_confirm_notification, 'test@email.com', [], [], []) }.to change {
+    expect { subject.send(:send_confirm_notification, 'test@email.com', [], []) }.to change {
       ActionMailer::Base.deliveries.count
     }.by 1
   end

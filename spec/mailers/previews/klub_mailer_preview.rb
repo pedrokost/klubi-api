@@ -7,13 +7,20 @@ class KlubMailerPreview < ActionMailer::Preview
   end
 
   def confirmation_for_pending_updates_mail
-    updates = Update.all[1..10]
-    branch_updates = Update.where(field: 'address').all[1..2]
-    deleted_branches = [Klub.first]
+    klub = Klub.find(715)
+    updates = klub.updates
+    new_branches = []
+    branch_updates = []
+    deleted_branches = []
 
-    klub = updates[0].updatable
+    old_branches = klub.branches.select{|branch| !branch.verified }
+    new_branches = klub.branches.select{|branch| !branch.verified }
+    branch_updates = old_branches.map(&:updates).flatten
+
+    updates = updates + branch_updates
+
     editor = 'you@me.com'
-    KlubMailer.confirmation_for_pending_updates_mail(klub.id, editor, updates.map(&:id), branch_updates.map(&:id), deleted_branches.map(&:id))
+    KlubMailer.confirmation_for_pending_updates_mail(klub.id, editor, updates.map(&:id), new_branches.map(&:id))
   end
 
   def new_klub_thanks_mail

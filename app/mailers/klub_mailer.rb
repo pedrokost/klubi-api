@@ -15,11 +15,11 @@ class KlubMailer < ApplicationMailer
     mail(to: email, subject: "Updates submitted for '#{@klub.name}'")
   end
 
-  def confirmation_for_pending_updates_mail(klub_id, editor_email, update_ids, branch_updates_ids=[], deleted_branch_ids=[])
+  def confirmation_for_pending_updates_mail(klub_id, editor_email, update_ids, new_branch_ids)
+
     @klub = Klub.unscoped.find(klub_id)
+    @branches = [@klub] + @klub.branches
     @updates = Update.find(update_ids)
-    @branch_updates = Update.find(branch_updates_ids)
-    @deleted_branches = Klub.find(deleted_branch_ids)
 
     from_email = ENV['DEFAULT_BOT_EMAIL']
     subject = "🚶 Vaši popravki za #{@klub.name} ( ͡° ͜ʖ ͡°)"

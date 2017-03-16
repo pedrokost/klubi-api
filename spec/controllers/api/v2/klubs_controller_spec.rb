@@ -640,7 +640,7 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       end
 
       it "should send an email for the parent only  to the editor" do
-        expect_any_instance_of(Klub).to receive(:send_confirm_notification).once.with(anything, anything, anything, anything)
+        expect_any_instance_of(Klub).to receive(:send_confirm_notification).once.with(anything, anything, anything)
         send_request()
       end
     end

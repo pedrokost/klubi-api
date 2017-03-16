@@ -47,25 +47,27 @@ module Api
         # Delete any of the other branches
         updated_branch_ids = update_klub_params[:branches_attributes].select{ |branch| branch[:id] }.map{ |branch| extract_slug(branch[:id]).to_i }
         deleted_branch_ids = klub.branches.map(&:id) - updated_branch_ids
+
         deleted_branch_ids.each do |branch_id|
-          klub.suggest_branch_removal branch_id, editor
+          updates << klub.suggest_branch_removal(branch_id, editor)
         end
 
         # Update existing branches
-        branches_updates = []
+        new_branches = []
         update_klub_params[:branches_attributes].each do |branch_attrs|
           branch = find_by_url_slug branch_attrs[:id]
           if branch
             branch_updates = branch.create_updates branch_attrs.merge(editor: editor)
-            branches_updates.concat branches_updates
+            updates.concat updates
           else
             branch = klub.created_branch branch_attrs
+            new_branches << branch
           end
         end
 
         klub.save!
 
-        klub.send_on_update_notifications update_klub_params[:editor], updates, branches_updates, deleted_branch_ids
+        klub.send_on_update_notifications update_klub_params[:editor], updates, new_branches
 
         render json: 'null', status: :accepted
       end
