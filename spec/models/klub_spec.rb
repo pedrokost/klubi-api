@@ -3,7 +3,12 @@ require 'pry'
 
 RSpec.describe Klub, :type => :model do
 
-  let(:klub) { build(:klub, name: 'Karate klub Skocjan -- ', email: 'owner@test.com', categories: ['football']) }
+  let(:klub) { build(:klub,
+    name: 'Karate klub Skocjan -- ',
+    email: 'owner@test.com',
+    latitude: '46.421684',
+    longitude: '14.089593',
+    categories: ['football']) }
 
   subject { klub }
 
@@ -32,6 +37,20 @@ RSpec.describe Klub, :type => :model do
     it "should also contain slug and ID" do
       klub.save
       expect(klub.url_slug).to eq("karate-klub-skocjan-#{klub.id}")
+    end
+  end
+
+  describe "create_updates" do
+
+    it "should not create update for tiny latitude change" do
+      expect { klub.create_updates({
+        latitude: 46.4216837
+      }) }.not_to change(Update, :count)
+    end
+    it "should not create update for tiny longitude change" do
+      expect { klub.create_updates({
+        longitude: 14.0895932
+      }) }.not_to change(Update, :count)
     end
   end
 
@@ -252,11 +271,11 @@ RSpec.describe Klub, :type => :model do
       end
 
       describe "address not provided" do
+        let(:klub) { create(:klub, address: "", categories: ['karate']) }
         before do
-          klub = create(:klub, address: "", categories: ['karate'])
+          expect(Geocoder).not_to receive(:address)
         end
         it "shoud not run if no address" do
-          # TODO: assert geocoder not run
           expect(klub.latitude).to be_nil
           expect(klub.longitude).to be_nil
           expect(klub.town).to be_nil
