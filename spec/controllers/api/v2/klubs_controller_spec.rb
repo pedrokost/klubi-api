@@ -258,6 +258,17 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       }
     end
 
+    it "should downcase and dasherize new categories" do
+      valid_attrs = {name: "Fitnes Maribor", address: "Mariborska cesta 5", latitude: "46.5534849", longitude: "15.503709399999934", website: "http://www.fitnes-zumba.si",categories: ["Fitnes","zu M  ba"], editor: "jaz@ti.com", notes: "Ta klub ne obstaja"}
+
+      post :create, data: {
+        type: 'klubs',
+        attributes: valid_attrs
+      }
+
+      expect(Klub.last.categories).to match(['fitnes', 'zu-m-ba'])
+    end
+
     it "should create a new unverified klub" do
       expect {
         post :create, data: {
@@ -565,6 +576,17 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       }
 
       expect(klub.reload).to have_attributes(old_attrs)
+    end
+
+    it "should downcase and dasherize categories" do
+      patch :update, id: klub.url_slug, data: {
+        type: 'klubs',
+        attributes: {
+          categories: ['Zumba', ' JoG   a']
+        }.merge(editor: 'joe@doe.com')
+      }
+
+      expect(Update.find_by(updatable: klub, field: 'categories', newvalue: "[\"zumba\", \"jog-a\"]")).to be_present
     end
 
     it "should send an email notification to admin" do

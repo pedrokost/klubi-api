@@ -20,20 +20,23 @@ module Api
       end
 
       def create
-        klub = Klub.new(new_klub_params.except(:editor, :branches_attributes))
-        klub.editor_emails << new_klub_params[:editor]
+        the_params = new_klub_params
+        the_params[:categories] = the_params[:categories].map(&:parameterize) if the_params[:categories]
+
+        klub = Klub.new(the_params.except(:editor, :branches_attributes))
+        klub.editor_emails << the_params[:editor]
 
         head 403 and return unless klub.valid?
 
         # Create branches
-        new_klub_params[:branches_attributes].each do |branch_attrs|
+        the_params[:branches_attributes].each do |branch_attrs|
           branch = klub.created_branch branch_attrs
           head 403 and return unless branch
         end
 
         klub.save!
 
-        klub.send_on_create_notifications new_klub_params[:editor]
+        klub.send_on_create_notifications the_params[:editor]
 
         render json: klub, include: [:branches], status: :accepted
       end

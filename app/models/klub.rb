@@ -73,6 +73,7 @@ class Klub < ActiveRecord::Base
       next if self.send(key) == val
       next if key == :latitude and (val - self.send(key)).abs < lat_lon_min_eta
       next if key == :longitude and (val - self.send(key)).abs < lat_lon_min_eta
+      val = val.map(&:parameterize) if key == "categories"
 
       updates << Update.create!(
         updatable: self,
