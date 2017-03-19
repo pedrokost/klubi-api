@@ -286,14 +286,14 @@ RSpec.describe Klub, :type => :model do
     context "on save" do
       let(:klub) { create(:klub, address: "Trzaska 25, 1000 Ljubljana", categories: ['karate']) }
       it "should not run" do
-        expect(klub.latitude).to eq 46.0448994
-        expect(klub.longitude).to eq 14.4892307
+        expect(klub.latitude).to eq 46.044899
+        expect(klub.longitude).to eq 14.489231
 
         klub.address = "Vrazov trg 2, 1104 Ljubljana, Slovenija"
         klub.save
 
-        expect(klub.latitude).to eq 46.0448994
-        expect(klub.longitude).to eq 14.4892307
+        expect(klub.latitude).to eq 46.044899
+        expect(klub.longitude).to eq 14.489231
       end
     end
   end

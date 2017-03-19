@@ -482,7 +482,7 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
                   name: 'Fitnes Mariborcan 22',
                   address: 'Address 2',
                   town: 'Metlika',
-                  latitude: 45.6474851,
+                  latitude: 45.647485,
                   longitude: 15.3155356
                 }
               }]
@@ -494,8 +494,8 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
         expect(json_response[:data][:attributes][:categories]).to match(['football'])
         expect(json_response[:data][:relationships][:branches][:data][0][:id]).to be_truthy
         expect(json_response[:included][0][:attributes][:address]).to eq 'Address 2'
-        expect(json_response[:included][0][:attributes][:latitude]).to eq "45.6474851"
-        expect(json_response[:included][0][:attributes][:longitude]).to eq "15.3155356"
+        expect(json_response[:included][0][:attributes][:latitude]).to eq "45.647485"
+        expect(json_response[:included][0][:attributes][:longitude]).to eq "15.315536"
         expect(response).to match_response_schema('v2/klub')
       end
     end

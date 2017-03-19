@@ -60,7 +60,7 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it 'sends a link to the klub' do
-      expect(mail.body.encoded).to match(klub.spa_url)
+      expect(mail.body.parts[0].decoded).to match(klub.spa_url)
     end
   end
 
@@ -160,7 +160,7 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it "contains the addresses of deleted branches" do
-      expect(mail.body.encoded.downcase).to match('<strike>univerza v ljubljani, tržaška cesta 25, 1000 ljubljana, slovenija</strike>')
+      expect(mail.body.parts[0].decoded.downcase).to match('<strike>univerza v ljubljani, tržaška cesta 25, 1000 ljubljana, slovenija</strike>')
     end
 
     it "should list klub address if only branch changed" do
@@ -184,9 +184,9 @@ RSpec.describe KlubMailer, :type => :mailer do
         []
       )
       # Parent address
-      expect(mail.body.encoded.downcase).to match('videm pri ptuju 49, 2284 videm pri ptuju, slovenija')
+      expect(mail.body.parts[0].decoded.downcase).to match('videm pri ptuju 49, 2284 videm pri ptuju, slovenija')
       # Deleted branch
-      expect(mail.body.encoded.downcase).to match('<strike>univerza v ljubljani, tržaška cesta 25, 1000 ljubljana, slovenija</strike>')
+      expect(mail.body.parts[0].decoded.downcase).to match('<strike>univerza v ljubljani, tržaška cesta 25, 1000 ljubljana, slovenija</strike>')
     end
 
     it "should list klub address if only branch added" do
@@ -197,9 +197,9 @@ RSpec.describe KlubMailer, :type => :mailer do
         [new_branch.id]
       )
       # Parent address
-      expect(mail.body.encoded.downcase).to match('videm pri ptuju 49, 2284 videm pri ptuju, slovenija')
+      expect(mail.body.parts[0].decoded.downcase).to match('videm pri ptuju 49, 2284 videm pri ptuju, slovenija')
       # New branch
-      expect(mail.body.encoded.downcase).to match('cesta xv')
+      expect(mail.body.parts[0].decoded.downcase).to match('cesta xv')
     end
 
   end
@@ -298,19 +298,19 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it "contains the the klub data" do
-      expect(mail.body.encoded.downcase).to match('ime')
-      expect(mail.body.encoded.downcase).to match('kraj treningov')
-      expect(mail.body.encoded.downcase).to match('e-pošta')
-      expect(mail.body.encoded.downcase).to match('spletna stran')
-      expect(mail.body.encoded.downcase).to match('facebook stran')
-      expect(mail.body.encoded.downcase).to match('telefon')
+      expect(mail.body.parts[0].decoded.downcase).to match('ime')
+      expect(mail.body.parts[0].decoded.downcase).to match('kraj treningov')
+      expect(mail.body.parts[0].decoded.downcase).to match('e-pošta')
+      expect(mail.body.parts[0].decoded.downcase).to match('spletna stran')
+      expect(mail.body.parts[0].decoded.downcase).to match('facebook stran')
+      expect(mail.body.parts[0].decoded.downcase).to match('telefon')
 
-      expect(mail.body.encoded.downcase).to match('myklub')
-      expect(mail.body.encoded.downcase).to match('cesta xv. brigade 2, 8330 metlika')
-      expect(mail.body.encoded.downcase).to match('owner@test.com')
-      expect(mail.body.encoded.downcase).to match('http://facebook.com')
-      expect(mail.body.encoded.downcase).to match('http://website.com')
-      expect(mail.body.encoded.downcase).to match('041 444 222')
+      expect(mail.body.parts[0].decoded.downcase).to match('myklub')
+      expect(mail.body.parts[0].decoded.downcase).to match('cesta xv. brigade 2, 8330 metlika')
+      expect(mail.body.parts[0].decoded.downcase).to match('owner@test.com')
+      expect(mail.body.parts[0].decoded.downcase).to match('http://facebook.com')
+      expect(mail.body.parts[0].decoded.downcase).to match('http://website.com')
+      expect(mail.body.parts[0].decoded.downcase).to match('041 444 222')
     end
 
     it "list all klub data, together with branches" do

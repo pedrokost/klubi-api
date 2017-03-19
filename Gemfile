@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 
 ruby '2.2.1'
 
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.8'
 
-gem 'rails-api', require: false
+gem 'rails-api', '~> 0.4.1', require: false
 
 gem 'spring', :group => :development
 
@@ -57,7 +57,7 @@ gem 'levenshtein-ffi', :require => 'levenshtein'
 gem 'aws-sdk' , '~> 2.6.44'  # for uploading the sitemap
 gem 'sitemap_generator', '~> 5.2.0'
 
-gem 'administrate', '~> 0.2.2'
+gem 'administrate', '~> 0.4'
 
 # Makes caching into memcacher work
 gem "dalli", '~> 2.7.6'
