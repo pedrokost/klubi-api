@@ -46,7 +46,7 @@ private
       # The format is /category/slug or /category/slug/uredi
 
       supposed_slug = path_parts[1]
-      klub = Klub.find_by(slug: supposed_slug)
+      klub = Klub.where(slug: supposed_slug).first
 
       if klub
         new_url = request.original_url.sub(supposed_slug, klub.url_slug)
@@ -56,7 +56,7 @@ private
       # The format is /slug or /slug/uredi
       supposed_slug = path_parts.first
 
-      klub = Klub.find_by(slug: supposed_slug)
+      klub = Klub.where(slug: supposed_slug).first
       if klub
         category = klub.categories.first
         new_url = request.original_url.sub(supposed_slug, "#{category}/#{klub.url_slug}")
