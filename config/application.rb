@@ -26,7 +26,7 @@ module KlubiApi
 
     config.middleware.insert_before ActionDispatch::Static, Rack::Cors, logger: Rails.logger do
       allow do
-        origins 'app.local:4200' , 'klubi.si', 'dev.klubi.si', 'www.klubi.si', 'd2ne2albfoowfo.cloudfront.net', '*'
+        origins 'app.local:4200', 'localhost:8000', 'klubi.si', 'dev.klubi.si', 'www.klubi.si', 'd2ne2albfoowfo.cloudfront.net', '*'
 
         resource '*',
           :headers => :any,
@@ -38,16 +38,16 @@ module KlubiApi
     config.middleware.insert_before(Rack::Cors, Rack::Rewrite) do
 
       # Redirect to the www version of the domain
-      r301 %r{.*}, "http://www.klubi.si$&", :if => Proc.new {|rack_env|
+      r301 %r{.*}, "https://www.klubi.si$&", :if => Proc.new {|rack_env|
         ["klubi.si", "www.zatresi.si", "zatresi.si"].include? rack_env['SERVER_NAME']
       }
 
       # Redirect the admin from old domain to the new domain
-      r301 %r{.*}, "http://admin.klubi.si$&", :if => Proc.new {|rack_env|
+      r301 %r{.*}, "https://admin.klubi.si$&", :if => Proc.new {|rack_env|
         ["admin.zatresi.si"].include? rack_env['SERVER_NAME']
       }
 
-      r301 %r{.*}, "http://api.klubi.si$&", :if => Proc.new {|rack_env|
+      r301 %r{.*}, "https://api.klubi.si$&", :if => Proc.new {|rack_env|
         ["api.zatresi.si"].include? rack_env['SERVER_NAME']
       }
 

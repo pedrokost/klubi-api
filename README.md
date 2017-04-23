@@ -39,3 +39,6 @@ foreman run rake updates:send_emails
 ```
 foreman run rake klubs:send_emails
 ```
+
+
+foreman run rails s puma -b 'ssl://127.0.0.1:3200?key=/home/vagrant/.ssh/server.key&cert=/home/vagrant/.ssh/server.crt'

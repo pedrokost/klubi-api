@@ -8,7 +8,7 @@ gem 'rails-api', '~> 0.4.1', require: false
 
 gem 'spring', :group => :development
 
-gem 'unicorn', '~>4.9.0'
+gem 'puma', '~>3.8.2'
 gem 'pg', '~>0.18.2'
 
 gem 'rails_12factor', group: :production
