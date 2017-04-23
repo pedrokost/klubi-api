@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.1'
+ruby '2.4.1'
 
 gem 'rails', '4.2.8'
 
@@ -18,7 +18,7 @@ gem 'active_model_serializers', '~> 0.10.4'
 
 gem 'active_model_serializers-jsonapi_embedded_records_deserializer', '~> 0.1.1'
 
-gem 'redis', '~> 3.2.1'
+gem 'redis', '~> 3.3.3'
 
 gem 'geocoder', '~> 1.2.8'
 
@@ -26,7 +26,7 @@ gem 'skylight', '~> 1.0.1'
 
 gem 'json_spec', '~>1.1.4'
 
-gem 'newrelic_rpm', '~> 3.12.0.288'
+gem 'newrelic_rpm', '~> 4.1.0.333'
 
 gem 'pry-rails'
 group :development do
@@ -42,7 +42,7 @@ gem 'nokogiri', '~> 1.5'
 
 gem 'rack-attack', '~> 4.3.0'
 
-gem 'rack-cors', github: 'cyu/rack-cors', require: 'rack/cors'
+gem 'rack-cors', '~>0.4.1', require: 'rack/cors'
 
 gem 'rack-rewrite', '~> 1.5.1'
 
@@ -67,7 +67,7 @@ gem 'raygun4ruby', '~> 1.1.11'
 
 group :development, :test do
   gem 'spring-commands-rspec'
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '~> 3.5.2'
   gem 'guard-rspec'
   gem 'factory_girl_rails'
 end
