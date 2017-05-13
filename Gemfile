@@ -57,7 +57,7 @@ gem 'levenshtein-ffi', :require => 'levenshtein'
 gem 'aws-sdk' , '~> 2.6.44'  # for uploading the sitemap
 gem 'sitemap_generator', '~> 5.2.0'
 
-gem 'administrate', '~> 0.4'
+gem 'administrate', '0.6'
 
 # Makes caching into memcacher work
 gem "dalli", '~> 2.7.6'
