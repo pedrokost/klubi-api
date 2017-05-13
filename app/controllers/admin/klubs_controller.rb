@@ -43,7 +43,7 @@ module Admin
       # Transform string for storage as a Postgres array:
       params["klub"]["categories"] = params["klub"]["categories"].split(' ')
       params["klub"]["editor_emails"] = params["klub"]["editor_emails"].split(' ')
-      params.require(resource_name).permit(*permitted_attributes, categories: [], editor_emails: [])
+      params.require(resource_name).permit(dashboard.permitted_attributes, categories: [], editor_emails: [])
     end
   end
 end
