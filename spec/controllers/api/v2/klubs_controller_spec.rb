@@ -75,6 +75,12 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
           expect(klubs[:data].length).to eq 2
           expect(klubs[:data].map{|h| h[:id]}).to match_array([klub1, klub_branch].map(&:url_slug))
         end
+
+        it "should return correct type for parent relationship" do
+          klubs = json_response
+          first_klub = klubs[:data].first
+          expect(first_klub[:relationships][:parent][:data][:type]).to eq "klubs"
+        end
       end
 
       context "Missing category filter" do
@@ -131,6 +137,19 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
       expect(response).to match_response_schema('v2/klub')
       klub = json_response[:data]
       expect(klub[:relationships][:parent][:data][:id]).to eq klub1.url_slug
+    end
+
+    it "should return correct type for parent relationship" do
+      get :show, id: klub_branch.url_slug
+      klubs = json_response
+      branch_klub = klubs[:data]
+      expect(branch_klub[:relationships][:parent][:data][:type]).to eq "klubs"
+    end
+
+    it "should return correct type for branches relationship" do
+      klubs = json_response
+      parent_klub = klubs[:data]
+      expect(parent_klub[:relationships][:branches][:data][0][:type]).to eq "klubs"
     end
 
     it "should include the parent" do

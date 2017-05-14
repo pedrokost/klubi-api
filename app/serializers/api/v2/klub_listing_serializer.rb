@@ -8,7 +8,7 @@ module Api
         object.url_slug
       end
 
-      belongs_to :parent, serializer: KlubListingSerializer
+      belongs_to :parent, serializer: KlubListingSerializer, type: :klubs
     end
   end
 end
