@@ -68,7 +68,7 @@ class Klub < ActiveRecord::Base
   def create_updates(new_attrs)
     editor = new_attrs[:editor]
     updates = []
-    lat_lon_min_eta = 0.000001
+    lat_lon_min_eta = 0.00001
 
     new_attrs.except(:editor, :id).each do |key, val|
       next if self.send(key) == val
