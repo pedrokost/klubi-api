@@ -12,6 +12,7 @@ class Klub < ActiveRecord::Base
 
 	validates :name, presence: true
   validates :categories, presence: true
+  validate :closed_at_cannot_be_in_the_future
 
 	scope :completed, -> { where(complete: true) }
 
@@ -165,5 +166,10 @@ private
 
   def send_confirm_notification(editor, updates, new_branches)
     KlubMailer.confirmation_for_pending_updates_mail(self.id, editor, updates.map(&:id), new_branches.map(&:id)).deliver_later
+  end
+
+  def closed_at_cannot_be_in_the_future
+    errors.add(:closed_at, "can't be in the future") if
+      !closed_at.blank? and closed_at > Date.today
   end
 end

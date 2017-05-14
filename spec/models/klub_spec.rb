@@ -33,6 +33,18 @@ RSpec.describe Klub, :type => :model do
     expect(klub.reload.editor_emails).to eq(emails)
   end
 
+  describe "closed_at" do
+    it "should not be in future" do
+      klub.closed_at = 1.day.from_now
+      expect(klub).not_to be_valid
+    end
+
+    it "can be today" do
+      klub.closed_at = Date.today
+      expect(klub).to be_valid
+    end
+  end
+
   describe "url slug" do
     it "should also contain slug and ID" do
       klub.save

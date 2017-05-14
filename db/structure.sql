@@ -100,7 +100,8 @@ CREATE TABLE klubs (
     parent_id integer,
     verified boolean DEFAULT false,
     notes character varying,
-    last_verification_reminder_at timestamp without time zone
+    last_verification_reminder_at timestamp without time zone,
+    closed_at date
 );
 
 
@@ -318,4 +319,6 @@ INSERT INTO schema_migrations (version) VALUES ('20161127143702');
 INSERT INTO schema_migrations (version) VALUES ('20170107115719');
 
 INSERT INTO schema_migrations (version) VALUES ('20170114173733');
+
+INSERT INTO schema_migrations (version) VALUES ('20170514142319');
 

@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2017-01-07 21:23:02
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-01-14 18:14:51
+# @Last Modified time: 2017-05-14 17:04:56
 
 class SendDataVerificationEmails
   # Sends email to klub owners who have not verified their klub data for a
@@ -33,6 +33,7 @@ class SendDataVerificationEmails
       .where('ARRAY[?]::varchar[] && categories', supported_categories)
       .where(parent: nil)
       .where.not(email: [nil, ''])
+      .where(closed_at: nil)
       .order('last_verification_reminder_at ASC NULLS FIRST, created_at ASC')
       .limit(ENV['NUM_DAILY_DATA_VERIFICATION_EMAILS'])
   end

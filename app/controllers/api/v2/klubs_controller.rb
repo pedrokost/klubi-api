@@ -8,10 +8,10 @@ module Api
 
         render json: [] and return unless supported_categories.include? category_params
 
-        stats = Klub.select('count(*) as count, max(updated_at) as last_update_at').completed.where("? = ANY (categories)", category_params).order(nil).first
+        stats = Klub.select('count(*) as count, max(updated_at) as last_update_at').completed.where("? = ANY (categories)", category_params).where('closed_at IS NULL').order(nil).first
 
         data = Rails.cache.fetch("v2/klubs/#{category_params}-#{stats.count}-#{stats.last_update_at.to_i}") do
-          klubs = Klub.completed.where("? = ANY (categories)", category_params)
+          klubs = Klub.completed.where("? = ANY (categories)", category_params).where('closed_at IS NULL')
           serializer = ActiveModel::Serializer::CollectionSerializer.new(klubs, serializer: Api::V2::KlubListingSerializer)
           ActiveModelSerializers::Adapter.create(serializer).to_json
         end

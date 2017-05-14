@@ -31,6 +31,7 @@ class KlubDashboard < Administrate::BaseDashboard
     editor_emails: Field::String.with_options(searchable: false),
     parent_id: Field::Number.with_options(searchable: false),
     last_verification_reminder_at: Field::DateTime.with_options(searchable: false),
+    closed_at: Field::DateTime.with_options(searchable: false),
     notes: Field::String,
   }.freeze
 
@@ -66,7 +67,8 @@ class KlubDashboard < Administrate::BaseDashboard
     :facebook_url,
     :editor_emails,
     :notes,
-    :branches
+    :branches,
+    :closed_at
   ].freeze
 
   # Overwrite this method to customize how klubs are displayed

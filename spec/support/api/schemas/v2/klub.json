@@ -78,7 +78,8 @@
             "longitude",
             "notes",
             "categories",
-            "verified"
+            "verified",
+            "closed-at"
           ],
           "properties": {
             "name" :      { "type": "string" },
@@ -92,6 +93,7 @@
             "facebook-url" : { "type": ["string", "null"] },
             "verified":   { "type": "boolean" },
             "notes":      {"type": ["string", "null"] },
+            "closed-at":   { "type": "date" },
             "categories": {
               "type": "array",
               "items": [{

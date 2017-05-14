@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2016-11-27 15:42:50
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-01-14 18:15:02
+# @Last Modified time: 2017-05-14 17:04:20
 
 
 require 'rails_helper'
@@ -15,6 +15,7 @@ RSpec.describe SendDataVerificationEmails do
   let!(:klub2) { create(:complete_klub, email: 'test@test.com', last_verification_reminder_at: 1.year.ago ) }
   let!(:klub3) { create(:complete_klub, email: 'test@test.com') }
   let!(:klub4) { create(:complete_klub, email: 'test@test.com') }
+  let!(:closed_klub) { create(:complete_klub, email: 'closed@test.com', closed_at: Date.yesterday) }
   let!(:klub_nil_email) { create(:complete_klub, email: nil) }
   let!(:klub_blank_email) { create(:complete_klub, email: '') }
   let!(:unverified_klub) { create(:complete_klub, email: 'test@test.com', verified: false) }
@@ -36,6 +37,11 @@ RSpec.describe SendDataVerificationEmails do
     it "should not include klubs which are not verified" do
       allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
       expect(subject.awaiting_klubs.map(&:id)).not_to include(unverified_klub.id)
+    end
+
+    it "should not include klubs which are closed" do
+      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
+      expect(subject.awaiting_klubs.map(&:id)).not_to include(closed_klub.id)
     end
 
     it "should not send emails for klub of unsupported categories" do

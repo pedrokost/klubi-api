@@ -10,6 +10,7 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
   describe 'GET #klubs' do
     let!(:klub1) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
     let!(:klub2) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes']) }
+    let!(:closed_klub) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes'], closed_at: Date.yesterday ) }
     let!(:klub_branch) { FactoryGirl.create(:klub_branch, verified: true, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
 
     before do
@@ -20,9 +21,14 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
 
     it { should be_success }
 
-    it "should return all items" do
-      klubs = JSON.parse(response.body)['data']
+    it "should return all open klubs" do
+      klubs = json_response[:data]
       expect(klubs.length).to eq 2
+    end
+
+    it "should not return closed klubs" do
+      klub_ids = json_response[:data].map{ |klub| klub[:id] }
+      expect(klub_ids).not_to include closed_klub.url_slug
     end
 
     it "should return a list of klubs" do
@@ -113,6 +119,7 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
   describe 'GET #klubs/:id' do
     let!(:klub1) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
     let!(:klub_branch) { FactoryGirl.create(:klub_branch, verified: true, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
+    let!(:closed_klub) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes'], closed_at: Date.yesterday ) }
 
     before do
       get :show, id: klub1.url_slug
@@ -202,6 +209,13 @@ RSpec.describe Api::V2::KlubsController, :type => :controller do
 
       branches = json_response[:data][:relationships][:branches][:data]
       expect(branches.length).to eq 0
+    end
+
+    it "should return closed klubs together with closed_at" do
+      get :show, id: closed_klub.url_slug
+      expect(response).to match_response_schema('v2/klub')
+      klub = json_response[:data]
+      expect(klub[:attributes][:'closed-at']).to eq Date.yesterday.to_s
     end
 
     context "unsupported cattegory" do
