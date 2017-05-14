@@ -1,7 +1,7 @@
 Pozdravljeni, <br>
 
 <p>
-  zanima me, če so sledeči podatki za klub <em><%= @klub.name %></em> pravilni: <br>
+  sem urednik spletnega portala Klubi Slovenije, ki združuje športne klube v Slovenije. Zanima me, če so sledeči podatki za klub <em><%= @klub.name %></em> pravilni: <br>
 
   <%= render partial: 'klub_attributes', locals: { klub: @klub } %>
 </p>
@@ -9,7 +9,7 @@ Pozdravljeni, <br>
 <p>Vabim vas, da podatke uredite in dopolnite s klikom na povezavo: <mark><b><%= link_to 'Uredite podatke!', @klub.spa_edit_url %></b></mark>. Vzelo vam bo samo 1 minuto!
 </p>
 
-<p>Klub <em><%= @klub.name %></em> je objavljen na <%= link_to 'www.klubi.si', @klub.spa_url %>, največjim portalom športnih klubov v Sloveniji. S tem, da popravite morebitne napake v podatkih omogočate obiskovalcem spletnega portala, da lažje najdejo in obiščejo klub!</p>
+<p>S tem, da popravite morebitne napake v podatkih omogočate obiskovalcem spletnega portala, da lažje najdejo in obiščejo <%= link_to 'vaš klub', @klub.spa_url %>!</p>
 
 
 Najlepša hvala in lep pozdrav, <br>
