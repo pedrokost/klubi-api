@@ -1,0 +1,5 @@
+Terms of use: Statistical Office of the Republic of Slovenia should be quoted as data source.
+As of: 2016
+sr_ime	feat_name
+TOT_P	Število prebivalcev
+V4155	Število prebivalcev

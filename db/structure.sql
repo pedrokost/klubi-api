@@ -144,12 +144,114 @@ ALTER SEQUENCE klubs_id_seq OWNED BY klubs.id;
 
 
 --
+-- Name: obcinas; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE obcinas (
+    id integer NOT NULL,
+    name character varying NOT NULL,
+    slug character varying NOT NULL,
+    population_size integer,
+    geom geography(MultiPolygon,4326),
+    statisticna_regija_id integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: obcinas_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE obcinas_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: obcinas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE obcinas_id_seq OWNED BY obcinas.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE schema_migrations (
     version character varying(255) NOT NULL
 );
+
+
+--
+-- Name: statisticna_regijas; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE statisticna_regijas (
+    id integer NOT NULL,
+    name character varying NOT NULL,
+    slug character varying NOT NULL,
+    population_size integer,
+    geom geography(MultiPolygon,4326),
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: statisticna_regijas_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE statisticna_regijas_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: statisticna_regijas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE statisticna_regijas_id_seq OWNED BY statisticna_regijas.id;
+
+
+--
+-- Name: statisticne_regije_test; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE statisticne_regije_test (
+    gid integer NOT NULL,
+    sr_ime character varying(30),
+    tot_p character varying(80),
+    v4155 character varying(80),
+    __gid numeric(10,0),
+    geom geometry(MultiPolygon,4326)
+);
+
+
+--
+-- Name: statisticne_regije_test_gid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE statisticne_regije_test_gid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: statisticne_regije_test_gid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE statisticne_regije_test_gid_seq OWNED BY statisticne_regije_test.gid;
 
 
 --
@@ -191,6 +293,39 @@ ALTER SEQUENCE updates_id_seq OWNED BY updates.id;
 
 
 --
+-- Name: zatresi-api_development; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE "zatresi-api_development" (
+    gid integer NOT NULL,
+    sr_ime character varying(30),
+    tot_p character varying(80),
+    v4155 character varying(80),
+    __gid numeric(10,0),
+    geom geometry(MultiPolygon,3912)
+);
+
+
+--
+-- Name: zatresi-api_development_gid_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE "zatresi-api_development_gid_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: zatresi-api_development_gid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE "zatresi-api_development_gid_seq" OWNED BY "zatresi-api_development".gid;
+
+
+--
 -- Name: email_stats id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -205,10 +340,38 @@ ALTER TABLE ONLY klubs ALTER COLUMN id SET DEFAULT nextval('klubs_id_seq'::regcl
 
 
 --
+-- Name: obcinas id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY obcinas ALTER COLUMN id SET DEFAULT nextval('obcinas_id_seq'::regclass);
+
+
+--
+-- Name: statisticna_regijas id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY statisticna_regijas ALTER COLUMN id SET DEFAULT nextval('statisticna_regijas_id_seq'::regclass);
+
+
+--
+-- Name: statisticne_regije_test gid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY statisticne_regije_test ALTER COLUMN gid SET DEFAULT nextval('statisticne_regije_test_gid_seq'::regclass);
+
+
+--
 -- Name: updates id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY updates ALTER COLUMN id SET DEFAULT nextval('updates_id_seq'::regclass);
+
+
+--
+-- Name: zatresi-api_development gid; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY "zatresi-api_development" ALTER COLUMN gid SET DEFAULT nextval('"zatresi-api_development_gid_seq"'::regclass);
 
 
 --
@@ -228,11 +391,43 @@ ALTER TABLE ONLY klubs
 
 
 --
+-- Name: obcinas obcinas_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY obcinas
+    ADD CONSTRAINT obcinas_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: statisticna_regijas statisticna_regijas_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY statisticna_regijas
+    ADD CONSTRAINT statisticna_regijas_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: statisticne_regije_test statisticne_regije_test_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY statisticne_regije_test
+    ADD CONSTRAINT statisticne_regije_test_pkey PRIMARY KEY (gid);
+
+
+--
 -- Name: updates updates_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY updates
     ADD CONSTRAINT updates_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: zatresi-api_development zatresi-api_development_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY "zatresi-api_development"
+    ADD CONSTRAINT "zatresi-api_development_pkey" PRIMARY KEY (gid);
 
 
 --
@@ -271,6 +466,41 @@ CREATE INDEX index_klubs_on_slug ON klubs USING btree (slug);
 
 
 --
+-- Name: index_obcinas_on_geom; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_obcinas_on_geom ON obcinas USING gist (geom);
+
+
+--
+-- Name: index_obcinas_on_slug; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_obcinas_on_slug ON obcinas USING btree (slug);
+
+
+--
+-- Name: index_obcinas_on_statisticna_regija_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_obcinas_on_statisticna_regija_id ON obcinas USING btree (statisticna_regija_id);
+
+
+--
+-- Name: index_statisticna_regijas_on_geom; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_statisticna_regijas_on_geom ON statisticna_regijas USING gist (geom);
+
+
+--
+-- Name: index_statisticna_regijas_on_slug; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_statisticna_regijas_on_slug ON statisticna_regijas USING btree (slug);
+
+
+--
 -- Name: index_updates_on_status; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -292,10 +522,32 @@ CREATE INDEX index_updates_on_updatable_type ON updates USING btree (updatable_t
 
 
 --
+-- Name: statisticne_regije_test_geom_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX statisticne_regije_test_geom_idx ON statisticne_regije_test USING gist (geom);
+
+
+--
 -- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
+
+
+--
+-- Name: zatresi-api_development_geom_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX "zatresi-api_development_geom_idx" ON "zatresi-api_development" USING gist (geom);
+
+
+--
+-- Name: obcinas fk_rails_439801d288; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY obcinas
+    ADD CONSTRAINT fk_rails_439801d288 FOREIGN KEY (statisticna_regija_id) REFERENCES statisticna_regijas(id);
 
 
 --
@@ -335,4 +587,8 @@ INSERT INTO schema_migrations (version) VALUES ('20170114173733');
 INSERT INTO schema_migrations (version) VALUES ('20170514142319');
 
 INSERT INTO schema_migrations (version) VALUES ('20170516202345');
+
+INSERT INTO schema_migrations (version) VALUES ('20170518201248');
+
+INSERT INTO schema_migrations (version) VALUES ('20170518210754');
 

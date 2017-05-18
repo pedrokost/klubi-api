@@ -1,5 +1,17 @@
 # This will guess the User class
 FactoryGirl.define do
+  factory :obcina do
+    name "MyString"
+    slug "MyString"
+    population_size 1
+    geom ""
+  end
+  factory :statisticna_regija do
+    name "MyString"
+    slug "MyString"
+    population_size 1
+    geom ""
+  end
 
   factory :email_stat do
     # last_opened_at "2017-01-14 17:37:33"

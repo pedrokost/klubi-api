@@ -38,6 +38,9 @@ GEM
       activemodel (= 4.2.8)
       activesupport (= 4.2.8)
       arel (~> 6.0)
+    activerecord-postgis-adapter (3.1.5)
+      activerecord (~> 4.2)
+      rgeo-activerecord (>= 4.0.4)
     activesupport (4.2.8)
       i18n (~> 0.7)
       minitest (~> 5.1)
@@ -255,6 +258,10 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rgeo (0.6.0)
+    rgeo-activerecord (4.0.5)
+      activerecord (~> 4.2)
+      rgeo (~> 0.3)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -321,6 +328,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (= 0.10.5)
   active_model_serializers-jsonapi_embedded_records_deserializer (~> 0.1.1)
+  activerecord-postgis-adapter
   administrate (= 0.6)
   aws-sdk (~> 2.6.44)
   dalli (~> 2.7.6)

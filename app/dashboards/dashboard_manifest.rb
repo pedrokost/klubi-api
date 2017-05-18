@@ -12,7 +12,9 @@ class DashboardManifest
   DASHBOARDS = [
     :klubs,
     :updates,
-    :email_stats
+    :email_stats,
+    :statisticna_regijas,
+    :obcinas
   ].freeze
 
   # `ROOT_DASHBOARD`

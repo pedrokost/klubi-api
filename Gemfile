@@ -11,6 +11,8 @@ gem 'spring', :group => :development
 gem 'puma', '~>3.8.2'
 gem 'pg', '~>0.18.2'
 
+gem 'activerecord-postgis-adapter'
+
 gem 'rails_12factor', group: :production
 
 # gem 'active_model_serializers', '~> 0.9.0'
