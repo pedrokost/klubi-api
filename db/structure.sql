@@ -2,12 +2,17 @@
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 9.6.3
+-- Dumped by pg_dump version 9.6.3
+
 SET statement_timeout = 0;
 SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+SET row_security = off;
 
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
@@ -21,6 +26,20 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 --
 
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+--
+-- Name: postgis; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS postgis WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION postgis; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON EXTENSION postgis IS 'PostGIS geometry, geography, and raster spatial types and functions';
 
 
 SET search_path = public, pg_catalog;
@@ -41,7 +60,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: email_stats; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: email_stats; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE email_stats (
@@ -77,7 +96,7 @@ ALTER SEQUENCE email_stats_id_seq OWNED BY email_stats.id;
 
 
 --
--- Name: klubs; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: klubs; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE klubs (
@@ -125,7 +144,7 @@ ALTER SEQUENCE klubs_id_seq OWNED BY klubs.id;
 
 
 --
--- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE schema_migrations (
@@ -134,7 +153,7 @@ CREATE TABLE schema_migrations (
 
 
 --
--- Name: updates; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: updates; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE updates (
@@ -172,28 +191,28 @@ ALTER SEQUENCE updates_id_seq OWNED BY updates.id;
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: email_stats id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY email_stats ALTER COLUMN id SET DEFAULT nextval('email_stats_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: klubs id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY klubs ALTER COLUMN id SET DEFAULT nextval('klubs_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: updates id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY updates ALTER COLUMN id SET DEFAULT nextval('updates_id_seq'::regclass);
 
 
 --
--- Name: email_stats_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: email_stats email_stats_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY email_stats
@@ -201,7 +220,7 @@ ALTER TABLE ONLY email_stats
 
 
 --
--- Name: klubs_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: klubs klubs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY klubs
@@ -209,7 +228,7 @@ ALTER TABLE ONLY klubs
 
 
 --
--- Name: updates_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: updates updates_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY updates
@@ -217,70 +236,63 @@ ALTER TABLE ONLY updates
 
 
 --
--- Name: index_email_stats_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_email_stats_on_email; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_email_stats_on_email ON email_stats USING btree (email);
 
 
 --
--- Name: index_klubs_on_categories; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_klubs_on_categories; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_klubs_on_categories ON klubs USING gin (categories);
 
 
 --
--- Name: index_klubs_on_editor_emails; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_klubs_on_editor_emails; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_klubs_on_editor_emails ON klubs USING gin (editor_emails);
 
 
 --
--- Name: index_klubs_on_parent_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_klubs_on_parent_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_klubs_on_parent_id ON klubs USING btree (parent_id);
 
 
 --
--- Name: index_klubs_on_slug; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_klubs_on_slug; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_klubs_on_slug ON klubs USING btree (slug);
 
 
 --
--- Name: index_updates_on_status; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_updates_on_status; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_updates_on_status ON updates USING btree (status);
 
 
 --
--- Name: index_updates_on_updatable_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_updates_on_updatable_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_updates_on_updatable_id ON updates USING btree (updatable_id);
 
 
 --
--- Name: index_updates_on_updatable_type; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_updates_on_updatable_type; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_updates_on_updatable_type ON updates USING btree (updatable_type);
 
 
 --
--- Name: klubs_categories; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE INDEX klubs_categories ON klubs USING btree (categories);
-
-
---
--- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
@@ -290,7 +302,7 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO "$user",public;
+SET search_path TO "$user", public;
 
 INSERT INTO schema_migrations (version) VALUES ('20141126203513');
 
@@ -321,4 +333,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170107115719');
 INSERT INTO schema_migrations (version) VALUES ('20170114173733');
 
 INSERT INTO schema_migrations (version) VALUES ('20170514142319');
+
+INSERT INTO schema_migrations (version) VALUES ('20170516202345');
 
