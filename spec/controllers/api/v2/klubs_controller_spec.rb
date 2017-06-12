@@ -2,9 +2,7 @@ require 'rails_helper'
 
 require 'json'
 
-require 'pry'
-
-RSpec.describe Api::V2::KlubsController, :type => :controller do
+RSpec.describe Api::V2::KlubsController, type: :controller do
   include ActiveSupport::Testing::TimeHelpers
 
   describe 'GET #klubs' do

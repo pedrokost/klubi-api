@@ -90,6 +90,7 @@ shp2pgsql -I -s 3912:4326 f1f60b8a-6513-5102-987c-4950a36c72ec.shp public.statis
 
 - [PostGIS and Google Maps in Rails Part 1](http://climber2002.github.io/blog/2014/05/18/postgis-and-google-maps-in-rails-part-1/)
 - [Geo-Rails Part 2: Setting Up a Geospatial Rails App](http://daniel-azuma.com/articles/georails/part-2)
+- [PostGIS and Rails: A Simple Approach](http://ngauthier.com/2013/08/postgis-and-rails-a-simple-approach.html)
 
 # Attribution
 

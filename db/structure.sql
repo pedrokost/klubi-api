@@ -487,6 +487,13 @@ CREATE INDEX index_obcinas_on_statisticna_regija_id ON obcinas USING btree (stat
 
 
 --
+-- Name: index_on_klubs_location; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_on_klubs_location ON klubs USING gist (st_geographyfromtext((((('SRID=4326;POINT('::text || longitude) || ' '::text) || latitude) || ')'::text)));
+
+
+--
 -- Name: index_statisticna_regijas_on_geom; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -591,4 +598,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170516202345');
 INSERT INTO schema_migrations (version) VALUES ('20170518201248');
 
 INSERT INTO schema_migrations (version) VALUES ('20170518210754');
+
+INSERT INTO schema_migrations (version) VALUES ('20170614201058');
 

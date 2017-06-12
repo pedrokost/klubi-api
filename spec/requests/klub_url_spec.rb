@@ -2,12 +2,13 @@
 # @Author: Pedro Kostelec
 # @Date:   2017-01-29 16:22:15
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-02-06 21:39:01
+# @Last Modified time: 2017-06-14 22:29:14
 
 require 'rails_helper'
 
 describe "Klub url redirecting" do
   before do
+    allow(REDIS).to receive(:get).and_return '<html></html>'
     allow(ENV).to receive(:[]).and_call_original
     allow(ENV).to receive(:[]).with("SUPPORTED_CATEGORIES").and_return('fitnes,karate')
   end
