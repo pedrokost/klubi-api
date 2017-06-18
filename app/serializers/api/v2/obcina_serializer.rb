@@ -3,6 +3,9 @@ class Api::V2::ObcinaSerializer < ActiveModel::Serializer
 
   has_many :klubs, serializer: Api::V2::KlubListingSerializer
 
+  def id
+    object.url_slug
+  end
 
   def klubs
     object.category_klubs @instance_options[:category]

@@ -23,6 +23,12 @@ RSpec.describe Api::V2::ObcinasController, type: :controller do
         expect(response).to match_response_schema("v2/obcina")
       end
 
+      it "should use the url_slug as id" do
+        get :show, id: obcina.url_slug, category: 'fitnes'
+
+        expect(json_response[:data][:id]).to eq obcina.url_slug
+      end
+
       it "should include a list of ids of klubs in the obcina" do
         allow_any_instance_of(Obcina).to receive(:category_klubs).and_return([klub])
         get :show, id: obcina.url_slug, category: 'fitnes'
