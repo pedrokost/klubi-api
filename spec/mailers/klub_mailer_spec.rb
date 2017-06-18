@@ -135,11 +135,11 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it "contains link to the klub" do
-      expect(mail.body.encoded).to match("http://www.klubi.si/fitnes/#{klub.url_slug}/")
+      expect(mail.body.encoded).to match("https://www.klubi.si/fitnes/#{klub.url_slug}/")
     end
 
     # it "contains link to edit the klub" do
-    #   expect(mail.body.encoded).to match("http://www.klubi.si/fitnes/#{klub.url_slug}/uredi")
+    #   expect(mail.body.encoded).to match("https://www.klubi.si/fitnes/#{klub.url_slug}/uredi")
     # end
 
     it "contains the list of updates" do
@@ -243,11 +243,11 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it "contains link to the klub" do
-      expect(mail.body.encoded).to match("http://www.klubi.si/fitnes/#{klub.url_slug}/")
+      expect(mail.body.encoded).to match("https://www.klubi.si/fitnes/#{klub.url_slug}/")
     end
 
     it "contains link to edit the klub" do
-      expect(mail.body.encoded).to match("http://www.klubi.si/fitnes/#{klub.url_slug}/uredi")
+      expect(mail.body.encoded).to match("https://www.klubi.si/fitnes/#{klub.url_slug}/uredi")
     end
 
     it "list all klub data, together with branches" do
@@ -294,7 +294,7 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it "contains link to the klub's edit page" do
-      expect(mail.body.encoded).to match("http://www.klubi.si/fitnes/#{klub.url_slug}/")
+      expect(mail.body.encoded).to match("https://www.klubi.si/fitnes/#{klub.url_slug}/")
     end
 
     it "contains the the klub data" do

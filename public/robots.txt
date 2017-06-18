@@ -6,4 +6,4 @@
 
 User-agent: *
 Disallow:
-Sitemap: http://www.klubi.si/sitemaps/sitemap.xml.gz
+Sitemap: https://www.klubi.si/sitemaps/sitemap.xml.gz

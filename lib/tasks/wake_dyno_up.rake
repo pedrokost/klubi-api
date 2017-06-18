@@ -5,7 +5,7 @@ task :wake_dyno_up => :environment do
   end_time_utc = 21
   if (start_time_utc..end_time_utc).cover? Time.now.getutc.hour
     puts "Waking up klubi.si"
-    uri = URI.parse('http://www.klubi.si/')
+    uri = URI.parse('https://www.klubi.si/')
     Net::HTTP.get(uri)
     puts "klubi.si was called."
   else
