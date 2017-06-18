@@ -48,7 +48,7 @@ gem 'rack-cors', '~>0.4.1', require: 'rack/cors'
 
 gem 'rack-rewrite', '~> 1.5.1'
 
-gem 'prerender_rails', '~> 1.2.0'
+gem 'prerender_rails', '~> 1.5.1'
 
 gem 'rest-client', require: false
 

@@ -185,7 +185,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     pg (0.18.4)
-    prerender_rails (1.2.0)
+    prerender_rails (1.5.1)
       activesupport
       rack
     pry (0.10.4)
@@ -344,7 +344,7 @@ DEPENDENCIES
   newrelic_rpm (~> 4.1.0.333)
   nokogiri (~> 1.5)
   pg (~> 0.18.2)
-  prerender_rails (~> 1.2.0)
+  prerender_rails (~> 1.5.1)
   pry-byebug
   pry-rails
   pry-rescue
