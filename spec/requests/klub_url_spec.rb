@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2017-01-29 16:22:15
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-06-14 22:29:14
+# @Last Modified time: 2017-06-21 22:52:04
 
 require 'rails_helper'
 
@@ -17,7 +17,7 @@ describe "Klub url redirecting" do
     let!(:klub) { create(:klub, categories: ['karate'], name: 'Banana Split') }
 
     context "new slug format" do
-      subject { get "http://www.klubi.si/karate/banana-split-#{klub.id}" }
+      subject { get "https://www.klubi.si/karate/banana-split-#{klub.id}" }
 
       it "should return 200" do
         expect(subject).to eq 200
@@ -25,19 +25,20 @@ describe "Klub url redirecting" do
     end
 
     context "old slug format" do
-      subject { get "http://www.klubi.si/karate/banana-split?aorst=arst" }
+      subject { get "https://www.klubi.si/karate/banana-split?aorst=arst" }
       it "should 301 redirect" do
         expect(subject).to eq 301
       end
 
       it "should redirect to new slug format" do
-        expect(subject).to redirect_to("http://www.klubi.si/karate/banana-split-#{klub.id}?aorst=arst")
+        expect(subject).to redirect_to("https://www.klubi.si/karate/banana-split-#{klub.id}?aorst=arst")
       end
 
     end
 
     context "static urls" do
-      subject { get '/oprojektu' }
+
+      subject { get '/oprojektu', {}, 'HTTPS': 'on' }
 
       it "should return 200" do
         expect(subject).to eq 200
@@ -45,21 +46,21 @@ describe "Klub url redirecting" do
     end
 
     context "/uredi urls" do
-      subject { get 'http://www.klubi.si/karate/banana-split/uredi' }
+      subject { get 'https://www.klubi.si/karate/banana-split/uredi' }
 
       it "should 301 redirect" do
         expect(subject).to eq 301
       end
 
       it "should redirect to new slug format" do
-        expect(subject).to redirect_to("http://www.klubi.si/karate/banana-split-#{klub.id}/uredi")
+        expect(subject).to redirect_to("https://www.klubi.si/karate/banana-split-#{klub.id}/uredi")
       end
     end
 
     context "unsupported category" do
       # TODO: assert category not uspported
 
-      subject { get 'http://www.klubi.si/lobanja/banana-split' }
+      subject { get 'https://www.klubi.si/lobanja/banana-split' }
 
       it "should return 200" do
         expect(subject).to eq 200
@@ -67,32 +68,32 @@ describe "Klub url redirecting" do
     end
 
     context "missing category with only slug" do
-      subject { get 'http://www.klubi.si/banana-split' }
+      subject { get 'https://www.klubi.si/banana-split' }
 
       it "should 301 redirect" do
         expect(subject).to eq 301
       end
 
       it "should redirect to new slug format" do
-        expect(subject).to redirect_to("http://www.klubi.si/karate/banana-split-#{klub.id}")
+        expect(subject).to redirect_to("https://www.klubi.si/karate/banana-split-#{klub.id}")
       end
     end
 
     context "missing category but with uredi" do
-      subject { get 'http://www.klubi.si/banana-split/uredi' }
+      subject { get 'https://www.klubi.si/banana-split/uredi' }
 
       it "should 301 redirect" do
         expect(subject).to eq 301
       end
 
       it "should redirect to new slug format" do
-        expect(subject).to redirect_to("http://www.klubi.si/karate/banana-split-#{klub.id}/uredi")
+        expect(subject).to redirect_to("https://www.klubi.si/karate/banana-split-#{klub.id}/uredi")
       end
     end
   end
 
   context "with not existing klub" do
-    subject { get 'http://www.klubi.si/this-klub-does-not-exist' }
+    subject { get 'https://www.klubi.si/this-klub-does-not-exist', {}, 'HTTPS': 'on' }
 
     it "should not redirect" do
       expect(subject).to eq 200
@@ -100,7 +101,7 @@ describe "Klub url redirecting" do
   end
 
   context "root domains" do
-    subject { get '/' }
+    subject { get '/', {}, 'HTTPS': 'on' }
 
     it "should not redirect" do
       expect(subject).to eq 200

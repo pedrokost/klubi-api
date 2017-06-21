@@ -8,6 +8,8 @@ gem 'rails-api', '~> 0.4.1', require: false
 
 gem 'spring', :group => :development
 
+gem 'rack-ssl-enforcer'
+
 gem 'puma', '~>3.8.2'
 gem 'pg', '~>0.18.2'
 

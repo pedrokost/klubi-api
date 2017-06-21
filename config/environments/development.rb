@@ -30,8 +30,6 @@ Rails.application.configure do
   config.cache_store = :dalli_store, nil,
   { :namespace => 'klubiapi', :expires_in => 1.hour, :compress => true }
 
-
-
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.

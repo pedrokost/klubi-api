@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'json'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -34,6 +35,21 @@ module KlubiApi
           :max_age => 1728000
       end
     end
+
+    # Clouldflare with Flexible SSL causes that the server does not directly
+    # know if the request comes form HTTP or HTTPS. Looking at the header
+    # HTTP_CF_VISITOR I can learn what protocol was used and act accordingly.
+    # I do not redirect any of the request which don't have the header (meaning
+    # I left clouldflare). I also do not do the 301 if the request comes from
+    # Prerender.
+    config.middleware.insert_before ActionDispatch::Cookies, Rack::SslEnforcer, except_agents: /prerender/i, ignore: lambda { |request|
+
+      clould_flare_visitor = JSON.parse(request.env["HTTP_CF_VISITOR"])['scheme'] if request.env["HTTP_CF_VISITOR"]
+      clould_flare_https = clould_flare_visitor.match(/https/i) if clould_flare_visitor
+
+      request.env["HTTPS"] == 'on' || clould_flare_https
+
+    }
 
     config.middleware.insert_before(Rack::Cors, Rack::Rewrite) do
 
