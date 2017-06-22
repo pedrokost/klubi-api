@@ -24,14 +24,17 @@ module Api
         the_params[:categories] = the_params[:categories].map(&:parameterize) if the_params[:categories]
 
         klub = Klub.new(the_params.except(:editor, :branches_attributes))
+
+        head 422 and return unless the_params[:editor]
+
         klub.editor_emails << the_params[:editor]
 
-        head 403 and return unless klub.valid?
+        head 422 and return unless klub.valid?
 
         # Create branches
         the_params[:branches_attributes].each do |branch_attrs|
           branch = klub.created_branch branch_attrs
-          head 403 and return unless branch
+          head 422 and return unless branch
         end
 
         klub.save!

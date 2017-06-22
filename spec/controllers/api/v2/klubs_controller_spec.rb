@@ -245,6 +245,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         type: 'klubs',
         attributes: {
           name: "Fitnes Maribor",
+          editor: 'joe@doe.com',
           categories: ['football']
         }
       }
@@ -261,6 +262,20 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
           categories: ['football']
         }
       }
+    end
+
+    it "should not allow missing submitter email" do
+      expect {
+        post :create, data: {
+          type: 'klubs',
+          attributes: {
+            name: 'Quien eres?',
+            categories: ['football']
+          }
+        }
+      }.not_to change(Klub.unscoped, :count)
+
+      expect(response.status).to eq 422
     end
 
     it "should not send thanks email if no submitter" do
@@ -306,7 +321,8 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
           type: 'klubs',
           attributes: {
             name: 'Fitnes Mariborcan 22',
-          categories: ['football']
+            categories: ['football'],
+            editor: 'joe@doe.com'
           }
         }
       }.to change(Klub.unscoped, :count).by 1
@@ -320,6 +336,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         type: 'klubs',
         attributes: {
           name: 'Fitnes',
+          editor: 'joe@doe.com',
           categories: ['football']
         }
       }
@@ -332,19 +349,21 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         post :create, data: {
           type: 'klubs',
           attributes: {
+            editor: 'joe@doe.com',
             name: 'Fitnes',
             categories: nil
           }
         }
       }.not_to change(Klub.unscoped, :count)
 
-      expect(response.status).to eq 403
+      expect(response.status).to eq 422
     end
 
     it "should respond with created klub" do
       post :create, data: {
         type: 'klubs',
         attributes: {
+          editor: 'joe@doe.com',
           name: 'Fitnes',
           categories: ['football']
         }
@@ -362,6 +381,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
           post :create, data: {
             type: 'klub',
             attributes: {
+              editor: 'joe@doe.com',
               name: 'Fitnes Mariborcan 22',
               address: 'Address 1',
               categories: ['football']
@@ -381,7 +401,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
           }
         }.not_to change(Klub.unscoped, :count)
 
-        expect(response.status).to eq 403
+        expect(response.status).to eq 422
       end
 
       it "should create parent and the branch" do
@@ -390,6 +410,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
             type: 'klub',
             attributes: {
               name: 'Fitnes Mariborcan 22',
+              editor: 'joe@doe.com',
               address: 'Address 1',
               categories: ['football']
             },
@@ -416,6 +437,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         post :create, data: {
           type: 'klub',
           attributes: {
+            editor: 'joe@doe.com',
             name: 'Fitnes Mariborcan 22',
             address: 'Cesta XV. brigade 2, Metlika',
             categories: ['mycategor987y']
@@ -448,6 +470,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         post :create, data: {
           type: 'klub',
           attributes: {
+            editor: 'joe@doe.com',
             name: 'Fitnes Mariborcan 22',
             address: 'Address 1',
             categories: ['football']
@@ -503,6 +526,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
           attributes: {
             name: 'Fitnes Mariborcan 22',
             address: 'Address 1',
+            editor: 'bla@bla',
             categories: ['football']
           },
           relationships: {
