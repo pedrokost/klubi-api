@@ -51,7 +51,7 @@ class Klub < ActiveRecord::Base
   end
 
   def send_on_update_notifications(editor, updates, new_branches)
-    send_updates_notification
+    send_updates_notification(editor)
     send_confirm_notification(editor, updates, new_branches) if editor
   end
 
@@ -160,8 +160,8 @@ private
     KlubMailer.new_klub_thanks_mail(self.id, editor).deliver_later
   end
 
-  def send_updates_notification
-    KlubMailer.new_updates_mail(self.id, updates.first.try(:editor)).deliver_later
+  def send_updates_notification(editor)
+    KlubMailer.new_updates_mail(self.id, editor).deliver_later
   end
 
   def send_confirm_notification(editor, updates, new_branches)

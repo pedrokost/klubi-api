@@ -73,7 +73,7 @@ module Api
 
         klub.save!
 
-        klub.send_on_update_notifications update_klub_params[:editor], updates, new_branches
+        klub.send_on_update_notifications editor, updates, new_branches
 
         render json: 'null', status: :accepted
       end

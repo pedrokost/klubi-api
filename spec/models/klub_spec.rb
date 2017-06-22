@@ -184,7 +184,7 @@ RSpec.describe Klub, :type => :model do
 
   it "sends an email upon updated" do
     klub.save
-    expect { subject.send(:send_updates_notification) }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    expect { subject.send(:send_updates_notification, 'joe@doe.com') }.to change { ActionMailer::Base.deliveries.count }.by(1)
   end
 
   it "send_confirm_notification" do
@@ -199,6 +199,17 @@ RSpec.describe Klub, :type => :model do
     expect { subject.send_updates_accepted_notification('test@email.com', []) }.to change {
       ActionMailer::Base.deliveries.count
     }.by 1
+  end
+
+  it "send_on_update_notifications" do
+    klub.save
+
+    expect(subject).to receive(:send_updates_notification).with('test@email.com')
+
+    expect { subject.send_on_update_notifications('test@email.com', [], []) }.to change {
+      ActionMailer::Base.deliveries.count
+    }.by 1
+
   end
 
   it "should be able to send a data verification email" do

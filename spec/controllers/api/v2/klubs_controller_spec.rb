@@ -654,7 +654,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
     end
 
     it "should send an email to the editor" do
-      expect_any_instance_of(Klub).to receive(:send_confirm_notification)
+      expect_any_instance_of(Klub).to receive(:send_confirm_notification).with('joe@doe.com', instance_of(Array), instance_of(Array))
 
       patch :update, id: klub.url_slug, data: {
         type: 'klubs',
