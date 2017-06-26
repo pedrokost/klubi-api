@@ -25,7 +25,7 @@ module Api
 
         klub = Klub.new(the_params.except(:editor, :branches_attributes))
 
-        head 422 and return unless the_params[:editor]
+        head 422 and return if the_params[:editor].blank?
 
         klub.editor_emails << the_params[:editor]
 
@@ -47,8 +47,10 @@ module Api
       def update
         klub = find_klub
 
-        updates = klub.create_updates update_klub_params.except(:branches_attributes)
         editor = update_klub_params[:editor]
+        head 422 and return if editor.blank?
+
+        updates = klub.create_updates update_klub_params.except(:branches_attributes)
 
         # Delete any of the other branches
         updated_branch_ids = update_klub_params[:branches_attributes].select{ |branch| branch[:id] }.map{ |branch| extract_slug(branch[:id]).to_i }

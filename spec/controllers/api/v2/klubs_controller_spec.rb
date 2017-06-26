@@ -278,6 +278,21 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
       expect(response.status).to eq 422
     end
 
+    it "should not allow blank submitter email" do
+      expect {
+        post :create, data: {
+          type: 'klubs',
+          attributes: {
+            editor: '',
+            name: 'Quien eres?',
+            categories: ['football']
+          }
+        }
+      }.not_to change(Klub.unscoped, :count)
+
+      expect(response.status).to eq 422
+    end
+
     it "should not send thanks email if no submitter" do
       expect_any_instance_of(Klub).not_to receive(:send_thanks_notification)
 
@@ -587,7 +602,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
     it "should be accepted" do
       patch :update, id: klub.url_slug, data: {
         type: 'klubs',
-        attributes: new_attrs
+        attributes: new_attrs.merge(editor: 'joe@doe.com')
       }
       expect(response.status).to eq 202  # Accepted -- no need to reply with changes
     end
@@ -651,6 +666,28 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         type: 'klubs',
         attributes: new_attrs.merge(editor: 'joe@doe.com')
       }
+    end
+
+    it "should not allow missing editor email" do
+      expect {
+        patch :update, id: klub.url_slug, data: {
+          type: 'klubs',
+          attributes: new_attrs.merge(editor: nil)
+        }
+      }.not_to change(Update, :count)
+
+      expect(response.status).to eq 422
+    end
+
+    it "should not allow blank editor" do
+      expect {
+        patch :update, id: klub.url_slug, data: {
+          type: 'klubs',
+          attributes: new_attrs.merge(editor: "")
+        }
+      }.not_to change(Update, :count)
+
+      expect(response.status).to eq 422
     end
 
     it "should send an email to the editor" do
