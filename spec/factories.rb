@@ -1,8 +1,12 @@
 # This will guess the User class
 FactoryGirl.define do
   factory :obcina do
-    name "MyString"
-    slug "MyString"
+    sequence :name do |n|
+      "Obcinas-#{n}"
+    end
+    sequence :slug do |n|
+      "obcina-#{n}"
+    end
     population_size 1
     geom ""
   end

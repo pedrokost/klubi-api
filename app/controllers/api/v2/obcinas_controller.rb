@@ -7,7 +7,7 @@ class Api::V2::ObcinasController < ApplicationController
 
     obcina = find_obcina
 
-    render json: obcina, include: [:klubs], category: category_params
+    render json: obcina, include: [:klubs, :neighbouring_obcinas], category: category_params
   end
 
 private

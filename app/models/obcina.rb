@@ -14,6 +14,19 @@ class Obcina < ActiveRecord::Base
     klubs.where("? = ANY (categories)", category)
   end
 
+  def neighbouring_obcinas
+    # select * from obcinas o WHERE ST_Touches(o.geom::geometry, (SELECT geom::geometry from obcinas WHERE id=235));
+
+    Obcina.where.not(
+      %{
+        ST_Disjoint(
+          geom::geometry,
+          (SELECT geom::geometry from obcinas WHERE id=%d)
+        )
+      } % [self.id]
+    ).where.not("id=?", self.id).order(population_size: :desc)
+  end
+
 private
 
   def klubs

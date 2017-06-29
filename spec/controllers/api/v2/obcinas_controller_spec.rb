@@ -5,6 +5,7 @@ require 'pry'
 RSpec.describe Api::V2::ObcinasController, type: :controller do
 
   describe 'GET #obcinas' do
+    let!(:touching_obcina) { FactoryGirl.create(:obcina, name: 'Touching obcina', slug: 'touching-obcina' ) }
     let!(:obcina) { FactoryGirl.create(:obcina, name: 'Grosuplje', slug: 'grosuplje' ) }
     let!(:klub) { FactoryGirl.create(:complete_klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes']) }
 
@@ -55,6 +56,29 @@ RSpec.describe Api::V2::ObcinasController, type: :controller do
         # AMS seems to call it twice, once for the klub_ids, once for the `include`.
         expect_any_instance_of(Obcina).to receive(:category_klubs).with('gimnastika').at_least(:once)
         get :show, id: obcina.url_slug, category: 'gimnastika'
+      end
+
+      it "should include a link to nearby obcinas" do
+        expect_any_instance_of(Obcina).to receive(:neighbouring_obcinas).at_least(:once).and_return([touching_obcina])
+        get :show, id: obcina.url_slug, category: 'fitnes'
+
+        expect(json_response[:data][:relationships][:"neighbouring-obcinas"][:data].length).to eq 1
+        expect(json_response[:data][:relationships][:"neighbouring-obcinas"][:data][0][:id]).to eq touching_obcina.url_slug
+      end
+
+      it "should include flat nearby obcina objects" do
+        expect_any_instance_of(Obcina).to receive(:neighbouring_obcinas).at_least(:once).and_return([touching_obcina])
+        get :show, id: obcina.url_slug, category: 'fitnes'
+
+        neighbouring_obcinas = json_response[:included].first
+
+        # Be simple
+        expect(neighbouring_obcinas[:id]).to eq touching_obcina.url_slug
+        expect(neighbouring_obcinas[:attributes][:name]).to eq touching_obcina.name
+
+        # Not complex
+        expect(neighbouring_obcinas[:attributes].keys).not_to include :geom
+        expect(neighbouring_obcinas[:attributes].keys).not_to include :neighbouring_obcinas
       end
     end
   end
