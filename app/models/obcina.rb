@@ -9,9 +9,11 @@ class Obcina < ActiveRecord::Base
     name
   end
 
-  def category_klubs(category)
+  def category_klubs(category = nil)
     # Returns list of all klubs in the region of given category
-    klubs.where("? = ANY (categories)", category)
+    search_categories = category.blank? ? supported_categories : category
+
+    klubs.where("categories && ARRAY[?]::varchar[]", search_categories)
   end
 
   def neighbouring_obcinas
@@ -28,6 +30,10 @@ class Obcina < ActiveRecord::Base
   end
 
 private
+
+  def supported_categories
+    ENV['SUPPORTED_CATEGORIES'].split(',').freeze
+  end
 
   def klubs
     # Return list of all klubs in the region

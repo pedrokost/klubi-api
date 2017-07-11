@@ -10,8 +10,20 @@ RSpec.describe Api::V2::ObcinasController, type: :controller do
     let!(:klub) { FactoryGirl.create(:complete_klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes']) }
 
     describe "without providing category param" do
-      it "should raise exception" do
-        expect { get :show, id: obcina.url_slug, category: nil }.to raise_error(ActionController::ParameterMissing)
+      before do
+        allow_any_instance_of(Obcina).to receive(:category_klubs).and_return([klub])
+        get :show, id: obcina.url_slug, category: nil
+      end
+
+      it "should not throw an error" do
+        expect { response }.not_to raise_error
+      end
+
+      it "should return list of all klubs in the obcina" do
+        obcina = json_response[:data]
+
+        expect(obcina[:relationships][:klubs][:data]).to be_a(Array)
+        expect(obcina[:relationships][:klubs][:data].length).to eq 1
       end
     end
 

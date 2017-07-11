@@ -3,11 +3,9 @@ class Api::V2::ObcinasController < ApplicationController
   before_action :select_ams_adapter
 
   def show
-    render json: nil, status: :not_found and return unless supported_categories.include? category_params
-
     obcina = find_obcina
 
-    render json: obcina, include: [:klubs, :neighbouring_obcinas], category: category_params
+    render json: obcina, include: [:klubs, :neighbouring_obcinas], category: category_params['category']
   end
 
 private
@@ -27,6 +25,6 @@ private
   end
 
   def category_params
-    params.require(:category)
+    params.permit(:category)
   end
 end

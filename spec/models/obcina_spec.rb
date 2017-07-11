@@ -120,5 +120,26 @@ RSpec.describe Obcina, type: :model do
       # I have not yet decided if parent should or should not be included here
       expect( obcina.category_klubs('fitnes') ).not_to include klub
     end
+
+    context "when no category provided" do
+      it "should include all klubs in category" do
+        allow(ENV).to receive(:[]).and_call_original
+        allow(ENV).to receive(:[]).with("SUPPORTED_CATEGORIES").and_return('fitnes,gimnastika')
+        klub_fitnes = create(:complete_klub, name: 'Klub 1', latitude: 46.117260, longitude: 15.059348, categories: ['fitnes'])
+        klub_gimnastika = create(:complete_klub, name: 'Klub 2', latitude: 46.117260, longitude: 15.059348, categories: ['gimnastika'])
+
+        expect( obcina.category_klubs ).to include klub_fitnes
+        expect( obcina.category_klubs ).to include klub_gimnastika
+      end
+
+      it "should not include klubs in unsupported categories" do
+        allow(ENV).to receive(:[]).and_call_original
+        allow(ENV).to receive(:[]).with("SUPPORTED_CATEGORIES").and_return('only-supported,basketball')
+
+        klub_unsupported = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: ['unsupported'])
+
+        expect( obcina.category_klubs ).not_to include klub_unsupported
+      end
+    end
   end
 end
