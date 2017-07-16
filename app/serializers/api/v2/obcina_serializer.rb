@@ -7,8 +7,6 @@ class Api::V2::ObcinaSerializer < ActiveModel::Serializer
     end
   end
 
-
-
   attributes :name
 
   has_many :klubs, serializer: Api::V2::KlubListingSerializer

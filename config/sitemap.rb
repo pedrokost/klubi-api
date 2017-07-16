@@ -57,9 +57,16 @@ SitemapGenerator::Sitemap.create do
     end
   end
 
+  # Add all obcinas
+  Obcina.all.each do |obcina|
+    add "/obcina/#{obcina.url_slug}", priority: 0.3
+
+    supported_categories.each do |category|
+      add "/obcina/#{obcina.url_slug}/#{category}", priority: 0.5
+    end
+  end
+
   # See output with:
   # gunzip -c tmp/sitemaps/sitemap.xml.gz | grep -oE "<loc>([^<]+)</loc>"  | cut -c 6- | cut -d'<' -f1
-
-
 
 end
