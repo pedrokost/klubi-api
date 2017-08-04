@@ -6,6 +6,23 @@
 
 * Configuration
 
+To configure the `WANTED_OUTGOING_EMAIL_DISTRIBTION` env variable use something like this:
+```
+# During rounding you loose precesion, need to make it again a distribution
+d_unnormalized = ([0] * 6 + [1.0/12] * 15 + [0] * 3).map{ |e| e + 0.01 }
+sum_d = d_unnormalized.sum.to_f
+d_normalized = d_unnormalized.map{ |e| (e / sum_d).round(2) }
+sum_d = d_normalized.sum.to_f
+max_index = d_normalized.each_with_index.max[1]
+d_normalized[max_index] += (1 - sum_d)
+d_normalized[max_index] = d_normalized[max_index].round(2)
+raise "Distribution does not sum to 1" unless d_normalized.sum.round(4) == 1.0
+raise "Distribution is not of length 24" unless d_normalized.length == 24
+p d_normalized.join(',')
+```
+This gives a tiny chance to nighly emails!
+
+
 * Database creation
 
 ```

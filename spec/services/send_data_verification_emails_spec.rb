@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2016-11-27 15:42:50
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-05-14 17:04:20
+# @Last Modified time: 2017-08-05 11:35:11
 
 
 require 'rails_helper'
@@ -27,60 +27,64 @@ RSpec.describe SendDataVerificationEmails do
     before do
       allow(ENV).to receive(:[]).with("REQUIRE_NEW_VERIFICATION_AFTER").and_return(180)
       allow(ENV).to receive(:[]).with("SUPPORTED_CATEGORIES").and_return('fitnes,wellness,karate,frizbi,judo,gimnastika,cheerleading')
+
+      allow(ENV).to receive(:[]).with("EXPECTED_NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return("24")
+      allow(ENV).to receive(:[]).with("WANTED_OUTGOING_EMAIL_DISTRIBTION").and_return ([1.0/24] * 24).join(',')
     end
 
     it "should not include klubs to which a notif was recently sent" do
-      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
+      expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
       expect(subject.awaiting_klubs.map(&:id)).not_to include(klub1.id)
     end
 
     it "should not include klubs which are not verified" do
-      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
+      expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
       expect(subject.awaiting_klubs.map(&:id)).not_to include(unverified_klub.id)
     end
 
     it "should not include klubs which are closed" do
-      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
+      expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
       expect(subject.awaiting_klubs.map(&:id)).not_to include(closed_klub.id)
     end
 
     it "should not send emails for klub of unsupported categories" do
-      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
+      expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
       expect(subject.awaiting_klubs.map(&:id)).not_to include(unsupported_category_klub.id)
     end
 
     it "should include klubs to which not notif was sent" do
-      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
+      expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
       expect(subject.awaiting_klubs.map(&:id)).to include(klub3.id, klub4.id)
     end
 
     it "should filter out branches" do
-      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
+      expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
       expect(subject.awaiting_klubs.map(&:id)).not_to include(klub_branch.id)
     end
 
     it "should include klubs to which a notif was sent long ago" do
-      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
+      expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
       expect(subject.awaiting_klubs.map(&:id)).to include(klub2.id)
     end
 
     it "should order the list" do
-      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
+      expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
       expect(subject.awaiting_klubs.map(&:id)).to match([klub3.id, klub4.id, klub2.id])
     end
 
-    it "should limit the number of daily emails" do
-      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(2)
+    it "should limit the number of daily emails using the doorman" do
+      expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(2)
+
       expect(subject.awaiting_klubs.map(&:id)).to match_array([klub3.id, klub4.id])
     end
 
     it "should filter out klubs with nil emails" do
-      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
+      expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
       expect(subject.awaiting_klubs.map(&:id)).not_to include(klub_nil_email)
     end
 
     it "should filter out klubs with blank emails" do
-      allow(ENV).to receive(:[]).with("NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return(100)
+      expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
       expect(subject.awaiting_klubs.map(&:id)).not_to include(klub_blank_email)
     end
   end
