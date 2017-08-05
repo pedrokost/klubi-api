@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2017-01-07 21:23:02
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-08-05 11:50:47
+# @Last Modified time: 2017-08-05 17:38:53
 
 class SendDataVerificationEmails
   # Sends email to klub owners who have not verified their klub data for a
@@ -12,13 +12,19 @@ class SendDataVerificationEmails
     begin
       klubs_to_email = awaiting_klubs
 
-      Rails.logger.info "Will send #{klubs_to_email.count} emails for data verification"
+      msg = "Will send #{klubs_to_email.count} emails for data verification"
+      Rails.logger.info msg
+      puts msg
+
       klubs_to_email.each do |klub|
-        Rails.logger.info "Sending data verification request email to #{klub.email} for klub #{klub.name}"
+        msg = "Sending data verification request email to #{klub.email} for klub #{klub.name}"
+        Rails.logger.info msg
+        puts msg
         klub.send_request_verify_klub_data_mail
       end
     rescue Exception => e
       Rails.logger.error e
+      puts e
       Raygun.track_exception(e)
     end
   end

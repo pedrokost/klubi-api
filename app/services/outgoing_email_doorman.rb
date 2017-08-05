@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2017-07-22 20:39:50
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-08-05 17:10:36
+# @Last Modified time: 2017-08-05 17:49:53
 
 class OutgoingEmailDoorman
   # This class helps you determine how many emails to send each hour it
@@ -50,9 +50,9 @@ private
     # bad players and temporarily marked as spam
 
     days_ago = 4
-    delivered_weight = 1
-    bounced_weight = 1
-    dropped_weight = 2
+    delivered_weight = 1.0
+    bounced_weight = 1.0
+    dropped_weight = 2.0
 
     # Performance optimization (for tests mostly)
     if EmailStat.where('updated_at > ?', Time.now - days_ago.days).count == 0
@@ -78,13 +78,15 @@ private
     day_score = [0] * (days_ago + 1)
 
     (days_ago + 1).times do |i|
-      day_score[i] = success_score[0][i] / success_score[1][i]
+      day_score[i] = success_score[0][i] / (success_score[1][i] + success_score[0][i])
     end
 
     max_series_sum = (1..(days_ago + 1)).map { |x| 1.0/x }.sum
 
-    day_score.each.with_index.inject(0) do |sum, (value, index)|
+    final_score = day_score.each.with_index.inject(0) do |sum, (value, index)|
       sum + value / (index + 1)
     end / max_series_sum
+
+    final_score
   end
 end
