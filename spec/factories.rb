@@ -18,6 +18,9 @@ FactoryGirl.define do
   end
 
   factory :email_stat do
+    sequence :email do |n|
+      "user-#{n}@email.com"
+    end
     # last_opened_at "2017-01-14 17:37:33"
     # last_clicked_at "2017-01-14 17:37:33"
     # last_bounced_at "2017-01-14 17:37:33"

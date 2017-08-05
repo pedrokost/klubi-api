@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2017-07-22 20:43:06
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-08-05 11:28:11
+# @Last Modified time: 2017-08-05 17:09:55
 
 require 'rails_helper'
 
@@ -104,4 +104,39 @@ RSpec.describe OutgoingEmailDoorman do
       expect(expect_vs_actual).to all( be <= 0.1 * num_daily_emails / 24  )
     end
   end
+
+  describe "when emails fail/success" do
+    let(:hourly_distribution) { [1.0/24] * 24 }
+    let(:num_daily_emails) { 48 }
+
+    it "should send fewer and fewer emails when they bounce or drop" do
+      create(:email_stat, last_delivered_at: Time.now - 5.days)
+      create(:email_stat, last_delivered_at: Time.now - 4.days)
+      create(:email_stat, last_bounced_at: Time.now - 3.days)
+
+      doorman = OutgoingEmailDoorman.new(num_daily_emails, hourly_distribution)
+
+      before_count = doorman.number_of_emails_to_send_now
+
+      create_list(:email_stat, 2, last_bounced_at: Time.now - 2.days)
+      create_list(:email_stat, 2, last_dropped_at: Time.now - 1.hour)
+
+      doorman = OutgoingEmailDoorman.new(num_daily_emails, hourly_distribution)
+      expect(doorman.number_of_emails_to_send_now).to be < before_count
+    end
+
+    it "should send more emails when success increases" do
+      create(:email_stat, last_dropped_at: Time.now - 1.day)
+
+      doorman = OutgoingEmailDoorman.new(num_daily_emails, hourly_distribution)
+
+      before_count = doorman.number_of_emails_to_send_now
+
+      create_list(:email_stat, 4, last_delivered_at: Time.now - 1.hour)
+
+      doorman = OutgoingEmailDoorman.new(num_daily_emails, hourly_distribution)
+      expect(doorman.number_of_emails_to_send_now).to be > before_count
+    end
+  end
+
 end
