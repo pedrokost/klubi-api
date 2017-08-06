@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2016-11-27 15:42:50
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-08-05 11:35:11
+# @Last Modified time: 2017-08-06 19:34:14
 
 
 require 'rails_helper'
@@ -17,6 +17,7 @@ RSpec.describe SendDataVerificationEmails do
   let!(:klub4) { create(:complete_klub, email: 'test@test.com') }
   let!(:closed_klub) { create(:complete_klub, email: 'closed@test.com', closed_at: Date.yesterday) }
   let!(:klub_nil_email) { create(:complete_klub, email: nil) }
+  let!(:klub_invalid_email) { create(:complete_klub, email: '234 234 234') }
   let!(:klub_blank_email) { create(:complete_klub, email: '') }
   let!(:unverified_klub) { create(:complete_klub, email: 'test@test.com', verified: false) }
   let!(:unsupported_category_klub) { create(:complete_klub, email: 'test@test.com', categories: ['pentafloss']) }
@@ -80,12 +81,17 @@ RSpec.describe SendDataVerificationEmails do
 
     it "should filter out klubs with nil emails" do
       expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
-      expect(subject.awaiting_klubs.map(&:id)).not_to include(klub_nil_email)
+      expect(subject.awaiting_klubs.map(&:id)).not_to include(klub_nil_email.id)
+    end
+
+    it "should filter out klubs with invalid emails" do
+      expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
+      expect(subject.awaiting_klubs.map(&:id)).not_to include(klub_invalid_email.id)
     end
 
     it "should filter out klubs with blank emails" do
       expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
-      expect(subject.awaiting_klubs.map(&:id)).not_to include(klub_blank_email)
+      expect(subject.awaiting_klubs.map(&:id)).not_to include(klub_blank_email.id)
     end
   end
 
