@@ -105,11 +105,11 @@ class Klub < ActiveRecord::Base
   end
 
   def spa_url
-    "#{ENV['WEBSITE_FULL_HOST']}/#{self.categories.first}/#{self.url_slug}/".freeze
+    "#{ENV['WEBSITE_FULL_HOST']}/#{category_for_url}/#{self.url_slug}/".freeze
   end
 
   def spa_edit_url
-    "#{ENV['WEBSITE_FULL_HOST']}/#{self.categories.first}/#{self.url_slug}/uredi/".freeze
+    "#{ENV['WEBSITE_FULL_HOST']}/#{category_for_url}/#{self.url_slug}/uredi/".freeze
   end
 
   def static_map_url(width: 400, height: 300)
@@ -131,6 +131,21 @@ class Klub < ActiveRecord::Base
   end
 
 private
+
+  def supported_categories
+    ENV['SUPPORTED_CATEGORIES'].split(',')
+  end
+
+  def category_for_url
+    category = self.categories.first
+
+    ok_categories = self.categories & supported_categories
+
+    category = ok_categories.first if ok_categories.length > 0
+
+    category
+  end
+
 	def update_complete
 		self.complete = !(self.name.blank? ||
                       self.latitude.nil? ||

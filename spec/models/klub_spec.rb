@@ -52,6 +52,24 @@ RSpec.describe Klub, :type => :model do
     end
   end
 
+  describe "spa_url" do
+    it "should try not to include unsupported categories" do
+      allow(ENV).to receive(:[]).with("SUPPORTED_CATEGORIES").and_return('football')
+      allow(ENV).to receive(:[]).with("WEBSITE_FULL_HOST").and_return('https://www.example.com')
+      klub.categories = ['unsupported', 'football']
+      expect(klub.spa_url).not_to include 'unsupported'
+    end
+  end
+
+  describe "spa_edit_url" do
+    it "should try not to include unsupported categories" do
+      allow(ENV).to receive(:[]).with("SUPPORTED_CATEGORIES").and_return('football')
+      allow(ENV).to receive(:[]).with("WEBSITE_FULL_HOST").and_return('https://www.example.com')
+      klub.categories = ['unsupported', 'football']
+      expect(klub.spa_edit_url).not_to include 'unsupported'
+    end
+  end
+
   describe "create_updates" do
 
     it "should not create update for tiny latitude change" do
