@@ -192,6 +192,7 @@ RSpec.describe Klub, :type => :model do
 
   it "sends an email upon creation" do
     klub.save
+
     expect { subject.send(:send_review_notification) }.to change { ActionMailer::Base.deliveries.count }.by(1)
   end
 

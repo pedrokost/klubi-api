@@ -11,7 +11,7 @@ module Api
           mailgun_params[:signature])
 
         if !verified
-          render nothing: true, status: :not_acceptable
+          render :head, status: :not_acceptable
           return
         end
 
@@ -28,11 +28,11 @@ module Api
         rescue NoMethodError => e
           logger.info "Received unsupported event type from Mailgun: #{mailgun_params[:event]}"
 
-          render nothing: true, status: :not_acceptable
+          render :head, status: :not_acceptable
           return
         end
 
-        render nothing: true, status: :ok
+        render :head, status: :ok
       end
 
     private

@@ -1,6 +1,6 @@
 require 'yaml'
 
-class Update < ActiveRecord::Base
+class Update < ApplicationRecord
   enum status: {
     unverified: 'unverified',
     accepted:   'accepted',

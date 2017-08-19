@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2017-02-06 19:55:12
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-06-22 21:31:25
+# @Last Modified time: 2017-08-19 22:03:59
 
 
 require 'rails_helper'
@@ -15,7 +15,7 @@ describe "Redirect zatresi.si to klubi.si", type: :request do
 
   context "www.zatresi.si" do
     before(:each) { host! "www.zatresi.si" }
-    subject { get "http://www.zatresi.si/karate/banana-split-1?oars=abs", {}, { "HTTP_CF_VISITOR" => '{"scheme": "http"}' } }
+    subject { get "http://www.zatresi.si/karate/banana-split-1?oars=abs", headers: { "HTTP_CF_VISITOR" => '{"scheme": "http"}' } }
 
     it "should return 301" do
       expect(subject).to eq 301
@@ -28,7 +28,7 @@ describe "Redirect zatresi.si to klubi.si", type: :request do
 
   context "zatresi.si" do
     before(:each) { host! "zatresi.si" }
-    subject { get "http://zatresi.si/fitnes", {}, { "HTTP_CF_VISITOR" => '{"scheme": "http"}' } }
+    subject { get "http://zatresi.si/fitnes", headers: { "HTTP_CF_VISITOR" => '{"scheme": "http"}' } }
 
     it "should return 301" do
       expect(subject).to eq 301
@@ -41,7 +41,7 @@ describe "Redirect zatresi.si to klubi.si", type: :request do
 
   context "http://klubi.si" do
     before(:each) { host! "klubi.si" }
-    subject { get "http://klubi.si/oprojektu", {}, { "HTTP_CF_VISITOR" => '{"scheme": "http"}' } }
+    subject { get "http://klubi.si/oprojektu", headers: { "HTTP_CF_VISITOR" => '{"scheme": "http"}' } }
 
     it "should return 301" do
       expect(subject).to eq 301
@@ -55,7 +55,7 @@ describe "Redirect zatresi.si to klubi.si", type: :request do
 
   context "http://www.klubi.si" do
     before(:each) { host! "www.klubi.si" }
-    subject { get "http://www.klubi.si/karate/", {}, { "HTTP_CF_VISITOR" => '{"scheme": "http"}' } }
+    subject { get "http://www.klubi.si/karate/", headers: { "HTTP_CF_VISITOR" => '{"scheme": "http"}' } }
 
     it "should 301 to https" do
       expect(subject).to redirect_to("https://www.klubi.si/karate/")
@@ -67,7 +67,7 @@ describe "Redirect zatresi.si to klubi.si", type: :request do
     before(:each) do
       host! "www.klubi.si"
     end
-    subject { get "http://www.klubi.si/karate/", {}, 'HTTP_USER_AGENT' => "Blah PreRendeR mee" }
+    subject { get "http://www.klubi.si/karate/", headers: { 'HTTP_USER_AGENT' => "Blah PreRendeR mee" } }
 
     it "should not redirect http -> https" do
       expect(subject).to eq 200
@@ -76,7 +76,7 @@ describe "Redirect zatresi.si to klubi.si", type: :request do
 
   context "https://www.klubi.si" do
     before(:each) { host! "www.klubi.si" }
-    subject { get "https://www.klubi.si/karate/", {}, { "HTTP_CF_VISITOR" => '{"scheme": "https"}' } }
+    subject { get "https://www.klubi.si/karate/", headers: { "HTTP_CF_VISITOR" => '{"scheme": "https"}' } }
 
     it "should return 200" do
       expect(subject).to eq 200
@@ -85,7 +85,7 @@ describe "Redirect zatresi.si to klubi.si", type: :request do
 
   context "admin.zatresi.si" do
     before(:each) { host! "admin.zatresi.si" }
-    subject { get "http://admin.zatresi.si", {}, { "HTTP_CF_VISITOR" => '{"scheme": "http"}' } }
+    subject { get "http://admin.zatresi.si", headers: { "HTTP_CF_VISITOR" => '{"scheme": "http"}' } }
 
     it "should return 301" do
       expect(subject).to eq 301
@@ -99,7 +99,7 @@ describe "Redirect zatresi.si to klubi.si", type: :request do
   context "admin.klubi.si" do
     before(:each) { host! "admin.klubi.si" }
 
-    subject { get "https://admin.klubi.si/klubs", {}, { "HTTP_CF_VISITOR" => '{"scheme": "https"}' } }
+    subject { get "https://admin.klubi.si/klubs", headers: { "HTTP_CF_VISITOR" => '{"scheme": "https"}' } }
 
     it "should return 401" do
       expect(subject).to eq 401
@@ -108,7 +108,7 @@ describe "Redirect zatresi.si to klubi.si", type: :request do
 
   context "api.zatresi.si" do
     before(:each) { host! "api.zatresi.si" }
-    subject { get "http://api.zatresi.si/klubs?category=fitnes", {}, { "HTTP_CF_VISITOR" => '{"scheme": "http"}' } }
+    subject { get "http://api.zatresi.si/klubs?category=fitnes", headers: { "HTTP_CF_VISITOR" => '{"scheme": "http"}' } }
 
     it "should return 301" do
       expect(subject).to eq 301
@@ -121,7 +121,7 @@ describe "Redirect zatresi.si to klubi.si", type: :request do
 
   context "http://api.klubi.si" do
     before(:each) { host! "api.klubi.si" }
-    subject { get "http://api.klubi.si/klubs?category=fitnes", {}, { "HTTP_CF_VISITOR" => '{"scheme": "http"}' } }
+    subject { get "http://api.klubi.si/klubs?category=fitnes", headers: { "HTTP_CF_VISITOR" => '{"scheme": "http"}' } }
 
     it "should return 301" do
       expect(subject).to redirect_to("https://api.klubi.si/klubs?category=fitnes")
@@ -130,7 +130,7 @@ describe "Redirect zatresi.si to klubi.si", type: :request do
 
   context "https://api.klubi.si" do
     before(:each) { host! "api.klubi.si" }
-    subject { get "https://api.klubi.si/klubs?category=fitnes", {}, { "HTTP_CF_VISITOR" => '{"scheme": "https"}' } }
+    subject { get "https://api.klubi.si/klubs?category=fitnes", headers: { "HTTP_CF_VISITOR" => '{"scheme": "https"}' } }
 
     it "should return 200" do
       expect(subject).to eq 200

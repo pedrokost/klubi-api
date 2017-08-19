@@ -1,4 +1,4 @@
-class StatisticnaRegija < ActiveRecord::Base
+class StatisticnaRegija < ApplicationRecord
   has_many :obcinas
 
   def to_s

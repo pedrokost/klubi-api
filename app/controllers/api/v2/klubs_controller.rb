@@ -23,7 +23,7 @@ module Api
         the_params = new_klub_params
         the_params[:categories] = the_params[:categories].map(&:parameterize) if the_params[:categories]
 
-        klub = Klub.new(the_params.except(:editor, :branches_attributes))
+        klub = Klub.new(the_params.to_h.except(:editor, :branches_attributes))
 
         head 422 and return if the_params[:editor].blank?
 

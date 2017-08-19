@@ -44,6 +44,7 @@ class UpdateDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :updatable,
+    :field,
     :oldvalue,
     :newvalue,
     :status,

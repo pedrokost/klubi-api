@@ -17,7 +17,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
 
       before do
         expect(ENV).to receive(:[]).with("MAILGUN_API_KEY").and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
-        post :webhook, valid_request_params
+        post :webhook, params: valid_request_params
       end
 
       it "should return 200" do
@@ -39,7 +39,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
 
       before do
         expect(ENV).to receive(:[]).with("MAILGUN_API_KEY").and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
-        post :webhook, invalid_request_params
+        post :webhook, params: invalid_request_params
       end
 
       it "should return 406" do
@@ -64,16 +64,16 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
       end
 
       it "should return 200" do
-        post :webhook, delivery_params
+        post :webhook, params: delivery_params
         expect(response.status).to eq 200
       end
 
       it "should add an entry to the db" do
-        expect { post :webhook, delivery_params }.to change(EmailStat, :count).by(1)
+        expect { post :webhook, params: delivery_params }.to change(EmailStat, :count).by(1)
       end
 
       it "should set the delivered timestamp in the db" do
-        post :webhook, delivery_params
+        post :webhook, params: delivery_params
         expect(EmailStat.find_by(email: 'alice@example.com').last_delivered_at).to eq DateTime.new(2017,1,14,17,45,9)
       end
 
@@ -90,15 +90,15 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
 
         before do
           expect(ENV).to receive(:[]).with("MAILGUN_API_KEY").and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
-          post :webhook, delivery_params
+          post :webhook, params: delivery_params
         end
 
         it "should not create a new record" do
-          expect { post :webhook, subsequent_delivery_params }.not_to change(EmailStat, :count)
+          expect { post :webhook, params: subsequent_delivery_params }.not_to change(EmailStat, :count)
         end
 
         it "should update the last_delivered_at" do
-          post :webhook, subsequent_delivery_params
+          post :webhook, params: subsequent_delivery_params
           expect(EmailStat.find_by(email: 'alice@example.com').last_delivered_at).to eq DateTime.new(2017,1,14,18,54,58)
         end
       end
@@ -121,16 +121,16 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
       end
 
       it "should return 200" do
-        post :webhook, opened_params
+        post :webhook, params: opened_params
         expect(response.status).to eq 200
       end
 
       it "should add an entry to the db" do
-        expect { post :webhook, opened_params }.to change(EmailStat, :count).by(1)
+        expect { post :webhook, params: opened_params }.to change(EmailStat, :count).by(1)
       end
 
       it "should set the delivered timestamp in the db" do
-        post :webhook, opened_params
+        post :webhook, params: opened_params
         expect(EmailStat.find_by(email: 'alice@example.com').last_opened_at).to eq DateTime.new(2017,1,14,17,45,9)
       end
     end
@@ -152,16 +152,16 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
       end
 
       it "should return 200" do
-        post :webhook, clicked_params
+        post :webhook, params: clicked_params
         expect(response.status).to eq 200
       end
 
       it "should add an entry to the db" do
-        expect { post :webhook, clicked_params }.to change(EmailStat, :count).by(1)
+        expect { post :webhook, params: clicked_params }.to change(EmailStat, :count).by(1)
       end
 
       it "should set the delivered timestamp in the db" do
-        post :webhook, clicked_params
+        post :webhook, params: clicked_params
         expect(EmailStat.find_by(email: 'alice@example.com').last_clicked_at).to eq DateTime.new(2017,1,14,17,45,9)
       end
     end
@@ -183,16 +183,16 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
       end
 
       it "should return 200" do
-        post :webhook, bounced_params
+        post :webhook, params: bounced_params
         expect(response.status).to eq 200
       end
 
       it "should add an entry to the db" do
-        expect { post :webhook, bounced_params }.to change(EmailStat, :count).by(1)
+        expect { post :webhook, params: bounced_params }.to change(EmailStat, :count).by(1)
       end
 
       it "should set the delivered timestamp in the db" do
-        post :webhook, bounced_params
+        post :webhook, params: bounced_params
         expect(EmailStat.find_by(email: 'alice@example.com').last_bounced_at).to eq DateTime.new(2017,1,14,17,45,9)
       end
     end
@@ -214,16 +214,16 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
       end
 
       it "should return 200" do
-        post :webhook, dropped_params
+        post :webhook, params: dropped_params
         expect(response.status).to eq 200
       end
 
       it "should add an entry to the db" do
-        expect { post :webhook, dropped_params }.to change(EmailStat, :count).by(1)
+        expect { post :webhook, params: dropped_params }.to change(EmailStat, :count).by(1)
       end
 
       it "should set the delivered timestamp in the db" do
-        post :webhook, dropped_params
+        post :webhook, params: dropped_params
         expect(EmailStat.find_by(email: 'alice@example.com').last_dropped_at).to eq DateTime.new(2017,1,14,17,45,9)
       end
     end
@@ -245,17 +245,17 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
      end
 
      it "should return 406" do
-        # Mailgun does not retry on 406.
-       post :webhook, invalid_params
-       expect(response.status).to eq 406
+      # Mailgun does not retry on 406.
+      post :webhook, params: invalid_params
+      expect(response.status).to eq 406
      end
 
      it "does not save the field in the db" do
-      expect {post :webhook, invalid_params }.not_to change(EmailStat, :count)
+      expect {post :webhook, params: invalid_params }.not_to change(EmailStat, :count)
      end
 
      it "should silently handle the error" do
-       expect { post :webhook, invalid_params }.not_to raise_error
+       expect { post :webhook, params: invalid_params }.not_to raise_error
      end
    end
 

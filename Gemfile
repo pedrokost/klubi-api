@@ -2,11 +2,12 @@ source 'https://rubygems.org'
 
 ruby '2.4.1'
 
-gem 'rails', '4.2.8'
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
 
-gem 'rails-api', '~> 0.4.1', require: false
-
-gem 'spring', :group => :development
+gem 'rails', '~> 5.1.3'
 
 gem 'rack-ssl-enforcer'
 
@@ -33,11 +34,15 @@ gem 'json_spec', '~>1.1.4'
 gem 'newrelic_rpm', '~> 4.1.0.333'
 
 gem 'pry-rails'
+
 group :development do
+  gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
   gem 'pry-byebug'
   gem 'foreman'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 gem 'randexp', '~> 0.1.7'
@@ -61,7 +66,7 @@ gem 'levenshtein-ffi', :require => 'levenshtein'
 gem 'aws-sdk' , '~> 2.6.44'  # for uploading the sitemap
 gem 'sitemap_generator', '~> 5.2.0'
 
-gem 'administrate', '0.6'
+gem 'administrate', '0.8.1'
 
 # Makes caching into memcacher work
 gem "dalli", '~> 2.7.6'
@@ -74,6 +79,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5.2'
   gem 'guard-rspec'
   gem 'factory_girl_rails'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 gem 'shoulda-matchers', '~> 2.8.0',  require: false
@@ -98,6 +104,5 @@ end
 # Deploy with Capistrano
 # gem 'capistrano', :group => :development
 
-# To use debugger
-# gem 'debugger', :require => 'ruby-debug'
-
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -33,7 +33,7 @@ RSpec.describe ApplicationController, :type => :controller do
           '<html>klubi12345</html>',
         ]
         expect(REDIS).to receive(:get).with('klubi:12345').and_return(*returns)
-        get :index, index_key: 'klubi:12345'
+        get :index, params: { index_key: 'klubi:12345' }
       end
 
       it "should return correct index key" do

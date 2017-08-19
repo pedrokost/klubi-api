@@ -1,4 +1,7 @@
-#{$all-buttons},
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
 .button {
   appearance: none;
   background-color: $action-color;
@@ -19,10 +22,14 @@
   vertical-align: middle;
   white-space: nowrap;
 
-  &:hover,
-  &:focus {
-    background-color: shade($action-color, 20%);
+  &:hover {
+    background-color: mix($black, $action-color, 20%);
     color: $white;
+  }
+
+  &:focus {
+    outline: $focus-outline;
+    outline-offset: $focus-outline-offset;
   }
 
   &:disabled {
@@ -35,7 +42,6 @@
   }
 
   &.button--danger {
-    background-color: $action-color-danger;
+    background-color: $red;
   }
 }
-

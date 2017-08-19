@@ -1,10 +1,9 @@
 require 'pry' if Rails.env.test?
 
-
-class Klub < ActiveRecord::Base
+class Klub < ApplicationRecord
 
   has_many :branches, class_name: 'Klub', foreign_key: 'parent_id'
-  belongs_to :parent, class_name: 'Klub', touch: true
+  belongs_to :parent, class_name: 'Klub', touch: true, optional: true
   has_many :updates, as: :updatable, dependent: :destroy
 
 	before_save :update_slug
@@ -122,7 +121,7 @@ class Klub < ActiveRecord::Base
     branch = Klub.new(self.attributes
       .merge( verified: false )
       .except("id", "created_at", "updated_at")
-      .merge(branch_attrs)
+      .merge(branch_attrs.to_h)
     )
 
     self.branches << branch

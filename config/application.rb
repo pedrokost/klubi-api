@@ -1,4 +1,4 @@
-require File.expand_path('../boot', __FILE__)
+require_relative 'boot'
 
 require 'rails/all'
 require 'json'
@@ -9,9 +9,18 @@ Bundler.require(*Rails.groups)
 
 module KlubiApi
   class Application < Rails::Application
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 5.1
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    # Only loads a smaller set of middleware suitable for API only apps.
+    # Middleware like session, flash, cookies can be added back manually.
+    # Skip views, helpers and assets when generating a new resource.
+    # Administrate require api_only to be set to false!
+    config.api_only = false
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
@@ -24,6 +33,7 @@ module KlubiApi
     config.i18n.default_locale = :si
 
     config.i18n.fallbacks =[:en]
+
 
     config.middleware.insert_before ActionDispatch::Static, Rack::Cors, logger: Rails.logger do
       allow do
@@ -42,13 +52,11 @@ module KlubiApi
     # I do not redirect any of the request which don't have the header (meaning
     # I left clouldflare). I also do not do the 301 if the request comes from
     # Prerender.
-    config.middleware.insert_before ActionDispatch::Cookies, Rack::SslEnforcer, except_agents: /prerender/i, ignore: lambda { |request|
+    config.middleware.insert_before ActionDispatch::Static, Rack::SslEnforcer, except_agents: /prerender/i, ignore: lambda { |request|
 
       clould_flare_visitor = JSON.parse(request.env["HTTP_CF_VISITOR"])['scheme'] if request.env["HTTP_CF_VISITOR"]
       clould_flare_https = clould_flare_visitor.match(/https/i) if clould_flare_visitor
-
-      request.env["HTTPS"] == 'on' || clould_flare_https
-
+      request.env["HTTPS"] == 'on' || clould_flare_https || Rails.env.development?
     }
 
     config.middleware.insert_before(Rack::Cors, Rack::Rewrite) do
@@ -66,7 +74,6 @@ module KlubiApi
       r301 %r{.*}, "https://api.klubi.si$&", :if => Proc.new {|rack_env|
         ["api.zatresi.si"].include? rack_env['SERVER_NAME']
       }
-
     end
 
     config.action_dispatch.default_headers = {
@@ -78,7 +85,6 @@ module KlubiApi
     config.middleware.use Rack::MethodOverride
 
     config.active_record.schema_format = :sql
-
 
     # Skylight config
     config.skylight.probes += %w(redis active_model_serializers)

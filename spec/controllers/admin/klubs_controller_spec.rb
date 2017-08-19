@@ -20,7 +20,7 @@ RSpec.describe Admin::KlubsController, :type => :controller do
       expect_any_instance_of(Klub).to receive(:send_request_verify_klub_data_mail).once
 
       @request.env["HTTP_REFERER"] = '/'
-      post :send_data_verification_email, id: klub.id
+      post :send_data_verification_email, params: { id: klub.id }
     end
   end
 end

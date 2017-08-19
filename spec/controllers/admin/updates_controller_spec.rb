@@ -20,19 +20,19 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
 
     it "should be accepted" do
       # binding.pry
-      put :update, id: update.id, update: { status: :rejected }
+      put :update, params: { id: update.id, update: { status: :rejected } }
       expect(response.status).to eq 302
     end
 
     it "should call the resolve! function" do
       expect{
-        put :update, id: update.id, update: { status: :accepted }
+        put :update, params: { id: update.id, update: { status: :accepted } }
         klub.reload
       }.to change(klub, :name)
     end
 
     it "should add the editor to the list" do
-      put :update, id: update.id, update: { status: :accepted }
+      put :update, params: { id: update.id, update: { status: :accepted } }
       klub.reload
 
       expect(klub.editor_emails).to include 'editor@email.com'
@@ -42,7 +42,7 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
       update.editor_email = 'owner@email.com'
       update.save
 
-      put :update, id: update.id, update: { status: :accepted }
+      put :update, params: { id: update.id, update: { status: :accepted } }
       klub.reload
 
       expect(klub.editor_emails.length).to eq 1
@@ -56,7 +56,7 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
     it "should set the correct status" do
       expect {
         @request.env["HTTP_REFERER"] = '/'
-        post :reject, id: update.id
+        post :reject, params: { id: update.id }
         update.reload
       }.to change(update, :status)
       expect(update.status).to eq('rejected')
@@ -65,7 +65,7 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
     it "should not alter the attribute" do
       expect {
         @request.env["HTTP_REFERER"] = '/'
-        post :reject, id: update.id
+        post :reject, params: { id: update.id }
         klub.reload
       }.not_to change(klub, :name)
     end
@@ -79,7 +79,7 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
     it "should set the correct status" do
       expect {
         @request.env["HTTP_REFERER"] = '/'
-        post :accept, id: update.id
+        post :accept, params: { id: update.id }
         update.reload
       }.to change(update, :status)
       expect(update.status).to eq('accepted')
@@ -88,7 +88,7 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
     it "should not alter the attribute" do
       expect {
         @request.env["HTTP_REFERER"] = '/'
-        post :accept, id: update.id
+        post :accept, params: { id: update.id }
         klub.reload
       }.to change(klub, :name)
       expect(klub.name).to eq 'Scented'

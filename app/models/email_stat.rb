@@ -1,2 +1,2 @@
-class EmailStat < ActiveRecord::Base
+class EmailStat < ApplicationRecord
 end

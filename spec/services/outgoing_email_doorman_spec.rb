@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2017-07-22 20:43:06
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-08-05 17:09:55
+# @Last Modified time: 2017-08-19 22:14:08
 
 require 'rails_helper'
 
@@ -69,7 +69,7 @@ RSpec.describe OutgoingEmailDoorman do
 
     it "should send 7 emails a day on average" do
       total_emails_sent = daily_average_emails num_daily_emails, hourly_distribution
-      expect( (total_emails_sent - num_daily_emails).abs).to be < num_daily_emails * 0.1
+      expect( (total_emails_sent - num_daily_emails).abs).to be < num_daily_emails * 0.2
     end
 
     it "should send emails according to distribution" do
@@ -107,7 +107,7 @@ RSpec.describe OutgoingEmailDoorman do
 
   describe "when emails fail/success" do
     let(:hourly_distribution) { [1.0/24] * 24 }
-    let(:num_daily_emails) { 48 }
+    let(:num_daily_emails) { 96 }
 
     it "should send fewer and fewer emails when they bounce or drop" do
       create(:email_stat, last_delivered_at: Time.now - 5.days)

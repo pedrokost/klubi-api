@@ -1,16 +1,13 @@
-require 'rails-api'
-
 class ApplicationController < ActionController::API
-	include ActionController::Serialization
-
-	skip_before_filter :verify_authenticity_token
+  include ActionController::Serialization
+	# skip_before_action :verify_authenticity_token
 
   def index
     new_url, changed = correct_url!
     redirect_to new_url, status: :moved_permanently and return if changed
 
     html = bootstrap_index(params[:index_key])
-    render text: html
+    render html: html.html_safe
   end
 
   def sitemap

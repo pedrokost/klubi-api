@@ -6,12 +6,15 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
-    before_action :set_locale
-    before_action :default_params
-
-    # before_filter :authenticate_admin
     http_basic_authenticate_with name: ENV.fetch("ADMIN_NAME"), password: ENV.fetch("ADMIN_PASSWORD")
 
+    before_action :set_locale
+    before_action :authenticate_admin
+    before_action :default_params
+
+    def authenticate_admin
+      # before_filter :authenticate_admin
+    end
 
     # Override this value to specify the number of elements to display at a time
     # on index pages. Defaults to 20.

@@ -12,7 +12,7 @@ RSpec.describe Api::V2::ObcinasController, type: :controller do
     describe "without providing category param" do
       before do
         allow_any_instance_of(Obcina).to receive(:category_klubs).and_return([klub])
-        get :show, id: obcina.url_slug, category: nil
+        get :show, params: { id: obcina.url_slug, category: nil }
       end
 
       it "should not throw an error" do
@@ -31,20 +31,20 @@ RSpec.describe Api::V2::ObcinasController, type: :controller do
       subject { response }
 
       it "should return a valid obcina response" do
-        get :show, id: obcina.url_slug, category: 'fitnes'
+        get :show, params: { id: obcina.url_slug, category: 'fitnes' }
         expect(response.status).to eq 200
         expect(response).to match_response_schema("v2/obcina")
       end
 
       it "should use the url_slug as id" do
-        get :show, id: obcina.url_slug, category: 'fitnes'
+        get :show, params: { id: obcina.url_slug, category: 'fitnes' }
 
         expect(json_response[:data][:id]).to eq obcina.url_slug
       end
 
       it "should include a list of ids of klubs in the obcina" do
         allow_any_instance_of(Obcina).to receive(:category_klubs).and_return([klub])
-        get :show, id: obcina.url_slug, category: 'fitnes'
+        get :show, params: { id: obcina.url_slug, category: 'fitnes' }
         obcina = json_response[:data]
 
         expect(obcina[:relationships][:klubs][:data]).to be_a(Array)
@@ -54,7 +54,7 @@ RSpec.describe Api::V2::ObcinasController, type: :controller do
 
       it "should include short klubs objects" do
         allow_any_instance_of(Obcina).to receive(:category_klubs).and_return([klub])
-        get :show, id: obcina.url_slug, category: 'fitnes'
+        get :show, params: { id: obcina.url_slug, category: 'fitnes' }
         returned_klub = json_response[:included].first
 
         # Be simple
@@ -67,12 +67,12 @@ RSpec.describe Api::V2::ObcinasController, type: :controller do
       it "should call obcina.category_klubs" do
         # AMS seems to call it twice, once for the klub_ids, once for the `include`.
         expect_any_instance_of(Obcina).to receive(:category_klubs).with('gimnastika').at_least(:once)
-        get :show, id: obcina.url_slug, category: 'gimnastika'
+        get :show, params: { id: obcina.url_slug, category: 'gimnastika' }
       end
 
       it "should include a link to nearby obcinas" do
         expect_any_instance_of(Obcina).to receive(:neighbouring_obcinas).at_least(:once).and_return([touching_obcina])
-        get :show, id: obcina.url_slug, category: 'fitnes'
+        get :show, params: { id: obcina.url_slug, category: 'fitnes' }
 
         expect(json_response[:data][:relationships][:"neighbouring-obcinas"][:data].length).to eq 1
         expect(json_response[:data][:relationships][:"neighbouring-obcinas"][:data][0][:id]).to eq touching_obcina.url_slug
@@ -80,7 +80,7 @@ RSpec.describe Api::V2::ObcinasController, type: :controller do
 
       it "should include flat nearby obcina objects" do
         expect_any_instance_of(Obcina).to receive(:neighbouring_obcinas).at_least(:once).and_return([touching_obcina])
-        get :show, id: obcina.url_slug, category: 'fitnes'
+        get :show, params: { id: obcina.url_slug, category: 'fitnes' }
 
         neighbouring_obcinas = json_response[:included].first
 

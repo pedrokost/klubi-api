@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2017-07-22 20:39:50
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-08-05 17:49:53
+# @Last Modified time: 2017-08-19 22:12:42
 
 class OutgoingEmailDoorman
   # This class helps you determine how many emails to send each hour it

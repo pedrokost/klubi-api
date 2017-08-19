@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2017-01-29 16:22:15
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-06-21 22:52:04
+# @Last Modified time: 2017-08-19 22:05:11
 
 require 'rails_helper'
 
@@ -38,7 +38,7 @@ describe "Klub url redirecting" do
 
     context "static urls" do
 
-      subject { get '/oprojektu', {}, 'HTTPS': 'on' }
+      subject { get '/oprojektu', headers: { 'HTTPS': 'on' } }
 
       it "should return 200" do
         expect(subject).to eq 200
@@ -93,7 +93,7 @@ describe "Klub url redirecting" do
   end
 
   context "with not existing klub" do
-    subject { get 'https://www.klubi.si/this-klub-does-not-exist', {}, 'HTTPS': 'on' }
+    subject { get 'https://www.klubi.si/this-klub-does-not-exist', headers: { 'HTTPS': 'on' } }
 
     it "should not redirect" do
       expect(subject).to eq 200
@@ -101,7 +101,7 @@ describe "Klub url redirecting" do
   end
 
   context "root domains" do
-    subject { get '/', {}, 'HTTPS': 'on' }
+    subject { get '/', headers: { 'HTTPS': 'on' } }
 
     it "should not redirect" do
       expect(subject).to eq 200

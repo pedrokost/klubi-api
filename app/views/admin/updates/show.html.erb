@@ -16,14 +16,17 @@ as well as a link to its edit page.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Show
 %>
 
-<% content_for(:title) { page.page_title } %>
+<% content_for(:title) { "#{t("administrate.actions.show")} #{page.page_title}" } %>
 
-<header class="header">
-  <h1 class="header__heading"><%= content_for(:title) %></h1>
-  <div class="header__actions">
+<header class="main-content__header" role="banner">
+  <h1 class="main-content__page-title">
+    <%= content_for(:title) %>
+  </h1>
+
+  <div>
     <% if page.resource.status != Update.statuses[:accepted] %>
       <%= form_tag([:accept, namespace, page.resource]) do %>
-        <%= submit_tag("Accept", class: 'button', data: { confirm: "This will delete the klub/branch  #{page.resource.updatable.name}!" }) %>
+        <%= submit_tag("Accept", class: 'button', data: { confirm: "Accept update for #{page.resource.updatable.name}!" }) %>
       <% end %>
     <% end %>
 
@@ -34,31 +37,33 @@ as well as a link to its edit page.
     <% end %>
 
     <%= link_to(
-      "Edit",
+      "#{t("administrate.actions.edit")} #{page.page_title}",
       [:edit, namespace, page.resource],
       class: "button",
-    ) %>
+    ) if valid_action? :edit %>
 
     <%= link_to(
       t("administrate.actions.destroy"),
       [namespace, page.resource],
-      class: "table__action--destroy",
+      class: "text-color-red",
       method: :delete,
       data: { confirm: t("administrate.actions.confirm") }
     ) %>
   </div>
 </header>
 
-<dl>
-  <% page.attributes.each do |attribute| %>
-    <dt class="attribute-label">
-    <%= t(
-      "helpers.label.#{resource_name}.#{attribute.name}",
-      default: attribute.name.titleize,
-    ) %>
-    </dt>
+<section class="main-content__body">
+  <dl>
+    <% page.attributes.each do |attribute| %>
+      <dt class="attribute-label" id="<%= attribute.name %>">
+      <%= t(
+        "helpers.label.#{resource_name}.#{attribute.name}",
+        default: attribute.name.titleize,
+      ) %>
+      </dt>
 
-    <dd class="attribute-data attribute-data--<%=attribute.html_class%>"
-        ><%= render_field attribute %></dd>
-  <% end %>
-</dl>
+      <dd class="attribute-data attribute-data--<%=attribute.html_class%>"
+          ><%= render_field attribute %></dd>
+    <% end %>
+  </dl>
+</section>

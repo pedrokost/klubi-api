@@ -18,16 +18,16 @@ module Admin
 
     def reject
       requested_resource.reject!
-      redirect_to(
-        :back,
+      redirect_back(
+        fallback_location: admin_update_path(requested_resource),
         notice: translate_with_resource("update.success")
       )
     end
 
     def accept
       requested_resource.accept!
-      redirect_to(
-        :back,
+      redirect_back(
+        fallback_location: admin_update_path(requested_resource),
         notice: translate_with_resource("update.success")
       )
     end

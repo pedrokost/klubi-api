@@ -1,5 +1,5 @@
-class Obcina < ActiveRecord::Base
-  belongs_to :statisticna_regija, touch: true
+class Obcina < ApplicationRecord
+  belongs_to :statisticna_regija, touch: true, optional: true
 
   def url_slug
     "#{slug}-#{id}"
