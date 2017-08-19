@@ -37,6 +37,11 @@ module Api
           head 422 and return unless branch
         end
 
+        # This helps not send verification reminders too soon
+        if the_params[:email] == the_params[:editor]
+          klub.last_verification_reminder_at = DateTime.now
+        end
+
         klub.save!
 
         klub.send_on_create_notifications the_params[:editor]

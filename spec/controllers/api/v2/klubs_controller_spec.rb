@@ -346,6 +346,36 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
       expect(klub.verified?).to be_falsy
     end
 
+    it "should set the klub verification date if submitter = owner" do
+      post :create, data: {
+        type: 'klubs',
+        attributes: {
+          name: 'Fitnes Mariborcan 22',
+          email: 'joe@doe.com',
+          categories: ['football'],
+          editor: 'joe@doe.com'
+        }
+      }
+
+      klub = Klub.unscoped.last
+      expect(klub.last_verification_reminder_at).not_to be_nil
+    end
+
+    it "should not set the klub verification date if submitter = owner" do
+      post :create, data: {
+        type: 'klubs',
+        attributes: {
+          name: 'Fitnes Mariborcan 22',
+          email: 'ben@doe.com',
+          categories: ['football'],
+          editor: 'joe@doe.com'
+        }
+      }
+
+      klub = Klub.unscoped.last
+      expect(klub.last_verification_reminder_at).to be_nil
+    end
+
     it "should return 202 Accepted" do
       post :create, data: {
         type: 'klubs',
