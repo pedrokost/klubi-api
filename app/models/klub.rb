@@ -55,12 +55,12 @@ class Klub < ApplicationRecord
   end
 
   def send_updates_accepted_notification(editor, updates)
-    KlubMailer.confirmation_for_acceped_updates_mail(self.id, editor, updates.map(&:id)).deliver_later
+    KlubMailer.confirmation_for_acceped_updates_mail(self.id, editor, updates.map(&:id)).deliver_now
   end
 
   def send_request_verify_klub_data_mail
     return if self.email.blank?
-    KlubMailer.request_verify_klub_mail(self.id, self.email).deliver_later
+    KlubMailer.request_verify_klub_mail(self.id, self.email).deliver_now
     self.update_attribute :last_verification_reminder_at, DateTime.now
   end
 
