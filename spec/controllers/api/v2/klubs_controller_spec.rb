@@ -211,6 +211,14 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
       expect(branches.length).to eq 0
     end
 
+    it "includes a link to images" do
+      get :show, params: { id: klub1.url_slug }
+      expect(response).to match_response_schema('v2/klub')
+
+      images = json_response[:data][:relationships][:images][:links][:related]
+      expect(images).to eq(images_klub_url(klub1.url_slug))
+    end
+
     it "should return closed klubs together with closed_at" do
       get :show, params: { id: closed_klub.url_slug }
       expect(response).to match_response_schema('v2/klub')
@@ -234,6 +242,116 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         expect(response).to match_response_schema("v2/klub")
         klub = json_response[:data]
         expect(klub[:id]).to eq klub1.url_slug
+      end
+    end
+  end
+
+  describe "GET #klubss/:id/images" do
+    let!(:klub) { FactoryGirl.create(:complete_klub) }
+
+    context "when no valid facebook url" do
+      before do
+        klub.facebook_url = 'https://google.com'
+        klub.save
+        get :images, params: { id: klub.url_slug }
+      end
+
+      subject { response }
+
+      it { should be_success }
+
+      it "should conform to the schema" do
+        expect(response).to match_response_schema("v2/images")
+      end
+
+      it "should return an empty array" do
+        expect(json_response[:data].length).to eq 0
+      end
+    end
+
+    context "when no facebook url" do
+      before do
+        klub.facebook_url = nil
+        klub.save
+        get :images, params: { id: klub.url_slug }
+      end
+
+      subject { response }
+
+      it { should be_success }
+
+      it "should conform to the schema" do
+        expect(response).to match_response_schema("v2/images")
+      end
+
+      it "should return an empty array" do
+        expect(json_response[:data].length).to eq 0
+      end
+    end
+
+    context "when valid facebook url" do
+      before do
+        allow(Koala::Facebook::OAuth).to receive(:new).and_return(double(get_app_access_token: 'fake_token'))
+        allow_any_instance_of(Koala::Facebook::API).to receive(:get_object).and_return([{ 'images' =>
+          [{ 'height' => 710,
+             'source' =>
+             'https://scontent.xx.fbcdn.net/v/t31.0-8/10443276_348531425325870_4781202915849569619_o.jpg?oh=f2df7dd6fc54f416dbea0594b7f14481&oe=5A48F262',
+             'width' => 1220 },
+           { 'height' => 600,
+             'source' =>
+             'https://scontent.xx.fbcdn.net/v/t31.0-0/q87/p600x600/10443276_348531425325870_4781202915849569619_o.jpg?oh=10f2e8172f5153642b1e63d357462e43&oe=5A160301',
+             'width' => 1030 },
+           { 'height' => 480,
+             'source' =>
+             'https://scontent.xx.fbcdn.net/v/t31.0-0/q87/p480x480/10443276_348531425325870_4781202915849569619_o.jpg?oh=9f97568a6640f1bb9b116053d0a3e432&oe=5A43EEE1',
+             'width' => 824 },
+           { 'height' => 320,
+             'source' =>
+             'https://scontent.xx.fbcdn.net/v/t1.0-0/q85/p320x320/10470190_348531425325870_4781202915849569619_n.jpg?oh=a070e9dfe920fede9642c8a15d6dba5c&oe=5A469DC6',
+             'width' => 550 },
+           { 'height' => 540,
+             'source' =>
+             'https://scontent.xx.fbcdn.net/v/t31.0-0/q85/p180x540/10443276_348531425325870_4781202915849569619_o.jpg?oh=82e159fd8bb7f2bcd2a20eae30063ddd&oe=5A590C78',
+             'width' => 927 },
+           { 'height' => 130,
+             'source' =>
+             'https://scontent.xx.fbcdn.net/v/t1.0-0/q85/p130x130/10470190_348531425325870_4781202915849569619_n.jpg?oh=a239299e45bcd5c0de67db9a442b7b26&oe=5A5BAFA9',
+             'width' => 223 },
+           { 'height' => 225,
+             'source' =>
+             'https://scontent.xx.fbcdn.net/v/t1.0-0/q85/p75x225/10470190_348531425325870_4781202915849569619_n.jpg?oh=27a7ab68cad79c3b7c118051418a0fb5&oe=5A408153',
+             'width' => 387 }],
+          'id' => '348531425325870' }])
+
+        klub.facebook_url = "https://www.facebook.com/klubi.slovenije/"
+        klub.save
+        get :images, params: { id: klub.url_slug }
+      end
+
+      subject { response }
+
+      it { should be_success }
+
+      it "should conform to the schema" do
+        expect(response).to match_response_schema("v2/images")
+      end
+
+      it "should include an array of images" do
+        expect(json_response[:data].length).to be >= 1
+      end
+    end
+
+    context "when invalid facebook page id" do
+      before do
+        allow(Koala::Facebook::OAuth).to receive(:new).and_return(double(get_app_access_token: 'fake_token'))
+        allow_any_instance_of(Koala::Facebook::API).to receive(:get_object).and_raise('error')
+
+        klub.facebook_url = "https://www.facebook.com/klubi.slovenije.does.not.exist/"
+        klub.save
+      end
+
+      it "should return empty array when no results" do
+        expect { get :images, params: { id: klub.url_slug } }.not_to raise_error
       end
     end
   end

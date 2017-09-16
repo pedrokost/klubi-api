@@ -70,6 +70,50 @@ RSpec.describe Klub, :type => :model do
     end
   end
 
+  describe "facebook_page_id" do
+    it "is nil when not valid fb page" do
+      klub.facebook_url = 'http://ni-ta-prav.si'
+
+      expect(klub.send(:facebook_page_id)).to eq nil
+    end
+
+    it "is nil when no facebook_url" do
+      klub.facebook_url = nil
+
+      expect(klub.send(:facebook_page_id)).to eq nil
+    end
+
+    it "returns valid id from url" do
+      klub.facebook_url = "https://www.facebook.com/karateklub.olimpija"
+
+      expect(klub.send(:facebook_page_id)).to eq "karateklub.olimpija"
+    end
+
+    it "extract id only" do
+      klub.facebook_url = "https://www.facebook.com/pg/Tokuhisa-Takashi-Karate-Dojo-141094595912874/"
+
+      expect(klub.send(:facebook_page_id)).to eq "141094595912874"
+    end
+
+    it "discards query params" do
+      klub.facebook_url = "http://www.facebook.com/fitnes.metulj?ref=ts&fref=ts"
+
+      expect(klub.send(:facebook_page_id)).to eq "fitnes.metulj"
+    end
+
+    it "discards query params" do
+      klub.facebook_url = "https://www.facebook.com/pages/Slovenska-Zveza-Tradicionalnega-Karateja-SZTK/150573685047026?ref=digest_email#!/karate.goryu"
+
+      expect(klub.send(:facebook_page_id)).to eq "150573685047026"
+    end
+
+    it "discards 'info' subpage" do
+      klub.facebook_url = "https://www.facebook.com/WksaSlovenija/info?tab=overview"
+
+      expect(klub.send(:facebook_page_id)).to eq "WksaSlovenija"
+    end
+  end
+
   describe "create_updates" do
 
     it "should not create update for tiny latitude change" do
@@ -240,7 +284,7 @@ RSpec.describe Klub, :type => :model do
 
   it "should send data verification email to correct addresee" do
     klub.save # klub must exist
-    expect(KlubMailer).to receive(:request_verify_klub_mail).twice.with(klub.id, 'owner@test.com').and_call_original
+    expect(KlubMailer).to receive(:request_verify_klub_mail).with(klub.id, 'owner@test.com').and_call_original
     subject.send_request_verify_klub_data_mail
   end
 

@@ -90,6 +90,15 @@ module Api
         render json: klub, include: [:branches, :parent]
       end
 
+      def images
+        klub = find_klub
+        images = Rails.cache.fetch("v2/klubs/#{klub.id}/images-#{Date.today.beginning_of_week}") do
+          serializer = ActiveModel::Serializer::CollectionSerializer.new(klub.images, serializer: Api::V2::ImageSerializer)
+          ActiveModelSerializers::Adapter.create(serializer).to_json
+        end
+        render json: images
+      end
+
     private
       def find_klub
         slug_with_id = params[:id]

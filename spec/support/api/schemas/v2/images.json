@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+
+  "definitions": {
+    "image": {
+      "type": "object",
+      "required": ["id", "type", "attributes"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "attributes": {
+          "type": "object",
+          "required": ["url", "type", "width", "height"],
+          "properties": {
+            "url": { "type": "string" },
+            "type": { "type": "string" },
+            "width": { "width": "number" },
+            "height": { "height": "number" }
+          }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": { "type": [{ "$ref": "#/definitions/image" }, "null"] }
+    }
+  }
+}

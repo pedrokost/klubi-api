@@ -53,19 +53,18 @@ Rails.application.configure do
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
-  config.log_tags = [ :request_id, :subdomain ]
+  config.log_tags = %i[request_id subdomain]
 
   # Use a different cache store in production.
   config.cache_store = :dalli_store,
-                      (ENV["MEMCACHIER_SERVERS"] || "").split(","),
-                      {:username => ENV["MEMCACHIER_USERNAME"],
-                       :password => ENV["MEMCACHIER_PASSWORD"],
-                       :failover => true,
-                       :socket_timeout => 1.5,
-                       :namespace => 'klubiapi',
-                       :compress => true,
-                       :socket_failure_delay => 0.2
-                      }
+                       (ENV['MEMCACHIER_SERVERS'] || '').split(','),
+                       { username: ENV['MEMCACHIER_USERNAME'],
+                         password: ENV['MEMCACHIER_PASSWORD'],
+                         failover: true,
+                         socket_timeout: 1.5,
+                         namespace: 'klubiapi',
+                         compress: true,
+                         socket_failure_delay: 0.2 }
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
@@ -95,8 +94,7 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
+  if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
@@ -108,5 +106,12 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { :host => 'www.klubi.si' }
+  config.action_mailer.default_url_options = { host: 'www.klubi.si' }
+  config.action_controller.default_url_options = {
+    host: ENV['HTTP_HOST'] || 'klubi.si',
+    protocol: ENV['HTTP_PROTOCOL'] || 'https'
+  }
 end
+
+Rails.application.routes.default_url_options[:host] = ENV['HTTP_HOST'] || 'klubi.si'
+Rails.application.routes.default_url_options[:protocol] = ENV['HTTP_PROTOCOL'] || 'https'

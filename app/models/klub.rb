@@ -1,42 +1,39 @@
 require 'pry' if Rails.env.test?
+require 'facebook_image_retriever'
 
 class Klub < ApplicationRecord
-
   has_many :branches, class_name: 'Klub', foreign_key: 'parent_id'
   belongs_to :parent, class_name: 'Klub', touch: true, optional: true
   has_many :updates, as: :updatable, dependent: :destroy
 
-	before_save :update_slug
-	before_save :update_complete
+  before_save :update_slug
+  before_save :update_complete
 
-	validates :name, presence: true
+  validates :name, presence: true
   validates :categories, presence: true
   validate :closed_at_cannot_be_in_the_future
 
-	scope :completed, -> { where(complete: true) }
+  scope :completed, -> { where(complete: true) }
 
-  geocoded_by :address do |obj,results|
+  geocoded_by :address do |obj, results|
     if geo = results.first
       obj.town = geo.city || geo.state
       obj.address = geo.formatted_address
       obj.latitude = geo.latitude
       obj.longitude = geo.longitude
-      obj.save!  # Only needed if after create
+      obj.save! # Only needed if after create
     end
   end
-  after_create :geocode, :if => :has_address?, :unless => :has_lat_lng_town_and_address?
+  after_create :geocode, if: :has_address?, unless: :has_lat_lng_town_and_address?
 
   def merge_with(klub_attrs, skip: [])
-
-    basic_attrs = [:name, :address, :town, :phone, :email, :website, :facebook_url] - skip
+    basic_attrs = %i[name address town phone email website facebook_url] - skip
     array_attrs = [:categories]
 
     klub_attrs.each do |key, val|
       if basic_attrs.include?(key)
 
-        if self[key].blank?
-          self[key] = val
-        end
+        self[key] = val if self[key].blank?
 
       elsif array_attrs.include?(key)
         self[key] = (self[key] + klub_attrs[key]).uniq
@@ -44,7 +41,7 @@ class Klub < ApplicationRecord
     end
   end
 
-  def send_on_create_notifications editor
+  def send_on_create_notifications(editor)
     send_review_notification
     send_thanks_notification editor if editor
   end
@@ -55,13 +52,13 @@ class Klub < ApplicationRecord
   end
 
   def send_updates_accepted_notification(editor, updates)
-    KlubMailer.confirmation_for_acceped_updates_mail(self.id, editor, updates.map(&:id)).deliver_now
+    KlubMailer.confirmation_for_acceped_updates_mail(id, editor, updates.map(&:id)).deliver_now
   end
 
   def send_request_verify_klub_data_mail
-    return if self.email.blank?
-    KlubMailer.request_verify_klub_mail(self.id, self.email).deliver_now
-    self.update_attribute :last_verification_reminder_at, DateTime.now
+    return if email.blank?
+    KlubMailer.request_verify_klub_mail(id, email).deliver_now
+    update_attribute :last_verification_reminder_at, DateTime.now
   end
 
   def create_updates(new_attrs)
@@ -70,15 +67,15 @@ class Klub < ApplicationRecord
     lat_lon_min_eta = 0.00001
 
     new_attrs.except(:editor, :id).each do |key, val|
-      next if self.send(key) == val
-      next if key == :latitude and (val - self.send(key)).abs < lat_lon_min_eta
-      next if key == :longitude and (val - self.send(key)).abs < lat_lon_min_eta
-      val = val.map(&:parameterize) if key == "categories"
+      next if send(key) == val
+      next if (key == :latitude) && ((val - send(key)).abs < lat_lon_min_eta)
+      next if (key == :longitude) && ((val - send(key)).abs < lat_lon_min_eta)
+      val = val.map(&:parameterize) if key == 'categories'
 
       updates << Update.create!(
         updatable: self,
         field: key,
-        oldvalue: self.send(key).to_s,
+        oldvalue: send(key).to_s,
         newvalue: val.to_s,
         editor_email: editor
       )
@@ -87,7 +84,7 @@ class Klub < ApplicationRecord
   end
 
   def suggest_branch_removal(branch_id, editor)
-    branch = self.branches.find(branch_id)
+    branch = branches.find(branch_id)
     return false unless branch
 
     Update.create!(
@@ -104,86 +101,106 @@ class Klub < ApplicationRecord
   end
 
   def spa_url
-    "#{ENV['WEBSITE_FULL_HOST']}/#{category_for_url}/#{self.url_slug}/".freeze
+    "#{ENV['WEBSITE_FULL_HOST']}/#{category_for_url}/#{url_slug}/".freeze
   end
 
   def spa_edit_url
-    "#{ENV['WEBSITE_FULL_HOST']}/#{category_for_url}/#{self.url_slug}/uredi/".freeze
+    "#{ENV['WEBSITE_FULL_HOST']}/#{category_for_url}/#{url_slug}/uredi/".freeze
   end
 
   def static_map_url(width: 400, height: 300)
-    "https://maps.googleapis.com/maps/api/staticmap?center=#{self.latitude},#{self.longitude}&zoom=15&size=#{width}x#{height}&maptype=roadmap&markers=color:blue%7Clabel:%7C#{self.latitude},#{self.longitude}&key=#{ENV['GOOGLE_STATIC_MAPS_SERVER_API_KEY']}".html_safe.freeze
+    "https://maps.googleapis.com/maps/api/staticmap?center=#{latitude},#{longitude}&zoom=15&size=#{width}x#{height}&maptype=roadmap&markers=color:blue%7Clabel:%7C#{latitude},#{longitude}&key=#{ENV['GOOGLE_STATIC_MAPS_SERVER_API_KEY']}".html_safe.freeze
   end
 
-  def created_branch branch_attrs
+  def created_branch(branch_attrs)
     return false if branch_attrs[:address].blank? || branch_attrs[:latitude].blank? || branch_attrs[:longitude].blank? || branch_attrs[:town].blank?
 
-    branch = Klub.new(self.attributes
-      .merge( verified: false )
-      .except("id", "created_at", "updated_at")
-      .merge(branch_attrs.to_h)
-    )
+    branch = Klub.new(attributes
+      .merge(verified: false)
+      .except('id', 'created_at', 'updated_at')
+      .merge(branch_attrs.to_h))
 
-    self.branches << branch
+    branches << branch
 
     branch
   end
 
-private
+  def images
+    return [] unless facebook_page_id
+
+    FacebookImageRetriever.new(page_id: facebook_page_id).photos
+  end
+
+  private
+
+  def facebook_page_id
+    return nil if facebook_url.nil?
+    return nil unless facebook_url.downcase.include?('facebook.com')
+
+    facebook_page_id = facebook_url.split('?').first
+    facebook_page_id = facebook_page_id.split('/').reject(&:empty?).reject {
+      |c| %w[info about reviews photos videos notes posts community].include? c
+    }.last
+
+    number_id = facebook_page_id.split('-').last
+    return number_id if number_id.match? '\d{8,}'
+
+    facebook_page_id
+  end
 
   def supported_categories
     ENV['SUPPORTED_CATEGORIES'].split(',')
   end
 
   def category_for_url
-    category = self.categories.first
+    category = categories.first
 
-    ok_categories = self.categories & supported_categories
+    ok_categories = categories & supported_categories
 
-    category = ok_categories.first if ok_categories.length > 0
+    category = ok_categories.first unless ok_categories.empty?
 
     category
   end
 
-	def update_complete
-		self.complete = !(self.name.blank? ||
-                      self.latitude.nil? ||
-                      self.longitude.nil?) &&
-                    self.verified?
-		nil
-	end
+  def update_complete
+    self.complete = !(name.blank? ||
+                      latitude.nil? ||
+                      longitude.nil?) &&
+                    verified?
+    nil
+  end
 
-	def update_slug
-		self.slug = self.name.parameterize
-		nil
-	end
+  def update_slug
+    self.slug = name.parameterize
+    nil
+  end
 
   def has_address?
-    !self.address.blank?
+    !address.blank?
   end
 
   def has_lat_lng_town_and_address?
-    return has_address? && self.latitude? && self.longitude? && self.town?
+    has_address? && latitude? && longitude? && town?
   end
 
   def send_review_notification
-    KlubMailer.new_klub_mail(self.id).deliver_later
+    KlubMailer.new_klub_mail(id).deliver_later
   end
 
   def send_thanks_notification(editor)
-    KlubMailer.new_klub_thanks_mail(self.id, editor).deliver_later
+    KlubMailer.new_klub_thanks_mail(id, editor).deliver_later
   end
 
   def send_updates_notification(editor)
-    KlubMailer.new_updates_mail(self.id, editor).deliver_later
+    KlubMailer.new_updates_mail(id, editor).deliver_later
   end
 
   def send_confirm_notification(editor, updates, new_branches)
-    KlubMailer.confirmation_for_pending_updates_mail(self.id, editor, updates.map(&:id), new_branches.map(&:id)).deliver_later
+    KlubMailer.confirmation_for_pending_updates_mail(id, editor, updates.map(&:id), new_branches.map(&:id)).deliver_later
   end
 
   def closed_at_cannot_be_in_the_future
     errors.add(:closed_at, "can't be in the future") if
-      !closed_at.blank? and closed_at > Date.today
+      !closed_at.blank? && (closed_at > Date.today)
   end
 end

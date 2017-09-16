@@ -2,31 +2,29 @@
 # @Author: Pedro Kostelec
 # @Date:   2017-01-07 21:23:02
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-08-06 19:35:56
+# @Last Modified time: 2017-09-16 20:25:05
 
 class SendDataVerificationEmails
   # Sends email to klub owners who have not verified their klub data for a
   # while
 
   def call
-    begin
-      klubs_to_email = awaiting_klubs
+    klubs_to_email = awaiting_klubs
 
-      msg = "Will send #{klubs_to_email.count} emails for data verification"
+    msg = "Will send #{klubs_to_email.count} emails for data verification"
+    Rails.logger.info msg
+    puts msg
+
+    klubs_to_email.each do |klub|
+      msg = "Sending data verification request email to #{klub.email} for klub #{klub.name}"
       Rails.logger.info msg
       puts msg
-
-      klubs_to_email.each do |klub|
-        msg = "Sending data verification request email to #{klub.email} for klub #{klub.name}"
-        Rails.logger.info msg
-        puts msg
-        klub.send_request_verify_klub_data_mail
-      end
-    rescue Exception => e
-      Rails.logger.error e
-      puts e
-      Raygun.track_exception(e)
+      klub.send_request_verify_klub_data_mail
     end
+  rescue Exception => e
+    Rails.logger.error e
+    puts e
+    Raygun.track_exception(e)
   end
 
   def awaiting_klubs
@@ -39,12 +37,12 @@ class SendDataVerificationEmails
     supported_categories = ENV['SUPPORTED_CATEGORIES'].split ','
 
     Klub.where('last_verification_reminder_at IS NULL OR last_verification_reminder_at < ?', threshold_date)
-      .where(verified: true)
-      .where('ARRAY[?]::varchar[] && categories', supported_categories)
-      .where(parent: nil)
-      .where('email LIKE ?', '%@%')
-      .where(closed_at: nil)
-      .order('last_verification_reminder_at ASC NULLS FIRST, created_at ASC')
-      .limit(send_num_emails)
+        .where(verified: true)
+        .where('ARRAY[?]::varchar[] && categories', supported_categories)
+        .where(parent: nil)
+        .where('email LIKE ?', '%@%')
+        .where(closed_at: nil)
+        .order('last_verification_reminder_at ASC NULLS FIRST, created_at ASC')
+        .limit(send_num_emails)
   end
 end

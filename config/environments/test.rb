@@ -46,4 +46,10 @@ Rails.application.configure do
   config.cache_store = :null_store
 
   config.action_mailer.default_url_options = { :host => 'www.klubi.si' }
+  config.action_controller.default_url_options = {
+    host: ENV['HTTP_HOST'] || 'klubi.si'
+  }
 end
+
+
+Rails.application.routes.default_url_options[:host]= ENV["HTTP_HOST"] || "klubi.si"
