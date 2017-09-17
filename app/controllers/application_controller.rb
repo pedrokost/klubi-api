@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::API
   include ActionController::Serialization
-  serialization_scope :view_context
 	# skip_before_action :verify_authenticity_token
 
   def index
