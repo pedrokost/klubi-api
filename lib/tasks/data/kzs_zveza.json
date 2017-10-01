@@ -1,0 +1,880 @@
+{
+  "KOŠARKARSKI KLUB BLOKE": {
+    "name": "KOŠARKARSKI KLUB BLOKE",
+    "website": "http://www.kk-bloke.si",
+    "phone": "041/360-354",
+    "email": "Boris.Marolt@jub.eu",
+    "address": "ŠD Bloški smučar, Nova vas 4A, 1385 Nova vas"
+  },
+  "KOŠARKARSKI KLUB KRKA-TELEKOM NOVO MESTO": {
+    "name": "KOŠARKARSKI KLUB KRKA-TELEKOM NOVO MESTO",
+    "website": "http://www.basket.krka.si",
+    "phone": "07/39-39-550, 041/722-715",
+    "email": "info@basketkrka.si",
+    "address": "Športna dvorana Leona Štuklja, Šegova 112, 8000 Novo mesto"
+  },
+  "KOŠARKARSKI KLUB OLIMPIJA LJUBLJANA": {
+    "name": "KOŠARKARSKI KLUB OLIMPIJA LJUBLJANA",
+    "website": "http://www.petrol.olimpija.com",
+    "phone": "01 234 88 02 ali 01 234 88 14",
+    "email": "mail@petrol.olimpija.com",
+    "address": "Dvorana Stožice, Vojkova cesta 100, 1000 Ljubljana"
+  },
+  "KOŠARKARSKI KLUB BISTRICA": {
+    "name": "KOŠARKARSKI KLUB BISTRICA",
+    "website": "",
+    "phone": "",
+    "email": "matic.prepelic@gmail.com",
+    "address":
+      "Športna dvorana Slovenska Bistrica, Partizanska ulica 35, 2310 Slovenska Bistrica"
+  },
+  "KOŠARKARSKO DRUŠTVO BORUT BESEDIČ - ČIRO": {
+    "name": "KOŠARKARSKO DRUŠTVO BORUT BESEDIČ - ČIRO",
+    "website": "",
+    "phone": "031/367-605",
+    "email": "borut.besedic@gmail.com",
+    "address": "OŠ Bojana Ilicha, Mladinska ulica 13 , 2000 Maribor"
+  },
+  "KOŠARKARSKI KLUB CELJE": {
+    "name": "KOŠARKARSKI KLUB CELJE",
+    "website": "http://www.kkcelje.com",
+    "phone": "030/611-347",
+    "email": "kafo12@gmail.com",
+    "address": "Dvorana Gimnazije Center , Kosovelova 1, 3000 Celje"
+  },
+  "KOŠARKARSKI KLUB CERNICA": {
+    "name": "KOŠARKARSKI KLUB CERNICA",
+    "website": "http://www.kk-cerknica.si",
+    "phone": "040/888-248",
+    "email": "kkcerknica1970@gmail.com",
+    "address": "Športna dvorana Cerknica , Cesta 4. maja 92, 1380 Cerknica"
+  },
+  "KOŠARKARSKI KLUB ČRNOMELJ": {
+    "name": "KOŠARKARSKI KLUB ČRNOMELJ",
+    "website": "http://www.kk-crnomelj.si",
+    "phone": "040/690-490",
+    "email": "milan.kordic@gmail.com",
+    "address":
+      "Dvorana OŠ Mirana Jarca Črnomelj, Ulica Otona Žušančiča 8, 8340 Črnomelj"
+  },
+  "DRUŠTVO KOŠARKARSKI KLUB DRAVOGRAD": {
+    "name": "DRUŠTVO KOŠARKARSKI KLUB DRAVOGRAD",
+    "website": "http://www.koroska-kosarka.si",
+    "phone": "040/537-012",
+    "email": "kkdravograd@gmail.com",
+    "address": "Športna dvorana Dravograd, Koroška cesta 51, 2370 Dravograd"
+  },
+  "ŽENSKO KOŠARKARSKO DRUŠTVO MARIBOR": {
+    "name": "ŽENSKO KOŠARKARSKO DRUŠTVO MARIBOR",
+    "website": "http://zkd-mb.si/",
+    "phone": "02/32 00 333",
+    "email": "info@zkd-mb.si",
+    "address": "Dvorana Tabor, Koresova 7, 2000 Maribor"
+  },
+  "ŽENSKI KOŠARKARSKI KLUB CINKARNA CELJE": {
+    "name": "ŽENSKI KOŠARKARSKI KLUB CINKARNA CELJE",
+    "website": "http://zkkcelje.si/domov/",
+    "phone": "041/689-341, 051/245-892",
+    "email": "info@zkk.athlete.si; urednistvo@tvcelje.si",
+    "address": "Dvorana Gimnazije Celje Center, Kosovelova ulica 1, 3000 Celje"
+  },
+  "DRUŠTVO ZA ŠPORTNE IN REKREATIVNE DEJAVNOSTI CELJE": {
+    "name": "DRUŠTVO ZA ŠPORTNE IN REKREATIVNE DEJAVNOSTI CELJE",
+    "website": "http://www.mladiupi.si",
+    "phone": "",
+    "email": null,
+    "address": null
+  },
+  "KOŠARKARSKI KLUB ELEKTRA": {
+    "name": "KOŠARKARSKI KLUB ELEKTRA",
+    "website": "http://www.kk-elektra.si",
+    "phone": "031/429-319",
+    "email": "info@kk-elektra.si",
+    "address": "Športna dvorana Šoštanj, Kajuhova cesta 8, 3225 Šoštanj"
+  },
+  "KOŠARKARSKO DRUŠTVO KOPER": {
+    "name": "KOŠARKARSKO DRUŠTVO KOPER",
+    "website": "http://www.kd-koper.si",
+    "phone": "041/692-326",
+    "email": "basket.koper@gmail.com",
+    "address": "OŠ KOPER, Cesta Zore Perello-Godina 1, 6000 KOPER"
+  },
+  "KOŠARKARSKO DRUŠTVO SLOVAN": {
+    "name": "KOŠARKARSKO DRUŠTVO SLOVAN",
+    "website": "http://www.kd-slovan.si",
+    "phone": "01/524-11-05",
+    "email": "slovan.basket@siol.net; info@kd-slovan.si",
+    "address": "Dvorana Kodeljevo, Gortanova 21, 1000 Ljubljana"
+  },
+  "ŽENSKI KOŠARKARSKI KLUB ČRNOMELJ": {
+    "name": "ŽENSKI KOŠARKARSKI KLUB ČRNOMELJ",
+    "website": "http://www.zkk-crnomelj.si",
+    "phone": "",
+    "email": "bfabjan@siol.net",
+    "address":
+      "Telovadnica Osnovne šole Mirana Jarca Črnomelj, Ulica Otona Župančiča 7, 8340 Črnomelj"
+  },
+  "ŽENSKI KOŠARKARSKI KLUB DOMŽALE": {
+    "name": "ŽENSKI KOŠARKARSKI KLUB DOMŽALE",
+    "website": "http://www.zkkdomzale.si.",
+    "phone": "",
+    "email": "info@zkkdomzale.si",
+    "address":
+      "Osnovna šola Venclja Perka Domžale, Ljubljanska 58a, 1230 Domžale"
+  },
+  "ŠPORTNO DRUŠTVO FELIX ZASAVJE": {
+    "name": "ŠPORTNO DRUŠTVO FELIX ZASAVJE",
+    "website": "http://www.sdfelix.com",
+    "phone": "040/585-697, 041/202-577",
+    "email": "info@sdfelix.com",
+    "address": "Osnovna šola Trbovlje, Mestni trg 6, 1420 Trbovlje"
+  },
+  "KOŠARKARSKI KLUB GLOBUS": {
+    "name": "KOŠARKARSKI KLUB GLOBUS",
+    "website": "http://www.kkglobus.si",
+    "phone": "031/780-829",
+    "email": "kkglobus@gmail.com",
+    "address": "KK Globus, Borsetova 9, 1000 Ljubljana"
+  },
+  "KOŠARKARSKI KLUB GORENJA VAS": {
+    "name": "KOŠARKARSKI KLUB GORENJA VAS",
+    "website": "http://kkgorenjavas.si/",
+    "phone": "051 348 761 (g. Jenko)",
+    "email": "info@kk-gorenja-vas.si",
+    "address": "ČLANSKE KATEGORIJE:"
+  },
+  "ŽENSKI KOŠARKARSKI KLUB GROSUPLJE": {
+    "name": "ŽENSKI KOŠARKARSKI KLUB GROSUPLJE",
+    "website": "http://www.zkk-grosuplje.si",
+    "phone": "051/623-006",
+    "email": "info@kkgrosuplje.si",
+    "address":
+      "Športna dvorana Brinje (članice, U19, U17), Ljubljanska cesta 40a, 1290 Grosuplje"
+  },
+  "KOŠARKARSKI KLUB GROSUPLJE": {
+    "name": "KOŠARKARSKI KLUB GROSUPLJE",
+    "website": "http://www.kk-grosuplje.si",
+    "phone": "051/623-006",
+    "email": "info@kkgrosuplje.si",
+    "address":
+      "Športna dvorana Brinje (člani, U19, U17A), Ljubljanska cesta 40a, 1290 Grosuplje"
+  },
+  "KOŠARKARSKI KLUB HIT": {
+    "name": "KOŠARKARSKI KLUB HIT",
+    "website": "http://www.kk-kranjskagora.si",
+    "phone": "",
+    "email": "kgj.zkk@gmail.com",
+    "address": "Dvorana Vitranc, Kolodvorska 1c, 4280 Kranjska Gora"
+  },
+  "KOŠARKARSKI KLUB - KOŠARKARSKA ŠOLA HALOZE": {
+    "name": "KOŠARKARSKI KLUB - KOŠARKARSKA ŠOLA HALOZE",
+    "website": "http://www.kkhaloze.com",
+    "phone": "031/683-357",
+    "email": "ks.haloze@gmail.com",
+    "address": "OŠ Majšperk, Majšperk 32b, 2322 Majšperk"
+  },
+  "KOŠARKARSKI KLUB DOMŽALE": {
+    "name": "KOŠARKARSKI KLUB DOMŽALE",
+    "website": "http://kkhelios.si/",
+    "phone": "01/724-10-15, 01/724-46-46",
+    "email": "info@helios-suns.si",
+    "address": "Športna dvorana Domžale, Mestni trg 1, 1230 Domžale"
+  },
+  "KOŠARKARSKI KLUB HIDRIA": {
+    "name": "KOŠARKARSKI KLUB HIDRIA",
+    "website": "http://www.kk-hidria.si",
+    "phone": "041/468-804",
+    "email": "kavcic.saso@gmail.com",
+    "address": "Modra dvorana , Lapajnetova ulica 48, 5280 Idrija"
+  },
+  "KOŠARKARSKO DRUŠTVO HOPSI POLZELA": {
+    "name": "KOŠARKARSKO DRUŠTVO HOPSI POLZELA",
+    "website": "http://www.hopsi.si",
+    "phone": "03/572-03-95, 03/705-03-73",
+    "email": "hopsi.polzela.slo@gmail.com",
+    "address": "Športna dvorana Polzela, Šolska ulica 3, 3313 Polzela"
+  },
+  "KOŠARKARSKI KLUB HRASTNIK": {
+    "name": "KOŠARKARSKI KLUB HRASTNIK",
+    "website": "http://www.kk-hrastnik.si",
+    "phone": "",
+    "email": "kkhrastnik@gmail.com",
+    "address": "Športna dvorana na Logu, Novi log 1, 1430 Hrastnik"
+  },
+  "KOŠARKARSKO DRUŠTVO ILIRIJA": {
+    "name": "KOŠARKARSKO DRUŠTVO ILIRIJA",
+    "website": "http://www.kdilirija.si",
+    "phone": "051/412-220",
+    "email": "info@kd-ilirija.com ; kdilirija@gmail.com",
+    "address": "Košarkarsko društvo Ilirija, Vodnikova 155, 1000 Ljubljana"
+  },
+  "KOŠARKARSKI KLUB IVANČNA GORICA": {
+    "name": "KOŠARKARSKI KLUB IVANČNA GORICA",
+    "website": "http://www.kkivancna.si",
+    "phone": "041/455-440",
+    "email": "info@kkivancna.si",
+    "address":
+      "Dvorana OŠ Stična, Cesta občine Hirschaid 1, 1295 Ivančna Gorica"
+  },
+  "KOŠARKARSKI KLUB IZOLA": {
+    "name": "KOŠARKARSKI KLUB IZOLA",
+    "website": "",
+    "phone": "",
+    "email": "cjadran@siol.net",
+    "address": "Center za šport - OŠ Livade, Livade 7, 6310 Izola"
+  },
+  "ŽENSKO KOŠARKARSKO DRUŠTVO ILIRIJA": {
+    "name": "ŽENSKO KOŠARKARSKO DRUŠTVO ILIRIJA",
+    "website": "http://www.zkdilirija.si/",
+    "phone": "",
+    "email": "zkdilirija@gmail.com",
+    "address": "ŠRC Ježica, Savlje 6, 1000 Ljubljana"
+  },
+  "KOŠARKARSKI KLUB JANČE": {
+    "name": "KOŠARKARSKI KLUB JANČE",
+    "website": "",
+    "phone": "01/54-973-06",
+    "email": "boris.zavrsnik@siol.net",
+    "address": "KK Janče, Kašeljska 119 , 1260 Ljubljana"
+  },
+  "KOŠARKARSKO DRUŠTVO JANINA - ROGAŠKA SLATINA": {
+    "name": "KOŠARKARSKO DRUŠTVO JANINA - ROGAŠKA SLATINA",
+    "website": "http://www.kd-janina.si",
+    "phone": "031/879-789",
+    "email": "darinka.bastasic@gmail.com; milan.bastasic@amis.net",
+    "address":
+      "Dvorana Janina (I. OŠ), Kidričeva ulica 24, 3250 Rogaška Slatina"
+  },
+  "ŠD JESENICE": {
+    "name": "ŠD JESENICE",
+    "website": "",
+    "phone": "041/491-206",
+    "email": "rajko.peternel@gmail.com; kosklubjesenice@gmail.com",
+    "address":
+      "Osnovna šola Prežihovega Voranca, Cesta Toneta Tomšiča 5, 4270 Jesenice"
+  },
+  "KOŠARKARSKO DRUŠTVO JEŽICA": {
+    "name": "KOŠARKARSKO DRUŠTVO JEŽICA",
+    "website": "http://www.kdjezica.com",
+    "phone": "040/612-882",
+    "email": "kdjezica.ljubljana@gmail.com",
+    "address": "Park Ježica, Savlje 6, 1000 Ljubljana"
+  },
+  "ŽENSKI KOŠARKARSKI KLUB JESENICE": {
+    "name": "ŽENSKI KOŠARKARSKI KLUB JESENICE",
+    "website": "",
+    "phone": "",
+    "email": "zkk.jesenice@gmail.com",
+    "address": "Osnovna šola Prežihov Voranc, Tomšičeva 5, 4270 Jesenice"
+  },
+  "ŽENSKO KOŠARKARSKO DRUŠTVO JEŽICA": {
+    "name": "ŽENSKO KOŠARKARSKO DRUŠTVO JEŽICA",
+    "website": "http://www.zkdjezica.si",
+    "phone": "041/709-460",
+    "email": "info@zkdjezica.si",
+    "address": "Šport Ljubljana - Park Ježica, Savlje 6 , 1000 Ljubljana"
+  },
+  "KOŠARKARSKI KLUB KELEJA CELJE": {
+    "name": "KOŠARKARSKI KLUB KELEJA CELJE",
+    "website": "",
+    "phone": "040/796-246, 03/548-20-46",
+    "email": "zmkeleja@gmail.com",
+    "address": "II. Osnovna šola , Mariborka 125, 3000 Celje"
+  },
+  "KOŠARKA KRANJSKIH OSNOVNIH ŠOL": {
+    "name": "KOŠARKA KRANJSKIH OSNOVNIH ŠOL",
+    "website": "",
+    "phone": "041/600-372",
+    "email": "franci.podlipnik@gmail.com",
+    "address": "Osnovna šola Simona Jenka, Ulica XXXI. divizije 7A, 4000 Kranj"
+  },
+  "KOŠARKARSKI KLUB SLOVENSKE KONJICE": {
+    "name": "KOŠARKARSKI KLUB SLOVENSKE KONJICE",
+    "website": "http://www.kk-konjice.si",
+    "phone": "03/759-07-72",
+    "email": "davorin.bauman@sport-konjice.si",
+    "address":
+      "Športna dvorana Slovenske Konjice, Šolska ulica 3a, 3210 Slovenske Konjice"
+  },
+  "ŽENSKI KOŠARKARSKI KLUB KONJICE": {
+    "name": "ŽENSKI KOŠARKARSKI KLUB KONJICE",
+    "website": "",
+    "phone": "03/759-07-72",
+    "email": "zkklub.konjice@gmail.com",
+    "address":
+      "Športna dvorana Slovenske Konjice, Šolska ulica 3/a, 3210 Slovenske Konjice"
+  },
+  "KOŠARKARSKI KLUB KOMENDA": {
+    "name": "KOŠARKARSKI KLUB KOMENDA",
+    "website": "http://www.koskomenda.si",
+    "phone": "041/635-007 (Košir); 041/622-646 (Maren)",
+    "email": "kos.klubkomenda@gmail.com",
+    "address": "Športna dvorana Komenda, Glavarjeva cesta 37, 1218 Komenda"
+  },
+  "KOŠARKARSKI KLUB KOROŠKA PREVALJE": {
+    "name": "KOŠARKARSKI KLUB KOROŠKA PREVALJE",
+    "website": "",
+    "phone": "041/961-914 (g. Lužnik)",
+    "email": null,
+    "address": "Športna dvorana Prevalje, Polje 4, 2391 Prevalje"
+  },
+  "ŠPORTNO DRUŠTVO KOŠ KOPER": {
+    "name": "ŠPORTNO DRUŠTVO KOŠ KOPER",
+    "website": "http://www.kos-koper.com",
+    "phone": "041/617-808 (Matjaž Hrabar); 041/687-480 (Rado Krmac)",
+    "email": "koskoper1995@gmail.com",
+    "address": "Osnovna šola Antona Ukmarja, Pot v Gaj 2, 6000 Koper"
+  },
+  "ŠPORTNO DRUŠTVO KRANJSKA GORA": {
+    "name": "ŠPORTNO DRUŠTVO KRANJSKA GORA",
+    "website": "",
+    "phone": "",
+    "email": "osjvkg.tajnistvo@siol.net",
+    "address": "Dvorana Vitranc, Kolodvorska 1a, 4280 Kranjska Gora"
+  },
+  "KOŠARKARSKI KLUB MESARIJA PRUNK SEŽANA": {
+    "name": "KOŠARKARSKI KLUB MESARIJA PRUNK SEŽANA",
+    "website": "http://www.kksezana.si",
+    "phone": "",
+    "email": "kkmesarijaprunksezana@gmail.com",
+    "address":
+      "Dvorana Srednje šole Srečka Kosovela Sežana, Kosovelova 5, 6210 Sežana"
+  },
+  "ŠPORTNO DRUŠTVO KRVAVEC": {
+    "name": "ŠPORTNO DRUŠTVO KRVAVEC",
+    "website": "",
+    "phone": "",
+    "email": "damjan.korosec@siol.net",
+    "address": "Športna dvorana Cerklje, Krvavška cesta 4, 4207 Cerklje"
+  },
+  "KOŠARKARSKI KLUB LASTOVKA": {
+    "name": "KOŠARKARSKI KLUB LASTOVKA",
+    "website": "http://www.kklastovka.si",
+    "phone": "01/5300-230",
+    "email": "info@kklastovka.si",
+    "address": "Športna dvorana Domžale, Mestni trg 1, 1230 Domžale"
+  },
+  "Občinski košarkarski klub Lenart": {
+    "name": "Občinski košarkarski klub Lenart",
+    "website": "",
+    "phone": "",
+    "email": "osz.lenart@triera.net; salamuna12@gmail.com",
+    "address":
+      "Športna dvorana Lenart, Ptujska cesta 27, 2230 Lenart v Slovenskih goricah"
+  },
+  "KOŠARKARSKI KLUB LESDOG KOČEVJE": {
+    "name": "KOŠARKARSKI KLUB LESDOG KOČEVJE",
+    "website": "http://www.kk-kocevje.si",
+    "phone": "041/614-291",
+    "email": "lesdog.kocevje@siol.net jernej.kalan@volja.net",
+    "address": "ŠD Kočevje, Cesta na stadion 7, 1330 Kočevje"
+  },
+  "KOŠARKARSKI KLUB LITIJA": {
+    "name": "KOŠARKARSKI KLUB LITIJA",
+    "website": "http://www.kosarkarskiklub-litija.net",
+    "phone": "01/898-31-54, 041/756-421",
+    "email": "iskra.sebastjan@gmail.com",
+    "address": "Športna dvorana Litija , Ulica Mire Pregleve 1, 1270 Litija"
+  },
+  "TVD PARTIZAN LJUTOMER": {
+    "name": "TVD PARTIZAN LJUTOMER",
+    "website": "",
+    "phone": "041/295-028",
+    "email": "rajko.mlinaric@gov.si; kosarkaljutomer@gmail.com",
+    "address": "ŠIC Ljutomer, Grossmanova ulica 7, 9240 Ljutomer"
+  },
+  "KOŠARKARSKI KLUB LOGATEC": {
+    "name": "KOŠARKARSKI KLUB LOGATEC",
+    "website": "http://www.kklogatec.com",
+    "phone": "",
+    "email": "info@kklogatec.com",
+    "address": "Športna dvorana Logatec, Šolska pot 4A, 1370 Logatec"
+  },
+  "KOŠARKARSKI KLUB LOVRENC NA POHORJU": {
+    "name": "KOŠARKARSKI KLUB LOVRENC NA POHORJU",
+    "website": "http://www.kk-lovrenc.net",
+    "phone": "031/484-795",
+    "email": "straus.aljosa@gmail.com; kk.lovrenc1@gmail.com",
+    "address":
+      "Telovadnica Osnovne šole Lovrenc na Pohorju, Šolska ulica 6, 2344 Lovrenc na Pohorju"
+  },
+  "KOŠARKARSKI KLUB ŠKOFJA LOKA": {
+    "name": "KOŠARKARSKI KLUB ŠKOFJA LOKA",
+    "website": "http://www.kklub-skofjaloka.si",
+    "phone": "05/993-56-19",
+    "email": "kk.skofjaloka@siol.net",
+    "address": "Športna dvorana Trata, Frankovo 51, 4220 Škofja Loka"
+  },
+  "KOŠARKARSKI KLUB KOPER": {
+    "name": "KOŠARKARSKI KLUB KOPER",
+    "website": "http://www.kk-koper.net",
+    "phone": "",
+    "email": "kkkoper@t-2.net",
+    "address": "Osnovna šola Koper, Cesta Zore Perello_Godina 1, 6000 Koper"
+  },
+  "KOŠARKARSKI KLUB AJDOVŠČINA": {
+    "name": "KOŠARKARSKI KLUB AJDOVŠČINA",
+    "website": "http://www.kosarkaski-klub-ajdovscina.si",
+    "phone": "05/364-39-00",
+    "email": "info@leone.si",
+    "address": "Dvorana OŠ Šturje, Bevkova ulica 22, 5270 Ajdovščina"
+  },
+  "KOŠARKARSKI KLUB DRAVA PTUJ": {
+    "name": "KOŠARKARSKI KLUB DRAVA PTUJ",
+    "website": "",
+    "phone": "",
+    "email": "marin.zlatko@gmail.com",
+    "address": "Gimnazija Ptuj"
+  },
+  "KOŠARKARSKI KLUB KAMNIK": {
+    "name": "KOŠARKARSKI KLUB KAMNIK",
+    "website": "http://www.kosarka-kamnik.si",
+    "phone": "",
+    "email": "kosarka.kamnik@gmail.com",
+    "address": "Športna dvorana Kamnik, Šolska ulica 1, 1241 Kamnik"
+  },
+  "KOŠARKARSKO DRUŠTVO MIKI ŠPORT": {
+    "name": "KOŠARKARSKO DRUŠTVO MIKI ŠPORT",
+    "website": "",
+    "phone": "",
+    "email": "milos.sporar@siol.net",
+    "address": "OŠ Poljčane"
+  },
+  "ŠPORTNO DRUŠTVO KOŠARKARSKA ŠOLA MIKLAVŽ": {
+    "name": "ŠPORTNO DRUŠTVO KOŠARKARSKA ŠOLA MIKLAVŽ",
+    "website": "",
+    "phone": "",
+    "email": "milicales@gmail.com",
+    "address": "Športna dvorana OŠ Miklavž na Dravskem polju"
+  },
+  "KOŠARKARSKI KLUB OSNOVNA ŠOLA NAKLO": {
+    "name": "KOŠARKARSKI KLUB OSNOVNA ŠOLA NAKLO",
+    "website": "",
+    "phone": "",
+    "email": "kkosnaklo@gmail.com",
+    "address":
+      "Košarkarski klub Osnovna šola Naklo, Glavna cesta 47, 4202 Naklo"
+  },
+  "KOŠARKARSKI KLUB NAZARJE": {
+    "name": "KOŠARKARSKI KLUB NAZARJE",
+    "website": "http://www.kknazarje.si",
+    "phone": "",
+    "email": "info@input.si",
+    "address": "Športna dvorana Nazarje, Zadrečka cesta 37, 3331 Nazarje"
+  },
+  "KOŠARKARSKO DRUŠTVO NOVA GORICA MLADI": {
+    "name": "KOŠARKARSKO DRUŠTVO NOVA GORICA MLADI",
+    "website": "http://www.kdng-mladi.si",
+    "phone": "041/895-412",
+    "email": "info@kdng-mladi.si",
+    "address":
+      "Košarkarsko društvo Nova Gorica mladi, Bazoviška ulica 4, 5000 Nova Gorica"
+  },
+  "ŽENSKI KOŠARKARSKI KLUB KRKA": {
+    "name": "ŽENSKI KOŠARKARSKI KLUB KRKA",
+    "website": "http://www.zkk-krka.si",
+    "phone": "041/773-477",
+    "email": "agenczasportnm@siol.net",
+    "address": "Športna dvorana Marof, Kettejev drevored 2, 8000 Novo mesto"
+  },
+  "KOŠARKARSKI KLUB PARKLJI": {
+    "name": "KOŠARKARSKI KLUB PARKLJI",
+    "website": "http://www.parklji.com",
+    "phone": "",
+    "email": "info@parklji.com",
+    "address": "Športno rekreacijski center Ježica, Savlje 6, 1000 Ljubljana"
+  },
+  "KOŠARKARSKI KLUB LJUBLJANA": {
+    "name": "KOŠARKARSKI KLUB LJUBLJANA",
+    "website": "http://www.kkljubljana.si",
+    "phone": "",
+    "email": "kklub.ljubljana@gmail.com",
+    "address": "Osnovna šola Alojza Šuštarja, Štula 23, 1000 Ljubljana"
+  },
+  "KOŠARKARSKI KLUB PIVKA": {
+    "name": "KOŠARKARSKI KLUB PIVKA",
+    "website": "http://www.kk-pivka.si",
+    "phone": "",
+    "email": "kzafran@gmail.com",
+    "address": "Športna dvorana Skala, Prečna 3, 6257 Pivka"
+  },
+  "KOŠARKARSKI KLUB PLAMA-PUR": {
+    "name": "KOŠARKARSKI KLUB PLAMA-PUR",
+    "website": "http://www.kkplama-pur.si",
+    "phone": "040/727-607",
+    "email": "info@kkplama-pur.si",
+    "address":
+      "Športna dvorana OŠ Antona Žnideršiča, Rozmanova 25, 6250 Ilirska Bistrica"
+  },
+  "ŠPORTNO DRUŠTVO PODBOČJE 75": {
+    "name": "ŠPORTNO DRUŠTVO PODBOČJE 75",
+    "website": "",
+    "phone": "031/544-670",
+    "email": "rok.jevsenak@gmail.com",
+    "address": null
+  },
+  "KOŠARKARSKI KLUB PODČETRTEK": {
+    "name": "KOŠARKARSKI KLUB PODČETRTEK",
+    "website": "http://kk-podcetrtek.si",
+    "phone": "031/683-745",
+    "email": "kktermeolimia.podcetrtek@gmail.com; karmen.cvirn@gmail.com",
+    "address":
+      "Športna dvorana Podčetrtek, Zdraviliška cesta24, 3254 Podčetrtek"
+  },
+  "KOŠARKARKO DRUŠTVO POSTOJNA": {
+    "name": "KOŠARKARKO DRUŠTVO POSTOJNA",
+    "website": "http://www.kd-postojna.si",
+    "phone": "",
+    "email": "kdpostojna@gmail.com",
+    "address":
+      "Dvorana šolskega centra Postojna, Cesta v Staro vas 2, 6230 Postojna"
+  },
+  "KOŠARKARSKI KLUB KRŠKO": {
+    "name": "KOŠARKARSKI KLUB KRŠKO",
+    "website": "",
+    "phone": "",
+    "email": "kk.posavjekrsko@gmail.com",
+    "address": "Športna dvorana OŠ Jurija Dalmatina, Šolska ulica 1, 8270 Krško"
+  },
+  "KOŠARKARSKI KLUB PREBOLD 2014": {
+    "name": "KOŠARKARSKI KLUB PREBOLD 2014",
+    "website": "http://www.preboldbasket.com",
+    "phone": "040/701-371 (predsednica)",
+    "email": "kkprebold2014@gmail.com",
+    "address": "Osnovna šola Prebold, Graščinska cesta 7, 3312 Prebold"
+  },
+  "AKADEMSKI KOŠARKARSKI KLUB BRANIK": {
+    "name": "AKADEMSKI KOŠARKARSKI KLUB BRANIK",
+    "website": "http://www.akkbranik.si",
+    "phone": "02/228-73-79",
+    "email": "info@akkbranik.si",
+    "address":
+      "Akademski košarkarski klub Branik, Mladinska ulica 29, 2000 Maribor"
+  },
+  "KOŠARKARSKI KLUB RADENSKA CREATIV SOBOTA": {
+    "name": "KOŠARKARSKI KLUB RADENSKA CREATIV SOBOTA",
+    "website": "http://www.kk.radenska.creativ.si",
+    "phone": "040/838-003",
+    "email": "peter.jutersnik@siol.net",
+    "address":
+      "Osnovna šola I. Murska Sobota, Štefana Kovača 32, 9000 Murska Sobota"
+  },
+  "KOŠARKARSKI KLUB RADOVLJICA": {
+    "name": "KOŠARKARSKI KLUB RADOVLJICA",
+    "website": "http://kkradovljica.si",
+    "phone": "",
+    "email": "kkradolca@gmail.com",
+    "address":
+      "Srednja gostinska šola Radovljica, Kranjska cesta 24, 4240 Radovljica"
+  },
+  "KOŠARKARSKI KLUB ROGAŠKA": {
+    "name": "KOŠARKARSKI KLUB ROGAŠKA",
+    "website": "http://www.kosarkarskiklub-rogaska.si",
+    "phone": "03/581-43-80",
+    "email": "kosarkarski.klub.rogaska@gmail.com",
+    "address":
+      "Športna dvorana Rogaška Slatina, Kozjanskega odreda 4, 3250 Rogaška Slatina"
+  },
+  "DRUŠTVO KOŠARKARSKA ŠOLA ROGAŠKA SLATINA": {
+    "name": "DRUŠTVO KOŠARKARSKA ŠOLA ROGAŠKA SLATINA",
+    "website": "",
+    "phone": "",
+    "email": "milan.bastasic@amis.net",
+    "address":
+      "Društvo košarkarska šola Rogaška Slatina, Spodnij Gabernik 39, 3241 Rogaška Podplat"
+  },
+  "ŠPORTNO DRUŠTVO RUŠE": {
+    "name": "ŠPORTNO DRUŠTVO RUŠE",
+    "website": "",
+    "phone": "",
+    "email": "luka.sumer@gmail.com; plohl.drago@gmail.com",
+    "address": "Športna dvorana Ruše, Šolska ulica 16a, 2342 Ruše"
+  },
+  "ŽENSKI KOŠARKARSKI KLUB POMURJE": {
+    "name": "ŽENSKI KOŠARKARSKI KLUB POMURJE",
+    "website": "http://www.zkkpomurje.si",
+    "phone": "051/253-144",
+    "email": "zkkpomurje@gmail.com",
+    "address":
+      "Športna dvorana Osnovne šole I., Štefana Kovača 32, 9000 Murska Sobota"
+  },
+  "KOŠARKARSKI KLUB RUDAR TRBOVLJE": {
+    "name": "KOŠARKARSKI KLUB RUDAR TRBOVLJE",
+    "website": "",
+    "phone": "",
+    "email": "kkrudartrbovlje@gmail.com",
+    "address": "Dvorana Polaj, Šuštarjeva kolonija 7 A, 1420 Trbovlje"
+  },
+  "KOŠARKARSKI KLUB SALONIT ANHOVO": {
+    "name": "KOŠARKARSKI KLUB SALONIT ANHOVO",
+    "website": "",
+    "phone": "05/305-20-71",
+    "email": "tatjana.mocnik@amis.net",
+    "address": "Športna dvorana Kanal, Gradnikova 25, 5213 Kanal"
+  },
+  "ŠPORTNO DRUŠTVO SMLEDNIK": {
+    "name": "ŠPORTNO DRUŠTVO SMLEDNIK",
+    "website": "",
+    "phone": "",
+    "email": "smlednik@yahoo.com",
+    "address":
+      "Srednja zdravstvena šola Ljubljana, Poljanska cesta 61a, 1000 Ljubljana"
+  },
+  "KOŠARKARSKI KLUB PORTOROŽ": {
+    "name": "KOŠARKARSKI KLUB PORTOROŽ",
+    "website": "http://www.kklub-portoroz.si",
+    "phone": "051/280-813",
+    "email": "uo.kkportoroz@gmail.com",
+    "address": "Športna dvorana Lucija, Liminjanska 78, 6320 Portorož"
+  },
+  "KOŠARKARSKI KLUB STRAŽIŠČE KRANJ": {
+    "name": "KOŠARKARSKI KLUB STRAŽIŠČE KRANJ",
+    "website": "http://www.basket-strazisce.com",
+    "phone": "041/600-356",
+    "email": "kozjek.matej@gmail.com",
+    "address": "OŠ Stražišče Kranj, Šolska ulica 2, 4000 Kranj"
+  },
+  "ŠPORTNO DRUŠTVO SOPERGA": {
+    "name": "ŠPORTNO DRUŠTVO SOPERGA",
+    "website": "",
+    "phone": "",
+    "email": null,
+    "address":
+      "Športna dvorana Slovenj Gradec, Kopališka 27, 2380 Slovenj Gradec"
+  },
+  "KOŠARKARSKI KLUB ŠENČUR": {
+    "name": "KOŠARKARSKI KLUB ŠENČUR",
+    "website": "http://www.kksencur.si",
+    "phone": "041/574-290",
+    "email": "ales.puhar@tele-cable.net",
+    "address": "Športna dvorana Šenčur, Pipanova cesta 43, 4208 Šenčur"
+  },
+  "KOŠARKARSKI KLUB ŠENTJUR": {
+    "name": "KOŠARKARSKI KLUB ŠENTJUR",
+    "website": "http://www.kksentjur.net",
+    "phone": "",
+    "email": "info@kksentjur.net",
+    "address": "Športna dvorana Hruševec Šentjur, Gajstova pot 2, 3230 Šentjur"
+  },
+  "ŠPORTNO DRUŠTVO ŠENTVID-LJUBLJANA": {
+    "name": "ŠPORTNO DRUŠTVO ŠENTVID-LJUBLJANA",
+    "website": "http://www.sd-sentvid.si",
+    "phone": "040/209-340",
+    "email": "sdsentvid@siol.net",
+    "address": "ŠRC ŠD Šentvid, Bokalova ulica 14, 1210 Ljubljana - Šentvid"
+  },
+  "KOŠARKARSKI KLUB JELŠA ŠMARJE": {
+    "name": "KOŠARKARSKI KLUB JELŠA ŠMARJE",
+    "website": "",
+    "phone": "070/897-041",
+    "email": "kkjelsa.smarje@gmail.com",
+    "address":
+      "Osnovna šola Šmarje pri Jelšah, Vegova ulica 26, 3240 Šmarje pri Jelšah"
+  },
+  "KK MEDVODE": {
+    "name": "KK MEDVODE",
+    "website": "http://www.kk-medvode.si",
+    "phone": "",
+    "email": "kkmedvode@gmail.com",
+    "address": "Športna dvorana Medvode , Ostrovrharjeva ulica 4, 1215 Medvode"
+  },
+  "KOŠARKARSKI KLUB TOLMIN": {
+    "name": "KOŠARKARSKI KLUB TOLMIN",
+    "website": "http://www.kk-tolmin.info",
+    "phone": "031/711-049",
+    "email": "boris.velikonja1@siol.net; kktolmin1950@gmail.com",
+    "address": "Športni center Tolmin, Dijaška 12/c, 5220 Tolmin"
+  },
+  "KOŠARKARSKI KLUB TRIGLAV KRANJ": {
+    "name": "KOŠARKARSKI KLUB TRIGLAV KRANJ",
+    "website": "http://www.kktriglav.si",
+    "phone": "",
+    "email": "kk.triglav1950@gmail.com",
+    "address":
+      "Košarkarski klub Triglav Kranj, Ulica Tončka Dežmana 1, 4000 Kranj"
+  },
+  "ŽENSKO KOŠARKARSKO DRUŠTVO TOLMIN": {
+    "name": "ŽENSKO KOŠARKARSKO DRUŠTVO TOLMIN",
+    "website": "",
+    "phone": "031/398-892",
+    "email": "oton.bratuz@salinvest.si",
+    "address": "Športni center Tolmin, Dijaška 12/c, 5220 Tolmin"
+  },
+  "KOŠARKARSKI KLUB TRBOVLJE": {
+    "name": "KOŠARKARSKI KLUB TRBOVLJE",
+    "website": "http://www.kk.trbovlje.si",
+    "phone": "",
+    "email": "kk.trbovlje@gmail.com",
+    "address": "Osnovna šola Trbovlje, Mestni trg 6, 1420 Trbovlje"
+  },
+  "ŽENSKI KOŠARKARSKI KLUB TRIGLAV": {
+    "name": "ŽENSKI KOŠARKARSKI KLUB TRIGLAV",
+    "website": "http://www.zkktriglav.com",
+    "phone": "",
+    "email": "zkktriglav@gmail.com",
+    "address":
+      "Športna dvorana Planina, Ulica Tončka Dežmana 1, p.p. 252, 4001 Kranj"
+  },
+  "KOŠARKARSKI KLUB VIPAVA": {
+    "name": "KOŠARKARSKI KLUB VIPAVA",
+    "website": "http://www.kkvipava.com",
+    "phone": "",
+    "email": "kkvipava@gmail.com",
+    "address": "Osnovna šola Draga Bajca Vipava, Vinarska cesta 4, 5271 Vipava"
+  },
+  "KOŠARKARSKI KLUB VOJNIK": {
+    "name": "KOŠARKARSKI KLUB VOJNIK",
+    "website": "http://www.kkvojnik.si/",
+    "phone": "03/781-26-13",
+    "email": "kkvojnik@siol.net",
+    "address": "Osnovna šola Vojnik, Prušnikova ulica 14, 3212 Vojnik"
+  },
+  "KOŠARKARSKO DRUŠTVO VRANI VRANSKO": {
+    "name": "KOŠARKARSKO DRUŠTVO VRANI VRANSKO",
+    "website": "http://www.vranivransko.si",
+    "phone": "031/475-072",
+    "email": "lucijan.ocvirk@gmail.com",
+    "address": "Športna dvorana Vransko, Vransko 134, 3305 Vransko"
+  },
+  "KOŠARKARSKI KLUB VRHNIKA": {
+    "name": "KOŠARKARSKI KLUB VRHNIKA",
+    "website": "http://www.kkvrhnika.si",
+    "phone": "040/702-349; 031/525-578",
+    "email": "info@kkvrhnika.si; vlado.bek@siol.net",
+    "address": "Osnovna šola Ivana Cankarja, Lošca 1, 1360 Vrhnika"
+  },
+  "KOŠARKARSKI KLUB ZAGORJE": {
+    "name": "KOŠARKARSKI KLUB ZAGORJE",
+    "website": "http://www.kkzagorje.si",
+    "phone": "040/851-140",
+    "email": "info@kkzagorje.si ; kkzagorje09@gmail.com",
+    "address":
+      "Športna dvorana Zagorje , Cesta 9. avgust 44 , 1410 Zagorje ob Savi"
+  },
+  "KOŠARKARSKI KLUB ZLATOROG LAŠKO": {
+    "name": "KOŠARKARSKI KLUB ZLATOROG LAŠKO",
+    "website": "http://www.kosarkarskiklub-lasko.si",
+    "phone": "03/573-03-21",
+    "email": "info@kkzlatorog.si",
+    "address": "Dvorana Tri lilije, Poženelova 22, 3270 Laško"
+  },
+  "KOŠARKARSKI KLUB ŽIRI": {
+    "name": "KOŠARKARSKI KLUB ŽIRI",
+    "website": "http://www.kosarka-ziri.si",
+    "phone": "",
+    "email": "kk.ziri@gmail.com",
+    "address": "Dvorana Osnovne šole Žiri, Jobstova cesta 22, 4226 Žiri"
+  },
+  "KOŠARKARSKI KLUB BLANCA 2003": {
+    "name": "KOŠARKARSKI KLUB BLANCA 2003",
+    "website": "",
+    "phone": "07/814 13 66",
+    "email": "potocje5@volja.net; b.arnsek@preis.si",
+    "address": null
+  },
+  "ŠPORTNO REKREACIJSKI KLUB KOŠI": {
+    "name": "ŠPORTNO REKREACIJSKI KLUB KOŠI",
+    "website": "",
+    "phone": "",
+    "email": "srkkosi@gmail.com",
+    "address": null
+  },
+  "": {
+    "name": "",
+    "website": "",
+    "phone": "",
+    "email": "franjo.modrijan@gmail.com",
+    "address": null
+  },
+  "KOŠARKARSKI KLUB BREŽICE": {
+    "name": "KOŠARKARSKI KLUB BREŽICE",
+    "website": "",
+    "phone": "",
+    "email": null,
+    "address": null
+  },
+  "Društvo Neso Lhke": {
+    "name": "Društvo Neso Lhke",
+    "website": "",
+    "phone": "041/353-825",
+    "email": "vsp@siol.net",
+    "address": null
+  },
+  "Košarkarski klub Metlika": {
+    "name": "Košarkarski klub Metlika",
+    "website": "",
+    "phone": "041/847-807",
+    "email": "kkmetlika@gmail.com",
+    "address": ""
+  },
+  "Košarkarska šola Sani Bečirovič": {
+    "name": "Košarkarska šola Sani Bečirovič",
+    "website": "",
+    "phone": "",
+    "email": "kssanibecirovic@gmail.com",
+    "address": null
+  },
+  "Žensko košarkarsko društvo Ledita": {
+    "name": "Žensko košarkarsko društvo Ledita",
+    "website": "http://zkdledita.si/",
+    "phone": "040/125-192, 0590 55516",
+    "email": "zkdledita@gmail.com",
+    "address": "OŠ Dragomelj, Dragomelj 180, 1230 Domžale"
+  },
+  "Športno društvo Jana": {
+    "name": "Športno društvo Jana",
+    "website": "http://www.sd-jana.si",
+    "phone": "031/428-795",
+    "email": "info@sd-jana.si",
+    "address": "Športno društvo JANA, Rifengozd 26a, 3270 Laško, Slovenija"
+  },
+  "Športno društvo košarkarska šola Tržič": {
+    "name": "Športno društvo košarkarska šola Tržič",
+    "website": "",
+    "phone": "",
+    "email": null,
+    "address": null
+  },
+  "Športno košarkarsko društvo Dražen Petrović": {
+    "name": "Športno košarkarsko društvo Dražen Petrović",
+    "website": "",
+    "phone": "",
+    "email": null,
+    "address": null
+  },
+  "Športno društvo i Team": {
+    "name": "Športno društvo i Team",
+    "website": "http://www.iteam.si",
+    "phone": "040/329-115",
+    "email": "info@iteam.si",
+    "address": null
+  },
+  "KK ŽOLTASTI TROTI": {
+    "name": "KK ŽOLTASTI TROTI",
+    "website": "http://www.troti.si",
+    "phone": "040/349-000; 031/363-043",
+    "email": "kktroti@gmail.com",
+    "address": "KK Žoltasti Troti, Šentjernejska 13, 8000 Novo mesto"
+  },
+  "KOŠARKARSKI KLUB 3X3 PIRAN": {
+    "name": "KOŠARKARSKI KLUB 3X3 PIRAN",
+    "website": "http://www.3x3piran.si/",
+    "phone": "040/474-234",
+    "email": "3x3piran@gmail.com",
+    "address": "Športna dvorana Lucija, Liminjanska cesta 87, 6320 Portorož"
+  },
+  "KOŠARKARSKI KLUB SLIVNICA": {
+    "name": "KOŠARKARSKI KLUB SLIVNICA",
+    "website": "",
+    "phone": "",
+    "email": "matevz.golez@amis.net",
+    "address": "Mariborska cesta 58, Radizel, 2312 Orehova vas"
+  },
+  "KOŠARKARSKI KLUB SEVNICA": {
+    "name": "KOŠARKARSKI KLUB SEVNICA",
+    "website": "",
+    "phone": "",
+    "email": "ziga.kobasevic5@gmail.com",
+    "address": null
+  }
+}

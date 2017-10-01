@@ -97,6 +97,14 @@ foreman run rake klubs:send_emails
 
 foreman run rails s puma -b 'ssl://127.0.0.1:3200?key=/home/vagrant/.ssh/server.key&cert=/home/ubuntu/.ssh/server.crt'
 
+3. Manual: To import data
+
+Create a new DataSource and a new Transformer for the data.
+Register it in data_import.rake
+```
+foreman run rake import:your_import_script
+```
+
 # Resources
 
 - [Loading data into PostGIS from the Command Line](http://suite.opengeo.org/docs/latest/dataadmin/pgGettingStarted/shp2pgsql.html)
