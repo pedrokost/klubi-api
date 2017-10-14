@@ -132,8 +132,46 @@ RSpec.describe Klub, :type => :model do
       klub.save
 
       expect { klub.create_updates({
-        phone: ""
+        phone: "",
       }) }.not_to change(Update, :count)
+    end
+
+    it "does not create updates which already exists from a previous submission" do
+      expect { klub.create_updates({
+        name: 'Novo ime',
+        editor: 'ninja@test.com'
+      }) }.to change(Update, :count).by(1)
+
+      expect { klub.create_updates({
+        name: 'Novo ime',
+        editor: 'ninja@test.com'
+      }) }.not_to change(Update, :count)
+    end
+
+    it "creates updates which already exists from a previous submission if update was rejected" do
+      expect { klub.create_updates({
+        name: 'Novo ime',
+        editor: 'ninja@test.com'
+      }) }.to change(Update, :count).by(1)
+
+      Update.last.reject!
+
+      expect { klub.create_updates({
+        name: 'Novo ime',
+        editor: 'ninja@test.com'
+      }) }.to change(Update, :count).by(1)
+    end
+
+    it "creates updates which already exists from a previous submission if different user" do
+      expect { klub.create_updates({
+        name: 'Novo ime',
+        editor: 'ninja@test.com'
+      }) }.to change(Update, :count).by(1)
+
+      expect { klub.create_updates({
+        name: 'Novo ime',
+        editor: 'another@test.com'
+      }) }.to change(Update, :count).by(1)
     end
   end
 

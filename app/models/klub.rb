@@ -72,13 +72,18 @@ class Klub < ApplicationRecord
       next if (key.to_s == 'longitude') && ((val - send(key)).abs < lat_lon_min_eta)
       val = val.map(&:parameterize) if key == 'categories'
 
-      updates << Update.create!(
-        updatable: self,
-        field: key,
-        oldvalue: send(key).to_s,
-        newvalue: val.to_s,
-        editor_email: editor
-      )
+      duplicate_update = Update.where(updatable: self, field: key, oldvalue: send(key).to_s, newvalue: val.to_s, editor_email: editor, status: Update.statuses[:unverified]).where('created_at >= ?', 1.month.ago)
+
+      unless duplicate_update.exists?
+        updates << Update.create!(
+          updatable: self,
+          field: key,
+          oldvalue: send(key).to_s,
+          newvalue: val.to_s,
+          editor_email: editor
+        )
+      end
+
     end
     updates
   end
@@ -138,9 +143,9 @@ class Klub < ApplicationRecord
     return nil unless facebook_url.downcase.include?('facebook.com')
 
     facebook_page_id = facebook_url.split('?').first
-    facebook_page_id = facebook_page_id.split('/').reject(&:empty?).reject {
-      |c| %w[info about reviews photos videos notes posts community].include? c
-    }.last
+    facebook_page_id = facebook_page_id.split('/').reject(&:empty?).reject do |c|
+      %w[info about reviews photos videos notes posts community].include? c
+    end.last
 
     number_id = facebook_page_id.split('-').last
     return number_id if number_id.match? '\d{8,}'
