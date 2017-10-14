@@ -27,7 +27,7 @@ gem 'redis', '~> 3.3.3'
 
 gem 'geocoder', '~> 1.2.8'
 
-gem 'skylight', '~> 1.3.1'
+gem 'skylight', '~> 1.4.2'
 
 gem 'json_spec', '~>1.1.4'
 
