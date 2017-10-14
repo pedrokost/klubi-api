@@ -67,9 +67,9 @@ class Klub < ApplicationRecord
     lat_lon_min_eta = 0.00001
 
     new_attrs.except(:editor, :id).each do |key, val|
-      next if send(key) == val
-      next if (key == :latitude) && ((val - send(key)).abs < lat_lon_min_eta)
-      next if (key == :longitude) && ((val - send(key)).abs < lat_lon_min_eta)
+      next if send(key).to_s == val.to_s
+      next if (key.to_s == 'latitude') && ((val - send(key)).abs < lat_lon_min_eta)
+      next if (key.to_s == 'longitude') && ((val - send(key)).abs < lat_lon_min_eta)
       val = val.map(&:parameterize) if key == 'categories'
 
       updates << Update.create!(

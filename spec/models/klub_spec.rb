@@ -126,6 +126,15 @@ RSpec.describe Klub, :type => :model do
         longitude: 14.0895932
       }) }.not_to change(Update, :count)
     end
+
+    it "really should not create update fro nil to blank conversions" do
+      klub.phone = nil
+      klub.save
+
+      expect { klub.create_updates({
+        phone: ""
+      }) }.not_to change(Update, :count)
+    end
   end
 
   describe "slug creation" do
