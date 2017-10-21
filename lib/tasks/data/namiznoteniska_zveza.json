@@ -1,0 +1,448 @@
+[
+  {
+    "name": "Namiznoteniški klub Arrigoni - STT Arrigoni",
+    "address": "Dantejeva 18, 6310 Izola",
+    "email": "igor.novel@turistica.si",
+    "phone": "",
+    "website": "https://sites.google.com/site/ntkarrigoni/",
+    "facebook_url": "https://www.facebook.com/NTK-Arrigoni-353345534839191/"
+  },
+  {
+    "name": "Namiznoteniški klub Biotop Celje",
+    "address": "Miklošičeva 4, 3000 Celje",
+    "email": "",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Športno društvo Cven",
+    "address": "Cven 3d, 9240 Ljutomer",
+    "email": "info@sdrustvo-cven.si",
+    "phone": "",
+    "website": "http://www.sdrustvo-cven.si/",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Gorica",
+    "address": "Bazoviška 4, 5000 Nova Gorica",
+    "email": "ntkgorica@gmail.com",
+    "phone": "",
+    "website": "www.ntkgorica.si",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Ilirija",
+    "address": "Vodnikova cesta 155, 1000 Ljubljana",
+    "email": "",
+    "phone": "",
+    "website": "",
+    "facebook_url": "https://www.facebook.com/ntk.ilirija"
+  },
+  {
+    "name": "Športno društvo Jesenice - namiznoteniški klub",
+    "address": "Ledarska c. 4, 4270 Jesenice",
+    "email": "",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Kema Puconci",
+    "address": "Puconci 80, 9201 Puconci",
+    "email": "ntk@kema.si",
+    "phone": "",
+    "website": "http://www.ntk-kema.si/",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Križe",
+    "address": "Cesta Kokrškega odreda 04, 4294 Križe",
+    "email": "ntk.krize@gmail.com",
+    "phone": "",
+    "website": "http://www.ntk-krize.si",
+    "facebook_url":
+      "https://www.facebook.com/Namiznoteni%C5%A1ki-klub-Kri%C5%BEe-329197627098571/"
+  },
+  {
+    "name": "Namiznoteniški klub Letrika Šempeter Vrtojba",
+    "address": "Ul. 9. Septembra 132 a, 5290 Šempeter pri Gorici",
+    "email": "ntk_isa_vrtojba@hotmail.com",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Športno društvo Ljubno",
+    "address": "Ljubno 114, 4244 Podnart",
+    "email": "franci.poljanc@siol.net",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Lm-Ko Lendava",
+    "address": "Lendavske Gorice 1B, 9220 Lendava",
+    "email": "",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Železničarski Namiznoteniški klub Maribor",
+    "address": "Engelsova 6, 2000 Maribor",
+    "email": "zntk.maribor@gmail.com",
+    "phone": "",
+    "website": "http://www.zntk-maribor.si/",
+    "facebook_url": "https://www.facebook.com/zntk.maribor/"
+  },
+  {
+    "name": "ŠD Partizan Mengeš - NTS Mengeš",
+    "address": "Slovenska c. 39, 1234 Mengeš",
+    "email": "partizan.menges@siol.net",
+    "phone": "",
+    "website": "http://partizan-menges.si",
+    "facebook_url": "https://www.facebook.com/NTS-Menge%C5%A1-129492357083689/"
+  },
+  {
+    "name": "Namiznoteniški klub Metlika",
+    "address": "Kolodvorska 1, 8330 Metlika",
+    "email": "",
+    "phone": "",
+    "website": "http://www.ntk-metlika.eu/",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Nek Krško",
+    "address": "Cesta krških žrtev 48, 8270 Krško",
+    "email": "",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Športno društvo Petrovče",
+    "address": "Petrovče 33, 3301 Petrovče",
+    "email": "",
+    "phone": "",
+    "website": "",
+    "facebook_url": "https://www.facebook.com/SDPetrovce"
+  },
+  {
+    "name": "Namiznoteniški klub Preserje",
+    "address": "Preserje 2, 1352 Preserje",
+    "email": "ntk.preserje@gmail.com",
+    "phone": "",
+    "website": "http://www.nt-klub-preserje.si/",
+    "facebook_url": "https://www.facebook.com/Ntk-Preserje-161810867530486/"
+  },
+  {
+    "name": "Namiznoteniški klub Radlje Ob Dravi",
+    "address": "Koroška c. 17, 2360 Radlje ob Dravi",
+    "email": "",
+    "phone": "",
+    "website": "http://www.ntk-radlje.si",
+    "facebook_url": "https://www.facebook.com/nkradlje/"
+  },
+  {
+    "name": "Namiznoteniški klub Royal Beach Škofja Loka",
+    "address": "Podlubnik 46, 4220 Škofja Loka",
+    "email": "igor@drakulic.eu",
+    "phone": "041 344 138",
+    "website": "",
+    "facebook_url": "https://www.facebook.com/NTKSkofjaLoka/"
+  },
+  {
+    "name": "ŠD Krka Komunalne Gradnje Grosuplje",
+    "address": "",
+    "email": "joze.kozinc.kgg@siol.net",
+    "phone": "041 670 168",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Športno društvo Šenčur - sekcija namizni tenis",
+    "address": "Pipanova 45, 4208 Šenčur",
+    "email": "",
+    "phone": "",
+    "website":
+      "http://www.sportnodrustvo-sencur.si/ostale-sekcije/namizni-tenis",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Škofije",
+    "address": "Sp.Škofije 120/B, 6281 Škofije",
+    "email": "ntk.skofije@3-port.si",
+    "phone": "",
+    "website": "http://www.ntk-skofije.si/",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Spin",
+    "address": "Tekavčeva 1, 3325 Šoštanj",
+    "email": "ntkspin.sostanj@gmail.com",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Cirkovce Šternmatik",
+    "address": "Lovrenc na Dravskem polju 108a, 2324 Lovrenc na Dravskem polju",
+    "email": "",
+    "phone": "",
+    "website": "",
+    "facebook_url": "https://www.facebook.com/ntk.cirkovce"
+  },
+  {
+    "name": "Namiznoteniški klub Trbovlje",
+    "address": "Rudarska cesta 4, 1420 Trbovlje",
+    "email": "ntk.trbovlje@gmail.com",
+    "phone": "",
+    "website": "",
+    "facebook_url":
+      "https://www.facebook.com/Namiznoteni%C5%A1ki-klub-Trbovlje-253819428055596/"
+  },
+  {
+    "name": "Športno društvo Vrhnika",
+    "address": "Tržaška cesta 9, 1360 Vrhnika",
+    "email": "ziga.perovic@gmail.com",
+    "phone": "",
+    "website": "http://ntenis.si/index.html",
+    "facebook_url": "https://www.facebook.com/NTSVrhnika"
+  },
+  {
+    "name": "Namiznoteniški klub B2 center",
+    "address": "Gosposvetska ulica 17, 4000 Kranj",
+    "email": "",
+    "phone": "",
+    "website": "",
+    "facebook_url": "https://www.facebook.com/Ntk-B2-1450398641860535/"
+  },
+  {
+    "name": "Športno kulturno društvo Branik - Markizet",
+    "address": "Loška ulica 8, 2000 Maribor",
+    "email": "avgust.hericko@markizet.si",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Dobova",
+    "address": "Kapelska cesta 25, 8257 Dobova",
+    "email": "ntkdobova@gmail.com",
+    "phone": "",
+    "website": "http://www.ntk-dobova.si/",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Hrastnik",
+    "address": "Cesta 1.maja 76, 1430 Hrastnik",
+    "email": "",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Fužinar",
+    "address": "Na Gradu 6, 2390 Ravne na Koroškem",
+    "email": "",
+    "phone": "",
+    "website": "http://www.fuzinar.com/",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniško društvo Kajuh-Slovan",
+    "address": "Gortanova 21, 1000 Ljubljana",
+    "email": "ntdkajuh@gmail.com",
+    "phone": "",
+    "website": "http://www.ntdkajuh-slovan.si",
+    "facebook_url": "https://www.facebook.com/NTDkajuhslovan/"
+  },
+  {
+    "name": "Namiznoteniški klub Kidričevo",
+    "address": "Starošince 2e, 2326 Cirkovce",
+    "email": "",
+    "phone": "070 710 566, 041 478 775",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Krka",
+    "address": "Kettejev drevored 2, 8000 Novo mesto",
+    "email": "ntk.krka@gmail.com",
+    "phone": "",
+    "website": "http://www.ntk-krka.si/",
+    "facebook_url": "https://www.facebook.com/NamiznoteniskiKlubKrka"
+  },
+  {
+    "name": "Namiznoteniški klub Ljubljana",
+    "address": "Zarnikova 3, 1000 Ljubljana",
+    "email": "",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Tvd Partizan Ljutomer - Namiznoteniški klub",
+    "address": "Prešernova 32, 9240 Ljutomer",
+    "email": "",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Logatec",
+    "address": "Grič 17, 1370 Logatec",
+    "email": "matjaz.rus@kabelnet.net",
+    "phone": "041 357 830",
+    "website": "http://www.ntk-logatec.si",
+    "facebook_url":
+      "https://www.facebook.com/Namiznoteni%C5%A1ki-klub-Logatec-216050431750011/"
+  },
+  {
+    "name": "Namiznoteniški klub Melamin",
+    "address": "Reška 16 a, 1330 Kočevje",
+    "email": "marjan.orazem49@gmail.com",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "NTK Merkur",
+    "address": "Kranj",
+    "email": "",
+    "phone": "",
+    "website": "ntk_merkur",
+    "facebook_url": "https://www.facebook.com/ntkmerkur.kranj"
+  },
+  {
+    "name": "Namiznoteniški klub Muta",
+    "address": "Glavni trg 17, 2366 Muta",
+    "email": "damjan.cvetko@ntkmuta.si",
+    "phone": "040 158 987",
+    "website": "http://www.ntkmuta.si/klub.html",
+    "facebook_url": ""
+  },
+  {
+    "name": "NTK Komenda",
+    "address": "",
+    "email": "zore.janez65@gmail.com",
+    "phone": "031 687 620",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Olimpija",
+    "address": "Ob dolenjski železnici 50, 1000 Ljubljana",
+    "email": "ntkolimpija@gmail.com",
+    "phone": "",
+    "website": "http://www.ntkolimpija.org",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Partizan Prebold",
+    "address": "Hmeljarska cesta 15, 3312 Prebold",
+    "email": "ntk.partizan.prebold@gmail.com",
+    "phone": "040 560 405",
+    "website": "",
+    "facebook_url":
+      "https://www.facebook.com/Namiznoteni%C5%A1ki-klub-Partizan-Prebold-622338347815676/"
+  },
+  {
+    "name": "Namiznoteniški klub Ptuj",
+    "address": "Čučkova 8, 2250 Ptuj",
+    "email": "ntk-ptuj@amis.net",
+    "phone": "00386(0)2 78 06 291, 00386 (0)41 631 578",
+    "website": "http://www.ntk-ptuj.si/",
+    "facebook_url": ""
+  },
+  {
+    "name": "Ping pong klub Rakek",
+    "address": "Partizanska c. 33, 1381 Rakek",
+    "email": "peter@kontim.si",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Savinja",
+    "address": "Luče 106, 3334 Luče",
+    "email": "ntk.savinja@gmail.com",
+    "phone": "051 632 618",
+    "website": "http://www.ntksavinja.si/",
+    "facebook_url": "https://www.facebook.com/ntksavinja/"
+  },
+  {
+    "name": "Namiznoteniški klub Semedela",
+    "address": "Jurčičeva 2, 6000 Koper",
+    "email": "",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Šentjur",
+    "address": "Šentjur",
+    "email": "",
+    "phone": "",
+    "website": "ntk_sentjur",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Sobota",
+    "address": "Mladinska 3, 9000 Murska Sobota",
+    "email": "ntksobota@gmail.com",
+    "phone": "041 918 743",
+    "website": "https://sites.google.com/site/ntkmurskasobota/",
+    "facebook_url": "https://www.facebook.com/people/Ntk-Sobota/100009427222275"
+  },
+  {
+    "name": "Športno društvo SU, Novo mesto",
+    "address": "Ljubljanska c. 88, 8000 Novo mesto",
+    "email": "info@sportnodrustvo-su.si",
+    "phone": "041 374 213",
+    "website": "http://sportnodrustvo-su.si/",
+    "facebook_url": "https://www.facebook.com/sportnodrustvo.su/"
+  },
+  {
+    "name": "Namiznoteniški klub Tempo Velenje",
+    "address": "Šaleška c. 3, 3320 Velenje",
+    "email": "ntk.tempo@gmail.com",
+    "phone": "",
+    "website": "http://ntk-tempo.velenje.si/",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Triglav",
+    "address": "Seljakovo naselje 1, 4000 Kranj",
+    "email": "",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Vesna",
+    "address": "Agrokombinatska 2, 1129 Ljubljana",
+    "email": "ntkvesna@gmail.com",
+    "phone": "",
+    "website": "",
+    "facebook_url":
+      "https://www.facebook.com/Namiznoteni%C5%A1ki-KLUB-VESNA-578951835576527/"
+  },
+  {
+    "name": "Namiznoteniški klub Žogica",
+    "address": "Prežihova 1, 9250 Gornja Radgona",
+    "email": "",
+    "phone": "",
+    "website": "",
+    "facebook_url": ""
+  },
+  {
+    "name": "Namiznoteniški klub Burja Ajdovscina",
+    "address": "Na Brajdi 21, 5270 Ajdovščina",
+    "email": "hijeronim.rodman@gmail.com",
+    "phone": "031/624-424",
+    "website": "http://www.ntk-burja.si/",
+    "facebook_url": ""
+  }
+]

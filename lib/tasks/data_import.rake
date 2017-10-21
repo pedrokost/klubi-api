@@ -15,6 +15,7 @@ require 'import/tenis_zveza'
 require 'import/nzs'
 require 'import/kzs'
 require 'import/atletska_zveza'
+require 'import/namiznoteniska_zveza'
 
 namespace :import do
 
@@ -96,6 +97,12 @@ namespace :import do
   task :atletska_zveza => :environment do
     transformer = Import::AtletskaZvezaTransformer.new
     data_source = Import::AtletskaZvezaDatasource.new
+    Import::Importer.new(data_source, transformer).run()
+  end
+
+  task :namiznoteniska_zveza => :environment do
+    transformer = Import::NamiznoteniskaZvezaTransformer.new
+    data_source = Import::NamiznoteniskaZvezaDatasource.new
     Import::Importer.new(data_source, transformer).run()
   end
 end
