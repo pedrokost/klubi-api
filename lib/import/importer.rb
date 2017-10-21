@@ -23,6 +23,7 @@ module Import
       raw_data = @datasource.fetch
       clean_data = @transformer.transform raw_data
 
+      # p clean_data
       commit(clean_data)
     end
 

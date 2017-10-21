@@ -1,0 +1,764 @@
+[
+  {
+    "name": "Akademsko atletsko društvo Slovan",
+    "address": "Gortanova ulica 21, 1000 Ljubljana",
+    "email": "info@tek.si",
+    "phone": "040 255 528",
+    "notes": "Kontaktna oseba: Stanislav Košir",
+    "latitude": "46.05182653143151",
+    "longitude": "14.5278277444595",
+    "website": "",
+    "facebook": ""
+  },
+  {
+    "name": "Atletski in maraton klub Kočevje",
+    "address": "Rozmanova ulica 10, 1330 Kočevje",
+    "email": "langus@amis.net",
+    "phone": "041 426 081",
+    "notes": "Kontaktna oseba: Feliks Papež",
+    "latitude": "45.644678210700945",
+    "longitude": "14.863944053649902",
+    "website": "",
+    "facebook": ""
+  },
+  {
+    "name": "Atletski klub As Kranj",
+    "address": "Partizanska cesta 39, 4000 Kranj",
+    "email": "peter.muhar@acron.si",
+    "phone": "031 242 715",
+    "notes": "Kontaktna oseba: Jože Satler",
+    "latitude": "46.2511595",
+    "longitude": "14.36351860000002",
+    "website": "",
+    "facebook": ""
+  },
+  {
+    "name": "Atletski klub Asfalt Kovač Šentjur",
+    "address": "Cesta Miloša Zidanška 28, 3230 Šentjur",
+    "email": "info@aksentjur.si",
+    "phone": "031 826 969",
+    "notes": "Kontaktna oseba: Vladimir Artnak",
+    "latitude": "46.2246201",
+    "longitude": "15.395369200000005",
+    "website": "http://www.aksentjur.si/",
+    "facebook": "https://www.facebook.com/aksentjur/"
+  },
+  {
+    "name": "Atletski klub BC",
+    "address": "Stanežiče 521210 Ljubljana - Šentvid",
+    "email": "zoja.tavcar@gmail.com",
+    "phone": "041 970 597",
+    "notes": "Kontaktna oseba: Zoja Tavčar",
+    "latitude": "46.115930",
+    "longitude": "14.441613",
+    "website": "",
+    "facebook": ""
+  },
+  {
+    "name": "Atletski klub Bela Krajina",
+    "address": "Pri stadionu 2, 8340 Črnomelj",
+    "email": "movrin.miha@gmail.com",
+    "phone": "040 630 428",
+    "notes": "Kontaktna oseba: Miha Movrin",
+    "latitude": "45.56633859999999",
+    "longitude": "15.19104219999997",
+    "website": "",
+    "facebook":
+      "https://www.facebook.com/Atletski-klub-Bela-krajina-545164705557206/"
+  },
+  {
+    "name": "Atletski klub Brežice",
+    "address": "Gregorčičeva ulica 9, 8250 Brežice",
+    "email": "henrik.omerzu@siol.net",
+    "phone": "041 604 724",
+    "notes": "Kontaktna oseba: Henrik Omerzu",
+    "latitude": "45.9028959",
+    "longitude": "15.597804999999994",
+    "website": "http://www.akbrezice.com/spletna/",
+    "facebook": "https://www.facebook.com/AtletskiKlubBrezice/"
+  },
+  {
+    "name": "Atletski klub Cerklje",
+    "address": "Krvavška cesta 4, 4207 Cerklje na Gorenjskem",
+    "email": "rozle_prezelj@hotmail.com",
+    "phone": "041 342 665",
+    "notes": "Kontaktna oseba: Rožle Prezelj",
+    "latitude": "46.2543221",
+    "longitude": "14.488464300000032",
+    "website": "",
+    "facebook": ""
+  },
+  {
+    "name": "Atletski klub Domžale",
+    "address": "Kopališka cesta 4, 1230 Domžale",
+    "email": "direktor@ak-domzale.si",
+    "phone": "040 795 795",
+    "notes": "Kontaktna oseba: Tomaž Jarc",
+    "latitude": "46.1356179",
+    "longitude": "14.601758399999994",
+    "website": "http://www.ak-domzale.si/",
+    "facebook": "https://www.facebook.com/akdomzale"
+  },
+  {
+    "name": "Atletski klub Gorica",
+    "address": "Bazoviška ulica 4, 5000 Nova Gorica",
+    "email": "ak-gorica@t-2.net",
+    "phone": "031 602 297",
+    "notes": "Kontaktna oseba: Oliver Batagelj",
+    "latitude": "45.95897476347732",
+    "longitude": "13.63178508960118",
+    "website": "http://www.atletski-klub-gorica.si/",
+    "facebook": ""
+  },
+  {
+    "name": "Atletski klub Koper",
+    "address": "p.p. 5, 6001 Koper",
+    "email": "atletski.klub.koper@siol.net",
+    "phone": "041 713 924",
+    "notes": "Kontaktna oseba: Markos Ventin",
+    "latitude": "45.528053",
+    "longitude": "13.647775",
+    "website": "http://www.akkoper.si/",
+    "facebook": "https://www.facebook.com/atletskiklub.koper"
+  },
+  {
+    "name": "Atletski klub Kranj",
+    "address": "Partizanska cesta 10e, 4000 Kranj",
+    "email": "prezelj.dusan@siol.net",
+    "phone": "031 730 987",
+    "notes": "Kontaktna oseba: Dušan Prezelj",
+    "latitude": "46.2454601",
+    "longitude": "14.359551199999942",
+    "website": "http://www.ak-triglav.si/",
+    "facebook": ""
+  },
+  {
+    "name": "Atletski klub Križe Tržič",
+    "address": "Ročevnica 33, 4290 Tržič",
+    "email": "jermana800@hotmail.com",
+    "phone": "031 336 290",
+    "notes": "Kontaktna oseba: Ana Jerman",
+    "latitude": "46.3540016",
+    "longitude": "14.288122499999986",
+    "website": "",
+    "facebook": ""
+  },
+  {
+    "name": "Atletski klub Krka Novo mesto",
+    "address": "Topliška cesta 4, p.p. 241, 8000 Novo mesto",
+    "email": "info@atletskiklub-nm.si",
+    "phone": "031 851 508",
+    "notes": "Kontaktna oseba: Matjaž Fabjan",
+    "latitude": "45.80576870799535",
+    "longitude": "15.150468349456787",
+    "website": "http://www.atletskiklub-nm.si/",
+    "facebook": "https://www.facebook.com/Atletski-klub-Krka-1716249828634644/"
+  },
+  {
+    "name": "Atletski klub Lendava",
+    "address": "Župančičeva ulica 6, 9220 Lendava",
+    "email": "attila.horvath@guest.arnes.si",
+    "phone": "041 935 412",
+    "notes": "Kontaktna oseba: Rihard Magyar",
+    "latitude": "46.56636115003907",
+    "longitude": "16.445328240370145",
+    "website": "",
+    "facebook": ""
+  },
+  {
+    "name": "Atletski klub Medvode",
+    "address": "Zgornje Pirniče 40g, 1215 Medvode",
+    "email": "franc.bohinc@guest.arnes.si",
+    "phone": "040 868 884",
+    "notes": "Kontaktna oseba: Uroš Bohinc",
+    "latitude": "46.1406284",
+    "longitude": "14.430588100000023",
+    "website": "http://akmedvode.si/",
+    "facebook":
+      "https://www.facebook.com/Atletski-klub-Medvode-1608700429419404/"
+  },
+  {
+    "name": "Atletski klub Olimpija",
+    "address": "Milčinskega ulica 2, 1107 Ljubljana",
+    "email": "info@atletski-klub-olimpija.si",
+    "phone": "051 352 206",
+    "notes": "Kontaktna oseba: Gregor Grad",
+    "latitude": "46.0697768",
+    "longitude": "14.499188600000025",
+    "website": "http://www.atletski-klub-olimpija.si/",
+    "facebook": "https://www.facebook.com/atletskiklub.olimpija"
+  },
+  {
+    "name": "Atletski klub Ormož",
+    "address": "Novakova cesta 17, 2270 Ormož",
+    "email": "info@ak-ormoz.si",
+    "phone": "031 303 273",
+    "notes": "Kontaktna oseba: Aleš Jurčec",
+    "latitude": "46.41001504299642",
+    "longitude": "16.12718221032992",
+    "website": "http://www.ak-ormoz.si/",
+    "facebook":
+      "https://www.facebook.com/Atletski-klub-Ormo%C5%BE-173729672693240/"
+  },
+  {
+    "name": "Atletski klub Panvita",
+    "address": "Mladinska ulica 3, 9000 Murska Sobota",
+    "email": "davidhorvat@gmail.com",
+    "phone": "031 447 180",
+    "notes": "Kontaktna oseba: Tiberij Lebar",
+    "latitude": "46.658463153712184",
+    "longitude": "16.1640950680885",
+    "website": "http://www.ak-panvita.eu/",
+    "facebook":
+      "https://www.facebook.com/AK-Panvita-Murska-Sobota-187551131720226/"
+  },
+  {
+    "name": "Atletski klub Pivka",
+    "address": "Kolodvorska cesta 5, 6257 Pivka",
+    "email": "atletskiklubpivka@gmail.com",
+    "phone": "041 465 959",
+    "notes": "Kontaktna oseba: Marjan Korent",
+    "latitude": "45.68404866980495",
+    "longitude": "14.190706257795682",
+    "website": "",
+    "facebook": "https://www.facebook.com/Atletski-klub-Pivka-567666613393081/"
+  },
+  {
+    "name": "Atletski klub Poljane Maribor",
+    "address": "Engelsova ulica 6, 2106 Maribor",
+    "email": "info@atletski-klub-poljane.si",
+    "phone": "041 262 300",
+    "notes": "Kontaktna oseba: Robert Herga",
+    "latitude": "46.553445135412275",
+    "longitude": "15.62230110168457",
+    "website": "http://www.atletski-klub-poljane.si/",
+    "facebook": "https://www.facebook.com/atletskiklubpoljane/"
+  },
+  {
+    "name": "Atletski klub Postojna",
+    "address": "Pot k Pivki 4, 6230 Postojna",
+    "email": "atletskiklubpostojna@gmail.com",
+    "phone": "031 269 989",
+    "notes": "Kontaktna oseba: ",
+    "latitude": "45.7748093",
+    "longitude": "14.209047499999997",
+    "website": "",
+    "facebook":
+      "https://www.facebook.com/Atletski-klub-Postojna-169707759721377/"
+  },
+  {
+    "name": "Atletski klub Ptuj",
+    "address": "Čučkova ulica 6, 2250 Ptuj",
+    "email": "atletskiklubptuj@gmail.com",
+    "phone": "040 469 991",
+    "notes": "Kontaktna oseba: Aleš Bezjak",
+    "latitude": "46.417573",
+    "longitude": "15.874912699999982",
+    "website": "http://www.atletski-klub-ptuj.si/",
+    "facebook": "https://www.facebook.com/Atletski-klub-Ptuj-790766477701007/"
+  },
+  {
+    "name": "Atletski klub Radeče",
+    "address": "Prnovše 24, 1433 Radeče",
+    "email": "ak.radece@gmail.com",
+    "phone": "031 220 484",
+    "notes": "Kontaktna oseba: Vinko Podlogar",
+    "latitude": "46.0698254",
+    "longitude": "15.174713200000042",
+    "website": "http://www.atletski-klub-radece.si/",
+    "facebook": "https://www.facebook.com/atletika.radece"
+  },
+  {
+    "name": "Atletski klub Radovljica",
+    "address": "Cankarjeva ulica 30, 4240 Radovljica",
+    "email": "zvonkoprezelj@yahoo.com",
+    "phone": "031 330 464",
+    "notes": "Kontaktna oseba: Iztok Omerza",
+    "latitude": "46.3468011",
+    "longitude": "14.168295899999976",
+    "website": "http://www.atletski-klub-radovljica.si/",
+    "facebook":
+      "https://www.facebook.com/Atletski-Klub-Radovljica-247496442092795/"
+  },
+  {
+    "name": "Atletski klub Rudar",
+    "address": "Rudarska cesta 6,1420 Trbovlje",
+    "email": "drustvo.akrudartrbovlje@gmail.com",
+    "phone": "031 264 821",
+    "notes": "Kontaktna oseba: Dejan Kralj",
+    "latitude": "46.1528694",
+    "longitude": "15.047260100000017",
+    "website": "",
+    "facebook": "https://www.facebook.com/AkRudar1958/"
+  },
+  {
+    "name": "Atletski klub Šentjernej",
+    "address": "Prvomajska cesta 9, 8310 Šentjernej",
+    "email": "joze.bucar2@gmail.com",
+    "phone": "041 500 186",
+    "notes": "Kontaktna oseba: Jože Bučar",
+    "latitude": "45.8448319",
+    "longitude": "15.34057740000003",
+    "website": "",
+    "facebook": "https://www.facebook.com/atletskiklub.sentjernej"
+  },
+  {
+    "name": "Atletski klub Sevnica",
+    "address": "Trg svobode 11, 8290 Sevnica",
+    "email": "info@aksevnica.si",
+    "phone": "030 686 114",
+    "notes": "Kontaktna oseba: Rafko Povhe",
+    "latitude": "46.01393580000001",
+    "longitude": "15.30301959999997",
+    "website": "http://aksevnica.si/",
+    "facebook": "https://www.facebook.com/AKSevnica"
+  },
+  {
+    "name": "Atletski klub Škofja Loka",
+    "address": "Log nad Škofjo Loko 1, 4220 Škofja Loka",
+    "email": "ak.skofjaloka@gmail.com",
+    "phone": "031 768 774",
+    "notes": "Kontaktna oseba: Jurij Demšar",
+    "latitude": "46.132538",
+    "longitude": "14.23565480000002",
+    "website": "http://www.akskofjaloka.si/",
+    "facebook": "https://www.facebook.com/akskofjaloka/"
+  },
+  {
+    "name": "Atletski klub Slovenj Gradec",
+    "address": "Strnadova ulica 9, 2380 Slovenj Gradec",
+    "email": "atletskiklub.sg@gmail.com",
+    "phone": "040 432 152",
+    "notes": "Kontaktna oseba: Uroš Verhovnik",
+    "latitude": "46.49889899999999",
+    "longitude": "15.074949100000026",
+    "website": "http://www.atletskiklub-sg.si/",
+    "facebook":
+      "https://www.facebook.com/Atletski-klub-Slovenj-Gradec-162552597115595/"
+  },
+  {
+    "name": "Atletski klub Špela",
+    "address": "Ljubljanska cesta 4a, 1290 Grosuplje",
+    "email": "akspela@siol.net",
+    "phone": "041 604 185",
+    "notes": "Kontaktna oseba: Tamara Dizdarević",
+    "latitude": "45.9576605",
+    "longitude": "14.660064199999965",
+    "website": "http://atletskiklubspela.si/",
+    "facebook":
+      "https://www.facebook.com/Atletski-Klub-%C5%A0PELA-201890199979358/"
+  },
+  {
+    "name": "Atletski klub Triglav",
+    "address": "Partizanska cesta 39, 4000 Kranj",
+    "email": "info@ak-triglav.si",
+    "phone": "040 452 886",
+    "notes": "Kontaktna oseba: Matjaž Polak",
+    "latitude": "46.2511595",
+    "longitude": "14.36351860000002",
+    "website": "http://www.ak-kranj.si/",
+    "facebook": "https://www.facebook.com/aktriglavkranj/"
+  },
+  {
+    "name": "Atletski klub Velenje",
+    "address": "Cesta na Jezero 7, p.p. 3, 3320 Velenje",
+    "email": "akvelenje@t-2.net",
+    "phone": "041 791 197",
+    "notes": "Kontaktna oseba: Natalija Bah",
+    "latitude": "46.3719776",
+    "longitude": "15.103521900000032",
+    "website": "http://www.ak-velenje.si/si/",
+    "facebook": "https://www.facebook.com/atletskiklubvelenje/"
+  },
+  {
+    "name": "Atletski klub Vežba",
+    "address": "Paradiž 11, 8230 Mokronog",
+    "email": "ak.vezba@gmail.com",
+    "phone": "040 143 696",
+    "notes": "Kontaktna oseba: Jan Samide",
+    "latitude": "45.9426435874761",
+    "longitude": "15.14459815036389",
+    "website": "https://atletskiklub-vezba.weebly.com/",
+    "facebook": ""
+  },
+  {
+    "name": "Atletski klub Žalec",
+    "address": "Aškerčeva ulica 13, 3310 Žalec",
+    "email": "aljosa.grobelnik@siol.net",
+    "phone": "070 856 903",
+    "notes": "Kontaktna oseba: Aljoša Grobelnik",
+    "latitude": "46.2539723",
+    "longitude": "15.163678300000015",
+    "website": "http://www.atletski-klub-zalec.si/",
+    "facebook": "https://www.facebook.com/atletskiklub.zalec"
+  },
+  {
+    "name": "Atletsko društvo As",
+    "address": "Kopališka cesta 4, 1230 Domžale",
+    "email": "info@atletskodrustvoas.si",
+    "phone": "041 604 542",
+    "notes": "Kontaktna oseba: Daša Sitar",
+    "latitude": "46.1356179",
+    "longitude": "14.601758399999994",
+    "website": "http://www.atletskodrustvoas.si/",
+    "facebook": "https://www.facebook.com/atletskodrustvoas"
+  },
+  {
+    "name": "Atletsko društvo Bled",
+    "address": "Riklijeva cesta 13, 4260 Bled",
+    "email": "info@adbled.si",
+    "phone": "041 295 136",
+    "notes": "Kontaktna oseba: Timotej Žvegelj",
+    "latitude": "46.37106586703531",
+    "longitude": "14.107325077056885",
+    "website": "http://www.adbled.si/",
+    "facebook":
+      "https://www.facebook.com/Atletsko-dru%C5%A1tvo-Bled-1387840971527513/"
+  },
+  {
+    "name": "Atletsko društvo Kamnik",
+    "address": "Bistričica 24, 1242 Stahovica",
+    "email": "damjan.zlatnar@gmail.com",
+    "phone": "041 344 900",
+    "notes": "Kontaktna oseba: Damjan Zlatnar",
+    "latitude": "46.2686181",
+    "longitude": "14.579282299999932",
+    "website": "",
+    "facebook": "https://www.facebook.com/ad.kamnik"
+  },
+  {
+    "name": "Atletsko društvo Kladivar Celje",
+    "address": "Stritarjeva ulica 24, 3000 Celje",
+    "email": "kladivarad@siol.net",
+    "phone": "041 224 601",
+    "notes": "Kontaktna oseba: Tina Jurčak",
+    "latitude": "46.23918459999999",
+    "longitude": "15.261396800000057",
+    "website": "http://ad-kladivar.si/",
+    "facebook": "https://www.facebook.com/kladivar"
+  },
+  {
+    "name": "Atletsko društvo Kronos Ljubljana",
+    "address": "Celovška cesta 150,1000 Ljubljana",
+    "email": "info@adkronos.si",
+    "phone": "041 844 748",
+    "notes": "Kontaktna oseba: Bojana Muhič Vojska",
+    "latitude": "46.073518",
+    "longitude": "14.486615",
+    "website": "http://www.kronos-klub.si/",
+    "facebook": "https://www.facebook.com/ad.kronos"
+  },
+  {
+    "name": "Atletsko društvo Mass Ljubljana",
+    "address": "Celovška cesta 150, 1000 Ljubljana",
+    "email": "info@admass.si",
+    "phone": "040 457 876",
+    "notes": "Kontaktna oseba: Albert Šoba",
+    "latitude": "46.0697768",
+    "longitude": "14.499188600000025",
+    "website": "http://www.admass.si/",
+    "facebook": "https://www.facebook.com/AtletskoDrustvoMASS"
+  },
+  {
+    "name": "Atletsko društvo Nova Aurora",
+    "address": "Ulica Osvobodilne fronte 10, p.p. 684, 6101 Koper",
+    "email": "info@nova-aurora.si",
+    "phone": "041 972 443",
+    "notes": "Kontaktna oseba: Jože Zadnik",
+    "latitude": "45.546841",
+    "longitude": "13.729979",
+    "website": "http://www.nova-aurora.si/",
+    "facebook":
+      "https://www.facebook.com/Atletsko-dru%C5%A1tvo-Nova-Aurora-Koper-194653097299844/"
+  },
+  {
+    "name": "Atletsko društvo Olimpik Kropa",
+    "address": "Kropa 3, 4245 Kropa",
+    "email": "adolimpik@gmail.com",
+    "phone": "040 236 081",
+    "notes": "Kontaktna oseba: Tomaž Zupančič",
+    "latitude": "46.29473087148364",
+    "longitude": "14.197230221761856",
+    "website": "http://www.adolimpik.com/",
+    "facebook": ""
+  },
+  {
+    "name": "Atletsko društvo Piran",
+    "address": "Sečovlje 3b, 6333 Sečovlje",
+    "email": "atletika.piran@gmail.com",
+    "phone": "040 864 764",
+    "notes": "Kontaktna oseba: Tomaž Mikeln",
+    "latitude": "45.46496630000001",
+    "longitude": "13.625050600000009",
+    "website": "http://www.adpiran.si/",
+    "facebook": ""
+  },
+  {
+    "name": "Atletsko društvo Posočje Tolmin",
+    "address": "Tumov drevored 21, 5220 Tolmin",
+    "email": "ad.posocje@gmail.com",
+    "phone": "041 406 806",
+    "notes": "Kontaktna oseba: Matej Gaberšček",
+    "latitude": "46.1847873",
+    "longitude": "13.730057100000067",
+    "website": "http://www.adposocje.si/",
+    "facebook": ""
+  },
+  {
+    "name": "Atletsko društvo Slovenska Bistrica",
+    "address": "Partizanska ulica 35, 2310 Slovenska Bistrica",
+    "email": "info@adsb.si",
+    "phone": "041 427 007",
+    "notes": "Kontaktna oseba: Boštjan Fridrih",
+    "latitude": "46.39696436815622",
+    "longitude": "15.559283460024744",
+    "website": "http://adsb.si/",
+    "facebook":
+      "https://www.facebook.com/Atletsko-dru%C5%A1tvo-Slovenska-Bistrica-305928046507487/"
+  },
+  {
+    "name": "Atletsko društvo Štajerska Maribor",
+    "address": "Engelsova ulica 6, 2000 Maribor",
+    "email": "info@ad-stajerska.si",
+    "phone": "041 449 744",
+    "notes": "Kontaktna oseba: Robert Rudelič",
+    "latitude": "46.5502818",
+    "longitude": "15.630382800000007",
+    "website": "http://www.ad-stajerska.si/",
+    "facebook":
+      "https://www.facebook.com/Atletsko-dru%C5%A1tvo-%C5%A0tajerska-Maribor-AD-%C5%A0tajerska-243365852368220/"
+  },
+  {
+    "name": "Atletsko društvo Železniki",
+    "address": "Trnje 39, 4228 Železniki",
+    "email": "brane.cencic@gmail.com",
+    "phone": "041 747 536",
+    "notes": "Kontaktna oseba: Jure Megušar",
+    "latitude": "46.21911480000001",
+    "longitude": "14.15447979999999",
+    "website": "http://www.atletsko-drustvo-zelezniki.si/",
+    "facebook": "https://www.facebook.com/AtletskoDrustvoZelezniki"
+  },
+  {
+    "name": "Društvo Konjiška atletska šola - KAŠ",
+    "address": "Ulica Toneta Melive 8a, 3210 Slovenske Konjice",
+    "email": "anton.noner@gmail.com",
+    "phone": "041 661 658",
+    "notes": "Kontaktna oseba: Anton Noner",
+    "latitude": "46.339839",
+    "longitude": "15.43196439999997",
+    "website": "http://ad-kas.si/",
+    "facebook":
+      "https://www.facebook.com/Konji%C5%A1ka-atletska-%C5%A1ola-KA%C5%A0-478675565572345/"
+  },
+  {
+    "name": "Klub gorskih tekačev Papež",
+    "address": "Podjelše 2, 1240 Kamnik",
+    "email": "kgtpapez@gmail.com",
+    "phone": "01 839 11 69",
+    "notes": "Kontaktna oseba: Mira Papež",
+    "latitude": "46.2460568",
+    "longitude": "14.61342000000002",
+    "website": "http://www.kgtpapez.si/",
+    "facebook": ""
+  },
+  {
+    "name": "Klub za gorske teke Grmada",
+    "address": "Tacenska cesta 137, 1133 Ljubljana",
+    "email": "tomo.sarf@helios.si",
+    "phone": "041 785 859",
+    "notes": "Kontaktna oseba: Tomo Šarf",
+    "latitude": "46.11504849999999",
+    "longitude": "14.46054950000007",
+    "website": "",
+    "facebook": ""
+  },
+  {
+    "name": "Koroški atletski klub Ravne",
+    "address": "Na Gradu 6, 2390 Ravne na Koroškem",
+    "email": "bojanpogorevc@siol.net",
+    "phone": "041 720 658",
+    "notes": "Kontaktna oseba: Uroš Verhovnik",
+    "latitude": "46.54037989999999",
+    "longitude": "14.95708860000002",
+    "website": "",
+    "facebook": "https://www.facebook.com/koroskiatletskiklub.kak"
+  },
+  {
+    "name":
+      "Športno društvo Dolenjske Toplice - Atletska sekcija Dolenjske Toplice",
+    "address": "Pionirska cesta 35, 8350 Dolenjske Toplice",
+    "email": "majda.krize@guest.arnes.si",
+    "phone": "031 689 906",
+    "notes": "Kontaktna oseba: Majda Križe",
+    "latitude": "45.7572047",
+    "longitude": "15.053497900000025",
+    "website": "",
+    "facebook": ""
+  },
+  {
+    "name": "Športno društvo Hopla Sežana",
+    "address": "Kosovelova ulica 5, 6210 Sežana",
+    "email": "sasaprokofjev@gmail.com",
+    "phone": "041 760 111",
+    "notes": "Kontaktna oseba: Aleksandra Saša Prokofjev",
+    "latitude": "45.7056018",
+    "longitude": "13.869799599999965",
+    "website": "",
+    "facebook": "https://www.facebook.com/atlet.sezana"
+  },
+  {
+    "name": "Športno društvo Jesenice - Atletski klub Jesenice",
+    "address": "Ledarska ulica 4, 4270 Jesenice",
+    "email": "akjesenice@yahoo.com",
+    "phone": "031 242 715",
+    "notes": "Kontaktna oseba: Jože Satler",
+    "latitude": "46.4331407",
+    "longitude": "14.049494200000026",
+    "website": "",
+    "facebook": ""
+  },
+  {
+    "name": "Športno društvo Naklo - Atletska sekcija",
+    "address": "Spodnje Duplje 20, 4203 Spodnje Duplje",
+    "email": "bojan1.klancnik@gmail.com",
+    "phone": "068 183 772",
+    "notes": "Kontaktna oseba: Bojan Klančnik",
+    "latitude": "46.3016563",
+    "longitude": "14.297732099999962",
+    "website": "",
+    "facebook": ""
+  },
+  {
+    "name": "Športno društvo Nanos Podnanos",
+    "address": "Hrašče 5, 5272 Podnanos",
+    "email": "sd.nanos@gmail.com",
+    "phone": "031 317 019",
+    "notes": "Kontaktna oseba: Florjana Trošt",
+    "latitude": "45.7959879",
+    "longitude": "13.978861100000017",
+    "website": "https://sd-nanos-podnanos.weebly.com/",
+    "facebook": "https://www.facebook.com/groups/567415726672970/"
+  },
+  {
+    "name": "Športno društvo Neža & 6AK Škofja Loka",
+    "address": "Sv. Duh 169, 4220 Škofja Loka",
+    "email": "nezahafner1@gmail.com",
+    "phone": "041 884 860",
+    "notes": "Kontaktna oseba: Neža Hafner",
+    "latitude": "46.1821804",
+    "longitude": "14.320348899999999",
+    "website": "",
+    "facebook": ""
+  },
+  {
+    "name": "Športno društvo Piran - Atletska sekcija",
+    "address": "Kajuhova ulica 12, 6330 Piran",
+    "email": "robert.letica@gmail.com",
+    "phone": "031 607 930",
+    "notes": "Kontaktna oseba: Robert Letica",
+    "latitude": "45.530258737543605",
+    "longitude": "13.562897686933866",
+    "website": "http://www.sailpiran.si/",
+    "facebook": ""
+  },
+  {
+    "name": "Športno društvo Tabor Žiri",
+    "address": "Jobstova cesta 22, 4226 Žiri",
+    "email": "rakuscek@siol.net",
+    "phone": "041 352 506",
+    "notes": "Kontaktna oseba: Katja Rakušček",
+    "latitude": "46.04575550000001",
+    "longitude": "14.108569799999941",
+    "website": "https://sportnodrustvo-tabor.si/",
+    "facebook": "https://www.facebook.com/TaborSportnoDrustvo"
+  },
+  {
+    "name": "Športno društvo Tek je lek",
+    "address": "Stara cesta 42, 1370 Logatec",
+    "email": "sdtekjelek@gmail.com",
+    "phone": "041 650 704",
+    "notes": "Kontaktna oseba: Igor Pavel",
+    "latitude": "45.9209588508401",
+    "longitude": "14.231273794284789",
+    "website": "http://www.tekjelek.si/2017/",
+    "facebook": "https://www.facebook.com/sdtekjelek"
+  },
+  {
+    "name": "Športno društvo Vrhnika - Atletska sekcija",
+    "address": "Tržaška cesta 9, 1360 Vrhnika",
+    "email": "sreco.zeleznik@kabelnet.net",
+    "phone": "041 751 128",
+    "notes": "Kontaktna oseba: Srečo Železnik",
+    "latitude": "45.9638393",
+    "longitude": "14.29726340000002",
+    "website": "",
+    "facebook": ""
+  },
+  {
+    "name": "Tekaški klub Kobarid",
+    "address": "Pri malnih 34, 5222 Kobarid",
+    "email": "tekaski.kobarid@gmail.com",
+    "phone": "",
+    "notes": "Kontaktna oseba: Anita Cukjati",
+    "latitude": "46.24617245081169",
+    "longitude": "13.567900657653809",
+    "website": "",
+    "facebook": ""
+  },
+  {
+    "name": "Tekaški klub Šmarnogorska naveza",
+    "address": "Seunigova ulica 18, 1211 Ljubljana-Šmartno",
+    "email": "bostjan.nov@gmail.com",
+    "phone": "041 297 547",
+    "notes": "Kontaktna oseba: Sašo Novak",
+    "latitude": "46.1200608",
+    "longitude": "14.45899810000003",
+    "website": "http://smarnogorska-naveza.si/",
+    "facebook": ""
+  },
+  {
+    "name": "Tekaško društvo Bistrc Ilirska Bistrica",
+    "address": "Cankarjeva ulica 18, 6250 Ilirska Bistrica",
+    "email": "info@tdbistrc.org",
+    "phone": "041 290 267",
+    "notes": "Kontaktna oseba: Gregor Kovačič",
+    "latitude": "45.5636187",
+    "longitude": "14.247571900000025",
+    "website": "http://tdbistrc.org/",
+    "facebook": ""
+  },
+  {
+    "name": "Tekaško društvo Bovec",
+    "address": "Čezsoča 144, 5230 Bovec",
+    "email": "vasja_vitez@siol.net",
+    "phone": "031 361 644",
+    "notes": "Kontaktna oseba: Albert Melihen",
+    "latitude": "46.3189755",
+    "longitude": "13.539357999999993",
+    "website": "http://www.tekaskodrustvobovec.si/",
+    "facebook": ""
+  },
+  {
+    "name": "Tekaško društvo Savinjčan",
+    "address": "Trubarjeva ulica 1, 3310 Žalec",
+    "email": "tdsavinjcan@gmail.com",
+    "phone": "041 208 822",
+    "notes": "Kontaktna oseba: Boris Podpečan",
+    "latitude": "46.2530293",
+    "longitude": "15.167417500000056",
+    "website": "http://www.tdsavinjcan.eu/",
+    "facebook": ""
+  },
+  {
+    "name": "Veteransko atletsko društvo Ljubljana",
+    "address": "Milčinskega ulica 2, 1107 Ljubljana",
+    "email": "joze@cvar.si",
+    "phone": "031 651 667",
+    "notes": "Kontaktna oseba: Jože Cvar",
+    "latitude": "46.0697768",
+    "longitude": "14.499188600000025",
+    "website": "",
+    "facebook": ""
+  }
+]
