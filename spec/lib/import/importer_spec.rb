@@ -12,7 +12,8 @@ RSpec.describe Import::Importer do
   let(:datasource) { instance_double(Import::Datasource) }
   let(:transformer) { instance_double(Import::Transformer) }
   let(:highline) { instance_double(HighLine) }
-  let(:merge_resolution) { Import::Resolution.new(:merge) }
+  let(:merge_left_resolution) { Import::Resolution.new(:merge_left) }
+  let(:merge_right_resolution) { Import::Resolution.new(:merge_right) }
   let(:create_new_resolution) { Import::Resolution.new(:create_new) }
 
   subject { Import::Importer.new(datasource, transformer, false) }
@@ -102,7 +103,7 @@ RSpec.describe Import::Importer do
     end
 
     it "should merge data if resolution is 'merge'" do
-      allow(Import::Resolution).to receive(:new).and_return(merge_resolution)
+      allow(Import::Resolution).to receive(:new).and_return(merge_left_resolution)
       data = [
             {
               name: 'Fitnes 1',
@@ -120,7 +121,7 @@ RSpec.describe Import::Importer do
     end
 
     it "should not create new klub for resoultion 'merge'" do
-      allow(Import::Resolution).to receive(:new).and_return(merge_resolution)
+      allow(Import::Resolution).to receive(:new).and_return(merge_left_resolution)
       data = [
             {
               name: 'Fitnes 1',
@@ -148,7 +149,7 @@ RSpec.describe Import::Importer do
     end
 
     it "if same name - case sensitive" do
-      allow(Import::Resolution).to receive(:new).and_return(merge_resolution)
+      allow(Import::Resolution).to receive(:new).and_return(merge_left_resolution)
       # FIXME: and user says merge
       data = [
         {
@@ -161,9 +162,9 @@ RSpec.describe Import::Importer do
     end
   end
 
-  describe "it should merge new data" do
+  context "merge_left" do
     before do
-      allow(Import::Resolution).to receive(:new).and_return(merge_resolution)
+      allow(Import::Resolution).to receive(:new).and_return(merge_left_resolution)
       subject.run
     end
 
@@ -355,6 +356,207 @@ RSpec.describe Import::Importer do
       expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['fitnes']
       subject.run
       expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['fitnes', 'pilates']
+    end
+  end
+
+  context "merge_right" do
+    before do
+      allow(Import::Resolution).to receive(:new).and_return(merge_right_resolution)
+      subject.run
+    end
+
+    it "should amend the category to a duplicate club" do
+      data = [
+        {
+          name: 'Fitnes 1',
+          categories: ['pilates']
+        }
+      ]
+      allow(transformer).to receive(:transform).and_return data
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['fitnes']
+      subject.run
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['pilates', 'fitnes']
+    end
+
+    it "should override address" do
+      klub = Klub.unscoped.where(name: 'Fitnes 1').first
+      klub.address = 'Some address'
+      klub.save!
+
+      data = [{
+              name: 'Fitnes 1',
+              address: 'Trzaska 25, 1000 Ljubljana'
+            }]
+      allow(transformer).to receive(:transform).and_return data
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.address ).to eq 'Some address'
+      subject.run
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.address ).to eq 'Trzaska 25, 1000 Ljubljana'
+    end
+
+    it "should not override the address if missing" do
+      klub = Klub.unscoped.where(name: 'Fitnes 1').first
+      klub.address = 'Some address'
+      klub.save!
+
+      data = [{
+              name: 'Fitnes 1',
+              address: nil
+            }]
+      allow(transformer).to receive(:transform).and_return data
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.address ).to eq 'Some address'
+      subject.run
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.address ).to eq 'Some address'
+    end
+
+    it "should override the facebook_url" do
+      data = [{
+              name: 'Fitnes 1',
+              facebook_url: 'Trzaska 25, 1000 Ljubljana'
+            }]
+      allow(transformer).to receive(:transform).and_return data
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url ).to be_nil
+      subject.run
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url ).to eq 'Trzaska 25, 1000 Ljubljana'
+    end
+
+    it "should not override the facebook_url if no new data" do
+      klub = Klub.unscoped.where(name: 'Fitnes 1').first
+      klub.facebook_url = 'Nekje 22'
+      klub.save!
+
+      data = [{
+              name: 'Fitnes 1',
+              facebook_url: nil
+            }]
+      allow(transformer).to receive(:transform).and_return data
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url ).to eq 'Nekje 22'
+      subject.run
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url ).to eq 'Nekje 22'
+    end
+
+    it "should override the website with new data" do
+      klub = Klub.unscoped.where(name: 'Fitnes 1').first
+      klub.website = 'Nekje 22'
+      klub.save!
+
+      data = [{
+              name: 'Fitnes 1',
+              website: 'Trzaska 25, 1000 Ljubljana'
+            }]
+      allow(transformer).to receive(:transform).and_return data
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.website ).to eq 'Nekje 22'
+      subject.run
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.website ).to eq 'Trzaska 25, 1000 Ljubljana'
+    end
+
+    it "should not override the website if no new data" do
+      klub = Klub.unscoped.where(name: 'Fitnes 1').first
+      klub.website = 'Nekje 22'
+      klub.save!
+
+      data = [{
+              name: 'Fitnes 1',
+              website: nil
+            }]
+      allow(transformer).to receive(:transform).and_return data
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.website ).to eq 'Nekje 22'
+      subject.run
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.website ).to eq 'Nekje 22'
+    end
+
+    it "should override the town with new data" do
+      klub = Klub.unscoped.where(name: 'Fitnes 1').first
+      klub.town = 'Nekje 22'
+      klub.save!
+
+      data = [{
+              name: 'Fitnes 1',
+              town: 'Trzaska 25, 1000 Ljubljana'
+            }]
+      allow(transformer).to receive(:transform).and_return data
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.town ).to eq 'Nekje 22'
+      subject.run
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.town ).to eq 'Trzaska 25, 1000 Ljubljana'
+    end
+
+    it "should not override the town if no new data" do
+      klub = Klub.unscoped.where(name: 'Fitnes 1').first
+      klub.town = 'Nekje 22'
+      klub.save!
+
+      data = [{
+              name: 'Fitnes 1',
+              town: nil
+            }]
+      allow(transformer).to receive(:transform).and_return data
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.town ).to eq 'Nekje 22'
+      subject.run
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.town ).to eq 'Nekje 22'
+    end
+
+    it "should override the phone with new data" do
+      data = [{
+              name: 'Fitnes 1',
+              phone: 'Trzaska 25, 1000 Ljubljana'
+            }]
+      allow(transformer).to receive(:transform).and_return data
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.phone ).to be_nil
+      subject.run
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.phone ).to eq 'Trzaska 25, 1000 Ljubljana'
+    end
+
+    it "should not override the phone if no new data" do
+      klub = Klub.unscoped.where(name: 'Fitnes 1').first
+      klub.phone = 'Nekje 22'
+      klub.save!
+
+      data = [{
+              name: 'Fitnes 1',
+              phone: nil
+            }]
+      allow(transformer).to receive(:transform).and_return data
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.phone ).to eq 'Nekje 22'
+      subject.run
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.phone ).to eq 'Nekje 22'
+    end
+
+    it "should override the email with new data" do
+      data = [{
+              name: 'Fitnes 1',
+              email: 'Trzaska 25, 1000 Ljubljana'
+            }]
+      allow(transformer).to receive(:transform).and_return data
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.email ).to be_nil
+      subject.run
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.email ).to eq 'Trzaska 25, 1000 Ljubljana'
+    end
+
+    it "should not override the email if no new data" do
+      klub = Klub.unscoped.where(name: 'Fitnes 1').first
+      klub.email = 'Nekje 22'
+      klub.save!
+
+      data = [{
+              name: 'Fitnes 1',
+              email: " "
+            }]
+      allow(transformer).to receive(:transform).and_return data
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.email ).to eq 'Nekje 22'
+      subject.run
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.email ).to eq 'Nekje 22'
+    end
+
+    it "should not add duplicate categories" do
+      data = [
+        {
+          name: 'Fitnes 1',
+          categories: ['pilates', 'fitnes']
+        }
+      ]
+      allow(transformer).to receive(:transform).and_return data
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['fitnes']
+      subject.run
+      expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['pilates', 'fitnes']
     end
   end
 end

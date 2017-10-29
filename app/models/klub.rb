@@ -26,20 +26,34 @@ class Klub < ApplicationRecord
   end
   after_create :geocode, if: :has_address?, unless: :has_lat_lng_town_and_address?
 
-  def merge_with(klub_attrs, skip: [])
+  def merge_left_with(klub_attrs, skip: [])
+    # uses new data to fill in missing spots only, preferring old data
     basic_attrs = %i[name address town phone email website facebook_url] - skip
     array_attrs = [:categories]
 
     klub_attrs.each do |key, val|
       if basic_attrs.include?(key)
-
         self[key] = val if self[key].blank?
-
       elsif array_attrs.include?(key)
         self[key] = (self[key] + klub_attrs[key]).uniq
       end
     end
   end
+
+  def merge_right_with(new_attrs, skip: [])
+    # uses old data to fill in missing spots in new data, preferring new data
+    basic_attrs = %i[name address town phone email website facebook_url] - skip
+    array_attrs = [:categories]
+
+    new_attrs.each do |key, val|
+      if basic_attrs.include?(key)
+        self[key] = val unless val.blank?
+      elsif array_attrs.include?(key)
+        self[key] = (new_attrs[key] + self[key]).uniq
+      end
+    end
+  end
+
 
   def send_on_create_notifications(editor)
     send_review_notification

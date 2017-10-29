@@ -59,15 +59,20 @@ module Import
         selection = Resolution.new
         h.choose do |menu|
           menu.prompt = "Merge data into existing klub or Create new klub?" if @verbose
-          menu.choice(:merge) { selection = Resolution.new(:merge) }
+          menu.choice(:merge_left) { selection = Resolution.new(:merge_left) }
+          menu.choice(:merge_right) { selection = Resolution.new(:merge_right) }
           menu.choices(:create_new) { selection = Resolution.new(:create_new) }
           menu.choices(:skip) { selection = Resolution.new(:skip) }
         end
         case selection.resolution
-        when :merge
+        when :merge_left
           require 'pry'; binding.pry unless Rails.env.test? # let me adjust stuff before merging
-          klub.merge_with(klubdata, skip: @do_not_merge)
-          h.say("DONE merging klubs' data") if @verbose
+          klub.merge_left_with(klubdata, skip: @do_not_merge)
+          h.say("DONE left merging klubs' data") if @verbose
+        when :merge_right
+          require 'pry'; binding.pry unless Rails.env.test? # let me adjust stuff before merging
+          klub.merge_right_with(klubdata, skip: @do_not_merge)
+          h.say("DONE right merging klubs' data") if @verbose
         when :create_new
           klub = Klub.new(klubdata)
           h.say("DONE creating new klub") if @verbose
