@@ -437,7 +437,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
 
     it "should accept categories and other parameters" do
 
-      valid_attrs = {name: "Fitnes Maribor", address: "Mariborska cesta 5", latitude: "46.5534849", longitude: "15.503709399999934", website: "http://www.fitnes-zumba.si",categories: ["fitnes","zumba"], editor: "jaz@ti.com", notes: "Ta klub ne obstaja"}
+      valid_attrs = {name: "Fitnes Maribor", address: "Mariborska cesta 5", latitude: "46.5534849", longitude: "15.503709399999934", website: "http://www.fitnes-zumba.si",categories: ["fitnes","zumba"], editor: "jaz@ti.com", notes: "Ta klub ne obstaja", description: "This is the klub description"}
 
       expect(Klub).to receive(:new).
         with(valid_attrs.except(:editor))
@@ -452,7 +452,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
     end
 
     it "should downcase and dasherize new categories" do
-      valid_attrs = {name: "Fitnes Maribor", address: "Mariborska cesta 5", latitude: "46.5534849", longitude: "15.503709399999934", website: "http://www.fitnes-zumba.si",categories: ["Fitnes","zu M  ba"], editor: "jaz@ti.com", notes: "Ta klub ne obstaja"}
+      valid_attrs = {name: "Fitnes Maribor", address: "Mariborska cesta 5", latitude: "46.5534849", longitude: "15.503709399999934", website: "http://www.fitnes-zumba.si",categories: ["Fitnes","zu M  ba"], editor: "jaz@ti.com", notes: "Ta klub ne obstaja", description: "Thisis desc"}
 
       post :create, params: {
         data: {
@@ -781,6 +781,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         phone: '404 404 404',
         email: 'new@club.com',
         categories: ['fitnes', 'rugby'],
+        description: 'My new description',
         notes: "Kera stvar",
         'facebook-url': 'http://facebook.com/newclub'
       }
@@ -807,7 +808,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
             attributes: new_attrs.merge(editor: 'joe@doe.com')
           }
         }
-      }.to change(Update, :count).by(8)
+      }.to change(Update, :count).by(9)
 
       new_attrs.each do |key, val|
         expect(

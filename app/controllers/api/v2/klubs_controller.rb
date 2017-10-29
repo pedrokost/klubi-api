@@ -142,6 +142,7 @@ module Api
           :phone,
           :email,
           :notes,
+          :description,
           { :categories => [] },
           :editor,
           :branches_attributes => [:address, :latitude, :longitude, :town]
@@ -168,6 +169,7 @@ module Api
           :phone,
           :email,
           :notes,
+          :description,
           { :categories => [] },
           :editor,
           :branches_attributes => [:id, :address, :latitude, :longitude, :town]

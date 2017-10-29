@@ -11,7 +11,7 @@ module Api
       end
 
       cache key: 'v2/klub'
-      attributes :name, :address, :email, :latitude, :longitude, :phone, :town, :website, :facebook_url, :categories, :notes, :verified, :closed_at
+      attributes :name, :address, :email, :latitude, :longitude, :phone, :town, :website, :facebook_url, :categories, :verified, :closed_at, :description
 
       has_many :branches, serializer: BranchSerializer
 

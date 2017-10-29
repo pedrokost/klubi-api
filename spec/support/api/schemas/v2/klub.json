@@ -3,68 +3,49 @@
 
   "definitions": {
     "parent": {
-      "type" : ["object", "null"],
-      "required" : [
-        "id",
-        "type"
-      ],
+      "type": ["object", "null"],
+      "required": ["id", "type"],
       "properties": {
-        "id" : { "type": "string" },
-        "type" : { "type": "string" }
+        "id": { "type": "string" },
+        "type": { "type": "string" }
       }
     },
     "branch_reference": {
-      "type" : ["object", "null"],
-      "required" : [
-        "id",
-        "type"
-      ],
+      "type": ["object", "null"],
+      "required": ["id", "type"],
       "properties": {
-        "id" : { "type": "string" },
-        "type" : { "type": "string" }
+        "id": { "type": "string" },
+        "type": { "type": "string" }
       }
     },
     "branch": {
-      "type" : ["object", "null"],
-      "required" : [
-        "id",
-        "type"
-      ],
+      "type": ["object", "null"],
+      "required": ["id", "type"],
       "properties": {
-        "id" : { "type": "string" },
-        "type" : { "type": "string" },
+        "id": { "type": "string" },
+        "type": { "type": "string" },
         "additionalProperties": false,
         "attributes": {
           "type": "object",
-          "required": [
-            "address",
-            "latitude",
-            "longitude"
-          ],
+          "required": ["address", "latitude", "longitude"],
           "properties": {
-            "address" :   { "type": ["string", "null"] },
-            "latitude" :  { "type": ["string", "null"] },
-            "longitude" : { "type": ["string", "null"] }
+            "address": { "type": ["string", "null"] },
+            "latitude": { "type": ["string", "null"] },
+            "longitude": { "type": ["string", "null"] }
           }
         }
       }
     }
   },
   "type": "object",
-  "required": [
-    "data"
-  ],
+  "required": ["data"],
   "properties": {
-    "data" : {
-      "type" : "object",
-      "required" : [
-        "id",
-        "type",
-        "attributes"
-      ],
+    "data": {
+      "type": "object",
+      "required": ["id", "type", "attributes"],
       "properties": {
-        "id" : { "type": "string" },
-        "type" : { "type": "string" },
+        "id": { "type": "string" },
+        "type": { "type": "string" },
         "attributes": {
           "type": "object",
           "required": [
@@ -76,58 +57,56 @@
             "email",
             "latitude",
             "longitude",
-            "notes",
             "categories",
             "verified",
-            "closed-at"
+            "closed-at",
+            "description"
           ],
           "properties": {
-            "name" :      { "type": "string" },
-            "address" :   { "type": ["string", "null"] },
-            "town" :      { "type": ["string", "null"] },
-            "website" :   { "type": ["string", "null"] },
-            "phone" :     { "type": ["string", "null"] },
-            "email" :     { "type": ["string", "null"] },
-            "latitude" :  { "type": ["string", "null"] },
-            "longitude" : { "type": ["string", "null"] },
-            "facebook-url" : { "type": ["string", "null"] },
-            "verified":   { "type": "boolean" },
-            "notes":      {"type": ["string", "null"] },
-            "closed-at":   { "type": "date" },
+            "name": { "type": "string" },
+            "address": { "type": ["string", "null"] },
+            "town": { "type": ["string", "null"] },
+            "website": { "type": ["string", "null"] },
+            "phone": { "type": ["string", "null"] },
+            "email": { "type": ["string", "null"] },
+            "latitude": { "type": ["string", "null"] },
+            "longitude": { "type": ["string", "null"] },
+            "facebook-url": { "type": ["string", "null"] },
+            "verified": { "type": "boolean" },
+            "closed-at": { "type": "date" },
+            "description": { "type": ["string", "null"] },
             "categories": {
               "type": "array",
-              "items": [{
-                "type": "string"
-              }]
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
             }
           }
         },
         "relationships": {
           "type": "object",
-          "required": [
-            "parent"
-          ],
-          "properties":  {
+          "required": ["parent"],
+          "properties": {
             "parent": {
               "type": "object",
-              "required": [
-                "data"
-              ],
+              "required": ["data"],
               "properties": {
                 "data": { "$ref": "#/definitions/parent" }
               }
             },
             "branches": {
               "type": "object",
-              "required": [
-                "data"
-              ],
+              "required": ["data"],
               "properties": {
                 "data": {
-                  "type": [ "array", "null"],
-                  "items": [{
-                    "$ref": "#/definitions/branch_reference"
-                  }]
+                  "type": ["array", "null"],
+                  "items": [
+                    {
+                      "$ref": "#/definitions/branch_reference"
+                    }
+                  ]
                 }
               }
             }
@@ -137,9 +116,11 @@
     },
     "included": {
       "type": "array",
-      "items": [{
-        "$ref": "#/definitions/branch"
-      }]
+      "items": [
+        {
+          "$ref": "#/definitions/branch"
+        }
+      ]
     }
   }
 }
