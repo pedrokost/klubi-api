@@ -19,6 +19,7 @@ class KlubDashboard < Administrate::BaseDashboard
     website: Field::String.with_options(searchable: true),
     phone: Field::String.with_options(searchable: true),
     email: Field::String.with_options(searchable: true),
+    description: Field::String.with_options(searchable: true),
     notes: Field::String.with_options(searchable: true),
     latitude: Field::String.with_options(searchable: false),
     longitude: Field::String.with_options(searchable: false),
@@ -66,6 +67,7 @@ class KlubDashboard < Administrate::BaseDashboard
     :categories,
     :facebook_url,
     :editor_emails,
+    :description,
     :notes,
     :branches,
     :closed_at
