@@ -76,6 +76,9 @@ gem "memcachier", '~> 0.0.2'
 
 gem 'raygun4ruby', '~> 1.1.11'
 
+gem "delayed_job_active_record", "~> 4.1.2"
+gem "workless", "~> 2.2.0"
+
 group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 3.5.2'

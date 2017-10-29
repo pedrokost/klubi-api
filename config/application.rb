@@ -88,5 +88,7 @@ module KlubiApi
 
     # Skylight config
     config.skylight.probes += %w(redis active_model_serializers)
+
+    config.active_job.queue_adapter = :delayed_job
   end
 end

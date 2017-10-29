@@ -284,23 +284,23 @@ RSpec.describe Klub, :type => :model do
   it "sends an email upon creation" do
     klub.save
 
-    expect { subject.send(:send_review_notification) }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    expect { subject.send(:send_review_notification) }.to change { enqueued_jobs.count }.by(1)
   end
 
   it "sends a thank you email upon creation" do
     klub.save
-    expect { subject.send(:send_thanks_notification, 'test@test.com') }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    expect { subject.send(:send_thanks_notification, 'test@test.com') }.to change { enqueued_jobs.count }.by(1)
   end
 
   it "sends an email upon updated" do
     klub.save
-    expect { subject.send(:send_updates_notification, 'joe@doe.com') }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    expect { subject.send(:send_updates_notification, 'joe@doe.com') }.to change { enqueued_jobs.count }.by(1)
   end
 
   it "send_confirm_notification" do
     klub.save
     expect { subject.send(:send_confirm_notification, 'test@email.com', [], []) }.to change {
-      ActionMailer::Base.deliveries.count
+      enqueued_jobs.count
     }.by 1
   end
 
@@ -317,7 +317,7 @@ RSpec.describe Klub, :type => :model do
     expect(subject).to receive(:send_updates_notification).with('test@email.com')
 
     expect { subject.send_on_update_notifications('test@email.com', [], []) }.to change {
-      ActionMailer::Base.deliveries.count
+      enqueued_jobs.count
     }.by 1
 
   end
