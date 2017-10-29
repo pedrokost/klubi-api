@@ -68,8 +68,8 @@ class Klub < ApplicationRecord
 
     new_attrs.except(:editor, :id).each do |key, val|
       next if send(key).to_s == val.to_s
-      next if (key.to_s == 'latitude') && ((val - send(key)).abs < lat_lon_min_eta)
-      next if (key.to_s == 'longitude') && ((val - send(key)).abs < lat_lon_min_eta)
+      next if (key.to_s == 'latitude') && ((val.to_f - send(key).to_f).abs < lat_lon_min_eta)
+      next if (key.to_s == 'longitude') && ((val.to_f - send(key).to_f).abs < lat_lon_min_eta)
       val = val.map(&:parameterize) if key == 'categories'
 
       duplicate_update = Update.where(updatable: self, field: key, oldvalue: send(key).to_s, newvalue: val.to_s, editor_email: editor, status: Update.statuses[:unverified]).where('created_at >= ?', 1.month.ago)
