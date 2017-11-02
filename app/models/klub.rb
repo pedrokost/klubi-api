@@ -84,19 +84,26 @@ class Klub < ApplicationRecord
       next if send(key).to_s == val.to_s
       next if (key.to_s == 'latitude') && ((val.to_f - send(key).to_f).abs < lat_lon_min_eta)
       next if (key.to_s == 'longitude') && ((val.to_f - send(key).to_f).abs < lat_lon_min_eta)
-      val = val.map(&:parameterize) if key == 'categories'
+      val = val.map(&:parameterize) if key.to_s == 'categories'
+
+      if key.to_s == 'notes'
+        if send(key).blank?
+          val = "#{Date.today}: #{val}"
+        else
+          val = "#{Date.today}: #{val}\n#{send(key)}"
+        end
+      end
 
       duplicate_update = Update.where(updatable: self, field: key, oldvalue: send(key).to_s, newvalue: val.to_s, editor_email: editor, status: Update.statuses[:unverified]).where('created_at >= ?', 1.month.ago)
+      next if duplicate_update.exists?
 
-      unless duplicate_update.exists?
-        updates << Update.create!(
-          updatable: self,
-          field: key,
-          oldvalue: send(key).to_s,
-          newvalue: val.to_s,
-          editor_email: editor
-        )
-      end
+      updates << Update.create!(
+        updatable: self,
+        field: key,
+        oldvalue: send(key).to_s,
+        newvalue: val.to_s,
+        editor_email: editor
+      )
 
     end
     updates

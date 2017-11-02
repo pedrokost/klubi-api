@@ -810,7 +810,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         }
       }.to change(Update, :count).by(9)
 
-      new_attrs.each do |key, val|
+      new_attrs.except(:notes).each do |key, val|
         expect(
           Update.find_by(
             updatable: klub,
@@ -821,6 +821,16 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
             editor_email: 'joe@doe.com'
         )).to be_truthy
       end
+
+      expect(
+        Update.find_by(
+          updatable: klub,
+          field: 'notes',
+          oldvalue: "",
+          newvalue: "#{Date.today}: Kera stvar",
+          status: :unverified,
+          editor_email: 'joe@doe.com'
+      )).to be_truthy
     end
 
     it "should not create Update objects for unchanged attributes" do

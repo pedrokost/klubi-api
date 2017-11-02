@@ -173,6 +173,22 @@ RSpec.describe Klub, :type => :model do
         editor: 'another@test.com'
       }) }.to change(Update, :count).by(1)
     end
+
+    it "appends the note with the date" do
+      klub.create_updates( notes: 'This is my note' )
+
+      expect(klub.updates.last.oldvalue).to eq ""
+      expect(klub.updates.last.newvalue).to eq "#{Date.today}: This is my note"
+    end
+
+    it "appends notes with dates" do
+      klub.notes = 'This is the old notes'
+
+      klub.create_updates( notes: 'This is another note' )
+
+      expect(klub.updates.last.oldvalue).to eq "This is the old notes"
+      expect(klub.updates.last.newvalue).to eq "#{Date.today}: This is another note\nThis is the old notes"
+    end
   end
 
   describe "slug creation" do
@@ -238,7 +254,6 @@ RSpec.describe Klub, :type => :model do
       }.to change(klub, :updated_at).from(klub.updated_at)
     end
   end
-
 
   describe "deleting a klub with updates" do
     let!(:update1) { create(:update, updatable: subject) }
