@@ -139,7 +139,7 @@ class Klub < ApplicationRecord
   end
 
   def created_branch(branch_attrs)
-    return false if branch_attrs[:address].blank? || branch_attrs[:latitude].blank? || branch_attrs[:longitude].blank? || branch_attrs[:town].blank?
+    return nil if branch_attrs[:address].blank? || branch_attrs[:latitude].blank? || branch_attrs[:longitude].blank? || branch_attrs[:town].blank?
 
     branch = Klub.new(attributes
       .merge(verified: false)

@@ -74,7 +74,7 @@ module Api
             updates.concat updates
           else
             branch = klub.created_branch branch_attrs
-            new_branches << branch
+            new_branches << branch if branch
           end
         end
 
