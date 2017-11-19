@@ -15,6 +15,8 @@ module Api
 
       has_many :branches, serializer: BranchSerializer
 
+      has_many :comments
+
       has_many :images do
         link(:related) { images_klub_url(object.url_slug) }
         include_data false

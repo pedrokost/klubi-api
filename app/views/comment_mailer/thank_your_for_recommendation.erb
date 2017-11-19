@@ -1,0 +1,14 @@
+Pozdravljeni <%= @comment.commenter_name %>,
+
+<p>V imenu <%= @comment.commentable.name %> bi se ti rad zahvalil za objavljeno 🏆 priporočilo 🏆 na portalu Klubi Slovenije.</p>
+
+<p>S svojim priporočilom omogočaš tisočim obiskovalcem portala, da izberejo klub, v katerem bojo lahko zablesteli 💪.</p>
+
+<p>Svoje priporočilo si lahko ogledaš <%= link_to 'tukaj', @comment.commentable.spa_url %>.</p>
+
+<p>
+  <small>To sporočilo si dobil/a, ker si na portalu Klubi Sloveniji objavil/a priporočilo za <%= @comment.commentable.name %>. Drugih elektronskih sporočil ti ne bomo pošiljali.</small>
+</p>
+
+Lep pozdrav, <br>
+<%= render partial: 'shared/default_email_signature' %>

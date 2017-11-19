@@ -65,6 +65,79 @@ CREATE TABLE ar_internal_metadata (
 
 
 --
+-- Name: comment_requests; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE comment_requests (
+    id bigint NOT NULL,
+    commentable_type character varying,
+    commentable_id bigint,
+    requester_email character varying,
+    requester_name character varying,
+    commenter_email character varying,
+    commenter_name character varying,
+    request_hash character varying,
+    comment_id bigint,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: comment_requests_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE comment_requests_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: comment_requests_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE comment_requests_id_seq OWNED BY comment_requests.id;
+
+
+--
+-- Name: comments; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE comments (
+    id bigint NOT NULL,
+    commentable_type character varying,
+    commentable_id bigint,
+    body character varying,
+    commenter_email character varying,
+    commenter_name character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: comments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE comments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE comments_id_seq OWNED BY comments.id;
+
+
+--
 -- Name: delayed_jobs; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -371,6 +444,20 @@ ALTER SEQUENCE "zatresi-api_development_gid_seq" OWNED BY "zatresi-api_developme
 
 
 --
+-- Name: comment_requests id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY comment_requests ALTER COLUMN id SET DEFAULT nextval('comment_requests_id_seq'::regclass);
+
+
+--
+-- Name: comments id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY comments ALTER COLUMN id SET DEFAULT nextval('comments_id_seq'::regclass);
+
+
+--
 -- Name: delayed_jobs id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -432,6 +519,22 @@ ALTER TABLE ONLY "zatresi-api_development" ALTER COLUMN gid SET DEFAULT nextval(
 
 ALTER TABLE ONLY ar_internal_metadata
     ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- Name: comment_requests comment_requests_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY comment_requests
+    ADD CONSTRAINT comment_requests_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: comments comments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY comments
+    ADD CONSTRAINT comments_pkey PRIMARY KEY (id);
 
 
 --
@@ -503,6 +606,41 @@ ALTER TABLE ONLY "zatresi-api_development"
 --
 
 CREATE INDEX delayed_jobs_priority ON delayed_jobs USING btree (priority, run_at);
+
+
+--
+-- Name: index_comment_request_unique_commenter_commentable; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_comment_request_unique_commenter_commentable ON comment_requests USING btree (commentable_type, commentable_id, commenter_email);
+
+
+--
+-- Name: index_comment_requests_on_comment_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_comment_requests_on_comment_id ON comment_requests USING btree (comment_id);
+
+
+--
+-- Name: index_comment_requests_on_commentable_type_and_commentable_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_comment_requests_on_commentable_type_and_commentable_id ON comment_requests USING btree (commentable_type, commentable_id);
+
+
+--
+-- Name: index_comment_requests_on_request_hash; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_comment_requests_on_request_hash ON comment_requests USING btree (request_hash);
+
+
+--
+-- Name: index_comments_on_commentable_type_and_commentable_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_comments_on_commentable_type_and_commentable_id ON comments USING btree (commentable_type, commentable_id);
 
 
 --
@@ -659,6 +797,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20170518210754'),
 ('20170614201058'),
 ('20171029112020'),
-('20171029141942');
+('20171029141942'),
+('20171118175221'),
+('20171118180158');
 
 

@@ -28,7 +28,6 @@ module Admin
       redirect_to action: :index, subdomain: 'admin'
     end
 
-
     def default_params
       params[:order] ||= "created_at"
       params[:direction] ||= "desc"

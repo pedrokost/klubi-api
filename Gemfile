@@ -19,7 +19,7 @@ gem 'activerecord-postgis-adapter'
 gem 'rails_12factor', group: :production
 
 # gem 'active_model_serializers', '~> 0.9.0'
-gem 'active_model_serializers', '0.10.5'
+gem 'active_model_serializers', '0.10.7'
 
 gem 'active_model_serializers-jsonapi_embedded_records_deserializer', '~> 0.1.1'
 
@@ -37,11 +37,14 @@ gem 'pry-rails'
 
 gem "koala", "~> 3.0.0"
 
+gem 'validates_email_format_of'
+
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
   gem 'pry-byebug'
+  gem 'pry-remote'
   gem 'foreman'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

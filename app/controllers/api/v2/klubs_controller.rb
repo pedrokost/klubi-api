@@ -87,7 +87,7 @@ module Api
 
       def show
         klub = find_klub
-        render json: klub, include: [:branches, :parent]
+        render json: klub, include: [:branches, :parent, :comments]
       end
 
       def images

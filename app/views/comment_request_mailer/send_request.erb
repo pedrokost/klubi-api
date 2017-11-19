@@ -1,0 +1,8 @@
+Pozdravljen/a <%= @comment_request.commenter_name %>,
+
+<p><%= @comment_request.requester_name %> te prosi za kratko priporočilo 👍 za <%= link_to @comment_request.commentable.name, @comment_request.spa_url %>. Klikni <%= link_to 'tukaj, da napišes priporočilo', @comment_request.spa_url %>!</p>
+
+<p>S priporočilom pomagaš obiskovalcem portala Klubi Slovenije, da spoznajo <%= @comment_request.commentable.name %> preko tvojih oči. Vzelo ti bo samo minutko.</p>
+
+Vnaprej hvala in lep pozdrav, <br>
+<%= render partial: 'shared/generic_email_signature' %>

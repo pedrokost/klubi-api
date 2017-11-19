@@ -5,6 +5,8 @@ class Klub < ApplicationRecord
   has_many :branches, class_name: 'Klub', foreign_key: 'parent_id'
   belongs_to :parent, class_name: 'Klub', touch: true, optional: true
   has_many :updates, as: :updatable, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :comment_requests, as: :commentable, dependent: :destroy
 
   before_save :update_slug
   before_save :update_complete
@@ -157,7 +159,7 @@ class Klub < ApplicationRecord
     FacebookImageRetriever.new(page_id: facebook_page_id).photos
   end
 
-  private
+private
 
   def facebook_page_id
     return nil if facebook_url.nil?

@@ -33,12 +33,13 @@ Rails.application.routes.draw do
     scope module: 'api' do
       scope module: :v2, constraints: ApiConstraints.new(version: 2, default: true) do
         resources :obcinas, only: [:show]
+        resources :comments, only: [:create]
+        resources :comment_requests, only: [:create], :path => '/comment-requests'
         resources :klubs, only: [:index, :create, :update, :show] do
           member do
             get :images
           end
         end
-
         post 'email_stats/webhook' => 'email_stats#webhook'
       end
     end

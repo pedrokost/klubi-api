@@ -18,6 +18,14 @@
         "type": { "type": "string" }
       }
     },
+    "comment_reference": {
+      "type": ["object", "null"],
+      "required": ["id", "type"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" }
+      }
+    },
     "branch": {
       "type": ["object", "null"],
       "required": ["id", "type"],
@@ -32,6 +40,23 @@
             "address": { "type": ["string", "null"] },
             "latitude": { "type": ["string", "null"] },
             "longitude": { "type": ["string", "null"] }
+          }
+        }
+      }
+    },
+    "comment": {
+      "type": ["object", "null"],
+      "required": ["id", "type"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "additionalProperties": false,
+        "attributes": {
+          "type": "object",
+          "required": ["body", "commenter-name"],
+          "properties": {
+            "body": { "type": ["string", "null"] },
+            "commenter-name": { "type": ["string", "null"] }
           }
         }
       }
@@ -109,6 +134,20 @@
                   ]
                 }
               }
+            },
+            "comments": {
+              "type": "object",
+              "required": ["data"],
+              "properties": {
+                "data": {
+                  "type": ["array", "null"],
+                  "items": [
+                    {
+                      "$ref": "#/definitions/comment_reference"
+                    }
+                  ]
+                }
+              }
             }
           }
         }
@@ -118,7 +157,10 @@
       "type": "array",
       "items": [
         {
-          "$ref": "#/definitions/branch"
+          "anyOf": [
+            { "$ref": "#/definitions/branch" },
+            { "$ref": "#/definitions/comment" }
+          ]
         }
       ]
     }

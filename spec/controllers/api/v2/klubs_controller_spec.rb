@@ -120,6 +120,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
     let!(:klub1) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
     let!(:klub_branch) { FactoryGirl.create(:klub_branch, verified: true, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
     let!(:closed_klub) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes'], closed_at: Date.yesterday ) }
+    let!(:comment) { FactoryGirl.create(:comment, commentable: klub1) }
 
     before do
       get :show, params: { id: klub1.url_slug }
@@ -162,7 +163,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
     it "should include the parent" do
       get :show, params: { id: klub_branch.url_slug }
       expect(response).to match_response_schema('v2/klub')
-      parent = json_response[:included]
+      parent = json_response[:included].select { |inc| inc[:type] === 'klubs' }
       expect(parent.length).to eq 1
       parent = parent[0]
       expect(parent[:id]).to eq klub1.url_slug
@@ -179,7 +180,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
     it "should include the branches" do
       get :show, params: { id: klub1.url_slug }
       expect(response).to match_response_schema('v2/klub')
-      branches = json_response[:included]
+      branches = json_response[:included].select { |inc| inc[:type] === 'klubs' }
       expect(branches.length).to eq 1
       branch = branches[0]
       expect(branch[:id]).to eq klub_branch.url_slug
@@ -219,6 +220,16 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
       expect(images).to eq(images_klub_url(klub1.url_slug))
     end
 
+    it "includes a comments" do
+      get :show, params: { id: klub1.url_slug }
+      expect(response).to match_response_schema('v2/klub')
+      comments = json_response[:data][:relationships][:comments]
+      expect(comments[:data].length).to eq 1
+
+      comment_content = json_response[:included].select { |inc| inc[:id] == comment.id && inc[:type] == 'comments' }
+      expect(comment_content).not_to be_nil
+    end
+
     it "should return closed klubs together with closed_at" do
       get :show, params: { id: closed_klub.url_slug }
       expect(response).to match_response_schema('v2/klub')
@@ -246,7 +257,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
     end
   end
 
-  describe "GET #klubss/:id/images" do
+  describe "GET #klubs/:id/images" do
     let!(:klub) { FactoryGirl.create(:complete_klub) }
 
     context "when no valid facebook url" do
@@ -759,7 +770,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
     end
   end
 
-  describe 'PATCH #klub/:id' do
+  describe 'PATCH #klubs/:id' do
 
     let(:old_attrs) do
       {

@@ -1,0 +1,2 @@
+web: bundle exec rails server webrick -b 0.0.0.0 -p $PORT
+log: tail -f log/development.log

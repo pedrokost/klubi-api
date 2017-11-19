@@ -14,7 +14,9 @@ class DashboardManifest
     :updates,
     :email_stats,
     :statisticna_regijas,
-    :obcinas
+    :obcinas,
+    :comments,
+    :comment_requests
   ].freeze
 
   # `ROOT_DASHBOARD`

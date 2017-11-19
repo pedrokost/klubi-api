@@ -1,5 +1,22 @@
 # This will guess the User class
 FactoryGirl.define do
+
+  factory :comment_request do
+    commentable { FactoryGirl.create(:complete_klub) }
+    requester_email "requester@test.com"
+    requester_name "Reqester Name"
+    commenter_email "commenter@test.com"
+    commenter_name "The Commenter"
+    comment nil
+  end
+
+  factory :comment do
+    commentable { FactoryGirl.create(:complete_klub) }
+    body "My comment"
+    commenter_email "commenter@test.com"
+    commenter_name "Commenter Name"
+  end
+
   factory :obcina do
     sequence :name do |n|
       "Obcinas-#{n}"
@@ -10,6 +27,7 @@ FactoryGirl.define do
     population_size 1
     geom ""
   end
+
   factory :statisticna_regija do
     name "MyString"
     slug "MyString"
@@ -32,14 +50,12 @@ FactoryGirl.define do
     last_delivery_at "2017-01-14 17:35:02"
   end
 
-
   factory :update do
     field 'name'
     oldvalue 'banana'
     newvalue 'pear'
     status 'unverified'
   end
-
 
   factory :klub do
 
@@ -66,7 +82,6 @@ FactoryGirl.define do
       verified true
       association :parent, factory: :complete_klub
     end
-
 
     factory :klub_to_import do
       address 'Trzaska cesta 25, 1000 Ljubljana'

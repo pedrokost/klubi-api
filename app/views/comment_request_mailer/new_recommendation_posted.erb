@@ -1,0 +1,15 @@
+Pozdravljeni <%= @comment_request.requester_name %>,
+
+<p><%= %w[Wooow! Hudo, Čestitam!].sample %> <%= @comment.commenter_name %> je pravkar objavil 🏆 priporočilo 🏆 za <%= link_to @comment.commentable.name, @comment.commentable.spa_url %> 👍:</p>
+
+<blockquote cite="<%= @comment.commentable.spa_url %>">
+  <p><%= @comment.body %></p>
+  <footer>— <%= link_to @comment.commenter_name, @comment.commentable.spa_url %></footer>
+</blockquote>
+
+<p>
+  <small>To sporočilo ste dobili, ker ste uporabnika <%= @comment.commenter_name %> povabili, da napiše priporočilo za <%= @comment.commentable.name %> na portalu Klubi Slovenije.</small>
+</p>
+
+Lep pozdrav, <br>
+<%= render partial: 'shared/default_email_signature' %>
