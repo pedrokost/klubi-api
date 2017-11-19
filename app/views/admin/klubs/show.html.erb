@@ -24,6 +24,12 @@ as well as a link to its edit page.
   </h1>
 
   <div>
+    <%= link_to(
+      "Open on klubi.si",
+      page.resource.spa_url,
+      class: "button",
+      target: "_blank"
+    ) %>
     <% if page.resource.verified %>
       <%= form_tag([:toggleverify, namespace, page.resource]) do %>
         <%= submit_tag("Mark as unverified", class: 'button button') %>
