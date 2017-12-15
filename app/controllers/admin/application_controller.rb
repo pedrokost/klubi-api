@@ -22,6 +22,12 @@ module Admin
     #   params[:per_page] || 20
     # end
 
+    def destroy
+      requested_resource.destroy
+      flash[:notice] = translate_with_resource("destroy.success")
+      redirect_to action: :index, subdomain: 'admin'
+    end
+
 
     def default_params
       params[:order] ||= "created_at"
