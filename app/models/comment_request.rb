@@ -22,7 +22,7 @@ class CommentRequest < ApplicationRecord
   end
 
   def spa_url
-    "#{self.commentable.spa_url}oddaj-mnenje/#{request_hash}".freeze
+    "#{self.commentable.spa_url}podaj-mnenje/#{request_hash}".freeze
   end
 
 private

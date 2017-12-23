@@ -55,7 +55,7 @@ RSpec.describe CommentRequest, type: :model do
       allow(ENV).to receive(:[]).with("WEBSITE_FULL_HOST").and_return('https://www.example.com')
       klub.categories = ['football']
       subject.save
-      expect(subject.spa_url).to eq "https://www.example.com/football/#{klub.url_slug}/oddaj-mnenje/#{subject.request_hash}"
+      expect(subject.spa_url).to eq "https://www.example.com/football/#{klub.url_slug}/podaj-mnenje/#{subject.request_hash}"
     end
   end
 end
