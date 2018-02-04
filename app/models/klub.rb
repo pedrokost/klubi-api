@@ -1,5 +1,6 @@
 require 'pry' if Rails.env.test?
 require 'facebook_image_retriever'
+require 'google_analytics_fetcher'
 
 class Klub < ApplicationRecord
   has_many :branches, class_name: 'Klub', foreign_key: 'parent_id'
@@ -56,7 +57,6 @@ class Klub < ApplicationRecord
     end
   end
 
-
   def send_on_create_notifications(editor)
     send_review_notification
     send_thanks_notification editor if editor
@@ -89,11 +89,11 @@ class Klub < ApplicationRecord
       val = val.map(&:parameterize) if key.to_s == 'categories'
 
       if key.to_s == 'notes'
-        if send(key).blank?
-          val = "#{Date.today}: #{val}"
-        else
-          val = "#{Date.today}: #{val}\n#{send(key)}"
-        end
+        val = if send(key).blank?
+                "#{Date.today}: #{val}"
+              else
+                "#{Date.today}: #{val}\n#{send(key)}"
+              end
       end
 
       duplicate_update = Update.where(updatable: self, field: key, oldvalue: send(key).to_s, newvalue: val.to_s, editor_email: editor, status: Update.statuses[:unverified]).where('created_at >= ?', 1.month.ago)
@@ -106,7 +106,6 @@ class Klub < ApplicationRecord
         newvalue: val.to_s,
         editor_email: editor
       )
-
     end
     updates
   end
@@ -157,6 +156,20 @@ class Klub < ApplicationRecord
     return [] unless facebook_page_id
 
     FacebookImageRetriever.new(page_id: facebook_page_id).photos
+  end
+
+  def update_visits_count_if_outdated!
+    return if visits_count_updated_at && visits_count_updated_at >= 1.day.ago.to_date
+    update_visits_count!
+  end
+
+  def update_visits_count!
+    return 0 unless persisted?
+    count = GoogleAnalyticsFetcher.new.total_visitors(id)
+    return unless count.nil?
+    self.visits_count = count
+    self.visits_count_updated_at = DateTime.now
+    save!
   end
 
 private

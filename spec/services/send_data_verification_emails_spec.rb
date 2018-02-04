@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2016-11-27 15:42:50
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-08-06 19:34:14
+# @Last Modified time: 2018-02-04 20:40:26
 
 
 require 'rails_helper'
@@ -97,8 +97,21 @@ RSpec.describe SendDataVerificationEmails do
 
   it "should send the emails" do
     allow(subject).to receive(:awaiting_klubs).and_return([klub4])
+    allow(klub4).to receive(:branches).and_return([])
+    allow(klub4).to receive(:update_visits_count_if_outdated!).exactly(2).times
 
-    expect_any_instance_of(Klub).to receive(:send_request_verify_klub_data_mail)
+    expect(klub4).to receive(:send_request_verify_klub_data_mail)
+
+    subject.call
+  end
+
+  it "should update the visits count" do
+    allow(subject).to receive(:awaiting_klubs).and_return([klub4])
+    allow(klub4).to receive(:branches).and_return([klub_branch])
+    allow(klub4).to receive(:send_request_verify_klub_data_mail)
+
+    expect(klub4).to receive(:update_visits_count_if_outdated!)
+    expect(klub_branch).to receive(:update_visits_count_if_outdated!)
 
     subject.call
   end

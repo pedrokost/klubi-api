@@ -238,7 +238,9 @@ CREATE TABLE klubs (
     notes character varying,
     last_verification_reminder_at timestamp without time zone,
     closed_at date,
-    description character varying
+    description character varying,
+    visits_count integer DEFAULT 0,
+    visits_count_updated_at timestamp without time zone
 );
 
 
@@ -799,6 +801,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20171029112020'),
 ('20171029141942'),
 ('20171118175221'),
-('20171118180158');
+('20171118180158'),
+('20180204185203');
 
 

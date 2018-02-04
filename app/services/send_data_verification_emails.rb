@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2017-01-07 21:23:02
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2017-09-16 20:25:05
+# @Last Modified time: 2018-02-04 20:41:01
 
 class SendDataVerificationEmails
   # Sends email to klub owners who have not verified their klub data for a
@@ -19,6 +19,10 @@ class SendDataVerificationEmails
       msg = "Sending data verification request email to #{klub.email} for klub #{klub.name}"
       Rails.logger.info msg
       puts msg
+
+      klub.update_visits_count_if_outdated!
+      klub.branches.each(&:update_visits_count_if_outdated!)
+
       klub.send_request_verify_klub_data_mail
     end
   rescue Exception => e

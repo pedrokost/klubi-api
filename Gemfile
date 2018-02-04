@@ -33,6 +33,8 @@ gem 'json_spec', '~>1.1.4'
 
 gem 'newrelic_rpm', '~> 4.1.0.333'
 
+gem 'google-api-client', '~> 0.19.5'
+
 gem 'pry-rails'
 
 gem "koala", "~> 3.0.0"

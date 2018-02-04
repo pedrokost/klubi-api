@@ -1,6 +1,7 @@
 require 'rails_helper'
 require 'pry'
 
+
 RSpec.describe Klub, :type => :model do
 
   let(:klub) { build(:klub,
@@ -443,6 +444,65 @@ RSpec.describe Klub, :type => :model do
         expect(klub.latitude).to eq 46.044899
         expect(klub.longitude).to eq 14.489231
       end
+    end
+  end
+
+  describe "update_visits_count_if_outdated" do
+    it "updates visit count if nil" do
+      subject.save!
+      expect(subject).to receive(:update_visits_count!)
+
+      subject.update_visits_count_if_outdated!
+    end
+
+    it "updates the count if out of date" do
+      subject.visits_count = 7
+      subject.visits_count_updated_at = 1.month.ago
+      subject.save!
+      expect(subject).to receive(:update_visits_count!)
+
+      subject.update_visits_count_if_outdated!
+    end
+
+    it "returns current count if recent" do
+      subject.visits_count = 7
+      subject.visits_count_updated_at = 7.hours.ago
+      subject.save!
+      expect(subject).not_to receive(:update_visits_count!)
+
+      subject.update_visits_count_if_outdated!
+    end
+  end
+
+  describe "update_visits_count" do
+
+    it "returns 0 for non persisted klubs" do
+      expect(subject.persisted?).to be_falsy
+      subject.update_visits_count!
+      expect(subject.visits_count).to eq 0
+    end
+
+    it "updates the count and date" do
+      subject.save!
+      expect_any_instance_of(GoogleAnalyticsFetcher).to receive(:total_visitors).and_return(5)
+
+      subject.update_visits_count!
+
+      expect(subject.reload.visits_count).to eq 5
+      expect(subject.reload.visits_count_updated_at).to be > 5.minutes.ago
+    end
+
+    it "does nothing if can't reach GA" do
+      time_ago = 45.minutes.ago
+      subject.visits_count = 7
+      subject.visits_count_updated_at = time_ago
+      subject.save!
+      expect_any_instance_of(GoogleAnalyticsFetcher).to receive(:total_visitors).and_return(nil)
+
+      subject.update_visits_count!
+
+      expect(subject.visits_count).to eq 7
+      expect(subject.visits_count_updated_at).to eq time_ago
     end
   end
 end
