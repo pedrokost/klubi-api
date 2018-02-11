@@ -21,6 +21,10 @@ module Admin
     def toggleverify
       requested_resource.toggle!(:verified)
 
+      if requested_resource.verified? && (requested_resource.data_confirmed_at.nil? || requested_resource.data_confirmed_at < requested_resource.created_at)
+        requested_resource.update_attributes! data_confirmed_at: requested_resource.created_at
+      end
+
       redirect_to(
         [:admin, requested_resource],
         notice: translate_with_resource("update.success")
