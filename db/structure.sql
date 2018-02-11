@@ -240,7 +240,8 @@ CREATE TABLE klubs (
     closed_at date,
     description character varying,
     visits_count integer DEFAULT 0,
-    visits_count_updated_at timestamp without time zone
+    visits_count_updated_at timestamp without time zone,
+    data_confirmed_at timestamp without time zone
 );
 
 
@@ -802,6 +803,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20171029141942'),
 ('20171118175221'),
 ('20171118180158'),
-('20180204185203');
+('20180204185203'),
+('20180211111013');
 
 

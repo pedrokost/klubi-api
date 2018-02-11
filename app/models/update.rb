@@ -24,7 +24,12 @@ class Update < ApplicationRecord
         the_new_value = YAML.load(newvalue).uniq.map(&:parameterize)
       end
 
-      updatable.update_attributes field => the_new_value
+      new_attributes = { field => the_new_value }
+      if updatable.data_confirmed_at.nil? || self.created_at > updatable.data_confirmed_at
+        new_attributes[:data_confirmed_at] = self.created_at
+      end
+      updatable.update_attributes new_attributes
+
     end
   end
 
