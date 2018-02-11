@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2017-01-07 21:23:02
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2018-02-04 20:41:01
+# @Last Modified time: 2018-02-11 13:39:01
 
 class SendDataVerificationEmails
   # Sends email to klub owners who have not verified their klub data for a
@@ -41,6 +41,7 @@ class SendDataVerificationEmails
     supported_categories = ENV['SUPPORTED_CATEGORIES'].split ','
 
     Klub.where('last_verification_reminder_at IS NULL OR last_verification_reminder_at < ?', threshold_date)
+        .where('data_confirmed_at IS NULL OR data_confirmed_at < ?', threshold_date) # TODO:test
         .where(verified: true)
         .where('ARRAY[?]::varchar[] && categories', supported_categories)
         .where(parent: nil)

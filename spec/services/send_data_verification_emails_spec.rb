@@ -2,7 +2,7 @@
 # @Author: Pedro Kostelec
 # @Date:   2016-11-27 15:42:50
 # @Last Modified by:   Pedro Kostelec
-# @Last Modified time: 2018-02-04 20:40:26
+# @Last Modified time: 2018-02-11 13:38:56
 
 
 require 'rails_helper'
@@ -16,6 +16,7 @@ RSpec.describe SendDataVerificationEmails do
   let!(:klub3) { create(:complete_klub, email: 'test@test.com') }
   let!(:klub4) { create(:complete_klub, email: 'test@test.com') }
   let!(:closed_klub) { create(:complete_klub, email: 'closed@test.com', closed_at: Date.yesterday) }
+  let!(:klub_data_confirmed) { create(:complete_klub, email: 'confirmed@test.com', data_confirmed_at: 3.days.ago, last_verification_reminder_at: 1.year.ago )}
   let!(:klub_nil_email) { create(:complete_klub, email: nil) }
   let!(:klub_invalid_email) { create(:complete_klub, email: '234 234 234') }
   let!(:klub_blank_email) { create(:complete_klub, email: '') }
@@ -36,6 +37,11 @@ RSpec.describe SendDataVerificationEmails do
     it "should not include klubs to which a notif was recently sent" do
       expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
       expect(subject.awaiting_klubs.map(&:id)).not_to include(klub1.id)
+    end
+
+    it "should not include klubs which have been recently confirmed" do
+      expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
+      expect(subject.awaiting_klubs.map(&:id)).not_to include(klub_data_confirmed.id)
     end
 
     it "should not include klubs which are not verified" do
