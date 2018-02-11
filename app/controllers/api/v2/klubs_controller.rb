@@ -99,6 +99,13 @@ module Api
         render json: images
       end
 
+      def confirm
+        klub = Klub.where(data_confirmation_request_hash: params[:request_hash]).first
+        head :not_found and return unless klub
+
+        klub.update_attributes! data_confirmed_at: DateTime.now, data_confirmation_request_hash: nil
+      end
+
     private
       def find_klub
         slug_with_id = params[:id]

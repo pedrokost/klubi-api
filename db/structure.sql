@@ -241,7 +241,8 @@ CREATE TABLE klubs (
     description character varying,
     visits_count integer DEFAULT 0,
     visits_count_updated_at timestamp without time zone,
-    data_confirmed_at timestamp without time zone
+    data_confirmed_at timestamp without time zone,
+    data_confirmation_request_hash character varying
 );
 
 

@@ -38,6 +38,7 @@ Rails.application.routes.draw do
         resources :klubs, only: [:index, :create, :update, :show] do
           member do
             get :images
+            post :confirm
           end
         end
         post 'email_stats/webhook' => 'email_stats#webhook'

@@ -1133,4 +1133,41 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
       end
     end
   end
+
+  describe "POST #klubs/:id/confirm" do
+    let!(:klub) { FactoryGirl.create(:complete_klub, data_confirmation_request_hash: 'myhash') }
+
+    it "requires a valid data_confirmation_request_hash" do
+      post :confirm, params: {
+        id: klub.url_slug,
+        request_hash: 'not real'
+      }
+      expect(response.status).to eq 404
+    end
+
+    it "returns 204" do
+      post :confirm, params: {
+        id: klub.url_slug,
+        request_hash: 'myhash'
+      }
+      expect(response.status).to eq 204
+    end
+
+    it "updates the data_confirmed_at" do
+      post :confirm, params: {
+        id: klub.url_slug,
+        request_hash: 'myhash'
+      }
+
+      expect(klub.reload.data_confirmed_at).not_to be_nil
+    end
+
+    it "nullifies the data_confirmation_request_hash when done" do
+      post :confirm, params: {
+        id: klub.url_slug,
+        request_hash: 'myhash'
+      }
+      expect(klub.reload.data_confirmation_request_hash).to be_nil
+    end
+  end
 end
