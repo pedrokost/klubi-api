@@ -11,6 +11,7 @@ Pozdravljeni, <br>
 
 <p>S tem, da popravite morebitne napake v podatkih omogočate obiskovalcem spletnega portala, da lažje najdejo in obiščejo <%= link_to 'vaš klub', @klub.spa_url %>!</p>
 
+<p>Če so zgornji podatki pravilni, nam to lahko potrdite <%= link_to 's klikom na to povezavo.', @klub.spa_data_confirmation_url %></p>
 
 Najlepša hvala in lep pozdrav, <br>
 <%= render partial: 'shared/default_email_signature' %>

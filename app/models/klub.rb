@@ -73,6 +73,9 @@ class Klub < ApplicationRecord
 
   def send_request_verify_klub_data_mail
     return if email.blank?
+
+    generate_data_confirmation_request_hash!
+
     KlubMailer.request_verify_klub_mail(id, email).deliver_now
     update_attribute :last_verification_reminder_at, DateTime.now
   end
@@ -135,6 +138,10 @@ class Klub < ApplicationRecord
     "#{ENV['WEBSITE_FULL_HOST']}/#{category_for_url}/#{url_slug}/uredi/".freeze
   end
 
+  def spa_data_confirmation_url
+    "#{ENV['WEBSITE_FULL_HOST']}/#{category_for_url}/#{url_slug}/confirm/#{data_confirmation_request_hash}".freeze
+  end
+
   def static_map_url(width: 400, height: 300)
     "https://maps.googleapis.com/maps/api/staticmap?center=#{latitude},#{longitude}&zoom=15&size=#{width}x#{height}&maptype=roadmap&markers=color:blue%7Clabel:%7C#{latitude},#{longitude}&key=#{ENV['GOOGLE_STATIC_MAPS_SERVER_API_KEY']}".html_safe.freeze
   end
@@ -172,7 +179,13 @@ class Klub < ApplicationRecord
     save!
   end
 
+
 private
+
+  def generate_data_confirmation_request_hash!
+    self.data_confirmation_request_hash = SecureRandom.uuid
+    self.save!
+  end
 
   def facebook_page_id
     return nil if facebook_url.nil?

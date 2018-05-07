@@ -265,6 +265,7 @@ RSpec.describe KlubMailer, :type => :mailer do
         facebook_url: 'http://facebook.com',
         website: 'http://website.com',
         address: "Cesta XV. brigade 2, Metlika",
+        data_confirmation_request_hash: '1234xxxx',
         phone: "041 444 222")
     }
     let!(:klub_branch) {
@@ -316,6 +317,10 @@ RSpec.describe KlubMailer, :type => :mailer do
     it "list all klub data, together with branches" do
       expect(mail.body.encoded.downcase).to match(klub.address.downcase)
       expect(mail.body.encoded.downcase).to match('videm pri ptuju 49, 2284 videm pri ptuju, slovenija')
+    end
+
+    it "includes link to confirm data" do
+      expect(mail.body.encoded.downcase).to match("https://www.klubi.si/fitnes/#{klub.url_slug}/confirm/1234xxxx")
     end
   end
 end
