@@ -320,7 +320,7 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it "includes link to confirm data" do
-      expect(mail.body.encoded.downcase).to match("https://www.klubi.si/fitnes/#{klub.url_slug}/confirm/1234xxxx")
+      expect(mail.body.encoded.downcase).to match("https://www.klubi.si/fitnes/#{klub.url_slug}/potrdi/1234xxxx")
     end
   end
 end

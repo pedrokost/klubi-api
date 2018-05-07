@@ -139,7 +139,7 @@ class Klub < ApplicationRecord
   end
 
   def spa_data_confirmation_url
-    "#{ENV['WEBSITE_FULL_HOST']}/#{category_for_url}/#{url_slug}/confirm/#{data_confirmation_request_hash}".freeze
+    "#{ENV['WEBSITE_FULL_HOST']}/#{category_for_url}/#{url_slug}/potrdi/#{data_confirmation_request_hash}".freeze
   end
 
   def static_map_url(width: 400, height: 300)

@@ -77,7 +77,7 @@ RSpec.describe Klub, type: :model do
       allow(ENV).to receive(:[]).with('SUPPORTED_CATEGORIES').and_return('football')
       allow(ENV).to receive(:[]).with('WEBSITE_FULL_HOST').and_return('https://www.example.com')
       klub.categories = %w[football]
-      expect(klub.spa_data_confirmation_url).to include 'confirm'
+      expect(klub.spa_data_confirmation_url).to include 'potrdi'
       expect(klub.spa_data_confirmation_url).to include '1234xxxx'
     end
   end

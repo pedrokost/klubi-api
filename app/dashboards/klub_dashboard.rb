@@ -32,6 +32,8 @@ class KlubDashboard < Administrate::BaseDashboard
     editor_emails: Field::String.with_options(searchable: false),
     parent_id: Field::Number.with_options(searchable: false),
     last_verification_reminder_at: Field::DateTime.with_options(searchable: false),
+    data_confirmation_request_hash: Field::String.with_options(searchable: false),
+    data_confirmed_at: Field::DateTime.with_options(searchable: false),
     closed_at: Field::DateTime.with_options(searchable: false)
   }.freeze
 
@@ -68,6 +70,7 @@ class KlubDashboard < Administrate::BaseDashboard
     :editor_emails,
     :description,
     :notes,
+    :data_confirmed_at,
     :branches,
     :closed_at
   ].freeze
