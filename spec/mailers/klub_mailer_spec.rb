@@ -27,11 +27,11 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it 'send klub\'s categories' do
-      expect(mail.body.encoded).to match('fitnes.*zumba')
+      expect(mail.html_part.body.decoded).to match('fitnes.*zumba')
     end
 
     it 'should send long parameters in full length' do
-      expect(mail.body.encoded).to match('My klub' * 10)
+      expect(mail.html_part.body.decoded).to match('My klub' * 10)
     end
 
     it "should contain direct link to admin's klub page" do

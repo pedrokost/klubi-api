@@ -171,12 +171,15 @@ class Klub < ApplicationRecord
   end
 
   def update_visits_count!
+
+
     return 0 unless persisted?
     count = GoogleAnalyticsFetcher.new.total_visitors(id)
-    return unless count.nil?
-    self.visits_count = count
-    self.visits_count_updated_at = DateTime.now
-    save!
+
+    return if count.nil?
+
+    update visits_count: count,
+           visits_count_updated_at: DateTime.now
   end
 
 
