@@ -1,8 +1,7 @@
-# README
+# Klubi Slovenije
 
-* Ruby version
-
-* System dependencies
+[![View performance data on Skylight](https://badges.skylight.io/status/pkiwulxFzCaH.svg?token=0Lzt51YRdY8Dg0Fz2x9PEbjDcgrfn9Xpo-YNy0Hmmac)](https://www.skylight.io/app/applications/pkiwulxFzCaH)
+[![View performance data on Skylight](https://badges.skylight.io/typical/pkiwulxFzCaH.svg?token=0Lzt51YRdY8Dg0Fz2x9PEbjDcgrfn9Xpo-YNy0Hmmac)](https://www.skylight.io/app/applications/pkiwulxFzCaH)
 
 * Configuration
 
