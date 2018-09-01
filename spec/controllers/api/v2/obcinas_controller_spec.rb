@@ -5,9 +5,9 @@ require 'pry'
 RSpec.describe Api::V2::ObcinasController, type: :controller do
 
   describe 'GET #obcinas' do
-    let!(:touching_obcina) { FactoryGirl.create(:obcina, name: 'Touching obcina', slug: 'touching-obcina' ) }
-    let!(:obcina) { FactoryGirl.create(:obcina, name: 'Grosuplje', slug: 'grosuplje' ) }
-    let!(:klub) { FactoryGirl.create(:complete_klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes']) }
+    let!(:touching_obcina) { FactoryBot.create(:obcina, name: 'Touching obcina', slug: 'touching-obcina' ) }
+    let!(:obcina) { FactoryBot.create(:obcina, name: 'Grosuplje', slug: 'grosuplje' ) }
+    let!(:klub) { FactoryBot.create(:complete_klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes']) }
 
     describe "without providing category param" do
       before do

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
 
-  let(:klub) { FactoryGirl.create(:complete_klub)  }
+  let(:klub) { FactoryBot.create(:complete_klub)  }
   let(:comment) { build(:comment, {
       commentable: klub,
       body: 'This is the comment',

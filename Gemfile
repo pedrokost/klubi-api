@@ -7,14 +7,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.1.3'
+gem 'rails', '~> 5.2.1'
 
 gem 'rack-ssl-enforcer'
 
 gem 'puma', '~>3.8.2'
 gem 'pg', '~>0.18.2'
 
-gem 'activerecord-postgis-adapter'
+gem 'activerecord-postgis-adapter', '~> 5.2.1'
 
 gem 'rails_12factor', group: :production
 
@@ -73,7 +73,7 @@ gem 'levenshtein-ffi', :require => 'levenshtein'
 gem 'aws-sdk' , '~> 2.6.44'  # for uploading the sitemap
 gem 'sitemap_generator', '~> 5.2.0'
 
-gem 'administrate', '0.8.1'
+gem 'administrate', '0.10.0'
 
 # Makes caching into memcacher work
 gem "dalli", '~> 2.7.6'
@@ -81,14 +81,14 @@ gem "memcachier", '~> 0.0.2'
 
 gem 'raygun4ruby', '~> 1.1.11'
 
-gem "delayed_job_active_record", "~> 4.1.2"
+gem "delayed_job_active_record", "~> 4.1.3"
 gem "workless", "~> 2.2.0"
 
 group :development, :test do
   gem 'spring-commands-rspec'
-  gem 'rspec-rails', '~> 3.5.2'
+  gem 'rspec-rails', '~> 3.8.0'
   gem 'guard-rspec'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 

@@ -6,10 +6,10 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
   include ActiveSupport::Testing::TimeHelpers
 
   describe 'GET #klubs' do
-    let!(:klub1) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
-    let!(:klub2) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes']) }
-    let!(:closed_klub) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes'], closed_at: Date.yesterday ) }
-    let!(:klub_branch) { FactoryGirl.create(:klub_branch, verified: true, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
+    let!(:klub1) { FactoryBot.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
+    let!(:klub2) { FactoryBot.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes']) }
+    let!(:closed_klub) { FactoryBot.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes'], closed_at: Date.yesterday ) }
+    let!(:klub_branch) { FactoryBot.create(:klub_branch, verified: true, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
 
     before do
       get :index, params: { category: 'fitnes' }
@@ -17,7 +17,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
 
     subject { response }
 
-    it { should be_success }
+    it { should be_successful }
 
     it "should return all open klubs" do
       klubs = json_response[:data]
@@ -104,7 +104,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         end
 
         it "should return 200" do
-          expect(response).to be_success
+          expect(response).to be_successful
         end
 
         it "should return an empty result set" do
@@ -117,10 +117,10 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
   end
 
   describe 'GET #klubs/:id' do
-    let!(:klub1) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
-    let!(:klub_branch) { FactoryGirl.create(:klub_branch, verified: true, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
-    let!(:closed_klub) { FactoryGirl.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes'], closed_at: Date.yesterday ) }
-    let!(:comment) { FactoryGirl.create(:comment, commentable: klub1) }
+    let!(:klub1) { FactoryBot.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
+    let!(:klub_branch) { FactoryBot.create(:klub_branch, verified: true, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
+    let!(:closed_klub) { FactoryBot.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes'], closed_at: Date.yesterday ) }
+    let!(:comment) { FactoryBot.create(:comment, commentable: klub1) }
 
     before do
       get :show, params: { id: klub1.url_slug }
@@ -128,7 +128,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
 
     subject { response }
 
-    it { should be_success }
+    it { should be_successful }
 
     it "should return only klub1" do
       expect(json_response[:data].class).to eq Hash
@@ -245,7 +245,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
       end
 
       it "should return 200" do
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it "should return return the klub" do
@@ -258,7 +258,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
   end
 
   describe "GET #klubs/:id/images" do
-    let!(:klub) { FactoryGirl.create(:complete_klub) }
+    let!(:klub) { FactoryBot.create(:complete_klub) }
 
     context "when no valid facebook url" do
       before do
@@ -269,7 +269,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
 
       subject { response }
 
-      it { should be_success }
+      it { should be_successful }
 
       it "should conform to the schema" do
         expect(response).to match_response_schema("v2/images")
@@ -289,7 +289,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
 
       subject { response }
 
-      it { should be_success }
+      it { should be_successful }
 
       it "should conform to the schema" do
         expect(response).to match_response_schema("v2/images")
@@ -341,7 +341,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
 
       subject { response }
 
-      it { should be_success }
+      it { should be_successful }
 
       it "should conform to the schema" do
         expect(response).to match_response_schema("v2/images")
@@ -797,7 +797,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         'facebook-url': 'http://facebook.com/newclub'
       }
     end
-    let!(:klub) { FactoryGirl.create(:klub, old_attrs.merge(verified: true)) }
+    let!(:klub) { FactoryBot.create(:klub, old_attrs.merge(verified: true)) }
 
     it "should be accepted" do
       patch :update, params: {
@@ -950,8 +950,8 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
 
     context "a klub with branches [expectations]" do
 
-      let!(:klub_branch) { FactoryGirl.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
-      let!(:second_branch) { FactoryGirl.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
+      let!(:klub_branch) { FactoryBot.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
+      let!(:second_branch) { FactoryBot.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
 
       def send_request
         patch :update, params: {
@@ -1004,8 +1004,8 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
 
     context "a klub with branches" do
 
-      let!(:klub_branch) { FactoryGirl.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
-      let!(:second_branch) { FactoryGirl.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
+      let!(:klub_branch) { FactoryBot.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
+      let!(:second_branch) { FactoryBot.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
 
       before do
 
@@ -1135,7 +1135,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
   end
 
   describe "POST #klubs/:id/confirm" do
-    let!(:klub) { FactoryGirl.create(:complete_klub, data_confirmation_request_hash: 'myhash') }
+    let!(:klub) { FactoryBot.create(:complete_klub, data_confirmation_request_hash: 'myhash') }
 
     it "requires a valid data_confirmation_request_hash" do
       post :confirm, params: {

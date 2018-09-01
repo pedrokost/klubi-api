@@ -15,8 +15,8 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
 
   describe 'PUT #updates/:id' do
 
-    let!(:klub) { FactoryGirl.create(:complete_klub, editor_emails: ['owner@email.com']) }
-    let!(:update) { FactoryGirl.create(:update, updatable: klub, field: 'name', oldvalue: klub.name, newvalue: 'Scented', editor_email: 'editor@email.com') }
+    let!(:klub) { FactoryBot.create(:complete_klub, editor_emails: ['owner@email.com']) }
+    let!(:update) { FactoryBot.create(:update, updatable: klub, field: 'name', oldvalue: klub.name, newvalue: 'Scented', editor_email: 'editor@email.com') }
 
     it "should be accepted" do
       # binding.pry
@@ -50,8 +50,8 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
   end
 
   describe 'POST #updates/:id/reject' do
-    let!(:klub) { FactoryGirl.create(:complete_klub) }
-    let!(:update) { FactoryGirl.create(:update, updatable: klub, field: 'name', oldvalue: klub.name, newvalue: 'Scented') }
+    let!(:klub) { FactoryBot.create(:complete_klub) }
+    let!(:update) { FactoryBot.create(:update, updatable: klub, field: 'name', oldvalue: klub.name, newvalue: 'Scented') }
 
     it "should set the correct status" do
       expect {
@@ -73,8 +73,8 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
   end
 
   describe 'POST #updates/:id/accept' do
-    let!(:klub) { FactoryGirl.create(:complete_klub) }
-    let!(:update) { FactoryGirl.create(:update, updatable: klub, field: 'name', oldvalue: klub.name, newvalue: 'Scented') }
+    let!(:klub) { FactoryBot.create(:complete_klub) }
+    let!(:update) { FactoryBot.create(:update, updatable: klub, field: 'name', oldvalue: klub.name, newvalue: 'Scented') }
 
     it "should set the correct status" do
       expect {

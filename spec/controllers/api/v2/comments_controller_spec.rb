@@ -39,8 +39,8 @@ RSpec.describe Api::V2::CommentsController, type: :controller do
         }
       }
 
-      let(:comment) { FactoryGirl.create(:comment) }
-      let!(:comment_request) { FactoryGirl.create(:comment_request, { request_hash: '1234', comment: comment }) }
+      let(:comment) { FactoryBot.create(:comment) }
+      let!(:comment_request) { FactoryBot.create(:comment_request, { request_hash: '1234', comment: comment }) }
 
       it "returns an error status code" do
         post :create, params: comment_attrs
@@ -60,7 +60,7 @@ RSpec.describe Api::V2::CommentsController, type: :controller do
 
     context "with a comments request hash" do
 
-      let!(:comment_request) { FactoryGirl.create(:comment_request, { request_hash: '1234'} ) }
+      let!(:comment_request) { FactoryBot.create(:comment_request, { request_hash: '1234'} ) }
 
       let(:comment_attrs) {
         {
@@ -78,7 +78,7 @@ RSpec.describe Api::V2::CommentsController, type: :controller do
 
       it "returns success" do
         post :create, params: comment_attrs
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it "returns the id of the created comment" do

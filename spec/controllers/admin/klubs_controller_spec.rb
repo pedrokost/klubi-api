@@ -14,7 +14,7 @@ RSpec.describe Admin::KlubsController, :type => :controller do
   end
 
   describe 'POST #klubs/:id/send_data_verification_email' do
-    let!(:klub) { FactoryGirl.create(:complete_klub, email: 'owner@test.com') }
+    let!(:klub) { FactoryBot.create(:complete_klub, email: 'owner@test.com') }
 
     it "should send an email" do
       expect_any_instance_of(Klub).to receive(:send_request_verify_klub_data_mail).once
@@ -26,7 +26,7 @@ RSpec.describe Admin::KlubsController, :type => :controller do
   describe "POST #klubs/:id/toggleverify" do
 
     context "setting verification" do
-      let!(:klub) { FactoryGirl.create(:complete_klub, verified: false, data_confirmed_at: nil, created_at: 2.days.ago.beginning_of_day) }
+      let!(:klub) { FactoryBot.create(:complete_klub, verified: false, data_confirmed_at: nil, created_at: 2.days.ago.beginning_of_day) }
 
       it "set data_confirmed_at if missing" do
         post :toggleverify, params: { id: klub.id }
@@ -47,7 +47,7 @@ RSpec.describe Admin::KlubsController, :type => :controller do
     end
 
     context "un-setting verification" do
-      let!(:klub) { FactoryGirl.create(:complete_klub, verified: true, data_confirmed_at: 3.days.ago.beginning_of_hour) }
+      let!(:klub) { FactoryBot.create(:complete_klub, verified: true, data_confirmed_at: 3.days.ago.beginning_of_hour) }
 
       it "does not change data_confirmed_at" do
         prev_val = klub.data_confirmed_at

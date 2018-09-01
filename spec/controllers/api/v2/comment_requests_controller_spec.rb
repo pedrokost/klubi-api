@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Api::V2::CommentRequestsController, type: :controller do
 
   describe "POST #comment-requests" do
-    let(:klub) { FactoryGirl.create(:complete_klub) }
+    let(:klub) { FactoryBot.create(:complete_klub) }
 
     it "should require requester email address" do
       expect {
@@ -204,7 +204,7 @@ RSpec.describe Api::V2::CommentRequestsController, type: :controller do
     end
 
     it "shoud not create new comment request if already existing" do
-      FactoryGirl.create(:comment_request, commenter_email: 'mon@her.com', commentable: klub)
+      FactoryBot.create(:comment_request, commenter_email: 'mon@her.com', commentable: klub)
 
       expect {
         post :create, params: {
@@ -256,7 +256,7 @@ RSpec.describe Api::V2::CommentRequestsController, type: :controller do
     end
 
     it "returns existing hash if request duplicated" do
-      FactoryGirl.create(:comment_request, commenter_email: 'mon@her.com', commentable: klub, request_hash: '1233')
+      FactoryBot.create(:comment_request, commenter_email: 'mon@her.com', commentable: klub, request_hash: '1233')
 
       post :create, params: {
         id: klub.url_slug,
@@ -285,7 +285,7 @@ RSpec.describe Api::V2::CommentRequestsController, type: :controller do
     it "does not resent request email if already exists" do
       expect_any_instance_of(CommentRequest).not_to receive(:send_comment_request_email)
 
-      FactoryGirl.create(:comment_request, commenter_email: 'mon@her.com', commentable: klub, request_hash: '1233')
+      FactoryBot.create(:comment_request, commenter_email: 'mon@her.com', commentable: klub, request_hash: '1233')
 
       post :create, params: {
         id: klub.url_slug,
