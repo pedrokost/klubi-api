@@ -54,7 +54,7 @@ end
 
 gem 'randexp', '~> 0.1.7'
 
-gem 'nokogiri', '~> 1.5'
+gem 'nokogiri', '~> 1.8.2'
 
 gem 'rack-attack', '~> 4.3.0'
 
