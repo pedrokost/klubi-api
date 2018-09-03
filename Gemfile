@@ -11,8 +11,8 @@ gem 'rails', '~> 5.2.1'
 
 gem 'rack-ssl-enforcer'
 
-gem 'puma', '~>3.8.2'
-gem 'pg', '~>0.18.2'
+gem 'puma', '~>3.12.0'
+gem 'pg', '~>0.18.4'
 
 gem 'activerecord-postgis-adapter', '~> 5.2.1'
 
@@ -27,15 +27,13 @@ gem 'redis', '~> 3.3.3'
 
 gem 'geocoder', '~> 1.2.8'
 
-gem 'skylight', '~> 1.4.2'
+gem 'skylight', '~> 2.0.2'
 
-gem 'json_spec', '~>1.1.4'
+gem 'json_spec', '~>1.1.5'
 
-gem 'newrelic_rpm', '~> 4.1.0.333'
+gem 'newrelic_rpm', '~> 5.3.0.346'
 
-gem 'google-api-client', '~> 0.19.5'
-
-gem 'pry-rails'
+gem 'google-api-client', '~> 0.23.8'
 
 gem "koala", "~> 3.0.0"
 
@@ -50,6 +48,7 @@ group :development do
   gem 'foreman'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'derailed_benchmarks'
 end
 
 gem 'randexp', '~> 0.1.7'
@@ -83,6 +82,8 @@ gem 'raygun4ruby', '~> 1.1.11'
 
 gem "delayed_job_active_record", "~> 4.1.3"
 gem "workless", "~> 2.2.0"
+
+gem 'pry-rails'
 
 group :development, :test do
   gem 'spring-commands-rspec'
