@@ -18,6 +18,5 @@ Geocoder.configure(
   # calculation options
   :units          => :km,       # :km for kilometers or :mi for miles
   # :distances    => :linear    # :spherical or :linear
-  :region         => :si,
-  :quotaUser      =>  ENV['GOOGLE_GEOCODING_QUOTA_USER_KEY']
+  :region         => :si
 )
