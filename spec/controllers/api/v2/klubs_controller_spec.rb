@@ -212,13 +212,15 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
       expect(branches.length).to eq 0
     end
 
-    it "includes a link to images" do
-      get :show, params: { id: klub1.url_slug }
-      expect(response).to match_response_schema('v2/klub')
+    # Facebook API has restricted access to public page images. Disable this
+    # feature until a new image hosting solution is found.
+    # it "includes a link to images" do
+    #   get :show, params: { id: klub1.url_slug }
+    #   expect(response).to match_response_schema('v2/klub')
 
-      images = json_response[:data][:relationships][:images][:links][:related]
-      expect(images).to eq(images_klub_url(klub1.url_slug))
-    end
+    #   images = json_response[:data][:relationships][:images][:links][:related]
+    #   expect(images).to eq(images_klub_url(klub1.url_slug))
+    # end
 
     it "includes a comments" do
       get :show, params: { id: klub1.url_slug }

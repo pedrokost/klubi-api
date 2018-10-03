@@ -17,10 +17,11 @@ module Api
 
       has_many :comments
 
-      has_many :images do
-        link(:related) { images_klub_url(object.url_slug) }
-        include_data false
-      end
+      # Cannot obtain Facebook permission for accessing public photos.
+      # has_many :images do
+      #   link(:related) { images_klub_url(object.url_slug) }
+      #   include_data false
+      # end
 
       belongs_to :parent, serializer: KlubSerializer, type: :klubs
 
