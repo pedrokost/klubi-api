@@ -11,9 +11,15 @@ class Api::V2::ObcinasController < ApplicationController
     # on new/deleted/updates klubs) I use a simple time-based caching method.
     # AMS caching is broken.
 
-    Rails.cache.fetch("v2/obcinas/#{obcina.slug}-#{obcina.id}", expires_in: 1.week) do
-      render json: obcina, include: [:klubs, :neighbouring_obcinas], category: category_params['category']
+    data = Rails.cache.fetch("v2/obcinas/#{obcina.slug}-#{obcina.id}-#{category_params['category']}", expires_in: 1.week) do
+      serializer = Api::V2::ObcinaSerializer.new(obcina,
+        category: category_params['category'])
+      data = ActiveModelSerializers::Adapter.create(
+        serializer,
+        include: [:klubs, :neighbouring_obcinas]).as_json
     end
+
+    render json: data
   end
 
 private
