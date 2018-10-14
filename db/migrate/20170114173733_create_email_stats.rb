@@ -1,4 +1,4 @@
-class CreateEmailStats < ActiveRecord::Migration
+class CreateEmailStats < ActiveRecord::Migration[5.0]
   def change
     create_table :email_stats do |t|
       t.string :email, null: false

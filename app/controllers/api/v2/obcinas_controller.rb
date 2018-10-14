@@ -5,7 +5,15 @@ class Api::V2::ObcinasController < ApplicationController
   def show
     obcina = find_obcina
 
-    render json: obcina, include: [:klubs, :neighbouring_obcinas], category: category_params['category']
+    # neighbouring_obcinas is expensive to compute (relatively speaking).
+    # I should cache it only, but it's simpler to cache the entire
+    # API response. Because there is no simple invalidation policy (depends
+    # on new/deleted/updates klubs) I use a simple time-based caching method.
+    # AMS caching is broken.
+
+    Rails.cache.fetch("v2/obcinas/#{obcina.slug}-#{obcina.id}", expires_in: 1.week) do
+      render json: obcina, include: [:klubs, :neighbouring_obcinas], category: category_params['category']
+    end
   end
 
 private

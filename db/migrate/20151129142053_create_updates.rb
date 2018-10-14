@@ -1,4 +1,4 @@
-class CreateUpdates < ActiveRecord::Migration
+class CreateUpdates < ActiveRecord::Migration[5.0]
   def up
     execute <<-SQL
       CREATE TYPE update_status AS ENUM ('unverified', 'accepted', 'rejected');

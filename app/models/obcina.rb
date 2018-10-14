@@ -18,7 +18,6 @@ class Obcina < ApplicationRecord
 
   def neighbouring_obcinas
     # select * from obcinas o WHERE ST_Touches(o.geom::geometry, (SELECT geom::geometry from obcinas WHERE id=235));
-
     Obcina.where.not(
       %{
         ST_Disjoint(

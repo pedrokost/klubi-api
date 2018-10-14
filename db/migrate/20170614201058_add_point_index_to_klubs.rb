@@ -1,4 +1,4 @@
-class AddPointIndexToKlubs < ActiveRecord::Migration
+class AddPointIndexToKlubs < ActiveRecord::Migration[5.0]
   def up
       execute %{
         create index index_on_klubs_location ON klubs using gist (

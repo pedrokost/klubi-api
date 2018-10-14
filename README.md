@@ -62,6 +62,8 @@ foreman run rspec spec/
 
 * Services (job queues, cache servers, search engines, etc.)
 
+* [Creating missing certification for development](https://gist.github.com/tadast/9932075)
+
 ## Deployment instructions
 
 https://github.com/cyberdelia/heroku-geo-buildpack/

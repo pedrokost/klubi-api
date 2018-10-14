@@ -1,4 +1,4 @@
-class AddIndexOnSlug < ActiveRecord::Migration
+class AddIndexOnSlug < ActiveRecord::Migration[5.0]
   def change
   	add_index :klubs, :slug
   end

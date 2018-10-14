@@ -1,4 +1,4 @@
-class CreateStatisticnaRegijas < ActiveRecord::Migration
+class CreateStatisticnaRegijas < ActiveRecord::Migration[5.0]
   def change
     create_table :statisticna_regijas do |t|
       t.string :name, null: false

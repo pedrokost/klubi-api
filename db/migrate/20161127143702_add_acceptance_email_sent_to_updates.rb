@@ -1,4 +1,4 @@
-class AddAcceptanceEmailSentToUpdates < ActiveRecord::Migration
+class AddAcceptanceEmailSentToUpdates < ActiveRecord::Migration[5.0]
   def change
     add_column :updates, :acceptance_email_sent, :boolean, default: false
 

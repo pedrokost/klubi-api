@@ -1,4 +1,4 @@
-class CreateObcinas < ActiveRecord::Migration
+class CreateObcinas < ActiveRecord::Migration[5.0]
   def change
     create_table :obcinas do |t|
       t.string :name, null: false
