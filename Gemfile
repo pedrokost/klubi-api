@@ -11,7 +11,7 @@ gem 'rails', '~> 5.2.1'
 
 gem 'rack-ssl-enforcer'
 
-gem 'puma', '~>3.12.0'
+gem 'puma', '~>3.12.4'
 gem 'pg', '~>0.18.4'
 
 gem 'activerecord-postgis-adapter', '~> 5.2.1'
