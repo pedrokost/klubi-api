@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.1'
+ruby '2.6.5'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -27,7 +27,7 @@ gem 'redis', '~> 3.3.3'
 
 gem 'geocoder', '~> 1.2.8'
 
-gem 'skylight', '~> 2.0.2'
+gem 'skylight', '~> 4.2.3'
 
 gem 'json_spec', '~>1.1.5'
 
@@ -61,11 +61,11 @@ gem 'rack-cors', '~>0.4.1', require: 'rack/cors'
 
 gem 'rack-rewrite', '~> 1.5.1'
 
-gem 'prerender_rails', '~> 1.5.1'
+gem 'prerender_rails', '~> 1.6.0'
 
 gem 'rest-client', require: false
 
-gem 'highline', '~> 1.6.21'
+gem 'tty-prompt', '~> 0.18.1'
 
 gem 'levenshtein-ffi', :require => 'levenshtein'
 

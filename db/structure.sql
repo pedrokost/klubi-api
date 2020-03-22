@@ -197,7 +197,6 @@ CREATE TABLE public.email_stats (
 --
 
 CREATE SEQUENCE public.email_stats_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -218,21 +217,21 @@ ALTER SEQUENCE public.email_stats_id_seq OWNED BY public.email_stats.id;
 
 CREATE TABLE public.klubs (
     id integer NOT NULL,
-    name character varying NOT NULL,
-    slug character varying NOT NULL,
-    address character varying,
-    town character varying,
-    website character varying,
-    phone character varying,
-    email character varying,
+    name character varying(255) NOT NULL,
+    slug character varying(255) NOT NULL,
+    address character varying(255),
+    town character varying(255),
+    website character varying(255),
+    phone character varying(255),
+    email character varying(255),
     latitude numeric(10,6),
     longitude numeric(10,6),
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
     complete boolean DEFAULT false,
-    categories character varying[] DEFAULT '{}'::character varying[],
-    facebook_url character varying,
-    editor_emails character varying[] DEFAULT '{}'::character varying[],
+    categories character varying(255)[] DEFAULT '{}'::character varying[],
+    facebook_url character varying(255),
+    editor_emails character varying(255)[] DEFAULT '{}'::character varying[],
     parent_id integer,
     verified boolean DEFAULT false,
     notes character varying,
@@ -251,7 +250,6 @@ CREATE TABLE public.klubs (
 --
 
 CREATE SEQUENCE public.klubs_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -287,7 +285,6 @@ CREATE TABLE public.obcinas (
 --
 
 CREATE SEQUENCE public.obcinas_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -307,7 +304,7 @@ ALTER SEQUENCE public.obcinas_id_seq OWNED BY public.obcinas.id;
 --
 
 CREATE TABLE public.schema_migrations (
-    version character varying NOT NULL
+    version character varying(255) NOT NULL
 );
 
 
@@ -331,7 +328,6 @@ CREATE TABLE public.statisticna_regijas (
 --
 
 CREATE SEQUENCE public.statisticna_regijas_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -370,7 +366,6 @@ CREATE TABLE public.updates (
 --
 
 CREATE SEQUENCE public.updates_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -495,14 +490,6 @@ ALTER TABLE ONLY public.klubs
 
 ALTER TABLE ONLY public.obcinas
     ADD CONSTRAINT obcinas_pkey PRIMARY KEY (id);
-
-
---
--- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.schema_migrations
-    ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
 
 
 --
@@ -659,6 +646,13 @@ CREATE INDEX index_updates_on_updatable_id ON public.updates USING btree (updata
 --
 
 CREATE INDEX index_updates_on_updatable_type ON public.updates USING btree (updatable_type);
+
+
+--
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX unique_schema_migrations ON public.schema_migrations USING btree (version);
 
 
 --
