@@ -57,7 +57,7 @@ gem 'nokogiri', '~> 1.8.2'
 
 gem 'rack-attack', '~> 4.3.0'
 
-gem 'rack-cors', '~>0.4.1', require: 'rack/cors'
+gem 'rack-cors', '~>1.0.5', require: 'rack/cors'
 
 gem 'rack-rewrite', '~> 1.5.1'
 
