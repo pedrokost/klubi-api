@@ -18,6 +18,7 @@ require 'import/atletska_zveza'
 require 'import/namiznoteniska_zveza'
 require 'import/lokostelska_zveza'
 require 'import/kickboxing_zveza'
+require 'import/rekreacija_si'
 
 namespace :import do
 
@@ -117,6 +118,12 @@ namespace :import do
   task :kickboxing_zveza => :environment do
     transformer = Import::KickboxingZvezaTransformer.new
     data_source = Import::KickboxingZvezaDatasource.new
+    Import::Importer.new(data_source, transformer).run()
+  end
+
+  task :rekreacija_si => :environment do
+    transformer = Import::RekreacijaSiTransformer.new
+    data_source = Import::RekreacijaSiDatasource.new
     Import::Importer.new(data_source, transformer).run()
   end
 end

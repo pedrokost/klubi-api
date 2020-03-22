@@ -4,14 +4,13 @@ require 'import/datasource'
 require 'import/transformer'
 
 require 'stringio'
-require 'highline'
 require 'pry'
 
 RSpec.describe Import::Importer do
 
   let(:datasource) { instance_double(Import::Datasource) }
   let(:transformer) { instance_double(Import::Transformer) }
-  let(:highline) { instance_double(HighLine) }
+  let(:prompt) { instance_double(TTY::Prompt) }
   let(:merge_left_resolution) { Import::Resolution.new(:merge_left) }
   let(:merge_right_resolution) { Import::Resolution.new(:merge_right) }
   let(:create_new_resolution) { Import::Resolution.new(:create_new) }
@@ -33,8 +32,8 @@ RSpec.describe Import::Importer do
     allow(transformer).to receive(:description).and_return('abracadabra')
     allow(transformer).to receive(:transform).and_return data
 
-    allow(HighLine).to receive(:new).and_return highline
-    allow(highline).to receive(:choose)
+    allow(TTY::Prompt).to receive(:new).and_return prompt
+    allow(prompt).to receive(:enum_select).and_return(merge_left_resolution)
   end
 
   # Pubic methods
@@ -67,7 +66,7 @@ RSpec.describe Import::Importer do
             }
           ]
       allow(transformer).to receive(:transform).and_return data
-      expect(highline).to receive(:choose)
+      expect(prompt).to receive(:enum_select)
 
       subject.run
     end
@@ -103,7 +102,7 @@ RSpec.describe Import::Importer do
     end
 
     it "should merge data if resolution is 'merge'" do
-      allow(Import::Resolution).to receive(:new).and_return(merge_left_resolution)
+      allow(prompt).to receive(:enum_select).and_return(merge_left_resolution)
       data = [
             {
               name: 'Fitnes 1',
@@ -121,7 +120,7 @@ RSpec.describe Import::Importer do
     end
 
     it "should not create new klub for resoultion 'merge'" do
-      allow(Import::Resolution).to receive(:new).and_return(merge_left_resolution)
+      allow(prompt).to receive(:enum_select).and_return(merge_left_resolution)
       data = [
             {
               name: 'Fitnes 1',
@@ -135,7 +134,8 @@ RSpec.describe Import::Importer do
     end
 
     it "should create new klub for resolution 'create new klub'" do
-      expect(Import::Resolution).to receive(:new).and_return(create_new_resolution)
+      allow(prompt).to receive(:enum_select).and_return(create_new_resolution)
+
       data = [
             {
               name: 'Fitnes 1',
@@ -149,7 +149,7 @@ RSpec.describe Import::Importer do
     end
 
     it "if same name - case sensitive" do
-      allow(Import::Resolution).to receive(:new).and_return(merge_left_resolution)
+      allow(prompt).to receive(:enum_select).and_return(merge_left_resolution)
       # FIXME: and user says merge
       data = [
         {
@@ -164,7 +164,7 @@ RSpec.describe Import::Importer do
 
   context "merge_left" do
     before do
-      allow(Import::Resolution).to receive(:new).and_return(merge_left_resolution)
+      allow(prompt).to receive(:enum_select).and_return(merge_left_resolution)
       subject.run
     end
 
@@ -361,7 +361,7 @@ RSpec.describe Import::Importer do
 
   context "merge_right" do
     before do
-      allow(Import::Resolution).to receive(:new).and_return(merge_right_resolution)
+      allow(prompt).to receive(:enum_select).and_return(merge_right_resolution)
       subject.run
     end
 
@@ -558,5 +558,18 @@ RSpec.describe Import::Importer do
       subject.run
       expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['pilates', 'fitnes']
     end
+  end
+
+  context "select_klubdata_to_keep" do
+    before do
+      # allow(prompt).to receive(:enum_select).and_return(merge_left_resolution)
+      # subject.run
+    end
+
+    it "returns all values when select the 'All' option"
+
+    it "returns select value when 1 selected"
+
+    it "return select values when returning more options"
   end
 end
