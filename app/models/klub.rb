@@ -31,7 +31,7 @@ class Klub < ApplicationRecord
 
   def merge_left_with(klub_attrs, skip: [])
     # uses new data to fill in missing spots only, preferring old data
-    basic_attrs = %i[name address town phone email website facebook_url] - skip
+    basic_attrs = %i[name address town phone email website facebook_url latitude longitude description] - skip
     array_attrs = [:categories]
 
     klub_attrs.each do |key, val|
@@ -45,7 +45,7 @@ class Klub < ApplicationRecord
 
   def merge_right_with(new_attrs, skip: [])
     # uses old data to fill in missing spots in new data, preferring new data
-    basic_attrs = %i[name address town phone email website facebook_url] - skip
+    basic_attrs = %i[name address town phone email website facebook_url latitude longitude description] - skip
     array_attrs = [:categories]
 
     new_attrs.each do |key, val|
