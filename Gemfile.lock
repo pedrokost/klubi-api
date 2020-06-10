@@ -125,7 +125,7 @@ GEM
     foreman (0.85.0)
       thor (~> 0.19.1)
     formatador (0.2.5)
-    geocoder (1.2.14)
+    geocoder (1.6.1)
     get_process_mem (0.2.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -450,7 +450,7 @@ DEPENDENCIES
   derailed_benchmarks
   factory_bot_rails
   foreman
-  geocoder (~> 1.2.8)
+  geocoder (~> 1.6.1)
   google-api-client (~> 0.23.8)
   guard-rspec
   json-schema
