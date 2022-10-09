@@ -41,6 +41,7 @@ Rails.application.routes.draw do
             post :confirm
           end
         end
+        resources :online_training_entries, only: [:index]
         post 'email_stats/webhook' => 'email_stats#webhook'
       end
     end

@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+
+  "definitions": {
+    "online_training_entry": {
+      "type": "object",
+      "required": ["id", "type", "attributes"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "attributes": {
+          "type": "object",
+          // "required": ["title", "brief", "organizer", "categories", "is_priced"],
+          "properties": {
+            "title": { "type": "string" },
+            "brief": { "type": "string" },
+            "organizer": { "type": "string" },
+            "categories": {
+              "type": "array",
+              "items": [{
+                "type": "string"
+              }]
+            },
+            "is_priced": { "type": ["boolean", "null"] }
+          }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": { "type": [{ "$ref": "#/definitions/online_training_entry" }, "null"] }
+    }
+  }
+}

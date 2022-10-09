@@ -1,5 +1,18 @@
 # This will guess the User class
 FactoryBot.define do
+  factory :online_training_entry do
+    sequence :slug do |n|
+      "slug-#{n}"
+    end
+    sequence :title do |n|
+      "Online Training Entry #{n}"
+    end
+    brief "MyText"
+    description "MyText"
+    is_priced nil
+    organizer "Boby Dean"
+    is_verified true
+  end
 
   factory :comment_request do
     commentable { FactoryBot.create(:complete_klub) }

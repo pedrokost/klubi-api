@@ -36,11 +36,14 @@ GRANT ALL PRIVILEGES ON DATABASE "zatresi-api_test" to zatresi;
 \q
 ```
 
+Note: adding postgis extension may require making the user a superuser :/
+
+
 * Database initialization
 
 ```
-foreman run rake db:migrate RAILS_ENV=development
-foreman run rake db:test:prepare
+foreman run bundle exec rake db:migrate RAILS_ENV=development
+foreman run bundle exec rake db:test:prepare
 ```
 
 Import latest production backup to local db

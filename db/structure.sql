@@ -5,22 +5,9 @@ SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
+SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
-
---
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
---
-
-CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
-
-
---
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: -
---
-
-COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
-
 
 --
 -- Name: postgis; Type: EXTENSION; Schema: -; Owner: -
@@ -48,8 +35,6 @@ CREATE TYPE public.update_status AS ENUM (
 
 
 SET default_tablespace = '';
-
-SET default_with_oids = false;
 
 --
 -- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: -
@@ -197,6 +182,7 @@ CREATE TABLE public.email_stats (
 --
 
 CREATE SEQUENCE public.email_stats_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -217,21 +203,21 @@ ALTER SEQUENCE public.email_stats_id_seq OWNED BY public.email_stats.id;
 
 CREATE TABLE public.klubs (
     id integer NOT NULL,
-    name character varying(255) NOT NULL,
-    slug character varying(255) NOT NULL,
-    address character varying(255),
-    town character varying(255),
-    website character varying(255),
-    phone character varying(255),
-    email character varying(255),
+    name character varying NOT NULL,
+    slug character varying NOT NULL,
+    address character varying,
+    town character varying,
+    website character varying,
+    phone character varying,
+    email character varying,
     latitude numeric(10,6),
     longitude numeric(10,6),
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
     complete boolean DEFAULT false,
-    categories character varying(255)[] DEFAULT '{}'::character varying[],
-    facebook_url character varying(255),
-    editor_emails character varying(255)[] DEFAULT '{}'::character varying[],
+    categories character varying[] DEFAULT '{}'::character varying[],
+    facebook_url character varying,
+    editor_emails character varying[] DEFAULT '{}'::character varying[],
     parent_id integer,
     verified boolean DEFAULT false,
     notes character varying,
@@ -250,6 +236,7 @@ CREATE TABLE public.klubs (
 --
 
 CREATE SEQUENCE public.klubs_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -285,6 +272,7 @@ CREATE TABLE public.obcinas (
 --
 
 CREATE SEQUENCE public.obcinas_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -300,11 +288,53 @@ ALTER SEQUENCE public.obcinas_id_seq OWNED BY public.obcinas.id;
 
 
 --
+-- Name: online_training_entries; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.online_training_entries (
+    id bigint NOT NULL,
+    slug character varying,
+    title character varying NOT NULL,
+    brief character varying,
+    description character varying,
+    organizer character varying,
+    categories character varying[] DEFAULT '{}'::character varying[],
+    is_priced boolean,
+    terminated_at date,
+    is_verified boolean,
+    data_confirmed_at timestamp without time zone,
+    last_verification_reminder_at timestamp without time zone,
+    data_confirmation_request_hash character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: online_training_entries_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.online_training_entries_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: online_training_entries_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.online_training_entries_id_seq OWNED BY public.online_training_entries.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.schema_migrations (
-    version character varying(255) NOT NULL
+    version character varying NOT NULL
 );
 
 
@@ -328,6 +358,7 @@ CREATE TABLE public.statisticna_regijas (
 --
 
 CREATE SEQUENCE public.statisticna_regijas_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -366,6 +397,7 @@ CREATE TABLE public.updates (
 --
 
 CREATE SEQUENCE public.updates_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -420,6 +452,13 @@ ALTER TABLE ONLY public.klubs ALTER COLUMN id SET DEFAULT nextval('public.klubs_
 --
 
 ALTER TABLE ONLY public.obcinas ALTER COLUMN id SET DEFAULT nextval('public.obcinas_id_seq'::regclass);
+
+
+--
+-- Name: online_training_entries id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.online_training_entries ALTER COLUMN id SET DEFAULT nextval('public.online_training_entries_id_seq'::regclass);
 
 
 --
@@ -490,6 +529,22 @@ ALTER TABLE ONLY public.klubs
 
 ALTER TABLE ONLY public.obcinas
     ADD CONSTRAINT obcinas_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: online_training_entries online_training_entries_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.online_training_entries
+    ADD CONSTRAINT online_training_entries_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.schema_migrations
+    ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
 
 
 --
@@ -649,13 +704,6 @@ CREATE INDEX index_updates_on_updatable_type ON public.updates USING btree (upda
 
 
 --
--- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE UNIQUE INDEX unique_schema_migrations ON public.schema_migrations USING btree (version);
-
-
---
 -- Name: obcinas fk_rails_439801d288; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -694,6 +742,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20171118175221'),
 ('20171118180158'),
 ('20180204185203'),
-('20180211111013');
+('20180211111013'),
+('20200413094057');
 
 
