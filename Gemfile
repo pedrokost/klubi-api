@@ -75,7 +75,7 @@ gem 'sitemap_generator', '~> 5.2.0'
 gem 'administrate', '0.10.0'
 
 # Makes caching into memcacher work
-gem "dalli", '~> 2.7.6'
+gem "dalli", '~> 3.2.3'
 gem "memcachier", '~> 0.0.2'
 
 gem 'raygun4ruby', '~> 1.1.11'
