@@ -81,7 +81,6 @@ gem "memcachier", '~> 0.0.2'
 gem 'raygun4ruby', '~> 1.1.11'
 
 gem "delayed_job_active_record", "~> 4.1.3"
-gem "workless", "~> 2.2.0"
 
 gem 'pry-rails'
 
@@ -117,3 +116,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# TODO: Rails 5.2.5, 6.0.3.6, and 6.1.3.1 have been released, removing the mimemagic dependency
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
