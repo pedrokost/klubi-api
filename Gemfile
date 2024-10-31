@@ -1,25 +1,23 @@
 source 'https://rubygems.org'
 
-ruby '2.6.5'
-
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.2.1'
+gem 'rails', '~> 7.2.1'
 
 gem 'rack-ssl-enforcer'
 
 gem 'puma', '~>3.12.0'
 gem 'pg', '~>0.18.4'
 
-gem 'activerecord-postgis-adapter', '~> 5.2.1'
+gem 'activerecord-postgis-adapter', github: "rgeo/activerecord-postgis-adapter"
 
 gem 'rails_12factor', group: :production
 
 # gem 'active_model_serializers', '~> 0.9.0'
-gem 'active_model_serializers', '0.10.7'
+gem 'active_model_serializers', '0.10.14'
 
 gem 'active_model_serializers-jsonapi_embedded_records_deserializer', '~> 0.1.1'
 
@@ -27,13 +25,13 @@ gem 'redis', '~> 3.3.3'
 
 gem 'geocoder', '~> 1.2.8'
 
-gem 'skylight', '~> 4.2.3'
+gem 'skylight', '~> 6.0.4'
 
 gem 'json_spec', '~>1.1.5'
 
-gem 'newrelic_rpm', '~> 5.3.0.346'
+# gem 'newrelic_rpm', '~> 5.3.0.346'
 
-gem 'google-api-client', '~> 0.23.8'
+gem 'google-api-client', '~> 0.53.0'
 
 gem "koala", "~> 3.0.0"
 
@@ -53,7 +51,7 @@ end
 
 gem 'randexp', '~> 0.1.7'
 
-gem 'nokogiri', '~> 1.8.2'
+gem 'nokogiri', '~> 1.16.7'
 
 gem 'rack-attack', '~> 4.3.0'
 
@@ -72,7 +70,7 @@ gem 'levenshtein-ffi', :require => 'levenshtein'
 gem 'aws-sdk' , '~> 2.6.44'  # for uploading the sitemap
 gem 'sitemap_generator', '~> 5.2.0'
 
-gem 'administrate', '0.10.0'
+gem 'administrate', '0.20.1'
 
 # Makes caching into memcacher work
 gem "dalli", '~> 2.7.6'
