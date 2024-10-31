@@ -10,7 +10,7 @@ gem 'rails', '~> 7.2.1'
 gem 'rack-ssl-enforcer'
 
 gem 'puma', '~>3.12.0'
-gem 'pg', '~>0.18.4'
+gem 'pg', '~> 1.5.9'
 
 gem 'activerecord-postgis-adapter', github: "rgeo/activerecord-postgis-adapter"
 
@@ -33,20 +33,20 @@ gem 'json_spec', '~>1.1.5'
 
 gem 'google-api-client', '~> 0.53.0'
 
-gem "koala", "~> 3.0.0"
+gem "koala", "~> 3.6.0"
 
 gem 'validates_email_format_of'
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'pry-rescue'
-  gem 'pry-stack_explorer'
-  gem 'pry-byebug'
-  gem 'pry-remote'
+  # gem 'pry-rescue'
+  # gem 'pry-stack_explorer'
+  # gem 'pry-byebug'
+  # gem 'pry-remote'
   gem 'foreman'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'derailed_benchmarks'
+  # gem 'spring'
+  # gem 'spring-watcher-listen', '~> 2.0.0'
+  # gem 'derailed_benchmarks'
 end
 
 gem 'randexp', '~> 0.1.7'
@@ -67,8 +67,8 @@ gem 'tty-prompt', '~> 0.18.1'
 
 gem 'levenshtein-ffi', :require => 'levenshtein'
 
-gem 'aws-sdk' , '~> 2.6.44'  # for uploading the sitemap
-gem 'sitemap_generator', '~> 5.2.0'
+gem 'aws-sdk' , '~> 3.2.0'  # for uploading the sitemap
+gem 'sitemap_generator', '~> 6.3.0'
 
 gem 'administrate', '0.20.1'
 
@@ -76,24 +76,23 @@ gem 'administrate', '0.20.1'
 gem "dalli", '~> 2.7.6'
 gem "memcachier", '~> 0.0.2'
 
-gem 'raygun4ruby', '~> 1.1.11'
+gem 'raygun4ruby', '~> 4.0.1'
 
 gem "delayed_job_active_record", "~> 4.1.3"
 
-gem 'pry-rails'
+# gem 'pry-rails'
 
 group :development, :test do
   gem 'spring-commands-rspec'
-  gem 'rspec-rails', '~> 3.8.0'
-  gem 'guard-rspec'
+  gem 'rspec-rails', '~> 6.1.2' 
+  # gem 'guard-rspec'
   gem 'factory_bot_rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-gem 'shoulda-matchers', '~> 2.8.0',  require: false
-
 group :test do
   gem "json-schema"
+  gem 'shoulda-matchers', "~> 6.2.0" #:github => 'thoughtbot/shoulda-matchers'
 end
 
 group :assets do

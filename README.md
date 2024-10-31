@@ -141,3 +141,17 @@ shp2pgsql -I -s 3912:4326 f1f60b8a-6513-5102-987c-4950a36c72ec.shp public.statis
 # Attribution
 
 Source of administrative regions: Statistical Office of the Republic of Slovenia.
+
+
+# Troubleshooting
+
+
+lavenshtein gem does not seem to be building the so file.
+
+If you get this error:
+
+```
+./ext/levenshtein/levenshtein: cannot open shared object file: No such file or directory.
+```
+
+Follow the steps here https://github.com/dbalatero/levenshtein-ffi/issues/13 to build the gem.

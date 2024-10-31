@@ -1,0 +1,6 @@
+ ☐ Upgraded to rails 7.2
+ ☐ Move to docker
+ ☐ Migrate from Heroku to Fly
+☐ Update adminstrate https://administrate-demo.herokuapp.com/getting_started
+☐ The google-api-client gem is deprecated and will likely not be updated further Instead, please install the gem corresponding to the specific service to use. For example, to use the Google Drive V3 client, install google-apis-drive_v3.
+☐ aws-sdk seems to install dozens of packages. see if can limit to specific package.

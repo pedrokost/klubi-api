@@ -20,7 +20,7 @@ CREATE EXTENSION IF NOT EXISTS postgis WITH SCHEMA public;
 -- Name: EXTENSION postgis; Type: COMMENT; Schema: -; Owner: -
 --
 
-COMMENT ON EXTENSION postgis IS 'PostGIS geometry and geography spatial types and functions';
+COMMENT ON EXTENSION postgis IS 'PostGIS geometry, geography, and raster spatial types and functions';
 
 
 --
@@ -184,7 +184,6 @@ CREATE TABLE public.email_stats (
 --
 
 CREATE SEQUENCE public.email_stats_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -205,21 +204,21 @@ ALTER SEQUENCE public.email_stats_id_seq OWNED BY public.email_stats.id;
 
 CREATE TABLE public.klubs (
     id integer NOT NULL,
-    name character varying NOT NULL,
-    slug character varying NOT NULL,
-    address character varying,
-    town character varying,
-    website character varying,
-    phone character varying,
-    email character varying,
+    name character varying(255) NOT NULL,
+    slug character varying(255) NOT NULL,
+    address character varying(255),
+    town character varying(255),
+    website character varying(255),
+    phone character varying(255),
+    email character varying(255),
     latitude numeric(10,6),
     longitude numeric(10,6),
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
     complete boolean DEFAULT false,
-    categories character varying[] DEFAULT '{}'::character varying[],
-    facebook_url character varying,
-    editor_emails character varying[] DEFAULT '{}'::character varying[],
+    categories character varying(255)[] DEFAULT '{}'::character varying[],
+    facebook_url character varying(255),
+    editor_emails character varying(255)[] DEFAULT '{}'::character varying[],
     parent_id integer,
     verified boolean DEFAULT false,
     notes character varying,
@@ -238,7 +237,6 @@ CREATE TABLE public.klubs (
 --
 
 CREATE SEQUENCE public.klubs_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -274,7 +272,6 @@ CREATE TABLE public.obcinas (
 --
 
 CREATE SEQUENCE public.obcinas_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -294,7 +291,7 @@ ALTER SEQUENCE public.obcinas_id_seq OWNED BY public.obcinas.id;
 --
 
 CREATE TABLE public.schema_migrations (
-    version character varying NOT NULL
+    version character varying(255) NOT NULL
 );
 
 
@@ -318,7 +315,6 @@ CREATE TABLE public.statisticna_regijas (
 --
 
 CREATE SEQUENCE public.statisticna_regijas_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -357,7 +353,6 @@ CREATE TABLE public.updates (
 --
 
 CREATE SEQUENCE public.updates_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -482,14 +477,6 @@ ALTER TABLE ONLY public.klubs
 
 ALTER TABLE ONLY public.obcinas
     ADD CONSTRAINT obcinas_pkey PRIMARY KEY (id);
-
-
---
--- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.schema_migrations
-    ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
 
 
 --
@@ -649,6 +636,13 @@ CREATE INDEX index_updates_on_updatable_type ON public.updates USING btree (upda
 
 
 --
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX unique_schema_migrations ON public.schema_migrations USING btree (version);
+
+
+--
 -- Name: obcinas fk_rails_439801d288; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -663,30 +657,32 @@ ALTER TABLE ONLY public.obcinas
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
-('20141126203513'),
-('20141127220853'),
-('20141127221214'),
-('20141130183820'),
-('20141207092059'),
-('20141213175601'),
-('20150405101024'),
-('20150822135854'),
-('20151129142053'),
-('20160703105120'),
-('20160707185547'),
-('20161127143702'),
-('20170107115719'),
-('20170114173733'),
-('20170514142319'),
-('20170516202345'),
-('20170518201248'),
-('20170518210754'),
-('20170614201058'),
-('20171029112020'),
-('20171029141942'),
-('20171118175221'),
-('20171118180158'),
+('20241031152650'),
+('20241031152649'),
+('20241031152648'),
+('20180211111013'),
 ('20180204185203'),
-('20180211111013');
-
+('20171118180158'),
+('20171118175221'),
+('20171029141942'),
+('20171029112020'),
+('20170614201058'),
+('20170518210754'),
+('20170518201248'),
+('20170516202345'),
+('20170514142319'),
+('20170114173733'),
+('20170107115719'),
+('20161127143702'),
+('20160707185547'),
+('20160703105120'),
+('20151129142053'),
+('20150822135854'),
+('20150405101024'),
+('20141213175601'),
+('20141207092059'),
+('20141130183820'),
+('20141127221214'),
+('20141127220853'),
+('20141126203513');
 
