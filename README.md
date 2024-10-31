@@ -88,6 +88,19 @@ rake sitemap:refresh
 rake sitemap:refresh:no_ping
 ```
 
+## Local running
+
+In /etc/hosts add `127.0.0.1   api.app.local`
+In /etc/hosts add `127.0.0.1   admin.app.local`
+
+Run server, then open:
+
+http://api.app.local:3200/klubs?category=fitnes
+
+Or to see the Administrate dashboard, open
+
+http://admin.app.local:3200/klubs
+
 ## Tasks
 
 1. Daily: Send an email for accepted klub updates
