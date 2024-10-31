@@ -31,7 +31,9 @@ gem 'json_spec', '~>1.1.5'
 
 # gem 'newrelic_rpm', '~> 5.3.0.346'
 
-gem 'google-api-client', '~> 0.53.0'
+# gem 'google-api-client', '~> 0.53.0'
+gem 'googleauth', '~> 1.11.2'
+gem 'google-apis-analyticsreporting_v4', '~> 0.17.0'
 
 gem "koala", "~> 3.6.0"
 
@@ -67,7 +69,7 @@ gem 'tty-prompt', '~> 0.18.1'
 
 gem 'levenshtein-ffi', :require => 'levenshtein'
 
-gem 'aws-sdk' , '~> 3.2.0'  # for uploading the sitemap
+gem 'aws-sdk-s3' , '~> 1.169.0'  # for uploading the sitemap
 gem 'sitemap_generator', '~> 6.3.0'
 
 gem 'administrate', '0.20.1'

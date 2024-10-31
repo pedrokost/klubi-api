@@ -23,9 +23,10 @@ Rails.application.configure do
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
 
-    config.cache_store = :dalli_store, nil, {
-      :namespace => 'klubiapi', :expires_in => 1.hour, :compress => true
-    }
+    config.cache_store = :memory_store
+    # , nil, {
+    #   :namespace => 'klubiapi', :expires_in => 1.hour, :compress => true
+    # }
     config.public_file_server.headers = {
       'Cache-Control' => "public, max-age=#{2.days.seconds.to_i}"
     }
@@ -74,9 +75,12 @@ Rails.application.configure do
   # Annotate rendered view with file names.
   config.action_view.annotate_rendered_view_with_filenames = true
 
-Rails.application.routes.default_url_options[:host]= ENV["HTTP_HOST"] || "app.local"
-Rails.application.routes.default_url_options[:port]= ENV["PORT"] || 4200
+  Rails.application.routes.default_url_options[:host]= ENV["HTTP_HOST"] || "app.local"
+  Rails.application.routes.default_url_options[:port]= ENV["PORT"] || 4200
 
   # Raise error when a before_action's only/except options reference missing actions.
   config.action_controller.raise_on_missing_callback_actions = true
+
+  config.hosts << "admin.app.local:3200"
+  config.hosts << "api.app.local:3200"
 end

@@ -51,6 +51,7 @@ module Admin
         redirect_to(
           [:admin, requested_resource],
           notice: translate_with_resource("update.success"),
+          allow_other_host: true
         )
       else
         render :edit, locals: {

@@ -27,7 +27,8 @@ module Admin
 
       redirect_to(
         [:admin, requested_resource],
-        notice: translate_with_resource("update.success")
+        notice: translate_with_resource("update.success"),
+        allow_other_host: true
       )
     end
 
@@ -35,7 +36,8 @@ module Admin
       requested_resource.send_request_verify_klub_data_mail
       redirect_to(
         [:admin, requested_resource],
-        notice: "A verification email has just been sent to #{requested_resource.email}"
+        notice: "A verification email has just been sent to #{requested_resource.email}",
+        allow_other_host: true
       )
     end
 

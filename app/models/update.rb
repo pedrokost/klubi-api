@@ -1,7 +1,7 @@
 require 'yaml'
 
 class Update < ApplicationRecord
-  enum status: {
+  enum :status, {
     unverified: 'unverified',
     accepted:   'accepted',
     rejected:   'rejected',
