@@ -23,7 +23,7 @@ gem 'active_model_serializers', '0.10.7'
 
 gem 'active_model_serializers-jsonapi_embedded_records_deserializer', '~> 0.1.1'
 
-gem 'redis', '~> 3.3.3'
+gem 'redis', '~> 4.0.2'
 
 gem 'geocoder', '~> 1.2.8'
 
