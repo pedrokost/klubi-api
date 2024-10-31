@@ -77,7 +77,7 @@ class Klub < ApplicationRecord
     generate_data_confirmation_request_hash!
 
     KlubMailer.request_verify_klub_mail(id, email).deliver_now
-    update_attribute :last_verification_reminder_at, DateTime.now
+    update :last_verification_reminder_at, DateTime.now
   end
 
   def create_updates(new_attrs)

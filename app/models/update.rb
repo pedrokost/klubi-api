@@ -28,7 +28,7 @@ class Update < ApplicationRecord
       if updatable.data_confirmed_at.nil? || self.created_at > updatable.data_confirmed_at
         new_attributes[:data_confirmed_at] = self.created_at
       end
-      updatable.update_attributes new_attributes
+      updatable.update new_attributes
 
     end
   end

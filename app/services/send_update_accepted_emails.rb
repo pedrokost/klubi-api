@@ -35,7 +35,7 @@ class SendUpdateAcceptedEmails
     klub.send_updates_accepted_notification(editor, updates)
 
     updates.each do |update|
-      update.update_attribute :acceptance_email_sent,  true
+      update.update :acceptance_email_sent,  true
     end
   end
 end

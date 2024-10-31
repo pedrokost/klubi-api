@@ -5,12 +5,15 @@ module Api
       before_action :select_ams_adapter
 
       def index
-
         render json: [] and return unless supported_categories.include? category_params
 
-        stats = Klub.select('count(*) as count, max(updated_at) as last_update_at').completed.where("? = ANY (categories)", category_params).where('closed_at IS NULL').order(nil).first
+        stats_count, last_update = Klub.completed
+          .where(closed_at: nil)
+          .where("? = ANY (categories)", category_params)
+          .pluck(Arel.sql('COUNT(*), MAX(updated_at)'))
+          .first
 
-        data = Rails.cache.fetch("v2/klubs/#{category_params}-#{stats.count}-#{stats.last_update_at.to_i}") do
+        data = Rails.cache.fetch("v2/klubs/#{category_params}-#{stats_count}-#{last_update.to_i}") do
           klubs = Klub.completed.where("? = ANY (categories)", category_params).where('closed_at IS NULL')
           serializer = ActiveModel::Serializer::CollectionSerializer.new(klubs, serializer: Api::V2::KlubListingSerializer)
           ActiveModelSerializers::Adapter.create(serializer).to_json
@@ -103,7 +106,7 @@ module Api
         klub = Klub.where(data_confirmation_request_hash: params[:request_hash]).first
         head :not_found and return unless klub
 
-        klub.update_attributes! data_confirmed_at: DateTime.now, data_confirmation_request_hash: nil
+        klub.update! data_confirmed_at: DateTime.now, data_confirmation_request_hash: nil
       end
 
     private
