@@ -3,9 +3,10 @@
 [![View performance data on Skylight](https://badges.skylight.io/status/pkiwulxFzCaH.svg)](https://oss.skylight.io/app/applications/pkiwulxFzCaH)
 [![View performance data on Skylight](https://badges.skylight.io/typical/pkiwulxFzCaH.svg)](https://oss.skylight.io/app/applications/pkiwulxFzCaH)
 
-* Configuration
+- Configuration
 
 To configure the `WANTED_OUTGOING_EMAIL_DISTRIBTION` env variable use something like this:
+
 ```
 # During rounding you loose precesion, need to make it again a distribution
 d_unnormalized = ([0] * 6 + [1.0/12] * 15 + [0] * 3).map{ |e| e + 0.01 }
@@ -19,10 +20,10 @@ raise "Distribution does not sum to 1" unless d_normalized.sum.round(4) == 1.0
 raise "Distribution is not of length 24" unless d_normalized.length == 24
 p d_normalized.join(',')
 ```
+
 This gives a tiny chance to nighly emails!
 
-
-* Database creation
+- Database creation
 
 ```
 sudo su - postgres
@@ -36,14 +37,15 @@ GRANT ALL PRIVILEGES ON DATABASE "zatresi-api_test" to zatresi;
 \q
 ```
 
-* Database initialization
+- Database initialization
 
 ```
-foreman run rake db:migrate RAILS_ENV=development
-foreman run rake db:test:prepare
+foreman run bundle exec rake db:migrate RAILS_ENV=development
+foreman run bundle exec rake db:test:prepare
 ```
 
 Import latest production backup to local db
+
 ```
 heroku pg:backups:capture
 heroku pg:backups:download
@@ -54,19 +56,20 @@ rm latest.dump
 
 Altnatively, run `rake db:seed` to seed default data into the database.
 
-* How to run the test suite
+- How to run the test suite
 
 ```
-foreman run rspec spec/
+foreman run bundle exec rspec spec/
 ```
 
-* Services (job queues, cache servers, search engines, etc.)
+- Services (job queues, cache servers, search engines, etc.)
 
-* [Creating missing certification for development](https://gist.github.com/tadast/9932075)
+- [Creating missing certification for development](https://gist.github.com/tadast/9932075)
 
 ## Deployment instructions
 
 https://github.com/cyberdelia/heroku-geo-buildpack/
+
 ```
 heroku buildpacks:set https://github.com/cyberdelia/heroku-geo-buildpack.git
 heroku buildpacks:add heroku/ruby
@@ -79,6 +82,7 @@ git push heroku master
 Setup the cron job to execute `rake sitemap:refresh` regularly (e.g. daily)
 
 Sitemap:
+
 ```
 rake sitemap:refresh
 rake sitemap:refresh:no_ping
@@ -87,11 +91,13 @@ rake sitemap:refresh:no_ping
 ## Tasks
 
 1. Daily: Send an email for accepted klub updates
+
 ```
 foreman run rake updates:send_emails
 ```
 
 2. Daily: Send email to request data verification to klubs
+
 ```
 foreman run rake klubs:send_emails
 ```
@@ -102,6 +108,7 @@ foreman run rails s puma -b 'ssl://127.0.0.1:3200?key=/home/vagrant/.ssh/server.
 
 Create a new DataSource and a new Transformer for the data.
 Register it in data_import.rake
+
 ```
 foreman run rake import:your_import_script
 ```

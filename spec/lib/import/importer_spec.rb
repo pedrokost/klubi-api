@@ -34,6 +34,19 @@ RSpec.describe Import::Importer do
 
     allow(TTY::Prompt).to receive(:new).and_return prompt
     allow(prompt).to receive(:enum_select).and_return(merge_left_resolution)
+
+    allow(prompt).to receive(:multi_select)
+      .with("Which to override?", hash_including(echo: false, per_page: 20))
+      .and_return([
+        :name, 
+        :address, 
+        :categories, 
+        :email,
+        :facebook_url,  
+        :website,      
+        :town,        
+        :phone        
+      ])
   end
 
   # Pubic methods
