@@ -9,8 +9,11 @@ gem 'rails', '~> 7.2.1'
 
 gem 'rack-ssl-enforcer'
 
-gem 'puma', '~>3.12.0'
+gem 'puma', '>= 5.0'
 gem 'pg', '~> 1.5.9'
+
+# Reduces boot times through caching; required in config/boot.rb
+gem "bootsnap", require: false
 
 gem 'activerecord-postgis-adapter', github: "rgeo/activerecord-postgis-adapter"
 
@@ -35,7 +38,7 @@ gem 'json_spec', '~>1.1.5'
 gem 'googleauth', '~> 1.11.2'
 gem 'google-apis-analyticsreporting_v4', '~> 0.17.0'
 
-gem "koala", "~> 3.6.0"
+gem 'koala', '~> 3.6.0'
 
 gem 'validates_email_format_of'
 
@@ -49,6 +52,9 @@ group :development do
   # gem 'spring'
   # gem 'spring-watcher-listen', '~> 2.0.0'
   # gem 'derailed_benchmarks'
+
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'web-console'
 end
 
 gem 'randexp', '~> 0.1.7'
@@ -85,7 +91,16 @@ gem "delayed_job_active_record", "~> 4.1.3"
 # gem 'pry-rails'
 
 group :development, :test do
-  gem 'spring-commands-rspec'
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'debug', platforms: %i[ mri windows ], require: 'debug/prelude'
+
+  # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
+  gem 'brakeman', require: false
+
+  # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
+  gem 'rubocop-rails-omakase', require: false
+
+  # gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 6.1.2' 
   # gem 'guard-rspec'
   gem 'factory_bot_rails'
