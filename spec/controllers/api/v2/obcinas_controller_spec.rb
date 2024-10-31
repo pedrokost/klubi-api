@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-require 'pry'
+# require 'pry'
 
 RSpec.describe Api::V2::ObcinasController, type: :controller do
 

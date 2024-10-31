@@ -1,4 +1,4 @@
-require 'pry' if Rails.env.test?
+# require 'pry' if Rails.env.test?
 
 class Image
   include ActiveModel::Serialization

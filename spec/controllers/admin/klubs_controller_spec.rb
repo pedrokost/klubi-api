@@ -2,7 +2,7 @@ require 'rails_helper'
 
 require 'json'
 
-require 'pry'
+# require 'pry'
 
 RSpec.describe Admin::KlubsController, :type => :controller do
 

@@ -1,4 +1,4 @@
-require 'pry' if Rails.env.test?
+# require 'pry' if Rails.env.test?
 require 'pp'
 
 module Import
@@ -116,7 +116,7 @@ module Import
         cli.ok("DONE left merging klubs' data") if @verbose
         klub.save!
       when :merge_right
-        require 'pry'; binding.pry unless Rails.env.test? # let me adjust stuff before merging
+        # require 'pry'; binding.pry unless Rails.env.test? # let me adjust stuff before merging
         klub.merge_right_with(klubdata, skip: @do_not_merge)
         cli.ok("DONE right merging klubs' data") if @verbose
         klub.save!

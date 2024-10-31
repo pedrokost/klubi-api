@@ -6,7 +6,7 @@
 
 require 'import/transformer'
 require 'import/datasource'
-require 'pry'
+# require 'pry'
 
 module Import
   class NamiznoteniskaZvezaDatasource < Datasource

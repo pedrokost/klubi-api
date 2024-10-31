@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'pry'
+# require 'pry'
 
 RSpec.describe Klub, type: :model do
   let(:klub) do

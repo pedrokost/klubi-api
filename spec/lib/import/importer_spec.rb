@@ -4,7 +4,7 @@ require 'import/datasource'
 require 'import/transformer'
 
 require 'stringio'
-require 'pry'
+# require 'pry'
 
 RSpec.describe Import::Importer do
 

@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 require 'csv'
-require 'pry'
+# require 'pry'
 
 Obcina.delete_all
 StatisticnaRegija.delete_all

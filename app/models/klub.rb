@@ -1,4 +1,4 @@
-require 'pry' if Rails.env.test?
+# require 'pry' if Rails.env.test?
 require 'facebook_image_retriever'
 require 'google_analytics_fetcher'
 
