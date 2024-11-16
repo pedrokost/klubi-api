@@ -68,16 +68,15 @@ foreman run bundle exec rspec spec/
 
 ## Deployment instructions
 
-https://github.com/cyberdelia/heroku-geo-buildpack/
+Requiremetns:
+- Postgres with Postgis
 
+Postgres setup:
 ```
-heroku buildpacks:set https://github.com/cyberdelia/heroku-geo-buildpack.git
-heroku buildpacks:add heroku/ruby
+fly postgres connect -a klubi-api-db
+CREATE EXTENSION postgis
 ```
 
-```
-git push heroku master
-```
 
 Setup the cron job to execute `rake sitemap:refresh` regularly (e.g. daily)
 
