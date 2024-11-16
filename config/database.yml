@@ -17,9 +17,13 @@
 default: &default
   adapter: postgis
   encoding: unicode
-  username: zatresi
-  password: pass
-  host: localhost
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  <% if ENV["DB_HOST"] %>
+  host: <%= ENV["DB_HOST"] %>
+  username: postgres
+  password: postgres
+  <% end %>
+  
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
@@ -28,6 +32,9 @@ development:
   <<: *default
   database: zatresi-api_development
   port: 5434
+  username: zatresi
+  password: pass
+  host: localhost
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

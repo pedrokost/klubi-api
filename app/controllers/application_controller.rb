@@ -66,8 +66,7 @@ private
   end
 
   def bootstrap_index(index_key)
-    index_key ||= 'klubi:current-content'
-    REDIS.get(index_key)
+    File.read(Rails.root.join('public', 'index.html'))
   end
 
 end
