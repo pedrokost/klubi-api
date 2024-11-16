@@ -95,4 +95,4 @@ production:
   database: zatresi-api_production
   username: zatresi-api
   password: <%= ENV['ZATRESI-API_DATABASE_PASSWORD'] %>
-  url: <%= ENV.fetch('DATABASE_URL', '').sub(/^postgres/, "postgis") %>
+  url: <%= ENV.fetch('DATABASE_URL', '') %>

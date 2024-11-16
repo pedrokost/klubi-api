@@ -53,6 +53,11 @@ RUN SECRET_KEY_BASE_DUMMY=1 FB_APP_ID=1 FB_APP_SECRET=1 ./bin/rails assets:preco
 # Final stage for app image
 FROM base
 
+# Install packages needed for deployment
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y curl postgresql-client && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
 # Copy built artifacts: gems, application
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
 COPY --from=build /rails /rails
