@@ -1,21 +1,13 @@
 require 'import/transformer'
+require 'csv'
 
 module Import
-  class KarateKlubiDatasource < Datasource
-    def initialize
-      super(
-        :file,
-        'lib/tasks/data/karate_klubi.csv'
-      )
-    end
-  end
   class KarateKlubiTransformer < Transformer
     def description
       "Import manually collected Karate clubs".freeze
     end
 
     def transform(data)
-
       clean_data = []
 
       CSV.parse(data, headers: :first_row) do |row|
@@ -29,4 +21,4 @@ module Import
       clean_data
     end
   end
-end
+end 

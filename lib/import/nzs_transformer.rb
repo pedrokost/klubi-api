@@ -1,17 +1,8 @@
 require 'import/transformer'
-require 'import/datasource'
+require 'json'
 
 module Import
-  class NZSDatasource < Datasource
-    def initialize
-      super(
-        :file,
-        "lib/tasks/data/nzs-si.json"
-      )
-    end
-  end
-
-  class NZSTransformer < Transformer
+  class NzsTransformer < Transformer
     def description
       "Import misc data from Sport Dogaja".freeze
     end
@@ -21,8 +12,6 @@ module Import
 
       clean_data = []
       json.each do |klubdata|
-
-
         klub = {
           'name': klubdata[1],
           'address': "#{klubdata[2]}, #{klubdata[3]} #{klubdata[4]}",
@@ -38,4 +27,4 @@ module Import
       clean_data = clean_data.uniq
     end
   end
-end
+end 

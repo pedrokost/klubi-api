@@ -1,16 +1,7 @@
 require 'import/transformer'
-require 'import/datasource'
+require 'json'
 
 module Import
-  class SloveniaWellnessDatasource < Datasource
-    def initialize
-      super(
-        :file,
-        "lib/tasks/data/slovenia_wellness.json"
-      )
-    end
-  end
-
   class SloveniaWellnessTransformer < Transformer
     def description
       "Import wellness data from dj-slovenia".freeze
@@ -39,4 +30,4 @@ module Import
       clean_data
     end
   end
-end
+end 

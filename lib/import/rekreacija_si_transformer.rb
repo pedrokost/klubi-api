@@ -1,24 +1,13 @@
 require 'import/transformer'
-require 'import/datasource'
+require 'json'
 
 module Import
-  class RekreacijaSiDatasource < Datasource
-    def initialize
-      super(
-        :file,
-        "lib/tasks/data/rekreacija_si.json"
-      )
-    end
-  end
-
   class RekreacijaSiTransformer < Transformer
     def description
       "Import misc data from RekreacijaSi".freeze
     end
 
     def transform(data)
-      clean_data = []
-
       json = JSON.parse(data)
 
       keymapping = {
@@ -34,7 +23,6 @@ module Import
         lo: :longitude,
         f: :facebook_url
       }
-
 
       clean_data = []
       json.each_with_index do |klubdata, index|
@@ -56,4 +44,4 @@ module Import
       clean_data
     end
   end
-end
+end 

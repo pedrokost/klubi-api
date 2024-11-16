@@ -1,16 +1,7 @@
 require 'import/transformer'
-require 'import/datasource'
+require 'json'
 
 module Import
-  class SportDogajaDatasource < Datasource
-    def initialize
-      super(
-        :file,
-        "lib/tasks/data/all_sport_dogaja.json"
-      )
-    end
-  end
-
   class SportDogajaTransformer < Transformer
     def description
       "Import misc data from Sport Dogaja".freeze
@@ -21,7 +12,6 @@ module Import
 
       clean_data = []
       json.each do |klubdata|
-
         klubdata['address'] = klubdata['address'].gsub("\t", '').gsub("\n", ',')
         klubdata['categories'] = [klubdata['category'].parameterize]
         klubdata.delete('category')
@@ -31,4 +21,4 @@ module Import
       clean_data = clean_data.uniq
     end
   end
-end
+end 

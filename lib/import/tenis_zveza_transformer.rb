@@ -1,16 +1,7 @@
 require 'import/transformer'
-require 'import/datasource'
+require 'csv'
 
 module Import
-  class TenisZvezaDatasource < Datasource
-    def initialize
-      super(
-        :file,
-        "lib/tasks/data/tenis_zveza.csv"
-      )
-    end
-  end
-
   class TenisZvezaTransformer < Transformer
     def description
       "Import tenis data from Tenis Zveza Slovenije".freeze
@@ -32,4 +23,4 @@ module Import
       clean_data
     end
   end
-end
+end 

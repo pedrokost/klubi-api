@@ -1,14 +1,6 @@
 require 'import/transformer'
 
 module Import
-  class FitnesSiNewDatasource < Datasource
-    def initialize
-      super(
-        :file,
-        'lib/tasks/data/fitnes_si_new.json'
-      )
-    end
-  end
   class FitnesSiNewTransformer < Transformer
     def description
       "Import results from FitneSiNew".freeze
@@ -40,4 +32,4 @@ module Import
       clean_data
     end
   end
-end
+end 

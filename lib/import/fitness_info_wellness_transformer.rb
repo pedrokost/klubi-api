@@ -1,15 +1,7 @@
 require 'import/transformer'
+require 'json'
 
 module Import
-  class FitnessInfoWellnessDatasource < Datasource
-    def initialize
-      super(
-        :file,
-        "lib/tasks/data/fitness_info_wellness.json"
-      )
-    end
-  end
-
   class FitnessInfoWellnessTransformer < Transformer
     def description
       "Import results from FitnessInfo".freeze
@@ -54,4 +46,4 @@ module Import
       clean_data
     end
   end
-end
+end 
