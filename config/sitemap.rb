@@ -5,7 +5,7 @@ SitemapGenerator::Sitemap.default_host = "https://www.klubi.si"
 # pick a place safe to write the files
 SitemapGenerator::Sitemap.public_path = 'tmp/'
 # store on S3 using Fog (pass in configuration values as shown above if needed)
-SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(ENV['AWS_BUCKET'], { path: '' })
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(Rails.application.credentials.AWS_BUCKET, { path: '' })
 # inform the map cross-linking where to find the other maps
 SitemapGenerator::Sitemap.sitemaps_host = "https://www.klubi.si/"
 # pick a namespace within your bucket to organize your maps
@@ -41,7 +41,7 @@ SitemapGenerator::Sitemap.create do
   add '/seznam-klubov'
   add '/oprojektu'
 
-  supported_categories = ENV['SUPPORTED_CATEGORIES'].split(',')
+  supported_categories = Rails.application.credentials.SUPPORTED_CATEGORIES.split(',')
 
   # Add all categories
   supported_categories.each do |category|

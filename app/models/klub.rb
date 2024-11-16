@@ -129,21 +129,20 @@ class Klub < ApplicationRecord
   def url_slug
     "#{slug}-#{id}"
   end
-
   def spa_url
-    "#{ENV['WEBSITE_FULL_HOST']}/#{category_for_url}/#{url_slug}/".freeze
+    "#{Rails.application.credentials.WEBSITE_FULL_HOST}/#{category_for_url}/#{url_slug}/".freeze
   end
 
   def spa_edit_url
-    "#{ENV['WEBSITE_FULL_HOST']}/#{category_for_url}/#{url_slug}/uredi/".freeze
+    "#{Rails.application.credentials.WEBSITE_FULL_HOST}/#{category_for_url}/#{url_slug}/uredi/".freeze
   end
 
   def spa_data_confirmation_url
-    "#{ENV['WEBSITE_FULL_HOST']}/#{category_for_url}/#{url_slug}/potrdi/#{data_confirmation_request_hash}".freeze
+    "#{Rails.application.credentials.WEBSITE_FULL_HOST}/#{category_for_url}/#{url_slug}/potrdi/#{data_confirmation_request_hash}".freeze
   end
 
   def static_map_url(width: 400, height: 300)
-    "https://maps.googleapis.com/maps/api/staticmap?center=#{latitude},#{longitude}&zoom=15&size=#{width}x#{height}&maptype=roadmap&markers=color:blue%7Clabel:%7C#{latitude},#{longitude}&key=#{ENV['GOOGLE_STATIC_MAPS_SERVER_API_KEY']}".html_safe.freeze
+    "https://maps.googleapis.com/maps/api/staticmap?center=#{latitude},#{longitude}&zoom=15&size=#{width}x#{height}&maptype=roadmap&markers=color:blue%7Clabel:%7C#{latitude},#{longitude}&key=#{Rails.application.credentials.GOOGLE_STATIC_MAPS_SERVER_API_KEY}".html_safe.freeze
   end
 
   def created_branch(branch_attrs)
@@ -206,7 +205,7 @@ private
   end
 
   def supported_categories
-    ENV['SUPPORTED_CATEGORIES'].split(',')
+    Rails.application.credentials.SUPPORTED_CATEGORIES.split(',')
   end
 
   def category_for_url

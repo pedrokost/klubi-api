@@ -5,7 +5,7 @@ module Api
     class EmailStatsController < ApplicationController
 
       def webhook
-        verified = verify_authenticity(ENV['MAILGUN_API_KEY'],
+        verified = verify_authenticity(Rails.application.credentials.MAILGUN_API_KEY,
           mailgun_params[:token],
           mailgun_params[:timestamp],
           mailgun_params[:signature])

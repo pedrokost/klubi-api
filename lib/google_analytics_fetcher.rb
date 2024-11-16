@@ -22,8 +22,7 @@ class GoogleAnalyticsFetcher
   def total_visitors(klub_id)
 
     analytics = Google::Apis::AnalyticsreportingV4::AnalyticsReportingService.new
-
-    creds = Google::Auth::ServiceAccountCredentials.make_creds(json_key_io: StringIO.new(ENV.fetch('GOOGLE_APIS_CREDENTIALS')),
+    creds = Google::Auth::ServiceAccountCredentials.make_creds(json_key_io: StringIO.new(Rails.application.credentials.GOOGLE_APIS_CREDENTIALS),
                                                                scope: SCOPE)
     analytics.authorization = creds
 
@@ -33,7 +32,7 @@ class GoogleAnalyticsFetcher
 
     request = Google::Apis::AnalyticsreportingV4::GetReportsRequest.new(
       report_requests: [Google::Apis::AnalyticsreportingV4::ReportRequest.new(
-        view_id: ENV.fetch('GOOGLE_ANALYTICS_VIEW'),
+        view_id: Rails.application.credentials.GOOGLE_ANALYTICS_VIEW,
         metrics: [metric_users],
         date_ranges: [date_range],
         filters_expression: "ga:pagePath=@-#{klub_id}/"

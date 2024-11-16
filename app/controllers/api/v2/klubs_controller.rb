@@ -133,7 +133,7 @@ module Api
       end
 
       def supported_categories
-        ENV['SUPPORTED_CATEGORIES'].split(',')
+        Rails.application.credentials.SUPPORTED_CATEGORIES.split(',')
       end
 
       def new_klub_params

@@ -74,7 +74,7 @@ Requiremetns:
 Postgres setup:
 ```
 fly postgres connect -a klubi-api-db
-CREATE EXTENSION postgis
+CREATE EXTENSION postgis  # Crashes if less than 512MB ram.
 ```
 
 

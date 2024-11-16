@@ -20,9 +20,8 @@ class ApplicationController < ActionController::API
   end
 
 private
-
   def supported_categories
-    ENV['SUPPORTED_CATEGORIES'].split(',')
+    Rails.application.credentials.SUPPORTED_CATEGORIES.split(',')
   end
 
   def correct_url!

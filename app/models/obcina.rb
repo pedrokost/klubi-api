@@ -29,9 +29,8 @@ class Obcina < ApplicationRecord
   end
 
 private
-
   def supported_categories
-    ENV['SUPPORTED_CATEGORIES'].split(',').freeze
+    Rails.application.credentials.SUPPORTED_CATEGORIES.split(',').freeze
   end
 
   def klubs

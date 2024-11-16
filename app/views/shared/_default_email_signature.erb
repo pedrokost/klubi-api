@@ -1,6 +1,6 @@
-<%= ENV['DEFAULT_BOT_NAME'] %> iz <%= link_to ENV['WEBSITE_FULL_HOST'] do %><%= email_image_tag("signature.png", width: 120, height: 11, alt: 'Klubi Slovenije') %><% end %>
+<%= Rails.application.credentials.DEFAULT_BOT_NAME %> iz <%= link_to Rails.application.credentials.WEBSITE_FULL_HOST do %><%= email_image_tag("signature.png", width: 120, height: 11, alt: 'Klubi Slovenije') %><% end %>
 <br> <br>
 
-Splet: <%= link_to 'www.klubi.si', ENV['WEBSITE_FULL_HOST'] %> <br>
+Splet: <%= link_to 'www.klubi.si', Rails.application.credentials.WEBSITE_FULL_HOST %> <br>
 Facebook: <%= link_to 'facebook.com/klubi.slovenije/', 'https://www.facebook.com/klubi.slovenije/' %> <br>
 Twitter: <%= link_to '@klubi_si', 'https://twitter.com/klubi_si' %> <br>

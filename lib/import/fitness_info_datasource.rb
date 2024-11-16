@@ -5,7 +5,7 @@ module Import
     def initialize
       super(
         :http,
-        "https://www.kimonolabs.com/api/atqwtfs6?apikey=#{ENV['KIMONO_LABS_API_KEY']}"
+        "https://www.kimonolabs.com/api/atqwtfs6?apikey=#{Rails.application.credentials.KIMONO_LABS_API_KEY}"
       )
     end
   end

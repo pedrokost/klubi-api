@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV['DEFAULT_EMAIL']
+  default from: Rails.application.credentials.DEFAULT_EMAIL
   helper EmailHelper
 end

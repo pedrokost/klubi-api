@@ -33,9 +33,8 @@ private
     id = slug_with_id.split('-').last
     Obcina.find(id)
   end
-
   def supported_categories
-    ENV['SUPPORTED_CATEGORIES'].split(',')
+    Rails.application.credentials.SUPPORTED_CATEGORIES.split(',')
   end
 
   def category_params
