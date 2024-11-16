@@ -1,4 +1,9 @@
-☐ Index.html hardcode!
+x Index.html hardcode
+x Move domain
+x Use Rails secrets
+☐ Make admin work 
+☐ Fix access from non-root urls!
+☐ Fix geolocation.
 ☐ Move to docker
 ☐ Migrate from Heroku to Fly
 ☐ Get rid of redis, instead upload to DB?
