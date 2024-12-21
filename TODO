@@ -4,12 +4,14 @@ x Use Rails secrets
 x Make admin work 
 x Fix access from non-root urls!
 x Fix geolocation.
-☐ Ensure backups work
+x Ensure backups work
 ☐ Make workers work
-☐ Document stupid build process for now for the index
-☐ Move to docker
-☐ Migrate from Heroku to Fly
-☐ Get rid of redis, instead upload to DB?
+x Document stupid build process for now for the
+☐ Drop the Heroku resources
 ☐ Update adminstrate https://administrate-demo.herokuapp.com/getting_started
 ☐ Administrate: update order unverified to top
 ☐ Administrate: edit buttons seem broken
+☐ Upgrade to rails 8
+☐ Move to docker
+☐ Migrate from Heroku to Fly
+☐ Get rid of redis, instead upload to DB?
