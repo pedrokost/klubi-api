@@ -9,12 +9,12 @@ module Admin
     http_basic_authenticate_with name: Rails.application.credentials.ADMIN_NAME, password: Rails.application.credentials.ADMIN_PASSWORD
 
     before_action :set_locale
-    before_action :authenticate_admin
+    # before_action :authenticate_admin
     before_action :default_params
 
-    def authenticate_admin
-      # before_filter :authenticate_admin
-    end
+    # def authenticate_admin
+    #   # before_filter :authenticate_admin
+    # end
 
     # Override this value to specify the number of elements to display at a time
     # on index pages. Defaults to 20.

@@ -23,6 +23,15 @@ p d_normalized.join(',')
 
 This gives a tiny chance to nighly emails!
 
+# Deveploment
+
+This website is deployed on a [fly.io](https://fly.io) cluster.
+It uses a Dockerfile to build the image.
+
+For local development, there is no Dockerfile yet. TODO
+
+
+
 - Database creation
 
 ```

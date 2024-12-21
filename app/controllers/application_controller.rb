@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::API
   include ActionController::Serialization
 
-	# skip_before_action :verify_authenticity_token
-
   def index
     new_url, changed = correct_url!
     redirect_to new_url, status: :moved_permanently and return if changed
@@ -65,7 +63,7 @@ private
   end
 
   def bootstrap_index(index_key)
-    File.read(Rails.root.join('public', 'index.html'))
+    File.read(Rails.root.join('public', 'temp_index.html'))
   end
 
 end

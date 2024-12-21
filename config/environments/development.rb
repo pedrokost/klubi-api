@@ -83,4 +83,6 @@ Rails.application.configure do
 
   config.hosts << "admin.app.local:3200"
   config.hosts << "api.app.local:3200"
+  config.hosts << "www.app.local:3200"
+  config.hosts << "app.local:3200"
 end
