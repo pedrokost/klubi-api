@@ -30,8 +30,6 @@ It uses a Dockerfile to build the image.
 
 For local development, there is no Dockerfile yet. TODO
 
-
-
 - Database creation
 
 ```
@@ -79,20 +77,20 @@ foreman run bundle exec rspec spec/
 
 Deploy to Fly.io
 
-``` 
+```
 fly deploy --dockerfile Dockerfile --build-arg RAILS_MASTER_KEY=$(cat config/master.key)
 ```
 
-
 Requiremetns:
+
 - Postgres with Postgis
 
 Postgres setup:
+
 ```
 fly postgres connect -a klubi-api-db
 CREATE EXTENSION postgis  # Crashes if less than 512MB ram.
 ```
-
 
 Setup the cron job to execute `rake sitemap:refresh` regularly (e.g. daily)
 
@@ -141,6 +139,12 @@ Register it in data_import.rake
 foreman run rake import:your_import_script
 ```
 
+# Cronjob
+
+Cronjobs are run via a separate Fly project called fly-cron-manager.
+To define the cronjobs, update the schedules.json file in that project.
+Note/TODO: periodically build images for the jobs. Currently relying on some random deployment image.
+
 # Resources
 
 - [Loading data into PostGIS from the Command Line](http://suite.opengeo.org/docs/latest/dataadmin/pgGettingStarted/shp2pgsql.html)
@@ -157,9 +161,7 @@ shp2pgsql -I -s 3912:4326 f1f60b8a-6513-5102-987c-4950a36c72ec.shp public.statis
 
 Source of administrative regions: Statistical Office of the Republic of Slovenia.
 
-
 # Troubleshooting
-
 
 lavenshtein gem does not seem to be building the so file.
 
