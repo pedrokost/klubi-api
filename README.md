@@ -77,6 +77,13 @@ foreman run bundle exec rspec spec/
 
 ## Deployment instructions
 
+Deploy to Fly.io
+
+``` 
+fly deploy --dockerfile Dockerfile --build-arg RAILS_MASTER_KEY=$(cat config/master.key)
+```
+
+
 Requiremetns:
 - Postgres with Postgis
 
