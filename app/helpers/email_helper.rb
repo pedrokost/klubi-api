@@ -6,7 +6,11 @@
 
 module EmailHelper
   def email_image_tag(image, **options)
-    attachments.inline[image] = File.read(Rails.root.join("public/assets/#{image}"))
+    # Use asset_path to get the compiled asset path
+    image_path = Rails.root.join('public', asset_path(image).sub(/\A\//, ''))
+    
+
+    attachments.inline[image] = File.read(image_path)
     image_tag attachments[image].url, **options
   end
 end

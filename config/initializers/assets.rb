@@ -10,3 +10,6 @@ Rails.application.config.assets.version = "1.0"
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w[ admin.js admin.css ]
+
+# Add signature.png to the precompiled assets list
+Rails.application.config.assets.precompile += %w( signature.png )
