@@ -21,3 +21,9 @@ x Administrate: edit buttons seem broken
 x Migrate from Heroku to Fly
 ☐ Get rid of redis, instead upload to DB?
 ☐ Find solution for the hardcoded index.html
+☐ Occupancy analytics
+    ☐ Get business hours form google
+    ☐ FIgure out opening hours form it
+    ☐ Figure out which classes are most busy, and which the least
+    ☐ Create an AI system that automatically generates Personalized social media posts
+    
