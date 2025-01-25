@@ -17,7 +17,7 @@ module Admin
     # end
 
     def default_sorting_attribute
-      :modified_at
+      :updated_at
     end
   
     def default_sorting_direction
