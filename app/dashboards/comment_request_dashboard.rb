@@ -8,12 +8,14 @@ class CommentRequestDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    commentable: Field::Polymorphic,
-    comment: Field::BelongsTo,
     id: Field::Number,
-    requester_email: Field::String,
+    comment: Field::BelongsTo,
+    commentable: Field::Polymorphic,
     commenter_email: Field::String,
+    commenter_name: Field::String,
     request_hash: Field::String,
+    requester_email: Field::String,
+    requester_name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -23,34 +25,45 @@ class CommentRequestDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :commentable,
-    :requester_email,
-    :commenter_email,
-    :comment
+  COLLECTION_ATTRIBUTES = %i[
+    commentable
+    requester_email
+    commenter_email
+    comment
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :id,
-    :commentable,
-    :comment,
-    :requester_email,
-    :commenter_email,
-    :request_hash,
-    :created_at,
-    :updated_at
+  SHOW_PAGE_ATTRIBUTES = %i[
+    commentable
+    comment
+    requester_email
+    commenter_email
+    request_hash
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :commentable,
-    :requester_email,
-    :commenter_email
+  FORM_ATTRIBUTES = %i[
+    commentable
+    requester_email
+    commenter_email
   ].freeze
+
+  # COLLECTION_FILTERS
+  # a hash that defines filters that can be used while searching via the search
+  # field of the dashboard.
+  #
+  # For example to add an option to search for open resources by typing "open:"
+  # in the search field:
+  #
+  #   COLLECTION_FILTERS = {
+  #     open: ->(resources) { resources.where(open: true) }
+  #   }.freeze
+  COLLECTION_FILTERS = {}.freeze
 
   # Overwrite this method to customize how comment requests are displayed
   # across all pages of the admin dashboard.

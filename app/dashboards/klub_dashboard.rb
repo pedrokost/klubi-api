@@ -8,33 +8,36 @@ class KlubDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    branches: Field::HasMany.with_options(class_name: "Klub", searchable: false),
-    parent: Field::BelongsTo.with_options(class_name: "Klub", searchable: false),
-    updates: Field::HasMany.with_options(searchable: false),
-    id: Field::Number.with_options(searchable: false),
-    name: Field::String.with_options(searchable: true),
-    slug: Field::String.with_options(searchable: true),
-    address: Field::String.with_options(searchable: true),
-    town: Field::String.with_options(searchable: true),
-    website: Field::String.with_options(searchable: true),
-    phone: Field::String.with_options(searchable: true),
-    email: Field::String.with_options(searchable: true),
-    description: Field::String.with_options(searchable: true),
-    notes: Field::String.with_options(searchable: true),
+    id: Field::Number,
+    address: Field::String,
+    branches: Field::HasMany,
+    categories: Field::String,
+    closed_at: Field::Date,
+    comment_requests: Field::HasMany,
+    comments: Field::HasMany,
+    complete: Field::Boolean,
+    data_confirmation_request_hash: Field::String,
+    data_confirmed_at: Field::DateTime,
+    description: Field::String,
+    editor_emails: Field::String,
+    email: Field::String,
+    facebook_url: Field::String,
+    last_verification_reminder_at: Field::DateTime,
     latitude: Field::String.with_options(searchable: false),
     longitude: Field::String.with_options(searchable: false),
-    created_at: Field::DateTime.with_options(searchable: false),
-    updated_at: Field::DateTime.with_options(searchable: false),
-    verified: Field::Boolean.with_options(searchable: false),
-    complete: Field::Boolean.with_options(searchable: false),
-    categories: Field::String.with_options(searchable: false),
-    facebook_url: Field::String.with_options(searchable: true),
-    editor_emails: Field::String.with_options(searchable: false),
-    parent_id: Field::Number.with_options(searchable: false),
-    last_verification_reminder_at: Field::DateTime.with_options(searchable: false),
-    data_confirmation_request_hash: Field::String.with_options(searchable: false),
-    data_confirmed_at: Field::DateTime.with_options(searchable: false),
-    closed_at: Field::DateTime.with_options(searchable: false)
+    name: Field::String,
+    notes: Field::String,
+    parent: Field::BelongsTo,
+    phone: Field::String,
+    slug: Field::String,
+    town: Field::String,
+    updates: Field::HasMany,
+    verified: Field::Boolean,
+    visits_count: Field::Number,
+    visits_count_updated_at: Field::DateTime,
+    website: Field::String,
+    created_at: Field::DateTime,
+    updated_at: Field::DateTime,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -42,38 +45,93 @@ class KlubDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :name,
-    :town,
-    :complete,
-    :updates,
-    :verified
+  COLLECTION_ATTRIBUTES = %i[
+    name
+    town
+    complete
+    updates
+    verified
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = ATTRIBUTE_TYPES.keys
+  SHOW_PAGE_ATTRIBUTES = %i[
+    id
+    address
+    branches
+    categories
+    closed_at
+    comment_requests
+    comments
+    complete
+    data_confirmation_request_hash
+    data_confirmed_at
+    description
+    editor_emails
+    email
+    facebook_url
+    last_verification_reminder_at
+    latitude
+    longitude
+    name
+    notes
+    parent
+    phone
+    slug
+    town
+    updates
+    verified
+    visits_count
+    visits_count_updated_at
+    website
+    created_at
+    updated_at
+  ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :verified,
-    :name,
-    :slug,
-    :address,
-    :website,
-    :phone,
-    :email,
-    :categories,
-    :facebook_url,
-    :editor_emails,
-    :description,
-    :notes,
-    :data_confirmed_at,
-    :branches,
-    :closed_at
+  FORM_ATTRIBUTES = %i[
+    address
+    branches
+    categories
+    closed_at
+    comment_requests
+    comments
+    complete
+    data_confirmation_request_hash
+    data_confirmed_at
+    description
+    editor_emails
+    email
+    facebook_url
+    last_verification_reminder_at
+    latitude
+    longitude
+    name
+    notes
+    parent
+    phone
+    slug
+    town
+    updates
+    verified
+    visits_count
+    visits_count_updated_at
+    website
   ].freeze
+
+  # COLLECTION_FILTERS
+  # a hash that defines filters that can be used while searching via the search
+  # field of the dashboard.
+  #
+  # For example to add an option to search for open resources by typing "open:"
+  # in the search field:
+  #
+  #   COLLECTION_FILTERS = {
+  #     open: ->(resources) { resources.where(open: true) }
+  #   }.freeze
+  COLLECTION_FILTERS = {}.freeze
 
   # Overwrite this method to customize how klubs are displayed
   # across all pages of the admin dashboard.

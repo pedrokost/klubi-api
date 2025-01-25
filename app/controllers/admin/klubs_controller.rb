@@ -1,23 +1,31 @@
 module Admin
   class KlubsController < Admin::ApplicationController
-    # To customize the behavior of this controller,
-    # you can overwrite any of the RESTful actions. For example:
+    # Overwrite any of the RESTful controller actions to implement custom behavior
+    # For example, you may want to send an email after a foo is updated.
     #
-    # def index
+    # def update
     #   super
-    #   @resources = Klub.
-    #     page(params[:page]).
-    #     per(10)
+    #   send_foo_updated_email(requested_resource)
     # end
 
-    # Define a custom finder by overriding the `find_resource` method:
+    # Override this method to specify custom lookup behavior.
+    # This will be used to set the resource for the `show`, `edit`, and `update`
+    # actions.
+    #
     # def find_resource(param)
-    #   Klub.find_by!(slug: param)
+    #   Foo.find_by!(slug: param)
     # end
 
-    # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
-    # for more information
 
+    def default_sorting_attribute
+      :modified_at
+    end
+  
+    def default_sorting_direction
+      :desc
+    end
+
+    # The result of this lookup will be available as `requested_resource`
     def toggleverify
       requested_resource.toggle!(:verified)
 

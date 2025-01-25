@@ -8,22 +8,13 @@ x Ensure backups work
 x Make workers work
 x Document stupid build process for now for the
 ✔ Transfers the cronjobs over from Heroku to Fly @done (24-12-21 22:30)
- ☐ Fix the sitemap task
-   ☐ 2024-12-21T21:27:48Z app[d890426c16d6d8] ams [info]ArgumentError: wrong number of arguments (given 2, expected 1) (ArgumentError)
-  2024-12-21T21:27:48Z app[d890426c16d6d8] ams [info]/usr/local/bundle/ruby/3.3.0/gems/sitemap_generator-6.3.0/lib/sitemap_generator/adapters/aws_sdk_adapter.rb:30:in `initialize'
-  2024-12-21T21:27:48Z app[d890426c16d6d8] ams [info]/rails/config/sitemap.rb:8:in `new'
-  2024-12-21T21:27:48Z app[d890426c16d6d8] ams [info]/rails/config/sitemap.rb:8:in `run'
-  2024-12-21T21:27:48Z app[d890426c16d6d8] ams [info]/usr/local/bundle/ruby/3.3.0/gems/sitemap_generator-6.3.0/lib/sitemap_generator/interpreter.rb:78:in `instance_eval'
-  2024-12-21T21:27:48Z app[d890426c16d6d8] ams [info]/usr/local/bundle/ruby/3.3.0/gems/sitemap_generator-6.3.0/lib/sitemap_generator/interpreter.rb:78:in `run'
-  2024-12-21T21:27:48Z app[d890426c16d6d8] ams [info]/usr/local/bundle/ruby/3.3.0/gems/sitemap_generator-6.3.0/lib/sitemap_generator/tasks.rb:51:in `block (2 levels) in <top (required)>'
-  2024-12-21T21:27:48Z app[d890426c16d6d8] ams [info]/usr/local/bundle/ruby/3.3.0/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
-  2024-12-21T21:27:48Z app[d890426c16d6d8] ams [info]Tasks: TOP => sitemap:refresh => sitemap:create
- ☐ Build image for the cronjobs
+✔ Fix the sitemap task
+☐ Build image for the cronjobs
 
 x Drop the Heroku resources
 ☐ Update adminstrate https://administrate-demo.herokuapp.com/getting_started
-☐ Administrate: update order unverified to top
-☐ Administrate: klubi unverified to top
+x Administrate: update order unverified to top
+x Administrate: klubi unverified to top
 ☐ Administrate: edit buttons seem broken
 ☐ Upgrade to rails 8
 ☐ Move to docker
