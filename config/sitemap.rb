@@ -1,11 +1,18 @@
 # require 'fog/aws'
+require 'aws-sdk-s3'
 
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "https://www.klubi.si"
 # pick a place safe to write the files
 SitemapGenerator::Sitemap.public_path = 'tmp/'
 # store on S3 using Fog (pass in configuration values as shown above if needed)
-SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(Rails.application.credentials.AWS_BUCKET, { path: '' })
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(
+  Rails.application.credentials.AWS_BUCKET, 
+  access_key_id: Rails.application.credentials.AWS_ACCESS_KEY_ID,
+  secret_access_key: Rails.application.credentials.AWS_SECRET_ACCESS_KEY,
+  # session_token: Rails.application.credentials.AWS_SESSION_TOKEN,
+  region: Rails.application.credentials.AWS_REGION,
+)
 # inform the map cross-linking where to find the other maps
 SitemapGenerator::Sitemap.sitemaps_host = "https://www.klubi.si/"
 # pick a namespace within your bucket to organize your maps
