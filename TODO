@@ -18,5 +18,6 @@ x Administrate: klubi unverified to top
 x Administrate: edit buttons seem broken
 ☐ Upgrade to rails 8
 ☐ Move to docker
-☐ Migrate from Heroku to Fly
+x Migrate from Heroku to Fly
 ☐ Get rid of redis, instead upload to DB?
+☐ Find solution for the hardcoded index.html
