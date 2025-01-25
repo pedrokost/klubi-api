@@ -15,7 +15,7 @@ x Drop the Heroku resources
 ☐ Update adminstrate https://administrate-demo.herokuapp.com/getting_started
 x Administrate: update order unverified to top
 x Administrate: klubi unverified to top
-☐ Administrate: edit buttons seem broken
+x Administrate: edit buttons seem broken
 ☐ Upgrade to rails 8
 ☐ Move to docker
 ☐ Migrate from Heroku to Fly
