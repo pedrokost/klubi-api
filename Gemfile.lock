@@ -331,7 +331,8 @@ GEM
     rack (3.1.8)
     rack-attack (4.3.1)
       rack
-    rack-cors (0.4.1)
+    rack-cors (2.0.2)
+      rack (>= 2.0.0)
     rack-rewrite (1.5.1)
     rack-session (2.1.0)
       base64 (>= 0.1.0)
@@ -575,7 +576,7 @@ DEPENDENCIES
   prerender_rails (~> 1.6.0)
   puma (>= 5.0)
   rack-attack (~> 4.3.0)
-  rack-cors (~> 0.4.1)
+  rack-cors (~> 2.0.2)
   rack-rewrite (~> 1.5.1)
   rack-ssl-enforcer
   rails (~> 7.2.1)
