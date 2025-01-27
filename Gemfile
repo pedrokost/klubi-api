@@ -63,7 +63,7 @@ gem 'nokogiri', '~> 1.16.7'
 
 gem 'rack-attack', '~> 4.3.0'
 
-gem 'rack-cors', '~>0.4.1', require: 'rack/cors'
+gem 'rack-cors', '~>2.0.2', require: 'rack/cors'
 
 gem 'rack-rewrite', '~> 1.5.1'
 
