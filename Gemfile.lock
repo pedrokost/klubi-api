@@ -179,7 +179,9 @@ GEM
     ffi (1.17.1-x86_64-linux-gnu)
     ffi (1.17.1-x86_64-linux-musl)
     foreman (0.88.1)
-    geocoder (1.2.14)
+    geocoder (1.8.5)
+      base64 (>= 0.1.0)
+      csv (>= 3.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     google-apis-analyticsreporting_v4 (0.17.0)
@@ -560,7 +562,7 @@ DEPENDENCIES
   delayed_job_active_record (~> 4.1.3)
   factory_bot_rails
   foreman
-  geocoder (~> 1.2.8)
+  geocoder (~> 1.8.5)
   google-apis-analyticsreporting_v4 (~> 0.17.0)
   googleauth (~> 1.11.2)
   json-schema
