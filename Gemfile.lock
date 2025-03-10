@@ -328,7 +328,7 @@ GEM
     puma (6.5.0)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (3.1.8)
+    rack (3.1.12)
     rack-attack (4.3.1)
       rack
     rack-cors (0.4.1)
