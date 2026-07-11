@@ -67,8 +67,7 @@ RSpec.describe KlubMailer, :type => :mailer do
   describe "new_updates_mail" do
     let!(:klub) { create(:klub, name: 'My klub' * 10, editor_emails: ['submitter@email.com'], categories: ['fitnes', 'zumba']) }
 
-    let!(:update) { create(:update, updatable: klub, editor_email: 'joe@doe.com', field: 'my_field', oldvalue: 'old_val', newvalue: 'new_val') }
-    let(:mail) { KlubMailer.new_updates_mail(klub.id, [update]) }
+    let(:mail) { KlubMailer.new_updates_mail(klub.id, 'joe@doe.com') }
 
     it 'renders the subject' do
       expect(mail.subject).to eql("Updates submitted for 'My klubMy klubMy klubMy klubMy klubMy klubMy klubMy klubMy klubMy klub'")
@@ -86,8 +85,8 @@ RSpec.describe KlubMailer, :type => :mailer do
       expect(mail.body.encoded).to match('joe@doe.com')
     end
 
-    it 'send update data' do
-      expect(mail.body.encoded).to match('my_field').and match('old_val').and match('new_val')
+    it 'links to the klub admin page' do
+      expect(mail.body.encoded).to match("/klubs/#{klub.id}")
     end
   end
 

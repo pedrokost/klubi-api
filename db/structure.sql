@@ -215,45 +215,6 @@ ALTER SEQUENCE public.comments_id_seq OWNED BY public.comments.id;
 
 
 --
--- Name: delayed_jobs; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.delayed_jobs (
-    id bigint NOT NULL,
-    priority integer DEFAULT 0 NOT NULL,
-    attempts integer DEFAULT 0 NOT NULL,
-    handler text NOT NULL,
-    last_error text,
-    run_at timestamp without time zone,
-    locked_at timestamp without time zone,
-    failed_at timestamp without time zone,
-    locked_by character varying,
-    queue character varying,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone
-);
-
-
---
--- Name: delayed_jobs_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.delayed_jobs_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: delayed_jobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.delayed_jobs_id_seq OWNED BY public.delayed_jobs.id;
-
-
---
 -- Name: email_stats; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -576,13 +537,6 @@ ALTER TABLE ONLY public.comments ALTER COLUMN id SET DEFAULT nextval('public.com
 
 
 --
--- Name: delayed_jobs id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.delayed_jobs ALTER COLUMN id SET DEFAULT nextval('public.delayed_jobs_id_seq'::regclass);
-
-
---
 -- Name: email_stats id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -639,14 +593,6 @@ ALTER TABLE ONLY public.comment_requests
 
 ALTER TABLE ONLY public.comments
     ADD CONSTRAINT comments_pkey PRIMARY KEY (id);
-
-
---
--- Name: delayed_jobs delayed_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.delayed_jobs
-    ADD CONSTRAINT delayed_jobs_pkey PRIMARY KEY (id);
 
 
 --
@@ -727,13 +673,6 @@ ALTER TABLE ONLY public.statisticna_regijas
 
 ALTER TABLE ONLY public.updates
     ADD CONSTRAINT updates_pkey PRIMARY KEY (id);
-
-
---
--- Name: delayed_jobs_priority; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX delayed_jobs_priority ON public.delayed_jobs USING btree (priority, run_at);
 
 
 --
@@ -1080,6 +1019,7 @@ ALTER TABLE ONLY public.obcinas
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260711172309'),
 ('20260711152439'),
 ('20241031152650'),
 ('20241031152649'),

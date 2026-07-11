@@ -11,7 +11,7 @@ x Document stupid build process for now for the
 ✔ Fix the sitemap task
 ☐ Build image for the cronjobs
 ✔ Migrate to goodjob to get rid of the separate worker. requires rails 6 at least. See if AI can upgrade both at once. First have ti review/add any important missing tests. @done (26-07-11)
-☐ After goodjob has been stable in production for a few days: remove delayed_job gems from Gemfile (marked with TODO), delete bin/delayed_job, add drop_table :delayed_jobs migration + regenerate structure.sql
+✔ After goodjob has been stable in production for a few days: remove delayed_job gems from Gemfile (marked with TODO), delete bin/delayed_job, add drop_table :delayed_jobs migration + regenerate structure.sql @done (26-07-11)
 ☐ Before/at first deploy of feature/rails8: add RAILS_MASTER_KEY secret to GitHub repo (CI needs it), check Delayed::Job.count == 0 on prod, fly deploy, then fly scale count worker=0
 
 x Drop the Heroku resources
