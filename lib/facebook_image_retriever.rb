@@ -12,7 +12,7 @@ class FacebookImageRetriever
   end
 
   def photos
-    @oauth = Koala::Facebook::OAuth.new(ENV.fetch('FB_APP_ID'), ENV.fetch('FB_APP_SECRET'))
+    @oauth = Koala::Facebook::OAuth.new(Rails.application.credentials.FB_APP_ID, Rails.application.credentials.FB_APP_SECRET)
     @graph = Koala::Facebook::API.new(@oauth.get_app_access_token)
     profile_images = @graph.get_object("#{page_id}/photos", fields: ['images'])
     uploaded_images = @graph.get_object("#{page_id}/photos?type=uploaded", fields: ['images'])

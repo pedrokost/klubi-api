@@ -76,7 +76,11 @@ gem 'levenshtein-ffi', :require => 'levenshtein'
 gem 'aws-sdk-s3' , '~> 1.169.0'  # for uploading the sitemap
 gem 'sitemap_generator', '~> 6.3.0'
 
-gem 'administrate', '0.20.1'
+gem 'administrate', '~> 1.0.0'
+
+# administrate >= 1.0 no longer depends on sprockets; the app still uses the
+# asset pipeline (signature.png for mailers, config.assets.*)
+gem 'sprockets-rails'
 
 # Makes caching into memcacher work
 gem "dalli", '~> 2.7.6'
