@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 8.0.5'
+gem 'rails', '~> 8.1.3'
 
 gem 'rack-ssl-enforcer'
 
@@ -15,10 +15,11 @@ gem 'pg', '~> 1.5.9'
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem 'activerecord-postgis-adapter', '~> 11.0'
+gem 'activerecord-postgis-adapter', '~> 11.1'
 
 # gem 'active_model_serializers', '~> 0.9.0'
-gem 'active_model_serializers', '0.10.14'
+# 0.10.16 drops ActiveSupport::Configurable (deprecated in Rails 8.1)
+gem 'active_model_serializers', '0.10.16'
 
 gem 'active_model_serializers-jsonapi_embedded_records_deserializer', '~> 0.1.1'
 
@@ -102,7 +103,7 @@ group :development, :test do
   gem 'rubocop-rails-omakase', require: false
 
   # gem 'spring-commands-rspec'
-  gem 'rspec-rails', '~> 7.1'
+  gem 'rspec-rails', '~> 8.0'
   # gem 'guard-rspec'
   gem 'factory_bot_rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
