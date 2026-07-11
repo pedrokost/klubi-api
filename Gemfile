@@ -15,9 +15,7 @@ gem 'pg', '~> 1.5.9'
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem 'activerecord-postgis-adapter', github: "rgeo/activerecord-postgis-adapter"
-
-gem 'rails_12factor', group: :production
+gem 'activerecord-postgis-adapter', '~> 10.0.3'
 
 # gem 'active_model_serializers', '~> 0.9.0'
 gem 'active_model_serializers', '0.10.14'
@@ -133,5 +131,3 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# TODO: Rails 5.2.5, 6.0.3.6, and 6.1.3.1 have been released, removing the mimemagic dependency
-gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
