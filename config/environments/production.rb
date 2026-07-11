@@ -71,9 +71,11 @@ Rails.application.configure do
   # (5 min TTL in BootstrapIndexService) and rack-attack throttling.
   config.cache_store = :memory_store, { size: 32.megabytes }
 
-  # Use a real queuing backend for Active Job (and separate queues per environment).
-  # config.active_job.queue_adapter = :resque
-  # config.active_job.queue_name_prefix = "klubi_api_production"
+  # GoodJob runs jobs inside the web process (single small fly.io VM, only
+  # short-lived mailer jobs) so no separate worker machine is needed.
+  config.good_job.execution_mode = :async
+  config.good_job.max_threads = 2
+  config.good_job.shutdown_timeout = 25 # finish in-flight jobs on Fly's SIGINT
 
   # Disable caching for Action Mailer templates even if Action Controller
   # caching is enabled.

@@ -17,16 +17,14 @@
 default: &default
   adapter: postgis
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # web threads + good_job async threads + LISTEN/NOTIFY + cron/utility
+  # (see https://github.com/bensheldon/good_job#database-connections)
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS", 3).to_i + ENV.fetch("GOOD_JOB_MAX_THREADS", 2).to_i + 2 %>
   <% if ENV["DB_HOST"] %>
   host: <%= ENV["DB_HOST"] %>
   username: postgres
   password: postgres
   <% end %>
-  
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
 
 development:
   <<: *default

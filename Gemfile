@@ -86,6 +86,9 @@ gem "memcachier", '~> 0.0.2'
 
 gem 'raygun4ruby', '~> 4.0.1'
 
+# Active Job backend; runs :async inside the web process (no worker machine)
+gem "good_job", "~> 4.19"
+# TODO: remove once good_job has been stable in production for a while
 gem "delayed_job_active_record", "~> 4.1.3"
 
 # gem 'pry-rails'

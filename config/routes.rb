@@ -3,6 +3,9 @@ require 'api_constraints'
 Rails.application.routes.draw do
 
   constraints subdomain: 'admin' do
+    # Job dashboard; protected by HTTP basic auth (see initializers/good_job.rb)
+    mount GoodJob::Engine => '/good_job'
+
     scope module: 'admin', as: 'admin' do
       DashboardManifest::DASHBOARDS.each do |dashboard_resource|
         resources dashboard_resource
