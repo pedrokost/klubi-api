@@ -23,14 +23,27 @@ p d_normalized.join(',')
 
 This gives a tiny chance to nighly emails!
 
-# Deveploment
+# Development
 
 This website is deployed on a [fly.io](https://fly.io) cluster.
-It uses a Dockerfile to build the image.
+It uses a Dockerfile to build the image (the same production image can also be run locally, see "Local running with Docker" below).
 
-For local development, there is no Dockerfile yet. TODO
+Ruby version: see `.ruby-version` (managed with [rv](https://github.com/spinel-coop/rv), e.g. `rv ruby install 3.3.5`).
+To build gems on the host you need dev headers: `sudo apt-get install libyaml-dev libpq-dev` (psych and pg fail to compile without them).
 
 - Database creation
+
+The easiest way is a PostGIS container matching `config/database.yml` (dev/test expect port 5434, user `zatresi`, password `pass`):
+
+```
+docker network create klubi
+docker run -d --name klubi-postgis --network klubi -p 5434:5432 \
+  -e POSTGRES_USER=zatresi -e POSTGRES_PASSWORD=pass \
+  -e POSTGRES_DB=zatresi-api_development \
+  postgis/postgis:16-3.4
+```
+
+Alternatively, on a host-installed Postgres (needs the PostGIS extension, and adjust the port in `config/database.yml`):
 
 ```
 sudo su - postgres
@@ -53,15 +66,15 @@ foreman run bundle exec rake db:test:prepare
 
 Import latest production backup to local db
 
-```
-heroku pg:backups:capture
-heroku pg:backups:download
+Backups are taken automatically from the Fly Postgres app by the `klubi-db-backups` repo (GitHub Action doing `fly proxy` + `pg_dump`, plain SQL format). To restore one into the local PostGIS container:
 
-pg_restore --verbose --clean --no-acl --no-owner -h localhost -U zatresi -d zatresi-api_development latest.dump
-rm latest.dump
+```
+docker exec -i klubi-postgis psql -U zatresi -d zatresi-api_development < ../../klubi-db-backups/backup.sql
 ```
 
-Altnatively, run `rake db:seed` to seed default data into the database.
+(Ownership errors for roles like `klubi_si_api`/`postgres` are harmless — those roles only exist in production.)
+
+Alternatively, run `rake db:seed` to seed default data into the database.
 
 - How to run the test suite
 
@@ -78,10 +91,12 @@ foreman run bundle exec rspec spec/
 Deploy to Fly.io
 
 ```
-fly deploy --dockerfile Dockerfile --build-arg RAILS_MASTER_KEY=$(cat config/master.key)
+fly deploy
 ```
 
-Requiremetns:
+Note: `RAILS_MASTER_KEY` is provided at runtime via `fly secrets` (set once with `fly secrets set RAILS_MASTER_KEY=$(cat config/master.key)`); the Dockerfile does not take it as a build arg.
+
+Requirements:
 
 - Postgres with Postgis
 
@@ -114,6 +129,27 @@ Or to see the Administrate dashboard, open
 
 http://admin.app.local:3200/klubs
 
+## Local running with Docker
+
+The production image can be run locally against the PostGIS container (see "Database creation" above) — this exercises the exact image Fly deploys:
+
+```
+docker build -t klubi-si-api .
+docker run -d --name klubi-api --network klubi -p 3000:3000 \
+  --env-file .env \
+  -e RAILS_ENV=production -e RACK_ENV=production -e PORT=3000 \
+  -e RAILS_MASTER_KEY=$(cat config/master.key) \
+  -e DATABASE_URL=postgis://zatresi:pass@klubi-postgis:5432/zatresi-api_development \
+  klubi-si-api
+```
+
+The entrypoint runs `db:prepare` on boot. Because routes are subdomain-constrained and production forces SSL, smoke-test with explicit headers:
+
+```
+curl -H "Host: api.app.local" -H "X-Forwarded-Proto: https" "http://localhost:3000/klubs?category=fitnes"
+curl -H "Host: www.app.local" -H "X-Forwarded-Proto: https" "http://localhost:3000/heartbeat"
+```
+
 ## Tasks
 
 1. Daily: Send an email for accepted klub updates
@@ -127,8 +163,6 @@ foreman run rake updates:send_emails
 ```
 foreman run rake klubs:send_emails
 ```
-
-foreman run rails s puma -b 'ssl://127.0.0.1:3200?key=/home/vagrant/.ssh/server.key&cert=/home/ubuntu/.ssh/server.crt'
 
 3. Manual: To import data
 
@@ -163,7 +197,7 @@ Source of administrative regions: Statistical Office of the Republic of Slovenia
 
 # Troubleshooting
 
-lavenshtein gem does not seem to be building the so file.
+levenshtein gem does not seem to be building the so file.
 
 If you get this error:
 
