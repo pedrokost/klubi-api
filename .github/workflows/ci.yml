@@ -68,6 +68,14 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      # levenshtein-ffi does not declare its C extension in the gemspec, so
+      # bundler never compiles it (the Dockerfile builds it manually too)
+      - name: Build levenshtein-ffi native extension
+        run: |
+          cd "$(bundle show levenshtein-ffi)/ext/levenshtein"
+          ruby extconf.rb
+          make CFLAGS="-fPIC -Wno-incompatible-pointer-types"
+
       - name: Run tests
         env:
           RAILS_ENV: test
