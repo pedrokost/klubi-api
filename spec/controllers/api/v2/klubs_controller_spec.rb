@@ -98,8 +98,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
       context "unsupporte cattegory" do
         before do
           expect(klub2.categories).to include 'fitnes' # expect at least one match
-          allow(ENV).to receive(:[]).and_call_original
-          expect(ENV).to receive(:[]).with("SUPPORTED_CATEGORIES").and_return('whatever,notit')
+          expect(Rails.application.credentials).to receive(:SUPPORTED_CATEGORIES).and_return('whatever,notit')
           get :index, params: { category: 'fitnes' }
         end
 
@@ -241,8 +240,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
 
     context "unsupported cattegory" do
       before do
-        allow(ENV).to receive(:[]).and_call_original
-        allow(ENV).to receive(:[]).with("SUPPORTED_CATEGORIES").and_return('whatever,notit')
+        allow(Rails.application.credentials).to receive(:SUPPORTED_CATEGORIES).and_return('whatever,notit')
         get :show, params: { id: klub1.url_slug }
       end
 

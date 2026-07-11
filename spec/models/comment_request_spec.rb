@@ -51,8 +51,8 @@ RSpec.describe CommentRequest, type: :model do
 
   describe "spa_url" do
     it "should point to correct link" do
-      allow(ENV).to receive(:[]).with("SUPPORTED_CATEGORIES").and_return('football')
-      allow(ENV).to receive(:[]).with("WEBSITE_FULL_HOST").and_return('https://www.example.com')
+      allow(Rails.application.credentials).to receive(:SUPPORTED_CATEGORIES).and_return('football')
+      allow(Rails.application.credentials).to receive(:WEBSITE_FULL_HOST).and_return('https://www.example.com')
       klub.categories = ['football']
       subject.save
       expect(subject.spa_url).to eq "https://www.example.com/football/#{klub.url_slug}/podaj-mnenje/#{subject.request_hash}"

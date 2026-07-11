@@ -9,8 +9,7 @@ require 'rails_helper'
 describe "Klub url redirecting" do
   before do
     allow_any_instance_of(BootstrapIndexService).to receive(:fetch).and_return '<html></html>'
-    allow(ENV).to receive(:[]).and_call_original
-    allow(ENV).to receive(:[]).with("SUPPORTED_CATEGORIES").and_return('fitnes,karate')
+    allow(Rails.application.credentials).to receive(:SUPPORTED_CATEGORIES).and_return('fitnes,karate')
   end
 
   context "with existing klub" do

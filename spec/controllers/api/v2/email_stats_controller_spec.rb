@@ -16,7 +16,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
       }
 
       before do
-        expect(ENV).to receive(:[]).with("MAILGUN_API_KEY").and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
+        expect(Rails.application.credentials).to receive(:MAILGUN_API_KEY).and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
         post :webhook, params: valid_request_params
       end
 
@@ -38,7 +38,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
       }
 
       before do
-        expect(ENV).to receive(:[]).with("MAILGUN_API_KEY").and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
+        expect(Rails.application.credentials).to receive(:MAILGUN_API_KEY).and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
         post :webhook, params: invalid_request_params
       end
 
@@ -60,7 +60,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
 
       before do
         allow(subject).to receive(:verify_authenticity).and_return(true)
-        expect(ENV).to receive(:[]).with("MAILGUN_API_KEY").and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
+        expect(Rails.application.credentials).to receive(:MAILGUN_API_KEY).and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
       end
 
       it "should return 200" do
@@ -89,7 +89,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
         }
 
         before do
-          expect(ENV).to receive(:[]).with("MAILGUN_API_KEY").and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
+          expect(Rails.application.credentials).to receive(:MAILGUN_API_KEY).and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
           post :webhook, params: delivery_params
         end
 
@@ -117,7 +117,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
 
       before do
         allow(subject).to receive(:verify_authenticity).and_return(true)
-        expect(ENV).to receive(:[]).with("MAILGUN_API_KEY").and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
+        expect(Rails.application.credentials).to receive(:MAILGUN_API_KEY).and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
       end
 
       it "should return 200" do
@@ -148,7 +148,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
 
       before do
         allow(subject).to receive(:verify_authenticity).and_return(true)
-        expect(ENV).to receive(:[]).with("MAILGUN_API_KEY").and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
+        expect(Rails.application.credentials).to receive(:MAILGUN_API_KEY).and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
       end
 
       it "should return 200" do
@@ -179,7 +179,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
 
       before do
         allow(subject).to receive(:verify_authenticity).and_return(true)
-        expect(ENV).to receive(:[]).with("MAILGUN_API_KEY").and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
+        expect(Rails.application.credentials).to receive(:MAILGUN_API_KEY).and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
       end
 
       it "should return 200" do
@@ -210,7 +210,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
 
       before do
         allow(subject).to receive(:verify_authenticity).and_return(true)
-        expect(ENV).to receive(:[]).with("MAILGUN_API_KEY").and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
+        expect(Rails.application.credentials).to receive(:MAILGUN_API_KEY).and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
       end
 
       it "should return 200" do
@@ -241,7 +241,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
 
      before do
        allow(subject).to receive(:verify_authenticity).and_return(true)
-       expect(ENV).to receive(:[]).with("MAILGUN_API_KEY").and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
+       expect(Rails.application.credentials).to receive(:MAILGUN_API_KEY).and_return('key-9ff9ed2f6a3e8cb5acd18fa124773c7a')
      end
 
      it "should return 406" do

@@ -27,11 +27,11 @@ RSpec.describe SendDataVerificationEmails do
 
   describe "awaiting_klubs" do
     before do
-      allow(ENV).to receive(:[]).with("REQUIRE_NEW_VERIFICATION_AFTER").and_return(180)
-      allow(ENV).to receive(:[]).with("SUPPORTED_CATEGORIES").and_return('fitnes,wellness,karate,frizbi,judo,gimnastika,cheerleading')
+      allow(Rails.application.credentials).to receive(:REQUIRE_NEW_VERIFICATION_AFTER).and_return(180)
+      allow(Rails.application.credentials).to receive(:SUPPORTED_CATEGORIES).and_return('fitnes,wellness,karate,frizbi,judo,gimnastika,cheerleading')
 
-      allow(ENV).to receive(:[]).with("EXPECTED_NUM_DAILY_DATA_VERIFICATION_EMAILS").and_return("24")
-      allow(ENV).to receive(:[]).with("WANTED_OUTGOING_EMAIL_DISTRIBTION").and_return ([1.0/24] * 24).join(',')
+      allow(Rails.application.credentials).to receive(:EXPECTED_NUM_DAILY_DATA_VERIFICATION_EMAILS).and_return("24")
+      allow(Rails.application.credentials).to receive(:WANTED_OUTGOING_EMAIL_DISTRIBTION).and_return ([1.0/24] * 24).join(',')
     end
 
     it "should not include klubs to which a notif was recently sent" do

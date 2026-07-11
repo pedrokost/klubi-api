@@ -55,8 +55,8 @@ RSpec.describe Klub, type: :model do
 
   describe 'spa_url' do
     it 'should try not to include unsupported categories' do
-      allow(ENV).to receive(:[]).with('SUPPORTED_CATEGORIES').and_return('football')
-      allow(ENV).to receive(:[]).with('WEBSITE_FULL_HOST').and_return('https://www.example.com')
+      allow(Rails.application.credentials).to receive(:SUPPORTED_CATEGORIES).and_return('football')
+      allow(Rails.application.credentials).to receive(:WEBSITE_FULL_HOST).and_return('https://www.example.com')
       klub.categories = %w[unsupported football]
       expect(klub.spa_url).not_to include 'unsupported'
     end
@@ -64,8 +64,8 @@ RSpec.describe Klub, type: :model do
 
   describe 'spa_edit_url' do
     it 'should try not to include unsupported categories' do
-      allow(ENV).to receive(:[]).with('SUPPORTED_CATEGORIES').and_return('football')
-      allow(ENV).to receive(:[]).with('WEBSITE_FULL_HOST').and_return('https://www.example.com')
+      allow(Rails.application.credentials).to receive(:SUPPORTED_CATEGORIES).and_return('football')
+      allow(Rails.application.credentials).to receive(:WEBSITE_FULL_HOST).and_return('https://www.example.com')
       klub.categories = %w[unsupported football]
       expect(klub.spa_edit_url).not_to include 'unsupported'
     end
@@ -74,8 +74,8 @@ RSpec.describe Klub, type: :model do
   describe 'spa_data_confirmation_url' do
     it 'should contain the confirmation hash' do
       klub.data_confirmation_request_hash = '1234xxxx'
-      allow(ENV).to receive(:[]).with('SUPPORTED_CATEGORIES').and_return('football')
-      allow(ENV).to receive(:[]).with('WEBSITE_FULL_HOST').and_return('https://www.example.com')
+      allow(Rails.application.credentials).to receive(:SUPPORTED_CATEGORIES).and_return('football')
+      allow(Rails.application.credentials).to receive(:WEBSITE_FULL_HOST).and_return('https://www.example.com')
       klub.categories = %w[football]
       expect(klub.spa_data_confirmation_url).to include 'potrdi'
       expect(klub.spa_data_confirmation_url).to include '1234xxxx'

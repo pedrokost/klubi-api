@@ -123,8 +123,7 @@ RSpec.describe Obcina, type: :model do
 
     context "when no category provided" do
       it "should include all klubs in category" do
-        allow(ENV).to receive(:[]).and_call_original
-        allow(ENV).to receive(:[]).with("SUPPORTED_CATEGORIES").and_return('fitnes,gimnastika')
+        allow(Rails.application.credentials).to receive(:SUPPORTED_CATEGORIES).and_return('fitnes,gimnastika')
         klub_fitnes = create(:complete_klub, name: 'Klub 1', latitude: 46.117260, longitude: 15.059348, categories: ['fitnes'])
         klub_gimnastika = create(:complete_klub, name: 'Klub 2', latitude: 46.117260, longitude: 15.059348, categories: ['gimnastika'])
 
@@ -133,8 +132,7 @@ RSpec.describe Obcina, type: :model do
       end
 
       it "should not include klubs in unsupported categories" do
-        allow(ENV).to receive(:[]).and_call_original
-        allow(ENV).to receive(:[]).with("SUPPORTED_CATEGORIES").and_return('only-supported,basketball')
+        allow(Rails.application.credentials).to receive(:SUPPORTED_CATEGORIES).and_return('only-supported,basketball')
 
         klub_unsupported = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: ['unsupported'])
 
