@@ -24,8 +24,6 @@ gem 'active_model_serializers', '0.10.14'
 
 gem 'active_model_serializers-jsonapi_embedded_records_deserializer', '~> 0.1.1'
 
-gem 'redis', '~> 4.0.2'
-
 gem 'geocoder', '~> 1.2.8'
 
 gem 'skylight', '~> 6.0.4'

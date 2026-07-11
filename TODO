@@ -10,6 +10,7 @@ x Document stupid build process for now for the
 ✔ Transfers the cronjobs over from Heroku to Fly @done (24-12-21 22:30)
 ✔ Fix the sitemap task
 ☐ Build image for the cronjobs
+☐ Migrate to goodjob to get rid of the separate worker. 
 
 x Drop the Heroku resources
 ☐ Update adminstrate https://administrate-demo.herokuapp.com/getting_started

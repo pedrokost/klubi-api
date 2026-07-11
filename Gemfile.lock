@@ -389,7 +389,6 @@ GEM
       ffi (~> 1.0)
     rdoc (6.11.0)
       psych (>= 4.0.0)
-    redis (4.0.3)
     regexp_parser (2.10.0)
     reline (0.6.0)
       io-console (~> 0.5)
@@ -582,7 +581,6 @@ DEPENDENCIES
   rails_12factor
   randexp (~> 0.1.7)
   raygun4ruby (~> 4.0.1)
-  redis (~> 4.0.2)
   rest-client
   rspec-rails (~> 6.1.2)
   rubocop-rails-omakase

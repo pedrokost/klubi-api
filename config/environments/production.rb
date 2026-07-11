@@ -67,8 +67,9 @@ Rails.application.configure do
   # want to log everything, set the level to "debug".
   config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
 
-  # Use a different cache store in production.
-  # config.cache_store = :mem_cache_store
+  # In-memory cache: single small fly.io VM, used for the bootstrap index page
+  # (5 min TTL in BootstrapIndexService) and rack-attack throttling.
+  config.cache_store = :memory_store, { size: 32.megabytes }
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter = :resque

@@ -10,7 +10,7 @@ require 'rails_helper'
 describe "Redirect zatresi.si to klubi.si", type: :request do
 
   before do
-    allow(REDIS).to receive(:get).and_return '<html></html>'
+    allow_any_instance_of(BootstrapIndexService).to receive(:fetch).and_return '<html></html>'
   end
 
   context "www.zatresi.si" do

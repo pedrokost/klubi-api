@@ -5,8 +5,10 @@ class ApplicationController < ActionController::API
     new_url, changed = correct_url!
     redirect_to new_url, status: :moved_permanently and return if changed
 
-    html = bootstrap_index(params[:index_key])
+    html = BootstrapIndexService.new.fetch(params[:index_key])
     render html: html.html_safe
+  rescue BootstrapIndexService::InvalidRevision, Aws::S3::Errors::NoSuchKey
+    head :not_found
   end
 
   def sitemap
@@ -60,10 +62,6 @@ private
     end
 
     return '', false
-  end
-
-  def bootstrap_index(index_key)
-    File.read(Rails.root.join('public', 'temp_index.html'))
   end
 
 end
