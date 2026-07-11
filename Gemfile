@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 7.2.1'
+gem 'rails', '~> 8.0.5'
 
 gem 'rack-ssl-enforcer'
 
@@ -15,7 +15,7 @@ gem 'pg', '~> 1.5.9'
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem 'activerecord-postgis-adapter', '~> 10.0.3'
+gem 'activerecord-postgis-adapter', '~> 11.0'
 
 # gem 'active_model_serializers', '~> 0.9.0'
 gem 'active_model_serializers', '0.10.14'
@@ -24,7 +24,7 @@ gem 'active_model_serializers-jsonapi_embedded_records_deserializer', '~> 0.1.1'
 
 gem 'geocoder', '~> 1.2.8'
 
-gem 'skylight', '~> 6.0.4'
+gem 'skylight', '~> 7.1'
 
 gem 'json_spec', '~>1.1.5'
 
@@ -104,7 +104,7 @@ group :development, :test do
   gem 'rubocop-rails-omakase', require: false
 
   # gem 'spring-commands-rspec'
-  gem 'rspec-rails', '~> 6.1.2' 
+  gem 'rspec-rails', '~> 7.1'
   # gem 'guard-rspec'
   gem 'factory_bot_rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -112,7 +112,7 @@ end
 
 group :test do
   gem "json-schema"
-  gem 'shoulda-matchers', "~> 6.2.0" #:github => 'thoughtbot/shoulda-matchers'
+  gem 'shoulda-matchers', "~> 6.5" #:github => 'thoughtbot/shoulda-matchers'
 end
 
 group :assets do
