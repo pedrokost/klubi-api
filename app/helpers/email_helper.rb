@@ -6,11 +6,14 @@
 
 module EmailHelper
   def email_image_tag(image, **options)
-    # Use asset_path to get the compiled asset path
-    image_path = Rails.root.join('public', asset_path(image).sub(/\A\//, ''))
-    
-
-    attachments.inline[image] = File.read(image_path)
+    # In dev/test the live asset pipeline serves the image; in production
+    # (config.assets.compile = false) read the precompiled file from public/
+    attachments.inline[image] =
+      if (asset = Rails.application.assets&.[](image))
+        asset.to_s
+      else
+        File.binread(Rails.root.join('public', asset_path(image).sub(/\A\//, '')))
+      end
     image_tag attachments[image].url, **options
   end
 end
