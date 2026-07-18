@@ -1,5 +1,7 @@
 # require 'pry' if Rails.env.test?
 require 'pp'
+require 'open3'
+require 'tempfile'
 
 module Import
   class Resolution
@@ -55,8 +57,7 @@ module Import
           pp klubdata
 
           print_keys = %w(name address town latitude longitude email phone website facebook_url categories description verified)
-          command = "diff  <(echo '#{klub.slice(print_keys).to_json}' | jq --sort-keys --color-output .) <(echo '#{klubdata.to_json}' | jq -SC .)"
-          system("bash", "-c", command)
+          print_json_diff(klub.slice(print_keys).to_json, klubdata.to_json)
         end
 
         cli = TTY::Prompt.new
@@ -73,6 +74,21 @@ module Import
         end
 
         handle_merge_choice(cli, user_selection.resolution, klub, klubdata)
+      end
+    end
+
+    def print_json_diff(old_json, new_json)
+      old_pretty, = Open3.capture2('jq', '--sort-keys', '--color-output', '.', stdin_data: old_json)
+      new_pretty, = Open3.capture2('jq', '--sort-keys', '--color-output', '.', stdin_data: new_json)
+
+      Tempfile.create('klub_old') do |old_file|
+        Tempfile.create('klub_new') do |new_file|
+          old_file.write(old_pretty)
+          old_file.flush
+          new_file.write(new_pretty)
+          new_file.flush
+          system('diff', old_file.path, new_file.path)
+        end
       end
     end
 
