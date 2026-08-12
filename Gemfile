@@ -82,7 +82,7 @@ gem 'administrate', '~> 1.0.0'
 gem 'sprockets-rails'
 
 # Makes caching into memcacher work
-gem "dalli", '~> 2.7.6'
+gem "dalli", '~> 3.2.8'
 gem "memcachier", '~> 0.0.2'
 
 gem 'raygun4ruby', '~> 4.0.1'
