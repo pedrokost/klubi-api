@@ -175,9 +175,18 @@ foreman run rake import:your_import_script
 
 # Cronjob
 
-Cronjobs are run via a separate Fly project called fly-cron-manager.
-To define the cronjobs, update the schedules.json file in that project.
-Note/TODO: periodically build images for the jobs. Currently relying on some random deployment image.
+Cronjobs are run via a separate Fly project called fly-cron-manager
+(~/Dropbox/Websites/fly-cron-manager). To define the cronjobs, update the
+schedules.json file in that project and `fly deploy` it.
+
+Jobs run on the image tagged `registry.fly.io/klubi-si-api:latest`. Each job
+provisions a fresh machine, so it always pulls whatever that tag points to.
+The CI deploy job (.github/workflows/ci.yml) moves the tag to the newly
+deployed image on every master push — no manual image updates needed.
+
+Check on it occasionally: `fly machine list -a fly-cron-manager` must show a
+started machine, and `fly ssh console -a fly-cron-manager -C "cm jobs list 1"`
+shows job history (it once sat dead for 19 months before anyone noticed).
 
 # Resources
 
