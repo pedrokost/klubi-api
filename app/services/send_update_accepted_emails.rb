@@ -19,17 +19,27 @@ class SendUpdateAcceptedEmails
   end
 
   def call
-    begin
-      groups do |group|
-        send_email *group
-      end
-    rescue Exception => e
-      Raygun.track_exception(e)
+    all_groups = []
+    groups { |group| all_groups << group }
+
+    msg = "Will send #{all_groups.count} emails for accepted updates"
+    Rails.logger.info msg
+    puts msg
+
+    all_groups.each do |group|
+      send_email *group
     end
+  rescue Exception => e
+    Rails.logger.error e
+    puts e
+    Raygun.track_exception(e)
   end
 
   def send_email(editor, klub, updates)
-    ActiveRecord::Base.logger.info "Sending update accepted emails to #{editor} for klub #{klub.name}"
+    msg = "Sending update accepted emails to #{editor} for klub #{klub.name}"
+    Rails.logger.info msg
+    puts msg
+
     klub.send_updates_accepted_notification(editor, updates)
 
     updates.each do |update|
