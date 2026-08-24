@@ -12,7 +12,7 @@ class ApplicationController < ActionController::API
   end
 
   def sitemap
-    redirect_to "https://s3.eu-central-1.amazonaws.com/www.klubi.si/sitemaps/sitemap.xml.gz"
+    redirect_to "https://s3.eu-central-1.amazonaws.com/www.klubi.si/sitemaps/sitemap.xml.gz", allow_other_host: true
   end
 
   def heartbeat
