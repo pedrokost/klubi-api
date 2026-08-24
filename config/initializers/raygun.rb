@@ -5,5 +5,5 @@ Raygun.setup do |config|
   # The default is Rails.env.production?
   # config.enable_reporting = !Rails.env.development? && !Rails.env.test?
 
-  config.ignore.delete('ActiveRecord::RecordNotFound')
+  config.ignore.delete("ActiveRecord::RecordNotFound")
 end

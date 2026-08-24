@@ -1,5 +1,5 @@
-require 'import/transformer'
-require 'json'
+require "import/transformer"
+require "json"
 
 module Import
   class SportDogajaTransformer < Transformer
@@ -12,13 +12,13 @@ module Import
 
       clean_data = []
       json.each do |klubdata|
-        klubdata['address'] = klubdata['address'].gsub("\t", '').gsub("\n", ',')
-        klubdata['categories'] = [klubdata['category'].parameterize]
-        klubdata.delete('category')
+        klubdata["address"] = klubdata["address"].gsub("\t", "").gsub("\n", ",")
+        klubdata["categories"] = [ klubdata["category"].parameterize ]
+        klubdata.delete("category")
         clean_data << klubdata.symbolize_keys
       end
 
       clean_data = clean_data.uniq
     end
   end
-end 
+end

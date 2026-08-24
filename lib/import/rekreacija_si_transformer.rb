@@ -1,5 +1,5 @@
-require 'import/transformer'
-require 'json'
+require "import/transformer"
+require "json"
 
 module Import
   class RekreacijaSiTransformer < Transformer
@@ -33,7 +33,7 @@ module Import
           end
           newklubdata[keymapping[k.to_sym]] = v
         end
-        newklubdata[:categories] = [newklubdata[:categories]]
+        newklubdata[:categories] = [ newklubdata[:categories] ]
         newklubdata[:latitude] = newklubdata[:latitude].to_d
         newklubdata[:longitude] = newklubdata[:longitude].to_d
         newklubdata[:verified] = true
@@ -44,4 +44,4 @@ module Import
       clean_data
     end
   end
-end 
+end

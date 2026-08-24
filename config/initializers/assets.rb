@@ -12,4 +12,4 @@ Rails.application.config.assets.version = "1.0"
 # Rails.application.config.assets.precompile += %w[ admin.js admin.css ]
 
 # Add signature.png to the precompiled assets list
-Rails.application.config.assets.precompile += %w( signature.png )
+Rails.application.config.assets.precompile += %w[ signature.png ]

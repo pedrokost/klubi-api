@@ -1,10 +1,10 @@
 # require 'pry' if Rails.env.test?
-require 'facebook_image_retriever'
-require 'google_analytics_fetcher'
+require "facebook_image_retriever"
+require "google_analytics_fetcher"
 
 class Klub < ApplicationRecord
-  has_many :branches, class_name: 'Klub', foreign_key: 'parent_id'
-  belongs_to :parent, class_name: 'Klub', touch: true, optional: true
+  has_many :branches, class_name: "Klub", foreign_key: "parent_id"
+  belongs_to :parent, class_name: "Klub", touch: true, optional: true
   has_many :updates, as: :updatable, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :comment_requests, as: :commentable, dependent: :destroy
@@ -32,7 +32,7 @@ class Klub < ApplicationRecord
   def merge_left_with(klub_attrs, skip: [])
     # uses new data to fill in missing spots only, preferring old data
     basic_attrs = %i[name address town phone email website facebook_url latitude longitude description] - skip
-    array_attrs = [:categories]
+    array_attrs = [ :categories ]
 
     klub_attrs.each do |key, val|
       if basic_attrs.include?(key)
@@ -46,7 +46,7 @@ class Klub < ApplicationRecord
   def merge_right_with(new_attrs, skip: [])
     # uses old data to fill in missing spots in new data, preferring new data
     basic_attrs = %i[name address town phone email website facebook_url latitude longitude description] - skip
-    array_attrs = [:categories]
+    array_attrs = [ :categories ]
 
     new_attrs.each do |key, val|
       if basic_attrs.include?(key)
@@ -87,19 +87,19 @@ class Klub < ApplicationRecord
 
     new_attrs.except(:editor, :id).each do |key, val|
       next if send(key).to_s == val.to_s
-      next if (key.to_s == 'latitude') && ((val.to_f - send(key).to_f).abs < lat_lon_min_eta)
-      next if (key.to_s == 'longitude') && ((val.to_f - send(key).to_f).abs < lat_lon_min_eta)
-      val = val.map(&:parameterize) if key.to_s == 'categories'
+      next if (key.to_s == "latitude") && ((val.to_f - send(key).to_f).abs < lat_lon_min_eta)
+      next if (key.to_s == "longitude") && ((val.to_f - send(key).to_f).abs < lat_lon_min_eta)
+      val = val.map(&:parameterize) if key.to_s == "categories"
 
-      if key.to_s == 'notes'
+      if key.to_s == "notes"
         val = if send(key).blank?
                 "#{Date.today}: #{val}"
-              else
+        else
                 "#{Date.today}: #{val}\n#{send(key)}"
-              end
+        end
       end
 
-      duplicate_update = Update.where(updatable: self, field: key, oldvalue: send(key).to_s, newvalue: val.to_s, editor_email: editor, status: Update.statuses[:unverified]).where('created_at >= ?', 1.month.ago)
+      duplicate_update = Update.where(updatable: self, field: key, oldvalue: send(key).to_s, newvalue: val.to_s, editor_email: editor, status: Update.statuses[:unverified]).where("created_at >= ?", 1.month.ago)
       next if duplicate_update.exists?
 
       updates << Update.create!(
@@ -119,7 +119,7 @@ class Klub < ApplicationRecord
 
     Update.create!(
       updatable: branch,
-      field: 'marked_for_deletion',
+      field: "marked_for_deletion",
       oldvalue: false,
       newvalue: true,
       editor_email: editor
@@ -150,7 +150,7 @@ class Klub < ApplicationRecord
 
     branch = Klub.new(attributes
       .merge(verified: false)
-      .except('id', 'created_at', 'updated_at')
+      .except("id", "created_at", "updated_at")
       .merge(branch_attrs.to_h))
 
     branches << branch
@@ -170,8 +170,6 @@ class Klub < ApplicationRecord
   end
 
   def update_visits_count!
-
-
     return 0 unless persisted?
     count = GoogleAnalyticsFetcher.new.total_visitors(id)
 
@@ -191,21 +189,21 @@ private
 
   def facebook_page_id
     return nil if facebook_url.nil?
-    return nil unless facebook_url.downcase.include?('facebook.com')
+    return nil unless facebook_url.downcase.include?("facebook.com")
 
-    facebook_page_id = facebook_url.split('?').first
-    facebook_page_id = facebook_page_id.split('/').reject(&:empty?).reject do |c|
+    facebook_page_id = facebook_url.split("?").first
+    facebook_page_id = facebook_page_id.split("/").reject(&:empty?).reject do |c|
       %w[info about reviews photos videos notes posts community].include? c
     end.last
 
-    number_id = facebook_page_id.split('-').last
+    number_id = facebook_page_id.split("-").last
     return number_id if number_id.match? '\d{8,}'
 
     facebook_page_id
   end
 
   def supported_categories
-    Rails.application.credentials.SUPPORTED_CATEGORIES.split(',')
+    Rails.application.credentials.SUPPORTED_CATEGORIES.split(",")
   end
 
   def category_for_url

@@ -1,5 +1,5 @@
-require 'import/transformer'
-require 'json'
+require "import/transformer"
+require "json"
 
 module Import
   class NamiznoteniskaZvezaTransformer < Transformer
@@ -12,12 +12,12 @@ module Import
       clean_data = []
 
       json.each do |klubdata|
-        klubdata['categories'] = ['namizni-tenis']
-        klubdata['verified'] = true
+        klubdata["categories"] = [ "namizni-tenis" ]
+        klubdata["verified"] = true
         clean_data << klubdata.symbolize_keys
       end
 
       clean_data
     end
   end
-end 
+end

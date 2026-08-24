@@ -21,7 +21,7 @@ module Admin
     def destroy
       requested_resource.destroy
       flash[:notice] = translate_with_resource("destroy.success")
-      redirect_to action: :index, subdomain: 'admin'
+      redirect_to action: :index, subdomain: "admin"
     end
 
     def default_params

@@ -4,7 +4,7 @@ class CommentRequest < ApplicationRecord
 
   before_create :generate_request_hash
 
-  validates_uniqueness_of :commenter_email, scope: [:commentable]
+  validates_uniqueness_of :commenter_email, scope: [ :commentable ]
   validates_presence_of :requester_name
   validates_presence_of :commenter_name
   validates_email_format_of :commenter_email

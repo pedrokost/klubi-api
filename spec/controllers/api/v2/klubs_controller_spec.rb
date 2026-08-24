@@ -6,10 +6,10 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
   include ActiveSupport::Testing::TimeHelpers
 
   describe 'GET #klubs' do
-    let!(:klub1) { FactoryBot.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
-    let!(:klub2) { FactoryBot.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes']) }
-    let!(:closed_klub) { FactoryBot.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes'], closed_at: Date.yesterday ) }
-    let!(:klub_branch) { FactoryBot.create(:klub_branch, verified: true, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
+    let!(:klub1) { FactoryBot.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: [ 'fitnes', 'gimnastika' ]) }
+    let!(:klub2) { FactoryBot.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: [ 'fitnes' ]) }
+    let!(:closed_klub) { FactoryBot.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: [ 'fitnes' ], closed_at: Date.yesterday) }
+    let!(:klub_branch) { FactoryBot.create(:klub_branch, verified: true, latitude: 20.1, longitude: 10.1, parent: klub1, categories: [ 'gimnastika' ]) }
 
     before do
       get :index, params: { category: 'fitnes' }
@@ -25,7 +25,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
     end
 
     it "should not return closed klubs" do
-      klub_ids = json_response[:data].map{ |klub| klub[:id] }
+      klub_ids = json_response[:data].map { |klub| klub[:id] }
       expect(klub_ids).not_to include closed_klub.url_slug
     end
 
@@ -36,8 +36,8 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
 
     describe "very incomplete data" do
       before do
-        klub1.latitude = nil;
-        klub1.longitude = nil;
+        klub1.latitude = nil
+        klub1.longitude = nil
         klub1.save
 
         get :index, params: { category: 'fitnes' }
@@ -51,9 +51,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
     end
 
     describe '?category' do
-
       context "=fitnes" do
-
         before do
           get :index, params: { category: 'fitnes' }
         end
@@ -63,7 +61,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
           klubs = json_response[:data]
           expect(response).to match_response_schema("v2/klubs")
           expect(klubs.length).to eq 2
-          expect(klubs.map{|h| h[:id]}).to match_array([klub1, klub2].map(&:url_slug))
+          expect(klubs.map { |h| h[:id] }).to match_array([ klub1, klub2 ].map(&:url_slug))
         end
       end
 
@@ -77,7 +75,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
           klubs = json_response
           expect(response).to match_response_schema("v2/klubs")
           expect(klubs[:data].length).to eq 2
-          expect(klubs[:data].map{|h| h[:id]}).to match_array([klub1, klub_branch].map(&:url_slug))
+          expect(klubs[:data].map { |h| h[:id] }).to match_array([ klub1, klub_branch ].map(&:url_slug))
         end
 
         it "should return correct type for parent relationship" do
@@ -89,7 +87,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
 
       context "Missing category filter" do
         it "should raise an exception" do
-          expect{
+          expect {
             get :index, params: { category: nil }
           }.to raise_error(ActionController::ParameterMissing)
         end
@@ -116,9 +114,9 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
   end
 
   describe 'GET #klubs/:id' do
-    let!(:klub1) { FactoryBot.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes', 'gimnastika']) }
-    let!(:klub_branch) { FactoryBot.create(:klub_branch, verified: true, latitude: 20.1, longitude: 10.1, parent: klub1, categories: ['gimnastika']) }
-    let!(:closed_klub) { FactoryBot.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: ['fitnes'], closed_at: Date.yesterday ) }
+    let!(:klub1) { FactoryBot.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: [ 'fitnes', 'gimnastika' ]) }
+    let!(:klub_branch) { FactoryBot.create(:klub_branch, verified: true, latitude: 20.1, longitude: 10.1, parent: klub1, categories: [ 'gimnastika' ]) }
+    let!(:closed_klub) { FactoryBot.create(:klub, verified: true, latitude: 20.1, longitude: 10.1, categories: [ 'fitnes' ], closed_at: Date.yesterday) }
     let!(:comment) { FactoryBot.create(:comment, commentable: klub1) }
 
     before do
@@ -303,8 +301,8 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
     context "when valid facebook url" do
       before do
         allow(Koala::Facebook::OAuth).to receive(:new).and_return(double(get_app_access_token: 'fake_token'))
-        allow_any_instance_of(Koala::Facebook::API).to receive(:get_object).and_return([{ 'images' =>
-          [{ 'height' => 710,
+        allow_any_instance_of(Koala::Facebook::API).to receive(:get_object).and_return([ { 'images' =>
+          [ { 'height' => 710,
              'source' =>
              'https://scontent.xx.fbcdn.net/v/t31.0-8/10443276_348531425325870_4781202915849569619_o.jpg?oh=f2df7dd6fc54f416dbea0594b7f14481&oe=5A48F262',
              'width' => 1220 },
@@ -331,8 +329,8 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
            { 'height' => 225,
              'source' =>
              'https://scontent.xx.fbcdn.net/v/t1.0-0/q85/p75x225/10470190_348531425325870_4781202915849569619_n.jpg?oh=27a7ab68cad79c3b7c118051418a0fb5&oe=5A408153',
-             'width' => 387 }],
-          'id' => '348531425325870' }])
+             'width' => 387 } ],
+          'id' => '348531425325870' } ])
 
         klub.facebook_url = "https://www.facebook.com/klubi.slovenije/"
         klub.save
@@ -368,7 +366,6 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
   end
 
   describe 'POST #klubs' do
-
     it "should send an email to admin" do
       expect_any_instance_of(Klub).to receive(:send_review_notification)
 
@@ -378,7 +375,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
           attributes: {
             name: "Fitnes Maribor",
             editor: 'joe@doe.com',
-            categories: ['football']
+            categories: [ 'football' ]
           }
         }
       }
@@ -393,7 +390,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
           attributes: {
             name: "Qien eres?",
             editor: 'joe@doe.com',
-            categories: ['football']
+            categories: [ 'football' ]
           }
         }
       }
@@ -406,7 +403,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
             type: 'klubs',
             attributes: {
               name: 'Quien eres?',
-              categories: ['football']
+              categories: [ 'football' ]
             }
           }
         }
@@ -423,7 +420,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
             attributes: {
               editor: '',
               name: 'Quien eres?',
-              categories: ['football']
+              categories: [ 'football' ]
             }
           }
         }
@@ -440,15 +437,14 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
           type: 'klubs',
           attributes: {
             name: 'Quien eres?',
-            categories: ['football']
+            categories: [ 'football' ]
           }
         }
       }
     end
 
     it "should accept categories and other parameters" do
-
-      valid_attrs = {name: "Fitnes Maribor", address: "Mariborska cesta 5", latitude: "46.5534849", longitude: "15.503709399999934", website: "http://www.fitnes-zumba.si",categories: ["fitnes","zumba"], editor: "jaz@ti.com", notes: "Ta klub ne obstaja", description: "This is the klub description"}
+      valid_attrs = { name: "Fitnes Maribor", address: "Mariborska cesta 5", latitude: "46.5534849", longitude: "15.503709399999934", website: "http://www.fitnes-zumba.si", categories: [ "fitnes", "zumba" ], editor: "jaz@ti.com", notes: "Ta klub ne obstaja", description: "This is the klub description" }
 
       expect(Klub).to receive(:new).
         with(valid_attrs.except(:editor))
@@ -463,7 +459,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
     end
 
     it "should downcase and dasherize new categories" do
-      valid_attrs = {name: "Fitnes Maribor", address: "Mariborska cesta 5", latitude: "46.5534849", longitude: "15.503709399999934", website: "http://www.fitnes-zumba.si",categories: ["Fitnes","zu M  ba"], editor: "jaz@ti.com", notes: "Ta klub ne obstaja", description: "Thisis desc"}
+      valid_attrs = { name: "Fitnes Maribor", address: "Mariborska cesta 5", latitude: "46.5534849", longitude: "15.503709399999934", website: "http://www.fitnes-zumba.si", categories: [ "Fitnes", "zu M  ba" ], editor: "jaz@ti.com", notes: "Ta klub ne obstaja", description: "Thisis desc" }
 
       post :create, params: {
         data: {
@@ -472,7 +468,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         }
       }
 
-      expect(Klub.last.categories).to match(['fitnes', 'zu-m-ba'])
+      expect(Klub.last.categories).to match([ 'fitnes', 'zu-m-ba' ])
     end
 
     it "should create a new unverified klub" do
@@ -482,7 +478,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
             type: 'klubs',
             attributes: {
               name: 'Fitnes Mariborcan 22',
-              categories: ['football'],
+              categories: [ 'football' ],
               editor: 'joe@doe.com'
             }
           }
@@ -500,7 +496,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
           attributes: {
             name: 'Fitnes Mariborcan 22',
             email: 'joe@doe.com',
-            categories: ['football'],
+            categories: [ 'football' ],
             editor: 'joe@doe.com'
           }
         }
@@ -517,7 +513,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
           attributes: {
             name: 'Fitnes Mariborcan 22',
             email: 'ben@doe.com',
-            categories: ['football'],
+            categories: [ 'football' ],
             editor: 'joe@doe.com'
           }
         }
@@ -534,7 +530,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
           attributes: {
             name: 'Fitnes',
             editor: 'joe@doe.com',
-            categories: ['football']
+            categories: [ 'football' ]
           }
         }
       }
@@ -566,18 +562,17 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
           attributes: {
             editor: 'joe@doe.com',
             name: 'Fitnes',
-            categories: ['football']
+            categories: [ 'football' ]
           }
         }
       }
 
       expect(json_response[:data][:id]).to be_truthy
-      expect(json_response[:data][:attributes][:categories]).to match(['football'])
+      expect(json_response[:data][:attributes][:categories]).to match([ 'football' ])
       expect(response).to match_response_schema('v2/klub')
     end
 
     context "a klub with branches" do
-
       it "should require latitude, longitude, address and town on branches" do
         expect {
           post :create, params: {
@@ -587,18 +582,18 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
                 editor: 'joe@doe.com',
                 name: 'Fitnes Mariborcan 22',
                 address: 'Address 1',
-                categories: ['football']
+                categories: [ 'football' ]
               },
               relationships: {
                 branches: {
-                  data: [{
+                  data: [ {
                     type: 'klub',
                     attributes: {
                       name: 'Fitnes Mariborcan 22',
                       address: 'Address 2',
-                      categories: ['football']
+                      categories: [ 'football' ]
                     }
-                  }]
+                  } ]
                 }
               }
             }
@@ -617,11 +612,11 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
                 name: 'Fitnes Mariborcan 22',
                 editor: 'joe@doe.com',
                 address: 'Address 1',
-                categories: ['football']
+                categories: [ 'football' ]
               },
               relationships: {
                 branches: {
-                  data: [{
+                  data: [ {
                     type: 'klub',
                     attributes: {
                       name: 'Fitnes Mariborcan 22',
@@ -630,7 +625,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
                       latitude: 123,
                       longitude: 231
                     }
-                  }]
+                  } ]
                 }
               }
             }
@@ -647,11 +642,11 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
               editor: 'joe@doe.com',
               name: 'Fitnes Mariborcan 22',
               address: 'Cesta XV. brigade 2, Metlika',
-              categories: ['mycategor987y']
+              categories: [ 'mycategor987y' ]
             },
             relationships: {
               branches: {
-                data: [{
+                data: [ {
                   type: 'klub',
                   attributes: {
                     name: 'Fitnes Mariborcan 22',
@@ -660,7 +655,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
                     latitude: 123,
                     longitude: 231
                   }
-                }]
+                } ]
               }
             }
           }
@@ -682,11 +677,11 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
               editor: 'joe@doe.com',
               name: 'Fitnes Mariborcan 22',
               address: 'Address 1',
-              categories: ['football']
+              categories: [ 'football' ]
             },
             relationships: {
               branches: {
-                data: [{
+                data: [ {
                   type: 'klub',
                   attributes: {
                     name: 'Fitnes Mariborcan 22',
@@ -695,7 +690,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
                     latitude: 123,
                     longitude: 231
                   }
-                }]
+                } ]
               }
             }
           }
@@ -712,11 +707,11 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
               name: 'Fitnes Mariborcan 22',
               address: 'Address 1',
               editor: 'bla@bla',
-              categories: ['football']
+              categories: [ 'football' ]
             },
             relationships: {
               branches: {
-                data: [{
+                data: [ {
                   type: 'klub',
                   attributes: {
                     name: 'Fitnes Mariborcan 22',
@@ -725,7 +720,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
                     latitude: 123,
                     longitude: 231
                   }
-                }]
+                } ]
               }
             }
           }
@@ -740,11 +735,11 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
               name: 'Fitnes Mariborcan 22',
               address: 'Address 1',
               editor: 'bla@bla',
-              categories: ['football']
+              categories: [ 'football' ]
             },
             relationships: {
               branches: {
-                data: [{
+                data: [ {
                   type: 'klub',
                   attributes: {
                     name: 'Fitnes Mariborcan 22',
@@ -753,14 +748,14 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
                     latitude: 45.647485,
                     longitude: 15.3155356
                   }
-                }]
+                } ]
               }
             }
           }
         }
 
         expect(json_response[:data][:id]).to be_truthy
-        expect(json_response[:data][:attributes][:categories]).to match(['football'])
+        expect(json_response[:data][:attributes][:categories]).to match([ 'football' ])
         expect(json_response[:data][:relationships][:branches][:data][0][:id]).to be_truthy
         expect(json_response[:included][0][:attributes][:address]).to eq 'Address 2'
         expect(json_response[:included][0][:attributes][:latitude]).to eq "45.647485"
@@ -771,7 +766,6 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
   end
 
   describe 'PATCH #klubs/:id' do
-
     let(:old_attrs) do
       {
         name: 'Old club',
@@ -779,7 +773,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         website: 'http://oldclub.com',
         phone: '040 040 040',
         email: 'old@club.com',
-        categories: ['fitnes'],
+        categories: [ 'fitnes' ],
         facebook_url: 'http://facebook.com/oldclub',
         editor_emails: []
       }
@@ -791,7 +785,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         website: 'http://newclub.com',
         phone: '404 404 404',
         email: 'new@club.com',
-        categories: ['fitnes', 'rugby'],
+        categories: [ 'fitnes', 'rugby' ],
         description: 'My new description',
         notes: "Kera stvar",
         'facebook-url': 'http://facebook.com/newclub'
@@ -876,7 +870,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         data: {
           type: 'klubs',
           attributes: {
-            categories: ['Zumba', ' JoG   a']
+            categories: [ 'Zumba', ' JoG   a' ]
           }.merge(editor: 'joe@doe.com')
         }
       }
@@ -949,7 +943,6 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
     end
 
     context "a klub with branches [expectations]" do
-
       let!(:klub_branch) { FactoryBot.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
       let!(:second_branch) { FactoryBot.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
 
@@ -962,7 +955,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
             attributes: new_attrs.merge(editor: 'joe@doe.com'),
             relationships: {
               branches: {
-                data: [{
+                data: [ {
                   type: 'klubs',
                   id: klub_branch.url_slug,
                   attributes: {
@@ -979,7 +972,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
                     longitude:  15.902942,
                     town: 'Logatec'
                   }
-                }]
+                } ]
               }
             }
           }
@@ -1003,17 +996,14 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
     end
 
     context "a klub with branches" do
-
       let!(:klub_branch) { FactoryBot.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
       let!(:second_branch) { FactoryBot.create(:klub, old_attrs.merge(verified: true, parent: klub)) }
 
       before do
-
         allow_any_instance_of(Klub).to receive(:send_updates_notification)
         allow_any_instance_of(Klub).to receive(:send_confirm_notification)
 
         travel_to Time.new(2024, 11, 24, 01, 04, 44) do
-
           patch :update, params: {
             id: klub.url_slug,
             data: {
@@ -1022,7 +1012,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
               attributes: new_attrs.merge(editor: 'joe@doe.com'),
               relationships: {
                 branches: {
-                  data: [{
+                  data: [ {
                     type: 'klubs',
                     id: klub_branch.url_slug,
                     attributes: {
@@ -1039,7 +1029,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
                       longitude:  15.902942,
                       town: 'Ptuj'
                     }
-                  }]
+                  } ]
                 }
               }
             }
@@ -1107,7 +1097,7 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
         klub_branches = klub.reload.branches
 
         expect(klub_branches.count).to eq 3
-        expect(klub_branches.map(&:verified)).to match_array [false, true, true]
+        expect(klub_branches.map(&:verified)).to match_array [ false, true, true ]
       end
 
       it "should marked deleted branches for deletion" do
@@ -1129,7 +1119,6 @@ RSpec.describe Api::V2::KlubsController, type: :controller do
 
       it "should not change the branch model" do
         expect(klub_branch.reload).to have_attributes(old_attrs)
-
       end
     end
   end

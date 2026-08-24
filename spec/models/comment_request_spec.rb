@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe CommentRequest, type: :model do
-
-  let(:klub) { create(:complete_klub, categories: ['football']) }
+  let(:klub) { create(:complete_klub, categories: [ 'football' ]) }
 
   let(:comment) { build(:comment, {
       commentable: klub,
@@ -38,7 +37,6 @@ RSpec.describe CommentRequest, type: :model do
   end
 
   describe "send_comment_request_email" do
-
     it "does nothing if request not persisted" do
       expect { subject.send_comment_request_email }.not_to change { enqueued_jobs.count }
     end
@@ -53,7 +51,7 @@ RSpec.describe CommentRequest, type: :model do
     it "should point to correct link" do
       allow(Rails.application.credentials).to receive(:SUPPORTED_CATEGORIES).and_return('football')
       allow(Rails.application.credentials).to receive(:WEBSITE_FULL_HOST).and_return('https://www.example.com')
-      klub.categories = ['football']
+      klub.categories = [ 'football' ]
       subject.save
       expect(subject.spa_url).to eq "https://www.example.com/football/#{klub.url_slug}/podaj-mnenje/#{subject.request_hash}"
     end

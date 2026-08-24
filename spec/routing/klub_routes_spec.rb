@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "routing to klub", :type => :routing do
-
+RSpec.describe "routing to klub", type: :routing do
   let(:url)         { "http://www.domain.si"     }
   let(:api_url)     { "http://api.domain.si"     }
 

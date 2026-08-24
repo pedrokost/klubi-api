@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe CommentMailer, type: :mailer do
-
   describe "new_klub_mail" do
     let!(:klub) { create(:complete_klub, name: 'My klub' * 3) }
     let!(:comment) do
@@ -18,15 +17,15 @@ RSpec.describe CommentMailer, type: :mailer do
     end
 
     it "is bbc's to bcc@klubi.si" do
-      expect(mail.bcc).to eql(['bcc@klubi.si'])
+      expect(mail.bcc).to eql([ 'bcc@klubi.si' ])
     end
 
     it 'renders the receiver email' do
-      expect(mail.to).to eql(['pisatelj.joze@test.com'])
+      expect(mail.to).to eql([ 'pisatelj.joze@test.com' ])
     end
 
     it 'renders the sender email' do
-      expect(mail.from).to eql(['peter@klubi.si'])
+      expect(mail.from).to eql([ 'peter@klubi.si' ])
     end
 
     it 'send klubs data' do

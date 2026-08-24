@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Obcina, type: :model do
-
   describe "neighbouring_obcinas" do
     let!(:obcina) { create(:obcina, {
         name: 'Obcina Right Slovenia',
@@ -59,7 +58,6 @@ RSpec.describe Obcina, type: :model do
   end
 
   describe "category_klubs" do
-
     # Right half of Slovenia
     # http://dev.openlayers.org/examples/vector-formats.html
     let!(:obcina) { create(:obcina, {
@@ -69,74 +67,74 @@ RSpec.describe Obcina, type: :model do
     }
 
     it "should include klubs in the obcina" do
-      klub = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: ['fitnes'])
+      klub = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: [ 'fitnes' ])
 
-      expect( obcina.category_klubs('fitnes') ).to include klub
+      expect(obcina.category_klubs('fitnes')).to include klub
     end
 
     it "should not include klubs outside obcina" do
-      klub = create(:complete_klub, name: 'Ajdovscina klub', latitude: 45.892941, longitude: 13.905172, categories: ['fitnes'])
+      klub = create(:complete_klub, name: 'Ajdovscina klub', latitude: 45.892941, longitude: 13.905172, categories: [ 'fitnes' ])
 
-      expect( obcina.category_klubs('fitnes') ).not_to include klub
+      expect(obcina.category_klubs('fitnes')).not_to include klub
     end
 
     it "should not return closed klubs" do
-      klub = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: ['fitnes'], closed_at: Date.today)
+      klub = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: [ 'fitnes' ], closed_at: Date.today)
 
-      expect( obcina.category_klubs('fitnes') ).not_to include klub
+      expect(obcina.category_klubs('fitnes')).not_to include klub
     end
 
     it "should not return unverified klubs" do
-      klub = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: ['fitnes'], verified: false)
+      klub = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: [ 'fitnes' ], verified: false)
 
-      expect( obcina.category_klubs('fitnes') ).not_to include klub
+      expect(obcina.category_klubs('fitnes')).not_to include klub
     end
 
     it "should include only klubs of the given category" do
-      klub = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: ['karate'])
+      klub = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: [ 'karate' ])
 
-      expect( obcina.category_klubs('karate') ).to include klub
+      expect(obcina.category_klubs('karate')).to include klub
     end
 
     it "should not include klubs of another category" do
-      klub = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: ['karate'])
+      klub = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: [ 'karate' ])
 
-      expect( obcina.category_klubs('fitnes') ).not_to include klub
+      expect(obcina.category_klubs('fitnes')).not_to include klub
     end
 
     it "should only return parent if child has no category" do
-      klub = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: ['joga'])
-      branch = create(:complete_klub_branch, latitude: 46.117260, longitude: 15.059348, parent: klub, categories: ['fitnes'])
+      klub = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: [ 'joga' ])
+      branch = create(:complete_klub_branch, latitude: 46.117260, longitude: 15.059348, parent: klub, categories: [ 'fitnes' ])
 
-      expect( obcina.category_klubs('joga') ).not_to include branch # goal
-      expect( obcina.category_klubs('joga') ).to include klub # not goal of this test
+      expect(obcina.category_klubs('joga')).not_to include branch # goal
+      expect(obcina.category_klubs('joga')).to include klub # not goal of this test
     end
 
     it "should return only branch if parent has no category" do
-      klub = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: ['joga'])
-      branch = create(:complete_klub_branch, latitude: 46.117260, longitude: 15.059348, parent: klub, categories: ['fitnes'])
+      klub = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: [ 'joga' ])
+      branch = create(:complete_klub_branch, latitude: 46.117260, longitude: 15.059348, parent: klub, categories: [ 'fitnes' ])
 
-      expect( obcina.category_klubs('fitnes') ).to include branch
+      expect(obcina.category_klubs('fitnes')).to include branch
       # I have not yet decided if parent should or should not be included here
-      expect( obcina.category_klubs('fitnes') ).not_to include klub
+      expect(obcina.category_klubs('fitnes')).not_to include klub
     end
 
     context "when no category provided" do
       it "should include all klubs in category" do
         allow(Rails.application.credentials).to receive(:SUPPORTED_CATEGORIES).and_return('fitnes,gimnastika')
-        klub_fitnes = create(:complete_klub, name: 'Klub 1', latitude: 46.117260, longitude: 15.059348, categories: ['fitnes'])
-        klub_gimnastika = create(:complete_klub, name: 'Klub 2', latitude: 46.117260, longitude: 15.059348, categories: ['gimnastika'])
+        klub_fitnes = create(:complete_klub, name: 'Klub 1', latitude: 46.117260, longitude: 15.059348, categories: [ 'fitnes' ])
+        klub_gimnastika = create(:complete_klub, name: 'Klub 2', latitude: 46.117260, longitude: 15.059348, categories: [ 'gimnastika' ])
 
-        expect( obcina.category_klubs ).to include klub_fitnes
-        expect( obcina.category_klubs ).to include klub_gimnastika
+        expect(obcina.category_klubs).to include klub_fitnes
+        expect(obcina.category_klubs).to include klub_gimnastika
       end
 
       it "should not include klubs in unsupported categories" do
         allow(Rails.application.credentials).to receive(:SUPPORTED_CATEGORIES).and_return('only-supported,basketball')
 
-        klub_unsupported = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: ['unsupported'])
+        klub_unsupported = create(:complete_klub, name: 'Trbovlje klub', latitude: 46.117260, longitude: 15.059348, categories: [ 'unsupported' ])
 
-        expect( obcina.category_klubs ).not_to include klub_unsupported
+        expect(obcina.category_klubs).not_to include klub_unsupported
       end
     end
   end

@@ -27,15 +27,15 @@ RSpec.describe CommentRequestMailer, type: :mailer do
     end
 
     it 'renders the receiver email' do
-      expect(mail.to).to eql(['requester@test.com'])
+      expect(mail.to).to eql([ 'requester@test.com' ])
     end
 
     it 'renders the sender email' do
-      expect(mail.from).to eql(['peter@klubi.si'])
+      expect(mail.from).to eql([ 'peter@klubi.si' ])
     end
 
     it "is bbc's to bcc@klubi.si" do
-      expect(mail.bcc).to eql(['bcc@klubi.si'])
+      expect(mail.bcc).to eql([ 'bcc@klubi.si' ])
     end
 
     it 'sends commenter name' do
@@ -78,15 +78,15 @@ RSpec.describe CommentRequestMailer, type: :mailer do
     end
 
     it 'sends the email to the commenter' do
-      expect(mail.to).to eql(['pisatelj.joze@test.com'])
+      expect(mail.to).to eql([ 'pisatelj.joze@test.com' ])
     end
 
     it 'sends the email from default email' do
-      expect(mail.from).to eql(['peter@klubi.si'])
+      expect(mail.from).to eql([ 'peter@klubi.si' ])
     end
 
     it "is bbc's to bcc@klubi.si" do
-      expect(mail.bcc).to eql(['bcc@klubi.si'])
+      expect(mail.bcc).to eql([ 'bcc@klubi.si' ])
     end
 
     it 'sends commenter name' do

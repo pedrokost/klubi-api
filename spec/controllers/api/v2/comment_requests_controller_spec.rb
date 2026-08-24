@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Api::V2::CommentRequestsController, type: :controller do
-
   describe "POST #comment-requests" do
     let(:klub) { FactoryBot.create(:complete_klub) }
 
@@ -197,7 +196,7 @@ RSpec.describe Api::V2::CommentRequestsController, type: :controller do
       }.to change(CommentRequest, :count).by(1)
 
       request = CommentRequest.last
-      expect(request.requester_email).to eq  'joe@doe.com'
+      expect(request.requester_email).to eq 'joe@doe.com'
       expect(request.requester_name).to eq 'Joe Doe'
       expect(request.commenter_email).to eq 'mon@her.com'
       expect(request.commenter_name).to eq 'Mon Her'

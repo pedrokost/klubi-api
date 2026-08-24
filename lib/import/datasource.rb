@@ -1,8 +1,8 @@
-require 'rest_client'
+require "rest_client"
 
 module Import
   class Datasource
-    def initialize(type, path, verbose=false)
+    def initialize(type, path, verbose = false)
       @type = type
       @path = path
       @verbose = verbose

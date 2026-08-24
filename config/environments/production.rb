@@ -107,5 +107,4 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
   config.action_mailer.default_url_options = { host: Rails.application.credentials.WEBSITE_FULL_HOST }
-
 end

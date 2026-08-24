@@ -12,7 +12,7 @@ module EmailHelper
       if (asset = Rails.application.assets&.[](image))
         asset.to_s
       else
-        File.binread(Rails.root.join('public', asset_path(image).sub(/\A\//, '')))
+        File.binread(Rails.root.join("public", asset_path(image).sub(/\A\//, "")))
       end
     image_tag attachments[image].url, **options
   end

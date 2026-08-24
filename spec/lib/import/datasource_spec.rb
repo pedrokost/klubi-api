@@ -2,10 +2,9 @@ require 'rails_helper'
 require 'import/datasource'
 
 RSpec.describe Import::Datasource do
-
   subject { Import::Datasource.new(:file, 'bla/bla.json') }
 
-  it{ is_expected.to respond_to :fetch }
+  it { is_expected.to respond_to :fetch }
 
   context "file source" do
     it "should return file data using fetch" do
@@ -27,6 +26,4 @@ RSpec.describe Import::Datasource do
       expect(subject.fetch).to eq response
     end
   end
-
-
 end

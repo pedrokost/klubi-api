@@ -1,5 +1,4 @@
 class Api::V2::CommentRequestsController < ApplicationController
-
   before_action :select_ams_adapter
 
   def create
@@ -29,8 +28,8 @@ private
 
   def comment_request_params
     parameters = ActionController::Parameters.new(
-      ActiveModelSerializers::Deserialization.jsonapi_parse!(params, embedded: [:klub])
-    ).permit(:requester_email, :requester_name, :commenter_email, :commenter_name, :klub_attributes => [:id])
+      ActiveModelSerializers::Deserialization.jsonapi_parse!(params, embedded: [ :klub ])
+    ).permit(:requester_email, :requester_name, :commenter_email, :commenter_name, klub_attributes: [ :id ])
     parameters.require(:requester_email)
     parameters.require(:requester_name)
     parameters.require(:commenter_email)
@@ -42,7 +41,7 @@ private
 
   def find_klub
     slug_with_id = comment_request_params[:klub_attributes][:id]
-    id = slug_with_id.split('-').last
+    id = slug_with_id.split("-").last
     Klub.find(id)
   end
 

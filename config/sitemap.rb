@@ -1,13 +1,13 @@
 # require 'fog/aws'
-require 'aws-sdk-s3'
+require "aws-sdk-s3"
 
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "https://www.klubi.si"
 # pick a place safe to write the files
-SitemapGenerator::Sitemap.public_path = 'tmp/'
+SitemapGenerator::Sitemap.public_path = "tmp/"
 # store on S3 using Fog (pass in configuration values as shown above if needed)
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(
-  Rails.application.credentials.AWS_BUCKET, 
+  Rails.application.credentials.AWS_BUCKET,
   access_key_id: Rails.application.credentials.AWS_ACCESS_KEY_ID,
   secret_access_key: Rails.application.credentials.AWS_SECRET_ACCESS_KEY,
   # session_token: Rails.application.credentials.AWS_SESSION_TOKEN,
@@ -16,7 +16,7 @@ SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(
 # inform the map cross-linking where to find the other maps
 SitemapGenerator::Sitemap.sitemaps_host = "https://www.klubi.si/"
 # pick a namespace within your bucket to organize your maps
-SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.sitemaps_path = "sitemaps/"
 SitemapGenerator::Sitemap.verbose = true
 
 
@@ -44,23 +44,23 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
 
-  add '/dodaj-klub'
-  add '/seznam-klubov'
-  add '/oprojektu'
+  add "/dodaj-klub"
+  add "/seznam-klubov"
+  add "/oprojektu"
 
-  supported_categories = Rails.application.credentials.SUPPORTED_CATEGORIES.split(',')
+  supported_categories = Rails.application.credentials.SUPPORTED_CATEGORIES.split(",")
 
   # Add all categories
   supported_categories.each do |category|
-    add "/#{category}", priority: 0.6, changefreq: 'daily'
-    add "/seznam-klubov/#{category}", priority: 0.6, changefreq: 'daily'
+    add "/#{category}", priority: 0.6, changefreq: "daily"
+    add "/seznam-klubov/#{category}", priority: 0.6, changefreq: "daily"
 
     # Add all klubs of supported categories (this may add duplicates - that's
     # fine since the category is different)
 
-    Klub.completed.where('? = ANY (categories)', category).where(closed_at: nil).where(parent: nil).find_each do |klub|  # does it in batches
-      add "/#{category}/#{klub.url_slug}", lastmod: klub.updated_at, changefreq: 'monthly', priority: 0.8
-      add "/#{category}/#{klub.url_slug}/uredi", lastmod: klub.updated_at, changefreq: 'monthly', priority: 0.2
+    Klub.completed.where("? = ANY (categories)", category).where(closed_at: nil).where(parent: nil).find_each do |klub|  # does it in batches
+      add "/#{category}/#{klub.url_slug}", lastmod: klub.updated_at, changefreq: "monthly", priority: 0.8
+      add "/#{category}/#{klub.url_slug}/uredi", lastmod: klub.updated_at, changefreq: "monthly", priority: 0.2
     end
   end
 
@@ -75,5 +75,4 @@ SitemapGenerator::Sitemap.create do
 
   # See output with:
   # gunzip -c tmp/sitemaps/sitemap.xml.gz | grep -oE "<loc>([^<]+)</loc>"  | cut -c 6- | cut -d'<' -f1
-
 end

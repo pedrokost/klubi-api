@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Api::V2::CommentsController, type: :controller do
-
   describe "POST #comments" do
-
     context "without a comment request hash" do
       let(:comment_attrs) {
         {
@@ -59,8 +57,7 @@ RSpec.describe Api::V2::CommentsController, type: :controller do
     end
 
     context "with a comments request hash" do
-
-      let!(:comment_request) { FactoryBot.create(:comment_request, { request_hash: '1234'} ) }
+      let!(:comment_request) { FactoryBot.create(:comment_request, { request_hash: '1234' }) }
 
       let(:comment_attrs) {
         {
@@ -106,7 +103,6 @@ RSpec.describe Api::V2::CommentsController, type: :controller do
       end
 
       describe "without a body" do
-
         it "return an error status code" do
           comment_attrs[:data][:attributes][:body] = " "
           expect { post :create, params: comment_attrs }.to raise_error(ActionController::ParameterMissing)
@@ -114,7 +110,6 @@ RSpec.describe Api::V2::CommentsController, type: :controller do
       end
 
       describe "without a commenter name" do
-
         it "return an error status code" do
           comment_attrs[:data][:attributes][:commenter_name] = ""
           expect { post :create, params: comment_attrs }.to raise_error(ActionController::ParameterMissing)

@@ -37,7 +37,7 @@ class KlubDashboard < Administrate::BaseDashboard
     visits_count_updated_at: Field::DateTime,
     website: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES

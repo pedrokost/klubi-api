@@ -10,6 +10,6 @@ class AddPointIndexToKlubs < ActiveRecord::Migration[5.0]
     end
 
     def down
-      execute %{drop index index_on_klubs_location}
+      execute %(drop index index_on_klubs_location)
     end
 end

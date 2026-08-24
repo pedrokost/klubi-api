@@ -1,6 +1,5 @@
 # This will guess the User class
 FactoryBot.define do
-
   factory :comment_request do
     commentable { FactoryBot.create(:complete_klub) }
     requester_email { "requester@test.com" }
@@ -46,7 +45,7 @@ FactoryBot.define do
     # last_delivered_at "2017-01-14 17:37:33"
   end
 
-  factory :email_stum, :class => 'EmailSta' do
+  factory :email_stum, class: 'EmailSta' do
     last_delivery_at { "2017-01-14 17:35:02" }
   end
 
@@ -58,16 +57,15 @@ FactoryBot.define do
   end
 
   factory :klub do
-
     sequence :name do |n|
       "Karate klub #{n}"
     end
 
-		factory :complete_klub do
-			latitude { 12.25566 }
-			longitude { 45.25566 }
+    factory :complete_klub do
+      latitude { 12.25566 }
+      longitude { 45.25566 }
       verified { true }
-      categories { ['fitnes'] }
+      categories { [ 'fitnes' ] }
     end
 
     factory :klub_branch do
@@ -78,7 +76,7 @@ FactoryBot.define do
     factory :complete_klub_branch do
       latitude { 12.25566 }
       longitude { 45.25566 }
-      categories { ['fitnes'] }
+      categories { [ 'fitnes' ] }
       verified { true }
       association :parent, factory: :complete_klub
     end

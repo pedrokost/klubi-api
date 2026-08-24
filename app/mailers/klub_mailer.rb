@@ -1,10 +1,9 @@
 class KlubMailer < ApplicationMailer
-
   def new_klub_mail(klub_id)
     @klub = Klub.unscoped.find(klub_id)
     @klub_data = @klub.to_json
     email = Rails.application.credentials.DEFAULT_EMAIL
-    mail(to: email, subject: 'A new klub has been added for review')
+    mail(to: email, subject: "A new klub has been added for review")
   end
 
   def new_updates_mail(klub_id, editor)
@@ -16,9 +15,8 @@ class KlubMailer < ApplicationMailer
   end
 
   def confirmation_for_pending_updates_mail(klub_id, editor_email, update_ids, new_branch_ids)
-
     @klub = Klub.unscoped.find(klub_id)
-    @branches = [@klub] + @klub.branches
+    @branches = [ @klub ] + @klub.branches
     @updates = Update.find(update_ids)
 
     from_email = Rails.application.credentials.DEFAULT_BOT_EMAIL

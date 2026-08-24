@@ -1,7 +1,7 @@
 # require 'pry' if Rails.env.test?
-require 'pp'
-require 'open3'
-require 'tempfile'
+require "pp"
+require "open3"
+require "tempfile"
 
 module Import
   class Resolution
@@ -12,7 +12,7 @@ module Import
   end
 
   class Importer
-    def initialize(datasource, transformer, verbose=true)
+    def initialize(datasource, transformer, verbose = true)
       @transformer = transformer
       @datasource = datasource
       @verbose = verbose
@@ -47,16 +47,16 @@ module Import
 
       if not klub
         klub = Klub.new(klubdata)
-        p 'New klub:' if @verbose
+        p "New klub:" if @verbose
         pp klub.as_json.symbolize_keys if @verbose
         klub.save!
       else
-        pp '=' * 60 if @verbose
+        pp "=" * 60 if @verbose
 
         if @verbose
           pp klubdata
 
-          print_keys = %w(name address town latitude longitude email phone website facebook_url categories description verified)
+          print_keys = %w[name address town latitude longitude email phone website facebook_url categories description verified]
           print_json_diff(klub.slice(print_keys).to_json, klubdata.to_json)
         end
 
@@ -78,16 +78,16 @@ module Import
     end
 
     def print_json_diff(old_json, new_json)
-      old_pretty, = Open3.capture2('jq', '--sort-keys', '--color-output', '.', stdin_data: old_json)
-      new_pretty, = Open3.capture2('jq', '--sort-keys', '--color-output', '.', stdin_data: new_json)
+      old_pretty, = Open3.capture2("jq", "--sort-keys", "--color-output", ".", stdin_data: old_json)
+      new_pretty, = Open3.capture2("jq", "--sort-keys", "--color-output", ".", stdin_data: new_json)
 
-      Tempfile.create('klub_old') do |old_file|
-        Tempfile.create('klub_new') do |new_file|
+      Tempfile.create("klub_old") do |old_file|
+        Tempfile.create("klub_new") do |new_file|
           old_file.write(old_pretty)
           old_file.flush
           new_file.write(new_pretty)
           new_file.flush
-          system('diff', old_file.path, new_file.path)
+          system("diff", old_file.path, new_file.path)
         end
       end
     end
@@ -97,10 +97,10 @@ module Import
       # klubdata hash in terms of sum of Levenshtein distance between selected
       # attributes
 
-      attrs = [:name, :address, :email]
+      attrs = [ :name, :address, :email ]
       # Reject any attributes which are not set in all objects
       attrs.delete_if do |attr|
-        klubdata[attr] == nil || existing_klubs.any?{ |k| k.send(attr) == nil }
+        klubdata[attr] == nil || existing_klubs.any? { |k| k.send(attr) == nil }
       end
 
       existing_klubs.min_by do |klub|
@@ -141,9 +141,9 @@ module Import
         cli.ok("DONE creating new klub") if @verbose
         klub.save!
       when :skip
-        cli.ok('SKIPPING klub') if @verbose
+        cli.ok("SKIPPING klub") if @verbose
       else
-        cli.error('Invalid options selected', user_selection)
+        cli.error("Invalid options selected", user_selection)
       end
     end
   end

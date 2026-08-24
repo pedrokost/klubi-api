@@ -1,5 +1,4 @@
 class Api::V2::ObcinaSerializer < ActiveModel::Serializer
-
   class IncludedObcinaSerializer < ActiveModel::Serializer
     attributes :name
     def id

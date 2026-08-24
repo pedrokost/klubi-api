@@ -1,5 +1,5 @@
-require 'import/transformer'
-require 'json'
+require "import/transformer"
+require "json"
 
 module Import
   class NzsTransformer < Transformer
@@ -18,7 +18,7 @@ module Import
           'email': klubdata[5],
           'website': klubdata[6],
           'notes': "Ustanovljen leta #{klubdata[7]}",
-          'categories': ['nogomet']
+          'categories': [ "nogomet" ]
         }
 
         clean_data << klub.symbolize_keys
@@ -27,4 +27,4 @@ module Import
       clean_data = clean_data.uniq
     end
   end
-end 
+end

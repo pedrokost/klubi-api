@@ -1,7 +1,6 @@
 module Import
   class Transformer
     def description
-
     end
 
     def transform(data)

@@ -1,9 +1,8 @@
-require 'openssl'
+require "openssl"
 
 module Api
   module V2
     class EmailStatsController < ApplicationController
-
       def webhook
         verified = verify_authenticity(Rails.application.credentials.MAILGUN_API_KEY,
           mailgun_params[:token],
@@ -23,7 +22,6 @@ module Api
             stat.send(method_field, Time.at(mailgun_params[:timestamp].to_i).utc)
 
             stat.save!
-
           end
         rescue NoMethodError => e
           logger.info "Received unsupported event type from Mailgun: #{mailgun_params[:event]}"
@@ -39,7 +37,7 @@ module Api
 
       def verify_authenticity(api_key, token, timestamp, signature)
         digest = OpenSSL::Digest::SHA256.new
-        data = [timestamp, token].join
+        data = [ timestamp, token ].join
         signature == OpenSSL::HMAC.hexdigest(digest, api_key, data)
       end
 

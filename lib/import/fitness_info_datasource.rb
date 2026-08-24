@@ -1,4 +1,4 @@
-require 'import/datasource'
+require "import/datasource"
 
 module Import
   class FitnessInfoDatasource < Datasource

@@ -17,7 +17,7 @@ class UpdateDashboard < Administrate::BaseDashboard
     oldvalue: Field::String,
     status: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -34,7 +34,7 @@ class UpdateDashboard < Administrate::BaseDashboard
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = ATTRIBUTE_TYPES.keys - [:id, :updated_at]
+  SHOW_PAGE_ATTRIBUTES = ATTRIBUTE_TYPES.keys - [ :id, :updated_at ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed

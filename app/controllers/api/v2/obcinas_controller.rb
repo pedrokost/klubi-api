@@ -1,5 +1,4 @@
 class Api::V2::ObcinasController < ApplicationController
-
   before_action :select_ams_adapter
 
   def show
@@ -13,10 +12,10 @@ class Api::V2::ObcinasController < ApplicationController
 
     data = Rails.cache.fetch("v2/obcinas/#{obcina.slug}-#{obcina.id}-#{category_params['category']}", expires_in: 1.week) do
       serializer = Api::V2::ObcinaSerializer.new(obcina,
-        category: category_params['category'])
+        category: category_params["category"])
       data = ActiveModelSerializers::Adapter.create(
         serializer,
-        include: [:klubs, :neighbouring_obcinas]).as_json
+        include: [ :klubs, :neighbouring_obcinas ]).as_json
     end
 
     render json: data
@@ -30,11 +29,11 @@ private
 
   def find_obcina
     slug_with_id = params[:id]
-    id = slug_with_id.split('-').last
+    id = slug_with_id.split("-").last
     Obcina.find(id)
   end
   def supported_categories
-    Rails.application.credentials.SUPPORTED_CATEGORIES.split(',')
+    Rails.application.credentials.SUPPORTED_CATEGORIES.split(",")
   end
 
   def category_params

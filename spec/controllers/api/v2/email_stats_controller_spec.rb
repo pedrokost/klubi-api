@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Api::V2::EmailStatsController, type: :controller do
   describe 'POST #weebhook' do
-
     describe "valid authenticity" do
       let(:valid_request_params) {
         {
@@ -74,7 +73,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
 
       it "should set the delivered timestamp in the db" do
         post :webhook, params: delivery_params
-        expect(EmailStat.find_by(email: 'alice@example.com').last_delivered_at).to eq DateTime.new(2017,1,14,17,45,9)
+        expect(EmailStat.find_by(email: 'alice@example.com').last_delivered_at).to eq DateTime.new(2017, 1, 14, 17, 45, 9)
       end
 
       describe "subsequent delivery" do
@@ -99,7 +98,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
 
         it "should update the last_delivered_at" do
           post :webhook, params: subsequent_delivery_params
-          expect(EmailStat.find_by(email: 'alice@example.com').last_delivered_at).to eq DateTime.new(2017,1,14,18,54,58)
+          expect(EmailStat.find_by(email: 'alice@example.com').last_delivered_at).to eq DateTime.new(2017, 1, 14, 18, 54, 58)
         end
       end
     end
@@ -131,7 +130,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
 
       it "should set the delivered timestamp in the db" do
         post :webhook, params: opened_params
-        expect(EmailStat.find_by(email: 'alice@example.com').last_opened_at).to eq DateTime.new(2017,1,14,17,45,9)
+        expect(EmailStat.find_by(email: 'alice@example.com').last_opened_at).to eq DateTime.new(2017, 1, 14, 17, 45, 9)
       end
     end
 
@@ -162,7 +161,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
 
       it "should set the delivered timestamp in the db" do
         post :webhook, params: clicked_params
-        expect(EmailStat.find_by(email: 'alice@example.com').last_clicked_at).to eq DateTime.new(2017,1,14,17,45,9)
+        expect(EmailStat.find_by(email: 'alice@example.com').last_clicked_at).to eq DateTime.new(2017, 1, 14, 17, 45, 9)
       end
     end
 
@@ -193,7 +192,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
 
       it "should set the delivered timestamp in the db" do
         post :webhook, params: bounced_params
-        expect(EmailStat.find_by(email: 'alice@example.com').last_bounced_at).to eq DateTime.new(2017,1,14,17,45,9)
+        expect(EmailStat.find_by(email: 'alice@example.com').last_bounced_at).to eq DateTime.new(2017, 1, 14, 17, 45, 9)
       end
     end
 
@@ -224,7 +223,7 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
 
       it "should set the delivered timestamp in the db" do
         post :webhook, params: dropped_params
-        expect(EmailStat.find_by(email: 'alice@example.com').last_dropped_at).to eq DateTime.new(2017,1,14,17,45,9)
+        expect(EmailStat.find_by(email: 'alice@example.com').last_dropped_at).to eq DateTime.new(2017, 1, 14, 17, 45, 9)
       end
     end
 
@@ -251,14 +250,12 @@ RSpec.describe Api::V2::EmailStatsController, type: :controller do
      end
 
      it "does not save the field in the db" do
-      expect {post :webhook, params: invalid_params }.not_to change(EmailStat, :count)
+      expect { post :webhook, params: invalid_params }.not_to change(EmailStat, :count)
      end
 
      it "should silently handle the error" do
        expect { post :webhook, params: invalid_params }.not_to raise_error
      end
    end
-
   end
-
 end

@@ -1,5 +1,4 @@
 class CommentMailer < ApplicationMailer
-
   def thank_your_for_recommendation(comment_id)
     @comment = Comment.find(comment_id)
 

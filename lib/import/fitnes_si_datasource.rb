@@ -1,4 +1,4 @@
-require 'import/datasource'
+require "import/datasource"
 
 module Import
   class FitnesSiDatasource < Datasource
@@ -9,7 +9,7 @@ module Import
       # )
       super(
         :file,
-        'lib/tasks/fitnes_si.xml'
+        "lib/tasks/fitnes_si.xml"
       )
     end
   end

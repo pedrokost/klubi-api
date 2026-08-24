@@ -1,11 +1,10 @@
-require 'json'
+require "json"
 
 class Api::V2::CommentsController < ApplicationController
-
   before_action :select_ams_adapter
 
   def create
-    comment_request = CommentRequest.where( request_hash: new_comment_params[:request_hash] ).first
+    comment_request = CommentRequest.where(request_hash: new_comment_params[:request_hash]).first
 
     if comment_request.try(:comment)
       head 422 and return

@@ -12,16 +12,16 @@ class ApplicationController < ActionController::API
   end
 
   def sitemap
-    redirect_to 'https://s3.eu-central-1.amazonaws.com/www.klubi.si/sitemaps/sitemap.xml.gz'
+    redirect_to "https://s3.eu-central-1.amazonaws.com/www.klubi.si/sitemaps/sitemap.xml.gz"
   end
 
   def heartbeat
-    render 'application/heartbeat', :formats=>[:html]
+    render "application/heartbeat", formats: [ :html ]
   end
 
 private
   def supported_categories
-    Rails.application.credentials.SUPPORTED_CATEGORIES.split(',')
+    Rails.application.credentials.SUPPORTED_CATEGORIES.split(",")
   end
 
   def correct_url!
@@ -32,9 +32,9 @@ private
     # TODO: remove this method after about 30 days, when google would
     # hopefully already register all the 301 and update its indices
 
-    return '', false unless request.path_parameters[:path]
+    return "", false unless request.path_parameters[:path]
 
-    path_parts = request.path_parameters[:path].split('/')
+    path_parts = request.path_parameters[:path].split("/")
     supposed_category = path_parts.first
 
     changed = false
@@ -61,7 +61,6 @@ private
       end
     end
 
-    return '', false
+    return "", false
   end
-
 end

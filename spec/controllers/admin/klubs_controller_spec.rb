@@ -4,8 +4,7 @@ require 'json'
 
 # require 'pry'
 
-RSpec.describe Admin::KlubsController, :type => :controller do
-
+RSpec.describe Admin::KlubsController, type: :controller do
   # login to http basic auth
   include AuthHelper
   before(:each) do
@@ -24,7 +23,6 @@ RSpec.describe Admin::KlubsController, :type => :controller do
   end
 
   describe "POST #klubs/:id/toggleverify" do
-
     context "setting verification" do
       let!(:klub) { FactoryBot.create(:complete_klub, verified: false, data_confirmed_at: nil, created_at: 2.days.ago.beginning_of_day) }
 
@@ -52,7 +50,7 @@ RSpec.describe Admin::KlubsController, :type => :controller do
       it "does not change data_confirmed_at" do
         prev_val = klub.data_confirmed_at
         post :toggleverify, params: { id: klub.id }
-        expect( klub.reload.data_confirmed_at ).to eq prev_val
+        expect(klub.reload.data_confirmed_at).to eq prev_val
       end
     end
   end

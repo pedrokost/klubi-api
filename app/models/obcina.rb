@@ -24,18 +24,18 @@ class Obcina < ApplicationRecord
           geom::geometry,
           (SELECT geom::geometry from obcinas WHERE id=%d)
         )
-      } % [self.id]
+      } % [ self.id ]
     ).where.not("id=?", self.id).order(population_size: :desc)
   end
 
 private
   def supported_categories
-    Rails.application.credentials.SUPPORTED_CATEGORIES.split(',').freeze
+    Rails.application.credentials.SUPPORTED_CATEGORIES.split(",").freeze
   end
 
   def klubs
     # Return list of all klubs in the region
-    Klub.completed.where('closed_at IS NULL').where(
+    Klub.completed.where("closed_at IS NULL").where(
       %{
         ST_Intersects(
           (SELECT geom FROM obcinas WHERE id=%d),
@@ -43,7 +43,7 @@ private
             'SRID=4326;POINT(' || longitude || ' ' || latitude || ')'
           )
         )
-      } % [self.id]
+      } % [ self.id ]
     )
   end
 end

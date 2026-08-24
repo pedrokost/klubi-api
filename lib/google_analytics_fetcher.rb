@@ -11,32 +11,31 @@
 # 4. Go to Google Analytics -> Admin -> View Settings. Note 'View ID'
 # 5. Go to User Management -> Add permissions for: (Service account ID) [Read & Analyze]
 
-require 'google/apis/analyticsreporting_v4'
-require 'googleauth'
+require "google/apis/analyticsreporting_v4"
+require "googleauth"
 
 class GoogleAnalyticsFetcher
   # Returns the total number of visits for given klub
 
-  SCOPE = 'https://www.googleapis.com/auth/analytics.readonly'.freeze
+  SCOPE = "https://www.googleapis.com/auth/analytics.readonly".freeze
 
   def total_visitors(klub_id)
-
     analytics = Google::Apis::AnalyticsreportingV4::AnalyticsReportingService.new
     creds = Google::Auth::ServiceAccountCredentials.make_creds(json_key_io: StringIO.new(Rails.application.credentials.GOOGLE_APIS_CREDENTIALS),
                                                                scope: SCOPE)
     analytics.authorization = creds
 
-    date_range = Google::Apis::AnalyticsreportingV4::DateRange.new(start_date: '2016-01-01', end_date: 'today')
+    date_range = Google::Apis::AnalyticsreportingV4::DateRange.new(start_date: "2016-01-01", end_date: "today")
     # metric_pageviews = Google::Apis::AnalyticsreportingV4::Metric.new(expression: 'ga:pageviews', alias: 'pageviews')
-    metric_users = Google::Apis::AnalyticsreportingV4::Metric.new(expression: 'ga:users', alias: 'users')
+    metric_users = Google::Apis::AnalyticsreportingV4::Metric.new(expression: "ga:users", alias: "users")
 
     request = Google::Apis::AnalyticsreportingV4::GetReportsRequest.new(
-      report_requests: [Google::Apis::AnalyticsreportingV4::ReportRequest.new(
+      report_requests: [ Google::Apis::AnalyticsreportingV4::ReportRequest.new(
         view_id: Rails.application.credentials.GOOGLE_ANALYTICS_VIEW,
-        metrics: [metric_users],
-        date_ranges: [date_range],
+        metrics: [ metric_users ],
+        date_ranges: [ date_range ],
         filters_expression: "ga:pagePath=@-#{klub_id}/"
-      )]
+      ) ]
     )
 
     begin

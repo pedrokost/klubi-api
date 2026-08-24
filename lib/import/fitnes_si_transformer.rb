@@ -1,4 +1,4 @@
-require 'import/transformer'
+require "import/transformer"
 
 module Import
   class FitnesSiTransformer < Transformer
@@ -9,20 +9,20 @@ module Import
     def transform(data)
       doc = Nokogiri::XML(data)
 
-      klubs = doc.xpath('//marker')
+      klubs = doc.xpath("//marker")
 
       clean_data = []
 
       klubs.each do |klub|
-        name = klub.attribute('name').try(:text)
-        address = klub.attribute('address').try(:text)
-        post_number = klub.attribute('post_number').try(:text)
-        city = klub.attribute('city').try(:text)
+        name = klub.attribute("name").try(:text)
+        address = klub.attribute("address").try(:text)
+        post_number = klub.attribute("post_number").try(:text)
+        city = klub.attribute("city").try(:text)
 
         clean_data << {
           name: name,
           address: "#{address}, #{post_number}, #{city}",
-          caterogies: ['fitnes']
+          caterogies: [ "fitnes" ]
         }
       end
 

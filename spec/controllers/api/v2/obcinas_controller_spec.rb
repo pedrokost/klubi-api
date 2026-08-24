@@ -3,15 +3,14 @@ require 'rails_helper'
 # require 'pry'
 
 RSpec.describe Api::V2::ObcinasController, type: :controller do
-
   describe 'GET #obcinas' do
-    let!(:touching_obcina) { FactoryBot.create(:obcina, name: 'Touching obcina', slug: 'touching-obcina' ) }
-    let!(:obcina) { FactoryBot.create(:obcina, name: 'Grosuplje', slug: 'grosuplje' ) }
-    let!(:klub) { FactoryBot.create(:complete_klub, latitude: 20.1, longitude: 10.1, categories: ['fitnes']) }
+    let!(:touching_obcina) { FactoryBot.create(:obcina, name: 'Touching obcina', slug: 'touching-obcina') }
+    let!(:obcina) { FactoryBot.create(:obcina, name: 'Grosuplje', slug: 'grosuplje') }
+    let!(:klub) { FactoryBot.create(:complete_klub, latitude: 20.1, longitude: 10.1, categories: [ 'fitnes' ]) }
 
     describe "without providing category param" do
       before do
-        allow_any_instance_of(Obcina).to receive(:category_klubs).and_return([klub])
+        allow_any_instance_of(Obcina).to receive(:category_klubs).and_return([ klub ])
         get :show, params: { id: obcina.url_slug, category: nil }
       end
 
@@ -43,7 +42,7 @@ RSpec.describe Api::V2::ObcinasController, type: :controller do
       end
 
       it "should include a list of ids of klubs in the obcina" do
-        allow_any_instance_of(Obcina).to receive(:category_klubs).and_return([klub])
+        allow_any_instance_of(Obcina).to receive(:category_klubs).and_return([ klub ])
         get :show, params: { id: obcina.url_slug, category: 'fitnes' }
         obcina = json_response[:data]
 
@@ -53,7 +52,7 @@ RSpec.describe Api::V2::ObcinasController, type: :controller do
       end
 
       it "should include short klubs objects" do
-        allow_any_instance_of(Obcina).to receive(:category_klubs).and_return([klub])
+        allow_any_instance_of(Obcina).to receive(:category_klubs).and_return([ klub ])
         get :show, params: { id: obcina.url_slug, category: 'fitnes' }
         returned_klub = json_response[:included].first
 
@@ -71,7 +70,7 @@ RSpec.describe Api::V2::ObcinasController, type: :controller do
       end
 
       it "should include a link to nearby obcinas" do
-        expect_any_instance_of(Obcina).to receive(:neighbouring_obcinas).at_least(:once).and_return([touching_obcina])
+        expect_any_instance_of(Obcina).to receive(:neighbouring_obcinas).at_least(:once).and_return([ touching_obcina ])
         get :show, params: { id: obcina.url_slug, category: 'fitnes' }
 
         expect(json_response[:data][:relationships][:"neighbouring-obcinas"][:data].length).to eq 1
@@ -79,7 +78,7 @@ RSpec.describe Api::V2::ObcinasController, type: :controller do
       end
 
       it "should include flat nearby obcina objects" do
-        expect_any_instance_of(Obcina).to receive(:neighbouring_obcinas).at_least(:once).and_return([touching_obcina])
+        expect_any_instance_of(Obcina).to receive(:neighbouring_obcinas).at_least(:once).and_return([ touching_obcina ])
         get :show, params: { id: obcina.url_slug, category: 'fitnes' }
 
         neighbouring_obcinas = json_response[:included].first

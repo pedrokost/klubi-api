@@ -14,25 +14,25 @@ class FacebookImageRetriever
   def photos
     @oauth = Koala::Facebook::OAuth.new(Rails.application.credentials.FB_APP_ID, Rails.application.credentials.FB_APP_SECRET)
     @graph = Koala::Facebook::API.new(@oauth.get_app_access_token)
-    profile_images = @graph.get_object("#{page_id}/photos", fields: ['images'])
-    uploaded_images = @graph.get_object("#{page_id}/photos?type=uploaded", fields: ['images'])
+    profile_images = @graph.get_object("#{page_id}/photos", fields: [ "images" ])
+    uploaded_images = @graph.get_object("#{page_id}/photos?type=uploaded", fields: [ "images" ])
 
-    return [[profile_images, 'profile_photo'], [uploaded_images, 'photo']].map do |images, type|
+    [ [ profile_images, "profile_photo" ], [ uploaded_images, "photo" ] ].map do |images, type|
       images.map do |image|
-        large = image['images'].first
-        thumbnail = image['images'].last
+        large = image["images"].first
+        thumbnail = image["images"].last
         Image.new(
-          id: image['id'],
+          id: image["id"],
           type: type,
           large: {
-            url: large['source'],
-            width: large['width'],
-            height: large['height']
+            url: large["source"],
+            width: large["width"],
+            height: large["height"]
           },
           thumbnail: {
-            url: thumbnail['source'],
-            width: thumbnail['width'],
-            height: thumbnail['height']
+            url: thumbnail["source"],
+            width: thumbnail["width"],
+            height: thumbnail["height"]
           }
         )
       end
@@ -43,6 +43,6 @@ class FacebookImageRetriever
     Rails.logger.error e
     Raygun.track_exception(e)
 
-    return []
+    []
   end
 end

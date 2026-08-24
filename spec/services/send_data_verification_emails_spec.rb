@@ -8,20 +8,19 @@
 require 'rails_helper'
 
 RSpec.describe SendDataVerificationEmails do
-
   subject { SendDataVerificationEmails.new }
 
-  let!(:klub1) { create(:complete_klub, email: 'test@test.com', last_verification_reminder_at: DateTime.now ) }
-  let!(:klub2) { create(:complete_klub, email: 'test@test.com', last_verification_reminder_at: 1.year.ago ) }
+  let!(:klub1) { create(:complete_klub, email: 'test@test.com', last_verification_reminder_at: DateTime.now) }
+  let!(:klub2) { create(:complete_klub, email: 'test@test.com', last_verification_reminder_at: 1.year.ago) }
   let!(:klub3) { create(:complete_klub, email: 'test@test.com') }
   let!(:klub4) { create(:complete_klub, email: 'test@test.com') }
   let!(:closed_klub) { create(:complete_klub, email: 'closed@test.com', closed_at: Date.yesterday) }
-  let!(:klub_data_confirmed) { create(:complete_klub, email: 'confirmed@test.com', data_confirmed_at: 3.days.ago, last_verification_reminder_at: 1.year.ago )}
+  let!(:klub_data_confirmed) { create(:complete_klub, email: 'confirmed@test.com', data_confirmed_at: 3.days.ago, last_verification_reminder_at: 1.year.ago) }
   let!(:klub_nil_email) { create(:complete_klub, email: nil) }
   let!(:klub_invalid_email) { create(:complete_klub, email: '234 234 234') }
   let!(:klub_blank_email) { create(:complete_klub, email: '') }
   let!(:unverified_klub) { create(:complete_klub, email: 'test@test.com', verified: false) }
-  let!(:unsupported_category_klub) { create(:complete_klub, email: 'test@test.com', categories: ['pentafloss']) }
+  let!(:unsupported_category_klub) { create(:complete_klub, email: 'test@test.com', categories: [ 'pentafloss' ]) }
   let!(:klub_branch) { create(:complete_klub, email: 'test@test.com', parent: klub4) }
 
 
@@ -31,7 +30,7 @@ RSpec.describe SendDataVerificationEmails do
       allow(Rails.application.credentials).to receive(:SUPPORTED_CATEGORIES).and_return('fitnes,wellness,karate,frizbi,judo,gimnastika,cheerleading')
 
       allow(Rails.application.credentials).to receive(:EXPECTED_NUM_DAILY_DATA_VERIFICATION_EMAILS).and_return("24")
-      allow(Rails.application.credentials).to receive(:WANTED_OUTGOING_EMAIL_DISTRIBTION).and_return ([1.0/24] * 24).join(',')
+      allow(Rails.application.credentials).to receive(:WANTED_OUTGOING_EMAIL_DISTRIBTION).and_return ([ 1.0/24 ] * 24).join(',')
     end
 
     it "should not include klubs to which a notif was recently sent" do
@@ -76,13 +75,13 @@ RSpec.describe SendDataVerificationEmails do
 
     it "should order the list" do
       expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(100)
-      expect(subject.awaiting_klubs.map(&:id)).to match([klub3.id, klub4.id, klub2.id])
+      expect(subject.awaiting_klubs.map(&:id)).to match([ klub3.id, klub4.id, klub2.id ])
     end
 
     it "should limit the number of daily emails using the doorman" do
       expect_any_instance_of(OutgoingEmailDoorman).to receive(:number_of_emails_to_send_now).and_return(2)
 
-      expect(subject.awaiting_klubs.map(&:id)).to match_array([klub3.id, klub4.id])
+      expect(subject.awaiting_klubs.map(&:id)).to match_array([ klub3.id, klub4.id ])
     end
 
     it "should filter out klubs with nil emails" do
@@ -102,7 +101,7 @@ RSpec.describe SendDataVerificationEmails do
   end
 
   it "should send the emails" do
-    allow(subject).to receive(:awaiting_klubs).and_return([klub4])
+    allow(subject).to receive(:awaiting_klubs).and_return([ klub4 ])
     allow(klub4).to receive(:branches).and_return([])
     allow(klub4).to receive(:update_visits_count_if_outdated!).exactly(2).times
 
@@ -112,8 +111,8 @@ RSpec.describe SendDataVerificationEmails do
   end
 
   it "should update the visits count" do
-    allow(subject).to receive(:awaiting_klubs).and_return([klub4])
-    allow(klub4).to receive(:branches).and_return([klub_branch])
+    allow(subject).to receive(:awaiting_klubs).and_return([ klub4 ])
+    allow(klub4).to receive(:branches).and_return([ klub_branch ])
     allow(klub4).to receive(:send_request_verify_klub_data_mail)
 
     expect(klub4).to receive(:update_visits_count_if_outdated!)

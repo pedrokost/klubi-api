@@ -14,7 +14,7 @@ class CommentDashboard < Administrate::BaseDashboard
     commenter_email: Field::String,
     commenter_name: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES

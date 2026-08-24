@@ -1,6 +1,5 @@
 # Preview all emails at http://localhost:3200/rails/mailers/
 class KlubMailerPreview < ActionMailer::Preview
-
   def new_updates_mail
     klub = Klub.last
     KlubMailer.new_updates_mail(klub.id, 'joe@doe.com')
@@ -13,8 +12,8 @@ class KlubMailerPreview < ActionMailer::Preview
     branch_updates = []
     deleted_branches = []
 
-    old_branches = klub.branches.select{|branch| !branch.verified }
-    new_branches = klub.branches.select{|branch| !branch.verified }
+    old_branches = klub.branches.select { |branch| !branch.verified }
+    new_branches = klub.branches.select { |branch| !branch.verified }
     branch_updates = old_branches.map(&:updates).flatten
 
     updates = updates + branch_updates

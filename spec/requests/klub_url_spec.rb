@@ -13,7 +13,7 @@ describe "Klub url redirecting" do
   end
 
   context "with existing klub" do
-    let!(:klub) { create(:klub, categories: ['karate'], name: 'Banana Split') }
+    let!(:klub) { create(:klub, categories: [ 'karate' ], name: 'Banana Split') }
 
     context "new slug format" do
       subject { get "https://www.klubi.si/karate/banana-split-#{klub.id}" }
@@ -32,11 +32,9 @@ describe "Klub url redirecting" do
       it "should redirect to new slug format" do
         expect(subject).to redirect_to("https://www.klubi.si/karate/banana-split-#{klub.id}?aorst=arst")
       end
-
     end
 
     context "static urls" do
-
       subject { get '/oprojektu', headers: { 'HTTPS': 'on' } }
 
       it "should return 200" do

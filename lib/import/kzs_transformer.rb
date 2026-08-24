@@ -1,5 +1,5 @@
-require 'import/transformer'
-require 'json'
+require "import/transformer"
+require "json"
 
 module Import
   class KzsTransformer < Transformer
@@ -12,15 +12,15 @@ module Import
       clean_data = []
 
       json.each do |klubdata|
-        if klubdata['address']
-          klubdata['address'] = klubdata['address'].gsub("\t", '').gsub("\n", ',')
+        if klubdata["address"]
+          klubdata["address"] = klubdata["address"].gsub("\t", "").gsub("\n", ",")
         end
-        klubdata['categories'] = ['kosarka']
-        klubdata['verified'] = true
+        klubdata["categories"] = [ "kosarka" ]
+        klubdata["verified"] = true
         clean_data << klubdata.symbolize_keys
       end
 
       clean_data
     end
   end
-end 
+end

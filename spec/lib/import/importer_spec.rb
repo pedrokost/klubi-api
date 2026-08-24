@@ -7,7 +7,6 @@ require 'stringio'
 # require 'pry'
 
 RSpec.describe Import::Importer do
-
   let(:datasource) { instance_double(Import::Datasource) }
   let(:transformer) { instance_double(Import::Transformer) }
   let(:prompt) { instance_double(TTY::Prompt) }
@@ -21,11 +20,11 @@ RSpec.describe Import::Importer do
     data = [
       {
         name: 'Fitnes 1',
-        categories: ['fitnes']
+        categories: [ 'fitnes' ]
       },
       {
         name: 'Fitnes 2',
-        categories: ['fitnes']
+        categories: [ 'fitnes' ]
       }
     ]
     allow(datasource).to receive(:fetch).and_return data
@@ -38,14 +37,14 @@ RSpec.describe Import::Importer do
     allow(prompt).to receive(:multi_select)
       .with("Which to override?", hash_including(echo: false, per_page: 20))
       .and_return([
-        :name, 
-        :address, 
-        :categories, 
+        :name,
+        :address,
+        :categories,
         :email,
-        :facebook_url,  
-        :website,      
-        :town,        
-        :phone        
+        :facebook_url,
+        :website,
+        :town,
+        :phone
       ])
   end
 
@@ -57,7 +56,7 @@ RSpec.describe Import::Importer do
   it { is_expected.not_to respond_to :commit_one }
 
   it "should be able to commit an array of klubs data" do
-    expect{subject.run}.to change{Klub.unscoped.count}.by 2
+    expect { subject.run }.to change { Klub.unscoped.count }.by 2
   end
 
   describe "it should not create duplicate klubs" do
@@ -67,7 +66,7 @@ RSpec.describe Import::Importer do
     end
 
     it "if same name" do
-      expect { subject.run }.not_to change{Klub.unscoped.count}
+      expect { subject.run }.not_to change { Klub.unscoped.count }
     end
 
     it "should prompt for resolution if same name" do
@@ -75,7 +74,7 @@ RSpec.describe Import::Importer do
             {
               name: 'Fitnes 1',
               address: 'Cesta 5, Maribor',
-              categories: ['fitnes', 'karate']
+              categories: [ 'fitnes', 'karate' ]
             }
           ]
       allow(transformer).to receive(:transform).and_return data
@@ -106,7 +105,7 @@ RSpec.describe Import::Importer do
       klubdata = {
         name: 'Fitnes X',
         address: 'Mariborcan',
-        categories: ['fitnes']
+        categories: [ 'fitnes' ]
       }
 
       similar = subject.send(:most_similar_klub, klubdata, existing_klubs)
@@ -120,7 +119,7 @@ RSpec.describe Import::Importer do
             {
               name: 'Fitnes 1',
               address: 'Cesta 5, Maribor',
-              categories: ['fitnes', 'karate']
+              categories: [ 'fitnes', 'karate' ]
             }
           ]
       allow(transformer).to receive(:transform).and_return data
@@ -129,7 +128,7 @@ RSpec.describe Import::Importer do
 
       klub = Klub.unscoped.where(name: 'Fitnes 1').first
       expect(klub.address).to eq 'Cesta 5, Maribor'
-      expect(klub.categories).to match ['fitnes', 'karate']
+      expect(klub.categories).to match [ 'fitnes', 'karate' ]
     end
 
     it "should not create new klub for resoultion 'merge'" do
@@ -138,12 +137,12 @@ RSpec.describe Import::Importer do
             {
               name: 'Fitnes 1',
               address: 'Cesta 5, Maribor',
-              categories: ['fitnes', 'karate']
+              categories: [ 'fitnes', 'karate' ]
             }
           ]
       allow(transformer).to receive(:transform).and_return data
 
-      expect{subject.run}.not_to change{Klub.unscoped.count}
+      expect { subject.run }.not_to change { Klub.unscoped.count }
     end
 
     it "should create new klub for resolution 'create new klub'" do
@@ -153,12 +152,12 @@ RSpec.describe Import::Importer do
             {
               name: 'Fitnes 1',
               address: 'Cesta 5, Maribor',
-              categories: ['fitnes', 'karate']
+              categories: [ 'fitnes', 'karate' ]
             }
           ]
       allow(transformer).to receive(:transform).and_return data
 
-      expect {subject.run}.to change{Klub.unscoped.count}.by 1
+      expect { subject.run }.to change { Klub.unscoped.count }.by 1
     end
 
     it "if same name - case sensitive" do
@@ -171,7 +170,7 @@ RSpec.describe Import::Importer do
       ]
       allow(transformer).to receive(:transform).and_return data
 
-      expect { subject.run }.not_to change{Klub.unscoped.count}
+      expect { subject.run }.not_to change { Klub.unscoped.count }
     end
   end
 
@@ -185,13 +184,13 @@ RSpec.describe Import::Importer do
       data = [
         {
           name: 'Fitnes 1',
-          categories: ['pilates']
+          categories: [ 'pilates' ]
         }
       ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['fitnes']
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.categories).to match [ 'fitnes' ]
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['fitnes', 'pilates']
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.categories).to match [ 'fitnes', 'pilates' ]
     end
 
     it "should amend the address if missing" do
@@ -199,14 +198,14 @@ RSpec.describe Import::Importer do
       klub.address = nil
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               address: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.address ).to be_nil
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.address).to be_nil
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.address ).to eq 'Trzaska 25, 1000 Ljubljana'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.address).to eq 'Trzaska 25, 1000 Ljubljana'
     end
 
     it "should not amend the address if not missing" do
@@ -214,25 +213,25 @@ RSpec.describe Import::Importer do
       klub.address = 'Nekje 22'
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               address: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.address ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.address).to eq 'Nekje 22'
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.address ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.address).to eq 'Nekje 22'
     end
 
     it "should amend the facebook_url if missing" do
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               facebook_url: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url ).to be_nil
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url).to be_nil
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url ).to eq 'Trzaska 25, 1000 Ljubljana'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url).to eq 'Trzaska 25, 1000 Ljubljana'
     end
 
     it "should not amend the facebook_url if not missing" do
@@ -240,25 +239,25 @@ RSpec.describe Import::Importer do
       klub.facebook_url = 'Nekje 22'
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               facebook_url: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url).to eq 'Nekje 22'
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url).to eq 'Nekje 22'
     end
 
     it "should amend the website if missing" do
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               website: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.website ).to be_nil
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.website).to be_nil
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.website ).to eq 'Trzaska 25, 1000 Ljubljana'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.website).to eq 'Trzaska 25, 1000 Ljubljana'
     end
 
     it "should not amend the website if not missing" do
@@ -266,14 +265,14 @@ RSpec.describe Import::Importer do
       klub.website = 'Nekje 22'
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               website: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.website ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.website).to eq 'Nekje 22'
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.website ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.website).to eq 'Nekje 22'
     end
 
     it "should amend the town if missing" do
@@ -281,14 +280,14 @@ RSpec.describe Import::Importer do
       klub.town = nil
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               town: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.town ).to be_nil
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.town).to be_nil
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.town ).to eq 'Trzaska 25, 1000 Ljubljana'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.town).to eq 'Trzaska 25, 1000 Ljubljana'
     end
 
     it "should not amend the town if not missing" do
@@ -296,25 +295,25 @@ RSpec.describe Import::Importer do
       klub.town = 'Nekje 22'
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               town: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.town ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.town).to eq 'Nekje 22'
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.town ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.town).to eq 'Nekje 22'
     end
 
     it "should amend the phone if missing" do
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               phone: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.phone ).to be_nil
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.phone).to be_nil
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.phone ).to eq 'Trzaska 25, 1000 Ljubljana'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.phone).to eq 'Trzaska 25, 1000 Ljubljana'
     end
 
     it "should not amend the phone if not missing" do
@@ -322,25 +321,25 @@ RSpec.describe Import::Importer do
       klub.phone = 'Nekje 22'
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               phone: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.phone ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.phone).to eq 'Nekje 22'
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.phone ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.phone).to eq 'Nekje 22'
     end
 
     it "should amend the email if missing" do
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               email: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.email ).to be_nil
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.email).to be_nil
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.email ).to eq 'Trzaska 25, 1000 Ljubljana'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.email).to eq 'Trzaska 25, 1000 Ljubljana'
     end
 
     it "should not amend the email if not missing" do
@@ -348,27 +347,27 @@ RSpec.describe Import::Importer do
       klub.email = 'Nekje 22'
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               email: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.email ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.email).to eq 'Nekje 22'
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.email ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.email).to eq 'Nekje 22'
     end
 
     it "should not add duplicate categories" do
       data = [
         {
           name: 'Fitnes 1',
-          categories: ['pilates', 'fitnes']
+          categories: [ 'pilates', 'fitnes' ]
         }
       ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['fitnes']
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.categories).to match [ 'fitnes' ]
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['fitnes', 'pilates']
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.categories).to match [ 'fitnes', 'pilates' ]
     end
   end
 
@@ -382,13 +381,13 @@ RSpec.describe Import::Importer do
       data = [
         {
           name: 'Fitnes 1',
-          categories: ['pilates']
+          categories: [ 'pilates' ]
         }
       ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['fitnes']
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.categories).to match [ 'fitnes' ]
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['pilates', 'fitnes']
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.categories).to match [ 'pilates', 'fitnes' ]
     end
 
     it "should override address" do
@@ -396,14 +395,14 @@ RSpec.describe Import::Importer do
       klub.address = 'Some address'
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               address: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.address ).to eq 'Some address'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.address).to eq 'Some address'
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.address ).to eq 'Trzaska 25, 1000 Ljubljana'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.address).to eq 'Trzaska 25, 1000 Ljubljana'
     end
 
     it "should not override the address if missing" do
@@ -411,25 +410,25 @@ RSpec.describe Import::Importer do
       klub.address = 'Some address'
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               address: nil
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.address ).to eq 'Some address'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.address).to eq 'Some address'
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.address ).to eq 'Some address'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.address).to eq 'Some address'
     end
 
     it "should override the facebook_url" do
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               facebook_url: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url ).to be_nil
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url).to be_nil
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url ).to eq 'Trzaska 25, 1000 Ljubljana'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url).to eq 'Trzaska 25, 1000 Ljubljana'
     end
 
     it "should not override the facebook_url if no new data" do
@@ -437,14 +436,14 @@ RSpec.describe Import::Importer do
       klub.facebook_url = 'Nekje 22'
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               facebook_url: nil
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url).to eq 'Nekje 22'
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.facebook_url).to eq 'Nekje 22'
     end
 
     it "should override the website with new data" do
@@ -452,14 +451,14 @@ RSpec.describe Import::Importer do
       klub.website = 'Nekje 22'
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               website: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.website ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.website).to eq 'Nekje 22'
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.website ).to eq 'Trzaska 25, 1000 Ljubljana'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.website).to eq 'Trzaska 25, 1000 Ljubljana'
     end
 
     it "should not override the website if no new data" do
@@ -467,14 +466,14 @@ RSpec.describe Import::Importer do
       klub.website = 'Nekje 22'
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               website: nil
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.website ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.website).to eq 'Nekje 22'
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.website ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.website).to eq 'Nekje 22'
     end
 
     it "should override the town with new data" do
@@ -482,14 +481,14 @@ RSpec.describe Import::Importer do
       klub.town = 'Nekje 22'
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               town: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.town ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.town).to eq 'Nekje 22'
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.town ).to eq 'Trzaska 25, 1000 Ljubljana'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.town).to eq 'Trzaska 25, 1000 Ljubljana'
     end
 
     it "should not override the town if no new data" do
@@ -497,25 +496,25 @@ RSpec.describe Import::Importer do
       klub.town = 'Nekje 22'
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               town: nil
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.town ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.town).to eq 'Nekje 22'
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.town ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.town).to eq 'Nekje 22'
     end
 
     it "should override the phone with new data" do
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               phone: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.phone ).to be_nil
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.phone).to be_nil
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.phone ).to eq 'Trzaska 25, 1000 Ljubljana'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.phone).to eq 'Trzaska 25, 1000 Ljubljana'
     end
 
     it "should not override the phone if no new data" do
@@ -523,25 +522,25 @@ RSpec.describe Import::Importer do
       klub.phone = 'Nekje 22'
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               phone: nil
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.phone ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.phone).to eq 'Nekje 22'
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.phone ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.phone).to eq 'Nekje 22'
     end
 
     it "should override the email with new data" do
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               email: 'Trzaska 25, 1000 Ljubljana'
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.email ).to be_nil
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.email).to be_nil
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.email ).to eq 'Trzaska 25, 1000 Ljubljana'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.email).to eq 'Trzaska 25, 1000 Ljubljana'
     end
 
     it "should not override the email if no new data" do
@@ -549,27 +548,27 @@ RSpec.describe Import::Importer do
       klub.email = 'Nekje 22'
       klub.save!
 
-      data = [{
+      data = [ {
               name: 'Fitnes 1',
               email: " "
-            }]
+            } ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.email ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.email).to eq 'Nekje 22'
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.email ).to eq 'Nekje 22'
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.email).to eq 'Nekje 22'
     end
 
     it "should not add duplicate categories" do
       data = [
         {
           name: 'Fitnes 1',
-          categories: ['pilates', 'fitnes']
+          categories: [ 'pilates', 'fitnes' ]
         }
       ]
       allow(transformer).to receive(:transform).and_return data
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['fitnes']
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.categories).to match [ 'fitnes' ]
       subject.run
-      expect( Klub.unscoped.where(name: 'Fitnes 1').first.categories ).to match ['pilates', 'fitnes']
+      expect(Klub.unscoped.where(name: 'Fitnes 1').first.categories).to match [ 'pilates', 'fitnes' ]
     end
   end
 

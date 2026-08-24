@@ -1,9 +1,9 @@
 class BootstrapIndexService
-  INDEX_KEY       = 'index/index.html'.freeze # matches ember-cli-deploy-s3-index prefix "index"
+  INDEX_KEY       = "index/index.html".freeze # matches ember-cli-deploy-s3-index prefix "index"
   REVISION_FORMAT = /\A[a-zA-Z0-9]{1,64}\z/
-  CACHE_KEY       = 'bootstrap_index/current'.freeze
+  CACHE_KEY       = "bootstrap_index/current".freeze
   CACHE_TTL       = 5.minutes
-  FALLBACK_FILE   = Rails.root.join('public', 'fallback_index.html')
+  FALLBACK_FILE   = Rails.root.join("public", "fallback_index.html")
 
   class InvalidRevision < StandardError; end
 

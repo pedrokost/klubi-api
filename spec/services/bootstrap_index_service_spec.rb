@@ -31,7 +31,7 @@ RSpec.describe BootstrapIndexService do
 
       service.fetch
 
-      expect(requested_keys).to eq ['index/index.html']
+      expect(requested_keys).to eq [ 'index/index.html' ]
     end
 
     it "caches the html" do
@@ -80,7 +80,7 @@ RSpec.describe BootstrapIndexService do
       })
 
       expect(service.fetch('abc123')).to eq '<html>rev</html>'
-      expect(requested_keys).to eq ['index/index.html:abc123']
+      expect(requested_keys).to eq [ 'index/index.html:abc123' ]
       expect(memory_cache.read(BootstrapIndexService::CACHE_KEY)).to be_nil
     end
 

@@ -8,7 +8,7 @@ RSpec.describe Klub, type: :model do
           email: 'owner@test.com',
           latitude: '46.421684',
           longitude: '14.089593',
-          categories: ['football'])
+          categories: [ 'football' ])
   end
 
   subject { klub }
@@ -27,7 +27,7 @@ RSpec.describe Klub, type: :model do
   end
 
   it 'should support multiple editors' do
-    emails = ['a@google.com', 'b@google.com']
+    emails = [ 'a@google.com', 'b@google.com' ]
     klub.editor_emails = emails
     expect(klub).to be_valid
     klub.save
@@ -248,7 +248,7 @@ RSpec.describe Klub, type: :model do
     it 'should allow two different klubs to have same slug' do
       # Differentiation is then in the IDs
       klub.save!
-      another_klub = build(:klub, name: 'Karate klub Skocjan', email: 'owner@test.com', categories: ['football'])
+      another_klub = build(:klub, name: 'Karate klub Skocjan', email: 'owner@test.com', categories: [ 'football' ])
       another_klub.save!
       expect(klub.reload.slug).to eq(another_klub.reload.slug)
     end
@@ -258,7 +258,7 @@ RSpec.describe Klub, type: :model do
     branch1 = create(:complete_klub_branch, parent: klub)
     branch2 = create(:complete_klub_branch, parent: klub)
 
-    expect(klub.branches).to match_array [branch1, branch2]
+    expect(klub.branches).to match_array [ branch1, branch2 ]
   end
 
   it 'may have a parent' do
@@ -270,7 +270,7 @@ RSpec.describe Klub, type: :model do
   describe 'branches' do
     it 'touches the parent when branch is edited' do
       expect do
-        create(:klub_branch, parent: klub, categories: ['karate'])
+        create(:klub_branch, parent: klub, categories: [ 'karate' ])
       end.to change(klub, :updated_at).from(klub.updated_at)
     end
   end
@@ -291,8 +291,8 @@ RSpec.describe Klub, type: :model do
 
     it 'Klub.completed.all should return only completed models' do
       klub.save
-      expect(Klub.completed.all).to eq([klub2])
-      expect(Klub.completed.unscoped).to eq([klub2, klub])
+      expect(Klub.completed.all).to eq([ klub2 ])
+      expect(Klub.completed.unscoped).to eq([ klub2, klub ])
     end
   end
 
@@ -406,7 +406,7 @@ RSpec.describe Klub, type: :model do
 
     context 'on create' do
       describe 'address provided' do
-        let(:klub) { build(:klub, address: 'Trzaska 25, 1000 Ljubljana', categories: ['karate']) }
+        let(:klub) { build(:klub, address: 'Trzaska 25, 1000 Ljubljana', categories: [ 'karate' ]) }
 
         it 'should compute latlong' do
           klub.save
@@ -442,7 +442,7 @@ RSpec.describe Klub, type: :model do
       end
 
       describe 'address not provided' do
-        let(:klub) { create(:klub, address: '', categories: ['karate']) }
+        let(:klub) { create(:klub, address: '', categories: [ 'karate' ]) }
         before do
           expect(Geocoder).not_to receive(:address)
         end
@@ -455,7 +455,7 @@ RSpec.describe Klub, type: :model do
     end
 
     context 'on save' do
-      let(:klub) { create(:klub, address: 'Trzaska 25, 1000 Ljubljana', categories: ['karate']) }
+      let(:klub) { create(:klub, address: 'Trzaska 25, 1000 Ljubljana', categories: [ 'karate' ]) }
       it 'should not run' do
         expect(klub.latitude).to eq 46.044899
         expect(klub.longitude).to eq 14.489231

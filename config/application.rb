@@ -41,17 +41,17 @@ module KlubiApi
 
     config.i18n.default_locale = :sl
 
-    config.i18n.fallbacks =[:en]
+    config.i18n.fallbacks =[ :en ]
 
 
     config.middleware.insert_before ActionDispatch::Static, Rack::Cors, logger: Rails.logger do
       allow do
-        origins 'app.local:4200', 'localhost:8000', 'klubi.si', 'dev.klubi.si', 'www.klubi.si', 'd2ne2albfoowfo.cloudfront.net', '*'
+        origins "app.local:4200", "localhost:8000", "klubi.si", "dev.klubi.si", "www.klubi.si", "d2ne2albfoowfo.cloudfront.net", "*"
 
-        resource '*',
-          :headers => :any,
-          :methods => [:get, :post, :delete, :put, :patch, :options, :head],
-          :max_age => 1728000
+        resource "*",
+          headers: :any,
+          methods: [ :get, :post, :delete, :put, :patch, :options, :head ],
+          max_age: 1728000
       end
     end
 
@@ -62,31 +62,29 @@ module KlubiApi
     # I left clouldflare). I also do not do the 301 if the request comes from
     # Prerender.
     config.middleware.insert_before ActionDispatch::Static, Rack::SslEnforcer, except_agents: /prerender/i, ignore: lambda { |request|
-
-      clould_flare_visitor = JSON.parse(request.env["HTTP_CF_VISITOR"])['scheme'] if request.env["HTTP_CF_VISITOR"]
+      clould_flare_visitor = JSON.parse(request.env["HTTP_CF_VISITOR"])["scheme"] if request.env["HTTP_CF_VISITOR"]
       clould_flare_https = clould_flare_visitor.match(/https/i) if clould_flare_visitor
-      request.env["HTTPS"] == 'on' || clould_flare_https || Rails.env.development?
+      request.env["HTTPS"] == "on" || clould_flare_https || Rails.env.development?
     }
 
     config.middleware.insert_before(Rack::Cors, Rack::Rewrite) do
-
       # Redirect to the www version of the domain
-      r301 %r{.*}, "https://www.klubi.si$&", :if => Proc.new {|rack_env|
-        ["klubi.si", "www.zatresi.si", "zatresi.si"].include? rack_env['SERVER_NAME']
+      r301 %r{.*}, "https://www.klubi.si$&", if: Proc.new { |rack_env|
+        [ "klubi.si", "www.zatresi.si", "zatresi.si" ].include? rack_env["SERVER_NAME"]
       }
 
       # Redirect the admin from old domain to the new domain
-      r301 %r{.*}, "https://admin.klubi.si$&", :if => Proc.new {|rack_env|
-        ["admin.zatresi.si"].include? rack_env['SERVER_NAME']
+      r301 %r{.*}, "https://admin.klubi.si$&", if: Proc.new { |rack_env|
+        [ "admin.zatresi.si" ].include? rack_env["SERVER_NAME"]
       }
 
-      r301 %r{.*}, "https://api.klubi.si$&", :if => Proc.new {|rack_env|
-        ["api.zatresi.si"].include? rack_env['SERVER_NAME']
+      r301 %r{.*}, "https://api.klubi.si$&", if: Proc.new { |rack_env|
+        [ "api.zatresi.si" ].include? rack_env["SERVER_NAME"]
       }
     end
 
     config.action_dispatch.default_headers = {
-        'X-Frame-Options' => 'ALLOWALL'
+        "X-Frame-Options" => "ALLOWALL"
     }
 
     config.middleware.use Rack::Attack
@@ -96,7 +94,7 @@ module KlubiApi
     config.active_record.schema_format = :sql
 
     # Skylight config
-    config.skylight.probes += %w(redis active_model_serializers active_job)
+    config.skylight.probes += %w[redis active_model_serializers active_job]
 
     config.active_job.queue_adapter = :good_job
   end

@@ -1,4 +1,4 @@
-require 'import/transformer'
+require "import/transformer"
 
 module Import
   class AtletskaZvezaTransformer < Transformer
@@ -11,14 +11,14 @@ module Import
       clean_data = []
 
       json.each do |klubdata|
-        klubdata['facebook_url'] = klubdata['facebook']
-        klubdata.delete('facebook')
-        klubdata['categories'] = ['atletika']
-        klubdata['verified'] = true
+        klubdata["facebook_url"] = klubdata["facebook"]
+        klubdata.delete("facebook")
+        klubdata["categories"] = [ "atletika" ]
+        klubdata["verified"] = true
         clean_data << klubdata.symbolize_keys
       end
 
       clean_data
     end
   end
-end 
+end

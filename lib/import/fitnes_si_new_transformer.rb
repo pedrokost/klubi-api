@@ -1,4 +1,4 @@
-require 'import/transformer'
+require "import/transformer"
 
 module Import
   class FitnesSiNewTransformer < Transformer
@@ -10,13 +10,13 @@ module Import
       json = JSON.parse(data)
 
       clean_data = []
-      json['results']['collection1'].each do |klubdata|
-        name = klubdata['name']
-        categories = klubdata['tags'].downcase.split("\n")
-        other = Hash[klubdata['address'].split("\n").in_groups_of(2)]
+      json["results"]["collection1"].each do |klubdata|
+        name = klubdata["name"]
+        categories = klubdata["tags"].downcase.split("\n")
+        other = Hash[klubdata["address"].split("\n").in_groups_of(2)]
         address = other["Naslov:"]
-        phone = other['Telefon:']
-        email = other['Email:']
+        phone = other["Telefon:"]
+        email = other["Email:"]
 
         k = {
           name: name,
@@ -32,4 +32,4 @@ module Import
       clean_data
     end
   end
-end 
+end

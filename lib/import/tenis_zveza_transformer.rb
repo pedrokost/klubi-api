@@ -1,5 +1,5 @@
-require 'import/transformer'
-require 'csv'
+require "import/transformer"
+require "csv"
 
 module Import
   class TenisZvezaTransformer < Transformer
@@ -15,7 +15,7 @@ module Import
         data_hash.delete(:ignore)
         data_hash[:verified] = true
         data_hash[:notes] = "Oznaka #{data_hash[:notes]}"
-        data_hash[:categories] = ['tenis']
+        data_hash[:categories] = [ "tenis" ]
         data_hash[:name] = data_hash[:name].titleize
         clean_data << data_hash
       end
@@ -23,4 +23,4 @@ module Import
       clean_data
     end
   end
-end 
+end

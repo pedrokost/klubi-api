@@ -1,4 +1,4 @@
-require 'import/datasource'
+require "import/datasource"
 
 module Import
   class LokostelskaZvezaDatasource < Datasource
@@ -9,4 +9,4 @@ module Import
       )
     end
   end
-end 
+end

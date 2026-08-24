@@ -1,5 +1,4 @@
 class Rack::Attack
-
   ### Configure Cache ###
 
   # If you don't want to use Rails.cache (Rack::Attack's default), then
@@ -24,7 +23,7 @@ class Rack::Attack
   # Throttle all requests by IP (30rpm)
   #
   # Key: "rack::attack:#{Time.now.to_i/:period}:req/ip:#{req.ip}"
-  throttle('req/ip', :limit => 150, :period => 5.minutes) do |req|
+  throttle("req/ip", limit: 150, period: 5.minutes) do |req|
     req.ip # unless req.path.starts_with?('/assets')
   end
 

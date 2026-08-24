@@ -28,7 +28,7 @@ Rails.application.configure do
     #   :namespace => 'klubiapi', :expires_in => 1.hour, :compress => true
     # }
     config.public_file_server.headers = {
-      'Cache-Control' => "public, max-age=#{2.days.seconds.to_i}"
+      "Cache-Control" => "public, max-age=#{2.days.seconds.to_i}"
     }
   else
     config.action_controller.perform_caching = false

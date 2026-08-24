@@ -4,8 +4,7 @@ require 'json'
 
 # require 'pry'
 
-RSpec.describe Admin::UpdatesController, :type => :controller do
-
+RSpec.describe Admin::UpdatesController, type: :controller do
   # login to http basic auth
   include AuthHelper
   before(:each) do
@@ -14,8 +13,7 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
 
 
   describe 'PUT #updates/:id' do
-
-    let!(:klub) { FactoryBot.create(:complete_klub, editor_emails: ['owner@email.com']) }
+    let!(:klub) { FactoryBot.create(:complete_klub, editor_emails: [ 'owner@email.com' ]) }
     let!(:update) { FactoryBot.create(:update, updatable: klub, field: 'name', oldvalue: klub.name, newvalue: 'Scented', editor_email: 'editor@email.com') }
 
     it "should be accepted" do
@@ -25,7 +23,7 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
     end
 
     it "should call the resolve! function" do
-      expect{
+      expect {
         put :update, params: { id: update.id, update: { status: :accepted } }
         klub.reload
       }.to change(klub, :name)
@@ -69,7 +67,6 @@ RSpec.describe Admin::UpdatesController, :type => :controller do
         klub.reload
       }.not_to change(klub, :name)
     end
-
   end
 
   describe 'POST #updates/:id/accept' do

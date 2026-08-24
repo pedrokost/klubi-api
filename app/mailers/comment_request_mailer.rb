@@ -1,5 +1,4 @@
 class CommentRequestMailer < ApplicationMailer
-
   def send_request(comment_request_id)
     @comment_request = CommentRequest.find(comment_request_id)
 

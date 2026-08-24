@@ -53,7 +53,6 @@ if Obcina.all.count == 0
 
   # Update slugs
   Obcina.pluck(:id, :slug).each do |id, slug|
-
     slug = "Sveta Trojica v Slovenskih goricah" if slug == "SV. TROJICA V SLOV. GORICAH"
     slug = "Sveti Jurij v Slovenskih goricah" if slug == "SVETI JURIJ V SLOV. GORICAH"
     slug = "Sveti Andraž v Slovenskih goricah" if slug == "SVETI ANDRAŽ V SLOV. GORICAH"
@@ -65,8 +64,8 @@ if Obcina.all.count == 0
   end
 
   # Add pointer to statistical region
-  csv_text = File.read(Rails.root.join('lib', 'assets', 'shpfiles','obcine_z_regijami.csv'))
-  csv = CSV.parse(csv_text, :headers => true)
+  csv_text = File.read(Rails.root.join('lib', 'assets', 'shpfiles', 'obcine_z_regijami.csv'))
+  csv = CSV.parse(csv_text, headers: true)
   csv.each do |row|
     statisticna_regija = StatisticnaRegija.where(slug: row["Statistična regija"].parameterize)
     p "WARNING: couldn't find statistical region: #{row}" unless statisticna_regija

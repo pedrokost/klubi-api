@@ -16,7 +16,7 @@ class EmailStatDashboard < Administrate::BaseDashboard
     last_dropped_at: Field::DateTime,
     last_opened_at: Field::DateTime,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES

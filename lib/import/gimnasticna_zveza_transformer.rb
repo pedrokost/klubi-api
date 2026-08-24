@@ -1,5 +1,5 @@
-require 'import/transformer'
-require 'json'
+require "import/transformer"
+require "json"
 
 module Import
   class GimnasticnaZvezaTransformer < Transformer
@@ -11,12 +11,12 @@ module Import
       json = JSON.parse(data)
 
       clean_data = []
-      json['results']['collection1'].each do |klubdata|
-        name = klubdata['name']
-        website = klubdata['website']
-        address = klubdata['address']
-        phone = klubdata['phone']
-        email = klubdata['email']
+      json["results"]["collection1"].each do |klubdata|
+        name = klubdata["name"]
+        website = klubdata["website"]
+        address = klubdata["address"]
+        phone = klubdata["phone"]
+        email = klubdata["email"]
 
         klub = {
           name: name,
@@ -24,7 +24,7 @@ module Import
           website: website,
           email: email,
           phone: phone,
-          categories: ['gimnastika']
+          categories: [ "gimnastika" ]
         }
 
         p klub
@@ -35,4 +35,4 @@ module Import
       clean_data
     end
   end
-end 
+end

@@ -1,15 +1,15 @@
-require 'yaml'
+require "yaml"
 
 class Update < ApplicationRecord
   enum :status, {
-    unverified: 'unverified',
-    accepted:   'accepted',
-    rejected:   'rejected',
+    unverified: "unverified",
+    accepted:   "accepted",
+    rejected:   "rejected"
   }
   belongs_to :updatable, polymorphic: true
 
   def resolve!
-    if status == 'accepted'
+    if status == "accepted"
       unless updatable.editor_emails.include? editor_email
         updatable.editor_emails << editor_email
       end

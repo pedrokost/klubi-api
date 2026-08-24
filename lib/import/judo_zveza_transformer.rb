@@ -1,5 +1,5 @@
-require 'import/transformer'
-require 'json'
+require "import/transformer"
+require "json"
 
 module Import
   class JudoZvezaTransformer < Transformer
@@ -11,11 +11,11 @@ module Import
       json = JSON.parse(data)
 
       clean_data = []
-      json['results']['collection1'].each do |klubdata|
+      json["results"]["collection1"].each do |klubdata|
         clean_data << klubdata.symbolize_keys
       end
 
       clean_data
     end
   end
-end 
+end

@@ -1,9 +1,8 @@
 require "rails_helper"
 
-RSpec.describe KlubMailer, :type => :mailer do
-
+RSpec.describe KlubMailer, type: :mailer do
   describe "new_klub_mail" do
-    let!(:klub) { create(:klub, name: 'My klub' * 10, editor_emails: ['submitter@email.com'], categories: ['fitnes', 'zumba']) }
+    let!(:klub) { create(:klub, name: 'My klub' * 10, editor_emails: [ 'submitter@email.com' ], categories: [ 'fitnes', 'zumba' ]) }
     let(:mail) { KlubMailer.new_klub_mail(klub.id) }
 
     it 'renders the subject' do
@@ -11,11 +10,11 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it 'renders the receiver email' do
-      expect(mail.to).to eql(['pedro@klubi.si'])
+      expect(mail.to).to eql([ 'pedro@klubi.si' ])
     end
 
     it 'renders the sender email' do
-      expect(mail.from).to eql(['pedro@klubi.si'])
+      expect(mail.from).to eql([ 'pedro@klubi.si' ])
     end
 
     it 'sends submitter email' do
@@ -40,7 +39,7 @@ RSpec.describe KlubMailer, :type => :mailer do
   end
 
   describe "new_klub_thanks_mail" do
-    let!(:klub) { create(:klub, name: 'My klub' * 10, editor_emails: ['submitter@email.com'], categories: ['fitnes', 'zumba']) }
+    let!(:klub) { create(:klub, name: 'My klub' * 10, editor_emails: [ 'submitter@email.com' ], categories: [ 'fitnes', 'zumba' ]) }
     let(:mail) { KlubMailer.new_klub_thanks_mail(klub.id, 'submitter@email.com') }
 
     it 'renders the subject' do
@@ -48,11 +47,11 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it 'is sent to the editor' do
-      expect(mail.to).to eql(['submitter@email.com'])
+      expect(mail.to).to eql([ 'submitter@email.com' ])
     end
 
     it 'is sent by the klubi bot' do
-      expect(mail.from).to eql(['peter@klubi.si'])
+      expect(mail.from).to eql([ 'peter@klubi.si' ])
     end
 
     it 'send klubs name' do
@@ -65,7 +64,7 @@ RSpec.describe KlubMailer, :type => :mailer do
   end
 
   describe "new_updates_mail" do
-    let!(:klub) { create(:klub, name: 'My klub' * 10, editor_emails: ['submitter@email.com'], categories: ['fitnes', 'zumba']) }
+    let!(:klub) { create(:klub, name: 'My klub' * 10, editor_emails: [ 'submitter@email.com' ], categories: [ 'fitnes', 'zumba' ]) }
 
     let(:mail) { KlubMailer.new_updates_mail(klub.id, 'joe@doe.com') }
 
@@ -74,11 +73,11 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it 'renders the receiver email' do
-      expect(mail.to).to eql(['pedro@klubi.si'])
+      expect(mail.to).to eql([ 'pedro@klubi.si' ])
     end
 
     it 'renders the sender email' do
-      expect(mail.from).to eql(['pedro@klubi.si'])
+      expect(mail.from).to eql([ 'pedro@klubi.si' ])
     end
 
     it 'sends submitter email' do
@@ -92,41 +91,41 @@ RSpec.describe KlubMailer, :type => :mailer do
 
   describe "confirmation_for_pending_updates_mail" do
     let!(:klub) {
-      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'], address: 'Videm pri Ptuju 49, Videm pri Ptuju')
+      create(:complete_klub, name: 'MyKlub', categories: [ 'fitnes' ], address: 'Videm pri Ptuju 49, Videm pri Ptuju')
     }
     let!(:klub_branch) {
-      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'], address: "Univerza v ljubljani, tržaška cesta 25, 1000 ljubljana, slovenija", parent: klub)
+      create(:complete_klub, name: 'MyKlub', categories: [ 'fitnes' ], address: "Univerza v ljubljani, tržaška cesta 25, 1000 ljubljana, slovenija", parent: klub)
     }
     let!(:klub_branch2) {
-      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'], address: "Univerza v ljubljani, tržaška cesta 25, 1000 ljubljana, slovenija", parent: klub)
+      create(:complete_klub, name: 'MyKlub', categories: [ 'fitnes' ], address: "Univerza v ljubljani, tržaška cesta 25, 1000 ljubljana, slovenija", parent: klub)
     }
     let!(:new_branch) {
-      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'], address: "Cesta XV. brigade 2, Metlika", parent: klub)
+      create(:complete_klub, name: 'MyKlub', categories: [ 'fitnes' ], address: "Cesta XV. brigade 2, Metlika", parent: klub)
     }
     let!(:update) {
-      create( :update, field: 'phone', oldvalue: 'staro', newvalue: 'novo', updatable: klub )
+      create(:update, field: 'phone', oldvalue: 'staro', newvalue: 'novo', updatable: klub)
     }
     let!(:branch_update) {
-      create( :update, field: 'address', oldvalue: 'addressOld', newvalue: 'addressNew', updatable: klub_branch2 )
+      create(:update, field: 'address', oldvalue: 'addressOld', newvalue: 'addressNew', updatable: klub_branch2)
     }
     let!(:klub_branch_delete_update) {
-      create( :update, field: 'marked_for_deletion', oldvalue: false, newvalue: true, updatable: klub_branch )
+      create(:update, field: 'marked_for_deletion', oldvalue: false, newvalue: true, updatable: klub_branch)
     }
     let(:mail) {
       KlubMailer.confirmation_for_pending_updates_mail(
         klub.id,
         'joe@email.com',
-        [update.id, branch_update.id, klub_branch_delete_update.id],
-        [new_branch.id]
+        [ update.id, branch_update.id, klub_branch_delete_update.id ],
+        [ new_branch.id ]
       )
     }
 
     it "is sent to the editor" do
-      expect(mail.to).to eql(['joe@email.com'])
+      expect(mail.to).to eql([ 'joe@email.com' ])
     end
 
     it "is sent from peter bot" do
-      expect(mail.from).to eql(['peter@klubi.si'])
+      expect(mail.from).to eql([ 'peter@klubi.si' ])
     end
 
     it "renders the subject" do
@@ -166,7 +165,7 @@ RSpec.describe KlubMailer, :type => :mailer do
       mail = KlubMailer.confirmation_for_pending_updates_mail(
         klub.id,
         'joe@email.com',
-        [branch_update.id],
+        [ branch_update.id ],
         []
       )
       # Parent address
@@ -179,7 +178,7 @@ RSpec.describe KlubMailer, :type => :mailer do
       mail = KlubMailer.confirmation_for_pending_updates_mail(
         klub.id,
         'joe@email.com',
-        [klub_branch_delete_update.id],
+        [ klub_branch_delete_update.id ],
         []
       )
       # Parent address
@@ -193,34 +192,33 @@ RSpec.describe KlubMailer, :type => :mailer do
         klub.id,
         'joe@email.com',
         [],
-        [new_branch.id]
+        [ new_branch.id ]
       )
       # Parent address
       expect(mail.body.parts[0].decoded.downcase).to match('videm pri ptuju 49, 2284 videm pri ptuju, slovenija')
       # New branch
       expect(mail.body.parts[0].decoded.downcase).to match('cesta xv')
     end
-
   end
 
   describe "confirmation for accepted updates mail" do
     let!(:klub) {
-      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'])
+      create(:complete_klub, name: 'MyKlub', categories: [ 'fitnes' ])
     }
     let!(:klub_branch) {
-      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'], address: "Cesta XV. brigade 2, Metlika", parent: klub)
+      create(:complete_klub, name: 'MyKlub', categories: [ 'fitnes' ], address: "Cesta XV. brigade 2, Metlika", parent: klub)
     }
     let(:update) {
-      create( :update, field: 'address', oldvalue: 'staro', newvalue: 'novo', updatable: klub )
+      create(:update, field: 'address', oldvalue: 'staro', newvalue: 'novo', updatable: klub)
     }
     let(:update2) {
-      create( :update, field: 'phone', oldvalue: '043224', newvalue: '012312', updatable: klub )
+      create(:update, field: 'phone', oldvalue: '043224', newvalue: '012312', updatable: klub)
     }
     let(:mail) {
       KlubMailer.confirmation_for_acceped_updates_mail(
         klub.id,
         'joe@email.com',
-        [update.id, update2.id]
+        [ update.id, update2.id ]
       )
     }
 
@@ -230,11 +228,11 @@ RSpec.describe KlubMailer, :type => :mailer do
     end
 
     it "is sent to the editor" do
-      expect(mail.to).to eql(['joe@email.com'])
+      expect(mail.to).to eql([ 'joe@email.com' ])
     end
 
     it "is sent from peter bot" do
-      expect(mail.from).to eql(['peter@klubi.si'])
+      expect(mail.from).to eql([ 'peter@klubi.si' ])
     end
 
     it "renders the subject" do
@@ -259,7 +257,7 @@ RSpec.describe KlubMailer, :type => :mailer do
     let!(:klub) {
       create(:complete_klub,
         name: 'MyKlub',
-        categories: ['fitnes'],
+        categories: [ 'fitnes' ],
         email: 'owner@test.com',
         facebook_url: 'http://facebook.com',
         website: 'http://website.com',
@@ -268,7 +266,7 @@ RSpec.describe KlubMailer, :type => :mailer do
         phone: "041 444 222")
     }
     let!(:klub_branch) {
-      create(:complete_klub, name: 'MyKlub', categories: ['fitnes'], address: "Videm pri Ptuju 49, Videm pri Ptuju", parent: klub)
+      create(:complete_klub, name: 'MyKlub', categories: [ 'fitnes' ], address: "Videm pri Ptuju 49, Videm pri Ptuju", parent: klub)
     }
     let(:mail) {
       KlubMailer.request_verify_klub_mail(
@@ -278,15 +276,15 @@ RSpec.describe KlubMailer, :type => :mailer do
     }
 
     it "is sent to the klub owner" do
-      expect(mail.to).to eql(['owner@test.com'])
+      expect(mail.to).to eql([ 'owner@test.com' ])
     end
 
     it "is sent from peter bot" do
-      expect(mail.from).to eql(['peter@klubi.si'])
+      expect(mail.from).to eql([ 'peter@klubi.si' ])
     end
 
     it "is bbc's to bcc@klubi.si" do
-      expect(mail.bcc).to eql(['bcc@klubi.si'])
+      expect(mail.bcc).to eql([ 'bcc@klubi.si' ])
     end
 
     it "renders the correct subject" do

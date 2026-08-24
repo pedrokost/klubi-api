@@ -11,7 +11,7 @@ class CreateObcinas < ActiveRecord::Migration[5.0]
     end
 
     add_index :obcinas, :geom, using: :gist
-    add_index :obcinas, :slug, :unique => true
+    add_index :obcinas, :slug, unique: true
     add_foreign_key :obcinas, :statisticna_regijas, column: :statisticna_regija_id
   end
 end

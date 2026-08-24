@@ -31,22 +31,22 @@ class SendDataVerificationEmails
     Raygun.track_exception(e)
   end
   def awaiting_klubs
-    doorman = OutgoingEmailDoorman.new(Rails.application.credentials.EXPECTED_NUM_DAILY_DATA_VERIFICATION_EMAILS.to_i, Rails.application.credentials.WANTED_OUTGOING_EMAIL_DISTRIBTION.split(',').map(&:to_f))
+    doorman = OutgoingEmailDoorman.new(Rails.application.credentials.EXPECTED_NUM_DAILY_DATA_VERIFICATION_EMAILS.to_i, Rails.application.credentials.WANTED_OUTGOING_EMAIL_DISTRIBTION.split(",").map(&:to_f))
 
     send_num_emails = doorman.number_of_emails_to_send_now
 
     # Ordered list of klubs to receive the the notification
     threshold_date = Rails.application.credentials.REQUIRE_NEW_VERIFICATION_AFTER.to_i.days.ago
-    supported_categories = Rails.application.credentials.SUPPORTED_CATEGORIES.split ','
+    supported_categories = Rails.application.credentials.SUPPORTED_CATEGORIES.split ","
 
-    Klub.where('last_verification_reminder_at IS NULL OR last_verification_reminder_at < ?', threshold_date)
-        .where('data_confirmed_at IS NULL OR data_confirmed_at < ?', threshold_date) # TODO:test
+    Klub.where("last_verification_reminder_at IS NULL OR last_verification_reminder_at < ?", threshold_date)
+        .where("data_confirmed_at IS NULL OR data_confirmed_at < ?", threshold_date) # TODO:test
         .where(verified: true)
-        .where('ARRAY[?]::varchar[] && categories', supported_categories)
+        .where("ARRAY[?]::varchar[] && categories", supported_categories)
         .where(parent: nil)
-        .where('email LIKE ?', '%@%')
+        .where("email LIKE ?", "%@%")
         .where(closed_at: nil)
-        .order('last_verification_reminder_at ASC NULLS FIRST, created_at ASC')
+        .order("last_verification_reminder_at ASC NULLS FIRST, created_at ASC")
         .limit(send_num_emails)
   end
 end

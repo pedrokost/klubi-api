@@ -20,7 +20,7 @@ module Admin
     def default_sorting_attribute
       :updated_at
     end
-  
+
     def default_sorting_direction
       :desc
     end
@@ -34,7 +34,7 @@ module Admin
       end
 
       redirect_to(
-        [:admin, requested_resource],
+        [ :admin, requested_resource ],
         notice: translate_with_resource("update.success"),
         allow_other_host: true
       )
@@ -43,7 +43,7 @@ module Admin
     def send_data_verification_email
       requested_resource.send_request_verify_klub_data_mail
       redirect_to(
-        [:admin, requested_resource],
+        [ :admin, requested_resource ],
         notice: "A verification email has just been sent to #{requested_resource.email}",
         allow_other_host: true
       )
@@ -55,8 +55,8 @@ module Admin
 
     def resource_params
       # Transform string for storage as a Postgres array:
-      params["klub"]["categories"] = params["klub"]["categories"].split(' ')
-      params["klub"]["editor_emails"] = params["klub"]["editor_emails"].split(' ')
+      params["klub"]["categories"] = params["klub"]["categories"].split(" ")
+      params["klub"]["editor_emails"] = params["klub"]["editor_emails"].split(" ")
       params.require(resource_name).permit(dashboard.permitted_attributes, categories: [], editor_emails: [])
     end
   end

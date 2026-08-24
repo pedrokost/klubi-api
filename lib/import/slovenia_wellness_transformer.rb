@@ -1,5 +1,5 @@
-require 'import/transformer'
-require 'json'
+require "import/transformer"
+require "json"
 
 module Import
   class SloveniaWellnessTransformer < Transformer
@@ -11,17 +11,17 @@ module Import
       json = JSON.parse(data)
 
       clean_data = []
-      json['results']['collection1'].each do |klubdata|
-        name = klubdata['name']
-        website = klubdata['website']['href']
-        address = klubdata['address']['text']
-        address = address.sub('Naslov podjetja: ', '').sub('Povezava na stran podjetja', '').gsub("\n", ' ').strip
+      json["results"]["collection1"].each do |klubdata|
+        name = klubdata["name"]
+        website = klubdata["website"]["href"]
+        address = klubdata["address"]["text"]
+        address = address.sub("Naslov podjetja: ", "").sub("Povezava na stran podjetja", "").gsub("\n", " ").strip
 
         klub = {
           name: name,
           address: address,
           website: website,
-          categories: ['wellness']
+          categories: [ "wellness" ]
         }
 
         clean_data << klub
@@ -30,4 +30,4 @@ module Import
       clean_data
     end
   end
-end 
+end

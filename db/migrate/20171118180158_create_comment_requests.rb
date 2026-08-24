@@ -11,6 +11,6 @@ class CreateCommentRequests < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_index :comment_requests, [:commentable_type, :commentable_id, :commenter_email], unique: true, name: 'index_comment_request_unique_commenter_commentable'
+    add_index :comment_requests, [ :commentable_type, :commentable_id, :commenter_email ], unique: true, name: 'index_comment_request_unique_commenter_commentable'
   end
 end

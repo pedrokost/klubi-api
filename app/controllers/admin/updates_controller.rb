@@ -19,7 +19,7 @@ module Admin
     def default_sorting_attribute
       :updated_at
     end
-  
+
     def default_sorting_direction
       :desc
     end
@@ -59,13 +59,13 @@ module Admin
 
       if updated_success
         redirect_to(
-          [:admin, requested_resource],
+          [ :admin, requested_resource ],
           notice: translate_with_resource("update.success"),
           allow_other_host: true
         )
       else
         render :edit, locals: {
-          page: Administrate::Page::Form.new(dashboard, requested_resource),
+          page: Administrate::Page::Form.new(dashboard, requested_resource)
         }
       end
     end

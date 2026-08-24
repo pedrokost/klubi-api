@@ -1,12 +1,11 @@
-require 'api_constraints'
+require "api_constraints"
 
 Rails.application.routes.draw do
-
-  constraints subdomain: 'admin' do
+  constraints subdomain: "admin" do
     # Job dashboard; protected by HTTP basic auth (see initializers/good_job.rb)
-    mount GoodJob::Engine => '/good_job'
+    mount GoodJob::Engine => "/good_job"
 
-    scope module: 'admin', as: 'admin' do
+    scope module: "admin", as: "admin" do
       DashboardManifest::DASHBOARDS.each do |dashboard_resource|
         resources dashboard_resource
       end
@@ -29,35 +28,34 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/rails/mailers' => "rails/mailers#index"
-  get '/rails/mailers/*path' => "rails/mailers#preview"
+  get "/rails/mailers" => "rails/mailers#index"
+  get "/rails/mailers/*path" => "rails/mailers#preview"
 
-  constraints subdomain: 'api' do
-    scope module: 'api' do
+  constraints subdomain: "api" do
+    scope module: "api" do
       scope module: :v2, constraints: ApiConstraints.new(version: 2, default: true) do
-        resources :obcinas, only: [:show]
-        resources :comments, only: [:create]
-        resources :comment_requests, only: [:create], :path => '/comment-requests'
-        resources :klubs, only: [:index, :create, :update, :show] do
+        resources :obcinas, only: [ :show ]
+        resources :comments, only: [ :create ]
+        resources :comment_requests, only: [ :create ], path: "/comment-requests"
+        resources :klubs, only: [ :index, :create, :update, :show ] do
           member do
             get :images
             post :confirm
           end
         end
-        post 'email_stats/webhook' => 'email_stats#webhook'
+        post "email_stats/webhook" => "email_stats#webhook"
       end
     end
   end
 
-  constraints subdomain: ['', 'www'] do
+  constraints subdomain: [ "", "www" ] do
+    get "/heartbeat" => "application#heartbeat"
 
-    get '/heartbeat' => 'application#heartbeat'
+    get "/sitemaps/sitemap.xml.gz" => "application#sitemap"
 
-    get '/sitemaps/sitemap.xml.gz' => 'application#sitemap'
+    root "application#index"
 
-    root 'application#index'
-
-    get '*path' => 'application#index'
+    get "*path" => "application#index"
   end
   # constraints subdomain: 'import' do
   #   post 'klubs/create'

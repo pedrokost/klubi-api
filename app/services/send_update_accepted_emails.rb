@@ -14,12 +14,11 @@ class SendUpdateAcceptedEmails
     update_groups.each do |key, updates|
       klub = Klub.find(key[:klub_id])
 
-      yield [key[:editor], klub, updates]
+      yield [ key[:editor], klub, updates ]
     end
   end
 
   def call
-
     begin
       groups do |group|
         send_email *group
@@ -27,7 +26,6 @@ class SendUpdateAcceptedEmails
     rescue Exception => e
       Raygun.track_exception(e)
     end
-
   end
 
   def send_email(editor, klub, updates)

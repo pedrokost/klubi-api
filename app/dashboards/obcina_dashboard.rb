@@ -15,7 +15,7 @@ class ObcinaDashboard < Administrate::BaseDashboard
     slug: Field::String,
     statisticna_regija: Field::BelongsTo,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES

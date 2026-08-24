@@ -10,6 +10,6 @@ class CreateStatisticnaRegijas < ActiveRecord::Migration[5.0]
     end
 
     add_index :statisticna_regijas, :geom, using: :gist
-    add_index :statisticna_regijas, :slug, :unique => true
+    add_index :statisticna_regijas, :slug, unique: true
   end
 end

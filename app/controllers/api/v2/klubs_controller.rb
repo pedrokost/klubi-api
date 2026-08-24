@@ -1,7 +1,6 @@
 module Api
   module V2
     class KlubsController < ApplicationController
-
       before_action :select_ams_adapter
 
       def index
@@ -10,11 +9,11 @@ module Api
         stats_count, last_update = Klub.completed
           .where(closed_at: nil)
           .where("? = ANY (categories)", category_params)
-          .pluck(Arel.sql('COUNT(*), MAX(updated_at)'))
+          .pluck(Arel.sql("COUNT(*), MAX(updated_at)"))
           .first
 
         data = Rails.cache.fetch("v2/klubs/#{category_params}-#{stats_count}-#{last_update.to_i}") do
-          klubs = Klub.completed.where("? = ANY (categories)", category_params).where('closed_at IS NULL')
+          klubs = Klub.completed.where("? = ANY (categories)", category_params).where("closed_at IS NULL")
           serializer = ActiveModel::Serializer::CollectionSerializer.new(klubs, serializer: Api::V2::KlubListingSerializer)
           ActiveModelSerializers::Adapter.create(serializer).to_json
         end
@@ -49,7 +48,7 @@ module Api
 
         klub.send_on_create_notifications the_params[:editor]
 
-        render json: klub, include: [:branches], status: :accepted
+        render json: klub, include: [ :branches ], status: :accepted
       end
 
       def update
@@ -61,7 +60,7 @@ module Api
         updates = klub.create_updates update_klub_params.except(:branches_attributes)
 
         # Delete any of the other branches
-        updated_branch_ids = update_klub_params[:branches_attributes].select{ |branch| branch[:id] }.map{ |branch| extract_slug(branch[:id]).to_i }
+        updated_branch_ids = update_klub_params[:branches_attributes].select { |branch| branch[:id] }.map { |branch| extract_slug(branch[:id]).to_i }
         deleted_branch_ids = klub.branches.map(&:id) - updated_branch_ids
 
         deleted_branch_ids.each do |branch_id|
@@ -85,12 +84,12 @@ module Api
 
         klub.send_on_update_notifications editor, updates, new_branches
 
-        render json: 'null', status: :accepted
+        render json: "null", status: :accepted
       end
 
       def show
         klub = find_klub
-        render json: klub, include: [:branches, :parent, :comments]
+        render json: klub, include: [ :branches, :parent, :comments ]
       end
 
       def images
@@ -112,20 +111,20 @@ module Api
     private
       def find_klub
         slug_with_id = params[:id]
-        id = slug_with_id.split('-').last
+        id = slug_with_id.split("-").last
         Klub.find(id)
       end
 
-      def find_by_url_slug url_slug
+      def find_by_url_slug(url_slug)
         return nil unless url_slug
         slug_with_id = url_slug
-        id = slug_with_id.split('-').last
+        id = slug_with_id.split("-").last
         Klub.find(id)
       end
 
-      def extract_slug url_slug
+      def extract_slug(url_slug)
         return nil unless url_slug
-        url_slug.split('-').last
+        url_slug.split("-").last
       end
 
       def category_params
@@ -133,13 +132,13 @@ module Api
       end
 
       def supported_categories
-        Rails.application.credentials.SUPPORTED_CATEGORIES.split(',')
+        Rails.application.credentials.SUPPORTED_CATEGORIES.split(",")
       end
 
       def new_klub_params
         parameters = ActionController::Parameters.new(
           ActiveModelSerializers::Deserialization.jsonapi_parse!(params,
-            embedded: [:branches],
+            embedded: [ :branches ],
           )
         ).permit(
           :name,
@@ -153,9 +152,9 @@ module Api
           :email,
           :notes,
           :description,
-          { :categories => [] },
+          { categories: [] },
           :editor,
-          :branches_attributes => [:address, :latitude, :longitude, :town]
+          branches_attributes: [ :address, :latitude, :longitude, :town ]
         )
 
         parameters[:branches_attributes] ||= []
@@ -166,7 +165,7 @@ module Api
       def update_klub_params
         parameters = ActionController::Parameters.new(
           ActiveModelSerializers::Deserialization.jsonapi_parse!(params,
-            embedded: [:branches],
+            embedded: [ :branches ],
           )
         ).permit(
           :name,
@@ -180,9 +179,9 @@ module Api
           :email,
           :notes,
           :description,
-          { :categories => [] },
+          { categories: [] },
           :editor,
-          :branches_attributes => [:id, :address, :latitude, :longitude, :town]
+          branches_attributes: [ :id, :address, :latitude, :longitude, :town ]
         )
 
         parameters[:branches_attributes] ||= []
@@ -193,8 +192,6 @@ module Api
       def select_ams_adapter
         ActiveModelSerializers.config.adapter = :json_api
       end
-
     end
   end
 end
-
