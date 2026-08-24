@@ -9,10 +9,10 @@ x Make workers work
 x Document stupid build process for now for the
 ✔ Transfers the cronjobs over from Heroku to Fly @done (24-12-21 22:30)
 ✔ Fix the sitemap task
-☐ Build image for the cronjobs
+☐ Resurrect cronjobs: fly-cron-manager app is suspended (0 machines) — no cron has run since ~Jan 2025 (S3 sitemap last modified 25-01-25). Start a machine for it and update schedules.json to the current klubi-si-api image (or replace with GoodJob cron, but that needs min_machines_running=1)
 ✔ Migrate to goodjob to get rid of the separate worker. requires rails 6 at least. See if AI can upgrade both at once. First have ti review/add any important missing tests. @done (26-07-11)
 ✔ After goodjob has been stable in production for a few days: remove delayed_job gems from Gemfile (marked with TODO), delete bin/delayed_job, add drop_table :delayed_jobs migration + regenerate structure.sql @done (26-07-11)
-☐ Before/at first deploy of feature/rails8: add RAILS_MASTER_KEY secret to GitHub repo (CI needs it), check Delayed::Job.count == 0 on prod, fly deploy, then fly scale count worker=0
+✔ Before/at first deploy of feature/rails8: add RAILS_MASTER_KEY secret to GitHub repo (CI needs it), check Delayed::Job.count == 0 on prod, fly deploy, then fly scale count worker=0 @done (26-08-24, deployed 26-07-11 as v36; no worker machines remain)
 
 x Drop the Heroku resources
 ✔ Update adminstrate https://administrate-demo.herokuapp.com/getting_started @done (26-07-11)

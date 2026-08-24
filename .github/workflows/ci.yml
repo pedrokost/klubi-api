@@ -4,6 +4,7 @@ on:
   pull_request:
   push:
     branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   scan_ruby:
@@ -83,3 +84,30 @@ jobs:
         run: |
           bin/rails db:test:prepare
           bundle exec rspec spec/
+
+  deploy:
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master'
+    needs: [scan_ruby, lint, test]
+    runs-on: ubuntu-latest
+    concurrency: fly-deploy
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Set up flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@master
+
+      - name: Deploy to Fly
+        run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+      # fly-cron-manager provisions a fresh machine per cron run from the
+      # :latest tag, so each deploy must move that tag to the new image
+      - name: Point :latest at the deployed image
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+        run: |
+          flyctl auth docker
+          IMAGE=$(flyctl machine list --json | jq -r '[.[] | select(.config.metadata.fly_process_group == "app")][0].config.image')
+          docker buildx imagetools create --tag registry.fly.io/klubi-si-api:latest "$IMAGE"
