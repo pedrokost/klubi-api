@@ -24,6 +24,7 @@ x Administrate: edit buttons seem broken
 x Migrate from Heroku to Fly
 ☐ Get rid of redis, instead upload to DB?
 ☐ Find solution for the hardcoded index.html
+☐ Remove dead Google Analytics (UA) visit-count fetching: GoogleAnalyticsFetcher uses the Universal Analytics Reporting API v4, shut down by Google in 2023 — every hourly klubs:send_emails run now logs a Raygun error per emailed klub (error is swallowed, emails still send). Fix: drop update_visits_count_if_outdated! calls in SendDataVerificationEmails, Klub#update_visits_count!/_if_outdated!, GoogleAnalyticsFetcher, and google-apis-analyticsreporting_v4/googleauth gems; visits_count is only shown in the admin dashboard (frozen at last fetch). Alternative: migrate to GA4 Data API if live counts are ever wanted (could fold into Occupancy analytics below)
 ☐ skylight metrics are not working
 ☐ Occupancy analytics
     ☐ Get business hours form google
